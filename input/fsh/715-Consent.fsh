@@ -1,3 +1,5 @@
+// Conditional questions supporting all age groups
+
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
@@ -28,6 +30,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "2e82032a-dc28-45f2-916e-862303d39fe5"
   * text = "Consent"
   * type = #group
@@ -39,18 +42,37 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #choice
     * repeats = false
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * operator = #>
+      * answerInteger = 12
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * linkId = "7fa8bc57-f3f9-4ddc-bf9b-12a9b9885dbd"
+    * text = "Consent given by parent/primary carer after discussion of process and benefits of a health check"
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * operator = #<=
+      * answerInteger = 12
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * linkId = "c72933c7-349f-4fef-94ff-c424c69da6f3"
     * text = "Parent/primary caregiver present for health check"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"  
+    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * operator = #<=
+      * answerInteger = 24
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "b7d116f9-0425-4cf1-8cde-fbf4dfaee550"
       * text = "Relationship to child"
-      * type = #string // possibly add a constrained answerValueSet https://healthterminologies.gov.au/fhir/ValueSet/related-person-relationship-type-1
+      * type = #string // should be a coded answer - possibly add a constrained answerValueSet https://healthterminologies.gov.au/fhir/ValueSet/related-person-relationship-type-1. Prototype uses http://snomed.info/sct?fhir_vs=refset/32570591000036107
       * enableWhen[+]
         * question = "c72933c7-349f-4fef-94ff-c424c69da6f3"
         * operator = #=
@@ -81,6 +103,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Date"
     * type = #date
     * repeats = false
+    * required = true
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "0f92eb2d-4629-4215-96f8-46722a2efa73"
@@ -109,6 +132,25 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
     * answerOption[+].valueCoding = $SCT#257698009 "School"
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * operator = #>
+      * answerInteger = 5 
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[sdc-questionnaire-openLabel].valueString = "Other, please specify"
+    * linkId = "9a51c056-021d-445d-8eaa-2123a69aa9c2"
+    * text = "Location of health check"
+    * type = #open-choice
+    * repeats = false
+    * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
+    * answerOption[+].valueCoding = $SCT#264362003 "Home"
+    * answerOption[+].valueCoding = $SCT#413817003 "Early learning centre" //concept id for child day care. Would be better with a new specific SCTAU concept. Could even remove conditional questioning and create a single value set to support the answer. 
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * operator = #<=
+      * answerInteger = 5
+
 
 
 

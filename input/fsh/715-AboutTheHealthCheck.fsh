@@ -1,3 +1,5 @@
+//Identical across all ages
+
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
@@ -9,6 +11,7 @@ Title: "715 About The Health Check"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
 * contained[+] = PrePopQuery
+* contained[+] = YesNoNA
 
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
@@ -28,6 +31,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "2e82032a-dc28-45f2-916e-862303d39fe5"
   * text = "About the health check"
   * type = #group
@@ -38,7 +42,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Eligible for health check"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"    
+    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "04f00512-888b-424e-ba76-9bd6fd8da682"

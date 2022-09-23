@@ -31,7 +31,7 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
 * item[+] 
   * linkId = "685c2d35-747f-4156-8b91-af64074573ca"
   * text = "Aboriginal and Torres Strait Islander health check - Adults (≥50 years)"
-  * type = #display
+  * type = #group
   // About The Health Check
   * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/715-AboutTheHealthCheck|0.1.0"

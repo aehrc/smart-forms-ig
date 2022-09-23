@@ -223,15 +223,34 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #group
     * repeats = false
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
       * linkId = "da1f3068-4de6-4cd5-ae25-5082e7c20ae2"
       * text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
       * extension[sdc-questionnaire-shortText].valueString = "Do you take any regular medications?"
-      * type = #choice
+      * type = #boolean
       * repeats = false
-      * answerOption[+].valueString = "None"
-      * answerOption[+].valueString = "Yes, up to date in health record"
-      * answerOption[+].valueString = "Understanding and adherence checked"
+    * item[+]
+      * linkId = "4d21d1d7-f3de-4292-bc48-e634d4621526"
+      * text = "Up to date in the health record?"
+      * type = #boolean
+      * repeats = false
+      /*
+      * enableWhen[+]
+        * question = "da1f3068-4de6-4cd5-ae25-5082e7c20ae2"
+        * operator = #=
+        * answerBoolean = true
+        */
+    * item[+]
+      * linkId = "813c1e8e-82fc-4ad5-b6fb-9f4757a4c709"
+      * text = "Medication understanding and adherence has been checked with patient"
+      * extension[sdc-questionnaire-shortText].valueString = "Understanding and adherence checked"
+      * type = #boolean
+      * repeats = false
+      /*
+      * enableWhen[+]
+        * question = "da1f3068-4de6-4cd5-ae25-5082e7c20ae2"
+        * operator = #=
+        * answerBoolean = true
+        */
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "6d7525c8-b3d5-402e-8500-6373c99c0184"
@@ -247,10 +266,9 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box    
       * linkId = "6fb913c4-a0c2-4448-bd5f-421125da606d"
-      * text = "Health record"
-      * type = #choice
+      * text = "Up to date in the health record?"
+      * type = #boolean
       * repeats = false
-      * answerOption[+].valueString = "Up to date in health record"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "2818498b-d277-4cdc-b49f-25d4684cc212"

@@ -28,14 +28,16 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
   * text = "Patient Details"
   * type = #group
   * repeats = false
   * item[+]
+    /*this */
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.name(first).where(use='usual').select(given.first() & ' ' & family)"
+      * expression = "%patient.name.where(use = 'usual').first().select(given.first() & ' ' & family)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
     * text = "Name"
@@ -52,12 +54,13 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "iif(today().toString().substring(4,4).toInteger > %patient.birthDate.toString().substring(4,4).toInteger, today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
+      * expression = "%age"
     * linkId = "e2a16e4d-2765-4b61-b286-82cfc6356b30"
     * text = "Age"
     * type = #integer
     * repeats = false
   * item[+]
+    /*Is this administrative gender like FHIR or gender identity?*/
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%patient.gender"
@@ -84,17 +87,25 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "c8852db9-efe9-4102-96db-cef3a8be0a5f"
     * text = "Parents/primary carer/s"
     * type = #choice
-    * repeats = true    
+    * repeats = true /*is repeating best way to allow selection of "MTH and FTH"?*/   
     * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH
     * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#FTH
     * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#GRPRN
     * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 24
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7089c48e-4216-4089-a548-034cd585e4da"
     * text = "Other family"
     * type = #string
-    * repeats = true    
+    * repeats = true
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 24    
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "70c45932-99dc-42a3-9650-4683892a0892"
@@ -106,12 +117,37 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "42b1f5e0-bf4a-47d9-86a4-f2fe946ac01f"
     * text = "Other"
     * type = #string
-    * repeats = true    
+    * repeats = true 
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 24   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "dcbd3a54-9b68-4486-bf30-f6f1723bc39c"
       * text = "details"
       * type = #display
+      * repeats = true
+  * item[+]
+    * linkId = "06737e46-e880-4037-9a2c-bcd278cd70ba"
+    * text = "Parents/primary carer/s details"    
+    * type = #group
+    * repeats = true
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 12  
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+      * linkId = "cc20ce96-af06-4cd7-aa9b-c2601a6169ad"
+      * text = "Name of parent/primary carer"
+      * type = #string
+      * repeats = false 
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+      * linkId = "372d79bb-9d0b-42d2-a98c-cbe332bd3745"
+      * text = "Relationship to child"
+      * type = #string
       * repeats = true
   * item[+]
     * linkId = "f1262ade-843c-4eba-a86d-51a9c97d134b"
@@ -131,7 +167,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.address.select(line.first() & ' ' & line.skip(1) & ' ' & line.skip(2)"
+        * expression = "%patient.address.select(line.first() & ' ' & line.skip(1).first() & ' ' & line.skip(2).first())"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "2fee2d51-7828-4178-b8c1-35edd32ba338"
       * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
@@ -222,9 +258,23 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "27099697-d6d1-42c0-bb0a-5e9ff7372a96"
+      * text = "Relationship to child"
+      * type = #string
+      * repeats = true   
+      * enableWhen[+]
+        * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+        * operator = #<=
+        * answerInteger = 12
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+      * linkId = "27099697-d6d1-42c0-bb0a-5e9ff7372a96"
       * text = "Relationship to patient"
       * type = #string
-      * repeats = true
+      * repeats = true 
+      * enableWhen[+]
+        * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+        * operator = #>
+        * answerInteger = 12
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -297,6 +347,42 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
   * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
+    * linkId = "e63547c6-1623-412f-963f-5f1ebf23563f"
+    * text = "Child has a birth certificate"
+    * type = #boolean
+    * repeats = false 
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 5
+  * item[+]
+    * linkId = "a8143230-b30d-4b85-9805-5f2f73f2dffa"
+    * text = "My Aged Care"
+    * type = #group
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>=
+      * answerInteger = 50
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "7165c072-e3d8-4564-9d1d-d17f6807787c"
+      * text = "Registered for My Aged Care"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+      * linkId = "04e50521-dc85-4744-b7ab-6f8682aacb11"
+      * text = "My Aged Care Number"
+      * type = #string
+      * enableWhen[+]
+        * question = "924b4500-53ac-4c4e-831b-7ab5569ff981"
+        * operator = #=
+        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+      * repeats = false
+  * item[+]
     * linkId = "2bfe50cb-7913-4f31-bce2-763c17ff8b1a"
     * text = "National Disability Insurance Scheme"
     * type = #group
@@ -323,6 +409,14 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Children"
     * type = #group
     * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 49
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>
+      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "e90b436b-2751-4e07-a40c-adfe951b6528"
@@ -352,9 +446,13 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
   * item[+]
     * linkId = "2b5ae784-4341-4172-875d-1698cc8069f0"
-    * text = "Carer"
+    * text = "Someone's carer"
     * type = #group
-    * repeats = false    
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>
+      * answerInteger = 12    
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "a08271f1-194b-4fe9-91f9-4f3398858eb0"
@@ -365,6 +463,32 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "4c14b158-3ae4-4994-8446-76e02640702c"
+      * text = "Details"
+      * type = #string
+      * enableWhen[+]
+        * question = "a08271f1-194b-4fe9-91f9-4f3398858eb0"
+        * operator = #=
+        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+      * repeats = false
+  * item[+]
+    * linkId = "6c80c675-1320-4ca3-ae3f-51ad173da741"
+    * text = "Your carer"
+    * type = #group
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>
+      * answerInteger = 50   
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "d05558fb-a3cc-4bd6-b803-b672b36b9c51"
+      * text = "Do you have a carer?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+      * linkId = "b9991e7e-ce03-465d-b4b0-5a1725b24e02"
       * text = "Details"
       * type = #string
       * enableWhen[+]
@@ -390,6 +514,52 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #text
       * repeats = false
+  * item[+]
+    * linkId = "38f81a73-447f-4ecd-a8eb-6eccd9dee050"
+    * text = "Advance care planning"
+    * type = #group
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>
+      * answerInteger = 50 
+    * item[+]
+      * linkId = "c023ef16-b554-4ed9-8993-1331e5f5a3b4"
+      * text = "Enduring Power of Attorney"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * linkId = "036eace9-ea83-46ec-9d01-f2093f710816"
+        * text = "Enduring Power of Attorney"
+        * type = #choice
+        * repeats = false
+        * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+        * linkId = "83518215-7151-4365-b745-d7464bbb9528"
+        * text = "Discussed today"
+        * type = #text
+        * repeats = false
+    * item[+]
+      * linkId = "c4f68251-26af-462f-879a-a69b449066ff"
+      * text = "Advance Health Directive"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * linkId = "b0632039-c12b-4748-9e94-52073590c0ba"
+        * text = "Advance Health Directive"
+        * type = #choice
+        * repeats = false
+        * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+        * linkId = "c4bc2d84-e411-488d-9c0d-761f0377a026"
+        * text = "Discussed today"
+        * type = #text
+        * repeats = false
+
 
 
 
