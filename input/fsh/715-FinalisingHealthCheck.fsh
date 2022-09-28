@@ -21,6 +21,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
 * url = "http://www.health.gov.au/assessments/mbs/715/715-FinalisingHealthCheck"
+* name = "715-FinalisingHealthCheck"
+* title = "715 Finalising the Health Check"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient
@@ -29,6 +31,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "7c158125-129f-4fce-9557-32dd372c92c7"
   * text = "Finalising the health check"
   * type = #group

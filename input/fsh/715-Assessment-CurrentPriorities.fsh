@@ -1,0 +1,128 @@
+Alias: $LNC = http://loinc.org
+Alias: $SCT = http://snomed.info/sct
+Alias: $UCUM = http://unitsofmeasure.org
+
+Instance: 715-Assessment-CurrentPriorities
+InstanceOf: Questionnaire
+Usage: #definition
+Title: "715 Assessment Current Priorities"
+Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+
+* contained[+] = PrePopQuery
+
+* extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
+* extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
+* extension[sdc-questionnaire-launchContext].extension[type].valueCode = #Patient
+* extension[sdc-questionnaire-launchContext].extension[description].valueString = "The patient that is to be used to pre-populate the form"
+* extension[sdc-questionnaire-sourceQueries].valueReference = Reference(PrePopQuery)
+
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
+//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
+//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
+* url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-CurrentPriorities"
+* name = "715-Assessment-CurrentPriorities"
+* title = "715 Assessment Current Priorities"
+* status = #draft
+* experimental = true
+* subjectType[+] = #Patient
+* date = "2022-05-24"
+* jurisdiction.coding = urn:iso:std:iso:3166#AU
+
+* item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * linkId = "b3a3eee2-f340-452e-9d05-d1f54f677b81"
+  * text = "Current health/patient priorities"
+  * type = #group
+  * repeats = false
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+    * linkId = "dcf182c0-a2bf-46ac-a19b-72e4d24ef24d"
+    * text = "What are the important things for you in this health check today?"
+    * type = #text
+    * repeats = false
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
+      * linkId = "3ac0c629-9acc-48af-bafe-6b05dfd06281"
+      * text = "details"
+      * type = #display
+      
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+    * linkId = "a0c06f8d-3210-480b-9031-7b5eb5bf1dda"
+    * text = "Is there anything you are worried about?"
+    * type = #text
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>
+      * answerInteger = 12
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
+      * linkId = "43fb3316-64a4-41dc-b12c-2f3fcee3eb84"
+      * text = "details"
+      * type = #display
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+    * linkId = "96f3396e-f5f8-4347-8692-9abdecb97768"
+    * text = "Is there anything that you are worried about with your child's health or wellbeing?"
+    * type = #text
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 12
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
+      * linkId = "75b39c42-8a15-4fdf-9129-936072336456"
+      * text = "details"
+      * type = #display
+
+  * item[+]
+    * linkId = "17651f83-8476-499c-a5ef-dd4e1a6c9f13"
+    * text = "Child Health Book"
+    * type = #group
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #<=
+      * answerInteger = 5
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "2655e0e1-fe4b-431e-87af-30d4ff1aca76"
+      * text = "Does your child have a Child Health Book?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "a30d0101-06ce-4481-b142-9fa2c091fe4f"
+      * text = "Is it up to date?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    
+
+
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+    * linkId = "35b3f6d8-2907-4134-ae55-1e321b908f70"
+    * text = "Do you have any specific health goals? Is there anything in particular about your health and wellbeing that you would like to improve?"
+    * type = #text
+    * repeats = false
+    * enableWhen[+]
+      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * operator = #>
+      * answerInteger = 12
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
+      * linkId = "bb176839-5cc8-4fb5-a919-0904968418be"
+      * text = "details"
+      * type = #display
+        
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+    * linkId = "7cd424e5-7672-4e99-8a99-30b1fb3043fd"
+    * text = "Health priorities, actions and follow-up"
+    * type = #text
+    * repeats = false

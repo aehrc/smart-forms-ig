@@ -21,6 +21,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
 * url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment"
+* name = "715-Assessment"
+* title = "715 Assessment"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

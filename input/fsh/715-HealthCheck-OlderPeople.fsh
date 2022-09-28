@@ -21,6 +21,8 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
 * url = "http://www.health.gov.au/assessments/mbs/715/715-HealthCheck-OlderPeople"
+* name = "715-HealthCheck-OlderPeople"
+* title = "715 Health Check for Older People"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

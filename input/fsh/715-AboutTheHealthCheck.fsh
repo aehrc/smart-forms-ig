@@ -11,7 +11,7 @@ Title: "715 About The Health Check"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
 * contained[+] = PrePopQuery
-* contained[+] = YesNoNA
+// * contained[+] = YesNoNA
 
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
@@ -24,6 +24,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
 * url = "http://www.health.gov.au/assessments/mbs/715/715-AboutTheHealthCheck"
+* name = "715-AboutTheHealthCheck"
+* title = "715 About The Health Check"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient
