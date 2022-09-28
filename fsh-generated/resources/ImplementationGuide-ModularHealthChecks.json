@@ -1,0 +1,225 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "ModularHealthChecks",
+  "url": "https://aehrc.csiro.au/fhir/ImplementationGuide/ModularHealthChecks",
+  "version": "0.1.0",
+  "name": "ModularHealthChecks",
+  "title": "Modular Health Checks",
+  "status": "draft",
+  "publisher": "CSIRO",
+  "contact": [
+    {
+      "name": "CSIRO",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://github.com/aehrc"
+        }
+      ]
+    }
+  ],
+  "packageId": "ModularHealthChecks",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.au.base",
+      "version": "current",
+      "uri": "http://hl7.org.au/fhir/ImplementationGuide/hl7.fhir.au.base",
+      "id": "hl7_fhir_au_base"
+    },
+    {
+      "packageId": "hl7.fhir.uv.sdc",
+      "version": "current",
+      "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+      "id": "hl7_fhir_uv_sdc"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/MyPatient"
+        },
+        "name": "MyPatient",
+        "description": "An example profile of the Patient resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MedicalHistory"
+        },
+        "name": "Medical History",
+        "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MedicalHistoryShortListAdolescents"
+        },
+        "name": "Medical History Short List for Adolescents",
+        "description": "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MedicalHistoryShortListAdults"
+        },
+        "name": "Medical History Short List for Adults",
+        "description": "The Medical History Short List for Adults value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/YesNo"
+        },
+        "name": "Yes No",
+        "description": "Concepts for Yes and No",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/YesNoNA"
+        },
+        "name": "Yes No NA",
+        "description": "Concepts for Yes, No and Not applicable",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/QuestionnaireItemControlExtended"
+        },
+        "name": "Questionnaire Item Control Extension",
+        "description": "The Questionnaire Item Control Extension code system defines concepts that extend the HL7 questionnaire item control concepts in http://hl7.org/fhir/questionnaire-item-control. They represent interface control/display mechanisms interface control/display mechanisms that might be used when rendering an item in a questionnaire.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-AboutTheHealthCheck"
+        },
+        "name": "715 About The Health Check",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Assessment"
+        },
+        "name": "715 Assessment",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Assessment-CurrentPriorities"
+        },
+        "name": "715 Assessment Current Priorities",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Assessment-LearningAndDevelopment"
+        },
+        "name": "715 Assessment Learning And development",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Assessment-LearningAndDevelopment-InfantModelling"
+        },
+        "name": "715 Assessment Learning And development",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Assessment-SocialHistoryChild"
+        },
+        "name": "715 Assessment Social History Child",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Consent"
+        },
+        "name": "715 Consent",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-FinalisingHealthCheck"
+        },
+        "name": "715 Finalising the Health Check",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-HealthCheck-Adults"
+        },
+        "name": "715 Health Check for Adults",
+        "description": "Root questionnaire for Aboriginal and Torres Strait Islander Health Checks - Adults (25-49 years)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-HealthCheck-OlderPeople"
+        },
+        "name": "715 Health Check for Older People",
+        "description": "Root questionnaire for Aboriginal and Torres Strait Islander Health Checks - Older People",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-PatientDetails"
+        },
+        "name": "715 Patient Details",
+        "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientExample"
+        },
+        "name": "PatientExample",
+        "description": "An example of a patient with a license to krill.",
+        "exampleCanonical": "https://aehrc.csiro.au/fhir/StructureDefinition/MyPatient"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/australian-states-territories-2"
+        },
+        "description": "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+        "exampleBoolean": false,
+        "name": "Australian States and Territories"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2022+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

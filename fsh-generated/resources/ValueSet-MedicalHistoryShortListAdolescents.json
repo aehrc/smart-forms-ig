@@ -1,0 +1,63 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MedicalHistoryShortListAdolescents",
+  "id": "MedicalHistoryShortListAdolescents",
+  "title": "Medical History Short List for Adolescents",
+  "description": "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents.",
+  "version": "0.1.0",
+  "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "129127001",
+            "display": "Ear infections"
+          },
+          {
+            "code": "300228004",
+            "display": "Hearing problems"
+          },
+          {
+            "code": "195967001",
+            "display": "Asthma"
+          },
+          {
+            "code": "38341003",
+            "display": "High blood pressure"
+          },
+          {
+            "code": "84757009",
+            "display": "Epilepsy"
+          },
+          {
+            "code": "25064002",
+            "display": "Headaches"
+          },
+          {
+            "code": "37796009",
+            "display": "Migraines"
+          },
+          {
+            "code": "73211009",
+            "display": "Diabetes mellitus"
+          },
+          {
+            "code": "23685000",
+            "display": "Rheumatic heart disease"
+          },
+          {
+            "code": "90708001",
+            "display": "Kidney disease"
+          },
+          {
+            "code": "413307004",
+            "display": "Mental health"
+          }
+        ]
+      }
+    ]
+  }
+}

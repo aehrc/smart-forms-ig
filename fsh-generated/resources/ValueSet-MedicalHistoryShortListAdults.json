@@ -1,0 +1,71 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MedicalHistoryShortListAdults",
+  "id": "MedicalHistoryShortListAdults",
+  "title": "Medical History Short List for Adults",
+  "description": "The Medical History Short List for Adults value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults.",
+  "version": "0.1.0",
+  "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "73211009",
+            "display": "Diabetes mellitus"
+          },
+          {
+            "code": "38341003",
+            "display": "Hypertension"
+          },
+          {
+            "code": "22298006",
+            "display": "Myocardial infarction"
+          },
+          {
+            "code": "230690007",
+            "display": "Stroke"
+          },
+          {
+            "code": "90708001",
+            "display": "Kidney disease"
+          },
+          {
+            "code": "15188001",
+            "display": "Hearing impairment"
+          },
+          {
+            "code": "84757009",
+            "display": "Epilepsy"
+          },
+          {
+            "code": "195967001",
+            "display": "Asthma"
+          },
+          {
+            "code": "13645005",
+            "display": "COPD"
+          },
+          {
+            "code": "23685000",
+            "display": "Rheumatic heart disease"
+          },
+          {
+            "code": "66071002",
+            "display": "HBV"
+          },
+          {
+            "code": "82271004",
+            "display": "Significant head trauma"
+          },
+          {
+            "code": "413307004",
+            "display": "Mental health"
+          }
+        ]
+      }
+    ]
+  }
+}

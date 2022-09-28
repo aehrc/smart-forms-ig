@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "YesNoNA",
+  "id": "YesNoNA",
+  "title": "Yes No NA",
+  "description": "Concepts for Yes, No and Not applicable",
+  "version": "0.1.0",
+  "url": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+        "concept": [
+          {
+            "code": "Y",
+            "display": "Yes"
+          },
+          {
+            "code": "N",
+            "display": "No"
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "concept": [
+          {
+            "code": "NA",
+            "display": "not applicable"
+          }
+        ]
+      }
+    ]
+  }
+}
