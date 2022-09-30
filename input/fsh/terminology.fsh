@@ -24,6 +24,46 @@ Description: "The Medical History value set includes values that may be used to 
 
 * include codes from system $SCT where constraint = "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
 
+ValueSet: MedicalHistoryShortListInfants
+Id: MedicalHistoryShortListInfants
+Title: "Medical History Short List for Infants"
+Description: "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants."
+
+* $SCT#609496007 "Pregnancy complications"
+* $SCT#199745000 "Birth complications"
+* $SCT#80113008 "Problems after birth"  //Complication of the puerperium
+* $SCT#32485007 "Hospital admissions"  //maybe need to create a H/O Hospital admission concept as it is a procedure? No others are H/O
+// following don't match form
+* $SCT#50417007 "Lower respiratory tract infection"
+* $SCT#49727002 "Cough"
+* $SCT#129127001 "Ear infection"
+* $SCT#38394007 "Chronic otitis media with perforation"
+* $SCT#78868004 "Chronic mucoid otitis media"
+* $SCT#247253001 "Ventilation tube in tympanic membrane"
+* $SCT#43381005 "Passive smoker"
+* $SCT#195528001 "Acute rheumatic fever"
+* $SCT#312591002 "Acute rheumatic heart disease"
+
+ValueSet: MedicalHistoryShortListPrimarySchool
+Id: MedicalHistoryShortListPrimarySchool
+Title: "Medical History Short List for Primary School Children"
+Description: "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children."
+
+// following don't match form
+* $SCT#50417007 "Lower respiratory tract infection"
+* $SCT#49727002 "Cough"
+* $SCT#129127001 "Ear infection"
+* $SCT#38394007 "Chronic otitis media with perforation"
+* $SCT#78868004 "Chronic mucoid otitis media"
+* $SCT#247253001 "Ventilation tube in tympanic membrane"
+* $SCT#129823000 "Childhood growth AND/OR development alteration"
+* $SCT#195528001 "Acute rheumatic fever"
+* $SCT#312591002 "Acute rheumatic heart disease"
+* $SCT#43381005 "Passive smoker"
+* $SCT#32485007 "Hospital admissions"  //maybe need to create a H/O Hospital admission concept as it is a procedure? No others are H/O
+
+
+
 ValueSet: MedicalHistoryShortListAdolescents
 Id: MedicalHistoryShortListAdolescents
 Title: "Medical History Short List for Adolescents"
@@ -41,10 +81,10 @@ Description: "The Medical History Short List for Adolescents value set includes 
 * $SCT#90708001 "Kidney disease"
 * $SCT#413307004 "Mental health"
 
-ValueSet: MedicalHistoryShortListAdults
+ValueSet: MedicalHistoryShortListAdultsAndOlderPeople
 Id: MedicalHistoryShortListAdults
-Title: "Medical History Short List for Adults"
-Description: "The Medical History Short List for Adults value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults."
+Title: "Medical History Short List for Adults and Older People"
+Description: "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People."
 
 * $SCT#73211009 "Diabetes mellitus"
 * $SCT#38341003 "Hypertension"

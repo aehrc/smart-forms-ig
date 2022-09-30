@@ -54,7 +54,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #text
     * repeats = false
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 12
     * item[+]
@@ -69,7 +69,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #text
     * repeats = false
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 12
     * item[+]
@@ -84,7 +84,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #group
     * repeats = false
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 5
     * item[+]
@@ -111,7 +111,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #text
     * repeats = false
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire (in variables)
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 12
     * item[+]

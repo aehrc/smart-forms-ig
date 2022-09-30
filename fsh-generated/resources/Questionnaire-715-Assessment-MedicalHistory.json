@@ -1,13 +1,13 @@
 {
   "resourceType": "Questionnaire",
-  "id": "715-Consent",
+  "id": "715-Assessment-MedicalHistory",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/715-Consent",
+  "url": "http://www.health.gov.au/assessments/mbs/715/715-Assessment-MedicalHistory",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
@@ -42,44 +42,48 @@
   ],
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
-        }
-      ],
       "item": [
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "wk",
+                "system": "http://unitsofmeasure.org"
               }
             }
           ],
-          "linkId": "d1e1ab3d-1c6c-430b-8ae7-af56b8f0af55",
-          "text": "Consent given after discussion of process and benefits of a health check",
-          "type": "choice",
+          "linkId": "a10a7375-e9d3-4e71-a47a-282e9ba38ec1",
+          "text": "Gestation at birth (weeks)",
+          "type": "decimal",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
+              "operator": "<=",
+              "answerInteger": 5
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "kg",
+                "system": "http://unitsofmeasure.org"
+              }
+            }
+          ],
+          "linkId": "29b6d8ea-23b2-4a69-98d9-899198692de7",
+          "text": "Birth weight (kg)",
+          "type": "decimal",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 5
             }
           ]
         },
@@ -90,25 +94,58 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "check-box",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
               }
             }
           ],
-          "linkId": "7fa8bc57-f3f9-4ddc-bf9b-12a9b9885dbd",
-          "text": "Consent given by parent/primary carer after discussion of process and benefits of a health check",
+          "linkId": "033db7b3-80da-43e2-9838-88f3d51e5913",
+          "text": "Problems",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 5
+            }
+          ],
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "check-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "384ab440-10ed-4ac1-89da-cd7d24f87a95",
+          "text": "Problems",
+          "type": "choice",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 5
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 12
             }
-          ]
+          ],
+          "enableBehavior": "all",
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool"
         },
         {
           "extension": [
@@ -117,56 +154,31 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "check-box",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
               }
             }
           ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "b7d116f9-0425-4cf1-8cde-fbf4dfaee550",
-              "text": "Relationship to child",
-              "type": "string",
-              "enableWhen": [
-                {
-                  "question": "c72933c7-349f-4fef-94ff-c424c69da6f3",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "Y",
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-                  }
-                }
-              ],
-              "repeats": true
-            }
-          ],
-          "linkId": "c72933c7-349f-4fef-94ff-c424c69da6f3",
-          "text": "Parent/primary caregiver present for health check",
+          "linkId": "c24ae0d2-8932-4b87-9b7e-a644b5eb2874",
+          "text": "Problems",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 12
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 24
             }
-          ]
+          ],
+          "enableBehavior": "all",
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents"
         },
         {
           "extension": [
@@ -175,175 +187,25 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "check-box",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
               }
             }
           ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "43517c44-5cd2-4d9a-9f18-d6bf8124f4ae",
-              "text": "Who/details",
-              "type": "text",
-              "enableWhen": [
-                {
-                  "question": "057483ce-f265-46df-a1c5-7a18d492c1ba",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "Y",
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-                  }
-                }
-              ],
-              "repeats": true
-            }
-          ],
-          "linkId": "057483ce-f265-46df-a1c5-7a18d492c1ba",
-          "text": "Consent given for sharing of information with relevant healthcare providers",
+          "linkId": "bba27ef5-05c5-4e9c-bc9f-cf42091e99cb",
+          "text": "Problems",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "today()"
-              }
-            }
-          ],
-          "linkId": "84162f36-f4af-4509-b178-ef2a3849d0b6",
-          "text": "Date",
-          "type": "date",
-          "repeats": false,
-          "required": true
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "0f92eb2d-4629-4215-96f8-46722a2efa73",
-          "text": "Doctor",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "8b94a129-3aab-4d13-bb6d-7a748f5c41e5",
-          "text": "Nurse",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "2a517291-e2f1-4f66-ad1f-ae5b091d2f8a",
-          "text": "Aboriginal and/or Torres Strait Islander Health Worker / Health Practitioner",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-              "valueString": "Other, please specify"
-            }
-          ],
-          "linkId": "5bbfb4a3-a667-4ef2-98c2-76e76da55c03",
-          "text": "Location of health check",
-          "type": "open-choice",
-          "repeats": false,
-          "answerOption": [
-            {
-              "valueCoding": {
-                "code": "257585005",
-                "system": "http://snomed.info/sct",
-                "display": "Clinic"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "264362003",
-                "system": "http://snomed.info/sct",
-                "display": "Home"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "257698009",
-                "system": "http://snomed.info/sct",
-                "display": "School"
-              }
-            }
-          ],
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
-              "answerInteger": 5
+              "answerInteger": 24
             }
-          ]
+          ],
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdultsAndOlderPeople"
         },
         {
           "extension": [
@@ -352,55 +214,71 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "autocomplete",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
               }
             },
             {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-              "valueString": "Other, please specify"
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%PrePopQuery.entry[21].resource.entry.resource.code.coding.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
+              "valueString": "Other relevant medical history"
             }
           ],
-          "linkId": "9a51c056-021d-445d-8eaa-2123a69aa9c2",
-          "text": "Location of health check",
+          "linkId": "736f2a51-e04d-4e7f-aef1-c47f3a1f4e3c",
+          "text": "Other relevant medical history, operations, hospital admissions, etc",
           "type": "open-choice",
-          "repeats": false,
-          "answerOption": [
+          "repeats": true,
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistory"
+        },
+        {
+          "extension": [
             {
-              "valueCoding": {
-                "code": "257585005",
-                "system": "http://snomed.info/sct",
-                "display": "Clinic"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "264362003",
-                "system": "http://snomed.info/sct",
-                "display": "Home"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "413817003",
-                "system": "http://snomed.info/sct",
-                "display": "Early learning centre"
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
               }
             }
           ],
-          "enableWhen": [
+          "linkId": "f00def30-35dd-401a-9a38-12602bd3b8b1",
+          "text": "Provide details of identified problems",
+          "type": "text",
+          "repeats": false
+        },
+        {
+          "extension": [
             {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
             }
-          ]
+          ],
+          "linkId": "62774152-8a6e-4449-af9f-87bdce8b9bf5",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
+          "repeats": false
         }
       ],
-      "linkId": "2e82032a-dc28-45f2-916e-862303d39fe5",
-      "text": "Consent",
+      "linkId": "28d5dbe4-1e65-487c-847a-847f544a6a91",
+      "text": "Medical history and current problems",
       "type": "group",
       "repeats": false
     }
@@ -589,8 +467,8 @@
       ]
     }
   ],
-  "name": "715-Consent",
-  "title": "715 Consent",
+  "name": "715-Assessment-MedicalHistory",
+  "title": "715 Assessment Medical History",
   "status": "draft",
   "experimental": true,
   "subjectType": [

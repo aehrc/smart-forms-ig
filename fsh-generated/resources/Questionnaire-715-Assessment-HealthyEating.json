@@ -1,13 +1,13 @@
 {
   "resourceType": "Questionnaire",
-  "id": "715-Consent",
+  "id": "715-Assessment-HealthyEating",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/715-Consent",
+  "url": "http://www.health.gov.au/assessments/mbs/715/715-Assessment-HealthyEating",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
@@ -42,19 +42,6 @@
   ],
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
-        }
-      ],
       "item": [
         {
           "extension": [
@@ -70,60 +57,6 @@
               }
             }
           ],
-          "linkId": "d1e1ab3d-1c6c-430b-8ae7-af56b8f0af55",
-          "text": "Consent given after discussion of process and benefits of a health check",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "7fa8bc57-f3f9-4ddc-bf9b-12a9b9885dbd",
-          "text": "Consent given by parent/primary carer after discussion of process and benefits of a health check",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
@@ -139,158 +72,34 @@
                   }
                 }
               ],
-              "linkId": "b7d116f9-0425-4cf1-8cde-fbf4dfaee550",
-              "text": "Relationship to child",
-              "type": "string",
-              "enableWhen": [
-                {
-                  "question": "c72933c7-349f-4fef-94ff-c424c69da6f3",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "Y",
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-                  }
-                }
-              ],
-              "repeats": true
-            }
-          ],
-          "linkId": "c72933c7-349f-4fef-94ff-c424c69da6f3",
-          "text": "Parent/primary caregiver present for health check",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 24
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "43517c44-5cd2-4d9a-9f18-d6bf8124f4ae",
-              "text": "Who/details",
+              "linkId": "f6907808-3e42-4206-9bf8-ca4082ea4814",
+              "text": "Details",
               "type": "text",
+              "repeats": false,
               "enableWhen": [
                 {
-                  "question": "057483ce-f265-46df-a1c5-7a18d492c1ba",
+                  "question": "e2942894-5537-47a6-ab43-06eb6761f9b5",
                   "operator": "=",
                   "answerCoding": {
                     "code": "Y",
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
                   }
                 }
-              ],
-              "repeats": true
+              ]
             }
           ],
-          "linkId": "057483ce-f265-46df-a1c5-7a18d492c1ba",
-          "text": "Consent given for sharing of information with relevant healthcare providers",
+          "linkId": "e2942894-5537-47a6-ab43-06eb6761f9b5",
+          "text": "Is there anything that you are worried about with your child's feeding/eating?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
-        },
-        {
-          "extension": [
+          "enableWhen": [
             {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "today()"
-              }
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 5
             }
           ],
-          "linkId": "84162f36-f4af-4509-b178-ef2a3849d0b6",
-          "text": "Date",
-          "type": "date",
-          "repeats": false,
-          "required": true
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "0f92eb2d-4629-4215-96f8-46722a2efa73",
-          "text": "Doctor",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "8b94a129-3aab-4d13-bb6d-7a748f5c41e5",
-          "text": "Nurse",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "2a517291-e2f1-4f66-ad1f-ae5b091d2f8a",
-          "text": "Aboriginal and/or Torres Strait Islander Health Worker / Health Practitioner",
-          "type": "string",
-          "repeats": false
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
         },
         {
           "extension": [
@@ -304,39 +113,350 @@
                   }
                 ]
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-              "valueString": "Other, please specify"
             }
           ],
-          "linkId": "5bbfb4a3-a667-4ef2-98c2-76e76da55c03",
-          "text": "Location of health check",
-          "type": "open-choice",
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "text-box",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "d88432dd-6d8d-4eea-bdb9-5aa39d44ee6d",
+              "text": "Details",
+              "type": "text",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "69d92a26-95ac-4556-94da-5b0e09940bfd",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ]
+            }
+          ],
+          "linkId": "69d92a26-95ac-4556-94da-5b0e09940bfd",
+          "text": "Is there anything that you are worried about with your child's eating?",
+          "type": "choice",
           "repeats": false,
-          "answerOption": [
+          "enableWhen": [
             {
-              "valueCoding": {
-                "code": "257585005",
-                "system": "http://snomed.info/sct",
-                "display": "Clinic"
-              }
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 5
             },
             {
-              "valueCoding": {
-                "code": "264362003",
-                "system": "http://snomed.info/sct",
-                "display": "Home"
-              }
-            },
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 12
+            }
+          ],
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo",
+          "enableBehavior": "all"
+        },
+        {
+          "extension": [
             {
-              "valueCoding": {
-                "code": "257698009",
-                "system": "http://snomed.info/sct",
-                "display": "School"
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
               }
             }
           ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "prompt",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "87f4277a-0af8-4bb9-ba2d-cb4e4f3a4548",
+              "text": "Details",
+              "type": "display"
+            }
+          ],
+          "linkId": "ff6a46e6-0812-4718-a854-489b24805925",
+          "text": "Breastfeeding history",
+          "type": "text",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 5
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "prompt",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "1792a4b0-640f-4d41-8704-c069179539bb",
+              "text": "Details",
+              "type": "display"
+            }
+          ],
+          "linkId": "b5f748d2-1874-4949-a7df-6e233f03135d",
+          "text": "Bottle feeding history",
+          "type": "text",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 5
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "text-box",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "1d5c3354-6780-4b6a-b9af-7a17b0386781",
+              "text": "Details",
+              "type": "text",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "646302e9-d384-4943-99bc-11e638641703",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ]
+            }
+          ],
+          "linkId": "646302e9-d384-4943-99bc-11e638641703",
+          "text": "Do you have any worries about your diet or weight?",
+          "type": "choice",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 12
+            }
+          ],
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "text-box",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ce71f016-c5e4-4121-abe5-fe0c974c1bba",
+              "text": "Details",
+              "type": "text",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "6dc96b26-cbc5-4434-8f6b-0260196311c2",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ]
+            }
+          ],
+          "linkId": "6dc96b26-cbc5-4434-8f6b-0260196311c2",
+          "text": "Have you lost weight without trying to in the last three months?",
+          "type": "choice",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">=",
+              "answerInteger": 50
+            }
+          ],
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "prompt",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "d3c0033f-20d0-40ab-b4d5-6eb3f67be492",
+              "text": "details",
+              "type": "display"
+            }
+          ],
+          "linkId": "9f6adf74-f240-41a2-a509-d216d5308911",
+          "text": "Document conversation about age-appropriate healthy eating, which could include:\n- current diet\n- transition to solids\n- dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks",
+          "type": "text",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "c1e0184b-d656-4fab-a478-ca3235ab2c1c",
+              "operator": "<=",
+              "answerInteger": 5
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "prompt",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "579a1e9e-c679-4411-b78f-0468cd45e1a2",
+              "text": "details",
+              "type": "display"
+            }
+          ],
+          "linkId": "7a22a4c4-6611-4687-af00-37c80c3f8fc0",
+          "text": "Document conversation about health eating which could include:\n- current diet including food and drinks\n- recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)",
+          "type": "text",
+          "repeats": false,
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -357,50 +477,67 @@
                   }
                 ]
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-              "valueString": "Other, please specify"
             }
           ],
-          "linkId": "9a51c056-021d-445d-8eaa-2123a69aa9c2",
-          "text": "Location of health check",
-          "type": "open-choice",
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "text-box",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "92908e91-9453-4d22-99eb-23dad580c1cb",
+              "text": "Details",
+              "type": "text",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "12a41538-5dbd-4c1d-af69-52c59c48b1a9",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ]
+            }
+          ],
+          "linkId": "12a41538-5dbd-4c1d-af69-52c59c48b1a9",
+          "text": "Are there any issues about availability of food?",
+          "type": "choice",
           "repeats": false,
-          "answerOption": [
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+        },
+        {
+          "extension": [
             {
-              "valueCoding": {
-                "code": "257585005",
-                "system": "http://snomed.info/sct",
-                "display": "Clinic"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "264362003",
-                "system": "http://snomed.info/sct",
-                "display": "Home"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "413817003",
-                "system": "http://snomed.info/sct",
-                "display": "Early learning centre"
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
               }
             }
           ],
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "linkId": "301789b0-8c6a-470d-8787-0ac6597e3bea",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
+          "repeats": false
         }
       ],
-      "linkId": "2e82032a-dc28-45f2-916e-862303d39fe5",
-      "text": "Consent",
+      "linkId": "ae7a3801-9491-4b1f-820c-678236d18f56",
+      "text": "Healthy eating",
       "type": "group",
       "repeats": false
     }
@@ -589,8 +726,8 @@
       ]
     }
   ],
-  "name": "715-Consent",
-  "title": "715 Consent",
+  "name": "715-Assessment-HealthyEating",
+  "title": "715 Assessment Healthy Eating",
   "status": "draft",
   "experimental": true,
   "subjectType": [

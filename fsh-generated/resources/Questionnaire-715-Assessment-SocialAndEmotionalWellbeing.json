@@ -1,13 +1,13 @@
 {
   "resourceType": "Questionnaire",
-  "id": "715-Consent",
+  "id": "715-Assessment-SocialAndEmotionalWellbeing",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/715-Consent",
+  "url": "http://www.health.gov.au/assessments/mbs/715/715-Assessment-SocialAndEmotionalWellbeing",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
@@ -70,60 +70,6 @@
               }
             }
           ],
-          "linkId": "d1e1ab3d-1c6c-430b-8ae7-af56b8f0af55",
-          "text": "Consent given after discussion of process and benefits of a health check",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "7fa8bc57-f3f9-4ddc-bf9b-12a9b9885dbd",
-          "text": "Consent given by parent/primary carer after discussion of process and benefits of a health check",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
@@ -139,27 +85,33 @@
                   }
                 }
               ],
-              "linkId": "b7d116f9-0425-4cf1-8cde-fbf4dfaee550",
-              "text": "Relationship to child",
-              "type": "string",
+              "linkId": "4c3427ce-062f-4f62-b566-2decb506a9cb",
+              "text": "Details",
+              "type": "text",
+              "repeats": false,
               "enableWhen": [
                 {
-                  "question": "c72933c7-349f-4fef-94ff-c424c69da6f3",
+                  "question": "e7297156-cfed-4437-b877-c345f744168b",
                   "operator": "=",
                   "answerCoding": {
                     "code": "Y",
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
                   }
                 }
-              ],
-              "repeats": true
+              ]
             }
           ],
-          "linkId": "c72933c7-349f-4fef-94ff-c424c69da6f3",
-          "text": "Parent/primary caregiver present for health check",
+          "linkId": "e7297156-cfed-4437-b877-c345f744168b",
+          "text": "Have there been any particular stressful life events that are impacting on you/your health lately?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+        },
+        {
+          "linkId": "7d783b71-7303-441b-822a-14e11a740038",
+          "text": "Social and emotional wellbeing assessment: consider tools such as Aboriginal and Torres Strait Islander Youth Social Emotional Wellbeing assessment question guide or HEEADSSS",
+          "type": "display",
+          "repeats": false,
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -175,7 +127,7 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "text-box",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
@@ -190,158 +142,27 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "text-box",
+                        "code": "prompt",
                         "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]
                   }
                 }
               ],
-              "linkId": "43517c44-5cd2-4d9a-9f18-d6bf8124f4ae",
-              "text": "Who/details",
-              "type": "text",
-              "enableWhen": [
-                {
-                  "question": "057483ce-f265-46df-a1c5-7a18d492c1ba",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "Y",
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-                  }
-                }
-              ],
-              "repeats": true
+              "linkId": "2740f866-2cd7-41a1-912c-ba29cbe7a582",
+              "text": "Details",
+              "type": "display"
             }
           ],
-          "linkId": "057483ce-f265-46df-a1c5-7a18d492c1ba",
-          "text": "Consent given for sharing of information with relevant healthcare providers",
-          "type": "choice",
+          "linkId": "9e991b80-7080-40d5-9ad9-447dc47e3a68",
+          "text": "Consider conversation about social connection, which could include questions about sports/hobbies/clubs/other activities",
+          "type": "text",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "today()"
-              }
-            }
-          ],
-          "linkId": "84162f36-f4af-4509-b178-ef2a3849d0b6",
-          "text": "Date",
-          "type": "date",
-          "repeats": false,
-          "required": true
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "0f92eb2d-4629-4215-96f8-46722a2efa73",
-          "text": "Doctor",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "8b94a129-3aab-4d13-bb6d-7a748f5c41e5",
-          "text": "Nurse",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "2a517291-e2f1-4f66-ad1f-ae5b091d2f8a",
-          "text": "Aboriginal and/or Torres Strait Islander Health Worker / Health Practitioner",
-          "type": "string",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-              "valueString": "Other, please specify"
-            }
-          ],
-          "linkId": "5bbfb4a3-a667-4ef2-98c2-76e76da55c03",
-          "text": "Location of health check",
-          "type": "open-choice",
-          "repeats": false,
-          "answerOption": [
-            {
-              "valueCoding": {
-                "code": "257585005",
-                "system": "http://snomed.info/sct",
-                "display": "Clinic"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "264362003",
-                "system": "http://snomed.info/sct",
-                "display": "Home"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "257698009",
-                "system": "http://snomed.info/sct",
-                "display": "School"
-              }
-            }
-          ],
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
-              "answerInteger": 5
+              "answerInteger": 24
             }
           ]
         },
@@ -352,57 +173,30 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "text-box",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-              "valueString": "Other, please specify"
             }
           ],
-          "linkId": "9a51c056-021d-445d-8eaa-2123a69aa9c2",
-          "text": "Location of health check",
-          "type": "open-choice",
-          "repeats": false,
-          "answerOption": [
-            {
-              "valueCoding": {
-                "code": "257585005",
-                "system": "http://snomed.info/sct",
-                "display": "Clinic"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "264362003",
-                "system": "http://snomed.info/sct",
-                "display": "Home"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "413817003",
-                "system": "http://snomed.info/sct",
-                "display": "Early learning centre"
-              }
-            }
-          ],
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "linkId": "b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
+          "repeats": false
         }
       ],
-      "linkId": "2e82032a-dc28-45f2-916e-862303d39fe5",
-      "text": "Consent",
+      "linkId": "0a3c9c93-5836-4a5b-93e5-d7de559e053a",
+      "text": "Social and emotional wellbeing",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": ">",
+          "answerInteger": 12
+        }
+      ]
     }
   ],
   "contained": [
@@ -589,8 +383,8 @@
       ]
     }
   ],
-  "name": "715-Consent",
-  "title": "715 Consent",
+  "name": "715-Assessment-SocialAndEmotionalWellbeing",
+  "title": "715 Assessment Social And Emotional Wellbeing",
   "status": "draft",
   "experimental": true,
   "subjectType": [

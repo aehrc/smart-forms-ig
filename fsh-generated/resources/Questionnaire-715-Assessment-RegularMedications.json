@@ -1,13 +1,13 @@
 {
   "resourceType": "Questionnaire",
-  "id": "715-Assessment-SocialHistoryChild",
+  "id": "715-Assessment-RegularMedications",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/715-Assessment-SocialHistoryChild",
+  "url": "http://www.health.gov.au/assessments/mbs/715/715-Assessment-RegularMedications",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
@@ -44,157 +44,108 @@
     {
       "extension": [
         {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
-        },
-        {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
-          "valueString": "Social history"
+          "valueString": "Regular medications"
         }
       ],
       "item": [
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
+              "valueString": "Does your child take any regular medications?"
             }
           ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "prompt",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "5b8134d2-f87e-4449-bfc1-eac1d8d3d58b",
-              "text": "Details",
-              "type": "display"
-            }
-          ],
-          "linkId": "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b",
-          "text": "Who lives in your household?/Who does the child live with?",
-          "type": "text",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "1ea0a898-d680-4a5d-a0f1-91b57eb77a91",
-              "text": "Details",
-              "type": "text",
-              "repeats": false,
-              "enableWhen": [
-                {
-                  "question": "062f5234-686a-4bf3-afcd-3fcd988afd6c",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "Y",
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-                  }
-                }
-              ]
-            }
-          ],
-          "linkId": "062f5234-686a-4bf3-afcd-3fcd988afd6c",
-          "text": "Have there been any stressful life events that would cause you or your child to be upset?",
+          "linkId": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
+          "text": "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
           "type": "choice",
           "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 12
+            }
+          ],
           "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
         },
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
+              "valueString": "Do you take any regular medications?"
             }
           ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "prompt",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "4048e200-1c09-441d-b25d-f8a946fac411",
-              "text": "Details",
-              "type": "display"
-            }
-          ],
-          "linkId": "272af1cb-4309-4227-bab4-a6cc9fb47635",
-          "text": "If indicated, ask about depression and other mental health concerns",
-          "type": "text",
+          "linkId": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
+          "text": "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
+          "type": "choice",
           "repeats": false,
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
-              "answerInteger": 5
+              "answerInteger": 12
             }
-          ]
+          ],
+          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+        },
+        {
+          "linkId": "874ec8db-95c9-4cc0-95db-e45edaa3cd12",
+          "text": "Up to date in the health record?",
+          "type": "boolean",
+          "repeats": false,
+          "required": true,
+          "enableWhen": [
+            {
+              "question": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
+              "operator": "=",
+              "answerCoding": {
+                "code": "Y",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+              }
+            },
+            {
+              "question": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
+              "operator": "=",
+              "answerCoding": {
+                "code": "Y",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+              }
+            }
+          ],
+          "enableBehavior": "any"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
+              "valueString": "Understanding and adherence checked"
+            }
+          ],
+          "linkId": "36290837-ad70-48b2-9c66-31533fec918b",
+          "text": "Medication understanding and adherence has been checked with patient",
+          "type": "boolean",
+          "repeats": false,
+          "required": true,
+          "enableWhen": [
+            {
+              "question": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
+              "operator": "=",
+              "answerCoding": {
+                "code": "Y",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+              }
+            },
+            {
+              "question": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
+              "operator": "=",
+              "answerCoding": {
+                "code": "Y",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+              }
+            }
+          ],
+          "enableBehavior": "any"
         },
         {
           "extension": [
@@ -210,23 +161,16 @@
               }
             }
           ],
-          "linkId": "76d51512-b94a-4092-b3ae-a656fbb9c360",
+          "linkId": "aa9ff2ed-bcd2-406d-a9ff-89c201df2605",
           "text": "Health priorities, actions and follow-up",
           "type": "text",
           "repeats": false
         }
       ],
-      "linkId": "a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9",
-      "text": "Social history: Information about family and child's living arrangements",
+      "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
+      "text": "Regular medications: check if still required, appropriate dose, understanding of medication and adherence",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<=",
-          "answerInteger": 12
-        }
-      ]
+      "repeats": false
     }
   ],
   "contained": [
@@ -413,8 +357,8 @@
       ]
     }
   ],
-  "name": "715-Assessment-SocialHistoryChild",
-  "title": "715 Assessment Social History Child",
+  "name": "715-Assessment-RegularMedications",
+  "title": "715 Assessment Regular Medications",
   "status": "draft",
   "experimental": true,
   "subjectType": [

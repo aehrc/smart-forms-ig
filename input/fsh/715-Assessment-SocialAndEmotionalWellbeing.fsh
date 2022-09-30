@@ -2,10 +2,10 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-Assessment-SocialHistoryChild
+Instance: 715-Assessment-SocialAndEmotionalWellbeing
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Social History Child"
+Title: "715 Assessment Social And Emotional Wellbeing"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
 * contained[+] = PrePopQuery
@@ -20,9 +20,9 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-SocialHistoryChild"
-* name = "715-Assessment-SocialHistoryChild"
-* title = "715 Assessment Social History Child"
+* url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-SocialAndEmotionalWellbeing"
+* name = "715-Assessment-SocialAndEmotionalWellbeing"
+* title = "715 Assessment Social And Emotional Wellbeing"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient
@@ -31,75 +31,59 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
-  * extension[sdc-questionnaire-shortText].valueString = "Social history"
-  * linkId = "a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9"
-  * text = "Social history: Information about family and child's living arrangements"
+  * linkId = "0a3c9c93-5836-4a5b-93e5-d7de559e053a"
+  * text = "Social and emotional wellbeing"
   * type = #group
   * repeats = false
   * enableWhen[+]
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<=
+    * operator = #>
     * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-    * linkId = "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b"
-    * text = "Who lives in your household?/Who does the child live with?"
-    * type = #text
-    * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "5b8134d2-f87e-4449-bfc1-eac1d8d3d58b"
-      * text = "Details"
-      * type = #display 
-  * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "062f5234-686a-4bf3-afcd-3fcd988afd6c"
-    * text = "Have there been any stressful life events that would cause you or your child to be upset?"
+    * linkId = "e7297156-cfed-4437-b877-c345f744168b"
+    * text = "Have there been any particular stressful life events that are impacting on you/your health lately?"
     * type = #choice
     * repeats = false
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-      * linkId = "1ea0a898-d680-4a5d-a0f1-91b57eb77a91"
+      * linkId = "4c3427ce-062f-4f62-b566-2decb506a9cb"
       * text = "Details"
       * type = #text
       * repeats = false
       * enableWhen[+]
-        * question = "062f5234-686a-4bf3-afcd-3fcd988afd6c"
+        * question = "e7297156-cfed-4437-b877-c345f744168b"
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * linkId = "7d783b71-7303-441b-822a-14e11a740038"
+    * text = "Social and emotional wellbeing assessment: consider tools such as Aboriginal and Torres Strait Islander Youth Social Emotional Wellbeing assessment question guide or HEEADSSS"
+    * type = #display
+    * repeats = false
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #<=
+      * answerInteger = 24
+  * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-    * linkId = "272af1cb-4309-4227-bab4-a6cc9fb47635"
-    * text = "If indicated, ask about depression and other mental health concerns"
+    * linkId = "9e991b80-7080-40d5-9ad9-447dc47e3a68"
+    * text = "Consider conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
-      * answerInteger = 5
+      * answerInteger = 24
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "4048e200-1c09-441d-b25d-f8a946fac411"
+      * linkId = "2740f866-2cd7-41a1-912c-ba29cbe7a582"
       * text = "Details"
       * type = #display
 
-/*
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-    * linkId = ""
-    * text = ""
-    * type = #text
-    * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = ""
-      * text = "Details"
-      * type = #display
-*/
-  * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-    * linkId = "76d51512-b94a-4092-b3ae-a656fbb9c360"
+    * linkId = "b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee"
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false

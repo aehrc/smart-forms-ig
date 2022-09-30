@@ -45,7 +45,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 12
   * item[+]
@@ -56,7 +56,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 12
   * item[+]
@@ -67,7 +67,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 24
     * item[+]
@@ -135,7 +135,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
     * answerOption[+].valueCoding = $SCT#257698009 "School"
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 5 
   * item[+]
@@ -149,7 +149,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
     * answerOption[+].valueCoding = $SCT#413817003 "Early learning centre" //concept id for child day care. Would be better with a new specific SCTAU concept. Could even remove conditional questioning and create a single value set to support the answer. 
     * enableWhen[+]
-      * question = "c1e0184b-d656-4fab-a478-ca3235ab2c1c" // hidden age item from root questionnaire
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 5
 
