@@ -492,7 +492,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #string
       * enableWhen[+]
-        * question = "a08271f1-194b-4fe9-91f9-4f3398858eb0"
+        * question = "d05558fb-a3cc-4bd6-b803-b672b36b9c51"
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
