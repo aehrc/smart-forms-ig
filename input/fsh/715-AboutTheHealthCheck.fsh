@@ -11,7 +11,14 @@ Title: "715 About The Health Check"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
 * contained[+] = PrePopQuery
-// * contained[+] = YesNoNA
+* contained[+] = YesNoNA
+* contained[+] = YesNo
+* contained[+] = MedicalHistory
+* contained[+] = MedicalHistoryShortListInfants
+* contained[+] = MedicalHistoryShortListPrimarySchool
+* contained[+] = MedicalHistoryShortListAdolescents
+* contained[+] = MedicalHistoryShortListAdults
+
 
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
@@ -44,7 +51,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Eligible for health check"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"   
+    * answerValueSet = "#YesNoNA"   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "04f00512-888b-424e-ba76-9bd6fd8da682"

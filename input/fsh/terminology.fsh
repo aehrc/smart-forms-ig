@@ -7,7 +7,7 @@ Description: "Concepts for Yes, No and Not applicable"
 
 * http://terminology.hl7.org/CodeSystem/v2-0136#Y "Yes"
 * http://terminology.hl7.org/CodeSystem/v2-0136#N "No"
-* http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA "not applicable"
+* http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA "N/A"
 
 ValueSet: YesNo
 Id: YesNo
