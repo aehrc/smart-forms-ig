@@ -83,7 +83,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Aboriginal and/or Torres Strait Islander status"
     * type = #choice
     * repeats = false
-    * answerValueSet[+] = "AboriginalTorresStraitIslander"
+    * answerValueSet[+] = "#AboriginalTorresStraitIslander"
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * linkId = "c8852db9-efe9-4102-96db-cef3a8be0a5f"
