@@ -43,7 +43,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b"
-    * text = "Who lives in your household?/Who does the child live with?"
+    * text = "Who lives in your household? / Who does the child live with?"
     * type = #text
     * repeats = false
     * item[+]
@@ -52,12 +52,16 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "062f5234-686a-4bf3-afcd-3fcd988afd6c"
-    * text = "Have there been any stressful life events that would cause you or your child to be upset?"
-    * type = #choice
+    * linkId = "934d105e-a4d6-4926-9b64-55bb1049d839"
+    * text = "Stressful life events"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "062f5234-686a-4bf3-afcd-3fcd988afd6c"
+      * text = "Have there been any stressful life events that would cause you or your child to be upset?"
+      * type = #choice
+      * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "1ea0a898-d680-4a5d-a0f1-91b57eb77a91"
@@ -84,19 +88,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
 
-/*
-  * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-    * linkId = ""
-    * text = ""
-    * type = #text
-    * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = ""
-      * text = "Details"
-      * type = #display
-*/
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "76d51512-b94a-4092-b3ae-a656fbb9c360"

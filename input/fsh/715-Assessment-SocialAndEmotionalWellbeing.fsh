@@ -40,12 +40,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #>
     * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "e7297156-cfed-4437-b877-c345f744168b"
-    * text = "Have there been any particular stressful life events that are impacting on you/your health lately?"
-    * type = #choice
+    * linkId = "c736d065-88f6-49c3-a5a4-91a2bd7a54bb"
+    * text = "Stressful life events"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "e7297156-cfed-4437-b877-c345f744168b"
+      * text = "Have there been any particular stressful life events that are impacting on you/your health lately?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "4c3427ce-062f-4f62-b566-2decb506a9cb"

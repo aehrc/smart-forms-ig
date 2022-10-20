@@ -46,16 +46,21 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerInteger = 50
   * enableBehavior = #all
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "0cd9e27b-1e98-41af-917b-0c6ee21c0819"
-    * text = "Are you studying at school/uni?"
-    * type = #choice
+    * linkId = "0e30e9b4-ec83-44ea-88ab-47963e52a2d7"
+    * text = "Learning"
+    * type = #group
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<
       * answerInteger = 25
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "0cd9e27b-1e98-41af-917b-0c6ee21c0819"
+      * text = "Are you studying at school/uni?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "18bdfa42-9845-4c6e-b737-843b14d54641"
@@ -67,16 +72,21 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "4a81afc0-f0da-49e1-b8cc-c19cb0f5f4e9"
-    * text = "Are you studying?"
-    * type = #choice
+    * linkId = "c0ba8a79-a9c5-40cc-b0c2-041e736784e9"
+    * text = "Learning"
+    * type = #group
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>=
       * answerInteger = 25
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "4a81afc0-f0da-49e1-b8cc-c19cb0f5f4e9"
+      * text = "Are you studying?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "1c648524-558e-4d24-bd83-c9f5cd35e97b"
@@ -88,12 +98,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "aaead1e2-ea54-4979-be0a-647e61ab59a9"
-    * text = "Are you working?"
-    * type = #choice
+    * linkId = "ccf6f0b0-57ae-473e-9929-2a09184c8a14"
+    * text = "Work"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "aaead1e2-ea54-4979-be0a-647e61ab59a9"
+      * text = "Are you working?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Details"
@@ -106,7 +121,12 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
-
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
+    * linkId = "3569e514-a74b-4343-b31b-3395e58d991a"
+    * text = "Health priorities, actions and follow-up"
+    * type = #text
+    * repeats = false
 
 // older people
 * item[+]
@@ -120,12 +140,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #>=
     * answerInteger = 50
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "4c68ff3e-0e73-4ea2-b295-5057deaa590e"
-    * text = "Are you working?"
-    * type = #choice
+    * linkId = "2bfc99a5-677c-4aea-a1ad-c37a181a3733"
+    * text = "Work"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "4c68ff3e-0e73-4ea2-b295-5057deaa590e"
+      * text = "Are you working?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Details"
@@ -138,7 +163,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
-// continue
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "ed6f7800-e22a-4639-9d11-faf845513500"

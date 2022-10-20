@@ -31,6 +31,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[sdc-questionnaire-shortText].valueString = "Current priorities" 
   * linkId = "b3a3eee2-f340-452e-9d05-d1f54f677b81"
   * text = "Current health/patient priorities"
   * type = #group

@@ -95,25 +95,31 @@
             }
           ],
           "linkId": "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b",
-          "text": "Who lives in your household?/Who does the child live with?",
+          "text": "Who lives in your household? / Who does the child live with?",
           "type": "text",
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "062f5234-686a-4bf3-afcd-3fcd988afd6c",
+              "text": "Have there been any stressful life events that would cause you or your child to be upset?",
+              "type": "choice",
+              "repeats": false
+            },
             {
               "extension": [
                 {
@@ -144,11 +150,10 @@
               ]
             }
           ],
-          "linkId": "062f5234-686a-4bf3-afcd-3fcd988afd6c",
-          "text": "Have there been any stressful life events that would cause you or your child to be upset?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "linkId": "934d105e-a4d6-4926-9b64-55bb1049d839",
+          "text": "Stressful life events",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [

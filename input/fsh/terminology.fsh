@@ -1,21 +1,69 @@
 Alias: $SCT = http://snomed.info/sct
 
+Alias: $v2-0136 = http://terminology.hl7.org/CodeSystem/v2-0136
+Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
+
 ValueSet: YesNoNA
 Id: YesNoNA
 Title: "Yes No NA"
 Description: "Concepts for Yes, No and Not applicable"
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "7709b027-415d-4eff-abf0-dc8edb2dc8fa"
+* ^expansion.timestamp = "2022-10-20T09:39:51+10:00"
+* ^expansion.total = 3
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+* ^expansion.contains[=].version = "2.9"
+* ^expansion.contains[=].code = #Y
+* ^expansion.contains[=].display = "Yes"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+* ^expansion.contains[=].version = "2.9"
+* ^expansion.contains[=].code = #N
+* ^expansion.contains[=].display = "No"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+* ^expansion.contains[=].version = "2018-08-12"
+* ^expansion.contains[=].code = #NA
+* ^expansion.contains[=].display = "not applicable"
+* $v2-0136#Y "Yes"
+* $v2-0136#N "No"
+* $v3-NullFlavor#NA "N/A"
 
-* http://terminology.hl7.org/CodeSystem/v2-0136#Y "Yes"
-* http://terminology.hl7.org/CodeSystem/v2-0136#N "No"
-* http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA "N/A"
 
 ValueSet: YesNo
 Id: YesNo
 Title: "Yes No"
 Description: "Concepts for Yes and No"
-
-* http://terminology.hl7.org/CodeSystem/v2-0136#Y "Yes"
-* http://terminology.hl7.org/CodeSystem/v2-0136#N "No"
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "91d952b0-22ed-474a-aad7-da1db1d7dcc7"
+* ^expansion.timestamp = "2022-10-20T09:43:07+10:00"
+* ^expansion.total = 2
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+* ^expansion.contains[=].code = #Y
+* ^expansion.contains[=].display = "Yes"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+* ^expansion.contains[=].code = #N
+* ^expansion.contains[=].display = "No"
+* $v2-0136#Y "Yes"
+* $v2-0136#N "No"
 
 ValueSet: MedicalHistory
 Id: MedicalHistory
@@ -28,7 +76,58 @@ ValueSet: MedicalHistoryShortListInfants
 Id: MedicalHistoryShortListInfants
 Title: "Medical History Short List for Infants"
 Description: "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants."
-
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "06bd5f41-3c10-4cdb-a304-b8127d72957f"
+* ^expansion.timestamp = "2022-10-20T09:50:13+10:00"
+* ^expansion.total = 13
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #609496007
+* ^expansion.contains[=].display = "Complication occurring during pregnancy"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #199745000
+* ^expansion.contains[=].display = "Complication occurring during labour and delivery"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #80113008
+* ^expansion.contains[=].display = "Complication of the puerperium"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #32485007
+* ^expansion.contains[=].display = "Hospital admission"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #50417007
+* ^expansion.contains[=].display = "Lower respiratory tract infection"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #49727002
+* ^expansion.contains[=].display = "Cough"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #129127001
+* ^expansion.contains[=].display = "Ear infection"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #38394007
+* ^expansion.contains[=].display = "Chronic otitis media with perforation"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #78868004
+* ^expansion.contains[=].display = "Chronic mucoid otitis media"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #247253001
+* ^expansion.contains[=].display = "Ventilation tube in tympanic membrane"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #43381005
+* ^expansion.contains[=].display = "Passive smoker"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #195528001
+* ^expansion.contains[=].display = "Acute rheumatic fever"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #312591002
+* ^expansion.contains[=].display = "Acute rheumatic heart disease"
 * $SCT#609496007 "Pregnancy complications"
 * $SCT#199745000 "Birth complications"
 * $SCT#80113008 "Problems after birth"  //Complication of the puerperium
@@ -48,7 +147,52 @@ ValueSet: MedicalHistoryShortListPrimarySchool
 Id: MedicalHistoryShortListPrimarySchool
 Title: "Medical History Short List for Primary School Children"
 Description: "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children."
-
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "455f4b6f-5083-4f56-8995-5ec798e47cc4"
+* ^expansion.timestamp = "2022-10-20T09:54:05+10:00"
+* ^expansion.total = 11
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #50417007
+* ^expansion.contains[=].display = "Lower respiratory tract infection"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #49727002
+* ^expansion.contains[=].display = "Cough"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #129127001
+* ^expansion.contains[=].display = "Ear infection"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #38394007
+* ^expansion.contains[=].display = "Chronic otitis media with perforation"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #78868004
+* ^expansion.contains[=].display = "Chronic mucoid otitis media"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #247253001
+* ^expansion.contains[=].display = "Ventilation tube in tympanic membrane"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #129823000
+* ^expansion.contains[=].display = "Childhood growth AND/OR development alteration"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #195528001
+* ^expansion.contains[=].display = "Acute rheumatic fever"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #312591002
+* ^expansion.contains[=].display = "Acute rheumatic heart disease"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #43381005
+* ^expansion.contains[=].display = "Passive smoker"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #32485007
+* ^expansion.contains[=].display = "Hospital admission"
 // following don't match form
 * $SCT#50417007 "Lower respiratory tract infection"
 * $SCT#49727002 "Cough"
@@ -63,12 +207,56 @@ Description: "The Medical History Short List for Primary School Children value s
 * $SCT#32485007 "Hospital admissions"  //maybe need to create a H/O Hospital admission concept as it is a procedure? No others are H/O
 
 
-
 ValueSet: MedicalHistoryShortListAdolescents
 Id: MedicalHistoryShortListAdolescents
 Title: "Medical History Short List for Adolescents"
 Description: "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents."
-
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "5b0bb9f4-1ca3-47e2-bb1d-91cad5454ce4"
+* ^expansion.timestamp = "2022-10-20T09:45:56+10:00"
+* ^expansion.total = 11
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #129127001
+* ^expansion.contains[=].display = "Ear infection"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #300228004
+* ^expansion.contains[=].display = "Hearing problem"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #195967001
+* ^expansion.contains[=].display = "Asthma"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #38341003
+* ^expansion.contains[=].display = "Hypertension"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #84757009
+* ^expansion.contains[=].display = "Epilepsy"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #25064002
+* ^expansion.contains[=].display = "Headache"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #37796009
+* ^expansion.contains[=].display = "Migraine"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #73211009
+* ^expansion.contains[=].display = "Diabetes mellitus"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #23685000
+* ^expansion.contains[=].display = "Rheumatic heart disease"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #90708001
+* ^expansion.contains[=].display = "Kidney disease"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #413307004
+* ^expansion.contains[=].display = "Mental health problem"
 * $SCT#129127001 "Ear infections" 
 * $SCT#300228004 "Hearing problems"
 * $SCT#195967001 "Asthma"
@@ -81,11 +269,63 @@ Description: "The Medical History Short List for Adolescents value set includes 
 * $SCT#90708001 "Kidney disease"
 * $SCT#413307004 "Mental health"
 
+
 ValueSet: MedicalHistoryShortListAdultsAndOlderPeople
 Id: MedicalHistoryShortListAdults
 Title: "Medical History Short List for Adults and Older People"
 Description: "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People."
-
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "1998291e-ed8a-49f2-ac11-9e6056efd7f3"
+* ^expansion.timestamp = "2022-10-20T09:48:19+10:00"
+* ^expansion.total = 13
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #73211009
+* ^expansion.contains[=].display = "Diabetes mellitus"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #38341003
+* ^expansion.contains[=].display = "Hypertension"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #22298006
+* ^expansion.contains[=].display = "Myocardial infarction"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #230690007
+* ^expansion.contains[=].display = "Stroke"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #90708001
+* ^expansion.contains[=].display = "Kidney disease"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #15188001
+* ^expansion.contains[=].display = "Hearing loss"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #84757009
+* ^expansion.contains[=].display = "Epilepsy"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #195967001
+* ^expansion.contains[=].display = "Asthma"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #13645005
+* ^expansion.contains[=].display = "COPD"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #23685000
+* ^expansion.contains[=].display = "Rheumatic heart disease"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #66071002
+* ^expansion.contains[=].display = "Hepatitis B"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #82271004
+* ^expansion.contains[=].display = "Head injury"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #413307004
+* ^expansion.contains[=].display = "Mental health problem"
 * $SCT#73211009 "Diabetes mellitus"
 * $SCT#38341003 "Hypertension"
 * $SCT#22298006 "Myocardial infarction" 
@@ -106,3 +346,55 @@ Title: "Questionnaire Item Control Extension"
 Description: "The Questionnaire Item Control Extension code system defines concepts that extend the HL7 questionnaire item control concepts in http://hl7.org/fhir/questionnaire-item-control. They represent interface control/display mechanisms interface control/display mechanisms that might be used when rendering an item in a questionnaire."
 
 * #tab "Tab" "Questions within the group should be displayed in a separate display container."
+
+
+ValueSet: ConditionClinicalStatusCodes
+Id: condition-clinical
+Title: "Condition Clinical Status Codes"
+Description: "Preferred value set for Condition Clinical Status."
+* ^meta.lastUpdated = "2022-05-28T12:47:40.239+10:00"
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension[=].valueCode = #pc
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #trial-use
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* ^extension[=].valueInteger = 3
+* ^url = "http://hl7.org/fhir/ValueSet/condition-clinical"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.3.164"
+* ^version = "4.3.0"
+* ^status = #draft
+* ^experimental = false
+* ^publisher = "FHIR Project team"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "http://hl7.org/fhir"
+* ^expansion.identifier = "5d4bed14-061a-42c4-853d-e6a624c4f483"
+* ^expansion.timestamp = "2022-10-20T09:32:48+10:00"
+* ^expansion.total = 6
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #active
+* ^expansion.contains[=].display = "Active"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #inactive
+* ^expansion.contains[=].display = "Inactive"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #recurrence
+* ^expansion.contains[=].display = "Recurrence"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #relapse
+* ^expansion.contains[=].display = "Relapse"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #remission
+* ^expansion.contains[=].display = "Remission"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #resolved
+* ^expansion.contains[=].display = "Resolved"
+* include codes from system ConditionClinicalStatusCodes

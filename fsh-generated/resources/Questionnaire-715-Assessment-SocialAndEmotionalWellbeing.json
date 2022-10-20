@@ -57,20 +57,27 @@
       ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "e7297156-cfed-4437-b877-c345f744168b",
+              "text": "Have there been any particular stressful life events that are impacting on you/your health lately?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+            },
             {
               "extension": [
                 {
@@ -101,11 +108,10 @@
               ]
             }
           ],
-          "linkId": "e7297156-cfed-4437-b877-c345f744168b",
-          "text": "Have there been any particular stressful life events that are impacting on you/your health lately?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "linkId": "c736d065-88f6-49c3-a5a4-91a2bd7a54bb",
+          "text": "Stressful life events",
+          "type": "group",
+          "repeats": false
         },
         {
           "linkId": "7d783b71-7303-441b-822a-14e11a740038",

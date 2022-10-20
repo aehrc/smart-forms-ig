@@ -29,6 +29,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
+// This questionnaire attempts to somewhat harmonise the infant and adolescent templates but there are differences that will require confirmation.
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "3e7d7246-98f8-4803-b063-8405ac30b086"
@@ -183,19 +184,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
 
 
-/*
-  * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-    * linkId = ""
-    * text = ""
-    * type = #text
-    * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = ""
-      * text = "Details"
-      * type = #text
-*/
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "5ab80929-5901-431d-bf68-67d532f5fa58"

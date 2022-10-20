@@ -57,20 +57,27 @@
       ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "0cd9e27b-1e98-41af-917b-0c6ee21c0819",
+              "text": "Are you studying at school/uni?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+            },
             {
               "extension": [
                 {
@@ -101,9 +108,9 @@
               ]
             }
           ],
-          "linkId": "0cd9e27b-1e98-41af-917b-0c6ee21c0819",
-          "text": "Are you studying at school/uni?",
-          "type": "choice",
+          "linkId": "0e30e9b4-ec83-44ea-88ab-47963e52a2d7",
+          "text": "Learning",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
@@ -111,24 +118,30 @@
               "operator": "<",
               "answerInteger": 25
             }
-          ],
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+          ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "4a81afc0-f0da-49e1-b8cc-c19cb0f5f4e9",
+              "text": "Are you studying?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+            },
             {
               "extension": [
                 {
@@ -159,9 +172,9 @@
               ]
             }
           ],
-          "linkId": "4a81afc0-f0da-49e1-b8cc-c19cb0f5f4e9",
-          "text": "Are you studying?",
-          "type": "choice",
+          "linkId": "c0ba8a79-a9c5-40cc-b0c2-041e736784e9",
+          "text": "Learning",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
@@ -169,24 +182,30 @@
               "operator": ">=",
               "answerInteger": 25
             }
-          ],
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+          ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "aaead1e2-ea54-4979-be0a-647e61ab59a9",
+              "text": "Are you working?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+            },
             {
               "extension": [
                 {
@@ -221,11 +240,29 @@
               ]
             }
           ],
-          "linkId": "aaead1e2-ea54-4979-be0a-647e61ab59a9",
-          "text": "Are you working?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+          "linkId": "ccf6f0b0-57ae-473e-9929-2a09184c8a14",
+          "text": "Work",
+          "type": "group",
+          "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "3569e514-a74b-4343-b31b-3395e58d991a",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
+          "repeats": false
         }
       ],
       "linkId": "5437e30d-8a0a-4785-974e-00a10d2a1df0",
@@ -262,20 +299,27 @@
       ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "4c68ff3e-0e73-4ea2-b295-5057deaa590e",
+              "text": "Are you working?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+            },
             {
               "extension": [
                 {
@@ -310,11 +354,10 @@
               ]
             }
           ],
-          "linkId": "4c68ff3e-0e73-4ea2-b295-5057deaa590e",
-          "text": "Are you working?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "linkId": "2bfc99a5-677c-4aea-a1ad-c37a181a3733",
+          "text": "Work",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [

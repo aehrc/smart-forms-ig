@@ -7,6 +7,83 @@
   "description": "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children.",
   "version": "0.1.0",
   "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool",
+  "expansion": {
+    "identifier": "455f4b6f-5083-4f56-8995-5ec798e47cc4",
+    "timestamp": "2022-10-20T09:54:05+10:00",
+    "total": 11,
+    "offset": 0,
+    "parameter": [
+      {
+        "name": "version",
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+      },
+      {
+        "name": "count",
+        "valueInteger": 2147483647
+      },
+      {
+        "name": "offset",
+        "valueInteger": 0
+      }
+    ],
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "50417007",
+        "display": "Lower respiratory tract infection"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "49727002",
+        "display": "Cough"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "129127001",
+        "display": "Ear infection"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "38394007",
+        "display": "Chronic otitis media with perforation"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "78868004",
+        "display": "Chronic mucoid otitis media"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "247253001",
+        "display": "Ventilation tube in tympanic membrane"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "129823000",
+        "display": "Childhood growth AND/OR development alteration"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "195528001",
+        "display": "Acute rheumatic fever"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "312591002",
+        "display": "Acute rheumatic heart disease"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "43381005",
+        "display": "Passive smoker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "32485007",
+        "display": "Hospital admission"
+      }
+    ]
+  },
   "compose": {
     "include": [
       {

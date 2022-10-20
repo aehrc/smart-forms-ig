@@ -656,7 +656,7 @@
                   }
                 }
               ],
-              "linkId": "27099697-d6d1-42c0-bb0a-5e9ff7372a96",
+              "linkId": "aa35d559-f45b-4d35-9453-dd02e4a790f3",
               "text": "Relationship to child",
               "type": "string",
               "repeats": true,
@@ -1137,7 +1137,8 @@
               "operator": ">",
               "answerInteger": 12
             }
-          ]
+          ],
+          "enableBehavior": "all"
         },
         {
           "item": [
@@ -1262,7 +1263,7 @@
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
+              "operator": ">=",
               "answerInteger": 50
             }
           ]
@@ -1418,7 +1419,7 @@
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
+              "operator": ">=",
               "answerInteger": 50
             }
           ]

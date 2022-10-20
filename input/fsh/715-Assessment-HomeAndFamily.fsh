@@ -52,12 +52,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "a7542da8-aad6-4a80-8b5b-806ca11d68d2"
-    * text = "Do you have stable housing?"
-    * type = #choice
+    * linkId = "64b979b6-cfc1-4024-868c-94e7be90d12b"
+    * text = "Housing stability"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "a7542da8-aad6-4a80-8b5b-806ca11d68d2"
+      * text = "Do you have stable housing?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "476dae02-d0e8-4128-81a1-7ad71dd06e97"
@@ -69,12 +74,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "6f73d1ee-dd8e-419a-9142-ede367200e3b"
-    * text = "Do you feel safe at home?"
-    * type = #choice
+    * linkId = "367ac5dd-07fa-4bda-a775-d9f38b15affd"
+    * text = "Home safety"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "6f73d1ee-dd8e-419a-9142-ede367200e3b"
+      * text = "Do you feel safe at home?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "9bd5f571-8cbf-4c25-975c-5fc8395b75f5"

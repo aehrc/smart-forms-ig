@@ -117,12 +117,12 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 24      
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdultsAndOlderPeople"
 
-//continue  
+//continue
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[21].resource.entry.resource.code.coding.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
+      * expression = "%PrePopQuery.entry[21].resource.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
     * linkId = "736f2a51-e04d-4e7f-aef1-c47f3a1f4e3c"
     * text = "Other relevant medical history, operations, hospital admissions, etc"
     * extension[sdc-questionnaire-shortText].valueString = "Other relevant medical history"
@@ -135,6 +135,49 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Provide details of identified problems"
     * type = #text
     * repeats = false  
+
+// experimental table of medical history
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#htable
+    * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
+    * text = "Medical history and current problems list"
+    * type = #group
+    * repeats = true
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%PrePopQuery.entry[21].resource.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
+      * linkId = "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"
+      * text = "Condition"
+      * type = #open-choice
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistory"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%PrePopQuery.entry[21].resource.entry.resource.clinicalStatus.coding.code"      
+      * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
+      * text = "Clinical Status"
+      * type = #choice
+      * answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%PrePopQuery.entry[21].resource.entry.resource.onsetDateTime"      
+      * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
+      * text = "Onset Date"
+      * type = #dateTime
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%PrePopQuery.entry[21].resource.entry.resource.recordedDate"      
+      * linkId = "18b9e159-2ed7-4047-82b7-deb2a171de4f"
+      * text = "Recorded Date"
+      * type = #dateTime
+
 
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box

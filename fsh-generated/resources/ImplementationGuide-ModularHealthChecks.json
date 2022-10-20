@@ -48,6 +48,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/condition-clinical"
+        },
+        "name": "Condition Clinical Status Codes",
+        "description": "Preferred value set for Condition Clinical Status.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/MedicalHistory"
         },
         "name": "Medical History",

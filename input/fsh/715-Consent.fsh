@@ -81,12 +81,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y 
       * repeats = true
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "057483ce-f265-46df-a1c5-7a18d492c1ba"
-    * text = "Consent given for sharing of information with relevant healthcare providers"
-    * type = #choice
+    * linkId = "d8c88bff-75ea-476f-8f83-e9b72fc9e1a0"
+    * text = "Consent for sharing of information"
+    * type = #group
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"  
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "057483ce-f265-46df-a1c5-7a18d492c1ba"
+      * text = "Consent given for sharing of information with relevant healthcare providers?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "43517c44-5cd2-4d9a-9f18-d6bf8124f4ae"

@@ -36,7 +36,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * type = #group
   * repeats = false
   * item[+]
-    /*this */
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%patient.name.where(use = 'usual').first().select(given.first() & ' ' & family)"
@@ -257,7 +256,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
-      * linkId = "27099697-d6d1-42c0-bb0a-5e9ff7372a96"
+      * linkId = "aa35d559-f45b-4d35-9453-dd02e4a790f3"
       * text = "Relationship to child"
       * type = #string
       * repeats = true   
@@ -417,6 +416,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 12
+    * enableBehavior = #all
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "e90b436b-2751-4e07-a40c-adfe951b6528"
@@ -477,7 +477,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
+      * operator = #>=
       * answerInteger = 50   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
@@ -521,7 +521,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
+      * operator = #>=
       * answerInteger = 50 
     * item[+]
       * linkId = "c023ef16-b554-4ed9-8993-1331e5f5a3b4"

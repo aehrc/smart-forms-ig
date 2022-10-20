@@ -96,20 +96,27 @@
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "a7542da8-aad6-4a80-8b5b-806ca11d68d2",
+              "text": "Do you have stable housing?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+            },
             {
               "extension": [
                 {
@@ -140,27 +147,33 @@
               ]
             }
           ],
-          "linkId": "a7542da8-aad6-4a80-8b5b-806ca11d68d2",
-          "text": "Do you have stable housing?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "linkId": "64b979b6-cfc1-4024-868c-94e7be90d12b",
+          "text": "Housing stability",
+          "type": "group",
+          "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "6f73d1ee-dd8e-419a-9142-ede367200e3b",
+              "text": "Do you feel safe at home?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+            },
             {
               "extension": [
                 {
@@ -191,11 +204,10 @@
               ]
             }
           ],
-          "linkId": "6f73d1ee-dd8e-419a-9142-ede367200e3b",
-          "text": "Do you feel safe at home?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "linkId": "367ac5dd-07fa-4bda-a775-d9f38b15affd",
+          "text": "Home safety",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [
