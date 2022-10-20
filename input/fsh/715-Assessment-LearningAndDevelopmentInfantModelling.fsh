@@ -5,7 +5,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 Instance: 715-Assessment-LearningAndDevelopment-InfantModelling
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Learning And development"
+Title: "715 Assessment Learning And Development Infant Modelling"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
 * contained[+] = PrePopQuery
@@ -21,8 +21,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
 * url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-LearningAndDevelopment-InfantModelling"
-* name = "715-Assessment-LearningAndDevelopment"
-* title = "715 Assessment Learning And development"
+* name = "715-Assessment-LearningAndDevelopmentInfantModelling"
+* title = "715 Assessment Learning And Development Infant Modelling"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

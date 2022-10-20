@@ -48,6 +48,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/AboriginalTorresStraitIslander"
+        },
+        "name": "Aboriginal and/or Torres Strait Islander",
+        "description": "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/condition-clinical"
         },
         "name": "Condition Clinical Status Codes",
@@ -92,6 +100,14 @@
         },
         "name": "Medical History Short List for Primary School Children",
         "description": "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PrimaryCarerParentGrandparent"
+        },
+        "name": "Primary Carer Of Parent Or Grandparent",
+        "description": "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
         "exampleBoolean": false
       },
       {
@@ -202,7 +218,7 @@
         "reference": {
           "reference": "Questionnaire/715-Assessment-LearningAndDevelopment-InfantModelling"
         },
-        "name": "715 Assessment Learning And development",
+        "name": "715 Assessment Learning And Development Infant Modelling",
         "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
         "exampleBoolean": false
       },

@@ -9,6 +9,8 @@ Title: "715 Patient Details"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
 * contained[+] = PrePopQuery
+* contained[+] = YesNoNA
+* contained[+] = YesNo
 
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
@@ -29,6 +31,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
+// do we want the main demographics "read-only"? Not sure we want to change these during the assessment. They are in the main patient record and we're not (yet) writing back
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
@@ -80,19 +83,14 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Aboriginal and/or Torres Strait Islander status"
     * type = #choice
     * repeats = false
-    * answerOption[+].valueCoding = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#1  
-    * answerOption[+].valueCoding = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#2
-    * answerOption[+].valueCoding = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#3
+    * answerValueSet[+] = "AboriginalTorresStraitIslander"
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * linkId = "c8852db9-efe9-4102-96db-cef3a8be0a5f"
     * text = "Parents/primary carer/s"
     * type = #choice
     * repeats = true /*is repeating best way to allow selection of "MTH and FTH"?*/   
-    * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH
-    * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#FTH
-    * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#GRPRN
-    * answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA
+    * answerValueSet[+] = "#PrimaryCarerParentGrandparent"
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=

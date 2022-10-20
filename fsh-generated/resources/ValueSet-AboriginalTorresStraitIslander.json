@@ -1,0 +1,68 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AboriginalTorresStraitIslander",
+  "id": "AboriginalTorresStraitIslander",
+  "title": "Aboriginal and/or Torres Strait Islander",
+  "description": "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+  "version": "0.1.0",
+  "url": "https://aehrc.csiro.au/fhir/ValueSet/AboriginalTorresStraitIslander",
+  "expansion": {
+    "identifier": "e2b013bd-1725-4299-a7a5-53635d42f1be",
+    "timestamp": "2022-10-20T11:38:45+10:00",
+    "total": 3,
+    "offset": 0,
+    "parameter": [
+      {
+        "name": "version",
+        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"
+      },
+      {
+        "name": "count",
+        "valueInteger": 2147483647
+      },
+      {
+        "name": "offset",
+        "valueInteger": 0
+      }
+    ],
+    "contains": [
+      {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "1",
+        "display": "Aboriginal but not Torres Strait Islander origin"
+      },
+      {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "2",
+        "display": "Torres Strait Islander but not Aboriginal origin"
+      },
+      {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "3",
+        "display": "Both Aboriginal and Torres Strait Islander origin"
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "concept": [
+          {
+            "code": "1",
+            "display": "Aboriginal"
+          },
+          {
+            "code": "2",
+            "display": "Torres Strait Islander"
+          },
+          {
+            "code": "3",
+            "display": "Aboriginal and Torres Strait Islander"
+          }
+        ]
+      }
+    ]
+  }
+}

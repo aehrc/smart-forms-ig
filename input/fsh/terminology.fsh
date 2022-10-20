@@ -65,6 +65,82 @@ Description: "Concepts for Yes and No"
 * $v2-0136#Y "Yes"
 * $v2-0136#N "No"
 
+Alias: $australian-indigenous-status-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1
+
+ValueSet: AboriginalTorresStraitIslander
+Id: AboriginalTorresStraitIslander
+Title: "Aboriginal and/or Torres Strait Islander"
+Description: "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people."
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/AboriginalTorresStraitIslander"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "e2b013bd-1725-4299-a7a5-53635d42f1be"
+* ^expansion.timestamp = "2022-10-20T11:38:45+10:00"
+* ^expansion.total = 3
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+* ^expansion.contains[=].code = #1
+* ^expansion.contains[=].display = "Aboriginal but not Torres Strait Islander origin"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+* ^expansion.contains[=].code = #2
+* ^expansion.contains[=].display = "Torres Strait Islander but not Aboriginal origin"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+* ^expansion.contains[=].code = #3
+* ^expansion.contains[=].display = "Both Aboriginal and Torres Strait Islander origin"
+* $australian-indigenous-status-1#1 "Aboriginal"
+* $australian-indigenous-status-1#2 "Torres Strait Islander"
+* $australian-indigenous-status-1#3 "Aboriginal and Torres Strait Islander"
+
+Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
+Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
+
+ValueSet: PrimaryCarerParentGrandparent
+Id: PrimaryCarerParentGrandparent
+Title: "Primary Carer Of Parent Or Grandparent"
+Description: "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent."
+* ^url = "https://aehrc.csiro.au/fhir/ValueSet/PrimaryCarerParentGrandparent"
+* ^version = "0.1.0"
+* ^status = #active
+* ^expansion.identifier = "2809c2fa-28ec-4def-9b16-93a611d29da3"
+* ^expansion.timestamp = "2022-10-20T11:42:30+10:00"
+* ^expansion.total = 4
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v3-RoleCode|2018-08-12"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+* ^expansion.contains[=].version = "2018-08-12"
+* ^expansion.contains[=].code = #MTH
+* ^expansion.contains[=].display = "mother"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+* ^expansion.contains[=].version = "2018-08-12"
+* ^expansion.contains[=].code = #FTH
+* ^expansion.contains[=].display = "father"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+* ^expansion.contains[=].version = "2018-08-12"
+* ^expansion.contains[=].code = #GRPRN
+* ^expansion.contains[=].display = "grandparent"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+* ^expansion.contains[=].version = "2018-08-12"
+* ^expansion.contains[=].code = #NA
+* ^expansion.contains[=].display = "not applicable"
+* $v3-RoleCode#MTH
+* $v3-RoleCode#FTH
+* $v3-RoleCode#GRPRN
+* $v3-NullFlavor#NA
+
+
 ValueSet: MedicalHistory
 Id: MedicalHistory
 Title: "Medical History"
