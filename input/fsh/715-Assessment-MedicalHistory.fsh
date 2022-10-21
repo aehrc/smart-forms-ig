@@ -30,6 +30,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "28d5dbe4-1e65-487c-847a-847f544a6a91"
   * text = "Medical history and current problems"
   * type = #group

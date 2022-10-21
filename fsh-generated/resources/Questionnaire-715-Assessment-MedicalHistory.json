@@ -42,6 +42,19 @@
   ],
   "item": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "tab",
+                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
+              }
+            ]
+          }
+        }
+      ],
       "item": [
         {
           "extension": [

@@ -11,6 +11,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * contained[+] = PrePopQuery
 * contained[+] = YesNoNA
 * contained[+] = YesNo
+* contained[+] = AboriginalTorresStraitIslander
+* contained[+] = PrimaryCarerParentGrandparent
 
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient

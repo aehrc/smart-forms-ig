@@ -1708,6 +1708,160 @@
           }
         ]
       }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "AboriginalTorresStraitIslander",
+      "status": "active",
+      "name": "AboriginalTorresStraitIslander",
+      "title": "Aboriginal and/or Torres Strait Islander",
+      "description": "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/AboriginalTorresStraitIslander",
+      "expansion": {
+        "identifier": "e2b013bd-1725-4299-a7a5-53635d42f1be",
+        "timestamp": "2022-10-20T11:38:45+10:00",
+        "total": 3,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+            "code": "1",
+            "display": "Aboriginal but not Torres Strait Islander origin"
+          },
+          {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+            "code": "2",
+            "display": "Torres Strait Islander but not Aboriginal origin"
+          },
+          {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+            "code": "3",
+            "display": "Both Aboriginal and Torres Strait Islander origin"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+            "concept": [
+              {
+                "code": "1",
+                "display": "Aboriginal"
+              },
+              {
+                "code": "2",
+                "display": "Torres Strait Islander"
+              },
+              {
+                "code": "3",
+                "display": "Aboriginal and Torres Strait Islander"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "PrimaryCarerParentGrandparent",
+      "status": "active",
+      "name": "PrimaryCarerParentGrandparent",
+      "title": "Primary Carer Of Parent Or Grandparent",
+      "description": "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/PrimaryCarerParentGrandparent",
+      "expansion": {
+        "identifier": "2809c2fa-28ec-4def-9b16-93a611d29da3",
+        "timestamp": "2022-10-20T11:42:30+10:00",
+        "total": 4,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v3-RoleCode|2018-08-12"
+          },
+          {
+            "name": "version",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "version": "2018-08-12",
+            "code": "MTH",
+            "display": "mother"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "version": "2018-08-12",
+            "code": "FTH",
+            "display": "father"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "version": "2018-08-12",
+            "code": "GRPRN",
+            "display": "grandparent"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+            "version": "2018-08-12",
+            "code": "NA",
+            "display": "not applicable"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "concept": [
+              {
+                "code": "MTH"
+              },
+              {
+                "code": "FTH"
+              },
+              {
+                "code": "GRPRN"
+              }
+            ]
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+            "concept": [
+              {
+                "code": "NA"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "name": "715-PatientDetails",
