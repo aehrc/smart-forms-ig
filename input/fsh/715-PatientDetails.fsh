@@ -349,8 +349,9 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * linkId = "e63547c6-1623-412f-963f-5f1ebf23563f"
     * text = "Child has a birth certificate"
-    * type = #boolean
-    * repeats = false 
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "#YesNoNA" 
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=

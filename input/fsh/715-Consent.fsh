@@ -60,16 +60,21 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * operator = #<=
       * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "c72933c7-349f-4fef-94ff-c424c69da6f3"
-    * text = "Parent/primary caregiver present for health check"
-    * type = #choice
+    * linkId = "80a6a405-49a4-44fb-bff3-212902096b95"
+    * text = "Parent/primary caregiver present"
+    * type = #group
     * repeats = false
-    * answerValueSet = "#YesNoNA"
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 24
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "c72933c7-349f-4fef-94ff-c424c69da6f3"
+      * text = "Parent/primary caregiver is present for health check?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "b7d116f9-0425-4cf1-8cde-fbf4dfaee550"
