@@ -115,7 +115,7 @@
               "text": "Do you have stable housing?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -172,7 +172,7 @@
               "text": "Do you feel safe at home?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [

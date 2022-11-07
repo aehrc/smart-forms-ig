@@ -45,7 +45,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Do you have any worries about your memory or thinking?"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "69985e2e-4619-42fa-a111-e6fb3118ef74"
@@ -62,7 +62,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Does anyone in your family have any worries about your memory or thinking?"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "43d2cb6c-29a7-4293-a6c8-87a228a82e19"

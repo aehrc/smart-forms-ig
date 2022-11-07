@@ -51,7 +51,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 12
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "26707b9a-4e3d-4063-a890-7ec2ff02ced1"
@@ -72,7 +72,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 12
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "13040f64-5cbf-4592-a683-c03527c64ac6"
@@ -97,7 +97,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<
       * answerInteger = 50
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * enableBehavior = #all
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
@@ -166,7 +166,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>=
       * answerInteger = 50
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "fd6beb79-ffc3-4879-913b-f42b0ec930ba"

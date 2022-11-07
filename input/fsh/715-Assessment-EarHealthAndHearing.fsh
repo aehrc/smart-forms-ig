@@ -50,7 +50,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything that you are worried about with your child's listening?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "297114f4-8c3f-4916-b840-c38ea14d37b1"
@@ -76,7 +76,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything you are worried about with your child's language/talking?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "30dc1581-f6b7-49f0-be09-3902178a495f"
@@ -102,7 +102,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Do you notice snoring/noisy breathing at night/while your child is sleeping?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "36a3967c-e79a-49a7-8022-ac9561c4e656"
@@ -128,7 +128,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything that you are worried about with your hearing?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "d72dacb8-a9b3-483b-ae24-8b062873b2cb"

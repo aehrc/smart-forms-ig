@@ -105,7 +105,7 @@
           "text": "Do you have any worries about your memory or thinking?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [
@@ -156,7 +156,7 @@
           "text": "Does anyone in your family have any worries about your memory or thinking?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [

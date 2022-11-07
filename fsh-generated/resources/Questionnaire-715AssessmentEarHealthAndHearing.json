@@ -76,7 +76,7 @@
               "text": "Is there anything that you are worried about with your child's listening?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -140,7 +140,7 @@
               "text": "Is there anything you are worried about with your child's language/talking?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -204,7 +204,7 @@
               "text": "Do you notice snoring/noisy breathing at night/while your child is sleeping?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -268,7 +268,7 @@
               "text": "Is there anything that you are worried about with your hearing?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [

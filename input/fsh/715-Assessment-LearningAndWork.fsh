@@ -60,7 +60,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Are you studying at school/uni?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+      * answerValueSet = "#YesNoNa"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "18bdfa42-9845-4c6e-b737-843b14d54641"
@@ -86,7 +86,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Are you studying?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+      * answerValueSet = "#YesNoNa"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "1c648524-558e-4d24-bd83-c9f5cd35e97b"
@@ -108,7 +108,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Are you working?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+      * answerValueSet = "#YesNoNa"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Details"
@@ -150,7 +150,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Are you working?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Details"

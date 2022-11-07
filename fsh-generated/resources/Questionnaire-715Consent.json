@@ -74,7 +74,7 @@
           "text": "Consent given after discussion of process and benefits of a health check",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
+          "answerValueSet": "#YesNoNa",
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -101,7 +101,7 @@
           "text": "Consent given by parent/primary carer after discussion of process and benefits of a health check",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
+          "answerValueSet": "#YesNoNa",
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -159,7 +159,7 @@
           "text": "Parent/primary caregiver present for health check",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
+          "answerValueSet": "#YesNoNa",
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -188,7 +188,7 @@
               "text": "Consent given for sharing of information with relevant healthcare providers?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+              "answerValueSet": "#YesNoNa"
             },
             {
               "extension": [

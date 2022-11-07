@@ -50,7 +50,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything that you are worried about with your child's development?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "714a512a-8319-463e-a677-2a44afc0292a"
@@ -72,7 +72,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything that you are worried about with your child's behaviour?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "4f72d71d-6587-40a5-8bd0-e02540c16f65"
@@ -94,7 +94,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything that you are worried about with your child's sleep?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "45c0647a-63e1-48b8-9f01-c653aabba554"

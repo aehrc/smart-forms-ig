@@ -94,14 +94,14 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Does your child have a Child Health Book?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "a30d0101-06ce-4481-b142-9fa2c091fe4f"
       * text = "Is it up to date?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
     
 
 

@@ -80,7 +80,7 @@
               "text": "Is there anything that you are worried about in relation to puberty/your sexual health?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -213,7 +213,7 @@
               "text": "Is there anything that you are worried about in relation to your sexual health?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -428,7 +428,7 @@
               "text": "Consider asking when appropriate: Is there anything that you are worried about in relation to your sexual health?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -485,7 +485,7 @@
               "text": "Do you have problems with urine leaking?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [

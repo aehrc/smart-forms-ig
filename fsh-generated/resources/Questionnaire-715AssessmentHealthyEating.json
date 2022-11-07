@@ -99,7 +99,7 @@
               "answerInteger": 5
             }
           ],
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [
@@ -162,7 +162,7 @@
               "answerInteger": 12
             }
           ],
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo",
+          "answerValueSet": "#YesNo",
           "enableBehavior": "all"
         },
         {
@@ -313,7 +313,7 @@
               "answerInteger": 12
             }
           ],
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [
@@ -371,7 +371,7 @@
               "answerInteger": 50
             }
           ],
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [
@@ -514,7 +514,7 @@
           "text": "Are there any issues about availability of food?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [

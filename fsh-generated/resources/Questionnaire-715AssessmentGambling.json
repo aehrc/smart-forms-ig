@@ -105,7 +105,7 @@
           "text": "Have you or someone close to you ever had issues with gambling?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+          "answerValueSet": "#YesNo"
         },
         {
           "extension": [

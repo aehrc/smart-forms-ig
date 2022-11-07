@@ -74,12 +74,12 @@
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "prompt",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                        "code": "instructions",
+                        "system": "http://hl7.org/fhir/questionnaire-display-category"
                       }
                     ]
                   }

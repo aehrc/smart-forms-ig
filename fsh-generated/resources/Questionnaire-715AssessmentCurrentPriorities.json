@@ -211,7 +211,7 @@
               "text": "Does your child have a Child Health Book?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
@@ -231,7 +231,7 @@
               "text": "Is it up to date?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             }
           ],
           "linkId": "17651f83-8476-499c-a5ef-dd4e1a6c9f13",

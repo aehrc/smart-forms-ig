@@ -76,7 +76,7 @@
               "text": "Have there been any particular stressful life events that are impacting on you/your health lately?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [

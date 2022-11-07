@@ -45,7 +45,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 12
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
   * item[+]
     * linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
     * text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
@@ -56,7 +56,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 12
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
   * item[+]
     * linkId = "874ec8db-95c9-4cc0-95db-e45edaa3cd12"
     * text = "Up to date in the health record?"

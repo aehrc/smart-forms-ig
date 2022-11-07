@@ -45,7 +45,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 5
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "f6907808-3e42-4206-9bf8-ca4082ea4814"
@@ -66,13 +66,13 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 5
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 12
     * enableBehavior = #all
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "d88432dd-6d8d-4eea-bdb9-5aa39d44ee6d"
@@ -123,7 +123,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 12
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "1d5c3354-6780-4b6a-b9af-7a17b0386781"
@@ -144,7 +144,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>=
       * answerInteger = 50
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "ce71f016-c5e4-4121-abe5-fe0c974c1bba"
@@ -191,7 +191,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Are there any issues about availability of food?"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "92908e91-9453-4d22-99eb-23dad580c1cb"

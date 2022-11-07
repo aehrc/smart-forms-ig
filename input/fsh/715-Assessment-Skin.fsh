@@ -51,7 +51,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Does your child have any skin problems?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
       * enableWhen[+]
         * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
         * operator = #<=
@@ -62,7 +62,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Is there anything that you are worried about with your skin?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+      * answerValueSet = "#YesNo"
       * enableWhen[+]
         * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
         * operator = #>
@@ -88,7 +88,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Do you use sun protection?"
     * type = #choice
     * repeats = false
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+    * answerValueSet = "#YesNo"
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>

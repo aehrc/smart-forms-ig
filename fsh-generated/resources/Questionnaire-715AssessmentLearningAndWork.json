@@ -76,7 +76,7 @@
               "text": "Are you studying at school/uni?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+              "answerValueSet": "#YesNoNa"
             },
             {
               "extension": [
@@ -140,7 +140,7 @@
               "text": "Are you studying?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+              "answerValueSet": "#YesNoNa"
             },
             {
               "extension": [
@@ -204,7 +204,7 @@
               "text": "Are you working?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+              "answerValueSet": "#YesNoNa"
             },
             {
               "extension": [
@@ -318,7 +318,7 @@
               "text": "Are you working?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [

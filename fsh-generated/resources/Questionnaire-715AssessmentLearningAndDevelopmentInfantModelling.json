@@ -107,7 +107,7 @@
               "text": "Is there anything that you are worried about with your child's development?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             }
           ],
           "linkId": "8dd21e7d-7c3d-4efe-982b-fe5c5948781f",
@@ -166,7 +166,7 @@
               "text": "Is there anything that you are worried about with your child's behaviour?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             }
           ],
           "linkId": "7cd3c9d7-61cf-42ba-bc52-ad801c643846",
@@ -225,7 +225,7 @@
               "text": "Is there anything that you are worried about with your child's sleep?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+              "answerValueSet": "#YesNo"
             }
           ],
           "linkId": "69b325cd-35e7-41d4-88b9-8c69b524a1f3",
