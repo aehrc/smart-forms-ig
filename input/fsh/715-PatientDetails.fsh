@@ -344,7 +344,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Registered for Closing the Gap PBS Co-payment Measure (CTG)"
     * type = #choice
     * repeats = false
-    * answerValueSet = "#YesNoNa"
+    * answerValueSet = "#YesNoNA"
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * linkId = "e63547c6-1623-412f-963f-5f1ebf23563f"
@@ -370,7 +370,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Registered for My Aged Care"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNoNa"
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "04e50521-dc85-4744-b7ab-6f8682aacb11"
@@ -392,7 +392,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Registered for NDIS"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNoNa"
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "7379a0fd-d95b-4ecb-a781-9f43d1394f10"
@@ -423,7 +423,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Do you have children?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNoNa"
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "241f5fca-f61a-49bd-8972-52613c0e6d15"
@@ -459,7 +459,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Are you responsible for caring for someone else?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNoNa"
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "4c14b158-3ae4-4994-8446-76e02640702c"
@@ -485,7 +485,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Do you have a carer?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNoNa"
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "b9991e7e-ce03-465d-b4b0-5a1725b24e02"
@@ -507,7 +507,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Are name and contact details of other key providers (eg case workers, support services) up to date?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNoNa"
+      * answerValueSet = "#YesNoNA"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "6733d6ec-5b6b-4ee2-a21e-0e9474c2b22b"
@@ -534,7 +534,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * text = "Enduring Power of Attorney"
         * type = #choice
         * repeats = false
-        * answerValueSet = "#YesNoNa"
+        * answerValueSet = "#YesNoNA"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "83518215-7151-4365-b745-d7464bbb9528"
@@ -552,7 +552,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * text = "Advance Health Directive"
         * type = #choice
         * repeats = false
-        * answerValueSet = "#YesNoNa"
+        * answerValueSet = "#YesNoNA"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "c4bc2d84-e411-488d-9c0d-761f0377a026"
