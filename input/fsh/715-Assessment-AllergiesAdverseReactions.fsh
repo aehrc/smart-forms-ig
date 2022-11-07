@@ -30,7 +30,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box    
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab   
   * linkId = "d4e4db07-a795-4a30-bd0f-9c109f96a22b"
   * text = "Allergies/adverse reactions"
   * type = #group

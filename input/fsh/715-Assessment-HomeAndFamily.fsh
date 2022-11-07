@@ -72,7 +72,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * enableWhen[+]
         * question = "a7542da8-aad6-4a80-8b5b-806ca11d68d2"
         * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
   * item[+]
     * linkId = "367ac5dd-07fa-4bda-a775-d9f38b15affd"
     * text = "Home safety"
@@ -94,7 +94,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * enableWhen[+]
         * question = "6f73d1ee-dd8e-419a-9142-ede367200e3b"
         * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
+        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
 
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box

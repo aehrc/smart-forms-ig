@@ -48,8 +48,8 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "check-box",
-                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                "code": "tab",
+                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
               }
             ]
           }

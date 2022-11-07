@@ -102,6 +102,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
+      * enableWhen[+]
+        * question = "2655e0e1-fe4b-431e-87af-30d4ff1aca76"
+        * operator = #=
+        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
     
 
 

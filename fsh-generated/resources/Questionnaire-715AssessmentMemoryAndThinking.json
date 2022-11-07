@@ -57,20 +57,27 @@
       ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "e29701be-2b79-471d-a42e-7e3830459080",
+              "text": "Do you have any worries about your memory or thinking?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -101,27 +108,33 @@
               ]
             }
           ],
-          "linkId": "e29701be-2b79-471d-a42e-7e3830459080",
-          "text": "Do you have any worries about your memory or thinking?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "#YesNo"
+          "linkId": "64fd0c95-b57b-4319-bf40-ad77d10a9832",
+          "text": "Personal concerns about your memory or thinking",
+          "type": "group",
+          "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "06a67326-9e3d-4c4c-b271-af5b168d077c",
+              "text": "Does anyone in your family have any worries about your memory or thinking?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -152,11 +165,10 @@
               ]
             }
           ],
-          "linkId": "06a67326-9e3d-4c4c-b271-af5b168d077c",
-          "text": "Does anyone in your family have any worries about your memory or thinking?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "#YesNo"
+          "linkId": "44da9ba8-4636-4eaa-8bb1-aaa65f117fab",
+          "text": "Family concerns about your memory or thinking",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [

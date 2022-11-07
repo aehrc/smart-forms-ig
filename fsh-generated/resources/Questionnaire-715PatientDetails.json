@@ -866,8 +866,9 @@
           ],
           "linkId": "e63547c6-1623-412f-963f-5f1ebf23563f",
           "text": "Child has a birth certificate",
-          "type": "boolean",
+          "type": "choice",
           "repeats": false,
+          "answerValueSet": "#YesNoNA",
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",

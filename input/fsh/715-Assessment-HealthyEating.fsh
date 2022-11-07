@@ -31,6 +31,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "ae7a3801-9491-4b1f-820c-678236d18f56"
   * text = "Healthy eating"
   * type = #group

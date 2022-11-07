@@ -231,7 +231,17 @@
               "text": "Is it up to date?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "#YesNo"
+              "answerValueSet": "#YesNo",
+              "enableWhen": [
+                {
+                  "question": "2655e0e1-fe4b-431e-87af-30d4ff1aca76",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ]
             }
           ],
           "linkId": "17651f83-8476-499c-a5ef-dd4e1a6c9f13",

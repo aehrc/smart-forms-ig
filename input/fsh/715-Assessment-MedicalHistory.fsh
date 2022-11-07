@@ -38,23 +38,33 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#wk
     * linkId = "a10a7375-e9d3-4e71-a47a-282e9ba38ec1"
-    * text = "Gestation at birth (weeks)"
+    * text = "Gestation at birth"
     * type = #decimal
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 5 
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+      * linkId = "f3899852-36c4-441f-9a7d-544ef1617f08"
+      * text = "weeks"
+      * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
     * linkId = "29b6d8ea-23b2-4a69-98d9-899198692de7"
-    * text = "Birth weight (kg)"
+    * text = "Birth weight"
     * type = #decimal
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 5 
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+      * linkId = "87cf1ecd-6d1b-4de1-894d-58bd77dcfde1"
+      * text = "kg"
+      * type = #display
   
   // for infants 0-5
   * item[+]
@@ -67,7 +77,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
       * answerInteger = 5       
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants"
+    * answerValueSet = "#MedicalHistoryShortListInfants"
 
   // for Primary School Children 5-12
   * item[+]
@@ -85,7 +95,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * operator = #<=
       * answerInteger = 12
     * enableBehavior = #all 
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool"
+    * answerValueSet = "#MedicalHistoryShortListPrimarySchool"
 
   // for adolescents 12-24
   * item[+]
@@ -103,7 +113,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * operator = #<=
       * answerInteger = 24
     * enableBehavior = #all        
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents"
+    * answerValueSet = "#MedicalHistoryShortListAdolescents"
 
  // for adults and older >24
   * item[+]
@@ -116,7 +126,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
       * answerInteger = 24      
-    * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdultsAndOlderPeople"
+    * answerValueSet = "#MedicalHistoryShortListAdultsAndOlderPeople"
 
 //continue
   * item[+]
@@ -137,7 +147,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #text
     * repeats = false  
 
-// experimental table of medical history
+/* experimental table of medical history
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#htable
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
@@ -178,7 +188,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * linkId = "18b9e159-2ed7-4047-82b7-deb2a171de4f"
       * text = "Recorded Date"
       * type = #dateTime
-
+*/
 
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box

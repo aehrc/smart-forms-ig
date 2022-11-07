@@ -29,13 +29,15 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
-* item[+]    
+* item[+]  
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab  
   * linkId = "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a"
   * text = "Regular medications: check if still required, appropriate dose, understanding of medication and adherence"
   * extension[sdc-questionnaire-shortText].valueString = "Regular medications"
   * type = #group
   * repeats = false
   * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
     * text = "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
     * extension[sdc-questionnaire-shortText].valueString = "Does your child take any regular medications?"
@@ -47,6 +49,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * answerValueSet = "#YesNo"
   * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
     * text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
     * extension[sdc-questionnaire-shortText].valueString = "Do you take any regular medications?"

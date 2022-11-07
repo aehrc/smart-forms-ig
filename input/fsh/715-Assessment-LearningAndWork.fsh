@@ -67,10 +67,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #text
       * repeats = false
-      * enableWhen[+]
-        * question = "0cd9e27b-1e98-41af-917b-0c6ee21c0819"
-        * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * linkId = "c0ba8a79-a9c5-40cc-b0c2-041e736784e9"
     * text = "Learning"
@@ -93,10 +89,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #text
       * repeats = false
-      * enableWhen[+]
-        * question = "4a81afc0-f0da-49e1-b8cc-c19cb0f5f4e9"
-        * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * linkId = "ccf6f0b0-57ae-473e-9929-2a09184c8a14"
     * text = "Work"
@@ -116,10 +108,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details (occupation including occupational hazards, study, training, disability, etc)"
       * type = #text
       * repeats = false
-      * enableWhen[+]
-        * question = "aaead1e2-ea54-4979-be0a-647e61ab59a9"
-        * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
@@ -158,10 +146,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details (occupation including occupational hazards, study, training, disability, etc)"
       * type = #text
       * repeats = false
-      * enableWhen[+]
-        * question = "4c68ff3e-0e73-4ea2-b295-5057deaa590e"
-        * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
