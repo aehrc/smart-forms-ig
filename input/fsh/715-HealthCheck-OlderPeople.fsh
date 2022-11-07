@@ -2,7 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-HealthCheck-OlderPeople
+Instance: 715HealthCheckOlderPeople
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Health Check for Older People"
@@ -20,8 +20,8 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-HealthCheck-OlderPeople"
-* name = "715-HealthCheck-OlderPeople"
+* url = "http://www.health.gov.au/assessments/mbs/715/715HealthCheckOlderPeople"
+* name = "715HealthCheckOlderPeople"
 * title = "715 Health Check for Older People"
 * status = #draft
 * experimental = true

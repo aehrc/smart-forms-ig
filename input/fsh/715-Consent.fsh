@@ -4,7 +4,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-Consent
+Instance: 715Consent
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Consent"
@@ -22,8 +22,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-Consent"
-* name = "715-Consent"
+* url = "http://www.health.gov.au/assessments/mbs/715/715Consent"
+* name = "715Consent"
 * title = "715 Consent"
 * status = #draft
 * experimental = true
@@ -33,7 +33,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
-  * linkId = "2e82032a-dc28-45f2-916e-862303d39fe5"
+  * linkId = "1016f79d-9756-4daf-b6ee-29add134b34f"
   * text = "Consent"
   * type = #group
   * repeats = false

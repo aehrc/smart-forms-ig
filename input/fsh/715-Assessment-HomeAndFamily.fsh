@@ -2,7 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-Assessment-HomeAndFamily
+Instance: 715AssessmentHomeAndFamily
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Home And Family"
@@ -20,8 +20,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-HomeAndFamily"
-* name = "715-Assessment-HomeAndFamily"
+* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentHomeAndFamily"
+* name = "715AssessmentHomeAndFamily"
 * title = "715 Assessment Home And Family"
 * status = #draft
 * experimental = true

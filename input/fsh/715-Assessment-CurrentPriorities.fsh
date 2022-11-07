@@ -2,7 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-Assessment-CurrentPriorities
+Instance: 715AssessmentCurrentPriorities
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Current Priorities"
@@ -20,8 +20,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-CurrentPriorities"
-* name = "715-Assessment-CurrentPriorities"
+* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentCurrentPriorities"
+* name = "715AssessmentCurrentPriorities"
 * title = "715 Assessment Current Priorities"
 * status = #draft
 * experimental = true

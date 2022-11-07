@@ -2,7 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-Assessment-RegularMedications
+Instance: 715AssessmentRegularMedications
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Regular Medications"
@@ -20,8 +20,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-Assessment-RegularMedications"
-* name = "715-Assessment-RegularMedications"
+* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentRegularMedications"
+* name = "715AssessmentRegularMedications"
 * title = "715 Assessment Regular Medications"
 * status = #draft
 * experimental = true

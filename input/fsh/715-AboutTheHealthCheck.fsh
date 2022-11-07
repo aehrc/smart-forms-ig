@@ -4,7 +4,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-AboutTheHealthCheck
+Instance: 715AboutTheHealthCheck
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 About The Health Check"
@@ -30,8 +30,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-AboutTheHealthCheck"
-* name = "715-AboutTheHealthCheck"
+* url = "http://www.health.gov.au/assessments/mbs/715/715AboutTheHealthCheck"
+* name = "715AboutTheHealthCheck"
 * title = "715 About The Health Check"
 * status = #draft
 * experimental = true
@@ -51,9 +51,9 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Eligible for health check"
     * type = #choice
     * repeats = false
-    * answerValueSet = "#YesNoNA"   
+    * answerValueSet = "#YesNoNA"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory].valueCodeableConcept = http://hl7.org/fhir/questionnaire-display-category#instructions
       * linkId = "04f00512-888b-424e-ba76-9bd6fd8da682"
       * text = "not claimed 715 or 228 in past nine months"
       * type = #display

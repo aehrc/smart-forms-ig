@@ -102,3 +102,7 @@ Usage: #inline
 * entry[24].fullUrl = "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52577"
 * entry[=].request.method = #GET
 * entry[=].request.url = "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
+// Head Occipital-frontal circumference
+* entry[25].fullUrl = "urn:uuid:12f24514-437e-40d8-b5c3-bfe8ecb4995d"
+* entry[=].request.method = #GET
+* entry[=].request.url = "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"

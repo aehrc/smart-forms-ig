@@ -2,7 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715-PatientDetails
+Instance: 715PatientDetails
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Patient Details"
@@ -24,8 +24,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
 //* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
-* url = "http://www.health.gov.au/assessments/mbs/715/715-PatientDetails"
-* name = "715-PatientDetails"
+* url = "http://www.health.gov.au/assessments/mbs/715/715PatientDetails"
+* name = "715PatientDetails"
 * title = "715 Patient Details"
 * status = #draft
 * experimental = true
@@ -43,7 +43,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.name.where(use = 'usual').first().select(given.first() & ' ' & family)"
+      * expression = "iif(%patient.name.where(use = 'official').exists(),%patient.name.where(use = 'official').first().select(given.first() & ' ' & family),%patient.name.text.first())"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
     * text = "Name"
