@@ -63,14 +63,34 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                    "code": "tab",
+                    "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
                   }
                 ]
               }
             }
           ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "304d0332-9bfd-42dc-a4be-a5122596fb89",
+              "text": "Is there anything that you are worried about with your child's level of physical activity?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -101,9 +121,9 @@
               ]
             }
           ],
-          "linkId": "304d0332-9bfd-42dc-a4be-a5122596fb89",
-          "text": "Is there anything that you are worried about with your child's level of physical activity?",
-          "type": "choice",
+          "linkId": "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4",
+          "text": "Physical activity concerns",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
@@ -111,8 +131,7 @@
               "operator": "<=",
               "answerInteger": 12
             }
-          ],
-          "answerValueSet": "#YesNo"
+          ]
         },
         {
           "extension": [
@@ -121,14 +140,34 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                    "code": "tab",
+                    "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
                   }
                 ]
               }
             }
           ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "465eacce-f9ee-4022-9186-89065cf01ce2",
+              "text": "Is there anything that you are worried about with your child's level of screen time?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -159,9 +198,9 @@
               ]
             }
           ],
-          "linkId": "465eacce-f9ee-4022-9186-89065cf01ce2",
-          "text": "Is there anything that you are worried about with your child's level of screen time?",
-          "type": "choice",
+          "linkId": "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4",
+          "text": "Screen time concerns",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
@@ -169,8 +208,7 @@
               "operator": "<=",
               "answerInteger": 12
             }
-          ],
-          "answerValueSet": "#YesNo"
+          ]
         },
         {
           "extension": [
@@ -179,14 +217,34 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                    "code": "tab",
+                    "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
                   }
                 ]
               }
             }
           ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "08320c7a-831b-4237-95e2-d79aee155b90",
+              "text": "Do you have any worries about physical activity or screen time?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -217,24 +275,17 @@
               ]
             }
           ],
-          "linkId": "08320c7a-831b-4237-95e2-d79aee155b90",
-          "text": "Do you have any worries about physical activity or screen time?",
-          "type": "choice",
+          "linkId": "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4",
+          "text": "Physical activity or screen time concerns",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
               "answerInteger": 12
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<",
-              "answerInteger": 50
             }
-          ],
-          "answerValueSet": "#YesNo",
-          "enableBehavior": "all"
+          ]
         },
         {
           "extension": [
@@ -273,14 +324,7 @@
           "linkId": "a9aaba01-5f11-4d4e-ad39-40b6bef745da",
           "text": "Document conversation about age-appropriate recommendations re physical activity and screen time",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<",
-              "answerInteger": 50
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [
@@ -328,11 +372,30 @@
             },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">=",
+              "operator": "<=",
               "answerInteger": 24
             }
           ],
           "enableBehavior": "all"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "text-box",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
+          "repeats": false
         }
       ],
       "linkId": "74736baa-455b-41d2-af98-fb65cd463e97",
@@ -369,14 +432,34 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                    "code": "tab",
+                    "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
                   }
                 ]
               }
             }
           ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "b30d5d21-c6d6-4bb3-aab4-0fdee80b3093",
+              "text": "Do you have any worries about physical activity?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -407,18 +490,10 @@
               ]
             }
           ],
-          "linkId": "b30d5d21-c6d6-4bb3-aab4-0fdee80b3093",
-          "text": "Do you have any worries about physical activity?",
-          "type": "choice",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">=",
-              "answerInteger": 50
-            }
-          ],
-          "answerValueSet": "#YesNo"
+          "linkId": "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4",
+          "text": "Physical activity concerns",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [
@@ -457,14 +532,7 @@
           "linkId": "eb326905-3709-4088-8491-8b83c97f2da4",
           "text": "Document conversation about recommendations re physical activity",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">=",
-              "answerInteger": 50
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [

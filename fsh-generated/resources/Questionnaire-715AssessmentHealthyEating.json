@@ -57,20 +57,61 @@
       ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "e2942894-5537-47a6-ab43-06eb6761f9b5",
+              "text": "Is there anything that you are worried about with your child's feeding/eating?",
+              "type": "choice",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+                  "operator": "<=",
+                  "answerInteger": 5
+                }
+              ],
+              "answerValueSet": "#YesNo"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "69d92a26-95ac-4556-94da-5b0e09940bfd",
+              "text": "Is there anything that you are worried about with your child's eating?",
+              "type": "choice",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+                  "operator": ">",
+                  "answerInteger": 5
+                }
+              ],
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -97,57 +138,7 @@
                     "code": "Y",
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
                   }
-                }
-              ]
-            }
-          ],
-          "linkId": "e2942894-5537-47a6-ab43-06eb6761f9b5",
-          "text": "Is there anything that you are worried about with your child's feeding/eating?",
-          "type": "choice",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ],
-          "answerValueSet": "#YesNo"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "d88432dd-6d8d-4eea-bdb9-5aa39d44ee6d",
-              "text": "Details",
-              "type": "text",
-              "repeats": false,
-              "enableWhen": [
+                },
                 {
                   "question": "69d92a26-95ac-4556-94da-5b0e09940bfd",
                   "operator": "=",
@@ -156,27 +147,21 @@
                     "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
                   }
                 }
-              ]
+              ],
+              "enableBehavior": "any"
             }
           ],
-          "linkId": "69d92a26-95ac-4556-94da-5b0e09940bfd",
-          "text": "Is there anything that you are worried about with your child's eating?",
-          "type": "choice",
+          "linkId": "9ac8c78d-9c36-4bf5-8c6e-e48109902dfa",
+          "text": "Child eating concerns",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 12
             }
-          ],
-          "answerValueSet": "#YesNo",
-          "enableBehavior": "all"
+          ]
         },
         {
           "extension": [
@@ -271,20 +256,27 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "646302e9-d384-4943-99bc-11e638641703",
+              "text": "Do you have any worries about your diet or weight?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -315,9 +307,9 @@
               ]
             }
           ],
-          "linkId": "646302e9-d384-4943-99bc-11e638641703",
-          "text": "Do you have any worries about your diet or weight?",
-          "type": "choice",
+          "linkId": "9266b946-74b3-4fc2-91ce-df557692e600",
+          "text": "Diet or weight concerns",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
@@ -325,24 +317,30 @@
               "operator": ">",
               "answerInteger": 12
             }
-          ],
-          "answerValueSet": "#YesNo"
+          ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "6dc96b26-cbc5-4434-8f6b-0260196311c2",
+              "text": "Have you lost weight without trying to in the last three months?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -373,9 +371,9 @@
               ]
             }
           ],
-          "linkId": "6dc96b26-cbc5-4434-8f6b-0260196311c2",
-          "text": "Have you lost weight without trying to in the last three months?",
-          "type": "choice",
+          "linkId": "c4c51d01-7acf-4551-a652-82f9fdf58a6d",
+          "text": "Unintended weight loss",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
@@ -383,8 +381,7 @@
               "operator": ">=",
               "answerInteger": 50
             }
-          ],
-          "answerValueSet": "#YesNo"
+          ]
         },
         {
           "extension": [
@@ -426,7 +423,7 @@
           "repeats": false,
           "enableWhen": [
             {
-              "question": "c1e0184b-d656-4fab-a478-ca3235ab2c1c",
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 5
             }
@@ -479,20 +476,27 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "12a41538-5dbd-4c1d-af69-52c59c48b1a9",
+              "text": "Are there any issues about availability of food?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -523,11 +527,10 @@
               ]
             }
           ],
-          "linkId": "12a41538-5dbd-4c1d-af69-52c59c48b1a9",
-          "text": "Are there any issues about availability of food?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "#YesNo"
+          "linkId": "71e39493-f0b0-4074-934b-604155b349e1",
+          "text": "Food availability issues",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [
