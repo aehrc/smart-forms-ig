@@ -31,6 +31,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 // some linkIds maintained from full assessment questionnaire
 * item[+]
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "14a9fb5f-5b0e-4862-b143-08a11cd3ebf0"
   * text = "Substance use, including tobacco"
   * type = #group
@@ -48,6 +49,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%PrePopQuery.entry[1].resource.entry.resource.valueCodeableConcept.coding"
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
       * text = "Smoking status"
       * type = #choice
@@ -56,11 +58,22 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never smoked"
       * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Smoker"
       * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-Smoker"
-      * answerOption[+].valueCoding = http://snomed.info/sct#48031000119106 "Quit ≥12 months"
-      * answerOption[+].valueCoding = http://snomed.info/sct#735128000 "Quit <12 months"
       * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Environmental exposure to tobacco smoke (home, car, etc)"
       * answerOption[+].valueString = "Wants to quit"
       * answerOption[+].valueString = "Other tobacco use"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "96dc7c22-d003-459c-8a56-f6cd182fc077"
+      * text = "Quit status"
+      * type = #choice
+      * repeats = false
+      * enableWhen[+]
+        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
+        * operator = #=
+        * answerCoding = http://snomed.info/sct#8517006
+      * answerOption[+].valueCoding = http://snomed.info/sct#48031000119106 "Quit ≥12 months"
+      * answerOption[+].valueCoding = http://snomed.info/sct#735128000 "Quit <12 months"
+      
     * item[+]
       * linkId = "9e86387d-1be4-4c26-9047-9dd6b03e1ee0"
       * text = "How many?"
@@ -73,15 +86,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
-        * answerCoding = http://snomed.info/sct#48031000119106
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
         * answerCoding = http://snomed.info/sct#8517006
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerCoding = http://snomed.info/sct#735128000
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
@@ -89,7 +94,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * enableBehavior = #any
     * item[+]
       * linkId = "32e71641-f660-4ca2-af99-dff8917f07be"
-      * text = "How long since start?"
+      * text = "How long as a smoker?"
       * type = #string
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
@@ -98,40 +103,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
-        * answerCoding = http://snomed.info/sct#48031000119106
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
         * answerCoding = http://snomed.info/sct#8517006
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerCoding = http://snomed.info/sct#735128000
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerString = "Wants to quit"
-      * enableBehavior = #any
-    * item[+]
-      * linkId = "51593f4b-316e-4615-8be8-f855283d4783"
-      * text = "How long since quit?"
-      * type = #string
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerCoding = http://snomed.info/sct#77176002
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerCoding = http://snomed.info/sct#48031000119106
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerCoding = http://snomed.info/sct#8517006
-      * enableWhen[+]
-        * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * operator = #=
-        * answerCoding = http://snomed.info/sct#735128000
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=

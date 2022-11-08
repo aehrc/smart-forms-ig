@@ -42,6 +42,19 @@
   ],
   "item": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "tab",
+                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
+              }
+            ]
+          }
+        }
+      ],
       "item": [
         {
           "item": [
@@ -52,6 +65,17 @@
                   "valueExpression": {
                     "language": "text/fhirpath",
                     "expression": "%PrePopQuery.entry[1].resource.entry.resource.valueCodeableConcept.coding"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
                   }
                 }
               ],
@@ -83,6 +107,50 @@
                 },
                 {
                   "valueCoding": {
+                    "code": "16090371000119103",
+                    "system": "http://snomed.info/sct",
+                    "display": "Environmental exposure to tobacco smoke (home, car, etc)"
+                  }
+                },
+                {
+                  "valueString": "Wants to quit"
+                },
+                {
+                  "valueString": "Other tobacco use"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "96dc7c22-d003-459c-8a56-f6cd182fc077",
+              "text": "Quit status",
+              "type": "choice",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "8517006",
+                    "system": "http://snomed.info/sct"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
                     "code": "48031000119106",
                     "system": "http://snomed.info/sct",
                     "display": "Quit ≥12 months"
@@ -94,19 +162,6 @@
                     "system": "http://snomed.info/sct",
                     "display": "Quit <12 months"
                   }
-                },
-                {
-                  "valueCoding": {
-                    "code": "16090371000119103",
-                    "system": "http://snomed.info/sct",
-                    "display": "Environmental exposure to tobacco smoke (home, car, etc)"
-                  }
-                },
-                {
-                  "valueString": "Wants to quit"
-                },
-                {
-                  "valueString": "Other tobacco use"
                 }
               ]
             },
@@ -128,23 +183,7 @@
                   "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
                   "operator": "=",
                   "answerCoding": {
-                    "code": "48031000119106",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
                     "code": "8517006",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "735128000",
                     "system": "http://snomed.info/sct"
                   }
                 },
@@ -158,7 +197,7 @@
             },
             {
               "linkId": "32e71641-f660-4ca2-af99-dff8917f07be",
-              "text": "How long since start?",
+              "text": "How long as a smoker?",
               "type": "string",
               "enableWhen": [
                 {
@@ -173,68 +212,7 @@
                   "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
                   "operator": "=",
                   "answerCoding": {
-                    "code": "48031000119106",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
                     "code": "8517006",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "735128000",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerString": "Wants to quit"
-                }
-              ],
-              "enableBehavior": "any"
-            },
-            {
-              "linkId": "51593f4b-316e-4615-8be8-f855283d4783",
-              "text": "How long since quit?",
-              "type": "string",
-              "enableWhen": [
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "77176002",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "48031000119106",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "8517006",
-                    "system": "http://snomed.info/sct"
-                  }
-                },
-                {
-                  "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "735128000",
                     "system": "http://snomed.info/sct"
                   }
                 },
