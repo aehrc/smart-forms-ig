@@ -48,7 +48,7 @@
           "valueExpression": {
             "name": "weight",
             "language": "text/fhirpath",
-            "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='ee7a7fe3-cd6a-44c5-97c0-24f777f6dbf7').answer.value"
+            "expression": "item.item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2136abeb-d75d-475d-9cc7-eeda8d131b95').answer.value"
           }
         },
         {
@@ -56,7 +56,7 @@
           "valueExpression": {
             "name": "height",
             "language": "text/fhirpath",
-            "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2d68889b-88c1-4c6d-8b00-db4178dc1f52').answer.value"
+            "expression": "item.item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2d68889b-88c1-4c6d-8b00-db4178dc1f52').answer.value"
           }
         },
         {

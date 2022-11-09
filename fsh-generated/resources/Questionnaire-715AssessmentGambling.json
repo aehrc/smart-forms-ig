@@ -57,20 +57,27 @@
       ],
       "item": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "a233c01e-a72e-474b-9a26-bab1504491fa",
+              "text": "Have you or someone close to you ever had issues with gambling?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
             {
               "extension": [
                 {
@@ -101,11 +108,10 @@
               ]
             }
           ],
-          "linkId": "a233c01e-a72e-474b-9a26-bab1504491fa",
-          "text": "Have you or someone close to you ever had issues with gambling?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "#YesNo"
+          "linkId": "fb489c43-f311-41f5-9d6a-1b61748e165f",
+          "text": "Gambling issues",
+          "type": "group",
+          "repeats": false
         },
         {
           "extension": [

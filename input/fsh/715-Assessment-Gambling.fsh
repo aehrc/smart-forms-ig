@@ -40,12 +40,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #>
     * answerInteger = 12 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "a233c01e-a72e-474b-9a26-bab1504491fa"
-    * text = "Have you or someone close to you ever had issues with gambling?"
-    * type = #choice
+    * linkId = "fb489c43-f311-41f5-9d6a-1b61748e165f"
+    * text = "Gambling issues"
+    * type = #group
     * repeats = false
-    * answerValueSet = "#YesNo"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "a233c01e-a72e-474b-9a26-bab1504491fa"
+      * text = "Have you or someone close to you ever had issues with gambling?"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "d1b68cfc-77cf-464e-83ce-0e8517bed9f3"

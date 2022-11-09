@@ -145,7 +145,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "f00def30-35dd-401a-9a38-12602bd3b8b1"
     * text = "Provide details of identified problems"
     * type = #text
-    * repeats = false  
+    * repeats = false 
 
 /* experimental table of medical history
   * item[+]
