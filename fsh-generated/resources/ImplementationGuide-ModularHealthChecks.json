@@ -40,14 +40,6 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/MyPatient"
-        },
-        "name": "MyPatient",
-        "description": "An example profile of the Patient resource.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/AboriginalTorresStraitIslander"
         },
         "name": "Aboriginal and/or Torres Strait Islander",
@@ -405,14 +397,6 @@
         "name": "715 Patient Details",
         "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
         "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "Patient/PatientExample"
-        },
-        "name": "PatientExample",
-        "description": "An example of a patient with a license to krill.",
-        "exampleCanonical": "https://aehrc.csiro.au/fhir/StructureDefinition/MyPatient"
       },
       {
         "reference": {
