@@ -52,7 +52,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "4c3427ce-062f-4f62-b566-2decb506a9cb"
       * text = "Details"
       * type = #text
@@ -71,7 +70,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * operator = #<=
       * answerInteger = 24
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "9e991b80-7080-40d5-9ad9-447dc47e3a68"
     * text = "Consider conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text
@@ -87,7 +85,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee"
     * text = "Health priorities, actions and follow-up"
     * type = #text

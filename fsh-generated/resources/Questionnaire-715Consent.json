@@ -133,19 +133,6 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "b7d116f9-0425-4cf1-8cde-fbf4dfaee550",
               "text": "Relationship to child",
               "type": "string",
@@ -197,19 +184,6 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "43517c44-5cd2-4d9a-9f18-d6bf8124f4ae",
               "text": "Who/details",
               "type": "text",
@@ -248,57 +222,18 @@
           "required": true
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "0f92eb2d-4629-4215-96f8-46722a2efa73",
           "text": "Doctor",
           "type": "string",
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "8b94a129-3aab-4d13-bb6d-7a748f5c41e5",
           "text": "Nurse",
           "type": "string",
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "2a517291-e2f1-4f66-ad1f-ae5b091d2f8a",
           "text": "Aboriginal and/or Torres Strait Islander Health Worker / Health Practitioner",
           "type": "string",

@@ -113,19 +113,6 @@
               ]
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "468770e4-af95-4377-8af5-280deb585e01",
               "text": "Details",
               "type": "text",
@@ -331,19 +318,6 @@
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "8dcdc04c-7655-4b47-88eb-8425f0cdc0d0",
           "text": "Health priorities, actions and follow-up",
           "type": "text",

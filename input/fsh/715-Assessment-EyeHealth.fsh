@@ -63,7 +63,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #>
         * answerInteger = 12 
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "468770e4-af95-4377-8af5-280deb585e01"
       * text = "Details"
       * type = #text
@@ -165,7 +164,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
         * answerOption[+].valueCoding = $SCT#95726001 "Corneal scarring"
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "8dcdc04c-7655-4b47-88eb-8425f0cdc0d0"
     * text = "Health priorities, actions and follow-up"
     * type = #text

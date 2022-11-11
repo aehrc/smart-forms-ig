@@ -76,19 +76,6 @@
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "3e689aeb-69a1-4a9b-93bd-50377511dd9b",
           "text": "Health priorities, actions and follow-up",
           "type": "text",

@@ -241,7 +241,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * operator = #<=
       * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "fcbfa6e1-c101-4675-969d-aa11027859c2"
     * text = "Health priorities, actions and follow-up"
     * type = #text

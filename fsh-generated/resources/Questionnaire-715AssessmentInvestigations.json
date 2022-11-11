@@ -55,6 +55,17 @@
           }
         }
       ],
+      "linkId": "918f7f32-cdaf-4742-b33a-8254eda2d8bd",
+      "text": "Investigations",
+      "type": "group",
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": ">=",
+          "answerInteger": 12
+        }
+      ],
       "item": [
         {
           "linkId": "740cbc59-08e3-41e8-bc00-de22c1ad45a0",
@@ -110,34 +121,10 @@
           "type": "text"
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "96a8d946-6078-4c85-9de8-3bf18d2c8150",
           "text": "Health priorities, actions and follow-up",
           "type": "text",
           "repeats": false
-        }
-      ],
-      "linkId": "918f7f32-cdaf-4742-b33a-8254eda2d8bd",
-      "text": "Investigations",
-      "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">=",
-          "answerInteger": 12
         }
       ]
     }

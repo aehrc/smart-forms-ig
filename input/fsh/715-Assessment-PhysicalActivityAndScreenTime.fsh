@@ -59,7 +59,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "26707b9a-4e3d-4063-a890-7ec2ff02ced1"
       * text = "Details"
       * type = #text
@@ -86,7 +85,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "13040f64-5cbf-4592-a683-c03527c64ac6"
       * text = "Details"
       * type = #text
@@ -113,7 +111,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "57fa51e3-11c5-43f1-bdf0-73b2b48414c3"
       * text = "Details"
       * type = #text
@@ -123,7 +120,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "a9aaba01-5f11-4d4e-ad39-40b6bef745da"
     * text = "Document conversation about age-appropriate recommendations re physical activity and screen time"
     * type = #text
@@ -134,7 +130,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "b2269be8-3ea5-494c-9368-06912b629789"
     * text = "Document conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text
@@ -154,7 +149,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"
     * text = "Health priorities, actions and follow-up"
     * type = #text
@@ -185,7 +179,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "fd6beb79-ffc3-4879-913b-f42b0ec930ba"
       * text = "Details"
       * type = #text
@@ -195,7 +188,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "eb326905-3709-4088-8491-8b83c97f2da4"
     * text = "Document conversation about recommendations re physical activity"
     * type = #text
@@ -207,7 +199,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "25b8b8fd-adb1-48ab-aeae-528603668c4b"
     * text = "Health priorities, actions and follow-up"
     * type = #text

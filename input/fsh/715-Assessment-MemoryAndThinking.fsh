@@ -52,7 +52,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "69985e2e-4619-42fa-a111-e6fb3118ef74"
       * text = "Details"
       * type = #text
@@ -74,7 +73,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "43d2cb6c-29a7-4293-a6c8-87a228a82e19"
       * text = "Details"
       * type = #text
@@ -84,7 +82,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "4ebb3c30-936b-4932-a330-f1e643b5ccd4"
     * text = "If any concerns are raised and/or high risk for cognitive impairment identified, follow up with cognitive screening (eg clock test, GPCOG, KICA-Cog, MMSE)"
     * type = #text
@@ -97,7 +94,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "1f0e7fde-e964-4f36-9151-dbdc5e145f94"
     * text = "Health priorities, actions and follow-up"
     * type = #text

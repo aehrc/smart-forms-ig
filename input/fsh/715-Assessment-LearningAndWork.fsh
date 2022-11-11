@@ -62,7 +62,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNoNA"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "18bdfa42-9845-4c6e-b737-843b14d54641"
       * text = "Details"
       * type = #text
@@ -84,7 +83,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNoNA"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "1c648524-558e-4d24-bd83-c9f5cd35e97b"
       * text = "Details"
       * type = #text
@@ -102,7 +100,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNoNA"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Details"
       * linkId = "749a4e1e-35ab-4f37-ab28-cb3f0830bb2a"
       * text = "Details (occupation including occupational hazards, study, training, disability, etc)"
@@ -110,7 +107,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "3569e514-a74b-4343-b31b-3395e58d991a"
     * text = "Health priorities, actions and follow-up"
     * type = #text
@@ -140,7 +136,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Details"
       * linkId = "794fc001-6799-4a51-9a80-f2ed7c685a42"
       * text = "Details (occupation including occupational hazards, study, training, disability, etc)"
@@ -148,7 +143,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "ed6f7800-e22a-4639-9d11-faf845513500"
     * text = "Health priorities, actions and follow-up"
     * type = #text

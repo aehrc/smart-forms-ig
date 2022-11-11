@@ -115,7 +115,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #group
     * repeats = false
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * extension[sdc-questionnaire-shortText].valueString = "Quantity and frequency of substance use" 
       * linkId = "ea73d52c-f831-46be-a45d-2c42250a5210"
       * text = "Quantity and frequency of:\n- alcohol\n- caffeine (coffee, soft drinks, iced coffee)\n- cannabis/yarndi/gunja\nother substance use: IVDU, methamphetamine, opiates, solvents, other"
@@ -127,7 +126,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * text = "details"
         * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "f8e1cc1f-f1a1-4eb3-8255-77d600f52831"
     * text = "Health priorities, actions and follow-up"
     * type = #text

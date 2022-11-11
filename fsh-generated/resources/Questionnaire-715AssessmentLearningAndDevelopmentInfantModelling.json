@@ -72,21 +72,13 @@
                   }
                 }
               ],
+              "linkId": "c55ecbfd-b38f-42b0-86bb-94cd0c6ffaea",
+              "text": "Is there anything that you are worried about with your child's development?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo",
               "item": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "text-box",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
                   "linkId": "714a512a-8319-463e-a677-2a44afc0292a",
                   "text": "Details",
                   "type": "text",
@@ -102,12 +94,7 @@
                     }
                   ]
                 }
-              ],
-              "linkId": "c55ecbfd-b38f-42b0-86bb-94cd0c6ffaea",
-              "text": "Is there anything that you are worried about with your child's development?",
-              "type": "choice",
-              "repeats": false,
-              "answerValueSet": "#YesNo"
+              ]
             }
           ],
           "linkId": "8dd21e7d-7c3d-4efe-982b-fe5c5948781f",
@@ -131,21 +118,13 @@
                   }
                 }
               ],
+              "linkId": "e757f62e-be25-4c2c-9056-85ab9ee1ef0d",
+              "text": "Is there anything that you are worried about with your child's behaviour?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo",
               "item": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "text-box",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
                   "linkId": "4f72d71d-6587-40a5-8bd0-e02540c16f65",
                   "text": "Details",
                   "type": "text",
@@ -161,12 +140,7 @@
                     }
                   ]
                 }
-              ],
-              "linkId": "e757f62e-be25-4c2c-9056-85ab9ee1ef0d",
-              "text": "Is there anything that you are worried about with your child's behaviour?",
-              "type": "choice",
-              "repeats": false,
-              "answerValueSet": "#YesNo"
+              ]
             }
           ],
           "linkId": "7cd3c9d7-61cf-42ba-bc52-ad801c643846",
@@ -190,21 +164,13 @@
                   }
                 }
               ],
+              "linkId": "21548530-ada4-495d-a132-172eb7b6e8cf",
+              "text": "Is there anything that you are worried about with your child's sleep?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo",
               "item": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "text-box",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
                   "linkId": "45c0647a-63e1-48b8-9f01-c653aabba554",
                   "text": "Details",
                   "type": "text",
@@ -220,12 +186,7 @@
                     }
                   ]
                 }
-              ],
-              "linkId": "21548530-ada4-495d-a132-172eb7b6e8cf",
-              "text": "Is there anything that you are worried about with your child's sleep?",
-              "type": "choice",
-              "repeats": false,
-              "answerValueSet": "#YesNo"
+              ]
             }
           ],
           "linkId": "69b325cd-35e7-41d4-88b9-8c69b524a1f3",
@@ -234,19 +195,6 @@
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
@@ -273,19 +221,6 @@
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
             {
               "extension": [

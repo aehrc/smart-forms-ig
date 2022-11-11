@@ -52,7 +52,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "714a512a-8319-463e-a677-2a44afc0292a"
         * text = "Details"
         * type = #text
@@ -74,7 +73,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "4f72d71d-6587-40a5-8bd0-e02540c16f65"
         * text = "Details"
         * type = #text
@@ -96,7 +94,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "45c0647a-63e1-48b8-9f01-c653aabba554"
         * text = "Details"
         * type = #text
@@ -107,7 +104,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
           * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "c932cb2d-ca61-4a90-b64e-fc9d3570e1e9"
     * text = "What childcare/early learning centre/kindergarten does your child go to? How often?"
     * type = #text
@@ -118,7 +114,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7d491dd8-fd03-41b4-8ba3-ea00ad0a74a1"
     * text = "How often does your child miss childcare/early learning centre/kindergarten?"
     * type = #text

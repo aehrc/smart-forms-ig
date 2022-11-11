@@ -64,17 +64,6 @@
                 "language": "text/fhirpath",
                 "expression": "iif(%patient.name.where(use = 'official').exists(),%patient.name.where(use = 'official').first().select(given.first() & ' ' & family),%patient.name.text.first())"
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
             }
           ],
           "linkId": "17596726-34cf-4133-9960-7081e1d63558",
@@ -103,7 +92,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age"
+                "expression": "iif(today().toString().substring(4,4).toInteger > %patient.birthDate.toString().substring(4,4).toInteger, today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
               }
             }
           ],
@@ -194,19 +183,6 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
@@ -240,19 +216,6 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
@@ -286,46 +249,6 @@
           ]
         },
         {
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "cc20ce96-af06-4cd7-aa9b-c2601a6169ad",
-              "text": "Name of parent/primary carer",
-              "type": "string",
-              "repeats": false
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "372d79bb-9d0b-42d2-a98c-cbe332bd3745",
-              "text": "Relationship to child",
-              "type": "string",
-              "repeats": true
-            }
-          ],
           "linkId": "06737e46-e880-4037-9a2c-bcd278cd70ba",
           "text": "Parents/primary carer/s details",
           "type": "group",
@@ -335,6 +258,20 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 12
+            }
+          ],
+          "item": [
+            {
+              "linkId": "cc20ce96-af06-4cd7-aa9b-c2601a6169ad",
+              "text": "Name of parent/primary carer",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "linkId": "372d79bb-9d0b-42d2-a98c-cbe332bd3745",
+              "text": "Relationship to child",
+              "type": "string",
+              "repeats": true
             }
           ]
         },
@@ -375,17 +312,6 @@
                     "language": "text/fhirpath",
                     "expression": "%patient.address.select(line.first() & ' ' & line.skip(1).first() & ' ' & line.skip(2).first())"
                   }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
                 }
               ],
               "linkId": "2fee2d51-7828-4178-b8c1-35edd32ba338",
@@ -408,17 +334,6 @@
                   "valueExpression": {
                     "language": "text/fhirpath",
                     "expression": "%patient.address.city"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
                   }
                 }
               ],
@@ -480,17 +395,6 @@
                   }
                 },
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                },
-                {
                   "url": "http://hl7.org/fhir/StructureDefinition/regex",
                   "valueString": "matches('^[0-9]{4}$')"
                 },
@@ -526,17 +430,6 @@
                 "language": "text/fhirpath",
                 "expression": "%patient.telecom.where(system = 'phone' and use = 'home').value"
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
             }
           ],
           "linkId": "9541f0b0-f5ba-4fe7-a8e9-ad003cef897b",
@@ -551,17 +444,6 @@
               "valueExpression": {
                 "language": "text/fhirpath",
                 "expression": "%patient.telecom.where(system = 'phone' and use = 'mobile').value"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
               }
             }
           ],
@@ -580,17 +462,6 @@
                     "language": "text/fhirpath",
                     "expression": "%patient.contact.where(relationship.coding.code = 'C').name.where(use='usual').select(given.first() & ' ' & family)"
                   }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
                 }
               ],
               "linkId": "d7f2dd75-20c8-480f-8c22-71d604ebee8d",
@@ -599,19 +470,6 @@
               "repeats": false
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "aa35d559-f45b-4d35-9453-dd02e4a790f3",
               "text": "Relationship to child",
               "type": "string",
@@ -625,19 +483,6 @@
               ]
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "27099697-d6d1-42c0-bb0a-5e9ff7372a96",
               "text": "Relationship to patient",
               "type": "string",
@@ -657,17 +502,6 @@
                   "valueExpression": {
                     "language": "text/fhirpath",
                     "expression": "%patient.contact.where(relationship.coding.code = 'C').telecom.value"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
                   }
                 }
               ],
@@ -694,17 +528,6 @@
                   }
                 },
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                },
-                {
                   "url": "http://hl7.org/fhir/StructureDefinition/regex",
                   "valueString": "matches('^[0-9]{10}$')"
                 }
@@ -724,17 +547,6 @@
                   }
                 },
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                },
-                {
                   "url": "http://hl7.org/fhir/StructureDefinition/regex",
                   "valueString": "matches('^[0-9]{1}$')"
                 }
@@ -751,17 +563,6 @@
                   "valueExpression": {
                     "language": "text/fhirpath",
                     "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').period.end.toString()"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
                   }
                 }
               ],
@@ -784,17 +585,6 @@
                 "language": "text/fhirpath",
                 "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='PEN').value"
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
             }
           ],
           "linkId": "c1e4e967-c0aa-4280-b5d4-ab1f375ed9ac",
@@ -810,17 +600,6 @@
               "valueExpression": {
                 "language": "text/fhirpath",
                 "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='HC').value"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
               }
             }
           ],
@@ -900,19 +679,6 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "04e50521-dc85-4744-b7ab-6f8682aacb11",
               "text": "My Aged Care Number",
               "type": "string",
@@ -964,19 +730,6 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "7379a0fd-d95b-4ecb-a781-9f43d1394f10",
               "text": "NDIS Number",
               "type": "string",
@@ -1021,19 +774,6 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "241f5fca-f61a-49bd-8972-52613c0e6d15",
               "text": "Number of children",
               "type": "integer",
@@ -1050,19 +790,6 @@
               "repeats": false
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "74ce4c60-31d6-4e78-9056-579937379451",
               "text": "Number of children in your care",
               "type": "integer",
@@ -1120,22 +847,9 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "4c14b158-3ae4-4994-8446-76e02640702c",
               "text": "Details",
-              "type": "string",
+              "type": "text",
               "enableWhen": [
                 {
                   "question": "a08271f1-194b-4fe9-91f9-4f3398858eb0",
@@ -1184,22 +898,9 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "b9991e7e-ce03-465d-b4b0-5a1725b24e02",
               "text": "Details",
-              "type": "string",
+              "type": "text",
               "enableWhen": [
                 {
                   "question": "d05558fb-a3cc-4bd6-b803-b672b36b9c51",
@@ -1248,19 +949,6 @@
               "answerValueSet": "#YesNoNA"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "6733d6ec-5b6b-4ee2-a21e-0e9474c2b22b",
               "text": "Details",
               "type": "text",
@@ -1297,19 +985,6 @@
                   "answerValueSet": "#YesNoNA"
                 },
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "text-box",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
                   "linkId": "83518215-7151-4365-b745-d7464bbb9528",
                   "text": "Discussed today",
                   "type": "text",
@@ -1344,19 +1019,6 @@
                   "answerValueSet": "#YesNoNA"
                 },
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "text-box",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
                   "linkId": "c4bc2d84-e411-488d-9c0d-761f0377a026",
                   "text": "Discussed today",
                   "type": "text",

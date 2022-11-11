@@ -64,7 +64,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerOption[+].valueString = "Declined"
       * answerOption[+].valueString = "Next due" 
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "4e0c55a0-c559-45fd-b165-5aaea3451423"
       * text = "Cervical screening details"
       * type = #text
@@ -86,7 +85,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerOption[+].valueString = "Declined"
       * answerOption[+].valueString = "Next due" 
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "b63a03c8-2c7b-46a5-8f13-ebc7fb8b91ee"
       * text = "Breast screening details"
       * type = #text
@@ -108,7 +106,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerOption[+].valueString = "Declined"
       * answerOption[+].valueString = "Next due" 
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "0d59513c-7a77-4752-9c4e-492a54412731"
       * text = "Bowel cancer screening details"
       * type = #text
@@ -116,7 +113,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "70f82c4b-d1f9-44d5-9903-bd7097799c05"
     * text = "Health priorities, actions and follow-up"
     * type = #text

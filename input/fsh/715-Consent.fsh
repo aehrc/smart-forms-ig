@@ -76,7 +76,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNoNA"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "b7d116f9-0425-4cf1-8cde-fbf4dfaee550"
       * text = "Relationship to child"
       * type = #string // should be a coded answer - possibly add a constrained answerValueSet https://healthterminologies.gov.au/fhir/ValueSet/related-person-relationship-type-1. Prototype uses http://snomed.info/sct?fhir_vs=refset/32570591000036107
@@ -98,7 +97,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNoNA"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "43517c44-5cd2-4d9a-9f18-d6bf8124f4ae"
       * text = "Who/details"
       * type = #text
@@ -117,19 +115,16 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * required = true
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "0f92eb2d-4629-4215-96f8-46722a2efa73"
     * text = "Doctor"
     * type = #string
     * repeats = false
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "8b94a129-3aab-4d13-bb6d-7a748f5c41e5"
     * text = "Nurse"
     * type = #string
     * repeats = false
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "2a517291-e2f1-4f66-ad1f-ae5b091d2f8a"
     * text = "Aboriginal and/or Torres Strait Islander Health Worker / Health Practitioner"
     * type = #string

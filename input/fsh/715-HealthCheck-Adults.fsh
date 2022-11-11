@@ -38,11 +38,11 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "weight"
     * language = #text/fhirpath
-    * expression = "item.item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2136abeb-d75d-475d-9cc7-eeda8d131b95').answer.value"
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2136abeb-d75d-475d-9cc7-eeda8d131b95').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "height"
     * language = #text/fhirpath
-    * expression = "item.item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2d68889b-88c1-4c6d-8b00-db4178dc1f52').answer.value"
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2d68889b-88c1-4c6d-8b00-db4178dc1f52').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "female"
     * language = #text/fhirpath
@@ -50,7 +50,7 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "age"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='c1e0184b-d656-4fab-a478-ca3235ab2c1c').answer.value"
+    * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "cvdAge"
     * language = #text/fhirpath
@@ -62,7 +62,7 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "smoker"
     * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').answer.value.code='77176002', 1, 0)"
+    * expression = "iif(item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.code='77176002', 1, 0)"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "totalCh"
     * language = #text/fhirpath
@@ -137,7 +137,7 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
     * expression = "(1 - (%cvdU.exp()*-1).exp()) * 100"
   // end variables
   
-  * item[+]
+ /* * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "iif(today().toString().substring(4,4).toInteger > %patient.birthDate.toString().substring(4,4).toInteger, today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
@@ -145,6 +145,7 @@ Description: "Root questionnaire for Aboriginal and Torres Strait Islander Healt
     * linkId = "c1e0184b-d656-4fab-a478-ca3235ab2c1c"
     * text = "Age of patient"
     * type = #integer
+    */
   // About The Health Check
   * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/715-AboutTheHealthCheck|0.1.0"

@@ -89,7 +89,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * answerValueSet = "#YesNo"
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "08e8ca54-9af8-4028-be83-aab20bccecc3"
     * text = "Immunisations due"
     * type = #text
@@ -107,7 +106,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "c8da01ec-de58-46e3-81a1-2c49aed8c28e"
       * text = "Details"
       * type = #text
@@ -118,7 +116,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "bcd1c9f2-889e-41e5-8c2b-a70221c5cec5"
     * text = "Health priorities, actions and follow-up"
     * type = #text

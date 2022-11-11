@@ -68,7 +68,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerInteger = 5
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "f6907808-3e42-4206-9bf8-ca4082ea4814"
       * text = "Details"
       * type = #text
@@ -83,7 +82,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * enableBehavior = #any    
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "ff6a46e6-0812-4718-a854-489b24805925"
     * text = "Breastfeeding history"
     * type = #text
@@ -98,7 +96,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "b5f748d2-1874-4949-a7df-6e233f03135d"
     * text = "Bottle feeding history"
     * type = #text
@@ -130,7 +127,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "1d5c3354-6780-4b6a-b9af-7a17b0386781"
       * text = "Details"
       * type = #text
@@ -156,7 +152,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "ce71f016-c5e4-4121-abe5-fe0c974c1bba"
       * text = "Details"
       * type = #text
@@ -166,7 +161,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "9f6adf74-f240-41a2-a509-d216d5308911"
     * text = "Document conversation about age-appropriate healthy eating, which could include:\n- current diet\n- transition to solids\n- dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks"
     * type = #text
@@ -181,7 +175,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7a22a4c4-6611-4687-af00-37c80c3f8fc0"
     * text = "Document conversation about health eating which could include:\n- current diet including food and drinks\n- recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
     * type = #text
@@ -208,7 +201,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "92908e91-9453-4d22-99eb-23dad580c1cb"
       * text = "Details"
       * type = #text
@@ -219,7 +211,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "301789b0-8c6a-470d-8787-0ac6597e3bea"
     * text = "Health priorities, actions and follow-up"
     * type = #text

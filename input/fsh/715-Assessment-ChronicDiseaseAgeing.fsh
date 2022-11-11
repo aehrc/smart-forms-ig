@@ -40,7 +40,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #>=
     * answerInteger = 50
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * extension[sdc-questionnaire-shortText].valueString = "Assessment of chronic disease associated with ageing"
     * linkId = "12e244c0-2887-4230-8792-9521d4f1ab33"
     * text = "For older people with chronic disease and/or conditions associated with ageing, consider assessing:\n- Osteoporosis risk\n- Falls risk\n- Balance, coordination and mobility\n- Pain\n- Nutrition\n- Regularity of chronic disease management and review"
@@ -53,7 +52,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7292070b-8944-4a40-bcf6-9aaf1721e986"
     * text = "Health priorities, actions and follow-up"
     * type = #text

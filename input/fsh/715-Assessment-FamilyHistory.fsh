@@ -36,7 +36,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * type = #group
   * repeats = false
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "532e09ea-2c2d-48c6-81f8-e23380b329a0"
     * text = "Provide relevant family history information"
     * type = #text
@@ -51,7 +50,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * extension[sdc-questionnaire-shortText].valueString = "Provide relevant family history information"
     * linkId = "df5b2081-a373-48ee-acab-96225dad3c1d"
     * text = "Provide relevant family history information (including diabetes, heart disease, cancer, mental health)"
@@ -68,7 +66,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "49ee4583-c608-41d4-a1e9-c06cf4292369"
     * text = "Health priorities, actions and follow-up"
     * type = #text

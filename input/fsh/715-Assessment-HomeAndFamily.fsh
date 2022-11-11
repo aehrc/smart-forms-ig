@@ -41,7 +41,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #>
     * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "29bb209f-6dfc-4ed0-8b8d-741016c0ac61"
     * text = "Who do you live with?"
     * type = #text
@@ -64,7 +63,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "476dae02-d0e8-4128-81a1-7ad71dd06e97"
       * text = "Details"
       * type = #text
@@ -86,7 +84,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "9bd5f571-8cbf-4c25-975c-5fc8395b75f5"
       * text = "Details"
       * type = #text
@@ -97,7 +94,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#N
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "08d2e80e-3bb4-4f67-8b1c-090b1ace225a"
     * text = "Health priorities, actions and follow-up"
     * type = #text

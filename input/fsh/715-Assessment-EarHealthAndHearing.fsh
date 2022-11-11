@@ -52,7 +52,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "297114f4-8c3f-4916-b840-c38ea14d37b1"
       * text = "Details"
       * type = #text
@@ -78,7 +77,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "30dc1581-f6b7-49f0-be09-3902178a495f"
       * text = "Details"
       * type = #text
@@ -104,7 +102,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "36a3967c-e79a-49a7-8022-ac9561c4e656"
       * text = "Details"
       * type = #text
@@ -130,7 +127,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "d72dacb8-a9b3-483b-ae24-8b062873b2cb"
       * text = "Details"
       * type = #text
@@ -261,20 +257,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerInteger = 12
       * enableBehavior = #all
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "a0d1413f-31e5-4b29-a00b-235f50f91cf7"
         * text = "Left ear"
         * type = #text
         * repeats = false
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
         * linkId = "6423348a-943f-41e5-b4f2-ef5a34e56414"
         * text = "Right ear"
         * type = #text
         * repeats = false
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "ac87b23a-b022-4d62-9e82-1c56583bca34"
     * text = "Health priorities, actions and follow-up"
     * type = #text

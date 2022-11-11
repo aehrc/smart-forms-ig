@@ -37,7 +37,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * type = #group
   * repeats = false
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "dcf182c0-a2bf-46ac-a19b-72e4d24ef24d"
     * text = "What are the important things for you in this health check today?"
     * type = #text
@@ -49,7 +48,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
       
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "a0c06f8d-3210-480b-9031-7b5eb5bf1dda"
     * text = "Is there anything you are worried about?"
     * type = #text
@@ -64,7 +62,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "96f3396e-f5f8-4347-8692-9abdecb97768"
     * text = "Is there anything that you are worried about with your child's health or wellbeing?"
     * type = #text
@@ -110,7 +107,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "35b3f6d8-2907-4134-ae55-1e321b908f70"
     * text = "Do you have any specific health goals? Is there anything in particular about your health and wellbeing that you would like to improve?"
     * type = #text
@@ -126,7 +122,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
         
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7cd424e5-7672-4e99-8a99-30b1fb3043fd"
     * text = "Health priorities, actions and follow-up"
     * type = #text

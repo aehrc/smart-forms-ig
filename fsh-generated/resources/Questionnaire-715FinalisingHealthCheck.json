@@ -249,19 +249,6 @@
               "type": "string"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "text-box",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e",
               "definition": "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.title",
               "text": "Recall",
@@ -274,19 +261,6 @@
           "repeats": true
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "text-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
           "linkId": "7202e1d0-c5eb-4613-9c03-414610054784",
           "text": "Patient actions",
           "type": "text"

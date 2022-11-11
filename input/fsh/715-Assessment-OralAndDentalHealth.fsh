@@ -63,7 +63,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #>
         * answerInteger = 12
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "cf949305-5ff7-4767-b946-7a50efd21cfc"
       * text = "Details"
       * type = #text
@@ -99,13 +98,11 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #group
     * repeats = false
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "6247ab4c-41cb-4e77-b028-c9c2a8c7da91"
       * text = "Examination findings"
       * type = #text
       * repeats = false
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "79e09f4d-dac6-4088-baa0-d95dc658fb0b"
       * text = "Document conversation about oral health and care of teeth"
       * type = #text
@@ -117,7 +114,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * type = #display
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "875574fa-9769-42ca-8381-9e80c3e5233d"
     * text = "Health priorities, actions and follow-up"
     * type = #text

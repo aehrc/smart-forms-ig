@@ -131,13 +131,11 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "recall-subject"
       * type = #string
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e"
       * definition = "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.title"
       * text = "Recall"
       * type = #text
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7202e1d0-c5eb-4613-9c03-414610054784"
     * text = "Patient actions"
     * type = #text

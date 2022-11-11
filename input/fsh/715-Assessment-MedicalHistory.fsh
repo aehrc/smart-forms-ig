@@ -141,7 +141,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = true
     * answerValueSet = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistory"
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "f00def30-35dd-401a-9a38-12602bd3b8b1"
     * text = "Provide details of identified problems"
     * type = #text
@@ -191,7 +190,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 */
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "62774152-8a6e-4449-af9f-87bdce8b9bf5"
     * text = "Health priorities, actions and follow-up"
     * type = #text

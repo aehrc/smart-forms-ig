@@ -40,7 +40,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #>
     * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "b3c510a7-bfd1-4ebe-8755-9f05e7a742ba"
     * text = "How have you been feeling lately?"
     * type = #text
@@ -51,7 +50,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * extension[sdc-questionnaire-shortText].valueString = "Ask about depression and complete risk assessment"
     * linkId = "b4245702-afe5-4e4e-a102-1d3ceb4ad7c2"
     * text = "If indicated, ask about depression (consider screening tools, eg aPHQ-9, K5 or K10) and complete risk assessment"
@@ -63,7 +61,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "6a99da48-366b-40c9-97ec-d0f2d52964a8"
     * text = "Explore other mental health concerns as indicated"
     * type = #text
@@ -75,7 +72,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "db9a8650-42a2-4bd3-8066-7e09394120d5"
     * text = "Health priorities, actions and follow-up"
     * type = #text

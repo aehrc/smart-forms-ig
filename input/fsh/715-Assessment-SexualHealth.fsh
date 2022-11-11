@@ -62,7 +62,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "d7b92cad-4aa8-47d3-975c-92563f132325"
       * text = "Details"
       * type = #text
@@ -72,7 +71,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * extension[sdc-questionnaire-shortText].valueString = "Consider discussing items relevant to age/sex/gender"
     * linkId = "0fba3972-faa3-4f40-940c-c2f1c9b55329"
     * text = "Consider discussing as relevant to age/sex/gender: \n- menstruation (including risk of anaemia)\n- current sexual activity\n- contraception\n- safe sex practice (eg use of condoms)\n- sexually transmitted infection symptoms and screening\n- blood-borne virus screening"
@@ -80,7 +78,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "b41572ba-cf36-4cec-addf-cb0b47fea63f"
     * text = "Health priorities, actions and follow-up"
     * type = #text
@@ -115,7 +112,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "5148c6c6-c99f-480d-bb05-569064ba7118"
       * text = "Details"
       * type = #text
@@ -145,13 +141,11 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #date
       * repeats = false
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "862fc298-5b5e-4a46-badc-900c6ba1ff50"
       * text = "Details"
       * type = #text
       * repeats = false
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * extension[sdc-questionnaire-shortText].valueString = "Consider discussing items relevant to age/sex/gender"
     * linkId = "39b02169-ea34-4af9-aa35-1c47f7f39333"
     * text = "Consider discussing as relevant to age/sex/gender:\n- contraception\n- menstruation\n- sexually transmitted infection symptoms and screening\n- blood-borne virus screening\n- continence\n- menopause\n- erectile dysfunction"
@@ -159,7 +153,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "efd0735c-c379-471f-83bb-93b0392093aa"
     * text = "Health priorities, actions and follow-up"
     * type = #text
@@ -189,7 +182,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "f93fe768-9215-4a15-9376-686e9530ea79"
       * text = "Details"
       * type = #text
@@ -211,7 +203,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * answerValueSet = "#YesNo"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "4fc14fd9-4c7e-48ec-90c0-c406523400fa"
       * text = "Details"
       * type = #text
@@ -221,7 +212,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * extension[sdc-questionnaire-shortText].valueString = "Consider discussing items relevant to age/sex/gender"
     * linkId = "8d75d1f1-290b-41fc-8e32-ad0681c650bb"
     * text = "Consider discussing as relevant to age/sex/gender:\n- menopause\n- erectile dysfunction\n- prostatic symptoms"
@@ -229,7 +219,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
   
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "e9936322-e6fe-4cf7-ab61-22846a8fbb95"
     * text = "Health priorities, actions and follow-up"
     * type = #text

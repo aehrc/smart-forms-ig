@@ -41,7 +41,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * operator = #<=
     * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "818c9aaa-1b00-4c76-9971-49df74edff7a"
     * text = "Is there anything that you are worried about with your child's development?"
     * type = #text
@@ -56,7 +55,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "e7ef5692-25e6-4598-aa08-d0107e21fe31"
     * text = "Is there anything that you are worried about with your child's learning?"
     * type = #text
@@ -71,7 +69,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "fc658147-3fad-42a0-9c10-c14fbd30775e"
     * text = "Is there anything that you are worried about with your child's behaviour?"
     * type = #text
@@ -82,7 +79,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "582fcfe5-c7a4-4847-9881-815452b9eafe"
     * text = "Is there anything that you are worried about with your child's sleep?"
     * type = #text
@@ -93,7 +89,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "335f4c10-a6e6-455b-8a7e-2962158f5183"
     * text = "What childcare/early learning centre/kindergarten does your child go to? How often?"
     * type = #text
@@ -108,7 +103,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "e5b886ad-840e-4f01-af04-55c5ea7f215d"
     * text = "How often does your child miss childcare/early learning centre/kindergarten?"
     * type = #text
@@ -123,7 +117,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "f0e0ea74-cffc-46a5-8554-67e8fcc667f1"
     * text = "Is there anything you are worried about at school?"
     * type = #text
@@ -138,7 +131,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "73a40641-04c9-4da4-813e-a8b9ae3a2ecf"
     * text = "How often does your child miss school?"
     * type = #text
@@ -153,7 +145,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "47f09b28-9eea-4f8c-8d3c-7efef0504728"
     * text = "Is your child having any difficulties making friends?"
     * type = #text
@@ -168,7 +159,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "9371dddc-49f4-4a8f-a9dc-a0e128f99636"
     * text = "Are there any other concerns about your child's learning and development"
     * type = #text
@@ -185,7 +175,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "5ab80929-5901-431d-bf68-67d532f5fa58"
     * text = "Health priorities, actions and follow-up"
     * type = #text

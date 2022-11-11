@@ -68,7 +68,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #>
         * answerInteger = 12
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
       * linkId = "b9332f4f-ed6c-4e87-a467-13d7e83bd550"
       * text = "Details"
       * type = #text
@@ -94,7 +93,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * operator = #>
       * answerInteger = 12
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "206f4e35-3b87-4252-97fc-c78bf9fb6f5d"
     * text = "Document conversation about sun protection as appropriate (ie sunscreen, hats, shade)."
     * type = #text
@@ -105,14 +103,12 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "7cec4c99-90da-40bc-86a6-f77abb093933"
     * text = "General skin examination findings"
     * type = #text
     * repeats = false
 
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#text-box
     * linkId = "88d23fa4-df88-43ab-a1d0-69315d55c3bf"
     * text = "Health priorities, actions and follow-up"
     * type = #text
