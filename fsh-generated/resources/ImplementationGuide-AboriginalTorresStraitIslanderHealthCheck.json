@@ -1,10 +1,10 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "ModularHealthChecks",
-  "url": "https://aehrc.csiro.au/fhir/ImplementationGuide/ModularHealthChecks",
+  "id": "AboriginalTorresStraitIslanderHealthCheck",
+  "url": "https://aehrc.csiro.au/fhir/ImplementationGuide/AboriginalTorresStraitIslanderHealthCheck",
   "version": "0.1.0",
-  "name": "ModularHealthChecks",
-  "title": "Modular Health Checks",
+  "name": "AboriginalTorresStraitIslanderHealthCheck",
+  "title": "Aboriginal And Torres Strait Islander Health Check",
   "status": "draft",
   "publisher": "CSIRO",
   "contact": [
@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "packageId": "ModularHealthChecks",
+  "packageId": "AboriginalTorresStraitIslanderHealthCheck",
   "fhirVersion": [
     "4.0.1"
   ],
@@ -376,27 +376,18 @@
       },
       {
         "reference": {
-          "reference": "Questionnaire/715HealthCheckAdults"
-        },
-        "name": "715 Health Check for Adults",
-        "description": "Root questionnaire for Aboriginal and Torres Strait Islander Health Checks - Adults (25-49 years)",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "Questionnaire/715HealthCheckOlderPeople"
-        },
-        "name": "715 Health Check for Older People",
-        "description": "Root questionnaire for Aboriginal and Torres Strait Islander Health Checks - Older People",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Questionnaire/715PatientDetails"
         },
         "name": "715 Patient Details",
         "description": "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/715-Assembled"
+        },
+        "exampleBoolean": false,
+        "name": "Aboriginal and Torres Strait Islander Health Check (Assembled)"
       },
       {
         "reference": {
