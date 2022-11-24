@@ -69,7 +69,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
-    * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"
+    * linkId = "e24d487b-3dd4-4a6d-a58e-85dfa8ce3f36"
     * text = "Screen time concerns"
     * type = #group
     * repeats = false
@@ -95,7 +95,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
-    * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"
+    * linkId = "e9b6ac74-d810-4350-8b41-8ea2e4bd14fc"
     * text = "Physical activity or screen time concerns"
     * type = #group
     * repeats = false
@@ -149,7 +149,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * text = "Details"
       * type = #display
   * item[+]
-    * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"
+    * linkId = "ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2"
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false
@@ -167,7 +167,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerInteger = 50
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
-    * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"
+    * linkId = "015d986f-89cf-45b0-a753-9a3ab0c4b05b"
     * text = "Physical activity concerns"
     * type = #group
     * repeats = false

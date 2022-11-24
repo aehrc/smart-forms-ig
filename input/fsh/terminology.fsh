@@ -347,7 +347,7 @@ Description: "The Medical History Short List for Adolescents value set includes 
 
 
 ValueSet: MedicalHistoryShortListAdultsAndOlderPeople
-Id: MedicalHistoryShortListAdults
+Id: MedicalHistoryShortListAdultsAndOlderPeople
 Title: "Medical History Short List for Adults and Older People"
 Description: "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People."
 * ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults"

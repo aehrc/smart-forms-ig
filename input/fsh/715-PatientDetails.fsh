@@ -90,7 +90,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "c8852db9-efe9-4102-96db-cef3a8be0a5f"
     * text = "Parents/primary carer/s"
     * type = #choice
-    * repeats = true /*is repeating best way to allow selection of "MTH and FTH"?*/   
+    * repeats = true
     * answerValueSet[+] = "#PrimaryCarerParentGrandparent"
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable

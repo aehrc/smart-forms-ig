@@ -17,7 +17,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
-* contained[+] = MedicalHistoryShortListAdults
+* contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
 
 
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
