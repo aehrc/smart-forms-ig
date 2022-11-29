@@ -47,6 +47,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e2942894-5537-47a6-ab43-06eb6761f9b5"
       * text = "Is there anything that you are worried about with your child's feeding/eating?"
       * type = #choice
@@ -58,6 +59,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "69d92a26-95ac-4556-94da-5b0e09940bfd"
       * text = "Is there anything that you are worried about with your child's eating?"
       * type = #choice
@@ -121,6 +123,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "646302e9-d384-4943-99bc-11e638641703"
       * text = "Do you have any worries about your diet or weight?"
       * type = #choice
@@ -146,6 +149,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 50
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "6dc96b26-cbc5-4434-8f6b-0260196311c2"
       * text = "Have you lost weight without trying to in the last three months?"
       * type = #choice
@@ -195,6 +199,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false 
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "12a41538-5dbd-4c1d-af69-52c59c48b1a9"
       * text = "Are there any issues about availability of food?"
       * type = #choice

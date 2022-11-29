@@ -47,6 +47,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "829de3f8-eea9-4139-8a18-47c16182ac9e"
       * text = "Does your child have any skin problems?"
       * type = #choice
@@ -58,6 +59,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "353f528b-3518-4fb3-a0bd-3ed5ae6b036a"
       * text = "Is there anything that you are worried about with your skin?"
       * type = #choice
@@ -83,6 +85,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * enableBehavior = #any
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "80e4349f-6d89-4017-8632-9a947e50e947"
     * text = "Do you use sun protection?"
     * type = #choice

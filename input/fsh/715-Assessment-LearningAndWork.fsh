@@ -56,6 +56,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 25
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "0cd9e27b-1e98-41af-917b-0c6ee21c0819"
       * text = "Are you studying at school/uni?"
       * type = #choice
@@ -77,6 +78,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 25
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "4a81afc0-f0da-49e1-b8cc-c19cb0f5f4e9"
       * text = "Are you studying?"
       * type = #choice
@@ -94,6 +96,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "aaead1e2-ea54-4979-be0a-647e61ab59a9"
       * text = "Are you working?"
       * type = #choice
@@ -130,6 +133,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "4c68ff3e-0e73-4ea2-b295-5057deaa590e"
       * text = "Are you working?"
       * type = #choice

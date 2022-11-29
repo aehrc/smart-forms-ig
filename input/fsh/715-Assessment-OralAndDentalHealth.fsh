@@ -42,6 +42,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e4cf4f15-7eed-4aa1-9f9d-61ccd659685c"
       * text = "Is there anything that you are worried about with your child's teeth or mouth?"
       * type = #choice
@@ -53,6 +54,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "cb287506-9a64-4ee8-8f24-ba7cb77756f3"
       * text = "Is there anything that you are worried about with your teeth?"
       * type = #choice
@@ -83,6 +85,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "ffe81bde-608f-4e3f-98ae-39d0b9884dcc"
     * text = "Dentures?"
     * type = #choice

@@ -87,6 +87,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "2655e0e1-fe4b-431e-87af-30d4ff1aca76"
       * text = "Does your child have a Child Health Book?"
       * type = #choice
@@ -94,6 +95,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerValueSet = "#YesNo"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "a30d0101-06ce-4481-b142-9fa2c091fe4f"
       * text = "Is it up to date?"
       * type = #choice

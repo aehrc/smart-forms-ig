@@ -57,6 +57,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "a7542da8-aad6-4a80-8b5b-806ca11d68d2"
       * text = "Do you have stable housing?"
       * type = #choice
@@ -78,6 +79,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "6f73d1ee-dd8e-419a-9142-ede367200e3b"
       * text = "Do you feel safe at home?"
       * type = #choice

@@ -38,6 +38,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * repeats = false
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
     * text = "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
     * extension[sdc-questionnaire-shortText].valueString = "Does your child take any regular medications?"
@@ -50,6 +51,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerValueSet = "#YesNo"
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
     * text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
     * extension[sdc-questionnaire-shortText].valueString = "Do you take any regular medications?"

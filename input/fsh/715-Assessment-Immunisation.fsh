@@ -83,6 +83,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * enableBehavior = #all
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "69a4a459-196b-4931-8336-ea76ab3fccd1"
     * text = "Immunisations up to date and recorded on Australian Immunisation Register (as per Australian immunisation handbook)?"
     * type = #choice
@@ -100,6 +101,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "9f5787e6-8ece-46a4-8d67-e7c3e14daf18"
       * text = "Vaccines recorded on Australian Immunisation Register?"
       * type = #choice

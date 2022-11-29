@@ -53,6 +53,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "304d0332-9bfd-42dc-a4be-a5122596fb89"
       * text = "Is there anything that you are worried about with your child's level of physical activity?"
       * type = #choice
@@ -79,6 +80,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "465eacce-f9ee-4022-9186-89065cf01ce2"
       * text = "Is there anything that you are worried about with your child's level of screen time?"
       * type = #choice
@@ -105,6 +107,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "08320c7a-831b-4237-95e2-d79aee155b90"
       * text = "Do you have any worries about physical activity or screen time?"
       * type = #choice
@@ -173,6 +176,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "b30d5d21-c6d6-4bb3-aab4-0fdee80b3093"
       * text = "Do you have any worries about physical activity?"
       * type = #choice

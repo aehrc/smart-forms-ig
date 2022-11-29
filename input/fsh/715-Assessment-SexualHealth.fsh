@@ -56,6 +56,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "1d20138a-caf3-4c43-9693-04c08d37a84a"
       * text = "Is there anything that you are worried about in relation to puberty/your sexual health?"
       * type = #choice
@@ -106,6 +107,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e56e79e5-8fbb-43f0-b2a3-018b55750bd0"
       * text = "Is there anything that you are worried about in relation to your sexual health?"
       * type = #choice
@@ -176,6 +178,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "1c40a720-bdb7-4386-a9f6-be82b7349bf7"
       * text = "Consider asking when appropriate: Is there anything that you are worried about in relation to your sexual health?"
       * type = #choice
@@ -197,6 +200,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "64fd0f79-7e09-4934-905d-9bff6715f9ba"
       * text = "Do you have problems with urine leaking?"
       * type = #choice

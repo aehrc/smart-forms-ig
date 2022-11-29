@@ -47,6 +47,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * repeats = false
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "3da318f1-a5dd-4c8f-b258-99d83872a4f2"
     * text = "Eligible for health check"
     * type = #choice

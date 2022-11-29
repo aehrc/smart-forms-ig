@@ -42,6 +42,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "bc49ee24-62a8-4252-a5ee-9c68bfed601c"
       * text = "Is there anything that you are worried about with your child's vision?"
       * type = #choice
@@ -53,6 +54,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "6286346d-c805-4519-8e82-bf364a215c58"
       * text = "Is there anything that you are worried about with your vision?"
       * type = #choice

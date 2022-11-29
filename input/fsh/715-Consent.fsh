@@ -39,6 +39,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * repeats = false
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "d1e1ab3d-1c6c-430b-8ae7-af56b8f0af55"
     * text = "Consent given after discussion of process and benefits of a health check"
     * type = #choice
@@ -50,6 +51,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "7fa8bc57-f3f9-4ddc-bf9b-12a9b9885dbd"
     * text = "Consent given by parent/primary carer after discussion of process and benefits of a health check"
     * type = #choice
@@ -70,6 +72,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 24
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "c72933c7-349f-4fef-94ff-c424c69da6f3"
       * text = "Parent/primary caregiver is present for health check?"
       * type = #choice
@@ -91,6 +94,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "057483ce-f265-46df-a1c5-7a18d492c1ba"
       * text = "Consent given for sharing of information with relevant healthcare providers?"
       * type = #choice

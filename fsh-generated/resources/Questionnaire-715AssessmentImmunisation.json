@@ -132,6 +132,10 @@
                   }
                 ]
               }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+              "valueCode": "horizontal"
             }
           ],
           "linkId": "69a4a459-196b-4931-8336-ea76ab3fccd1",
@@ -160,6 +164,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "9f5787e6-8ece-46a4-8d67-e7c3e14daf18",

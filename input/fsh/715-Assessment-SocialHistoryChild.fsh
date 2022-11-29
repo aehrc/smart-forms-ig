@@ -57,6 +57,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "062f5234-686a-4bf3-afcd-3fcd988afd6c"
       * text = "Have there been any stressful life events that would cause you or your child to be upset?"
       * type = #choice

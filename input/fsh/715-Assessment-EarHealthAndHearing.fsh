@@ -46,6 +46,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "f982c374-f023-4e68-8968-1f1f5d3969ae"
       * text = "Is there anything that you are worried about with your child's listening?"
       * type = #choice
@@ -71,6 +72,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "06c150f8-4d54-4d10-aeff-2ef7567b6812"
       * text = "Is there anything you are worried about with your child's language/talking?"
       * type = #choice
@@ -96,6 +98,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "b326271b-e9b1-45a0-b899-125364833702"
       * text = "Do you notice snoring/noisy breathing at night/while your child is sleeping?"
       * type = #choice
@@ -121,6 +124,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "3e53edc7-c90e-4681-a006-b7a05b91a02c"
       * text = "Is there anything that you are worried about with your hearing?"
       * type = #choice

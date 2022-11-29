@@ -46,6 +46,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "a233c01e-a72e-474b-9a26-bab1504491fa"
       * text = "Have you or someone close to you ever had issues with gambling?"
       * type = #choice

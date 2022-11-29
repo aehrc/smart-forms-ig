@@ -428,7 +428,6 @@ ValueSet: ConditionClinicalStatusCodes
 Id: condition-clinical
 Title: "Condition Clinical Status Codes"
 Description: "Preferred value set for Condition Clinical Status."
-* ^meta.lastUpdated = "2022-05-28T12:47:40.239+10:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #pc

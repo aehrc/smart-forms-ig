@@ -46,6 +46,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e7297156-cfed-4437-b877-c345f744168b"
       * text = "Have there been any particular stressful life events that are impacting on you/your health lately?"
       * type = #choice
