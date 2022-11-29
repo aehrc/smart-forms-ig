@@ -118,7 +118,9 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "ca830916-e2ee-4b24-a4c1-13eee23f8733"
     * text = "Cardiovascular disease risk calculated result"
     // * code = $SCT#827181004 "Risk of cardiovascular disease"
-    * type = #integer     
+    * type = #integer   
+    * repeats = false
+    * readOnly = true  
     * item[+]
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory].valueCodeableConcept = http://hl7.org/fhir/questionnaire-display-category#instructions
       * linkId = "1d0b746d-70a3-4c09-a33b-f67fd6db63a0"
