@@ -49,7 +49,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 // following items require coded answers. Either <|Context values for actions (qualifier value)| or <|Chronic disease monitoring status (finding)|
   * item[+]
     * linkId = "ed15e82b-803a-4d21-9344-9110b57b2313"
-    * text = "Cervical screening (age ≤74 years)"
+    * text = "Cervical screening (age <=74 years)"
     * type = #group
     * repeats = false
     * item[+]
@@ -70,7 +70,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
   * item[+]
     * linkId = "17ff5354-fe9c-429c-a752-c27a871d4ee7"
-    * text = "Breast screening (age ≤74 years)"
+    * text = "Breast screening (age <=74 years)"
     * type = #group
     * repeats = false
     * item[+]
@@ -91,7 +91,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
   * item[+]
     * linkId = "bb5d56e3-efb9-45fe-854d-e4550b327d26"
-    * text = "Bowel cancer screening (age ≤74 years)"
+    * text = "Bowel cancer screening (age <=74 years)"
     * type = #group
     * repeats = false
     * item[+]

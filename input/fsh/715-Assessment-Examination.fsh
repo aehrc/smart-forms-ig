@@ -224,7 +224,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12
   * item[+]
     * linkId = "6c69ee91-f777-494c-bf09-d963773cd4ae"
-    * text = "Newborn examination (if indicated, infant aged ≤6 weeks)"
+    * text = "Newborn examination (if indicated, infant aged <=6 weeks)"
     * type = #text
     * repeats = false
     * enableWhen[+]

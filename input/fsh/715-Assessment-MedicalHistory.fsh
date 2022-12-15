@@ -146,9 +146,9 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #text
     * repeats = false 
 
-/* experimental table of medical history
+// experimental table of medical history
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#htable
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
     * type = #group
@@ -187,7 +187,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * linkId = "18b9e159-2ed7-4047-82b7-deb2a171de4f"
       * text = "Recorded Date"
       * type = #dateTime
-*/
+
 
   * item[+]
     * linkId = "62774152-8a6e-4449-af9f-87bdce8b9bf5"

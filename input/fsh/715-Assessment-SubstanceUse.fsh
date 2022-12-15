@@ -71,7 +71,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
         * answerCoding = http://snomed.info/sct#8517006
-      * answerOption[+].valueCoding = http://snomed.info/sct#48031000119106 "Quit ≥12 months"
+      * answerOption[+].valueCoding = http://snomed.info/sct#48031000119106 "Quit >=12 months"
       * answerOption[+].valueCoding = http://snomed.info/sct#735128000 "Quit <12 months"
       
     * item[+]

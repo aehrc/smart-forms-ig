@@ -59,13 +59,13 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "iif(today().toString().substring(4,4).toInteger > %patient.birthDate.toString().substring(4,4).toInteger, today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
+      * expression = "iif(today().toString().select(substring(5,2) & substring(8,2)).toInteger() > %patient.birthDate.toString().select(substring(5,2) & substring(8,2)).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
     * linkId = "e2a16e4d-2765-4b61-b286-82cfc6356b30"
     * text = "Age"
     * type = #integer
     * repeats = false
   * item[+]
-    /*Is this administrative gender like FHIR or gender identity?*/
+    /*Should this be administrative gender or sex for clinical use?*/
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%patient.gender"
@@ -321,13 +321,15 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * maxLength = 10
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "83814495-3a81-43f4-88df-42186cce516a"
     * text = "Registered for Closing the Gap PBS Co-payment Measure (CTG)"
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNoNA"
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "e63547c6-1623-412f-963f-5f1ebf23563f"
     * text = "Child has a birth certificate"
     * type = #choice
@@ -348,6 +350,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 50
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "7165c072-e3d8-4564-9d1d-d17f6807787c"
       * text = "Registered for My Aged Care"
       * type = #choice
@@ -369,6 +372,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "924b4500-53ac-4c4e-831b-7ab5569ff981"
       * text = "Registered for NDIS"
       * type = #choice
@@ -399,6 +403,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * enableBehavior = #all
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e90b436b-2751-4e07-a40c-adfe951b6528"
       * text = "Do you have children?"
       * type = #choice
@@ -433,6 +438,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 12    
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "a08271f1-194b-4fe9-91f9-4f3398858eb0"
       * text = "Are you responsible for caring for someone else?"
       * type = #choice
@@ -458,6 +464,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * answerInteger = 50   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "d05558fb-a3cc-4bd6-b803-b672b36b9c51"
       * text = "Do you have a carer?"
       * type = #choice
@@ -479,6 +486,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "41210be5-d441-4c44-b9c2-8dd94a44cbb4"
       * text = "Are name and contact details of other key providers (eg case workers, support services) up to date?"
       * type = #choice
@@ -505,6 +513,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * extension[questionnaire-choiceOrientation].valueCode = #horizontal
         * linkId = "036eace9-ea83-46ec-9d01-f2093f710816"
         * text = "Enduring Power of Attorney"
         * type = #choice
@@ -522,6 +531,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * extension[questionnaire-choiceOrientation].valueCode = #horizontal
         * linkId = "b0632039-c12b-4748-9e94-52073590c0ba"
         * text = "Advance Health Directive"
         * type = #choice

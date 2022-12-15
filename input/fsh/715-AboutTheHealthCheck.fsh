@@ -18,13 +18,65 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
+* contained[+] = condition-clinical
 
 
+/*
 * extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
 * extension[sdc-questionnaire-launchContext].extension[type].valueCode = #Patient
 * extension[sdc-questionnaire-launchContext].extension[description].valueString = "The patient that is to be used to pre-populate the form"
 * extension[sdc-questionnaire-sourceQueries].valueReference = Reference(PrePopQuery)
+*/
+// workaround for retaining contained value sets
+* extension[+]
+  * url = "http://keepmyvalueset.hack"
+  * extension[+]
+    * url = "1"
+    * valueReference.reference = "#YesNoNA"
+  * extension[+]
+    * url = "2"
+    * valueReference.reference = "#YesNo"
+  * extension[+]
+    * url = "3"
+    * valueReference.reference = "#MedicalHistory"
+  * extension[+]  
+    * url = "4"
+    * valueReference.reference = "#MedicalHistoryShortListInfants"
+  * extension[+]
+    * url = "5"
+    * valueReference.reference = "#MedicalHistoryShortListPrimarySchool"
+  * extension[+]
+    * url = "6"
+    * valueReference.reference = "#MedicalHistoryShortListAdolescents"
+  * extension[+]
+    * url = "7"
+    * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
+  * extension[+]
+    * url = "8"
+    * valueReference.reference = "#AboriginalTorresStraitIslander"
+  * extension[+]
+    * url = "9"
+    * valueReference.reference = "#condition-clinical"
+
+
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[+]
+    * url = "name"
+    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
+  * extension[+]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[+]
+    * url = "description"
+    * valueString = "The patient that is to be used to pre-populate the form"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
+  * valueCode = #assemble-child
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries"
+  * valueReference = Reference(PrePopQuery)    
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

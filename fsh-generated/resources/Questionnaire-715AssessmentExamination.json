@@ -258,6 +258,7 @@
           "text": "BMI",
           "type": "decimal",
           "repeats": false,
+          "readOnly": true,
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -531,7 +532,7 @@
         },
         {
           "linkId": "6c69ee91-f777-494c-bf09-d963773cd4ae",
-          "text": "Newborn examination (if indicated, infant aged ≤6 weeks)",
+          "text": "Newborn examination (if indicated, infant aged <=6 weeks)",
           "type": "text",
           "repeats": false,
           "enableWhen": [

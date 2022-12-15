@@ -92,7 +92,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "iif(today().toString().substring(4,4).toInteger > %patient.birthDate.toString().substring(4,4).toInteger, today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
+                "expression": "iif(today().toString().select(substring(5,2) & substring(8,2)).toInteger() > %patient.birthDate.toString().select(substring(5,2) & substring(8,2)).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
               }
             }
           ],
@@ -621,6 +621,10 @@
                   }
                 ]
               }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+              "valueCode": "horizontal"
             }
           ],
           "linkId": "83814495-3a81-43f4-88df-42186cce516a",
@@ -636,11 +640,15 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "check-box",
+                    "code": "radio-button",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
               }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+              "valueCode": "horizontal"
             }
           ],
           "linkId": "e63547c6-1623-412f-963f-5f1ebf23563f",
@@ -670,6 +678,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "7165c072-e3d8-4564-9d1d-d17f6807787c",
@@ -721,6 +733,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "924b4500-53ac-4c4e-831b-7ab5569ff981",
@@ -765,6 +781,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "e90b436b-2751-4e07-a40c-adfe951b6528",
@@ -838,6 +858,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "a08271f1-194b-4fe9-91f9-4f3398858eb0",
@@ -889,6 +913,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "d05558fb-a3cc-4bd6-b803-b672b36b9c51",
@@ -940,6 +968,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
                 }
               ],
               "linkId": "41210be5-d441-4c44-b9c2-8dd94a44cbb4",
@@ -976,6 +1008,10 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                      "valueCode": "horizontal"
                     }
                   ],
                   "linkId": "036eace9-ea83-46ec-9d01-f2093f710816",
@@ -1010,6 +1046,10 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                      "valueCode": "horizontal"
                     }
                   ],
                   "linkId": "b0632039-c12b-4748-9e94-52073590c0ba",
