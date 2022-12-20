@@ -10,7 +10,7 @@ Description: "Root questionnaire for the Aboriginal and Torres Strait Islander H
 
 * contained[+] = PrePopQuery
 
-* extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
+* extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-root
 * extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
 * extension[sdc-questionnaire-launchContext].extension[type].valueCode = #Patient
 * extension[sdc-questionnaire-launchContext].extension[description].valueString = "The patient that is to be used to pre-populate the form"

@@ -92,8 +92,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * linkId = "08e8ca54-9af8-4028-be83-aab20bccecc3"
     * text = "Immunisations due"
-    * type = #text
-    * repeats = false
+    * type = #string
+    * repeats = true
   * item[+]
     * linkId = "cc522cb1-b553-48c7-9028-61d15dd60845"
     * text = "Vaccines given today"

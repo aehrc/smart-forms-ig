@@ -72,7 +72,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "033db7b3-80da-43e2-9838-88f3d51e5913"
     * text = "Problems"
     * type = #choice
-    * repeats = false
+    * repeats = true
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<=
@@ -85,7 +85,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "384ab440-10ed-4ac1-89da-cd7d24f87a95"
     * text = "Problems"
     * type = #choice
-    * repeats = false
+    * repeats = true
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
@@ -103,7 +103,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "c24ae0d2-8932-4b87-9b7e-a644b5eb2874"
     * text = "Problems"
     * type = #choice
-    * repeats = false
+    * repeats = true
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>
@@ -121,7 +121,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * linkId = "bba27ef5-05c5-4e9c-bc9f-cf42091e99cb"
     * text = "Problems"
     * type = #choice
-    * repeats = false
+    * repeats = true
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #>

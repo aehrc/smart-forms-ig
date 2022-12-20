@@ -179,7 +179,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
           * linkId = "dedfc83e-7451-404d-bd24-97b1254304eb"
           * text = "Left ear"
           * type = #open-choice
-          * repeats = false
+          * repeats = true
           // potential for coding with additional SCTAU content
           * answerOption[+].valueString = "Clear and intact"
           * answerOption[+].valueString = "Dull and intact"
@@ -197,7 +197,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
           * linkId = "23daa784-4476-447f-8aa2-42933b4490d9"
           * text = "Right ear"
           * type = #open-choice
-          * repeats = false
+          * repeats = true
           // potential for coding with additional SCTAU content
           * answerOption[+].valueString = "Clear and intact"
           * answerOption[+].valueString = "Dull and intact"
@@ -224,7 +224,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
           * linkId = "079df9c5-234c-4129-8769-800dab47a59a"
           * text = "Left ear"
           * type = #open-choice
-          * repeats = false
+          * repeats = true
           // potential for coding with additional SCTAU content
           * answerOption[+].valueString = "Clear and intact"
           * answerOption[+].valueString = "Dull and intact"
@@ -238,7 +238,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
           * linkId = "ce1fc869-a412-4aea-aa53-36e794a14519"
           * text = "Right ear"
           * type = #open-choice
-          * repeats = false
+          * repeats = true
           // potential for coding with additional SCTAU content
           * answerOption[+].valueString = "Clear and intact"
           * answerOption[+].valueString = "Dull and intact"

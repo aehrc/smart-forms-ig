@@ -3,7 +3,7 @@
   "id": "715-Assembled",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2022-12-15T13:37:38.165009"
+    "lastUpdated": "2022-12-20T10:21:06.649970"
   },
   "contained": [
     {
@@ -1331,7 +1331,7 @@
   "subjectType": [
     "Patient"
   ],
-  "date": "2022-12-15T13:37:38.165009",
+  "date": "2022-12-20T10:21:06.649970",
   "publisher": "CSIRO",
   "description": "Aboriginal and Torres Strait Islander Health Checks questionnaire formed from an assembled collection of sub-questionnaires.",
   "item": [
@@ -2371,7 +2371,7 @@
                   "linkId": "aa35d559-f45b-4d35-9453-dd02e4a790f3",
                   "text": "Relationship to child",
                   "type": "string",
-                  "repeats": true,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -2384,7 +2384,7 @@
                   "linkId": "27099697-d6d1-42c0-bb0a-5e9ff7372a96",
                   "text": "Relationship to patient",
                   "type": "string",
-                  "repeats": true,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -3332,7 +3332,7 @@
               "linkId": "033db7b3-80da-43e2-9838-88f3d51e5913",
               "text": "Problems",
               "type": "choice",
-              "repeats": false,
+              "repeats": true,
               "enableWhen": [
                 {
                   "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -3359,7 +3359,7 @@
               "linkId": "384ab440-10ed-4ac1-89da-cd7d24f87a95",
               "text": "Problems",
               "type": "choice",
-              "repeats": false,
+              "repeats": true,
               "enableWhen": [
                 {
                   "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -3392,7 +3392,7 @@
               "linkId": "c24ae0d2-8932-4b87-9b7e-a644b5eb2874",
               "text": "Problems",
               "type": "choice",
-              "repeats": false,
+              "repeats": true,
               "enableWhen": [
                 {
                   "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -3425,7 +3425,7 @@
               "linkId": "bba27ef5-05c5-4e9c-bc9f-cf42091e99cb",
               "text": "Problems",
               "type": "choice",
-              "repeats": false,
+              "repeats": true,
               "enableWhen": [
                 {
                   "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
@@ -7650,7 +7650,7 @@
                           "linkId": "dedfc83e-7451-404d-bd24-97b1254304eb",
                           "text": "Left ear",
                           "type": "open-choice",
-                          "repeats": false,
+                          "repeats": true,
                           "answerOption": [
                             {
                               "valueString": "Clear and intact"
@@ -7705,7 +7705,7 @@
                           "linkId": "23daa784-4476-447f-8aa2-42933b4490d9",
                           "text": "Right ear",
                           "type": "open-choice",
-                          "repeats": false,
+                          "repeats": true,
                           "answerOption": [
                             {
                               "valueString": "Clear and intact"
@@ -7775,7 +7775,7 @@
                           "linkId": "079df9c5-234c-4129-8769-800dab47a59a",
                           "text": "Left ear",
                           "type": "open-choice",
-                          "repeats": false,
+                          "repeats": true,
                           "answerOption": [
                             {
                               "valueString": "Clear and intact"
@@ -7818,7 +7818,7 @@
                           "linkId": "ce1fc869-a412-4aea-aa53-36e794a14519",
                           "text": "Right ear",
                           "type": "open-choice",
-                          "repeats": false,
+                          "repeats": true,
                           "answerOption": [
                             {
                               "valueString": "Clear and intact"
@@ -8407,8 +8407,8 @@
             {
               "linkId": "08e8ca54-9af8-4028-be83-aab20bccecc3",
               "text": "Immunisations due",
-              "type": "text",
-              "repeats": false
+              "type": "string",
+              "repeats": true
             },
             {
               "item": [

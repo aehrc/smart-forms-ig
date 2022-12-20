@@ -247,7 +247,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * linkId = "aa35d559-f45b-4d35-9453-dd02e4a790f3"
       * text = "Relationship to child"
       * type = #string
-      * repeats = true   
+      * repeats = false   
       * enableWhen[+]
         * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
         * operator = #<=
@@ -256,7 +256,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * linkId = "27099697-d6d1-42c0-bb0a-5e9ff7372a96"
       * text = "Relationship to patient"
       * type = #string
-      * repeats = true 
+      * repeats = false 
       * enableWhen[+]
         * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
         * operator = #>
@@ -296,7 +296,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').period.end.toString()"
-      // Probably don't want this card format as not compatible with date datatype * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "MM/YY"
       * linkId = "c520e213-5313-42c3-860a-d30206620290"
       * text = "Expiry"
       * type = #string
