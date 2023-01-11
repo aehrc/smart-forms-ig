@@ -385,7 +385,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "Recalls entered (eg clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations)"
     * type = #group
     * repeats = true
-    * item[+] //confirm why this is required
+    * item[+] //confirm this as a requirement
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath

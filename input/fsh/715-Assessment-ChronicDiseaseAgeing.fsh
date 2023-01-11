@@ -41,8 +41,19 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * answerInteger = 50
   * item[+]
     * extension[sdc-questionnaire-shortText].valueString = "Assessment of chronic disease associated with ageing"
+    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</p>
+    <ul>
+      <li>Osteoporosis risk</li>
+      <li>Falls risk</li>
+      <li>Balance, coordination and mobility</li>
+      <li>Pain</li>
+      <li>Nutrition</li>
+      <li>Regularity of chronic disease management and review</li>
+    </ul>
+    </div>"
     * linkId = "12e244c0-2887-4230-8792-9521d4f1ab33"
-    * text = "For older people with chronic disease and/or conditions associated with ageing, consider assessing:\n- Osteoporosis risk\n- Falls risk\n- Balance, coordination and mobility\n- Pain\n- Nutrition\n- Regularity of chronic disease management and review"
+    * text = "For older people with chronic disease and/or conditions associated with ageing, consider assessing: Osteoporosis risk; Falls risk; Balance, coordination and mobility; Pain; Nutrition; Regularity of chronic disease management and review"
     * type = #text
     * repeats = false
     * item[+]

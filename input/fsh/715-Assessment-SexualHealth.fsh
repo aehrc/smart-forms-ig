@@ -72,9 +72,20 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+      <p>Consider discussing as relevant to age/sex/gender:</p>
+      <ul>
+        <li>menstruation (including risk of anaemia)</li>
+        <li>current sexual activity</li>
+        <li>contraception</li>
+        <li>safe sex practice (eg use of condoms)</li>
+        <li>sexually transmitted infection symptoms and screening</li>
+        <li>blood-borne virus screening</li>
+      </ul>
+      </div>"
     * extension[sdc-questionnaire-shortText].valueString = "Consider discussing items relevant to age/sex/gender"
     * linkId = "0fba3972-faa3-4f40-940c-c2f1c9b55329"
-    * text = "Consider discussing as relevant to age/sex/gender: \n- menstruation (including risk of anaemia)\n- current sexual activity\n- contraception\n- safe sex practice (eg use of condoms)\n- sexually transmitted infection symptoms and screening\n- blood-borne virus screening"
+    * text = "Consider discussing as relevant to age/sex/gender: menstruation (including risk of anaemia); current sexual activity; contraception; safe sex practice (eg use of condoms); sexually transmitted infection symptoms and screening; blood-borne virus screening"
     * type = #text
     * repeats = false
 
@@ -148,9 +159,21 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #text
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+      <p>Consider discussing as relevant to age/sex/gender:</p>
+      <ul>
+        <li>contraception</li>
+        <li>menstruation</li>
+        <li>sexually transmitted infection symptoms and screening</li>
+        <li>blood-borne virus screening</li>
+        <li>continence</li>
+        <li>menopause</li>
+        <li>erectile dysfunction</li>
+      </ul>
+      </div>"
     * extension[sdc-questionnaire-shortText].valueString = "Consider discussing items relevant to age/sex/gender"
     * linkId = "39b02169-ea34-4af9-aa35-1c47f7f39333"
-    * text = "Consider discussing as relevant to age/sex/gender:\n- contraception\n- menstruation\n- sexually transmitted infection symptoms and screening\n- blood-borne virus screening\n- continence\n- menopause\n- erectile dysfunction"
+    * text = "Consider discussing as relevant to age/sex/gender: contraception; menstruation; sexually transmitted infection symptoms and screening; blood-borne virus screening; continence; menopause; erectile dysfunction"
     * type = #text
     * repeats = false
 
@@ -216,9 +239,17 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+      <p>Consider discussing as relevant to age/sex/gender:</p>
+      <ul>
+        <li>menopause</li>
+        <li>erectile dysfunction</li>
+        <li>prostatic symptoms</li>
+      </ul>
+	    </div>"
     * extension[sdc-questionnaire-shortText].valueString = "Consider discussing items relevant to age/sex/gender"
     * linkId = "8d75d1f1-290b-41fc-8e32-ad0681c650bb"
-    * text = "Consider discussing as relevant to age/sex/gender:\n- menopause\n- erectile dysfunction\n- prostatic symptoms"
+    * text = "Consider discussing as relevant to age/sex/gender: menopause; erectile dysfunction; prostatic symptoms"
     * type = #text
     * repeats = false
   

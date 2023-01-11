@@ -115,9 +115,18 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * type = #group
     * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+        <p>Quantity and frequency of:</p>
+        <ul>
+          <li>alcohol</li>
+          <li>caffeine (coffee, soft drinks, iced coffee)</li>
+          <li>cannabis/yarndi/gunja</li>
+          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>
+        </ul>
+	      </div>"
       * extension[sdc-questionnaire-shortText].valueString = "Quantity and frequency of substance use" 
       * linkId = "ea73d52c-f831-46be-a45d-2c42250a5210"
-      * text = "Quantity and frequency of:\n- alcohol\n- caffeine (coffee, soft drinks, iced coffee)\n- cannabis/yarndi/gunja\nother substance use: IVDU, methamphetamine, opiates, solvents, other"
+      * text = "Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other"
       * type = #text
       * repeats = false
       * item[+]
