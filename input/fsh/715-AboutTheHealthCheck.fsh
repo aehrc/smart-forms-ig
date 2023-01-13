@@ -76,12 +76,12 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * valueCode = #assemble-child
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries"
-  * valueReference = Reference(PrePopQuery)    
+  * valueReference = Reference(PrePopQuery)
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
-//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+
 * url = "http://www.health.gov.au/assessments/mbs/715/715AboutTheHealthCheck"
 * name = "715AboutTheHealthCheck"
 * title = "715 About The Health Check"

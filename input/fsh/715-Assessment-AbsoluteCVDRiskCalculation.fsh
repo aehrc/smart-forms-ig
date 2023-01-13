@@ -107,10 +107,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * text = "ECG LVH"
     * type = #boolean
     * repeats = false
-      //  * item[=].item[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-instruction"
-      // * item[=].item[=].extension[=].valueString = "auscvdrisk.com.au/risk-calculator/"
   * item[+]
-    // * extension[sdc-questionnaire-observationExtract].valueBoolean = true
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "CVD Risk Score"
       * language = #text/fhirpath

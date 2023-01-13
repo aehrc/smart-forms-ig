@@ -161,7 +161,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
     * linkId = "15200593-ab79-47ec-babe-4fdcb2327737"
     * text = "Blood pressure"
-    * type = #integer
+    * type = #string
     * repeats = false
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
