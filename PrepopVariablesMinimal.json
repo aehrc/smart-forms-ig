@@ -74,7 +74,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/variable",
             "valueExpression": [
                 {
-                    "name": "ObsBloodPressurePanel",
+                    "name": "ObsBloodPressure",
                     "language": "application/x-fhir-query",
                     "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
                 }

@@ -48,7 +48,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[2].resource.entry.resource.value.value"
+      * expression = "%ObsBodyHeight.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
     * linkId = "7df41f88-6511-4793-a26a-d96fcd89fbba"
     * text = "Length/Height"
@@ -66,7 +66,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[2].resource.entry.resource.value.value"
+      * expression = "%ObsBodyHeight.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
     * linkId = "2d68889b-88c1-4c6d-8b00-db4178dc1f52"
     * text = "Height"
@@ -84,7 +84,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[4].resource.entry.resource.value.value"
+      * expression = "%ObsBodyWeight.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
     * linkId = "2136abeb-d75d-475d-9cc7-eeda8d131b95"
     * text = "Weight"
@@ -98,7 +98,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[6].resource.entry.resource.value.value"
+      * expression = "%ObsBMI.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "BMI calculation"
@@ -121,7 +121,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[25].resource.entry.resource.value.value"
+      * expression = "%ObsHeadCircumference.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
     * linkId = "e9bc555b-39f7-4ab7-9998-c2e691c3dd85"
     * text = "Head circumference"
@@ -139,7 +139,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[3].resource.entry.resource.value.value"
+      * expression = "%ObsWaistCircumference.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
     * linkId = "f8cb01db-7ac7-4794-a276-773e3f1520c2"
     * text = "Waist circumference"
@@ -157,7 +157,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[7].resource.entry.resource.select(component[0].value.select(value.toString()) + '/' + component[1].value.select(value.toString()) )"
+      * expression = "%ObsBloodPressure.entry.resource.select(component[0].value.select(value.toString()) + '/' + component[1].value.select(value.toString()) )"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
     * linkId = "15200593-ab79-47ec-babe-4fdcb2327737"
     * text = "Blood pressure"
@@ -175,7 +175,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[5].resource.entry.resource.value.value"
+      * expression = "%ObsHeartRate.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
     * linkId = "4eb7887a-fb87-4130-a246-20a5284f47fd"
     * text = "Heart rate"

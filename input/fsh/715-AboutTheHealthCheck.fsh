@@ -20,14 +20,6 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
 * contained[+] = condition-clinical
 
-
-/*
-* extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
-* extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
-* extension[sdc-questionnaire-launchContext].extension[type].valueCode = #Patient
-* extension[sdc-questionnaire-launchContext].extension[description].valueString = "The patient that is to be used to pre-populate the form"
-* extension[sdc-questionnaire-sourceQueries].valueReference = Reference(PrePopQuery)
-*/
 // workaround for retaining contained value sets
 * extension[+]
   * url = "http://keepmyvalueset.hack"
