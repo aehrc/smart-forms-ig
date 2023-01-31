@@ -1,0 +1,52 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "SmartFormsServer",
+  "url": "xxx-endpoint/metadata",
+  "name": "SmartFormsServerSystemCapabilities",
+  "description": "Capabilities of the Smart Forms Server instance.",
+  "status": "draft",
+  "experimental": true,
+  "date": "2023-01-31",
+  "kind": "instance",
+  "imports": [
+    "http://hapi.com"
+  ],
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json",
+    "xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Questionnaire",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "operation": [
+            {
+              "name": "populate",
+              "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-populate"
+            },
+            {
+              "name": "assemble",
+              "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "transaction"
+        }
+      ]
+    }
+  ]
+}
