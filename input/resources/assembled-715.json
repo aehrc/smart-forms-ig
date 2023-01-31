@@ -3487,7 +3487,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[21].resource.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                    "expression": "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
                   }
                 },
                 {
@@ -3539,7 +3539,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%PrePopQuery.entry[21].resource.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                        "expression": "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
                       }
                     }
                   ],
@@ -3565,7 +3565,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%PrePopQuery.entry[21].resource.entry.resource.clinicalStatus.coding.code"
+                        "expression": "%Condition.entry.resource.clinicalStatus.coding.code"
                       }
                     }
                   ],
@@ -3591,7 +3591,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%PrePopQuery.entry[21].resource.entry.resource.onsetDateTime"
+                        "expression": "%Condition.entry.resource.onsetDateTime"
                       }
                     }
                   ],
@@ -3616,7 +3616,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%PrePopQuery.entry[21].resource.entry.resource.recordedDate"
+                        "expression": "%Condition.entry.resource.recordedDate"
                       }
                     }
                   ],
@@ -6474,7 +6474,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%PrePopQuery.entry[1].resource.entry.resource.valueCodeableConcept.coding"
+                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding"
                       }
                     },
                     {
@@ -8704,7 +8704,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[2].resource.entry.resource.value.value"
+                    "expression": "%ObsBodyHeight.entry.resource.value.value"
                   }
                 },
                 {
@@ -8753,7 +8753,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[2].resource.entry.resource.value.value"
+                    "expression": "%ObsBodyHeight.entry.resource.value.value"
                   }
                 },
                 {
@@ -8802,7 +8802,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[4].resource.entry.resource.value.value"
+                    "expression": "%ObsBodyWeight.entry.resource.value.value"
                   }
                 },
                 {
@@ -8844,7 +8844,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[6].resource.entry.resource.value.value"
+                    "expression": "%ObsBMI.entry.resource.value.value"
                   }
                 },
                 {
@@ -8902,7 +8902,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[25].resource.entry.resource.value.value"
+                    "expression": "%ObsHeadCircumference.entry.resource.value.value"
                   }
                 },
                 {
@@ -8951,7 +8951,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[3].resource.entry.resource.value.value"
+                    "expression": "%ObsWaistCircumference.entry.resource.value.value"
                   }
                 },
                 {
@@ -9000,7 +9000,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[7].resource.entry.resource.select(component[0].value.select(value.toString()) + '/' + component[1].value.select(value.toString()) )"
+                    "expression": "%ObsBloodPressure.entry.resource.select(component[0].value.select(value.toString()) + '/' + component[1].value.select(value.toString()) )"
                   }
                 },
                 {
@@ -9049,7 +9049,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[5].resource.entry.resource.value.value"
+                    "expression": "%ObsHeartRate.entry.resource.value.value"
                   }
                 },
                 {
@@ -9225,7 +9225,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[7].resource.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+                    "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
                   }
                 },
                 {
@@ -9284,7 +9284,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[23].resource.entry.resource.value.value"
+                    "expression": "%ObsTotalCholesterol.entry.resource.value.value"
                   }
                 },
                 {
@@ -9343,7 +9343,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[24].resource.entry.resource.value.value"
+                    "expression": "%ObsHDLCholesterol.entry.resource.value.value"
                   }
                 },
                 {
@@ -9402,7 +9402,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[21].resource.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()"
+                    "expression": "%Condition.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()"
                   }
                 }
               ],

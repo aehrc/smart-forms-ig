@@ -47,7 +47,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[7].resource.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+      * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
     * linkId = "4b98f514-2f6a-41f3-ad9d-185abc68ae34"
     * text = "Systolic Blood Pressure"
@@ -65,7 +65,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]        
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[23].resource.entry.resource.value.value"
+      * expression = "%ObsTotalCholesterol.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
     * linkId = "f11feebc-fc4a-40d5-8481-b87d9f5a89aa"
     * text = "Total Cholesterol"
@@ -83,7 +83,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[24].resource.entry.resource.value.value"
+      * expression = "%ObsHDLCholesterol.entry.resource.value.value"
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
     * linkId = "c47a7fae-0c60-40f8-8426-1019b1f0dd8f"
     * text = "HDL Cholesterol"
@@ -101,7 +101,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%PrePopQuery.entry[21].resource.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()" //type 2 diabetes
+      * expression = "%Condition.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()" //type 2 diabetes
     * linkId = "e8fed84e-6c15-4f62-bc95-cd08033af3f7"
     * text = "Diabetes"
     * type = #boolean

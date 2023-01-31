@@ -277,7 +277,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%PrePopQuery.entry[21].resource.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                "expression": "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
               }
             },
             {
@@ -329,7 +329,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[21].resource.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                    "expression": "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
                   }
                 }
               ],
@@ -355,7 +355,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[21].resource.entry.resource.clinicalStatus.coding.code"
+                    "expression": "%Condition.entry.resource.clinicalStatus.coding.code"
                   }
                 }
               ],
@@ -381,7 +381,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[21].resource.entry.resource.onsetDateTime"
+                    "expression": "%Condition.entry.resource.onsetDateTime"
                   }
                 }
               ],
@@ -406,7 +406,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[21].resource.entry.resource.recordedDate"
+                    "expression": "%Condition.entry.resource.recordedDate"
                   }
                 }
               ],

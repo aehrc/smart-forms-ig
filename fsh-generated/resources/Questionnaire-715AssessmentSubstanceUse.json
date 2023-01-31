@@ -64,7 +64,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%PrePopQuery.entry[1].resource.entry.resource.valueCodeableConcept.coding"
+                    "expression": "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding"
                   }
                 },
                 {
