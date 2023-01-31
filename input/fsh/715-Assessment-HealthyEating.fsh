@@ -166,7 +166,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p>Document conversation about age-appropriate healthy eating, which could include:</p>
+    <div>Document conversation about age-appropriate healthy eating, which could include:</div>
     <ul>
       <li>current diet</li>
       <li>transition to solids</li>
@@ -188,7 +188,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p>Document conversation about health eating which could include:</p>
+    <div>Document conversation about health eating which could include:</div>
     <ul>
       <li>current diet including food and drinks</li>
       <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>

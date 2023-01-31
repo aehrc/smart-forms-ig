@@ -116,7 +116,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-        <p>Quantity and frequency of:</p>
+        <div>Quantity and frequency of:</div>
         <ul>
           <li>alcohol</li>
           <li>caffeine (coffee, soft drinks, iced coffee)</li>

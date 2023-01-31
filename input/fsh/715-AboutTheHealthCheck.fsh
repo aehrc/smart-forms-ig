@@ -19,6 +19,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
 * contained[+] = condition-clinical
+* contained[+] = AboriginalTorresStraitIslander
+* contained[+] = PrimaryCarerParentGrandparent
 
 
 /*
@@ -54,10 +56,13 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
   * extension[+]
     * url = "8"
-    * valueReference.reference = "#AboriginalTorresStraitIslander"
+    * valueReference.reference = "#condition-clinical"
   * extension[+]
     * url = "9"
-    * valueReference.reference = "#condition-clinical"
+    * valueReference.reference = "#AboriginalTorresStraitIslander"
+  * extension[+]
+    * url = "10"
+    * valueReference.reference = "#PrimaryCarerParentGrandparent"
 
 
 * extension[+]

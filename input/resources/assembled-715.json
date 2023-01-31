@@ -3,7 +3,7 @@
   "id": "715-Assembled",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2023-01-13T11:17:18.646374"
+    "lastUpdated": "2023-01-31T13:06:29.926656"
   },
   "contained": [
     {
@@ -1264,13 +1264,19 @@
         {
           "url": "8",
           "valueReference": {
-            "reference": "#AboriginalTorresStraitIslander"
+            "reference": "#condition-clinical"
           }
         },
         {
           "url": "9",
           "valueReference": {
-            "reference": "#condition-clinical"
+            "reference": "#AboriginalTorresStraitIslander"
+          }
+        },
+        {
+          "url": "10",
+          "valueReference": {
+            "reference": "#PrimaryCarerParentGrandparent"
           }
         }
       ]
@@ -1339,7 +1345,7 @@
   "subjectType": [
     "Patient"
   ],
-  "date": "2023-01-13T11:17:18.646374",
+  "date": "2023-01-31T13:06:29.926656",
   "publisher": "CSIRO",
   "description": "Aboriginal and Torres Strait Islander Health Checks questionnaire formed from an assembled collection of sub-questionnaires.",
   "item": [
@@ -5247,7 +5253,7 @@
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</p>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
                 }
               ],
               "item": [
@@ -5781,7 +5787,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Document conversation about age-appropriate healthy eating, which could include:</p>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about age-appropriate healthy eating, which could include:</div>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
                 }
               ],
               "item": [
@@ -5820,7 +5826,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Document conversation about health eating which could include:</p>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
                 }
               ],
               "item": [
@@ -6534,7 +6540,7 @@
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                      "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p>Quantity and frequency of:</p>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
+                      "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
                     },
                     {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -6744,7 +6750,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <p>Consider discussing as relevant to age/sex/gender:</p>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -6917,7 +6923,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <p>Consider discussing as relevant to age/sex/gender:</p>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -7069,7 +7075,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <p>Consider discussing as relevant to age/sex/gender:</p>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",

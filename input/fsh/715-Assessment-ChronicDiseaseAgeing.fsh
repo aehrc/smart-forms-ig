@@ -42,7 +42,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * item[+]
     * extension[sdc-questionnaire-shortText].valueString = "Assessment of chronic disease associated with ageing"
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</p>
+    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>
     <ul>
       <li>Osteoporosis risk</li>
       <li>Falls risk</li>
