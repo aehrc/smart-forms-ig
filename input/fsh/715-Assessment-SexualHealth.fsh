@@ -42,6 +42,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * repeats = false
   * enableWhen[+]
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #>
     * answerInteger = 12
   * enableWhen[+]
@@ -73,7 +77,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-      <p>Consider discussing as relevant to age/sex/gender:</p>
+      <div>Consider discussing as relevant to age/sex/gender:</div>
       <ul>
         <li>menstruation (including risk of anaemia)</li>
         <li>current sexual activity</li>
@@ -160,7 +164,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * repeats = false
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-      <p>Consider discussing as relevant to age/sex/gender:</p>
+      <div>Consider discussing as relevant to age/sex/gender:</div>
       <ul>
         <li>contraception</li>
         <li>menstruation</li>
@@ -240,7 +244,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-      <p>Consider discussing as relevant to age/sex/gender:</p>
+      <div>Consider discussing as relevant to age/sex/gender:</div>
       <ul>
         <li>menopause</li>
         <li>erectile dysfunction</li>

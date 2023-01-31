@@ -38,6 +38,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * repeats = false
   * enableWhen[+]
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #>=
     * answerInteger = 12
   * item[+]
@@ -116,7 +120,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-        <p>Quantity and frequency of:</p>
+        <div>Quantity and frequency of:</div>
         <ul>
           <li>alcohol</li>
           <li>caffeine (coffee, soft drinks, iced coffee)</li>

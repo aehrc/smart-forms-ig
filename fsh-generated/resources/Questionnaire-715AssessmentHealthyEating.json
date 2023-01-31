@@ -338,7 +338,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Document conversation about age-appropriate healthy eating, which could include:</p>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
+              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about age-appropriate healthy eating, which could include:</div>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
             }
           ],
           "item": [
@@ -377,7 +377,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Document conversation about health eating which could include:</p>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
+              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
             }
           ],
           "item": [
@@ -470,7 +470,14 @@
       "linkId": "ae7a3801-9491-4b1f-820c-678236d18f56",
       "text": "Healthy eating",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

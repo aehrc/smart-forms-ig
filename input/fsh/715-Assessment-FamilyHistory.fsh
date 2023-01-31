@@ -35,6 +35,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * text = "Family history"
   * type = #group
   * repeats = false
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
   * item[+]
     * linkId = "532e09ea-2c2d-48c6-81f8-e23380b329a0"
     * text = "Provide relevant family history information"

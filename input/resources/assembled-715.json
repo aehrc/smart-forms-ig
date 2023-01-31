@@ -3,7 +3,7 @@
   "id": "715-Assembled",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2023-01-13T14:52:00.655090"
+    "lastUpdated": "2023-01-31T13:39:18.906133"
   },
   "contained": [
     {
@@ -1264,13 +1264,19 @@
         {
           "url": "8",
           "valueReference": {
-            "reference": "#AboriginalTorresStraitIslander"
+            "reference": "#condition-clinical"
           }
         },
         {
           "url": "9",
           "valueReference": {
-            "reference": "#condition-clinical"
+            "reference": "#AboriginalTorresStraitIslander"
+          }
+        },
+        {
+          "url": "10",
+          "valueReference": {
+            "reference": "#PrimaryCarerParentGrandparent"
           }
         }
       ]
@@ -1339,7 +1345,7 @@
   "subjectType": [
     "Patient"
   ],
-  "date": "2023-01-13T14:52:00.655090",
+  "date": "2023-01-31T13:39:18.906133",
   "publisher": "CSIRO",
   "description": "Aboriginal and Torres Strait Islander Health Checks questionnaire formed from an assembled collection of sub-questionnaires.",
   "item": [
@@ -1619,7 +1625,14 @@
           "linkId": "2e82032a-dc28-45f2-916e-862303d39fe5",
           "text": "About the health check",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -1945,7 +1958,14 @@
           "linkId": "1016f79d-9756-4daf-b6ee-29add134b34f",
           "text": "Consent",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -3222,7 +3242,14 @@
           "linkId": "b3a3eee2-f340-452e-9d05-d1f54f677b81",
           "text": "Current health/patient priorities",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -3613,7 +3640,14 @@
           "linkId": "28d5dbe4-1e65-487c-847a-847f544a6a91",
           "text": "Medical history and current problems",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -3772,7 +3806,14 @@
           "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
           "text": "Regular medications: check if still required, appropriate dose, understanding of medication and adherence",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -3818,7 +3859,14 @@
           "linkId": "d4e4db07-a795-4a30-bd0f-9c109f96a22b",
           "text": "Allergies/adverse reactions",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -3917,7 +3965,14 @@
           "linkId": "01f67f0b-e3be-48d8-a2ad-4c54f469cd13",
           "text": "Family history",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -4040,6 +4095,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
@@ -4185,6 +4245,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
@@ -4345,6 +4410,11 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
               "answerInteger": 12
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
             }
           ]
         },
@@ -4695,6 +4765,11 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 12
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
             }
           ]
         },
@@ -4859,6 +4934,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
@@ -5063,6 +5143,11 @@
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
               "answerInteger": 12
             }
@@ -5219,6 +5304,11 @@
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">=",
               "answerInteger": 50
             }
@@ -5247,7 +5337,7 @@
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</p>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
                 }
               ],
               "item": [
@@ -5291,6 +5381,11 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">=",
               "answerInteger": 50
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
             }
           ]
         },
@@ -5471,6 +5566,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">=",
@@ -5781,7 +5881,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Document conversation about age-appropriate healthy eating, which could include:</p>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about age-appropriate healthy eating, which could include:</div>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
                 }
               ],
               "item": [
@@ -5820,7 +5920,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Document conversation about health eating which could include:</p>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
                 }
               ],
               "item": [
@@ -5913,7 +6013,14 @@
           "linkId": "ae7a3801-9491-4b1f-820c-678236d18f56",
           "text": "Healthy eating",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -6211,6 +6318,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<",
@@ -6534,7 +6646,7 @@
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                      "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p>Quantity and frequency of:</p>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
+                      "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
                     },
                     {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -6584,6 +6696,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">=",
@@ -6670,6 +6787,11 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
               "answerInteger": 12
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
             }
           ]
         },
@@ -6744,7 +6866,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <p>Consider discussing as relevant to age/sex/gender:</p>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -6768,6 +6890,11 @@
           "type": "group",
           "repeats": false,
           "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">",
@@ -6917,7 +7044,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <p>Consider discussing as relevant to age/sex/gender:</p>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -7069,7 +7196,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <p>Consider discussing as relevant to age/sex/gender:</p>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -7394,7 +7521,14 @@
           "linkId": "961da481-1698-4a1d-962b-a9c2185e335a",
           "text": "Eye health",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -7948,7 +8082,14 @@
           "linkId": "de71bbd0-178c-4974-9c75-55d5a48c66f7",
           "text": "Ear health and hearing",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -8147,7 +8288,14 @@
           "linkId": "bde9ab00-a20f-4a7c-9266-11f53f60c65f",
           "text": "Oral and dental health",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -8336,6 +8484,11 @@
           "enableWhen": [
             {
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": "<=",
               "answerInteger": 24
             }
@@ -8508,7 +8661,14 @@
           "linkId": "205677d6-17c7-4285-a7c4-61aa02b6c816",
           "text": "Immunisation",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -9035,7 +9195,14 @@
           "linkId": "c587e3b6-b91a-40dc-9a16-179342d001e9",
           "text": "Examination",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         },
         {
           "extension": [
@@ -9303,6 +9470,11 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">=",
               "answerInteger": 25
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
             }
           ]
         },
@@ -9329,6 +9501,11 @@
               "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
               "operator": ">=",
               "answerInteger": 12
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
             }
           ],
           "item": [
@@ -10339,7 +10516,14 @@
           "linkId": "16971bd2-5494-483d-9713-eda182c47f02",
           "text": "Finalising the health check",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
         }
       ]
     }

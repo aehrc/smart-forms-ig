@@ -268,7 +268,14 @@
       "linkId": "b3a3eee2-f340-452e-9d05-d1f54f677b81",
       "text": "Current health/patient priorities",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

@@ -198,7 +198,14 @@
       "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
       "text": "Regular medications: check if still required, appropriate dose, understanding of medication and adherence",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

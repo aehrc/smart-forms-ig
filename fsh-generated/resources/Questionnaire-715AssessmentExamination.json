@@ -566,7 +566,14 @@
       "linkId": "c587e3b6-b91a-40dc-9a16-179342d001e9",
       "text": "Examination",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

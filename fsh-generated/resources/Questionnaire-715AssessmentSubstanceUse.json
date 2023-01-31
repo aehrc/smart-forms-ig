@@ -236,7 +236,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p>Quantity and frequency of:</p>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
+                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
@@ -286,6 +286,11 @@
       "type": "group",
       "repeats": false,
       "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        },
         {
           "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
           "operator": ">=",

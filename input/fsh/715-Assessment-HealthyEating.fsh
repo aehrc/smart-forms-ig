@@ -36,6 +36,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * text = "Healthy eating"
   * type = #group
   * repeats = false
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
   * item[+]
     * linkId = "9ac8c78d-9c36-4bf5-8c6e-e48109902dfa"
     * text = "Child eating concerns"
@@ -166,7 +170,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p>Document conversation about age-appropriate healthy eating, which could include:</p>
+    <div>Document conversation about age-appropriate healthy eating, which could include:</div>
     <ul>
       <li>current diet</li>
       <li>transition to solids</li>
@@ -188,7 +192,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p>Document conversation about health eating which could include:</p>
+    <div>Document conversation about health eating which could include:</div>
     <ul>
       <li>current diet including food and drinks</li>
       <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>

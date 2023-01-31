@@ -19,6 +19,8 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
 * contained[+] = condition-clinical
+* contained[+] = AboriginalTorresStraitIslander
+* contained[+] = PrimaryCarerParentGrandparent
 
 // workaround for retaining contained value sets
 * extension[+]
@@ -46,10 +48,13 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
     * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
   * extension[+]
     * url = "8"
-    * valueReference.reference = "#AboriginalTorresStraitIslander"
+    * valueReference.reference = "#condition-clinical"
   * extension[+]
     * url = "9"
-    * valueReference.reference = "#condition-clinical"
+    * valueReference.reference = "#AboriginalTorresStraitIslander"
+  * extension[+]
+    * url = "10"
+    * valueReference.reference = "#PrimaryCarerParentGrandparent"
 
 
 * extension[+]
@@ -89,6 +94,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * text = "About the health check"
   * type = #group
   * repeats = false
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
