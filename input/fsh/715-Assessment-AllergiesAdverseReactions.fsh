@@ -35,6 +35,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * text = "Allergies/adverse reactions"
   * type = #group
   * repeats = false
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box    
     * linkId = "8a1d70bf-a68b-4b7b-be73-ba6956fccc78"

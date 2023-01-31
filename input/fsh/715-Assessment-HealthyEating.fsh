@@ -36,6 +36,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * text = "Healthy eating"
   * type = #group
   * repeats = false
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
   * item[+]
     * linkId = "9ac8c78d-9c36-4bf5-8c6e-e48109902dfa"
     * text = "Child eating concerns"

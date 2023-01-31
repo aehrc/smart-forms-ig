@@ -593,7 +593,14 @@
       "linkId": "de71bbd0-178c-4974-9c75-55d5a48c66f7",
       "text": "Ear health and hearing",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

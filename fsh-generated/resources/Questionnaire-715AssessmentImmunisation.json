@@ -208,7 +208,14 @@
       "linkId": "205677d6-17c7-4285-a7c4-61aa02b6c816",
       "text": "Immunisation",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

@@ -79,7 +79,14 @@
       "linkId": "2e82032a-dc28-45f2-916e-862303d39fe5",
       "text": "About the health check",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

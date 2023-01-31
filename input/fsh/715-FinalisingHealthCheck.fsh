@@ -36,6 +36,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * text = "Finalising the health check"
   * type = #group
   * repeats = false
+  * enableWhen[+]
+    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+    * operator = #exists
+    * answerBoolean = true
   * item[+]
     * linkId = "30532ad8-3465-4bdd-97ed-ec5664f9d733"
     * text = "Patient priorities and goals: What does the parent/carer say are the important things that have come out of this health check?"

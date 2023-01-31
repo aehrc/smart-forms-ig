@@ -365,7 +365,14 @@
       "linkId": "1016f79d-9756-4daf-b6ee-29add134b34f",
       "text": "Consent",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [

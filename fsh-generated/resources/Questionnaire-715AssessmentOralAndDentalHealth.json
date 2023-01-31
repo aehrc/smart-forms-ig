@@ -238,7 +238,14 @@
       "linkId": "bde9ab00-a20f-4a7c-9266-11f53f60c65f",
       "text": "Oral and dental health",
       "type": "group",
-      "repeats": false
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
     }
   ],
   "contained": [
