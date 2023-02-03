@@ -10,53 +10,14 @@ Usage: #definition
 Title: "715 About The Health Check"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
-* contained[+] = PrePopQuery
 * contained[+] = YesNoNA
-* contained[+] = YesNo
-* contained[+] = MedicalHistory
-* contained[+] = MedicalHistoryShortListInfants
-* contained[+] = MedicalHistoryShortListPrimarySchool
-* contained[+] = MedicalHistoryShortListAdolescents
-* contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
-* contained[+] = condition-clinical
-* contained[+] = AboriginalTorresStraitIslander
-* contained[+] = PrimaryCarerParentGrandparent
 
-// workaround for retaining contained value sets
+//assemble expectation
 * extension[+]
-  * url = "http://keepmyvalueset.hack"
-  * extension[+]
-    * url = "1"
-    * valueReference.reference = "#YesNoNA"
-  * extension[+]
-    * url = "2"
-    * valueReference.reference = "#YesNo"
-  * extension[+]
-    * url = "3"
-    * valueReference.reference = "#MedicalHistory"
-  * extension[+]  
-    * url = "4"
-    * valueReference.reference = "#MedicalHistoryShortListInfants"
-  * extension[+]
-    * url = "5"
-    * valueReference.reference = "#MedicalHistoryShortListPrimarySchool"
-  * extension[+]
-    * url = "6"
-    * valueReference.reference = "#MedicalHistoryShortListAdolescents"
-  * extension[+]
-    * url = "7"
-    * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
-  * extension[+]
-    * url = "8"
-    * valueReference.reference = "#condition-clinical"
-  * extension[+]
-    * url = "9"
-    * valueReference.reference = "#AboriginalTorresStraitIslander"
-  * extension[+]
-    * url = "10"
-    * valueReference.reference = "#PrimaryCarerParentGrandparent"
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
+  * valueCode = #assemble-child
 
-
+//launch context
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
   * extension[+]
@@ -68,17 +29,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * extension[+]
     * url = "description"
     * valueString = "The patient that is to be used to pre-populate the form"
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
-  * valueCode = #assemble-child
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries"
-  * valueReference = Reference(PrePopQuery)
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-
 * url = "http://www.health.gov.au/assessments/mbs/715/715AboutTheHealthCheck"
 * name = "715AboutTheHealthCheck"
 * title = "715 About The Health Check"

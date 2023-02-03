@@ -4,7 +4,8 @@
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
     ]
   },
   "url": "http://www.health.gov.au/assessments/mbs/715/715AssessmentMedicalHistory",
@@ -36,7 +37,7 @@
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries",
       "valueReference": {
-        "reference": "#PrePopQuery"
+        "reference": "Bundle/PrePopQuery"
       }
     }
   ],
@@ -309,6 +310,14 @@
                   }
                 ]
               }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+              "valueExpression": {
+                "name": "ConditionRepeat",
+                "language": "text/fhirpath",
+                "expression": "%Condition.entry.resource"
+              }
             }
           ],
           "item": [
@@ -329,7 +338,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                    "expression": "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
                   }
                 }
               ],
@@ -355,7 +364,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%Condition.entry.resource.clinicalStatus.coding.code"
+                    "expression": "%ConditionRepeat.clinicalStatus.coding"
                   }
                 }
               ],
@@ -381,7 +390,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%Condition.entry.resource.onsetDateTime"
+                    "expression": "%ConditionRepeat.onset.ofType(DateTime)"
                   }
                 }
               ],
@@ -406,7 +415,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%Condition.entry.resource.recordedDate"
+                    "expression": "%ConditionRepeat.recordedDate"
                   }
                 }
               ],
@@ -442,193 +451,730 @@
   ],
   "contained": [
     {
-      "resourceType": "Bundle",
-      "id": "PrePopQuery",
-      "type": "batch",
-      "entry": [
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52553",
-          "request": {
-            "method": "GET",
-            "url": "FamilyMemberHistory?patient={{%patient.id}}"
+      "resourceType": "ValueSet",
+      "id": "MedicalHistory",
+      "status": "active",
+      "name": "MedicalHistory",
+      "title": "Medical History",
+      "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistory",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "filter": [
+              {
+                "property": "constraint",
+                "op": "=",
+                "value": "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
+              }
+            ]
           }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "MedicalHistoryShortListInfants",
+      "status": "active",
+      "name": "MedicalHistoryShortListInfants",
+      "title": "Medical History Short List for Infants",
+      "description": "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants",
+      "expansion": {
+        "identifier": "06bd5f41-3c10-4cdb-a304-b8127d72957f",
+        "timestamp": "2022-10-20T09:50:13+10:00",
+        "total": 13,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "609496007",
+            "display": "Complication occurring during pregnancy"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "199745000",
+            "display": "Complication occurring during labour and delivery"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "80113008",
+            "display": "Complication of the puerperium"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "32485007",
+            "display": "Hospital admission"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "50417007",
+            "display": "Lower respiratory tract infection"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "49727002",
+            "display": "Cough"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "129127001",
+            "display": "Ear infection"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "38394007",
+            "display": "Chronic otitis media with perforation"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "78868004",
+            "display": "Chronic mucoid otitis media"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "247253001",
+            "display": "Ventilation tube in tympanic membrane"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "43381005",
+            "display": "Passive smoker"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "195528001",
+            "display": "Acute rheumatic fever"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "312591002",
+            "display": "Acute rheumatic heart disease"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "609496007",
+                "display": "Pregnancy complications"
+              },
+              {
+                "code": "199745000",
+                "display": "Birth complications"
+              },
+              {
+                "code": "80113008",
+                "display": "Problems after birth"
+              },
+              {
+                "code": "32485007",
+                "display": "Hospital admissions"
+              },
+              {
+                "code": "50417007",
+                "display": "Lower respiratory tract infection"
+              },
+              {
+                "code": "49727002",
+                "display": "Cough"
+              },
+              {
+                "code": "129127001",
+                "display": "Ear infection"
+              },
+              {
+                "code": "38394007",
+                "display": "Chronic otitis media with perforation"
+              },
+              {
+                "code": "78868004",
+                "display": "Chronic mucoid otitis media"
+              },
+              {
+                "code": "247253001",
+                "display": "Ventilation tube in tympanic membrane"
+              },
+              {
+                "code": "43381005",
+                "display": "Passive smoker"
+              },
+              {
+                "code": "195528001",
+                "display": "Acute rheumatic fever"
+              },
+              {
+                "code": "312591002",
+                "display": "Acute rheumatic heart disease"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "MedicalHistoryShortListPrimarySchool",
+      "status": "active",
+      "name": "MedicalHistoryShortListPrimarySchool",
+      "title": "Medical History Short List for Primary School Children",
+      "description": "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool",
+      "expansion": {
+        "identifier": "455f4b6f-5083-4f56-8995-5ec798e47cc4",
+        "timestamp": "2022-10-20T09:54:05+10:00",
+        "total": 11,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "50417007",
+            "display": "Lower respiratory tract infection"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "49727002",
+            "display": "Cough"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "129127001",
+            "display": "Ear infection"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "38394007",
+            "display": "Chronic otitis media with perforation"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "78868004",
+            "display": "Chronic mucoid otitis media"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "247253001",
+            "display": "Ventilation tube in tympanic membrane"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "129823000",
+            "display": "Childhood growth AND/OR development alteration"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "195528001",
+            "display": "Acute rheumatic fever"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "312591002",
+            "display": "Acute rheumatic heart disease"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "43381005",
+            "display": "Passive smoker"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "32485007",
+            "display": "Hospital admission"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "50417007",
+                "display": "Lower respiratory tract infection"
+              },
+              {
+                "code": "49727002",
+                "display": "Cough"
+              },
+              {
+                "code": "129127001",
+                "display": "Ear infection"
+              },
+              {
+                "code": "38394007",
+                "display": "Chronic otitis media with perforation"
+              },
+              {
+                "code": "78868004",
+                "display": "Chronic mucoid otitis media"
+              },
+              {
+                "code": "247253001",
+                "display": "Ventilation tube in tympanic membrane"
+              },
+              {
+                "code": "129823000",
+                "display": "Childhood growth AND/OR development alteration"
+              },
+              {
+                "code": "195528001",
+                "display": "Acute rheumatic fever"
+              },
+              {
+                "code": "312591002",
+                "display": "Acute rheumatic heart disease"
+              },
+              {
+                "code": "43381005",
+                "display": "Passive smoker"
+              },
+              {
+                "code": "32485007",
+                "display": "Hospital admissions"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "MedicalHistoryShortListAdolescents",
+      "status": "active",
+      "name": "MedicalHistoryShortListAdolescents",
+      "title": "Medical History Short List for Adolescents",
+      "description": "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents",
+      "expansion": {
+        "identifier": "5b0bb9f4-1ca3-47e2-bb1d-91cad5454ce4",
+        "timestamp": "2022-10-20T09:45:56+10:00",
+        "total": 11,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "129127001",
+            "display": "Ear infection"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "300228004",
+            "display": "Hearing problem"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "195967001",
+            "display": "Asthma"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "38341003",
+            "display": "Hypertension"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "84757009",
+            "display": "Epilepsy"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "25064002",
+            "display": "Headache"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "37796009",
+            "display": "Migraine"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "73211009",
+            "display": "Diabetes mellitus"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "23685000",
+            "display": "Rheumatic heart disease"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "90708001",
+            "display": "Kidney disease"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "413307004",
+            "display": "Mental health problem"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "129127001",
+                "display": "Ear infections"
+              },
+              {
+                "code": "300228004",
+                "display": "Hearing problems"
+              },
+              {
+                "code": "195967001",
+                "display": "Asthma"
+              },
+              {
+                "code": "38341003",
+                "display": "High blood pressure"
+              },
+              {
+                "code": "84757009",
+                "display": "Epilepsy"
+              },
+              {
+                "code": "25064002",
+                "display": "Headaches"
+              },
+              {
+                "code": "37796009",
+                "display": "Migraines"
+              },
+              {
+                "code": "73211009",
+                "display": "Diabetes mellitus"
+              },
+              {
+                "code": "23685000",
+                "display": "Rheumatic heart disease"
+              },
+              {
+                "code": "90708001",
+                "display": "Kidney disease"
+              },
+              {
+                "code": "413307004",
+                "display": "Mental health"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "MedicalHistoryShortListAdultsAndOlderPeople",
+      "status": "active",
+      "name": "MedicalHistoryShortListAdultsAndOlderPeople",
+      "title": "Medical History Short List for Adults and Older People",
+      "description": "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People.",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults",
+      "expansion": {
+        "identifier": "1998291e-ed8a-49f2-ac11-9e6056efd7f3",
+        "timestamp": "2022-10-20T09:48:19+10:00",
+        "total": 13,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20220930"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "73211009",
+            "display": "Diabetes mellitus"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "38341003",
+            "display": "Hypertension"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "22298006",
+            "display": "Myocardial infarction"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "230690007",
+            "display": "Stroke"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "90708001",
+            "display": "Kidney disease"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "15188001",
+            "display": "Hearing loss"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "84757009",
+            "display": "Epilepsy"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "195967001",
+            "display": "Asthma"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "13645005",
+            "display": "COPD"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "23685000",
+            "display": "Rheumatic heart disease"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66071002",
+            "display": "Hepatitis B"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "82271004",
+            "display": "Head injury"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "413307004",
+            "display": "Mental health problem"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "73211009",
+                "display": "Diabetes mellitus"
+              },
+              {
+                "code": "38341003",
+                "display": "Hypertension"
+              },
+              {
+                "code": "22298006",
+                "display": "Myocardial infarction"
+              },
+              {
+                "code": "230690007",
+                "display": "Stroke"
+              },
+              {
+                "code": "90708001",
+                "display": "Kidney disease"
+              },
+              {
+                "code": "15188001",
+                "display": "Hearing impairment"
+              },
+              {
+                "code": "84757009",
+                "display": "Epilepsy"
+              },
+              {
+                "code": "195967001",
+                "display": "Asthma"
+              },
+              {
+                "code": "13645005",
+                "display": "COPD"
+              },
+              {
+                "code": "23685000",
+                "display": "Rheumatic heart disease"
+              },
+              {
+                "code": "66071002",
+                "display": "HBV"
+              },
+              {
+                "code": "82271004",
+                "display": "Significant head trauma"
+              },
+              {
+                "code": "413307004",
+                "display": "Mental health"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "condition-clinical",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "status": "draft",
+      "name": "ConditionClinicalStatusCodes",
+      "title": "Condition Clinical Status Codes",
+      "description": "Preferred value set for Condition Clinical Status.",
+      "version": "4.3.0",
+      "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "pc"
         },
         {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52554",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "trial-use"
         },
         {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52555",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=8302-2&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52556",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=8280-0&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52557",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=29463-7&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52558",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=8867-4&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52559",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=39156-5&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52560",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52561",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52562",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=160625004&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52563",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=smoking-date-started&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52564",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=229819007&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52565",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=160573003&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52566",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=228308009&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52567",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=1373041000168105&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52568",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=160573003&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52569",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=60621009&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52570",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=absolute-cvd-risk&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52571",
-          "request": {
-            "method": "GET",
-            "url": "Immunization?patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52572",
-          "request": {
-            "method": "GET",
-            "url": "MedicationStatement?patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52573",
-          "request": {
-            "method": "GET",
-            "url": "AllergyIntolerance?patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52575",
-          "request": {
-            "method": "GET",
-            "url": "Condition?patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52574",
-          "request": {
-            "method": "GET",
-            "url": "DiagnosticReport?patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52576",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=14647-2&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:38a25157-b8e4-42e4-9525-7954fed52577",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
-        },
-        {
-          "fullUrl": "urn:uuid:12f24514-437e-40d8-b5c3-bfe8ecb4995d",
-          "request": {
-            "method": "GET",
-            "url": "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"
-          }
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 3
         }
-      ]
+      ],
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
+        }
+      ],
+      "experimental": false,
+      "publisher": "FHIR Project team",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            }
+          ]
+        }
+      ],
+      "expansion": {
+        "identifier": "5d4bed14-061a-42c4-853d-e6a624c4f483",
+        "timestamp": "2022-10-20T09:32:48+10:00",
+        "total": 6,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "inactive",
+            "display": "Inactive"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "recurrence",
+            "display": "Recurrence"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "relapse",
+            "display": "Relapse"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "remission",
+            "display": "Remission"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "resolved",
+            "display": "Resolved"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+          }
+        ]
+      }
     }
   ],
   "name": "715AssessmentMedicalHistory",

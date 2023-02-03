@@ -8,18 +8,28 @@ Usage: #definition
 Title: "715 Assessment Examination"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
-* contained[+] = PrePopQuery
 
-* extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
-* extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
-* extension[sdc-questionnaire-launchContext].extension[type].valueCode = #Patient
-* extension[sdc-questionnaire-launchContext].extension[description].valueString = "The patient that is to be used to pre-populate the form"
-* extension[sdc-questionnaire-sourceQueries].valueReference = Reference(PrePopQuery)
+//assemble expectation
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
+  * valueCode = #assemble-child
+
+//launch context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[+]
+    * url = "name"
+    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
+  * extension[+]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[+]
+    * url = "description"
+    * valueString = "The patient that is to be used to pre-populate the form"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
-//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentExamination"
 * name = "715AssessmentExamination"
 * title = "715 Assessment Examination"

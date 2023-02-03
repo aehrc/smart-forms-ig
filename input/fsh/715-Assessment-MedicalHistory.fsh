@@ -8,18 +8,34 @@ Usage: #definition
 Title: "715 Assessment Medical History"
 Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
 
-* contained[+] = PrePopQuery
+* contained[+] = MedicalHistory
+* contained[+] = MedicalHistoryShortListInfants
+* contained[+] = MedicalHistoryShortListPrimarySchool
+* contained[+] = MedicalHistoryShortListAdolescents
+* contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
+* contained[+] = condition-clinical
 
-* extension[sdc-questionnaire-assemble-expectation].valueCode = #assemble-child
-* extension[sdc-questionnaire-launchContext].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
-* extension[sdc-questionnaire-launchContext].extension[type].valueCode = #Patient
-* extension[sdc-questionnaire-launchContext].extension[description].valueString = "The patient that is to be used to pre-populate the form"
-* extension[sdc-questionnaire-sourceQueries].valueReference = Reference(PrePopQuery)
+//assemble expectation
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
+  * valueCode = #assemble-child
+
+//launch context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[+]
+    * url = "name"
+    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
+  * extension[+]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[+]
+    * url = "description"
+    * valueString = "The patient that is to be used to pre-populate the form"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-obsn"
-//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-obsn"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentMedicalHistory"
 * name = "715AssessmentMedicalHistory"
 * title = "715 Assessment Medical History"
@@ -153,6 +169,10 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
 // experimental table of medical history
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
+    * extension[sdc-questionnaire-itemPopulationContext].valueExpression
+      * name = "ConditionRepeat"
+      * language = #text/fhirpath
+      * expression = "%Condition.entry.resource"
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
     * type = #group
@@ -161,7 +181,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
+        * expression = "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
       * linkId = "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"
       * text = "Condition"
       * type = #open-choice
@@ -170,7 +190,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.clinicalStatus.coding.code"      
+        * expression = "%ConditionRepeat.clinicalStatus.coding"      
       * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
       * text = "Clinical Status"
       * type = #choice
@@ -179,7 +199,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.onsetDateTime"      
+        * expression = "%ConditionRepeat.onset.ofType(DateTime)"
       * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
       * text = "Onset Date"
       * type = #dateTime
@@ -187,7 +207,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.recordedDate"      
+        * expression = "%ConditionRepeat.recordedDate"
       * linkId = "18b9e159-2ed7-4047-82b7-deb2a171de4f"
       * text = "Recorded Date"
       * type = #dateTime
