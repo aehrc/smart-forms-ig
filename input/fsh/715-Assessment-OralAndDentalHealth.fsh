@@ -6,7 +6,7 @@ Instance: 715AssessmentOralAndDentalHealth
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Oral And Dental Health"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

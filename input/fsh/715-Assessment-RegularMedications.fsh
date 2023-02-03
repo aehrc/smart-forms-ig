@@ -6,7 +6,7 @@ Instance: 715AssessmentRegularMedications
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Regular Medications"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Regular Medications sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

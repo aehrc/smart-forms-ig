@@ -6,7 +6,7 @@ Instance: 715AssessmentExamination
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Examination"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 
 //assemble expectation

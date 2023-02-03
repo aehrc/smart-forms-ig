@@ -6,7 +6,7 @@ Instance: 715AssessmentLearningAndDevelopment
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Learning And Development"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Learning And Development sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 //assemble expectation
 * extension[+]

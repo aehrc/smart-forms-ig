@@ -6,7 +6,7 @@ Instance: 715AssessmentAllergiesAdverseReactions
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Allergies/Adverse Reactions"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 //assemble expectation
 * extension[+]

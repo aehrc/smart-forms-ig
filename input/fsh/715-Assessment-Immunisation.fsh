@@ -6,7 +6,7 @@ Instance: 715AssessmentImmunisation
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Immunisation"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

@@ -6,7 +6,7 @@ Instance: 715FinalisingHealthCheck
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Finalising the Health Check"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = PrePopQuery
 

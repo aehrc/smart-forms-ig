@@ -6,7 +6,7 @@ Instance: 715AssessmentEyeHealth
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Eye Health"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

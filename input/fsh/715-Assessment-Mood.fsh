@@ -6,7 +6,7 @@ Instance: 715AssessmentMood
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Mood"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 
 //assemble expectation

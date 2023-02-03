@@ -6,7 +6,7 @@ Instance: 715AssessmentHealthyEating
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Healthy Eating"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

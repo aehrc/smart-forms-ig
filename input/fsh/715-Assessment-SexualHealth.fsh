@@ -6,7 +6,7 @@ Instance: 715AssessmentSexualHealth
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Sexual Health"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

@@ -6,7 +6,7 @@ Instance: AboriginalTorresStraitIslanderHealthCheck
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "Aboriginal and Torres Strait Islander Health Check"
-Description: "Questionnaire for the Aboriginal and Torres Strait Islander Health Check"
+Description: "Aboriginal and Torres Strait Islander Health Check assessment form."
 
 //* contained[+] = PrePopQuery
 * contained[+] = YesNo

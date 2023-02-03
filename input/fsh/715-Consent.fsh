@@ -8,7 +8,7 @@ Instance: 715Consent
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Consent"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNoNA
 

@@ -6,7 +6,7 @@ Instance: 715AssessmentGambling
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Gambling"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 
@@ -27,7 +27,7 @@ Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health
   * extension[+]
     * url = "description"
     * valueString = "The patient that is to be used to pre-populate the form"
-    
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"

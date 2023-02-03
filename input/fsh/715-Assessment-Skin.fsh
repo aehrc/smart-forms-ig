@@ -6,7 +6,7 @@ Instance: 715AssessmentSkin
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Skin"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

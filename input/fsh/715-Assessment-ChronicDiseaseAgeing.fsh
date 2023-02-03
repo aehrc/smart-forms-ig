@@ -6,7 +6,7 @@ Instance: 715AssessmentChronicDiseaseAgeing
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Chronic Disease Ageing"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 
 //assemble expectation

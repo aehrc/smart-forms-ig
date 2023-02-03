@@ -8,7 +8,7 @@ Instance: 715AboutTheHealthCheck
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 About The Health Check"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "About The Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNoNA
 

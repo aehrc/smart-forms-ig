@@ -6,7 +6,7 @@ Instance: 715AssessmentMemoryAndThinking
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Memory And Thinking"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

@@ -6,7 +6,7 @@ Instance: 715AssessmentMedicalHistory
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Medical History"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = MedicalHistory
 * contained[+] = MedicalHistoryShortListInfants

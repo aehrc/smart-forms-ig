@@ -6,7 +6,7 @@ Instance: 715AssessmentAbsoluteCVDRiskCalculation
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Absolute Cardiovascular Disease Risk Calculation"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 
 //assemble expectation

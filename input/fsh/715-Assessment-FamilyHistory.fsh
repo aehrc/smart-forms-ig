@@ -6,7 +6,7 @@ Instance: 715AssessmentFamilyHistory
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Family History"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Family History sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 
 //assemble expectation

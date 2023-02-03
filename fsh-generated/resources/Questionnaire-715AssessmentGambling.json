@@ -9,38 +9,6 @@
     ]
   },
   "url": "http://www.health.gov.au/assessments/mbs/715/715AssessmentGambling",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
-      "valueCode": "assemble-child"
-    },
-    {
-      "extension": [
-        {
-          "url": "name",
-          "valueCoding": {
-            "code": "patient",
-            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
-          }
-        },
-        {
-          "url": "type",
-          "valueCode": "Patient"
-        },
-        {
-          "url": "description",
-          "valueString": "The patient that is to be used to pre-populate the form"
-        }
-      ],
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-    },
-    {
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-sourceQueries",
-      "valueReference": {
-        "reference": "Bundle/PrePopQuery"
-      }
-    }
-  ],
   "item": [
     {
       "extension": [
@@ -189,6 +157,32 @@
           }
         ]
       }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
+      "valueCode": "assemble-child"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "The patient that is to be used to pre-populate the form"
+        }
+      ]
     }
   ],
   "name": "715AssessmentGambling",

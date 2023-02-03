@@ -6,7 +6,7 @@ Instance: 715PatientDetails
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Patient Details"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNoNA
 * contained[+] = AboriginalTorresStraitIslander

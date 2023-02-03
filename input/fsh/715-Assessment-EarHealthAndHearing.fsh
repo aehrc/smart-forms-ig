@@ -6,7 +6,7 @@ Instance: 715AssessmentEarHealthAndHearing
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Ear Health And Hearing"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

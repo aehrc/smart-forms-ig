@@ -6,7 +6,7 @@ Instance: 715AssessmentPhysicalActivityAndScreenTime
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Physical Activity And Screen Time"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

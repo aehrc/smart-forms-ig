@@ -6,7 +6,7 @@ Instance: 715AssessmentHomeAndFamily
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Home And Family"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Home And Family sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

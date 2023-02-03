@@ -6,7 +6,7 @@ Instance: 715AssessmentSocialAndEmotionalWellbeing
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Social And Emotional Wellbeing"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 

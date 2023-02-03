@@ -6,7 +6,7 @@ Instance: 715AssessmentSubstanceUse
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Substance Use"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 
 //assemble expectation

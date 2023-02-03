@@ -6,7 +6,7 @@ Instance: 715AssessmentSocialHistoryChild
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "715 Assessment Social History Child"
-Description: "Sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks"
+Description: "Social History Child sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
 
 * contained[+] = YesNo
 
