@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentRegularMedications
+Instance: RegularMedications
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Regular Medications"
-Description: "Regular Medications sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Regular Medications"
+Description: "Regular Medications sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
 
@@ -31,9 +31,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentRegularMedications"
-* name = "715AssessmentRegularMedications"
-* title = "715 Assessment Regular Medications"
+* url = "http://www.health.gov.au/assessments/mbs/715/RegularMedications"
+* name = "RegularMedications"
+* title = "Aboriginal and Torres Strait Islander Health Check - Regular Medications"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

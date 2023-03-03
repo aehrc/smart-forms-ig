@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentScreeningPrograms
+Instance: ScreeningPrograms
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Screening Programs"
-Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Screening Programs"
+Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 //assemble expectation
 * extension[+]
@@ -29,9 +29,9 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentScreeningPrograms"
-* name = "715AssessmentScreeningPrograms"
-* title = "715 Assessment Screening Programs"
+* url = "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms"
+* name = "ScreeningPrograms"
+* title = "Aboriginal and Torres Strait Islander Health Check - Screening Programs"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

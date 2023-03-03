@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715PatientDetails
+Instance: PatientDetails
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Patient Details"
-Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Patient Details"
+Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNoNA
 * contained[+] = AboriginalTorresStraitIslander
@@ -33,9 +33,9 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715PatientDetails"
-* name = "715PatientDetails"
-* title = "715 Patient Details"
+* url = "http://www.health.gov.au/assessments/mbs/715/PatientDetails"
+* name = "PatientDetails"
+* title = "Aboriginal and Torres Strait Islander Health Check - Patient Details"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient
@@ -156,7 +156,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * linkId = "f1262ade-843c-4eba-a86d-51a9c97d134b"
     * text = "Home address"
     * type = #group
-    * repeats = true
+    * repeats = false
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -168,61 +168,54 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #boolean
       * repeats = false
     * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%patient.address.select(line.first() & ' ' & line.skip(1).first() & ' ' & line.skip(2).first())"
-      * linkId = "2fee2d51-7828-4178-b8c1-35edd32ba338"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
-      * text = "Street address"
-      * type = #string
+      * linkId = "4e0dc185-f83e-4027-b7a8-ecb543d42c6d"
+      * text = "Address"
+      * type = #group
+      * repeats = true      
       * enableWhen[+]
         * question = "311d83bb-f22e-4f60-9b50-b6e38dd2059b"
-        * operator = #=
-        * answerBoolean = false
-      * repeats = true
-    * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%patient.address.city"
-      * linkId = "ddb65ed1-f4b2-4730-af2a-2f98bc73c76f"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city"
-      * text = "City"
-      * type = #string
-      * enableWhen[+]
-        * question = "311d83bb-f22e-4f60-9b50-b6e38dd2059b"
-        * operator = #=
-        * answerBoolean = false
-      * repeats = false
-    * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%patient.address.state"
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-      * linkId = "d9a1236c-8d6e-4f20-a12a-9d5de5a1d0f6"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state"
-      * text = "State"
-      * type = #choice
-      * enableWhen[+]
-        * question = "311d83bb-f22e-4f60-9b50-b6e38dd2059b"
-        * operator = #=
-        * answerBoolean = false
-      * repeats = false
-      * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
-    * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%patient.address.postalCode"
-      * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{4}$')"
-      * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "####"
-      * linkId = "3f61a1ea-1c74-4f52-8519-432ce861a74f"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode"
-      * text = "Postcode"
-      * type = #string
-      * enableWhen[+]
-        * question = "311d83bb-f22e-4f60-9b50-b6e38dd2059b"
-        * operator = #=
-        * answerBoolean = false
-      * repeats = false
+        * operator = #!=
+        * answerBoolean = true
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%patient.address.select(line.first() & ' ' & line.skip(1).first() & ' ' & line.skip(2).first())"
+        * linkId = "2fee2d51-7828-4178-b8c1-35edd32ba338"
+        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
+        * text = "Street address"
+        * type = #string
+        * repeats = true
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%patient.address.city"
+        * linkId = "ddb65ed1-f4b2-4730-af2a-2f98bc73c76f"
+        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city"
+        * text = "City"
+        * type = #string
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%patient.address.state"
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+        * linkId = "d9a1236c-8d6e-4f20-a12a-9d5de5a1d0f6"
+        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state"
+        * text = "State"
+        * type = #choice
+        * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%patient.address.postalCode"
+        * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{4}$')"
+        * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "####"
+        * linkId = "3f61a1ea-1c74-4f52-8519-432ce861a74f"
+        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode"
+        * text = "Postcode"
+        * type = #string
+        * repeats = false
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath

@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentEarHealthAndHearing
+Instance: EarHealthAndHearing
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Ear Health And Hearing"
-Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Ear Health And Hearing"
+Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
 
@@ -31,9 +31,9 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentEarHealthAndHearing"
-* name = "715AssessmentEarHealthAndHearing"
-* title = "715 Assessment Ear Health And Hearing"
+* url = "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing"
+* name = "EarHealthAndHearing"
+* title = "Aboriginal and Torres Strait Islander Health Check - Ear Health And Hearing"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

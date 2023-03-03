@@ -1,0 +1,295 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "Immunisation",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+    ]
+  },
+  "url": "http://www.health.gov.au/assessments/mbs/715/Immunisation",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "tab",
+                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
+              }
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "54de7714-b917-4426-acb4-29d48648a2d8",
+          "text": "Check Child Health Record/Book and Australian Immunisation Register",
+          "type": "display",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 12
+            }
+          ]
+        },
+        {
+          "linkId": "d77c527d-6fde-4ed7-97b9-c71acf817f39",
+          "text": "Eligibility for funded vaccines may vary across jurisdictions",
+          "type": "display",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 12
+            }
+          ]
+        },
+        {
+          "linkId": "77d87581-d4d7-4267-9f3c-ad6541ad0f46",
+          "text": "Check Australian Immunisation Register",
+          "type": "display",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 12
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 24
+            }
+          ],
+          "enableBehavior": "all"
+        },
+        {
+          "linkId": "a2631d2c-2b5c-4147-9aca-05ae655a56a5",
+          "text": "Check recommended primary vaccinations completed and provide catch-up if required",
+          "type": "display",
+          "repeats": false,
+          "enableWhen": [
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": ">",
+              "answerInteger": 24
+            },
+            {
+              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+              "operator": "<=",
+              "answerInteger": 49
+            }
+          ],
+          "enableBehavior": "all"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+              "valueCode": "horizontal"
+            }
+          ],
+          "linkId": "69a4a459-196b-4931-8336-ea76ab3fccd1",
+          "text": "Immunisations up to date and recorded on Australian Immunisation Register (as per Australian immunisation handbook)?",
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#YesNo"
+        },
+        {
+          "linkId": "08e8ca54-9af8-4028-be83-aab20bccecc3",
+          "text": "Immunisations due",
+          "type": "string",
+          "repeats": true
+        },
+        {
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
+                }
+              ],
+              "linkId": "9f5787e6-8ece-46a4-8d67-e7c3e14daf18",
+              "text": "Vaccines recorded on Australian Immunisation Register?",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "#YesNo"
+            },
+            {
+              "linkId": "c8da01ec-de58-46e3-81a1-2c49aed8c28e",
+              "text": "Details",
+              "type": "text",
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "9f5787e6-8ece-46a4-8d67-e7c3e14daf18",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "Y",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+                  }
+                }
+              ]
+            }
+          ],
+          "linkId": "cc522cb1-b553-48c7-9028-61d15dd60845",
+          "text": "Vaccines given today",
+          "type": "group",
+          "repeats": false
+        },
+        {
+          "linkId": "bcd1c9f2-889e-41e5-8c2b-a70221c5cec5",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
+          "repeats": false
+        }
+      ],
+      "linkId": "205677d6-17c7-4285-a7c4-61aa02b6c816",
+      "text": "Immunisation",
+      "type": "group",
+      "repeats": false,
+      "enableWhen": [
+        {
+          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
+          "operator": "exists",
+          "answerBoolean": true
+        }
+      ]
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "YesNo",
+      "status": "active",
+      "name": "YesNo",
+      "title": "Yes No",
+      "description": "Concepts for Yes and No",
+      "version": "0.1.0",
+      "url": "https://aehrc.csiro.au/fhir/ValueSet/YesNo",
+      "expansion": {
+        "identifier": "91d952b0-22ed-474a-aad7-da1db1d7dcc7",
+        "timestamp": "2022-10-20T09:43:07+10:00",
+        "total": 2,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
+          },
+          {
+            "name": "count",
+            "valueInteger": 2147483647
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "code": "Y",
+            "display": "Yes"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "code": "N",
+            "display": "No"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "concept": [
+              {
+                "code": "Y",
+                "display": "Yes"
+              },
+              {
+                "code": "N",
+                "display": "No"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation",
+      "valueCode": "assemble-child"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "The patient that is to be used to pre-populate the form"
+        }
+      ]
+    }
+  ],
+  "name": "Immunisation",
+  "title": "Aboriginal and Torres Strait Islander Health Check - Immunisation",
+  "status": "draft",
+  "experimental": true,
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2022-05-24",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "AU",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ]
+}

@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentLearningAndWork
+Instance: LearningAndWork
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Learning And Work"
-Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Learning And Work"
+Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
 * contained[+] = YesNoNA
@@ -32,9 +32,9 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentLearningAndWork"
-* name = "715AssessmentLearningAndWork"
-* title = "715 Assessment Learning And Work"
+* url = "http://www.health.gov.au/assessments/mbs/715/LearningAndWork"
+* name = "LearningAndWork"
+* title = "Aboriginal and Torres Strait Islander Health Check - Learning And Work"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

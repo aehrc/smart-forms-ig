@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715FinalisingHealthCheck
+Instance: FinalisingHealthCheck
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Finalising the Health Check"
-Description: "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check"
+Description: "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 
 //assemble expectation
@@ -30,9 +30,9 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715FinalisingHealthCheck"
-* name = "715FinalisingHealthCheck"
-* title = "715 Finalising the Health Check"
+* url = "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck"
+* name = "FinalisingHealthCheck"
+* title = "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

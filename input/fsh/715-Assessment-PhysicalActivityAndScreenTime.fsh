@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentPhysicalActivityAndScreenTime
+Instance: PhysicalActivityAndScreenTime
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Physical Activity And Screen Time"
-Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Physical Activity And Screen Time"
+Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
 
@@ -31,9 +31,9 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentPhysicalActivityAndScreenTime"
-* name = "715AssessmentPhysicalActivityAndScreenTime"
-* title = "715 Assessment Physical Activity And Screen Time"
+* url = "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime"
+* name = "PhysicalActivityAndScreenTime"
+* title = "Aboriginal and Torres Strait Islander Health Check - Physical Activity And Screen Time"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentSubstanceUse
+Instance: SubstanceUse
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Substance Use"
-Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Substance Use"
+Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 
 //assemble expectation
@@ -30,9 +30,9 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentSubstanceUse"
-* name = "715AssessmentSubstanceUse"
-* title = "715 Assessment Substance Use"
+* url = "http://www.health.gov.au/assessments/mbs/715/SubstanceUse"
+* name = "SubstanceUse"
+* title = "Aboriginal and Torres Strait Islander Health Check - Substance Use"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

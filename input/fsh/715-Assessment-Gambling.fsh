@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentGambling
+Instance: Gambling
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Gambling"
-Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Gambling"
+Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
 
@@ -31,9 +31,9 @@ Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Island
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentGambling"
-* name = "715AssessmentGambling"
-* title = "715 Assessment Gambling"
+* url = "http://www.health.gov.au/assessments/mbs/715/Gambling"
+* name = "Gambling"
+* title = "Aboriginal and Torres Strait Islander Health Check - Gambling"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

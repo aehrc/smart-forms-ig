@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentCurrentPriorities
+Instance: CurrentPriorities
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Current Priorities"
-Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Current Priorities"
+Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
 
@@ -31,9 +31,9 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentCurrentPriorities"
-* name = "715AssessmentCurrentPriorities"
-* title = "715 Assessment Current Priorities"
+* url = "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities"
+* name = "CurrentPriorities"
+* title = "Aboriginal and Torres Strait Islander Health Check - Current Priorities"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient

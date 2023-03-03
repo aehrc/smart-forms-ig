@@ -2,11 +2,11 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: 715AssessmentLearningAndDevelopment
+Instance: LearningAndDevelopment
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "715 Assessment Learning And Development"
-Description: "Learning And Development sub-questionnaire for Aboriginal and Torres Strait Islander Health Checks."
+Title: "Aboriginal and Torres Strait Islander Health Check - Learning And Development"
+Description: "Learning And Development sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 //assemble expectation
 * extension[+]
@@ -29,9 +29,9 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/715AssessmentLearningAndDevelopment"
-* name = "715AssessmentLearningAndDevelopment"
-* title = "715 Assessment Learning And Development"
+* url = "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment"
+* name = "LearningAndDevelopment"
+* title = "Aboriginal and Torres Strait Islander Health Check - Learning And Development"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient
