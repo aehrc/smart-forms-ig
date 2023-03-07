@@ -3,21 +3,21 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: AboriginalTorresStraitIslanderHealthCheck
-canonical: https://aehrc.csiro.au/fhir
-name: AboriginalTorresStraitIslanderHealthCheck
-title: Aboriginal And Torres Strait Islander Health Check
-# description: Example Implementation Guide for getting started with SUSHI
+id: SmartForms
+canonical: https://smartforms.csiro.au/ig
+name: SmartForms
+title: Smart Forms
+description: Smart Forms FHIR Implementation Guide. 
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2022+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
-# license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+license: Apache-2.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: CSIRO
-  url: https://github.com/aehrc
+  name: AEHRC CSIRO
+  url: https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -164,7 +164,7 @@ menu:
 # * experimental
 # * useContext
 # * copyright
-# * packageId
+packageId: csiro.fhir.au.smartforms
 #
 #
 # ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮

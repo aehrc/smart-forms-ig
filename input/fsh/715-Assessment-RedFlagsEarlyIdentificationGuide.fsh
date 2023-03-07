@@ -63,7 +63,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
     * linkId = "0b520b20-98df-4024-b25d-2986f6b96e77"
     * text = "What age group is the child closet to?"
     * type = #choice
-    * repeats = true
+    * repeats = false
     * answerOption[+].valueString = "6 months"
     * answerOption[+].valueString = "9 months"
     * answerOption[+].valueString = "12 months"

@@ -290,7 +290,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * linkId = "7692f28c-7c0a-48ea-b27d-a8489974377d"
     * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.1.0] not available. Unable to display all questions."
     * type = #display
-  // Medical History
+  // Medical History and Current Problems
   * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems|0.1.0"
     * linkId = "15f83d80-f49a-4852-a20f-18db9b951e53"

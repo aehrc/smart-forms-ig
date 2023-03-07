@@ -137,7 +137,7 @@ Usage: #definition
 
 Instance: SmartFormsApplication
 InstanceOf: CapabilityStatement
-Title: "Smart Forms Application Integration Requirement"
+Title: "Smart Forms Application"
 Usage: #definition
 * name = "SmartFormsApplicationIntegrationRequirement"
 * description = "Requirements for a system integrating the Smart Forms Application."
