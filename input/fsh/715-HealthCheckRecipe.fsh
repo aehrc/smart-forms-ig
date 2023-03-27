@@ -2,7 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 
-Instance: AboriginalTorresStraitIslanderHealthCheck
+Instance: AboriginalTorresStraitIslanderHealthCheckRecipe
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "Aboriginal and Torres Strait Islander Health Check"
