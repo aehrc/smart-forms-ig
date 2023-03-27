@@ -56,6 +56,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #<
     * answerInteger = 50
+  * enableBehavior = #all
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
     * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"

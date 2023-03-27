@@ -53,6 +53,7 @@ Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander H
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #>
     * answerInteger = 12
+  * enableBehavior = #all
   * item[+]
     * linkId = "b3c510a7-bfd1-4ebe-8755-9f05e7a742ba"
     * text = "How have you been feeling lately?"

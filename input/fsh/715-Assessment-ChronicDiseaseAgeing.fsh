@@ -53,6 +53,7 @@ Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #exists
     * answerBoolean = true
+  * enableBehavior = #all
   * item[+]
     * extension[sdc-questionnaire-shortText].valueString = "Assessment of chronic disease associated with ageing"
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">

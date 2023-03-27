@@ -53,6 +53,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #exists
     * answerBoolean = true
+  * enableBehavior = #all
   * item[+]
     * linkId = "818c9aaa-1b00-4c76-9971-49df74edff7a"
     * text = "Is there anything that you are worried about with your child's development?"
