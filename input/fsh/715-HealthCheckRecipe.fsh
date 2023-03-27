@@ -302,9 +302,13 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * language = #text/fhirpath
     * expression = "item.where(linkId='3e7d7246-98f8-4803-b063-8405ac30b086').item.where(linkId='5ab80929-5901-431d-bf68-67d532f5fa58').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "HealthPrioritiesSummaryLearningWork"
+    * name = "HealthPrioritiesSummaryLearningWorkAdults"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='5437e30d-8a0a-4785-974e-00a10d2a1df0').item.where(linkId='ed6f7800-e22a-4639-9d11-faf845513500').answer.value"
+    * expression = "item.where(linkId='5437e30d-8a0a-4785-974e-00a10d2a1df0').item.where(linkId='3569e514-a74b-4343-b31b-3395e58d991a').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryLearningWorkOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='dec713ae-246a-4961-95c9-0626bfebfed2').item.where(linkId='ed6f7800-e22a-4639-9d11-faf845513500').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "HealthPrioritiesSummaryMood"
     * language = #text/fhirpath
@@ -326,21 +330,33 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * language = #text/fhirpath
     * expression = "item.where(linkId='ae7a3801-9491-4b1f-820c-678236d18f56').item.where(linkId='301789b0-8c6a-470d-8787-0ac6597e3bea').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "HealthPrioritiesSummaryPhysicalActivityScreenTime"
+    * name = "HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='74736baa-455b-41d2-af98-fb65cd463e97').item.where(linkId='25b8b8fd-adb1-48ab-aeae-528603668c4b').answer.value"
+    * expression = "item.where(linkId='74736baa-455b-41d2-af98-fb65cd463e97').item.where(linkId='ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='d56234a0-aafd-4c22-96c9-00ead8424f0b').item.where(linkId='25b8b8fd-adb1-48ab-aeae-528603668c4b').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "HealthPrioritiesSummarySubstanceUse"
     * language = #text/fhirpath
     * expression = "item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='f8e1cc1f-f1a1-4eb3-8255-77d600f52831').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "GamblingCalculation"
+    * name = "HealthPrioritiesSummaryGambling"
     * language = #text/fhirpath
     * expression = "item.where(linkId='a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240').item.where(linkId='2ab74c97-55d9-4fd9-968f-8962d62ea573').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "HealthPrioritiesSummarySexualHealth"
+    * name = "HealthPrioritiesSummarySexualHealthAdolescents"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='4b49c291-6e93-4b7e-be3b-15ef8bc207ad').item.where(linkId='e9936322-e6fe-4cf7-ab61-22846a8fbb95').answer.value"
+    * expression = "item.where(linkId='4b49c291-6e93-4b7e-be3b-15ef8bc207ad').item.where(linkId='b41572ba-cf36-4cec-addf-cb0b47fea63f').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySexualHealthAdults"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='589b53a4-ceb2-41c0-850a-69438f9fd1cc').item.where(linkId='efd0735c-c379-471f-83bb-93b0392093aa').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySexualHealthOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='02048954-e9d7-424e-8c7b-6a3c495d7ce4').item.where(linkId='e9936322-e6fe-4cf7-ab61-22846a8fbb95').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "HealthPrioritiesSummaryEyeHealth"
     * language = #text/fhirpath

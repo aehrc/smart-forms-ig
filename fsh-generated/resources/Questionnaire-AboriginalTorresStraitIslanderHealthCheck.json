@@ -287,9 +287,17 @@
         {
           "url": "http://hl7.org/fhir/StructureDefinition/variable",
           "valueExpression": {
-            "name": "HealthPrioritiesSummaryLearningWork",
+            "name": "HealthPrioritiesSummaryLearningWorkAdults",
             "language": "text/fhirpath",
-            "expression": "item.where(linkId='5437e30d-8a0a-4785-974e-00a10d2a1df0').item.where(linkId='ed6f7800-e22a-4639-9d11-faf845513500').answer.value"
+            "expression": "item.where(linkId='5437e30d-8a0a-4785-974e-00a10d2a1df0').item.where(linkId='3569e514-a74b-4343-b31b-3395e58d991a').answer.value"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/variable",
+          "valueExpression": {
+            "name": "HealthPrioritiesSummaryLearningWorkOlder",
+            "language": "text/fhirpath",
+            "expression": "item.where(linkId='dec713ae-246a-4961-95c9-0626bfebfed2').item.where(linkId='ed6f7800-e22a-4639-9d11-faf845513500').answer.value"
           }
         },
         {
@@ -335,9 +343,17 @@
         {
           "url": "http://hl7.org/fhir/StructureDefinition/variable",
           "valueExpression": {
-            "name": "HealthPrioritiesSummaryPhysicalActivityScreenTime",
+            "name": "HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder",
             "language": "text/fhirpath",
-            "expression": "item.where(linkId='74736baa-455b-41d2-af98-fb65cd463e97').item.where(linkId='25b8b8fd-adb1-48ab-aeae-528603668c4b').answer.value"
+            "expression": "item.where(linkId='74736baa-455b-41d2-af98-fb65cd463e97').item.where(linkId='ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2').answer.value"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/variable",
+          "valueExpression": {
+            "name": "HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder",
+            "language": "text/fhirpath",
+            "expression": "item.where(linkId='d56234a0-aafd-4c22-96c9-00ead8424f0b').item.where(linkId='25b8b8fd-adb1-48ab-aeae-528603668c4b').answer.value"
           }
         },
         {
@@ -351,7 +367,7 @@
         {
           "url": "http://hl7.org/fhir/StructureDefinition/variable",
           "valueExpression": {
-            "name": "GamblingCalculation",
+            "name": "HealthPrioritiesSummaryGambling",
             "language": "text/fhirpath",
             "expression": "item.where(linkId='a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240').item.where(linkId='2ab74c97-55d9-4fd9-968f-8962d62ea573').answer.value"
           }
@@ -359,9 +375,25 @@
         {
           "url": "http://hl7.org/fhir/StructureDefinition/variable",
           "valueExpression": {
-            "name": "HealthPrioritiesSummarySexualHealth",
+            "name": "HealthPrioritiesSummarySexualHealthAdolescents",
             "language": "text/fhirpath",
-            "expression": "item.where(linkId='4b49c291-6e93-4b7e-be3b-15ef8bc207ad').item.where(linkId='e9936322-e6fe-4cf7-ab61-22846a8fbb95').answer.value"
+            "expression": "item.where(linkId='4b49c291-6e93-4b7e-be3b-15ef8bc207ad').item.where(linkId='b41572ba-cf36-4cec-addf-cb0b47fea63f').answer.value"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/variable",
+          "valueExpression": {
+            "name": "HealthPrioritiesSummarySexualHealthAdults",
+            "language": "text/fhirpath",
+            "expression": "item.where(linkId='589b53a4-ceb2-41c0-850a-69438f9fd1cc').item.where(linkId='efd0735c-c379-471f-83bb-93b0392093aa').answer.value"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/variable",
+          "valueExpression": {
+            "name": "HealthPrioritiesSummarySexualHealthOlder",
+            "language": "text/fhirpath",
+            "expression": "item.where(linkId='02048954-e9d7-424e-8c7b-6a3c495d7ce4').item.where(linkId='e9936322-e6fe-4cf7-ab61-22846a8fbb95').answer.value"
           }
         },
         {

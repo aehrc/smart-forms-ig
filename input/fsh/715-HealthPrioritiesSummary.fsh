@@ -164,9 +164,9 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
       * answerInteger = 12
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-      * description = "Learning and work calculation"
+      * description = "Learning and work for adolescents and adults calculation"
       * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummaryLearningWork"
+      * expression = "%HealthPrioritiesSummaryLearningWorkAdults"
     * linkId = "aefbee8b-64fc-4cdc-9902-d6c3f50a2e18"
     * text = "Learning and work"
     * type = #text
@@ -181,6 +181,20 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
       * operator = #<
       * answerInteger = 50
     * enableBehavior = #all
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+      * description = "Learning and work calculation"
+      * language = #text/fhirpath
+      * expression = "%HealthPrioritiesSummaryLearningWorkOlder"
+    * linkId = "a96cce74-cda3-4b6b-adc4-1b7d73df2317"
+    * text = "Work"
+    * type = #text
+    * repeats = false 
+    * readOnly = true
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #>=
+      * answerInteger = 50
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Mood calculation"
@@ -256,7 +270,7 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Physical activity and screen time calculation"
       * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummaryPhysicalActivityScreenTime"
+      * expression = "%HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder"
     * linkId = "b7e32f62-a4e7-4419-a728-6addceefeb02"
     * text = "Physical activity and screen time"
     * type = #text
@@ -265,6 +279,20 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * enableWhen[+]
       * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
       * operator = #<
+      * answerInteger = 50
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+      * description = "Physical activity and screen time calculation"
+      * language = #text/fhirpath
+      * expression = "%HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder"
+    * linkId = "f1c3d1ba-240c-4e68-8afc-62c50cc313d1"
+    * text = "Physical activity"
+    * type = #text
+    * repeats = false 
+    * readOnly = true
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #>=
       * answerInteger = 50
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
@@ -282,7 +310,7 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
       * answerInteger = 12
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-      * description = "GamblingCalculation"
+      * description = "Gambling calculation"
       * language = #text/fhirpath
       * expression = "%HealthPrioritiesSummaryGambling"
     * linkId = "931457d4-0de0-434c-88af-eb1b17746953"
@@ -298,7 +326,7 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Sexual health calculation"
       * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummarySexualHealth"
+      * expression = "%HealthPrioritiesSummarySexualHealthAdolescents"
     * linkId = "797402ac-95de-4c0b-a04f-44b669755f7c"
     * text = "Sexual health"
     * type = #text
@@ -313,6 +341,39 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
       * operator = #<=
       * answerInteger = 24
     * enableBehavior = #all
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+      * description = "Sexual health calculation"
+      * language = #text/fhirpath
+      * expression = "%HealthPrioritiesSummarySexualHealthAdults"
+    * linkId = "e4df6f14-7a9c-445c-8cf5-3fc489db7307"
+    * text = "Genitourinary and sexual health"
+    * type = #text
+    * repeats = false 
+    * readOnly = true
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #>
+      * answerInteger = 24
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #<=
+      * answerInteger = 49
+    * enableBehavior = #all
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+      * description = "Sexual health calculation"
+      * language = #text/fhirpath
+      * expression = "%HealthPrioritiesSummarySexualHealthOlder"
+    * linkId = "23e293c4-537f-46ca-90f9-c8dfb7630211"
+    * text = "Genitourinary and sexual health"
+    * type = #text
+    * repeats = false 
+    * readOnly = true
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #>=
+      * answerInteger = 50
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Eye health calculation"
