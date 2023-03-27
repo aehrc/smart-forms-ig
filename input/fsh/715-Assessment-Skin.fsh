@@ -55,6 +55,7 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #<=
     * answerInteger = 24 
+  * enableBehavior = #all
   * item[+]
     * linkId = "0d23be6b-3a30-4a80-9ebe-158acf32eb09"
     * text = "Skin problems"

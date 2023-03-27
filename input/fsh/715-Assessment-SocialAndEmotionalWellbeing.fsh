@@ -54,6 +54,7 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #>
     * answerInteger = 12
+  * enableBehavior = #all
   * item[+]
     * linkId = "c736d065-88f6-49c3-a5a4-91a2bd7a54bb"
     * text = "Stressful life events"

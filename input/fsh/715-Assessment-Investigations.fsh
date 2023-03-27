@@ -55,6 +55,7 @@ Description: "Investigations sub-questionnaire for Aboriginal and Torres Strait 
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #exists
     * answerBoolean = true
+  * enableBehavior = #all
   * item[+]
     * linkId = "740cbc59-08e3-41e8-bc00-de22c1ad45a0"
     * text = "Full blood count, HbA1c or blood glucose level, serum lipids, Kidney function including eGFR, Liver function tests, ACR"

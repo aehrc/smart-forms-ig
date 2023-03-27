@@ -54,6 +54,7 @@ Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Island
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #exists
     * answerBoolean = true
+  * enableBehavior = #all
   * item[+]
     * linkId = "fb489c43-f311-41f5-9d6a-1b61748e165f"
     * text = "Gambling issues"
