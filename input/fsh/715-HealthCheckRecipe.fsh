@@ -264,6 +264,133 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "cvdScore"
     * language = #text/fhirpath
     * expression = "(1 - (%cvdU.exp()*-1).exp()) * 100"
+  // Health priorities summary variables
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryCurrentPriorities"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='b3a3eee2-f340-452e-9d05-d1f54f677b81').item.where(linkId='7cd424e5-7672-4e99-8a99-30b1fb3043fd').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryMedicalHistory"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='28d5dbe4-1e65-487c-847a-847f544a6a91').item.where(linkId='62774152-8a6e-4449-af9f-87bdce8b9bf5').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryRegularMedications"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a').item.where(linkId='aa9ff2ed-bcd2-406d-a9ff-89c201df2605').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryAllergiesAdverseReactions"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='d4e4db07-a795-4a30-bd0f-9c109f96a22b').item.where(linkId='3e689aeb-69a1-4a9b-93bd-50377511dd9b').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryFamilyHistory"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='01f67f0b-e3be-48d8-a2ad-4c54f469cd13').item.where(linkId='49ee4583-c608-41d4-a1e9-c06cf4292369').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySocialEmotionalWellbeing"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='0a3c9c93-5836-4a5b-93e5-d7de559e053a').item.where(linkId='b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySocialHistory"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9').item.where(linkId='76d51512-b94a-4092-b3ae-a656fbb9c360').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryHomeFamily"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='819b3305-bf93-4502-9986-242ea2ae5f43').item.where(linkId='08d2e80e-3bb4-4f67-8b1c-090b1ace225a').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryLearningDevelopment"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='3e7d7246-98f8-4803-b063-8405ac30b086').item.where(linkId='5ab80929-5901-431d-bf68-67d532f5fa58').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryLearningWorkAdults"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='5437e30d-8a0a-4785-974e-00a10d2a1df0').item.where(linkId='3569e514-a74b-4343-b31b-3395e58d991a').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryLearningWorkOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='dec713ae-246a-4961-95c9-0626bfebfed2').item.where(linkId='ed6f7800-e22a-4639-9d11-faf845513500').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryMood"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='9559242e-9ffe-4e1f-a9fc-86d1fa62c4b9').item.where(linkId='db9a8650-42a2-4bd3-8066-7e09394120d5').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryMemoryThinking"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='1bd58e7b-2cb7-45fb-965f-d5fa33d0bb4c').item.where(linkId='1f0e7fde-e964-4f36-9151-dbdc5e145f94').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryChronicDiseaseAgeing"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='c5da020c-c4f3-437c-b658-ea7e7667514d').item.where(linkId='7292070b-8944-4a40-bcf6-9aaf1721e986').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryScreeningPrograms"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='9674ffa0-2ad9-4ca3-80e6-e8bb0670a802').item.where(linkId='70f82c4b-d1f9-44d5-9903-bd7097799c05').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryHealthyEating"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='ae7a3801-9491-4b1f-820c-678236d18f56').item.where(linkId='301789b0-8c6a-470d-8787-0ac6597e3bea').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='74736baa-455b-41d2-af98-fb65cd463e97').item.where(linkId='ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='d56234a0-aafd-4c22-96c9-00ead8424f0b').item.where(linkId='25b8b8fd-adb1-48ab-aeae-528603668c4b').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySubstanceUse"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='f8e1cc1f-f1a1-4eb3-8255-77d600f52831').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryGambling"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240').item.where(linkId='2ab74c97-55d9-4fd9-968f-8962d62ea573').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySexualHealthAdolescents"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='4b49c291-6e93-4b7e-be3b-15ef8bc207ad').item.where(linkId='b41572ba-cf36-4cec-addf-cb0b47fea63f').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySexualHealthAdults"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='589b53a4-ceb2-41c0-850a-69438f9fd1cc').item.where(linkId='efd0735c-c379-471f-83bb-93b0392093aa').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySexualHealthOlder"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='02048954-e9d7-424e-8c7b-6a3c495d7ce4').item.where(linkId='e9936322-e6fe-4cf7-ab61-22846a8fbb95').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryEyeHealth"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='961da481-1698-4a1d-962b-a9c2185e335a').item.where(linkId='8dcdc04c-7655-4b47-88eb-8425f0cdc0d0').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryEarHealthHearing"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='de71bbd0-178c-4974-9c75-55d5a48c66f7').item.where(linkId='ac87b23a-b022-4d62-9e82-1c56583bca34').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryOralDentalHealth"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='bde9ab00-a20f-4a7c-9266-11f53f60c65f').item.where(linkId='875574fa-9769-42ca-8381-9e80c3e5233d').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummarySkin"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='7d4772cb-a1cd-49d9-853f-883ccd8343a6').item.where(linkId='88d23fa4-df88-43ab-a1d0-69315d55c3bf').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryImmunisation"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='205677d6-17c7-4285-a7c4-61aa02b6c816').item.where(linkId='bcd1c9f2-889e-41e5-8c2b-a70221c5cec5').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryExamination"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='fcbfa6e1-c101-4675-969d-aa11027859c2').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryAbsoluteCVDRisk"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='f8022f3f-21fe-42c0-8abd-95f24e2e37e5').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "HealthPrioritiesSummaryInvestigations"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='918f7f32-cdaf-4742-b33a-8254eda2d8bd').item.where(linkId='96a8d946-6078-4c85-9de8-3bf18d2c8150').answer.value"
+
+
   // end variables
 
   // About The Health Check
@@ -452,6 +579,12 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/Investigations|0.1.0"
     * linkId = "302d9437-25b9-41e3-9d66-138c352d32a8"
     * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Investigations|0.1.0] not available. Unable to display all questions."
+    * type = #display
+  // Health Priorities Summary
+  * item[+] 
+    * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.1.0"
+    * linkId = "ada45623-5e86-49ea-a00b-be0699364281"
+    * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.1.0] not available. Unable to display all questions."
     * type = #display
   // Finalising Health Check
   * item[+] 
