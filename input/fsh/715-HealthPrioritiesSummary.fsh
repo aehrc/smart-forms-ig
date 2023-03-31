@@ -41,7 +41,7 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
 
 // some linkIds maintained from full assessment questionnaire
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Health Priorities Summary" 
   * linkId = "e2c778e2-83df-40d5-89ea-f0f91b666b04"
   * text = "Health Priorities, Actions And Follow-Up Summary"

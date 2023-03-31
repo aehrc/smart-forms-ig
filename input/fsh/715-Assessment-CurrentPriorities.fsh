@@ -41,7 +41,7 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Current priorities" 
   * linkId = "b3a3eee2-f340-452e-9d05-d1f54f677b81"
   * text = "Current health/patient priorities"

@@ -41,7 +41,7 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "2e82032a-dc28-45f2-916e-862303d39fe5"
   * text = "About the health check"
   * type = #group

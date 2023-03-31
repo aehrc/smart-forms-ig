@@ -41,7 +41,7 @@ Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Island
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240"
   * text = "Gambling"
   * type = #group

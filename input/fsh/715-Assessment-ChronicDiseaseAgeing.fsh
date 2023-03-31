@@ -40,7 +40,7 @@ Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "c5da020c-c4f3-437c-b658-ea7e7667514d"
   * text = "Chronic disease associated with ageing"
   * type = #group

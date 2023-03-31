@@ -41,7 +41,7 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "0a3c9c93-5836-4a5b-93e5-d7de559e053a"
   * text = "Social and emotional wellbeing"
   * type = #group

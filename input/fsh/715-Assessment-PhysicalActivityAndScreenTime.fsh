@@ -43,7 +43,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 
 //all ages except older people
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "74736baa-455b-41d2-af98-fb65cd463e97"
   * text = "Physical activity and screen time"
   * type = #group
@@ -58,7 +58,6 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
     * answerInteger = 50
   * enableBehavior = #all
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
     * linkId = "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4"
     * text = "Physical activity concerns"
     * type = #group
@@ -85,7 +84,6 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
     * linkId = "e24d487b-3dd4-4a6d-a58e-85dfa8ce3f36"
     * text = "Screen time concerns"
     * type = #group
@@ -112,7 +110,6 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
     * linkId = "e9b6ac74-d810-4350-8b41-8ea2e4bd14fc"
     * text = "Physical activity or screen time concerns"
     * type = #group
@@ -175,7 +172,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 
 // older people >=50
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "d56234a0-aafd-4c22-96c9-00ead8424f0b"
   * text = "Physical activity"
   * type = #group
@@ -185,7 +182,6 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
     * operator = #>=
     * answerInteger = 50
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
     * linkId = "015d986f-89cf-45b0-a753-9a3ab0c4b05b"
     * text = "Physical activity concerns"
     * type = #group

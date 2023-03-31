@@ -7,7 +7,7 @@ ValueSet: YesNoNA
 Id: YesNoNA
 Title: "Yes No NA"
 Description: "Concepts for Yes, No and Not applicable"
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/YesNoNA"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "7709b027-415d-4eff-abf0-dc8edb2dc8fa"
@@ -43,7 +43,7 @@ ValueSet: YesNo
 Id: YesNo
 Title: "Yes No"
 Description: "Concepts for Yes and No"
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/YesNo"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/YesNo"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "91d952b0-22ed-474a-aad7-da1db1d7dcc7"
@@ -71,7 +71,7 @@ ValueSet: AboriginalTorresStraitIslander
 Id: AboriginalTorresStraitIslander
 Title: "Aboriginal and/or Torres Strait Islander"
 Description: "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people."
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/AboriginalTorresStraitIslander"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "e2b013bd-1725-4299-a7a5-53635d42f1be"
@@ -104,7 +104,7 @@ ValueSet: PrimaryCarerParentGrandparent
 Id: PrimaryCarerParentGrandparent
 Title: "Primary Carer Of Parent Or Grandparent"
 Description: "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent."
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/PrimaryCarerParentGrandparent"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "2809c2fa-28ec-4def-9b16-93a611d29da3"
@@ -152,7 +152,7 @@ ValueSet: MedicalHistoryShortListInfants
 Id: MedicalHistoryShortListInfants
 Title: "Medical History Short List for Infants"
 Description: "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants."
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListInfants"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "06bd5f41-3c10-4cdb-a304-b8127d72957f"
@@ -223,7 +223,7 @@ ValueSet: MedicalHistoryShortListPrimarySchool
 Id: MedicalHistoryShortListPrimarySchool
 Title: "Medical History Short List for Primary School Children"
 Description: "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children."
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListPrimarySchool"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "455f4b6f-5083-4f56-8995-5ec798e47cc4"
@@ -287,7 +287,7 @@ ValueSet: MedicalHistoryShortListAdolescents
 Id: MedicalHistoryShortListAdolescents
 Title: "Medical History Short List for Adolescents"
 Description: "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents."
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdolescents"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "5b0bb9f4-1ca3-47e2-bb1d-91cad5454ce4"
@@ -350,7 +350,7 @@ ValueSet: MedicalHistoryShortListAdultsAndOlderPeople
 Id: MedicalHistoryShortListAdultsAndOlderPeople
 Title: "Medical History Short List for Adults and Older People"
 Description: "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People."
-* ^url = "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults"
+* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdults"
 * ^version = "0.1.0"
 * ^status = #active
 * ^expansion.identifier = "1998291e-ed8a-49f2-ac11-9e6056efd7f3"

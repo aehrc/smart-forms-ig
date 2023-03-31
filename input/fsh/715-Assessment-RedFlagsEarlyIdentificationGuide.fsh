@@ -39,7 +39,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "b9a6ce8b-7766-47a5-8e1c-1590a1edbfa8"
   * text = "Red flags early identification guide for children"
   * type = #group

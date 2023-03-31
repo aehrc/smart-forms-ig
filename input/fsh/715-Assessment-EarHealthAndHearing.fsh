@@ -41,7 +41,7 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "de71bbd0-178c-4974-9c75-55d5a48c66f7"
   * text = "Ear health and hearing"
   * type = #group

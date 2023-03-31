@@ -41,7 +41,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "16971bd2-5494-483d-9713-eda182c47f02"
   * text = "Finalising the health check"
   * type = #group

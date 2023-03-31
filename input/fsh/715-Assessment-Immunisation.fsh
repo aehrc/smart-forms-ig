@@ -41,7 +41,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "205677d6-17c7-4285-a7c4-61aa02b6c816"
   * text = "Immunisation"
   * type = #group

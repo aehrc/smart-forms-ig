@@ -41,7 +41,7 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Social history"
   * linkId = "a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9"
   * text = "Social history: Information about family and child's living arrangements"

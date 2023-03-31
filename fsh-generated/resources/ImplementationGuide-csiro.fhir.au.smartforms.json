@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "SmartForms",
-  "url": "https://smartforms.csiro.au/ig/ImplementationGuide/SmartForms",
+  "id": "csiro.fhir.au.smartforms",
+  "url": "https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms",
   "version": "0.1.0",
   "name": "SmartForms",
   "title": "Smart Forms",
@@ -27,12 +27,6 @@
     "4.0.1"
   ],
   "dependsOn": [
-    {
-      "packageId": "hl7.fhir.au.base",
-      "version": "current",
-      "uri": "http://hl7.org.au/fhir/ImplementationGuide/hl7.fhir.au.base",
-      "id": "hl7_fhir_au_base"
-    },
     {
       "packageId": "hl7.fhir.au.core",
       "version": "current",
@@ -138,14 +132,6 @@
       },
       {
         "reference": {
-          "reference": "Questionnaire/AboriginalTorresStraitIslanderHealthCheckRecipe"
-        },
-        "name": "Aboriginal and Torres Strait Islander Health Check",
-        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Questionnaire/AboutTheHealthCheck"
         },
         "name": "Aboriginal and Torres Strait Islander Health Check - About The Health Check",
@@ -166,6 +152,14 @@
         },
         "name": "Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions",
         "description": "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/AssemblyInstructions"
+        },
+        "name": "Aboriginal and Torres Strait Islander Health Check",
+        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
         "exampleBoolean": false
       },
       {
@@ -465,6 +459,150 @@
       {
         "code": "releaselabel",
         "value": "ci-build"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/_resources/exp-params.json"
+      },
+      {
+        "code": "special-url-base",
+        "value": "http://www.health.gov.au/assessments/mbs/715"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Examination"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/EyeHealth"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/FamilyHistory"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Gambling"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/HealthyEating"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Immunisation"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Investigations"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/LearningAndWork"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Mood"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/RegularMedications"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/SexualHealth"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Skin"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/SubstanceUse"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/Consent"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary"
+      },
+      {
+        "code": "special-url",
+        "value": "http://www.health.gov.au/assessments/mbs/715/PatientDetails"
       }
     ]
   }

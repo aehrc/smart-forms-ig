@@ -43,7 +43,7 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
 
 // adolescents and adults
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5437e30d-8a0a-4785-974e-00a10d2a1df0"
   * text = "Learning and work"
   * type = #group
@@ -133,7 +133,7 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
 
 // older people
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "dec713ae-246a-4961-95c9-0626bfebfed2"
   * text = "Work"
   * type = #group

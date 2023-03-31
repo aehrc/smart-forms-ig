@@ -40,7 +40,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
 
 // This questionnaire attempts to somewhat harmonise the infant and adolescent templates but there are differences that will require confirmation.
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "3e7d7246-98f8-4803-b063-8405ac30b086"
   * text = "Learning and development"
   * type = #group

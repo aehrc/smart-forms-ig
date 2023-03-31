@@ -39,7 +39,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab   
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab   
   * linkId = "d4e4db07-a795-4a30-bd0f-9c109f96a22b"
   * text = "Allergies/adverse reactions"
   * type = #group

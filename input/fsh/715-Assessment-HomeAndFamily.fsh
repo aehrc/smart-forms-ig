@@ -42,7 +42,7 @@ Description: "Home And Family sub-questionnaire for Aboriginal and Torres Strait
 
 // for adolescents and up
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "819b3305-bf93-4502-9986-242ea2ae5f43"
   * text = "Home and family"
   * type = #group

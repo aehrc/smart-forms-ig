@@ -41,7 +41,7 @@ Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres St
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "1bd58e7b-2cb7-45fb-965f-d5fa33d0bb4c"
   * text = "Memory and thinking"
   * type = #group

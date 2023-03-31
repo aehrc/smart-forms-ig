@@ -18,7 +18,7 @@
             "coding": [
               {
                 "code": "tab",
-                "system": "https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended"
+                "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
               }
             ]
           }
@@ -258,7 +258,7 @@
           "text": "Other relevant medical history, operations, hospital admissions, etc",
           "type": "open-choice",
           "repeats": true,
-          "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistory"
+          "answerValueSet": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistory"
         },
         {
           "linkId": "f00def30-35dd-401a-9a38-12602bd3b8b1",
@@ -313,7 +313,7 @@
               "linkId": "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e",
               "text": "Condition",
               "type": "open-choice",
-              "answerValueSet": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistory"
+              "answerValueSet": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistory"
             },
             {
               "extension": [
@@ -450,7 +450,7 @@
       "title": "Medical History Short List for Infants",
       "description": "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListInfants",
       "expansion": {
         "identifier": "06bd5f41-3c10-4cdb-a304-b8127d72957f",
         "timestamp": "2022-10-20T09:50:13+10:00",
@@ -608,7 +608,7 @@
       "title": "Medical History Short List for Primary School Children",
       "description": "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListPrimarySchool",
       "expansion": {
         "identifier": "455f4b6f-5083-4f56-8995-5ec798e47cc4",
         "timestamp": "2022-10-20T09:54:05+10:00",
@@ -748,7 +748,7 @@
       "title": "Medical History Short List for Adolescents",
       "description": "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdolescents",
       "expansion": {
         "identifier": "5b0bb9f4-1ca3-47e2-bb1d-91cad5454ce4",
         "timestamp": "2022-10-20T09:45:56+10:00",
@@ -888,7 +888,7 @@
       "title": "Medical History Short List for Adults and Older People",
       "description": "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdults",
       "expansion": {
         "identifier": "1998291e-ed8a-49f2-ac11-9e6056efd7f3",
         "timestamp": "2022-10-20T09:48:19+10:00",

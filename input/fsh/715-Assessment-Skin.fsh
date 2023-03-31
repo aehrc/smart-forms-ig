@@ -42,7 +42,7 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "7d4772cb-a1cd-49d9-853f-883ccd8343a6"
   * text = "Skin"
   * type = #group

@@ -41,7 +41,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "c587e3b6-b91a-40dc-9a16-179342d001e9"
   * text = "Examination"
   * type = #group

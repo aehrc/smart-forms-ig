@@ -40,7 +40,7 @@ Description: "Family History sub-questionnaire for Aboriginal and Torres Strait 
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "01f67f0b-e3be-48d8-a2ad-4c54f469cd13"
   * text = "Family history"
   * type = #group

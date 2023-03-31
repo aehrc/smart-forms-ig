@@ -41,7 +41,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "d95abe99-8ef2-4b97-bc88-a2901e2ebc9c"
   * text = "Absolute cardiovascular risk calculation"
   * type = #group

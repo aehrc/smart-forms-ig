@@ -41,7 +41,7 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "961da481-1698-4a1d-962b-a9c2185e335a"
   * text = "Eye health"
   * type = #group

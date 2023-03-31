@@ -1,6 +1,6 @@
 {
   "resourceType": "Questionnaire",
-  "id": "AboriginalTorresStraitIslanderHealthCheckRecipe",
+  "id": "AssemblyInstructions",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
@@ -840,7 +840,7 @@
       "title": "Yes No",
       "description": "Concepts for Yes and No",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/YesNo",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
       "expansion": {
         "identifier": "91d952b0-22ed-474a-aad7-da1db1d7dcc7",
         "timestamp": "2022-10-20T09:43:07+10:00",
@@ -899,7 +899,7 @@
       "title": "Yes No NA",
       "description": "Concepts for Yes, No and Not applicable",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/YesNoNA",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
       "expansion": {
         "identifier": "7709b027-415d-4eff-abf0-dc8edb2dc8fa",
         "timestamp": "2022-10-20T09:39:51+10:00",
@@ -1003,7 +1003,7 @@
       "title": "Medical History Short List for Infants",
       "description": "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListInfants",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListInfants",
       "expansion": {
         "identifier": "06bd5f41-3c10-4cdb-a304-b8127d72957f",
         "timestamp": "2022-10-20T09:50:13+10:00",
@@ -1161,7 +1161,7 @@
       "title": "Medical History Short List for Primary School Children",
       "description": "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListPrimarySchool",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListPrimarySchool",
       "expansion": {
         "identifier": "455f4b6f-5083-4f56-8995-5ec798e47cc4",
         "timestamp": "2022-10-20T09:54:05+10:00",
@@ -1301,7 +1301,7 @@
       "title": "Medical History Short List for Adolescents",
       "description": "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdolescents",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdolescents",
       "expansion": {
         "identifier": "5b0bb9f4-1ca3-47e2-bb1d-91cad5454ce4",
         "timestamp": "2022-10-20T09:45:56+10:00",
@@ -1441,7 +1441,7 @@
       "title": "Medical History Short List for Adults and Older People",
       "description": "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/MedicalHistoryShortListAdults",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdults",
       "expansion": {
         "identifier": "1998291e-ed8a-49f2-ac11-9e6056efd7f3",
         "timestamp": "2022-10-20T09:48:19+10:00",
@@ -1705,7 +1705,7 @@
       "title": "Aboriginal and/or Torres Strait Islander",
       "description": "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/AboriginalTorresStraitIslander",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
       "expansion": {
         "identifier": "e2b013bd-1725-4299-a7a5-53635d42f1be",
         "timestamp": "2022-10-20T11:38:45+10:00",
@@ -1773,7 +1773,7 @@
       "title": "Primary Carer Of Parent Or Grandparent",
       "description": "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
       "version": "0.1.0",
-      "url": "https://aehrc.csiro.au/fhir/ValueSet/PrimaryCarerParentGrandparent",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
       "expansion": {
         "identifier": "2809c2fa-28ec-4def-9b16-93a611d29da3",
         "timestamp": "2022-10-20T11:42:30+10:00",

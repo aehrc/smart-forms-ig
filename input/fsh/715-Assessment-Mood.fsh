@@ -40,7 +40,7 @@ Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander H
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "9559242e-9ffe-4e1f-a9fc-86d1fa62c4b9"
   * text = "Mood"
   * type = #group

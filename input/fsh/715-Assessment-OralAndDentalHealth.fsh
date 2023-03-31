@@ -41,7 +41,7 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "bde9ab00-a20f-4a7c-9266-11f53f60c65f"
   * text = "Oral and dental health"
   * type = #group

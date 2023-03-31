@@ -42,7 +42,7 @@ Description: "Investigations sub-questionnaire for Aboriginal and Torres Strait 
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "918f7f32-cdaf-4742-b33a-8254eda2d8bd"
   * text = "Investigations"
   * type = #group

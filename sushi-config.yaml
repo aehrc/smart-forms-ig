@@ -3,7 +3,7 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: SmartForms
+id: csiro.fhir.au.smartforms
 canonical: https://smartforms.csiro.au/ig
 name: SmartForms
 title: Smart Forms
@@ -25,9 +25,8 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  hl7.fhir.au.base: current
+
   hl7.fhir.au.core: current
-#  au.csiro.fhir.au-primarycare: current
   hl7.fhir.uv.sdc: current
 #
 #
@@ -59,7 +58,47 @@ dependencies:
 # partial list of allowed parameters see:
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
 #
-# parameters:
+parameters:
+  path-expansion-params: '../../input/_resources/exp-params.json'
+  special-url-base: 'http://www.health.gov.au/assessments/mbs/715'
+  special-url:
+    - 'http://www.health.gov.au/assessments/mbs/715'
+    - 'http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck'
+    - 'http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation'
+    - 'http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions'
+    - 'http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing'
+    - 'http://www.health.gov.au/assessments/mbs/715/CurrentPriorities'
+    - 'http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing'
+    - 'http://www.health.gov.au/assessments/mbs/715/Examination'
+    - 'http://www.health.gov.au/assessments/mbs/715/EyeHealth'
+    - 'http://www.health.gov.au/assessments/mbs/715/FamilyHistory'
+    - 'http://www.health.gov.au/assessments/mbs/715/Gambling'
+    - 'http://www.health.gov.au/assessments/mbs/715/HealthyEating'
+    - 'http://www.health.gov.au/assessments/mbs/715/HomeAndFamily'
+    - 'http://www.health.gov.au/assessments/mbs/715/Immunisation'
+    - 'http://www.health.gov.au/assessments/mbs/715/Investigations'
+    - 'http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment'
+    - 'http://www.health.gov.au/assessments/mbs/715/LearningAndWork'
+    - 'http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems'
+    - 'http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking'
+    - 'http://www.health.gov.au/assessments/mbs/715/Mood'
+    - 'http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth'
+    - 'http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime'
+    - 'http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide'
+    - 'http://www.health.gov.au/assessments/mbs/715/RegularMedications'
+    - 'http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms'
+    - 'http://www.health.gov.au/assessments/mbs/715/SexualHealth'
+    - 'http://www.health.gov.au/assessments/mbs/715/Skin'
+    - 'http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing'
+    - 'http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild'
+    - 'http://www.health.gov.au/assessments/mbs/715/SubstanceUse'
+    - 'http://www.health.gov.au/assessments/mbs/715/Consent'
+    - 'http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck'
+    - 'http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary'
+    - 'http://www.health.gov.au/assessments/mbs/715/PatientDetails'
+  
+    
+
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

@@ -42,7 +42,7 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "ae7a3801-9491-4b1f-820c-678236d18f56"
   * text = "Healthy eating"
   * type = #group

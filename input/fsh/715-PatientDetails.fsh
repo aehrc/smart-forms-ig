@@ -44,7 +44,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 
 // do we want the main demographics "read-only"? Not sure we want to change these during the assessment. They are in the main patient record and we're not (yet) writing back
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://aehrc.csiro.au/fhir/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
   * text = "Patient Details"
   * type = #group
