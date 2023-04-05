@@ -2031,6 +2031,7 @@
       ]
     }
   ],
+  "version": "0.1.0",
   "name": "AboriginalTorresStraitIslanderHealthCheck",
   "title": "Aboriginal and Torres Strait Islander Health Check",
   "_title": {
@@ -2046,7 +2047,19 @@
   "subjectType": [
     "Patient"
   ],
-  "date": "2022-05-24",
+  "date": "2023-04-05",
+  "publisher": "AEHRC CSIRO",
+  "contact": [
+    {
+      "name": "AEHRC CSIRO",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"
+        }
+      ]
+    }
+  ],
   "jurisdiction": [
     {
       "coding": [
@@ -2056,5 +2069,6 @@
         }
       ]
     }
-  ]
+  ],
+  "copyright": "CSIRO © 2022+; Licensed under Apache License, Version 2.0"
 }
