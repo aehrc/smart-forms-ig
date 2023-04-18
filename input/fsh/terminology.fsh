@@ -7,9 +7,6 @@ ValueSet: YesNoNA
 Id: YesNoNA
 Title: "Yes No NA"
 Description: "Concepts for Yes, No and Not applicable"
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/YesNoNA"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "7709b027-415d-4eff-abf0-dc8edb2dc8fa"
 * ^expansion.timestamp = "2022-10-20T09:39:51+10:00"
@@ -44,9 +41,6 @@ ValueSet: YesNo
 Id: YesNo
 Title: "Yes No"
 Description: "Concepts for Yes and No"
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/YesNo"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "91d952b0-22ed-474a-aad7-da1db1d7dcc7"
 * ^expansion.timestamp = "2022-10-20T09:43:07+10:00"
@@ -73,9 +67,6 @@ ValueSet: AboriginalTorresStraitIslander
 Id: AboriginalTorresStraitIslander
 Title: "Aboriginal and/or Torres Strait Islander"
 Description: "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people."
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "e2b013bd-1725-4299-a7a5-53635d42f1be"
 * ^expansion.timestamp = "2022-10-20T11:38:45+10:00"
@@ -107,9 +98,6 @@ ValueSet: PrimaryCarerParentGrandparent
 Id: PrimaryCarerParentGrandparent
 Title: "Primary Carer Of Parent Or Grandparent"
 Description: "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent."
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "2809c2fa-28ec-4def-9b16-93a611d29da3"
 * ^expansion.timestamp = "2022-10-20T11:42:30+10:00"
@@ -149,6 +137,7 @@ ValueSet: MedicalHistory
 Id: MedicalHistory
 Title: "Medical History"
 Description: "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions."
+* ^experimental = false
 
 * include codes from system $SCT where constraint = "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
 
@@ -156,9 +145,6 @@ ValueSet: MedicalHistoryShortListInfants
 Id: MedicalHistoryShortListInfants
 Title: "Medical History Short List for Infants"
 Description: "The Medical History Short List for Infants value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Infants."
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListInfants"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "06bd5f41-3c10-4cdb-a304-b8127d72957f"
 * ^expansion.timestamp = "2022-10-20T09:50:13+10:00"
@@ -228,9 +214,6 @@ ValueSet: MedicalHistoryShortListPrimarySchool
 Id: MedicalHistoryShortListPrimarySchool
 Title: "Medical History Short List for Primary School Children"
 Description: "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children."
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListPrimarySchool"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "455f4b6f-5083-4f56-8995-5ec798e47cc4"
 * ^expansion.timestamp = "2022-10-20T09:54:05+10:00"
@@ -293,9 +276,6 @@ ValueSet: MedicalHistoryShortListAdolescents
 Id: MedicalHistoryShortListAdolescents
 Title: "Medical History Short List for Adolescents"
 Description: "The Medical History Short List for Adolescents value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adolescents."
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdolescents"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "5b0bb9f4-1ca3-47e2-bb1d-91cad5454ce4"
 * ^expansion.timestamp = "2022-10-20T09:45:56+10:00"
@@ -357,9 +337,6 @@ ValueSet: MedicalHistoryShortListAdultsAndOlderPeople
 Id: MedicalHistoryShortListAdultsAndOlderPeople
 Title: "Medical History Short List for Adults and Older People"
 Description: "The Medical History Short List for Adults and Older People value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Adults and Older People."
-* ^url = "https://smartforms.csiro.au/ig/ValueSet/MedicalHistoryShortListAdultsAndOlderPeople"
-* ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^expansion.identifier = "1998291e-ed8a-49f2-ac11-9e6056efd7f3"
 * ^expansion.timestamp = "2022-10-20T09:48:19+10:00"
