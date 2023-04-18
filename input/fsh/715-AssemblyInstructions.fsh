@@ -111,37 +111,35 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 
 //workaround to stop server stripping of value sets referenced as canonical
 * extension[+]
-  * url = "https:///aehrc.csiro.au/fhir/StructureDefinition/RetainValueSet"
-  * extension[+]
-    * url = "1"
-    * valueReference.reference = "#YesNoNA"
-  * extension[+]
-    * url = "2"
-    * valueReference.reference = "#YesNo"
-  * extension[+]
-    * url = "3"
-    * valueReference.reference = "#MedicalHistory"
-  * extension[+]  
-    * url = "4"
-    * valueReference.reference = "#MedicalHistoryShortListInfants"
-  * extension[+]
-    * url = "5"
-    * valueReference.reference = "#MedicalHistoryShortListPrimarySchool"
-  * extension[+]
-    * url = "6"
-    * valueReference.reference = "#MedicalHistoryShortListAdolescents"
-  * extension[+]
-    * url = "7"
-    * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
-  * extension[+]
-    * url = "8"
-    * valueReference.reference = "#condition-clinical"
-  * extension[+]
-    * url = "9"
-    * valueReference.reference = "#AboriginalTorresStraitIslander"
-  * extension[+]
-    * url = "10"
-    * valueReference.reference = "#PrimaryCarerParentGrandparent"
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#YesNoNA"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#YesNo"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#MedicalHistory"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#MedicalHistoryShortListInfants"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#MedicalHistoryShortListPrimarySchool"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#MedicalHistoryShortListAdolescents"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#condition-clinical"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#AboriginalTorresStraitIslander"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#PrimaryCarerParentGrandparent"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
