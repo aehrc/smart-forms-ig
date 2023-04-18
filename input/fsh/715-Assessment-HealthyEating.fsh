@@ -35,7 +35,7 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
 * name = "HealthyEating"
 * title = "Aboriginal and Torres Strait Islander Health Check - Healthy Eating"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

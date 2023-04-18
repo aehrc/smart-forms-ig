@@ -35,7 +35,7 @@ Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Island
 * name = "Gambling"
 * title = "Aboriginal and Torres Strait Islander Health Check - Gambling"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

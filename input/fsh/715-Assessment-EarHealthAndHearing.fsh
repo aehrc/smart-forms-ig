@@ -35,7 +35,7 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
 * name = "EarHealthAndHearing"
 * title = "Aboriginal and Torres Strait Islander Health Check - Ear Health And Hearing"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

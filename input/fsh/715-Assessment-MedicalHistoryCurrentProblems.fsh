@@ -40,7 +40,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * name = "MedicalHistoryCurrentProblems"
 * title = "Aboriginal and Torres Strait Islander Health Check - Medical History And Current Problems"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

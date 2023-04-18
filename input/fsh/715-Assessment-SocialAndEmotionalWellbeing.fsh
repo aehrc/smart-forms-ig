@@ -35,7 +35,7 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
 * name = "SocialAndEmotionalWellbeing"
 * title = "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

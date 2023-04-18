@@ -35,7 +35,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
 * name = "Immunisation"
 * title = "Aboriginal and Torres Strait Islander Health Check - Immunisation"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

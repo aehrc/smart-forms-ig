@@ -34,7 +34,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 * name = "Examination"
 * title = "Aboriginal and Torres Strait Islander Health Check - Examination"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

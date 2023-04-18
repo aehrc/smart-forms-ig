@@ -35,7 +35,7 @@ Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres St
 * name = "MemoryAndThinking"
 * title = "Aboriginal and Torres Strait Islander Health Check - Memory And Thinking"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

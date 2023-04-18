@@ -35,7 +35,7 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
 * name = "AboutTheHealthCheck"
 * title = "Aboriginal and Torres Strait Islander Health Check - About The Health Check"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

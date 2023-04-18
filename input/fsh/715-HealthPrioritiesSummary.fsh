@@ -34,7 +34,7 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
 * name = "HealthPrioritiesActionsAndFollowUpSummary"
 * title = "Aboriginal and Torres Strait Islander Health Check - Health Priorities, Actions And Follow-Up Summary"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

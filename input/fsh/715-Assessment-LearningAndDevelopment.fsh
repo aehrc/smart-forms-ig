@@ -33,7 +33,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
 * name = "LearningAndDevelopment"
 * title = "Aboriginal and Torres Strait Islander Health Check - Learning And Development"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

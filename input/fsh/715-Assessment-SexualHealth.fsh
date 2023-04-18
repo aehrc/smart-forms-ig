@@ -35,7 +35,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 * name = "SexualHealth"
 * title = "Aboriginal and Torres Strait Islander Health Check - Sexual Health"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU

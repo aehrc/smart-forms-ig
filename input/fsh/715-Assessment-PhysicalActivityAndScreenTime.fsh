@@ -35,7 +35,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 * name = "PhysicalActivityAndScreenTime"
 * title = "Aboriginal and Torres Strait Islander Health Check - Physical Activity And Screen Time"
 * status = #draft
-* experimental = true
+* experimental = false
 * subjectType[+] = #Patient
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
