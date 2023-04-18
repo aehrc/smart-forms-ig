@@ -2,10 +2,10 @@
   "resourceType": "CapabilityStatement",
   "id": "SmartFormsApplication",
   "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsApplication",
-  "name": "SmartFormsApplicationIntegrationRequirement",
-  "description": "Requirements for a system integrating the Smart Forms Application.",
+  "name": "SmartFormsApplicationCapabilities",
+  "description": "Capabilities of the Smart Forms Application.",
   "status": "draft",
-  "experimental": true,
+  "experimental": false,
   "date": "2023-01-31",
   "jurisdiction": [
     {
@@ -17,14 +17,17 @@
       ]
     }
   ],
-  "kind": "requirements",
+  "kind": "capability",
+  "software": {
+    "name": "Smart Forms Application"
+  },
   "fhirVersion": "4.0.1",
   "format": [
     "json"
   ],
   "rest": [
     {
-      "mode": "server",
+      "mode": "client",
       "security": {
         "cors": true,
         "service": [
@@ -42,7 +45,6 @@
       "resource": [
         {
           "type": "Patient",
-          "profile": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient",
           "interaction": [
             {
               "code": "read",
@@ -57,7 +59,6 @@
         },
         {
           "type": "Practitioner",
-          "profile": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner",
           "interaction": [
             {
               "code": "read",
@@ -72,7 +73,6 @@
         },
         {
           "type": "Condition",
-          "profile": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition",
           "interaction": [
             {
               "code": "search-type",
@@ -100,18 +100,6 @@
         },
         {
           "type": "Observation",
-          "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bmi",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate",
-            "https://aehrc.com/fhir/StructureDefinition/AUItem715Cholesterol",
-            "https://aehrc.com/fhir/StructureDefinition/AUItem715HDLCholesterol"
-          ],
           "interaction": [
             {
               "code": "search-type",
@@ -150,7 +138,6 @@
         },
         {
           "type": "QuestionnaireResponse",
-          "profile": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse",
           "interaction": [
             {
               "code": "read",

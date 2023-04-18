@@ -1,16 +1,16 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "SmartFormsServer",
-  "url": "xxx-endpoint/metadata",
+  "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer",
   "name": "SmartFormsServerSystemCapabilities",
-  "description": "Capabilities of the Smart Forms Server instance.",
+  "description": "Capabilities of the Smart Forms Server.",
   "status": "draft",
-  "experimental": true,
+  "experimental": false,
   "date": "2023-01-31",
-  "kind": "instance",
-  "imports": [
-    "http://hapi.com"
-  ],
+  "kind": "capability",
+  "software": {
+    "name": "Smart Forms Server"
+  },
   "fhirVersion": "4.0.1",
   "format": [
     "json",
@@ -24,17 +24,19 @@
           "type": "Questionnaire",
           "interaction": [
             {
-              "code": "read"
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
             },
             {
               "code": "search-type"
             }
           ],
           "operation": [
-            {
-              "name": "populate",
-              "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-populate"
-            },
             {
               "name": "assemble",
               "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
