@@ -110,9 +110,29 @@ parameters:
 # │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# menu:
+#  Home: index.html
+#  Artifacts: artifacts.html
+
 menu:
   Home: index.html
-  Artifacts: artifacts.html
+#  Conformance: #conformance.html
+#      General Requirements: general-requirements.html
+#      Must Support: must-support.html
+  Guidance: #guidance.html
+      Solution Architecture: solution-architecture.html
+#      General Guidance: general-guidance.html
+  FHIR Artefacts: #artifact.html
+      All Artefacts: artifacts.html
+      Questionnaires: questionnaires.html
+      Capability Statements: capability-statements.html
+      Profiles and Extensions: profiles-and-extensions.html
+#      Search Parameters and Operations: search-parameters-and-operations.html
+      Terminology: terminology.html
+#  Examples: examples.html
+  Downloads: downloads.html
+#  Change Log: changes.html
+
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
