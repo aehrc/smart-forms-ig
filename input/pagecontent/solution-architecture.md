@@ -9,9 +9,11 @@ The PMS consists of:
 
 The Smart Forms Common Service is not limited to a single centralised deployment, it could be deployed within a jurisdiction, regionally or by vendor as deemed appropriate.  
 
-![High Level Solution Architecture](SmartForms_SolnSum_HighLevel.png)  
+<div>
+<img src="SmartForms_SolnSum_HighLevel.png" alt="High Level Solution Architecture" />
+</div>
+
 *Figure 1: High Level Solution Architecture* 
-<img src="filename" alt="description of the image" />
 
 The components that support the Smart Forms solution are outlined below.  
 ##### PMS Components
