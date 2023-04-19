@@ -12,3 +12,4 @@ The NACCHO and RACGP established a working group to review the Aboriginal and To
 
 These example templates can be downloaded from the [RACGP](https://www.racgp.org.au/the-racgp/faculties/aboriginal-and-torres-strait-islander-health/guides/resources/2019-mbs-item-715-health-check-templates).
 
+This resource is FHIR Questionnaire representation of the templates above. 
