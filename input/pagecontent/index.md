@@ -35,9 +35,9 @@ This guide is divided into several pages which are listed at the top of each pag
 
 - [Home](index.html): This page provides the introduction and scope for this guide.
 - Guidance
-  - [Solution Architecture](solution-architecture.html): This page defines the high level solution architecture of Smart Forms.
+  - [Reference Implementation](reference-implementation.html): This page describes software components and high level solution architecture of a Smart Forms reference implementation.
 - FHIR Artefacts: These pages provide detailed descriptions and formal definitions for all the FHIR artefacts defined in this guide.
-  - [All Artefacts](artifacts.html): This page lists all of the FHIR artefacts defined in this guide.
+  - [Artefact Summary](artifacts.html): This page lists all of the FHIR artefacts defined in this guide.
   - [Questionnaires](questionnaires.html): This page lists all of the Questionnaire resources defined in this guide.
   - [Capability Statements](capability-statements.html): This page lists all of the CapabilityStatement resources defined in this guide.
   - [Profiles and Extensions](profiles-and-extensions.html): This page lists all of the StructureDefinition resources defined in this guide.
