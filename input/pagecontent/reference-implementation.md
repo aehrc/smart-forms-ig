@@ -14,8 +14,13 @@ A web application supporting the rendering of Questionnaire resources and author
 
 Publicly available endpoint here: <https://api.smartforms.io/fhir>
 
-A Questionnaire-hosting Forms Server API that supports the [$assemble](http://hl7.org/fhir/uv/sdc/OperationDefinition-Questionnaire-assemble.html) operation. This API is built on the [HAPI-FHIR Starter Project](https://github.com/hapifhir/hapi-fhir-jpaserver-starter). 
+A Questionnaire-hosting Forms Server API that supports the [$assemble](http://hl7.org/fhir/uv/sdc/OperationDefinition-Questionnaire-assemble.html) operation. This API is built on the [HAPI-FHIR Starter Project](https://github.com/hapifhir/hapi-fhir-jpaserver-starter).
 
+#### Clinical System Simulator
+
+Try it out here: <https://launch.smartforms.io>
+
+A simple simulator showing a patient summary screen with a launch button to perform an [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). The patient and user are preselected but can be changed on the Configuration page. The simulator is supported by the [SMART Launcher](https://launch.smarthealthit.org/).
 
 ### High Level Solution Architecture
 
