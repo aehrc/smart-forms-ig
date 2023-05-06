@@ -52,7 +52,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "iif(%patient.name.where(use = 'official').exists(),%patient.name.where(use = 'official').first().select(given.first() & ' ' & family),%patient.name.text.first())"
+      * expression = "(name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
     * text = "Name"
     * type = #string
@@ -179,7 +179,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%patient.address.select(line.first() & ' ' & line.skip(1).first() & ' ' & line.skip(2).first())"
+          * expression = "%patient.address.select(line.join(', '))"
         * linkId = "2fee2d51-7828-4178-b8c1-35edd32ba338"
         * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
         * text = "Street address"
@@ -240,7 +240,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.contact.where(relationship.coding.code = 'C').name.where(use='usual').select(given.first() & ' ' & family)"
+        * expression = "%patient.contact.where(relationship.coding.code = 'C').name.where(use='usual').select(given.first() | family).join(' ')"
       * linkId = "d7f2dd75-20c8-480f-8c22-71d604ebee8d"
       * text = "Name"
       * type = #string
@@ -279,7 +279,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').value.substring(0,10)"
+        * expression = "%patient.identifier.where(type.coding.where(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(0,10)"
       * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{10}$')"
       * linkId = "eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf"
       * text = "Number"
