@@ -388,27 +388,6 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/SmartFormsApplication"
-        },
-        "name": "Smart Forms Application Capabilities",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CapabilityStatement/SmartFormsApplicationInteractionRequirement"
-        },
-        "name": "Smart Forms Application Interaction Requirement",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CapabilityStatement/SmartFormsServer"
-        },
-        "name": "Smart Forms Server System Capabilities",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Questionnaire/SocialAndEmotionalWellbeing"
         },
         "name": "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing",
@@ -430,6 +409,30 @@
         "name": "Aboriginal and Torres Strait Islander Health Check - Substance Use",
         "description": "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+        },
+        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the Smart Forms client application to support the [Aboriginal Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/SmartFormsApplication"
+        },
+        "description": "This CapabilityStatement describes the capabilities of the Smart Forms application. It lists the application's use of resource types used in a launch context, for prepopulation and completion of forms. These capabilities include supported FHIR profiles, RESTful operations, and search parameters.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Application"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/SmartFormsServer"
+        },
+        "description": "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed, include supported FHIR profiles, RESTful operations, and search parameters.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Server"
       },
       {
         "reference": {
