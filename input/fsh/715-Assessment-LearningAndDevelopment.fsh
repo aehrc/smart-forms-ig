@@ -25,6 +25,17 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
   * extension[+]
     * url = "description"
     * valueString = "The patient that is to be used to pre-populate the form"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[+]
+    * url = "name"
+    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#user
+  * extension[+]
+    * url = "type"
+    * valueCode = #Practitioner
+  * extension[+]
+    * url = "description"
+    * valueString = "The practitioner user that is to be used to pre-populate the form"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

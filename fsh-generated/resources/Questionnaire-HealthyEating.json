@@ -535,6 +535,26 @@
           "valueString": "The patient that is to be used to pre-populate the form"
         }
       ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "user",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Practitioner"
+        },
+        {
+          "url": "description",
+          "valueString": "The practitioner user that is to be used to pre-populate the form"
+        }
+      ]
     }
   ],
   "name": "HealthyEating",
