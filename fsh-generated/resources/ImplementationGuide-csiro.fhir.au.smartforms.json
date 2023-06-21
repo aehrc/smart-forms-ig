@@ -60,6 +60,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/australian-states-territories-2"
+        },
+        "name": "Australian States and Territories",
+        "description": "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/condition-clinical"
         },
         "name": "Condition Clinical Status Codes",
@@ -440,14 +448,6 @@
         },
         "exampleBoolean": false,
         "name": "Aboriginal and Torres Strait Islander Health Check"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/australian-states-territories-2"
-        },
-        "description": "The Australian States and Territories value set includes values that represent the Australian states and territories.",
-        "exampleBoolean": false,
-        "name": "Australian States and Territories"
       }
     ],
     "page": {

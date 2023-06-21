@@ -349,8 +349,8 @@ Description: "The Medical History Short List for Adults and Older People value s
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.contains[0].system = "http://snomed.info/sct"
-* ^expansion.contains[=].code = #73211009
-* ^expansion.contains[=].display = "Diabetes mellitus"
+* ^expansion.contains[=].code = #44054006
+* ^expansion.contains[=].display = "Type 2 diabetes mellitus"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].code = #38341003
 * ^expansion.contains[=].display = "Hypertension"
@@ -387,7 +387,7 @@ Description: "The Medical History Short List for Adults and Older People value s
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].code = #413307004
 * ^expansion.contains[=].display = "Mental health problem"
-* $SCT#73211009 // "Diabetes mellitus"
+* $SCT#44054006 // "Diabetes mellitus"
 * $SCT#38341003 // "Hypertension"
 * $SCT#22298006 // "Myocardial infarction" 
 * $SCT#230690007 // "Stroke"
@@ -460,3 +460,69 @@ Description: "Preferred value set for Condition Clinical Status."
 * ^expansion.contains[=].code = #resolved
 * ^expansion.contains[=].display = "Resolved"
 * include codes from system ConditionClinicalStatusCodes
+
+
+Alias: $australian-states-territories-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1
+
+ValueSet: AustralianStatesAndTerritories
+Id: australian-states-territories-2
+Title: "Australian States and Territories"
+Description: "The Australian States and Territories value set includes values that represent the Australian states and territories."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10026"
+* ^version = "2.0.2"
+* ^status = #active
+* ^experimental = false
+* ^date = "2020-05-31"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
+* ^expansion.identifier = "e9439195-c1d8-4069-a349-98c1d552a351"
+* ^expansion.timestamp = "2023-06-20T04:20:58+00:00"
+* ^expansion.total = 9
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 2147483647
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.contains[0].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #ACT
+* ^expansion.contains[=].display = "Australian Capital Territory"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #NSW
+* ^expansion.contains[=].display = "New South Wales"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #NT
+* ^expansion.contains[=].display = "Northern Territory"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #OTHER
+* ^expansion.contains[=].display = "Other territories"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #QLD
+* ^expansion.contains[=].display = "Queensland"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #SA
+* ^expansion.contains[=].display = "South Australia"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #TAS
+* ^expansion.contains[=].display = "Tasmania"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #VIC
+* ^expansion.contains[=].display = "Victoria"
+* ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+* ^expansion.contains[=].code = #WA
+* ^expansion.contains[=].display = "Western Australia"
+* $australian-states-territories-1#ACT
+* $australian-states-territories-1#NSW
+* $australian-states-territories-1#NT
+* $australian-states-territories-1#OTHER
+* $australian-states-territories-1#QLD
+* $australian-states-territories-1#SA
+* $australian-states-territories-1#TAS
+* $australian-states-territories-1#VIC
+* $australian-states-territories-1#WA
