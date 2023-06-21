@@ -178,6 +178,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * linkId = "a9fad80e-aee6-41bd-b82d-f31ede4dbc45"
       * text = "cm"
       * type = #display
+/*
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -196,6 +197,46 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * linkId = "eb022a99-7bd0-4635-aaad-04ac0d0334c8"
       * text = "mm Hg"
       * type = #display
+*/
+  * item[+]
+    * linkId = "72c56a10-a1d9-4a53-99ec-902fea9b58a7"
+    * text = "Blood pressure"
+    * type = #group
+    * repeats = false
+    * enableWhen[+]
+      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
+      * operator = #>
+      * answerInteger = 12
+    * item[+]      
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+      * linkId = "38cda3d6-6fbf-4970-91fc-f6c1636db5f9"
+      * text = "Systolic"
+      * type = #integer
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "eb022a99-7bd0-4635-aaad-04ac0d0334c8"
+        * text = "mm Hg"
+        * type = #display
+    * item[+]      
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8462-4')).value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+      * linkId = "38cda3d6-6fbf-4970-91fc-f6c1636db5f9"
+      * text = "Diastolic"
+      * type = #integer
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "eb022a99-7bd0-4635-aaad-04ac0d0334c8"
+        * text = "mm Hg"
+        * type = #display
+
+    
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath

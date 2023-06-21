@@ -334,45 +334,95 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBloodPressure.entry.resource.select(component[0].value.select(value.toString()) + '/' + component[1].value.select(value.toString()) )"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-              "valueCoding": {
-                "code": "mm[Hg]",
-                "system": "http://unitsofmeasure.org"
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "unit",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "mm[Hg]",
+                    "system": "http://unitsofmeasure.org"
                   }
                 }
               ],
-              "linkId": "eb022a99-7bd0-4635-aaad-04ac0d0334c8",
-              "text": "mm Hg",
-              "type": "display"
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "unit",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "eb022a99-7bd0-4635-aaad-04ac0d0334c8",
+                  "text": "mm Hg",
+                  "type": "display"
+                }
+              ],
+              "linkId": "38cda3d6-6fbf-4970-91fc-f6c1636db5f9",
+              "text": "Systolic",
+              "type": "integer",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8462-4')).value.value"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "mm[Hg]",
+                    "system": "http://unitsofmeasure.org"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "unit",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "eb022a99-7bd0-4635-aaad-04ac0d0334c8",
+                  "text": "mm Hg",
+                  "type": "display"
+                }
+              ],
+              "linkId": "38cda3d6-6fbf-4970-91fc-f6c1636db5f9",
+              "text": "Diastolic",
+              "type": "integer",
+              "repeats": false
             }
           ],
-          "linkId": "15200593-ab79-47ec-babe-4fdcb2327737",
+          "linkId": "72c56a10-a1d9-4a53-99ec-902fea9b58a7",
           "text": "Blood pressure",
-          "type": "string",
+          "type": "group",
           "repeats": false,
           "enableWhen": [
             {
