@@ -63,7 +63,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
+      * expression = "%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text).first()"
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
     * text = "Name"
     * type = #string

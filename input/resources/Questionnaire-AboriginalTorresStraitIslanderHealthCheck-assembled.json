@@ -2224,7 +2224,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
+                                        "expression": "%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text).first()"
                                     }
                                 }
                             ],
