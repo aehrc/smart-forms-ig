@@ -31,7 +31,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
+                "expression": "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | %patient.name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
               }
             }
           ],
@@ -240,7 +240,7 @@
               "linkId": "372d79bb-9d0b-42d2-a98c-cbe332bd3745",
               "text": "Relationship to child",
               "type": "string",
-              "repeats": true
+              "repeats": false
             }
           ]
         },
