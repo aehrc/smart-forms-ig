@@ -218,7 +218,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * repeats = false
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "eb022a99-7bd0-4635-aaad-04ac0d0334c8"
+        * linkId = "085e2215-1bfd-45bb-a21a-a4904d0a6aa9"
         * text = "mm Hg"
         * type = #display
     * item[+]      
@@ -226,7 +226,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * language = #text/fhirpath
         * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8462-4')).value.value"
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
-      * linkId = "38cda3d6-6fbf-4970-91fc-f6c1636db5f9"
+      * linkId = "4d67ff19-80bc-42d0-b0fd-6f1a78d2b956"
       * text = "Diastolic"
       * type = #integer
       * repeats = false
