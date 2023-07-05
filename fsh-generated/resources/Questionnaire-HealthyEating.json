@@ -22,13 +22,36 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
         }
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age <= 5"
+                  }
+                },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
@@ -49,17 +72,17 @@
               "text": "Is there anything that you are worried about with your child's feeding/eating?",
               "type": "choice",
               "repeats": false,
-              "enableWhen": [
-                {
-                  "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                  "operator": "<=",
-                  "answerInteger": 5
-                }
-              ],
               "answerValueSet": "#YesNo"
             },
             {
               "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age > 5"
+                  }
+                },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
@@ -80,13 +103,6 @@
               "text": "Is there anything that you are worried about with your child's eating?",
               "type": "choice",
               "repeats": false,
-              "enableWhen": [
-                {
-                  "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                  "operator": ">",
-                  "answerInteger": 5
-                }
-              ],
               "answerValueSet": "#YesNo"
             },
             {
@@ -118,16 +134,18 @@
           "linkId": "9ac8c78d-9c36-4bf5-8c6e-e48109902dfa",
           "text": "Child eating concerns",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -151,16 +169,18 @@
           "linkId": "ff6a46e6-0812-4718-a854-489b24805925",
           "text": "Breastfeeding history",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -184,16 +204,18 @@
           "linkId": "b5f748d2-1874-4949-a7df-6e233f03135d",
           "text": "Bottle feeding history",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -239,16 +261,18 @@
           "linkId": "9266b946-74b3-4fc2-91ce-df557692e600",
           "text": "Diet or weight concerns",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age >= 50"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -294,17 +318,17 @@
           "linkId": "c4c51d01-7acf-4551-a652-82f9fdf58a6d",
           "text": "Unintended weight loss",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">=",
-              "answerInteger": 50
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
               "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about age-appropriate healthy eating, which could include:</div>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
@@ -333,17 +357,17 @@
           "linkId": "9f6adf74-f240-41a2-a509-d216d5308911",
           "text": "Document conversation about age-appropriate healthy eating, which could include: current diet; transition to solids; dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
               "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
@@ -372,14 +396,7 @@
           "linkId": "7a22a4c4-6611-4687-af00-37c80c3f8fc0",
           "text": "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
           "item": [
@@ -439,14 +456,7 @@
       "linkId": "ae7a3801-9491-4b1f-820c-678236d18f56",
       "text": "Healthy eating",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ]
+      "repeats": false
     }
   ],
   "contained": [

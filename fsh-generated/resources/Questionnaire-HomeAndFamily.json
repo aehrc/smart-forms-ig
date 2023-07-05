@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age > 12"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -157,20 +164,7 @@
       "linkId": "819b3305-bf93-4502-9986-242ea2ae5f43",
       "text": "Home and family",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">",
-          "answerInteger": 12
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "contained": [

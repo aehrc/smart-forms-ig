@@ -53,57 +53,48 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "16971bd2-5494-483d-9713-eda182c47f02"
   * text = "Finalising the health check"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * linkId = "30532ad8-3465-4bdd-97ed-ec5664f9d733"
     * text = "Patient priorities and goals: What does the parent/carer say are the important things that have come out of this health check?"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age <= 12).intersect(%age > 5)"
     * linkId = "6aa0a113-4d33-4f6b-9899-fa249674075a"
     * text = "Patient priorities and goals: What does the parent/carer and child say are the important things that have come out of this health check?"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5
-    * enableBehavior = #all
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * linkId = "71c19d58-a8ae-43ba-8b96-463c108c75dc"
     * text = "Patient priorities and goals: What does the patient say are the important things that have come out of this health check?"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
+
   * item[+] //infant
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "d0e58402-a08a-49ca-b2ca-9f4bbdb89da0"
     * text = "Brief intervention: advice and information provided during health check"
     * type = #open-choice
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
     // Look to replace with answerValueSet
     * answerOption[+].valueString = "Sugary drinks"
     * answerOption[+].valueString = "Screen use"
@@ -114,22 +105,17 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Parenting advice"
     * answerOption[+].valueString = "Safe sleeping practices"   
     * answerOption[+].valueString = "Developmental milestones - including language and hearing"
+
   * item[+] //Primary school
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age <= 12).intersect(%age > 5)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8"
     * text = "Brief intervention: advice and information provided during health check"
     * type = #open-choice
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5
-    * enableBehavior = #all
     // Look to replace with answerValueSet
     * answerOption[+].valueString = "Healthy eating"
     * answerOption[+].valueString = "Screen use"
@@ -138,22 +124,17 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Sugary drinks"    
     * answerOption[+].valueString = "Physical activity and exercise"    
     * answerOption[+].valueString = "Parenting advice"
+
   * item[+] //Adolescent 
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age <= 24).intersect(%age > 12)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "eaed9770-95f4-4c6a-b06c-d573427a2616"
     * text = "Brief intervention: advice and information provided during health check"
     * type = #open-choice
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
-    * enableBehavior = #all
     // Look to replace with answerValueSet
     * answerOption[+].valueString = "Healthy eating"
     * answerOption[+].valueString = "Screen use"
@@ -164,22 +145,17 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Substance use/harm minimisation"
     * answerOption[+].valueString = "Safe sex/contraception"
     * answerOption[+].valueString = "Care of teeth and gums"
+
   * item[+] //Adult 
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age <= 49).intersect(%age > 24)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "25f27e83-fcf0-49c8-86c1-e285e201a043"
     * text = "Brief intervention: advice and information provided during health check"
     * type = #open-choice
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 49
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 24
-    * enableBehavior = #all
     // Look to replace with answerValueSet
     * answerOption[+].valueString = "Healthy eating"
     * answerOption[+].valueString = "Screen use"
@@ -191,17 +167,17 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Substance use/harm minimisation"
     * answerOption[+].valueString = "Safe sex/contraception"
     * answerOption[+].valueString = "Oral and dental health"
+
   * item[+] //Older people 
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 49"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "2657da9c-a27e-4939-af7a-08a19b9ab6f7"
     * text = "Brief intervention: advice and information provided during health check"
     * type = #open-choice
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 49
     // Look to replace with answerValueSet
     * answerOption[+].valueString = "Healthy eating"
     * answerOption[+].valueString = "Physical activity and exercise"
@@ -211,6 +187,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Substance use/harm minimisation"
     * answerOption[+].valueString = "Social support and services"
     * answerOption[+].valueString = "Oral and dental health"
+
   * item[+]
     * linkId = "afbadad6-bef9-4fad-b5f4-111f666ccf11"
     * text = "Care provided as part of the health check (eg immunisations, medication review, investigations requested)"
@@ -241,16 +218,15 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * type = #group
       * repeats = true
       * item[+] //Infant
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%age <= 5"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "4044d0b4-94b2-4a89-b826-a14614298511"
         * text = "Who"
         * type = #open-choice
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #<=
-          * answerInteger = 5
         // Look to replace with answerValueSet
         * answerOption[+].valueString = "GP follow-up"
         * answerOption[+].valueString = "Aboriginal and/or Torres Strait Islander Health Worker follow-up"
@@ -265,21 +241,15 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Early intervention (development) services"
         * answerOption[+].valueString = "Parenting programs/support services"
       * item[+] //Primary School
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "(%age <= 12).intersect(%age > 5)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a"
         * text = "Who"
         * type = #open-choice
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #<=
-          * answerInteger = 12
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #>
-          * answerInteger = 5
-        * enableBehavior = #all
         // Look to replace with answerValueSet
         * answerOption[+].valueString = "GP follow-up"
         * answerOption[+].valueString = "Aboriginal and/or Torres Strait Islander Health Worker follow-up"
@@ -292,21 +262,15 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Mental health"
         * answerOption[+].valueString = "Parenting programs/support services"
       * item[+] //Adolescent
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "(%age <= 24).intersect(%age > 12)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "07cfe077-ba93-4f93-b2a5-027023faa33b"
         * text = "Who"
         * type = #open-choice
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #<=
-          * answerInteger = 24
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #>
-          * answerInteger = 12
-        * enableBehavior = #all
         // Look to replace with answerValueSet
         * answerOption[+].valueString = "GP follow-up"
         * answerOption[+].valueString = "GP review of results of investigations"
@@ -320,21 +284,15 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Parenting programs/support services"
         * answerOption[+].valueString = "Social and emotional wellbeing/mental health"
       * item[+] //Adult
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "(%age <= 49).intersect(%age > 24)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "a525c370-d8c3-4764-ab3a-bf62081725e0"
         * text = "Who"
         * type = #open-choice
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #<=
-          * answerInteger = 49
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #>
-          * answerInteger = 24
-        * enableBehavior = #all
         // Look to replace with answerValueSet
         * answerOption[+].valueString = "GP follow-up"
         * answerOption[+].valueString = "GP review of results of investigations"
@@ -350,16 +308,15 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Parenting programs/support services"
         * answerOption[+].valueString = "Social and emotional wellbeing/mental health"
       * item[+] //Older people
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%age > 49"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "d68d9693-48d3-4663-9dbb-dd3a7aec5278"
         * text = "Who"
         * type = #open-choice
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #>
-          * answerInteger = 49
         // Look to replace with answerValueSet
         * answerOption[+].valueString = "GP follow-up"
         * answerOption[+].valueString = "GP review of results of investigations"
@@ -424,37 +381,29 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * type = #text
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * linkId = "5a0c98f8-5349-4045-9ba0-27a4f35630b9"
     * text = "Parent/carer actions"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age <= 12).intersect(%age > 5)"
     * linkId = "cde03bf0-182a-4998-a37e-7b3f22786617"
     * text = "Parent/patient actions"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5
-    * enableBehavior = #all
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >12"
     * linkId = "51ff0c15-312a-45ce-a25a-6c6a4bf0e17e"
     * text = "Patient actions"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[sdc-questionnaire-shortText].valueString = "Copy of health check"

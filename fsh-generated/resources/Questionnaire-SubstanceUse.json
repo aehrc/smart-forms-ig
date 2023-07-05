@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age >= 12"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -253,20 +260,7 @@
       "linkId": "14a9fb5f-5b0e-4862-b143-08a11cd3ebf0",
       "text": "Substance use, including tobacco",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">=",
-          "answerInteger": 12
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "extension": [

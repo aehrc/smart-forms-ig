@@ -52,41 +52,38 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]  
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab  
   * linkId = "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a"
   * text = "Regular medications: check if still required, appropriate dose, understanding of medication and adherence"
   * extension[sdc-questionnaire-shortText].valueString = "Regular medications"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
     * text = "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
     * extension[sdc-questionnaire-shortText].valueString = "Does your child take any regular medications?"
     * type = #choice
-    * repeats = false    
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
+    * repeats = false 
     * answerValueSet = "#YesNo"
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
     * text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
     * extension[sdc-questionnaire-shortText].valueString = "Do you take any regular medications?"
     * type = #choice
-    * repeats = false    
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
+    * repeats = false  
     * answerValueSet = "#YesNo"
   * item[+]
     * linkId = "874ec8db-95c9-4cc0-95db-e45edaa3cd12"

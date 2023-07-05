@@ -22,56 +22,70 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
         }
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "linkId": "30532ad8-3465-4bdd-97ed-ec5664f9d733",
           "text": "Patient priorities and goals: What does the parent/carer say are the important things that have come out of this health check?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
-        },
-        {
-          "linkId": "6aa0a113-4d33-4f6b-9899-fa249674075a",
-          "text": "Patient priorities and goals: What does the parent/carer and child say are the important things that have come out of this health check?",
-          "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ],
-          "enableBehavior": "all"
-        },
-        {
-          "linkId": "71c19d58-a8ae-43ba-8b96-463c108c75dc",
-          "text": "Patient priorities and goals: What does the patient say are the important things that have come out of this health check?",
-          "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age <= 12).intersect(%age > 5)"
+              }
+            }
+          ],
+          "linkId": "6aa0a113-4d33-4f6b-9899-fa249674075a",
+          "text": "Patient priorities and goals: What does the parent/carer and child say are the important things that have come out of this health check?",
+          "type": "text",
+          "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            }
+          ],
+          "linkId": "71c19d58-a8ae-43ba-8b96-463c108c75dc",
+          "text": "Patient priorities and goals: What does the patient say are the important things that have come out of this health check?",
+          "type": "text",
+          "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
@@ -92,13 +106,6 @@
           "text": "Brief intervention: advice and information provided during health check",
           "type": "open-choice",
           "repeats": true,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ],
           "answerOption": [
             {
               "valueString": "Sugary drinks"
@@ -132,6 +139,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age <= 12).intersect(%age > 5)"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -151,19 +165,6 @@
           "text": "Brief intervention: advice and information provided during health check",
           "type": "open-choice",
           "repeats": true,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ],
-          "enableBehavior": "all",
           "answerOption": [
             {
               "valueString": "Healthy eating"
@@ -191,6 +192,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age <= 24).intersect(%age > 12)"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -210,19 +218,6 @@
           "text": "Brief intervention: advice and information provided during health check",
           "type": "open-choice",
           "repeats": true,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 24
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ],
-          "enableBehavior": "all",
           "answerOption": [
             {
               "valueString": "Healthy eating"
@@ -256,6 +251,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age <= 49).intersect(%age > 24)"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -275,19 +277,6 @@
           "text": "Brief intervention: advice and information provided during health check",
           "type": "open-choice",
           "repeats": true,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 49
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 24
-            }
-          ],
-          "enableBehavior": "all",
           "answerOption": [
             {
               "valueString": "Healthy eating"
@@ -324,6 +313,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 49"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -343,13 +339,6 @@
           "text": "Brief intervention: advice and information provided during health check",
           "type": "open-choice",
           "repeats": true,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 49
-            }
-          ],
           "answerOption": [
             {
               "valueString": "Healthy eating"
@@ -430,6 +419,13 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%age <= 5"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -449,13 +445,6 @@
                   "text": "Who",
                   "type": "open-choice",
                   "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": "<=",
-                      "answerInteger": 5
-                    }
-                  ],
                   "answerOption": [
                     {
                       "valueString": "GP follow-up"
@@ -498,6 +487,13 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "(%age <= 12).intersect(%age > 5)"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -517,19 +513,6 @@
                   "text": "Who",
                   "type": "open-choice",
                   "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": "<=",
-                      "answerInteger": 12
-                    },
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": ">",
-                      "answerInteger": 5
-                    }
-                  ],
-                  "enableBehavior": "all",
                   "answerOption": [
                     {
                       "valueString": "GP follow-up"
@@ -566,6 +549,13 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "(%age <= 24).intersect(%age > 12)"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -585,19 +575,6 @@
                   "text": "Who",
                   "type": "open-choice",
                   "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": "<=",
-                      "answerInteger": 24
-                    },
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": ">",
-                      "answerInteger": 12
-                    }
-                  ],
-                  "enableBehavior": "all",
                   "answerOption": [
                     {
                       "valueString": "GP follow-up"
@@ -637,6 +614,13 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "(%age <= 49).intersect(%age > 24)"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -656,19 +640,6 @@
                   "text": "Who",
                   "type": "open-choice",
                   "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": "<=",
-                      "answerInteger": 49
-                    },
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": ">",
-                      "answerInteger": 24
-                    }
-                  ],
-                  "enableBehavior": "all",
                   "answerOption": [
                     {
                       "valueString": "GP follow-up"
@@ -714,6 +685,13 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%age > 49"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -733,13 +711,6 @@
                   "text": "Who",
                   "type": "open-choice",
                   "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                      "operator": ">",
-                      "answerInteger": 49
-                    }
-                  ],
                   "answerOption": [
                     {
                       "valueString": "GP follow-up"
@@ -872,49 +843,49 @@
           "repeats": true
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "linkId": "5a0c98f8-5349-4045-9ba0-27a4f35630b9",
           "text": "Parent/carer actions",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age <= 12).intersect(%age > 5)"
+              }
+            }
+          ],
           "linkId": "cde03bf0-182a-4998-a37e-7b3f22786617",
           "text": "Parent/patient actions",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ],
-          "enableBehavior": "all"
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age >12"
+              }
+            }
+          ],
           "linkId": "51ff0c15-312a-45ce-a25a-6c6a4bf0e17e",
           "text": "Patient actions",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [
@@ -954,14 +925,7 @@
       "linkId": "16971bd2-5494-483d-9713-eda182c47f02",
       "text": "Finalising the health check",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ]
+      "repeats": false
     }
   ],
   "extension": [

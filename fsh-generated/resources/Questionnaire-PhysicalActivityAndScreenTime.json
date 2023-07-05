@@ -22,10 +22,26 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age < 50"
+          }
         }
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -71,16 +87,18 @@
           "linkId": "8c5e737f-820b-47a4-8c8a-27ce1eb18cf4",
           "text": "Physical activity concerns",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -126,16 +144,18 @@
           "linkId": "e24d487b-3dd4-4a6d-a58e-85dfa8ce3f36",
           "text": "Screen time concerns",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -181,14 +201,7 @@
           "linkId": "e9b6ac74-d810-4350-8b41-8ea2e4bd14fc",
           "text": "Physical activity or screen time concerns",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
           "item": [
@@ -217,6 +230,15 @@
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age > 12).intersect(%age <= 24)"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -240,20 +262,7 @@
           "linkId": "b2269be8-3ea5-494c-9368-06912b629789",
           "text": "Document conversation about social connection, which could include questions about sports/hobbies/clubs/other activities",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 24
-            }
-          ],
-          "enableBehavior": "all"
+          "repeats": false
         },
         {
           "linkId": "ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2",
@@ -265,20 +274,7 @@
       "linkId": "74736baa-455b-41d2-af98-fb65cd463e97",
       "text": "Physical activity and screen time",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<",
-          "answerInteger": 50
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     },
     {
       "extension": [
@@ -291,6 +287,13 @@
                 "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
               }
             ]
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age >= 50"
           }
         }
       ],
@@ -379,14 +382,7 @@
       "linkId": "d56234a0-aafd-4c22-96c9-00ead8424f0b",
       "text": "Physical activity",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">=",
-          "answerInteger": 50
-        }
-      ]
+      "repeats": false
     }
   ],
   "contained": [

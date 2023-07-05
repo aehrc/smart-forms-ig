@@ -52,24 +52,14 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
 
 // should this group be only for >=74?
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "(%age >= 50).intersect(%age <= 74)"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "9674ffa0-2ad9-4ca3-80e6-e8bb0670a802"
   * text = "Participation in screening programs"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>=
-    * answerInteger = 50
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<=
-    * answerInteger = 74
-  * enableBehavior = #all
 // following items require coded answers. Either <|Context values for actions (qualifier value)| or <|Chronic disease monitoring status (finding)|
   * item[+]
     * linkId = "ed15e82b-803a-4d21-9344-9110b57b2313"

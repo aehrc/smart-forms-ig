@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age >= 50"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -157,20 +164,7 @@
       "linkId": "1bd58e7b-2cb7-45fb-965f-d5fa33d0bb4c",
       "text": "Memory and thinking",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">=",
-          "answerInteger": 50
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "contained": [

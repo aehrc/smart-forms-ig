@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "(%age > 12).intersect(%age < 50)"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -26,6 +33,15 @@
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age < 25"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -61,16 +77,18 @@
           "linkId": "0e30e9b4-ec83-44ea-88ab-47963e52a2d7",
           "text": "Learning",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<",
-              "answerInteger": 25
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age >= 25"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -106,14 +124,7 @@
           "linkId": "c0ba8a79-a9c5-40cc-b0c2-041e736784e9",
           "text": "Learning",
           "type": "group",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">=",
-              "answerInteger": 25
-            }
-          ]
+          "repeats": false
         },
         {
           "item": [
@@ -169,25 +180,7 @@
       "linkId": "5437e30d-8a0a-4785-974e-00a10d2a1df0",
       "text": "Learning and work",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">",
-          "answerInteger": 12
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<",
-          "answerInteger": 50
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     },
     {
       "extension": [
@@ -200,6 +193,13 @@
                 "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
               }
             ]
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age >= 50"
           }
         }
       ],
@@ -258,14 +258,7 @@
       "linkId": "dec713ae-246a-4961-95c9-0626bfebfed2",
       "text": "Work",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">=",
-          "answerInteger": 50
-        }
-      ]
+      "repeats": false
     }
   ],
   "contained": [

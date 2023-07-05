@@ -53,23 +53,24 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "c587e3b6-b91a-40dc-9a16-179342d001e9"
   * text = "Examination"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "d15824f8-eafc-4fa0-80a2-82f0ec7f8728"
     * text = "Growth measures recorded on Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO) growth charts for centile and tracking overtime"
     * type = #display
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%ObsBodyHeight.entry.resource.value.value"
@@ -78,16 +79,15 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * text = "Length/Height"
     * type = #decimal
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
       * linkId = "a7399bd6-33ef-4fb4-988c-d1426e93ffc0"
       * text = "cm"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 5"
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%ObsBodyHeight.entry.resource.value.value"
@@ -96,10 +96,6 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * text = "Height"
     * type = #decimal
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
       * linkId = "b290acfa-d1f7-4e4f-91bd-93b402721127"
@@ -120,6 +116,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * text = "kg"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%ObsBMI.entry.resource.value.value"
@@ -133,16 +132,15 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #decimal
     * repeats = false
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
       * linkId = "ab15aa50-a1c6-469a-83c5-3a28f110c00b"
       * text = "kg/m2"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%ObsHeadCircumference.entry.resource.value.value"
@@ -151,16 +149,15 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * text = "Head circumference"
     * type = #decimal
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
       * linkId = "b39b7f1e-74e3-4600-b3f1-e18c2aa711ab"
       * text = "cm"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 18"
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%ObsWaistCircumference.entry.resource.value.value"
@@ -169,10 +166,6 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * text = "Waist circumference"
     * type = #decimal
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 18
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
       * linkId = "a9fad80e-aee6-41bd-b82d-f31ede4dbc45"
@@ -199,14 +192,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * type = #display
 */
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * linkId = "72c56a10-a1d9-4a53-99ec-902fea9b58a7"
     * text = "Blood pressure"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
     * item[+]      
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -261,51 +253,46 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * repeats = false
   // needs assessment for potentional coded response
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "213a3eac-e530-4e27-859c-407136c7a0a6"
     * text = "Cardiac auscultation"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "8886f3bb-52de-4294-a5cb-8f960e2a6bbe"
     * text = "Abdominal examination"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "5e10229c-390d-4968-90d3-f896840f3c50"
     * text = "Gait examination (musculoskeletal structure, balance, coordination)"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age < 1"
     * linkId = "6c69ee91-f777-494c-bf09-d963773cd4ae"
     * text = "Newborn examination (if indicated, infant aged <=6 weeks)"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<
-      * answerInteger = 1
 // needs assessment for what is being recorded. Actual measurement result or result interpretation?
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "7a431d03-1726-4905-aae7-49f62a10ce5e"
     * text = "Haemoglobin (children at risk of iron deficiency anaemia)"
     * type = #string
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
     * linkId = "fcbfa6e1-c101-4675-969d-aa11027859c2"
     * text = "Health priorities, actions and follow-up"

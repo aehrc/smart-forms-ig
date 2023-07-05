@@ -52,20 +52,14 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age > 12"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "0a3c9c93-5836-4a5b-93e5-d7de559e053a"
   * text = "Social and emotional wellbeing"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>
-    * answerInteger = 12
-  * enableBehavior = #all
   * item[+]
     * linkId = "c736d065-88f6-49c3-a5a4-91a2bd7a54bb"
     * text = "Stressful life events"
@@ -89,22 +83,20 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 24"
     * linkId = "7d783b71-7303-441b-822a-14e11a740038"
     * text = "Social and emotional wellbeing assessment: consider tools such as Aboriginal and Torres Strait Islander Youth Social Emotional Wellbeing assessment question guide or HEEADSSS"
     * type = #display
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 24"
     * linkId = "9e991b80-7080-40d5-9ad9-447dc47e3a68"
     * text = "Consider conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 24
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "2740f866-2cd7-41a1-912c-ba29cbe7a582"

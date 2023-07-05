@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -31,6 +38,13 @@
       "item": [
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
@@ -55,17 +69,17 @@
           "text": "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
           "type": "choice",
           "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ],
           "answerValueSet": "#YesNo"
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
@@ -90,13 +104,6 @@
           "text": "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
           "type": "choice",
           "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ],
           "answerValueSet": "#YesNo"
         },
         {
@@ -167,14 +174,7 @@
       "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
       "text": "Regular medications: check if still required, appropriate dose, understanding of medication and adherence",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ]
+      "repeats": false
     }
   ],
   "contained": [

@@ -55,15 +55,17 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "1016f79d-9756-4daf-b6ee-29add134b34f"
   * text = "Consent"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "d1e1ab3d-1c6c-430b-8ae7-af56b8f0af55"
@@ -71,11 +73,10 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNoNA"
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "7fa8bc57-f3f9-4ddc-bf9b-12a9b9885dbd"
@@ -83,19 +84,14 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNoNA"
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 24"
     * linkId = "80a6a405-49a4-44fb-bff3-212902096b95"
     * text = "Parent/primary caregiver present"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -160,6 +156,9 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * type = #string
     * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 5"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[sdc-questionnaire-openLabel].valueString = "Other, please specify"
     * linkId = "5bbfb4a3-a667-4ef2-98c2-76e76da55c03"
@@ -169,11 +168,10 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
     * answerOption[+].valueCoding = $SCT#257698009 "School"
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5 
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[sdc-questionnaire-openLabel].valueString = "Other, please specify"
     * linkId = "9a51c056-021d-445d-8eaa-2123a69aa9c2"
@@ -183,11 +181,6 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
     * answerOption[+].valueCoding = $SCT#413817003 "Early learning centre" //concept id for child day care. Would be better with a new specific SCTAU concept. Could even remove conditional questioning and create a single value set to support the answer. 
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
-
 
 
 

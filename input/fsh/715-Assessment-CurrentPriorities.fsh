@@ -53,15 +53,14 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
-  * extension[sdc-questionnaire-shortText].valueString = "Current priorities" 
+  * extension[sdc-questionnaire-shortText].valueString = "Current priorities"   
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()" 
   * linkId = "b3a3eee2-f340-452e-9d05-d1f54f677b81"
   * text = "Current health/patient priorities"
   * type = #group
-  * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
+  * repeats = false 
   * item[+]
     * linkId = "dcf182c0-a2bf-46ac-a19b-72e4d24ef24d"
     * text = "What are the important things for you in this health check today?"
@@ -71,31 +70,28 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "3ac0c629-9acc-48af-bafe-6b05dfd06281"
       * text = "details"
-      * type = #display
-      
-  * item[+]
+      * type = #display      
+  * item[+]  
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12" 
     * linkId = "a0c06f8d-3210-480b-9031-7b5eb5bf1dda"
     * text = "Is there anything you are worried about?"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "43fb3316-64a4-41dc-b12c-2f3fcee3eb84"
       * text = "details"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12" 
     * linkId = "96f3396e-f5f8-4347-8692-9abdecb97768"
     * text = "Is there anything that you are worried about with your child's health or wellbeing?"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "75b39c42-8a15-4fdf-9129-936072336456"
@@ -103,14 +99,13 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
       * type = #display
 
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5" 
     * linkId = "17651f83-8476-499c-a5ef-dd4e1a6c9f13"
     * text = "Child Health Book"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -134,15 +129,14 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
     
 
 
-  * item[+]
+  * item[+]    
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12" 
     * linkId = "35b3f6d8-2907-4134-ae55-1e321b908f70"
     * text = "Do you have any specific health goals? Is there anything in particular about your health and wellbeing that you would like to improve?"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "bb176839-5cc8-4fb5-a919-0904968418be"

@@ -106,53 +106,49 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
     * answerValueSet[+] = "#AboriginalTorresStraitIslander"
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 24"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * linkId = "c8852db9-efe9-4102-96db-cef3a8be0a5f"
     * text = "Parents/primary carer/s"
     * type = #choice
     * repeats = true
     * answerValueSet[+] = "#PrimaryCarerParentGrandparent"
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 24"
     * linkId = "7089c48e-4216-4089-a548-034cd585e4da"
     * text = "Other family"
     * type = #string
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24    
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "70c45932-99dc-42a3-9650-4683892a0892"
       * text = "details"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 24"
     * linkId = "42b1f5e0-bf4a-47d9-86a4-f2fe946ac01f"
     * text = "Other"
     * type = #string
     * repeats = true 
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "dcbd3a54-9b68-4486-bf30-f6f1723bc39c"
       * text = "details"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "06737e46-e880-4037-9a2c-bcd278cd70ba"
     * text = "Parents/primary carer/s details"    
     * type = #group
     * repeats = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12  
     * item[+]
       * linkId = "cc20ce96-af06-4cd7-aa9b-c2601a6169ad"
       * text = "Name of parent/primary carer"
@@ -257,23 +253,21 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #string
       * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 12"
       * linkId = "aa35d559-f45b-4d35-9453-dd02e4a790f3"
       * text = "Relationship to child"
       * type = #string
-      * repeats = false   
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 12
+      * repeats = false  
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
       * linkId = "27099697-d6d1-42c0-bb0a-5e9ff7372a96"
       * text = "Relationship to patient"
       * type = #string
       * repeats = false 
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>
-        * answerInteger = 12
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -340,6 +334,9 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
     * answerValueSet = "#YesNoNA"
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "e63547c6-1623-412f-963f-5f1ebf23563f"
@@ -347,19 +344,14 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNoNA" 
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * linkId = "a8143230-b30d-4b85-9805-5f2f73f2dffa"
     * text = "My Aged Care"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -400,19 +392,13 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age <= 49).intersect(%age > 12)"
     * linkId = "9bc882bc-e989-4600-9587-8089fb757641"
     * text = "Children"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 49
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
-    * enableBehavior = #all
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -440,14 +426,13 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * linkId = "2b5ae784-4341-4172-875d-1698cc8069f0"
     * text = "Someone's carer"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12    
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -466,14 +451,13 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * linkId = "6c80c675-1320-4ca3-ae3f-51ad173da741"
     * text = "Your carer"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50   
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -510,14 +494,13 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #text
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * linkId = "38f81a73-447f-4ecd-a8eb-6eccd9dee050"
     * text = "Advance care planning"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50 
     * item[+]
       * linkId = "c023ef16-b554-4ed9-8993-1331e5f5a3b4"
       * text = "Enduring Power of Attorney"

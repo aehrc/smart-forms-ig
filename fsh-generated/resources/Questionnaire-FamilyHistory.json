@@ -22,10 +22,26 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
         }
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -49,17 +65,17 @@
           "linkId": "532e09ea-2c2d-48c6-81f8-e23380b329a0",
           "text": "Provide relevant family history information",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
               "valueString": "Provide relevant family history information"
@@ -88,14 +104,7 @@
           "linkId": "df5b2081-a373-48ee-acab-96225dad3c1d",
           "text": "Provide relevant family history information (including diabetes, heart disease, cancer, mental health)",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "repeats": false
         },
         {
           "linkId": "49ee4583-c608-41d4-a1e9-c06cf4292369",
@@ -107,14 +116,7 @@
       "linkId": "01f67f0b-e3be-48d8-a2ad-4c54f469cd13",
       "text": "Family history",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ]
+      "repeats": false
     }
   ],
   "extension": [

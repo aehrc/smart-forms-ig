@@ -22,6 +22,13 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age >= 50"
+          }
         }
       ],
       "item": [
@@ -71,20 +78,7 @@
       "linkId": "c5da020c-c4f3-437c-b658-ea7e7667514d",
       "text": "Chronic disease associated with ageing",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": ">=",
-          "answerInteger": 50
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "extension": [

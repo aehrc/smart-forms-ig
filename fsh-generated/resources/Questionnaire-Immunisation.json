@@ -22,68 +22,71 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
         }
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "linkId": "54de7714-b917-4426-acb4-29d48648a2d8",
           "text": "Check Child Health Record/Book and Australian Immunisation Register",
-          "type": "display",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 12
-            }
-          ]
+          "type": "display"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            }
+          ],
           "linkId": "d77c527d-6fde-4ed7-97b9-c71acf817f39",
           "text": "Eligibility for funded vaccines may vary across jurisdictions",
-          "type": "display",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "type": "display"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age > 12).intersect(%age <= 24)"
+              }
+            }
+          ],
           "linkId": "77d87581-d4d7-4267-9f3c-ad6541ad0f46",
           "text": "Check Australian Immunisation Register",
-          "type": "display",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 24
-            }
-          ],
-          "enableBehavior": "all"
+          "type": "display"
         },
         {
-          "linkId": "a2631d2c-2b5c-4147-9aca-05ae655a56a5",
-          "text": "Check recommended primary vaccinations completed and provide catch-up if required",
-          "type": "display",
-          "enableWhen": [
+          "extension": [
             {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 24
-            },
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 49
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "(%age > 24).intersect(%age <= 49)"
+              }
             }
           ],
-          "enableBehavior": "all"
+          "linkId": "a2631d2c-2b5c-4147-9aca-05ae655a56a5",
+          "text": "Check recommended primary vaccinations completed and provide catch-up if required",
+          "type": "display"
         },
         {
           "extension": [
@@ -173,14 +176,7 @@
       "linkId": "205677d6-17c7-4285-a7c4-61aa02b6c816",
       "text": "Immunisation",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ]
+      "repeats": false
     }
   ],
   "contained": [

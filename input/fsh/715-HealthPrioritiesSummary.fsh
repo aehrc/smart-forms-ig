@@ -52,16 +52,15 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
 
 // some linkIds maintained from full assessment questionnaire
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Health Priorities Summary" 
   * linkId = "e2c778e2-83df-40d5-89ea-f0f91b666b04"
   * text = "Health Priorities, Actions And Follow-Up Summary"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
     * linkId = "f948fb81-48e9-4bc6-bf81-8d778ac4375a"
     * text = "The following information is a read-only collection of the 'Health priorities, actions and follow-up' sections entered in the previous tabs."
@@ -117,6 +116,9 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * repeats = false 
     * readOnly = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Social and emotional wellbeing calculation"
       * language = #text/fhirpath
@@ -126,11 +128,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Social history calculation"
       * language = #text/fhirpath
@@ -140,11 +141,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Home and family calculation"
       * language = #text/fhirpath
@@ -154,11 +154,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Learning and development calculation"
       * language = #text/fhirpath
@@ -168,11 +167,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age > 12).intersect(%age < 50)"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Learning and work for adolescents and adults calculation"
       * language = #text/fhirpath
@@ -182,16 +180,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<
-      * answerInteger = 50
-    * enableBehavior = #all
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Learning and work calculation"
       * language = #text/fhirpath
@@ -201,11 +193,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Mood calculation"
       * language = #text/fhirpath
@@ -215,11 +206,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Memory and thinking calculation"
       * language = #text/fhirpath
@@ -229,11 +219,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50  
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Chronic disease associated with ageing calculation"
       * language = #text/fhirpath
@@ -243,11 +232,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age >= 50.intersect(%age <= 74)"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Participation in screening programs calculation"
       * language = #text/fhirpath
@@ -257,15 +245,6 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 74
-    * enableBehavior = #all
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Healthy eating calculation"
@@ -277,6 +256,9 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * repeats = false 
     * readOnly = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age < 50"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Physical activity and screen time calculation"
       * language = #text/fhirpath
@@ -286,11 +268,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<
-      * answerInteger = 50
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Physical activity and screen time calculation"
       * language = #text/fhirpath
@@ -300,11 +281,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Substance use, including tobacco calculation"
       * language = #text/fhirpath
@@ -314,11 +294,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 12
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Gambling calculation"
       * language = #text/fhirpath
@@ -328,11 +307,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12 
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age > 12).intersect(%age <= 24)"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Sexual health calculation"
       * language = #text/fhirpath
@@ -342,16 +320,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24
-    * enableBehavior = #all
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%age > 24).intersect(%age <= 49)"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Sexual health calculation"
       * language = #text/fhirpath
@@ -361,16 +333,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 24
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 49
-    * enableBehavior = #all
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Sexual health calculation"
       * language = #text/fhirpath
@@ -380,10 +346,6 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Eye health calculation"
@@ -415,6 +377,9 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * repeats = false 
     * readOnly = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 24"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Skin calculation"
       * language = #text/fhirpath
@@ -424,10 +389,6 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 24 
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Immunisation calculation"
@@ -449,6 +410,9 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * repeats = false 
     * readOnly = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 25"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Absolute cardiovascular risk calculation calculation"
       * language = #text/fhirpath
@@ -458,11 +422,10 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 25
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 12"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Investigations calculation"
       * language = #text/fhirpath
@@ -472,49 +435,4 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
     * type = #text
     * repeats = false 
     * readOnly = true
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 12
-    /*
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-      * description = "Calculation"
-      * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummary"
-    * linkId = "f579ca65-d3eb-4f9c-88c9-719574eb21ee"
-    * text = ""
-    * type = #text
-    * repeats = false 
-    * readOnly = true
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-      * description = "Calculation"
-      * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummary"
-    * linkId = "bf281310-51d7-4372-95d1-827064a90628"
-    * text = ""
-    * type = #text
-    * repeats = false 
-    * readOnly = true
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-      * description = "Calculation"
-      * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummary"
-    * linkId = "eb6d2f22-721e-41e6-9c96-a3d3917abb8a"
-    * text = ""
-    * type = #text
-    * repeats = false 
-    * readOnly = true
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-      * description = "Calculation"
-      * language = #text/fhirpath
-      * expression = "%HealthPrioritiesSummary"
-    * linkId = "3d59fa4f-f1d6-45ac-bc75-e54f299d9a21"
-    * text = ""
-    * type = #text
-    * repeats = false 
-    * readOnly = true
-    */
+    

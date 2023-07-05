@@ -52,20 +52,14 @@ Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Island
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age > 12"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240"
   * text = "Gambling"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>
-    * answerInteger = 12 
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableBehavior = #all
   * item[+]
     * linkId = "fb489c43-f311-41f5-9d6a-1b61748e165f"
     * text = "Gambling issues"

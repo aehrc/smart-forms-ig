@@ -54,46 +54,42 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "ae7a3801-9491-4b1f-820c-678236d18f56"
   * text = "Healthy eating"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "9ac8c78d-9c36-4bf5-8c6e-e48109902dfa"
     * text = "Child eating concerns"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 5"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e2942894-5537-47a6-ab43-06eb6761f9b5"
       * text = "Is there anything that you are worried about with your child's feeding/eating?"
       * type = #choice
       * repeats = false
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 5
       * answerValueSet = "#YesNo"
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 5"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "69d92a26-95ac-4556-94da-5b0e09940bfd"
       * text = "Is there anything that you are worried about with your child's eating?"
       * type = #choice
       * repeats = false
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>
-        * answerInteger = 5
       * answerValueSet = "#YesNo"
     * item[+]
       * linkId = "f6907808-3e42-4206-9bf8-ca4082ea4814"
@@ -110,28 +106,26 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * enableBehavior = #any    
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * linkId = "ff6a46e6-0812-4718-a854-489b24805925"
     * text = "Breastfeeding history"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "87f4277a-0af8-4bb9-ba2d-cb4e4f3a4548"
       * text = "Details"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * linkId = "b5f748d2-1874-4949-a7df-6e233f03135d"
     * text = "Bottle feeding history"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "1792a4b0-640f-4d41-8704-c069179539bb"
@@ -139,14 +133,13 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
       * type = #display
   
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * linkId = "9266b946-74b3-4fc2-91ce-df557692e600"
     * text = "Diet or weight concerns"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -165,14 +158,13 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * linkId = "c4c51d01-7acf-4551-a652-82f9fdf58a6d"
     * text = "Unintended weight loss"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -191,6 +183,9 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 5"
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <div>Document conversation about age-appropriate healthy eating, which could include:</div>
     <ul>
@@ -203,16 +198,15 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     * text = "Document conversation about age-appropriate healthy eating, which could include: current diet; transition to solids; dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "d3c0033f-20d0-40ab-b4d5-6eb3f67be492"
       * text = "details"
       * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 5"
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <div>Document conversation about health eating which could include:</div>
     <ul>
@@ -224,10 +218,6 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     * text = "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "579a1e9e-c679-4411-b78f-0468cd45e1a2"

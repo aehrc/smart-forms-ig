@@ -52,19 +52,13 @@ Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander H
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age > 12"
   * linkId = "9559242e-9ffe-4e1f-a9fc-86d1fa62c4b9"
   * text = "Mood"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>
-    * answerInteger = 12
-  * enableBehavior = #all
   * item[+]
     * linkId = "b3c510a7-bfd1-4ebe-8755-9f05e7a742ba"
     * text = "How have you been feeling lately?"

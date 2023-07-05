@@ -22,10 +22,26 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age <= 12"
+          }
         }
       ],
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -49,16 +65,18 @@
           "linkId": "818c9aaa-1b00-4c76-9971-49df74edff7a",
           "text": "Is there anything that you are worried about with your child's development?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -82,14 +100,7 @@
           "linkId": "e7ef5692-25e6-4598-aa08-d0107e21fe31",
           "text": "Is there anything that you are worried about with your child's learning?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
           "item": [
@@ -144,6 +155,15 @@
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -167,16 +187,18 @@
           "linkId": "335f4c10-a6e6-455b-8a7e-2962158f5183",
           "text": "What childcare/early learning centre/kindergarten does your child go to? How often?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -200,16 +222,18 @@
           "linkId": "e5b886ad-840e-4f01-af04-55c5ea7f215d",
           "text": "How often does your child miss childcare/early learning centre/kindergarten?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": "<=",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -233,16 +257,18 @@
           "linkId": "f0e0ea74-cffc-46a5-8554-67e8fcc667f1",
           "text": "Is there anything you are worried about at school?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -266,16 +292,18 @@
           "linkId": "73a40641-04c9-4da4-813e-a8b9ae3a2ecf",
           "text": "How often does your child miss school?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -299,16 +327,18 @@
           "linkId": "47f09b28-9eea-4f8c-8d3c-7efef0504728",
           "text": "Is your child having any difficulties making friends?",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -332,14 +362,7 @@
           "linkId": "9371dddc-49f4-4a8f-a9dc-a0e128f99636",
           "text": "Are there any other concerns about your child's learning and development",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
           "linkId": "5ab80929-5901-431d-bf68-67d532f5fa58",
@@ -351,20 +374,7 @@
       "linkId": "3e7d7246-98f8-4803-b063-8405ac30b086",
       "text": "Learning and development",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<=",
-          "answerInteger": 12
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "extension": [

@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age <= 12"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -104,6 +111,15 @@
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -127,14 +143,7 @@
           "linkId": "272af1cb-4309-4227-bab4-a6cc9fb47635",
           "text": "If indicated, ask about depression and other mental health concerns",
           "type": "text",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 5
-            }
-          ]
+          "repeats": false
         },
         {
           "linkId": "76d51512-b94a-4092-b3ae-a656fbb9c360",
@@ -146,20 +155,7 @@
       "linkId": "a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9",
       "text": "Social history: Information about family and child's living arrangements",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<=",
-          "answerInteger": 12
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "contained": [

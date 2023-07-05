@@ -54,33 +54,22 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
 
 // adolescents and adults
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "(%age > 12).intersect(%age < 50)"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5437e30d-8a0a-4785-974e-00a10d2a1df0"
   * text = "Learning and work"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>
-    * answerInteger = 12
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<
-    * answerInteger = 50
-  * enableBehavior = #all
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age < 25"
     * linkId = "0e30e9b4-ec83-44ea-88ab-47963e52a2d7"
     * text = "Learning"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<
-      * answerInteger = 25
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -95,14 +84,13 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
       * type = #text
       * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 25"
     * linkId = "c0ba8a79-a9c5-40cc-b0c2-041e736784e9"
     * text = "Learning"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 25
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -145,14 +133,13 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
 // older people
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age >= 50"
   * linkId = "dec713ae-246a-4961-95c9-0626bfebfed2"
   * text = "Work"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>=
-    * answerInteger = 50
   * item[+]
     * linkId = "2bfc99a5-677c-4aea-a1ad-c37a181a3733"
     * text = "Work"

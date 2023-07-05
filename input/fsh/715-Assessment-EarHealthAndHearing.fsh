@@ -53,23 +53,21 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "de71bbd0-178c-4974-9c75-55d5a48c66f7"
   * text = "Ear health and hearing"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "f3473e82-4336-4858-96de-3a61eff5abfb"
     * text = "Child listening concerns"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -88,14 +86,13 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "d2a3a346-7b20-4634-beb4-f2bdc7252fe5"
     * text = "Child language concerns"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -114,14 +111,13 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age <= 12"
     * linkId = "6662bc91-fd05-4ea0-a96b-1cc124a9769a"
     * text = "Child snoring"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #<=
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -140,14 +136,13 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * linkId = "ec7b6e93-e1f0-41f5-b2c2-43c7ddff8aed"
     * text = "Hearing concerns"
     * type = #group
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
@@ -182,22 +177,20 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
       * repeats = false
       * item[+]
         * extension[questionnaire-displayCategory].valueCodeableConcept = http://hl7.org/fhir/questionnaire-displayCategory#instructions
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%age <= 12"
         * linkId = "fe96046a-a202-4c22-ad3e-00419e717185"
         * text = "Video otoscopy procedure recommended where possible as it allows for parental education and for images to be saved for tracking over time"
         * type = #display 
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #<=
-          * answerInteger = 12
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%age <= 12"
         * linkId = "2841915f-c8d2-4edb-8bc7-39b63385a2fb"
         * text = "Otoscopy findings" //children
         * type = #group
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #<=
-          * answerInteger = 12
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
           * extension[sdc-questionnaire-openLabel].valueString = "Other, please specify"
@@ -235,14 +228,13 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
           * answerOption[+].valueString = "Perforation"
           * answerOption[+].valueString = "Red/bulging"
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%age > 12"
         * linkId = "361b3c80-375b-423e-bb61-5732826bc2f0"
         * text = "Otoscopy findings" //adolescents +
         * type = #group
         * repeats = false
-        * enableWhen[+]
-          * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-          * operator = #>
-          * answerInteger = 12
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
           * extension[sdc-questionnaire-openLabel].valueString = "Other, please specify"
@@ -272,19 +264,13 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
           * answerOption[+].valueString = "Unable to view eardrum"
           * answerOption[+].valueString = "Wax"  
     * item[+] // this group needs better modelling. The template is ambiguous so not properly represented. 
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "(%age > 5).intersect(%age <= 12)"
       * linkId = "972afa06-9649-43d9-b8ce-c802f7f27e39"
       * text = "Tympanometry"
       * type = #group
-      * repeats = false  
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>
-        * answerInteger = 5
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 12
-      * enableBehavior = #all
+      * repeats = false 
       * item[+]
         * linkId = "a0d1413f-31e5-4b29-a00b-235f50f91cf7"
         * text = "Left ear"

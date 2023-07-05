@@ -52,21 +52,15 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age <= 12"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Social history"
   * linkId = "a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9"
   * text = "Social history: Information about family and child's living arrangements"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<=
-    * answerInteger = 12
-  * enableBehavior = #all
   * item[+]
     * linkId = "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b"
     * text = "Who lives in your household? / Who does the child live with?"
@@ -100,14 +94,13 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 5"
     * linkId = "272af1cb-4309-4227-bab4-a6cc9fb47635"
     * text = "If indicated, ask about depression and other mental health concerns"
     * type = #text
     * repeats = false
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 5
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "4048e200-1c09-441d-b25d-f8a946fac411"

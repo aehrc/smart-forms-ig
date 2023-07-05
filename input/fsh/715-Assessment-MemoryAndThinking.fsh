@@ -52,20 +52,14 @@ Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres St
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age >= 50"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "1bd58e7b-2cb7-45fb-965f-d5fa33d0bb4c"
   * text = "Memory and thinking"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>=
-    * answerInteger = 50  
-  * enableBehavior = #all
   * item[+]
     * linkId = "64fd0c95-b57b-4319-bf40-ad77d10a9832"
     * text = "Personal concerns about your memory or thinking"

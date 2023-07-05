@@ -51,19 +51,13 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age <= 5"
   * linkId = "b9a6ce8b-7766-47a5-8e1c-1590a1edbfa8"
   * text = "Red flags early identification guide for children"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<=
-    * answerInteger = 5
-  * enableBehavior = #all
   * item[+]    
     * linkId = "dfbf13b5-e9e1-4f2f-83fc-1b3b9e50c921"
     * text = "This is based on material from the The State of Queensland, Red flags early identification guide (for children aged birth to five years). 2nd edn. South Brisbane, Qld: Child Development Program, Queensland Health, 2016. Available at www.childrens.health.qld.gov.au/wp-content/uploads/PDF/red-flags-a3.pdf [Accessed 2 December 2019]. © Developed by the Child Development Program in conjunction with Brisbane North Primary Health Network. Updated: July 2016."

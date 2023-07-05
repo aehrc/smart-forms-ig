@@ -53,26 +53,23 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
 
 
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age <= 24"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "7d4772cb-a1cd-49d9-853f-883ccd8343a6"
   * text = "Skin"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<=
-    * answerInteger = 24 
-  * enableBehavior = #all
   * item[+]
     * linkId = "0d23be6b-3a30-4a80-9ebe-158acf32eb09"
     * text = "Skin problems"
     * type = #group
     * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 12"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "829de3f8-eea9-4139-8a18-47c16182ac9e"
@@ -80,11 +77,10 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 12
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "353f528b-3518-4fb3-a0bd-3ed5ae6b036a"
@@ -92,10 +88,6 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>
-        * answerInteger = 12
     * item[+]
       * linkId = "b9332f4f-ed6c-4e87-a467-13d7e83bd550"
       * text = "Details"
@@ -111,6 +103,9 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * enableBehavior = #any
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "80e4349f-6d89-4017-8632-9a947e50e947"
@@ -118,10 +113,6 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNo"
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>
-      * answerInteger = 12
   * item[+]
     * linkId = "206f4e35-3b87-4252-97fc-c78bf9fb6f5d"
     * text = "Document conversation about sun protection as appropriate (ie sunscreen, hats, shade)."

@@ -53,20 +53,22 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "961da481-1698-4a1d-962b-a9c2185e335a"
   * text = "Eye health"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
     * linkId = "0e30de87-8d5a-4b7a-893a-f1791c4f31c5"
     * text = "Vision concerns"
     * type = #group
     * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 12"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "bc49ee24-62a8-4252-a5ee-9c68bfed601c"
@@ -74,11 +76,10 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 12
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "6286346d-c805-4519-8e82-bf364a215c58"
@@ -86,10 +87,6 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>
-        * answerInteger = 12 
     * item[+]
       * linkId = "468770e4-af95-4377-8af5-280deb585e01"
       * text = "Details"
@@ -110,14 +107,13 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
     * type = #group
     * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age < 1"
       * linkId = "58e29c14-e279-4a1d-a7d6-b9d92b60d0e2"
       * text = "Red reflex (up to six months)"
       * type = #group
       * repeats = false
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<
-        * answerInteger = 1 
       * item[+]
         * linkId = "021437bf-b9ca-43e9-804c-affe84f84497"
         * text = "Right eye"
@@ -129,14 +125,13 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * type = #string
         * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 12"
       * linkId = "70773cba-54b0-43bc-b1f2-2942693957ce"
       * text = "Evidence of squint or other abnormality"
       * type = #group
       * repeats = false
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 12 
       * item[+]
         * linkId = "6c552a96-4929-458a-97b5-418a7069d9c2"
         * text = "Right eye"
@@ -148,14 +143,13 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * type = #string
         * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age >= 3"
       * linkId = "3424f8ef-d17c-4ad6-ba09-60a0d0b7a1d2"
       * text = "Visual acuity"
       * type = #group
       * repeats = false
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>=
-        * answerInteger = 3 
       * item[+]
         * linkId = "ed7900c2-8912-42e1-80f1-9ed09f8e00f8"
         * text = "Right eye"
@@ -167,14 +161,13 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * type = #string
         * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age >= 25"
       * linkId = "f6603a1c-7176-4121-8df5-03433cdc36db"
       * text = "Trachoma Check (endemic areas)"
       * type = #group
       * repeats = false
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>=
-        * answerInteger = 25 
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
         * linkId = "c76f02fb-2021-4462-b6ca-1da14b772c11"

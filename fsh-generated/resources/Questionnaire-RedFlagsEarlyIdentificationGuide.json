@@ -22,6 +22,13 @@
               }
             ]
           }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age <= 5"
+          }
         }
       ],
       "item": [
@@ -1211,20 +1218,7 @@
       "linkId": "b9a6ce8b-7766-47a5-8e1c-1590a1edbfa8",
       "text": "Red flags early identification guide for children",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<=",
-          "answerInteger": 5
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "extension": [

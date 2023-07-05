@@ -53,20 +53,14 @@ Description: "Home And Family sub-questionnaire for Aboriginal and Torres Strait
 
 // for adolescents and up
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age > 12"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "819b3305-bf93-4502-9986-242ea2ae5f43"
   * text = "Home and family"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>
-    * answerInteger = 12
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableBehavior = #all
   * item[+]
     * linkId = "29bb209f-6dfc-4ed0-8b8d-741016c0ac61"
     * text = "Who do you live with?"

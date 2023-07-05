@@ -53,19 +53,13 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age >= 25"
   * linkId = "d95abe99-8ef2-4b97-bc88-a2901e2ebc9c"
   * text = "Absolute cardiovascular risk calculation"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>=
-    * answerInteger = 25
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
-  * enableBehavior = #all
   * item[+]
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath

@@ -53,12 +53,16 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 
 // Adolescents
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "(%age > 12).intersect(%age <= 24)"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Sexual health"
   * linkId = "4b49c291-6e93-4b7e-be3b-15ef8bc207ad"
   * text = "Sexual health (sexual activity, contraception, safe sex/protection, sexual orientation, gender identity, pressure to have sex, STIs)"
   * type = #group
   * repeats = false
+  /*
   * enableWhen[+]
     * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
     * operator = #exists
@@ -72,6 +76,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
     * operator = #<=
     * answerInteger = 24
   * enableBehavior = #all
+  */
   * item[+]
     * linkId = "e5aeda89-b820-4bb3-8fbd-d4f662207b7d"
     * text = "Puberty and sexual health concerns"
@@ -120,20 +125,14 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
   
 //Adults
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "(%age > 24).intersect(%age <= 49)"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "589b53a4-ceb2-41c0-850a-69438f9fd1cc"
   * text = "Genitourinary and sexual health"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>
-    * answerInteger = 24
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #<=
-    * answerInteger = 49
-  * enableBehavior = #all
   * item[+]
     * linkId = "5f5d4886-ce06-47fa-a4d8-f6808b9081c0"
     * text = "Sexual health concerns"
@@ -208,15 +207,14 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 
 //Older people
 * item[+]
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age >= 50"
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "02048954-e9d7-424e-8c7b-6a3c495d7ce4"
   * text = "Genitourinary and sexual health"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #>=
-    * answerInteger = 50
   * item[+]
     * linkId = "8172aaac-81c4-4b06-b4cd-6a891a227e9f"
     * text = "Sexual health concerns"

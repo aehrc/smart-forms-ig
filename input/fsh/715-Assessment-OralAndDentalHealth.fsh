@@ -53,20 +53,22 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
 
 * item[+]
   * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * language = #text/fhirpath
+    * expression = "%age.exists()"
   * linkId = "bde9ab00-a20f-4a7c-9266-11f53f60c65f"
   * text = "Oral and dental health"
   * type = #group
   * repeats = false
-  * enableWhen[+]
-    * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-    * operator = #exists
-    * answerBoolean = true
   * item[+]
     * linkId = "70714d58-d936-4170-9763-82398f84a7a7"
     * text = "Dental concerns"
     * type = #group
     * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 12"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "e4cf4f15-7eed-4aa1-9f9d-61ccd659685c"
@@ -74,11 +76,10 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #<=
-        * answerInteger = 12
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * extension[questionnaire-choiceOrientation].valueCode = #horizontal
       * linkId = "cb287506-9a64-4ee8-8f24-ba7cb77756f3"
@@ -86,10 +87,6 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
       * type = #choice
       * repeats = false
       * answerValueSet = "#YesNo"
-      * enableWhen[+]
-        * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-        * operator = #>
-        * answerInteger = 12
     * item[+]
       * linkId = "cf949305-5ff7-4767-b946-7a50efd21cfc"
       * text = "Details"
@@ -110,6 +107,9 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
     * type = #date
     * repeats = false
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 50"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "ffe81bde-608f-4e3f-98ae-39d0b9884dcc"
@@ -117,10 +117,6 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNo"
-    * enableWhen[+]
-      * question = "e2a16e4d-2765-4b61-b286-82cfc6356b30" // age item which has initial population from variable
-      * operator = #>=
-      * answerInteger = 50  
   * item[+]
     * linkId = "5a3a56c6-b953-4d96-894d-95e07268473f"
     * text = "Teeth and mouth check"

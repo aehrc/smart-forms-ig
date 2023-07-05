@@ -13,6 +13,13 @@
     {
       "extension": [
         {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age <= 24"
+          }
+        },
+        {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
           "valueCodeableConcept": {
             "coding": [
@@ -29,6 +36,13 @@
           "item": [
             {
               "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age <= 12"
+                  }
+                },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
@@ -49,17 +63,17 @@
               "text": "Does your child have any skin problems?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "#YesNo",
-              "enableWhen": [
-                {
-                  "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                  "operator": "<=",
-                  "answerInteger": 12
-                }
-              ]
+              "answerValueSet": "#YesNo"
             },
             {
               "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age > 12"
+                  }
+                },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
@@ -80,14 +94,7 @@
               "text": "Is there anything that you are worried about with your skin?",
               "type": "choice",
               "repeats": false,
-              "answerValueSet": "#YesNo",
-              "enableWhen": [
-                {
-                  "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-                  "operator": ">",
-                  "answerInteger": 12
-                }
-              ]
+              "answerValueSet": "#YesNo"
             },
             {
               "linkId": "b9332f4f-ed6c-4e87-a467-13d7e83bd550",
@@ -123,6 +130,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -142,14 +156,7 @@
           "text": "Do you use sun protection?",
           "type": "choice",
           "repeats": false,
-          "answerValueSet": "#YesNo",
-          "enableWhen": [
-            {
-              "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-              "operator": ">",
-              "answerInteger": 12
-            }
-          ]
+          "answerValueSet": "#YesNo"
         },
         {
           "item": [
@@ -193,20 +200,7 @@
       "linkId": "7d4772cb-a1cd-49d9-853f-883ccd8343a6",
       "text": "Skin",
       "type": "group",
-      "repeats": false,
-      "enableWhen": [
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "exists",
-          "answerBoolean": true
-        },
-        {
-          "question": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
-          "operator": "<=",
-          "answerInteger": 24
-        }
-      ],
-      "enableBehavior": "all"
+      "repeats": false
     }
   ],
   "contained": [
