@@ -152,7 +152,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "_sort"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[=].documentation = "<div> <p>The client and server <strong>SHALL</strong> support sorting by date and <strong>MAY</strong> support other values.</p></div>"
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client and server <strong>SHALL</strong> support search result sorting by date and <strong>MAY</strong> support other values.</p></div>"
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 
@@ -164,7 +164,18 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].extension[=].extension[+].url = "required"
-* rest.resource[=].extension[=].extension[=].valueString = "author"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHALL
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "questionnaire"
 * rest.resource[=].type = #QuestionnaireResponse
@@ -187,21 +198,26 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both. </p></div>"
-* rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
-* rest.resource[=].searchParam[+].name = "author"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-author"
-* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both. </p></div>"
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "questionnaire"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p> <p>The client and server <strong>SHALL</strong> support chained search questionnaire.title using the :contains modifier.</p></div>"
+* rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[+].name = "_count"
+* rest.resource[=].searchParam[=].type = #number
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client and server <strong>SHALL</strong> support search result limiting.</p></div>"
+* rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[+].name = "_sort"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client and server <strong>SHALL</strong> support search result sorting by authored and <strong>MAY</strong> support other values.</p></div>"
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 
-* rest.interaction[0].code = #transaction
 
 
 Instance: SmartFormsServer
@@ -231,6 +247,18 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[=].valueString = "url"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "version"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "title"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].type = #Questionnaire
 * rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Questionnaire"
 * rest.resource[=].supportedProfile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
@@ -243,10 +271,21 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "version"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Questionnaire-version"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].name = "title"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Questionnaire-title"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search using the :contains modifier.</p></div>"
+* rest.resource[=].searchParam[+].name = "_count"
+* rest.resource[=].searchParam[=].type = #number
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The server supports search result limiting.</p></div>"
+* rest.resource[=].searchParam[+].name = "_sort"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The server supports search result sorting by date and <strong>MAY</strong> support other values.</p></div>"
 * rest.resource[=].operation[0].name = "assemble"
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
 
-* rest.interaction[0].code = #transaction
+* rest.interaction[+].code = #transaction
+* rest.interaction[+].code = #batch
 
 
 Instance: SmartFormsApplication
@@ -273,35 +312,122 @@ Usage: #definition
 * rest.security.description = "SMART App Launch supported to allow secure data exchange."
 
 * rest.resource[+].type = #Patient
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Patient"
 * rest.resource[=].supportedProfile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
 * rest.resource[=].interaction[0].code = #read
 
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Practitioner"
 * rest.resource[=].supportedProfile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
 * rest.resource[=].interaction[0].code = #read
+
+* rest.resource[+].type = #Encounter
+* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Encounter"
+* rest.resource[=].supportedProfile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+* rest.resource[=].interaction[0].code = #read
+
+* rest.resource[+].type = #Condition
+* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Condition"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+* rest.resource[=].interaction[0].code = #search-type
+* rest.resource[=].searchParam[0].name = "patient"
+* rest.resource[=].searchParam[0].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+* rest.resource[=].searchParam[0].type = #reference
+* rest.resource[=].searchParam[0].documentation = "<div><p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p></div>"
+
+* rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "code"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].type = #Observation
+* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-observation"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bmi"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result"
+* rest.resource[=].interaction[0].code = #search-type
+* rest.resource[=].searchParam[+].name = "patient"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both. </p></div>"
+* rest.resource[=].searchParam[+].name = "code"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a code value and <strong>MAY</strong> provide both the code and system values. The server <strong>SHALL</strong> support both.</p></div>"
+* rest.resource[=].searchParam[+].name = "_count"
+* rest.resource[=].searchParam[=].type = #number
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result limiting.</p></div>"
+* rest.resource[=].searchParam[+].name = "_sort"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result sorting by date and <strong>MAY</strong> support other values.</p></div>"
 
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "url"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "version"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "title"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].type = #Questionnaire
 * rest.resource[=].profile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
 * rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[+].code = #create
 * rest.resource[=].searchParam[+].name = "url"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Questionnaire-url"
 * rest.resource[=].searchParam[=].type = #uri
 * rest.resource[=].searchParam[+].name = "version"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Questionnaire-version"
 * rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].name = "title"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Questionnaire-title"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search using the :contains modifier.</p></div>"
+* rest.resource[=].searchParam[+].name = "_count"
+* rest.resource[=].searchParam[=].type = #number
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result limiting.</p></div>"
+* rest.resource[=].searchParam[+].name = "_sort"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result sorting by date and <strong>MAY</strong> support other values.</p></div>"
+* rest.resource[=].operation[+].name = "assemble"
+* rest.resource[=].operation[=].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
+* rest.resource[=].operation[+].name = "populate"
+* rest.resource[=].operation[=].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-populate"
 
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].extension[=].extension[+].url = "required"
-* rest.resource[=].extension[=].extension[=].valueString = "author"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "questionnaire"
 * rest.resource[=].type = #QuestionnaireResponse
@@ -313,12 +439,17 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "author"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-author"
-* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both. </p></div>"
 * rest.resource[=].searchParam[+].name = "questionnaire"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p> <p>The client and server <strong>SHALL</strong> support chained search questionnaire.title using the :contains modifier.</p></div>"
+* rest.resource[=].searchParam[+].name = "_count"
+* rest.resource[=].searchParam[=].type = #number
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result limiting.</p></div>"
+* rest.resource[=].searchParam[+].name = "_sort"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result sorting by authored and <strong>MAY</strong> support other values.</p></div>"
 
 * rest.resource[+].type = #ValueSet
 * rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/ValueSet"
@@ -326,5 +457,6 @@ Usage: #definition
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"
 
 
-* rest.interaction[0].code = #transaction
+* rest.interaction[+].code = #transaction
+* rest.interaction[+].code = #batch
 */
