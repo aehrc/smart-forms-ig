@@ -4,7 +4,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * name = "SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck"
 * title = "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check"
-* description = "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the Smart Forms client application to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters."
+* description = "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters."
 * status = #draft
 * experimental = false
 * date = "2023-06-16"
@@ -225,7 +225,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * name = "SmartFormsServer"
 * title = "Smart Forms Server"
-* description = "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed, include supported FHIR profiles, RESTful operations, and search parameters."
+* description = "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters."
 * status = #draft
 * experimental = false
 * date = "2023-06-16"
