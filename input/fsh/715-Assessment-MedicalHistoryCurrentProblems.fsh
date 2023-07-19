@@ -190,7 +190,6 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * type = #choice
       * answerValueSet = "#condition-clinical"
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%ConditionRepeat.onset.ofType(dateTime)"
@@ -198,7 +197,6 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * text = "Onset Date"
       * type = #dateTime
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%ConditionRepeat.recordedDate"

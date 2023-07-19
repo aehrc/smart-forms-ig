@@ -339,17 +339,6 @@
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "autocomplete",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                },
-                {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
@@ -363,17 +352,6 @@
             },
             {
               "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "autocomplete",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
