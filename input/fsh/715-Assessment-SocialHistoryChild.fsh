@@ -55,7 +55,6 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age <= 12"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[sdc-questionnaire-shortText].valueString = "Social history"
   * linkId = "a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9"
   * text = "Social history: Information about family and child's living arrangements"

@@ -55,7 +55,6 @@ Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Island
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age > 12"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240"
   * text = "Gambling"
   * type = #group

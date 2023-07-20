@@ -55,7 +55,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab  
   * linkId = "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a"
   * text = "Regular medications: check if still required, appropriate dose, understanding of medication and adherence"
   * extension[sdc-questionnaire-shortText].valueString = "Regular medications"

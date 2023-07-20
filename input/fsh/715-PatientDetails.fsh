@@ -55,7 +55,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 
 // do we want the main demographics "read-only"? Not sure we want to change these during the assessment. They are in the main patient record and we're not (yet) writing back
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
   * text = "Patient Details"
   * type = #group
@@ -63,7 +62,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | %patient.name.where(use!='official').select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
+      * expression = "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | %patient.name.select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
     * text = "Name"
     * type = #string

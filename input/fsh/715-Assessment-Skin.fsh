@@ -56,7 +56,6 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age <= 24"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "7d4772cb-a1cd-49d9-853f-883ccd8343a6"
   * text = "Skin"
   * type = #group
