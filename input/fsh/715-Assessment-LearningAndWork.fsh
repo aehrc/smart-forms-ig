@@ -57,7 +57,6 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "(%age > 12).intersect(%age < 50)"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "5437e30d-8a0a-4785-974e-00a10d2a1df0"
   * text = "Learning and work"
   * type = #group
@@ -132,7 +131,6 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
 
 // older people
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age >= 50"

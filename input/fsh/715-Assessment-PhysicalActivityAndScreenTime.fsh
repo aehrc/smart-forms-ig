@@ -54,7 +54,6 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 
 //all ages except older people
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age < 50"
@@ -168,7 +167,6 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 
 // older people >=50
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age >= 50"

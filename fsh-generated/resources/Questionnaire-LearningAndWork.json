@@ -18,17 +18,6 @@
             "language": "text/fhirpath",
             "expression": "(%age > 12).intersect(%age < 50)"
           }
-        },
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
         }
       ],
       "item": [
@@ -184,17 +173,6 @@
     },
     {
       "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
-        },
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
           "valueExpression": {
