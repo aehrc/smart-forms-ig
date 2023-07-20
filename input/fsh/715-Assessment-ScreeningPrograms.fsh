@@ -55,7 +55,6 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "(%age >= 50).intersect(%age <= 74)"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "9674ffa0-2ad9-4ca3-80e6-e8bb0670a802"
   * text = "Participation in screening programs"
   * type = #group

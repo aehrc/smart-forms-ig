@@ -55,7 +55,6 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age >= 12"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "14a9fb5f-5b0e-4862-b143-08a11cd3ebf0"
   * text = "Substance use, including tobacco"
   * type = #group

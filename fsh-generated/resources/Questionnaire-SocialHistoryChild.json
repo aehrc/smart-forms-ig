@@ -20,17 +20,6 @@
           }
         },
         {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
-        },
-        {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
           "valueString": "Social history"
         }

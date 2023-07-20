@@ -55,7 +55,6 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age > 12"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "0a3c9c93-5836-4a5b-93e5-d7de559e053a"
   * text = "Social and emotional wellbeing"
   * type = #group

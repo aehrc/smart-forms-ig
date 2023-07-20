@@ -52,7 +52,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
 
 
 * item[+]
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"

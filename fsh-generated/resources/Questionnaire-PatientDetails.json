@@ -11,19 +11,6 @@
   "url": "http://www.health.gov.au/assessments/mbs/715/PatientDetails",
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
-        }
-      ],
       "item": [
         {
           "extension": [
