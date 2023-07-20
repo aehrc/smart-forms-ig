@@ -18,17 +18,6 @@
             "language": "text/fhirpath",
             "expression": "%age >= 50"
           }
-        },
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "code": "tab",
-                "system": "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"
-              }
-            ]
-          }
         }
       ],
       "item": [

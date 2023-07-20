@@ -56,7 +56,6 @@ Description: "Home And Family sub-questionnaire for Aboriginal and Torres Strait
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age > 12"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "819b3305-bf93-4502-9986-242ea2ae5f43"
   * text = "Home and family"
   * type = #group

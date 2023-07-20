@@ -55,7 +55,6 @@ Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres St
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age >= 50"
-  * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#tab
   * linkId = "1bd58e7b-2cb7-45fb-965f-d5fa33d0bb4c"
   * text = "Memory and thinking"
   * type = #group
