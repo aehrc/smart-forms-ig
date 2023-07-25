@@ -43,6 +43,7 @@
 [MedicalHistoryShortListPrimarySchool]: ValueSet-MedicalHistoryShortListPrimarySchool.html
 [PhysicalActivityAndScreenTime]: Questionnaire-PhysicalActivityAndScreenTime.html
 [PrimaryCarerParentGrandparent]: ValueSet-PrimaryCarerParentGrandparent.html
+[QuestionnaireItemControlExtended]: CodeSystem-QuestionnaireItemControlExtended.html
 [QuestionnaireItemUIControlCodes]: CodeSystem-questionnaire-item-control.html
 [QuestionnaireItemUIControlCodes]: ValueSet-questionnaire-item-control.html
 [SmartFormsApplication]: CapabilityStatement-SmartFormsApplication.html
