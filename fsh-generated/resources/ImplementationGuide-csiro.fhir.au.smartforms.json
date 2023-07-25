@@ -403,6 +403,14 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/QuestionnaireItemControlExtended"
+        },
+        "name": "Questionnaire Item Control Extension",
+        "description": "The Questionnaire Item Control Extension code system defines concepts that extend the HL7 questionnaire item control concepts in http://hl7.org/fhir/questionnaire-item-control. They represent interface control/display mechanisms interface control/display mechanisms that might be used when rendering an item in a questionnaire.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/questionnaire-item-control"
         },
         "description": "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire.",

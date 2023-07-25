@@ -3,6 +3,15 @@ Alias: $SCT = http://snomed.info/sct
 Alias: $v2-0136 = http://terminology.hl7.org/CodeSystem/v2-0136
 Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 
+CodeSystem: QuestionnaireItemControlExtended
+Id: QuestionnaireItemControlExtended
+Title: "Questionnaire Item Control Extension"
+Description: "The Questionnaire Item Control Extension code system defines concepts that extend the HL7 questionnaire item control concepts in http://hl7.org/fhir/questionnaire-item-control. They represent interface control/display mechanisms interface control/display mechanisms that might be used when rendering an item in a questionnaire."
+
+* ^experimental = false
+* ^caseSensitive = true
+* #context-display "context-display" "An display item rendered adjacent (horizontally or vertically) to the text of the parent item."
+
 ValueSet: YesNoNA
 Id: YesNoNA
 Title: "Yes No NA"
