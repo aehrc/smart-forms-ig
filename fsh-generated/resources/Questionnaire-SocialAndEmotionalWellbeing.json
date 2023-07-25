@@ -9,6 +9,8 @@
     ]
   },
   "url": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing",
+  "title": "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing",
+  "description": "Social And Emotional Wellbeing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
   "item": [
     {
       "extension": [
@@ -135,11 +137,10 @@
     {
       "resourceType": "ValueSet",
       "id": "YesNo",
-      "status": "active",
+      "status": "draft",
       "name": "YesNo",
       "title": "Yes No",
       "description": "Concepts for Yes and No",
-      "version": "0.1.0",
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
       "experimental": false,
       "expansion": {
@@ -240,7 +241,6 @@
     }
   ],
   "name": "SocialAndEmotionalWellbeing",
-  "title": "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing",
   "status": "draft",
   "experimental": false,
   "subjectType": [
