@@ -8,15 +8,16 @@
     ]
   },
   "url": "https://smartforms.csiro.au/ig/Questionnaire/AgedCareQIPrototype",
+  "title": "Aged Care QI Prototype",
+  "description": "Aged Care QI Prototype.",
   "contained": [
     {
       "resourceType": "ValueSet",
       "id": "PressureInjuryClassification",
-      "status": "active",
+      "status": "draft",
       "name": "PressureInjuryClassification",
       "title": "Pressure Injury Classification",
       "description": "Pressure Injury Classification.",
-      "version": "0.1.0",
       "url": "https://smartforms.csiro.au/ig/ValueSet/PressureInjuryClassification",
       "expansion": {
         "timestamp": "2023-06-20T09:43:07+10:00",
@@ -139,7 +140,6 @@
     }
   ],
   "name": "AgedCareQIPrototype",
-  "title": "Aged Care QI Prototype",
   "status": "draft",
   "experimental": true,
   "subjectType": [
