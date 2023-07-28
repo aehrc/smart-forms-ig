@@ -33,6 +33,7 @@
 [SocialHistoryChild]: Questionnaire-SocialHistoryChild.html
 [SubstanceUse]: Questionnaire-SubstanceUse.html
 [AboriginalTorresStraitIslander]: ValueSet-AboriginalTorresStraitIslander.html
+[AgedCareQIPrototype]: Questionnaire-AgedCareQIPrototype.html
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
@@ -42,6 +43,7 @@
 [MedicalHistoryShortListInfants]: ValueSet-MedicalHistoryShortListInfants.html
 [MedicalHistoryShortListPrimarySchool]: ValueSet-MedicalHistoryShortListPrimarySchool.html
 [PhysicalActivityAndScreenTime]: Questionnaire-PhysicalActivityAndScreenTime.html
+[PressureInjuryClassification]: ValueSet-PressureInjuryClassification.html
 [PrimaryCarerParentGrandparent]: ValueSet-PrimaryCarerParentGrandparent.html
 [QuestionnaireItemControlExtended]: CodeSystem-QuestionnaireItemControlExtended.html
 [QuestionnaireItemUIControlCodes]: CodeSystem-questionnaire-item-control.html
