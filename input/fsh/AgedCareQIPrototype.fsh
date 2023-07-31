@@ -34,6 +34,10 @@ Description: "Aged Care QI Prototype."
 * extension[=].valueExpression[+].name = "Condition"
 * extension[=].valueExpression[=].language = #application/x-fhir-query
 * extension[=].valueExpression[=].expression = "Condition?patient={{%patient.id}}"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression[+].name = "Weight"
+* extension[=].valueExpression[=].language = #application/x-fhir-query
+* extension[=].valueExpression[=].expression = "Observation?code=29463-7&patient={{%patient.id}}"
 
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -239,6 +243,7 @@ Description: "Aged Care QI Prototype."
 
 // QI - Unplanned Weight Loss
 
+
 * item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * item[=].item[=].extension[=].valueExpression.name = "PreviousWeight"
 * item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
@@ -247,11 +252,37 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].extension[=].valueExpression.name = "FinishingWeight"
 * item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
 * item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-3').item.where(linkId='qi-weight-3-4').answer.value"
-* item[=].item[=].linkId = "qi-weight"
-* item[=].item[=].text = "Unplanned Weight Loss"
-* item[=].item[=].type = #group
-* item[=].item[=].repeats = false
-* item[=].item[=].required = true
+/*
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "LatestWeight"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-5').item[0].where(linkId='qi-weight-5-2').answer.value"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "LatestWeightDate"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-5').item[0].where(linkId='qi-weight-5-1').answer.value"
+
+* item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "LatestDate+2"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-5').item[0].where(linkId='qi-weight-5-1').answer.value + 2 months"
+*/
+// * item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-5' and item.where(linkId='qi-weight-5-1').answer.value> ).item.where(linkId='qi-weight-5-2' and ).answer.value"
+
+0
+/*
+//alert
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+* item[=].item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-5').item.where(linkId='qi-weight-3-4').answer.value"
+* item[=].item[=].item[=].linkId = "alert-weight-5"
+* item[=].item[=].item[=].text = ">5% weight loss within last 2 months"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\">5% weight loss within last 2 months\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNkMzJmMmYiIGQ9Ik0xMSAxNWgydjJoLTJ2LTJtMC04aDJ2NmgtMlY3bTEtNUM2LjQ3IDIgMiA2LjUgMiAxMmExMCAxMCAwIDAgMCAxMCAxMGExMCAxMCAwIDAgMCAxMC0xMEExMCAxMCAwIDAgMCAxMiAybTAgMThhOCA4IDAgMCAxLTgtOGE4IDggMCAwIDEgOC04YTggOCAwIDAgMSA4IDhhOCA4IDAgMCAxLTggOFoiLz48L3N2Zz4=' style=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
+* item[=].item[=].item[=].type = #display
+*/
 
 * item[=].item[=].item[+].linkId = "qi-weight-1"
 * item[=].item[=].item[=].text = "Undertaking weight loss strategy"
@@ -335,6 +366,30 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].item[=].linkId = "qi-weight-4-1"
 * item[=].item[=].item[=].item[=].text = "%"
 * item[=].item[=].item[=].item[=].type = #display
+
+
+* item[=].item[=].item[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#gtable
+* item[=].item[=].item[=].linkId = "qi-weight-5"
+* item[=].item[=].item[=].text = "Recorded weights (most recent first)"
+* item[=].item[=].item[=].type = #group
+* item[=].item[=].item[=].repeats = true
+
+* item[=].item[=].item[=].item[+].linkId = "qi-weight-5-1"
+* item[=].item[=].item[=].item[=].text = "Date performed"
+* item[=].item[=].item[=].item[=].type = #dateTime
+
+* item[=].item[=].item[=].item[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $UCUM#kg "kg"
+* item[=].item[=].item[=].item[=].linkId = "qi-weight-5-2"
+* item[=].item[=].item[=].item[=].text = "Weight"
+* item[=].item[=].item[=].item[=].type = #decimal
+* item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+* item[=].item[=].item[=].item[=].item[=].linkId = "qi-weight-5-2-1"
+* item[=].item[=].item[=].item[=].item[=].text = "kg"
+* item[=].item[=].item[=].item[=].item[=].type = #display
+
 
 // QI - Continence
 

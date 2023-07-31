@@ -137,6 +137,14 @@
         "language": "application/x-fhir-query",
         "expression": "Condition?patient={{%patient.id}}"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "Weight",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=29463-7&patient={{%patient.id}}"
+      }
     }
   ],
   "name": "AgedCareQIPrototype",
@@ -563,6 +571,22 @@
                 "language": "text/fhirpath",
                 "expression": "item.where(linkId='qi-weight-3').item.where(linkId='qi-weight-3-4').answer.value"
               }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "LatestWeight",
+                "language": "text/fhirpath",
+                "expression": "item.where(linkId='qi-weight-5').item[0].where(linkId='qi-weight-5-2').answer.value"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "LatestWeightDate",
+                "language": "text/fhirpath",
+                "expression": "item.where(linkId='qi-weight-5').item[0].where(linkId='qi-weight-5-1').answer.value"
+              }
             }
           ],
           "linkId": "qi-weight",
@@ -833,6 +857,71 @@
                   "linkId": "qi-weight-4-1",
                   "text": "%",
                   "type": "display"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "gtable",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "qi-weight-5",
+              "text": "Recorded weights (most recent first)",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "qi-weight-5-1",
+                  "text": "Date performed",
+                  "type": "dateTime"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "kg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "kg"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "qi-weight-5-2",
+                  "text": "Weight",
+                  "type": "decimal",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "qi-weight-5-2-1",
+                      "text": "kg",
+                      "type": "display"
+                    }
+                  ]
                 }
               ]
             }
