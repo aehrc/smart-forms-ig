@@ -36,7 +36,7 @@ Usage: #definition
 * implementationGuide[=].extension[0].valueCode = #SHOULD
 
 * rest.mode = #server
-* rest.documentation = "<div><p>A Smart Forms Launcher Server <strong>SHALL</strong>:</p><ol><li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-patient.html\">AU Core Patient resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-practitioner.html\">AU Core Practitioner resource profile</a>.</li><li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-condition.html\">AU Core Condition resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/profiles-and-extensions.html#observation\">AU Core Observation resource profiles</a>.</li><li>Implement the RESTful behavior according to the FHIR specification.</li><li>Support JSON source formats for all interactions.</li></ol></div>"
+* rest.documentation = "<div><p>A Smart Forms Launcher Server <strong>SHALL</strong>:</p><ol><li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-patient.html\">AU Core Patient resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-practitioner.html\">AU Core Practitioner resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-encounter.html\">AU Core Encounter resource profile</a>.</li><li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-condition.html\">AU Core Condition resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/profiles-and-extensions.html#observation\">AU Core Observation resource profiles</a>.</li><li>Implement the RESTful behavior according to the FHIR specification.</li><li>Support JSON source formats for all interactions.</li></ol></div>"
 
 * rest.security.cors = true
 * rest.security.cors.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -64,6 +64,17 @@ Usage: #definition
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "<div> <p>The server <strong>SHALL</strong> support the Practitioner resource, AU Core profile and the conformance expectations for the Practitioner resource.</p></div>"
+* rest.resource[=].interaction[0].code = #read
+* rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
+
+* rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[0].valueCode = #SHALL
+* rest.resource[=].type = #Encounter
+* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+* rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].profile.extension[0].valueCode = #SHALL
+* rest.resource[=].documentation = "<div> <p>The server <strong>SHALL</strong> support the Encounter resource, AU Core profile and the conformance expectations for the Encounter resource.</p></div>"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -284,8 +295,6 @@ Usage: #definition
 * rest.resource[=].operation[0].name = "assemble"
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
 
-* rest.interaction[+].code = #transaction
-* rest.interaction[+].code = #batch
 
 
 Instance: SmartFormsApplication
