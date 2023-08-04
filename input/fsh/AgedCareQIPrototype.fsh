@@ -50,12 +50,154 @@ Description: "Aged Care QI Prototype."
 * date = "2023-07-07"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
-* item[0].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+// variables
+* item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].extension[=].valueExpression.name = "ReportingStartDate"
+* item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].extension[=].valueExpression.expression = "item.where(linkId='client').item.where(linkId='client-period').item.where(linkId='client-period-start').answer.value"
+* item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].extension[=].valueExpression.name = "ReportingEndDate"
+* item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].extension[=].valueExpression.expression = "item.where(linkId='client').item.where(linkId='client-period').item.where(linkId='client-period-end').answer.value"
+
+* item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#tab-container
 * item[=].linkId = "tab-container"
 * item[=].type = #group
 * item[=].repeats = false
+
+//QI Summary
+* item[=].item[+].linkId = "summary"
+* item[=].item[=].text = "QI Summary"
+* item[=].item[=].type = #group
+
+* item[=].item[=].item[+].linkId = "summary-PI"
+* item[=].item[=].item[=].text = "Pressure Injuries"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].repeats = false
+//in-progress
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].item[=].linkId = "CD-in-progress-summary-PI"
+* item[=].item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-1" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].item[=].linkId = "CD-complete-summary-PI"
+* item[=].item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-1" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
+
+* item[=].item[=].item[+].linkId = "summary-restraint"
+* item[=].item[=].item[=].text = "Physical Restraint"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].repeats = false
+//in-progress
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].item[=].linkId = "CD-in-progress-summary-restraint"
+* item[=].item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-2" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].item[=].linkId = "CD-complete-summary-restraint"
+* item[=].item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-2" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
+
+* item[=].item[=].item[+].linkId = "summary-weight"
+* item[=].item[=].item[=].text = "Weight loss"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].repeats = false
+//in-progress
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].item[=].linkId = "CD-in-progress-summary-weight"
+* item[=].item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-3" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].item[=].linkId = "CD-complete-summary-weight"
+* item[=].item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-3" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
+
+* item[=].item[=].item[+].linkId = "summary-continence"
+* item[=].item[=].item[=].text = "Continence"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].repeats = false
+//in-progress
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].item[=].linkId = "CD-in-progress-summary-continence"
+* item[=].item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-4" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].item[=].linkId = "CD-complete-summary-continence"
+* item[=].item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-4" // Section complete item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
+//alert
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].item[=].linkId = "alert-summary-iad"
+* item[=].item[=].item[=].item[=].text = "IAD present"
+* item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"IAD present\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNkMzJmMmYiIGQ9Ik0xMSAxNWgydjJoLTJ2LTJtMC04aDJ2NmgtMlY3bTEtNUM2LjQ3IDIgMiA2LjUgMiAxMmExMCAxMCAwIDAgMCAxMCAxMGExMCAxMCAwIDAgMCAxMC0xMEExMCAxMCAwIDAgMCAxMiAybTAgMThhOCA4IDAgMCAxLTgtOGE4IDggMCAwIDEgOC04YTggOCAwIDAgMSA4IDhhOCA4IDAgMCAxLTggOFoiLz48L3N2Zz4=' style=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
+* item[=].item[=].item[=].item[=].type = #display      
+* item[=].item[=].item[=].item[=].enableWhen[+].question = "qi-continence-1-1" // IAD category item
+* item[=].item[=].item[=].item[=].enableWhen[=].operator = #exists
+* item[=].item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
+
+
 //Client Details
+
 * item[=].item[+].linkId = "client"
 * item[=].item[=].text = "Client Details"
 * item[=].item[=].type = #group
@@ -98,17 +240,31 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].readOnly = true
 * item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/administrative-gender"
-* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%patient.gender"
-* item[=].item[=].item[=].linkId = "client-absent"
+* item[=].item[=].item[+].linkId = "client-absent"
 * item[=].item[=].item[=].text = "Absent from service for the entire quarter"
 * item[=].item[=].item[=].type = #boolean
 * item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].linkId = "client-eol"
+* item[=].item[=].item[+].linkId = "client-eol"
 * item[=].item[=].item[=].text = "Receiving end-of-life care"
 * item[=].item[=].item[=].type = #boolean
 * item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[+].linkId = "client-period"
+* item[=].item[=].item[=].text = "Reporting Period"
+* item[=].item[=].item[=].type = #group
+* item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[+].linkId = "client-period-start"
+* item[=].item[=].item[=].item[=].text = "Start Date"
+* item[=].item[=].item[=].item[=].type = #date
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[=].valueExpression.expression = "%ReportingStartDate + 3 months"
+* item[=].item[=].item[=].item[=].linkId = "client-period-end"
+* item[=].item[=].item[=].item[=].text = "End Date"
+* item[=].item[=].item[=].item[=].type = #date
+* item[=].item[=].item[=].item[=].repeats = false
+
+
 
 
 // QI - Pressure Injuries
@@ -122,13 +278,29 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].type = #group
 * item[=].item[=].repeats = false
 * item[=].item[=].required = true
+//in-progress
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].linkId = "CD-in-progress-1"
+* item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-1" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].linkId = "CD-complete-1"
+* item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-1" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = true
 
-
-* item[=].item[=].item[+].linkId = "qi-pi-2"
-* item[=].item[=].item[=].text = "Date of last assessment"
-* item[=].item[=].item[=].type = #date
-* item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "qi-pi-3"
 * item[=].item[=].item[=].text = "Withheld consent for pressure injury assessment for the entire quarter"
@@ -186,6 +358,12 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].required = true
 
 
+* item[=].item[=].item[+].linkId = "MarkComplete-1"
+* item[=].item[=].item[=].text = "Mark section as complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item[=].item[=].item[=].text.extension[=].valueString = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</html>"
+* item[=].item[=].item[=].type = #boolean
+* item[=].item[=].item[=].repeats = false
 
 // QI - Physical Restraint
 
@@ -194,6 +372,28 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].type = #group
 * item[=].item[=].repeats = false
 * item[=].item[=].required = true
+//in-progress
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].linkId = "CD-in-progress-2"
+* item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-2" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].linkId = "CD-complete-2"
+* item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-2" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = true
 
 * item[=].item[=].item[+].linkId = "qi-restraint-1"
 * item[=].item[=].item[=].text = "Date of assessment"
@@ -241,8 +441,16 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].required = true
 
-// QI - Unplanned Weight Loss
 
+* item[=].item[=].item[+].linkId = "MarkComplete-2"
+* item[=].item[=].item[=].text = "Mark section as complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item[=].item[=].item[=].text.extension[=].valueString = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</html>"
+* item[=].item[=].item[=].type = #boolean
+* item[=].item[=].item[=].repeats = false
+
+
+// QI - Unplanned Weight Loss
 
 * item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * item[=].item[=].extension[=].valueExpression.name = "PreviousWeight"
@@ -269,7 +477,7 @@ Description: "Aged Care QI Prototype."
 */
 // * item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-weight-5' and item.where(linkId='qi-weight-5-1').answer.value> ).item.where(linkId='qi-weight-5-2' and ).answer.value"
 
-0
+
 /*
 //alert
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
@@ -283,6 +491,36 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].text.extension[=].valueString = "<div title=\">5% weight loss within last 2 months\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNkMzJmMmYiIGQ9Ik0xMSAxNWgydjJoLTJ2LTJtMC04aDJ2NmgtMlY3bTEtNUM2LjQ3IDIgMiA2LjUgMiAxMmExMCAxMCAwIDAgMCAxMCAxMGExMCAxMCAwIDAgMCAxMC0xMEExMCAxMCAwIDAgMCAxMiAybTAgMThhOCA4IDAgMCAxLTgtOGE4IDggMCAwIDEgOC04YTggOCAwIDAgMSA4IDhhOCA4IDAgMCAxLTggOFoiLz48L3N2Zz4=' style=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
 * item[=].item[=].item[=].type = #display
 */
+
+* item[=].item[=].linkId = "qi-weight"
+* item[=].item[=].text = "Unplanned Weight Loss"
+* item[=].item[=].type = #group
+* item[=].item[=].repeats = false
+* item[=].item[=].required = true
+
+//in-progress
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].linkId = "CD-in-progress-3"
+* item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-3" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].linkId = "CD-complete-3"
+* item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-3" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
 
 * item[=].item[=].item[+].linkId = "qi-weight-1"
 * item[=].item[=].item[=].text = "Undertaking weight loss strategy"
@@ -390,6 +628,12 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].item[=].item[=].text = "kg"
 * item[=].item[=].item[=].item[=].item[=].type = #display
 
+* item[=].item[=].item[+].linkId = "MarkComplete-3"
+* item[=].item[=].item[=].text = "Mark section as complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item[=].item[=].item[=].text.extension[=].valueString = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</html>"
+* item[=].item[=].item[=].type = #boolean
+* item[=].item[=].item[=].repeats = false
 
 // QI - Continence
 
@@ -400,23 +644,23 @@ Description: "Aged Care QI Prototype."
 //in-progress
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
-* item[=].item[=].item[=].linkId = "CD-in-progress-1"
+* item[=].item[=].item[=].linkId = "CD-in-progress-4"
 * item[=].item[=].item[=].text = "In progress"
 * item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
 * item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
 * item[=].item[=].item[=].type = #display
-* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-1" // Section complete item
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-4" // Section complete item
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
 //complete
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
-* item[=].item[=].item[=].linkId = "CD-complete-1"
+* item[=].item[=].item[=].linkId = "CD-complete-4"
 * item[=].item[=].item[=].text = "Complete"
 * item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
 * item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
 * item[=].item[=].item[=].type = #display
-* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-1" // Section complete item
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-4" // Section complete item
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerBoolean = true
 //alert
@@ -511,7 +755,7 @@ Description: "Aged Care QI Prototype."
 * item[=].item[=].item[=].item[=].type = #dateTime
 
 
-* item[=].item[=].item[+].linkId = "MarkComplete-1"
+* item[=].item[=].item[+].linkId = "MarkComplete-4"
 * item[=].item[=].item[=].text = "Mark section as complete"
 * item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
 * item[=].item[=].item[=].text.extension[=].valueString = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</html>"
@@ -545,3 +789,124 @@ Description: "Aged Care QI Prototype."
 
 */
 
+
+// QI - ADL
+
+// variables
+* item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "ADLBowels"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-adl-barthel').item.where(linkId='qi-adl-barthel-bowels').item.where(linkId='qi-adl-barthel-bowels-1').answer.value"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "ADLBowelsScore"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-adl-barthel').item.where(linkId='qi-adl-barthel-bowels').item.where(linkId='qi-adl-barthel-bowels-2').answer.value"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "ADLBladder"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-adl-barthel').item.where(linkId='qi-adl-barthel-bladder').item.where(linkId='qi-adl-barthel-bladder-1').answer.value"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "ADLBladderScore"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='qi-adl-barthel').item.where(linkId='qi-adl-barthel-bladder').item.where(linkId='qi-adl-barthel-bladder-2').answer.value"
+
+* item[=].item[=].type = #group
+* item[=].item[=].linkId = "qi-adl"
+* item[=].item[=].text = "Activities of Daily Living"
+
+//in-progress
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+* item[=].item[=].item[=].linkId = "CD-in-progress-5"
+* item[=].item[=].item[=].text = "In progress"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-5" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = false  
+//complete
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item[=].item[=].item[=].linkId = "CD-complete-5"
+* item[=].item[=].item[=].text = "Complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml" 
+* item[=].item[=].item[=].text.extension[=].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+* item[=].item[=].item[=].type = #display
+* item[=].item[=].item[=].enableWhen[+].question = "MarkComplete-5" // Section complete item
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[=].answerBoolean = true
+
+
+
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+* item[=].item[=].item[=].type = #group
+* item[=].item[=].item[=].linkId = "qi-adl-barthel"
+* item[=].item[=].item[=].text = "Barthel Index"
+* item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[+].type = #group
+* item[=].item[=].item[=].item[=].linkId = "qi-adl-barthel-bowels"
+* item[=].item[=].item[=].item[=].text = "Bowels"
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].item[+].type = #choice
+* item[=].item[=].item[=].item[=].item[=].linkId = "qi-adl-barthel-bowels-1"
+* item[=].item[=].item[=].item[=].item[=].text = "Assessment"
+* item[=].item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "Incontinent (or needs to be given enemata)"
+* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "Occasional accident (once per week)"
+* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "Continent"
+* item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression.description = "ADL Bowel Score"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression.expression = "iif (%ADLBowels = 'Incontinent (or needs to be given enemata)', 0, (iif (%ADLBowels = 'Occasional accident (once per week)', 1, (iif(%ADLBowels = 'Continent', 2, {})))))"
+* item[=].item[=].item[=].item[=].item[=].type = #integer
+* item[=].item[=].item[=].item[=].item[=].linkId = "qi-adl-barthel-bowels-2"
+* item[=].item[=].item[=].item[=].item[=].text = "Score"
+* item[=].item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].item[=].readOnly = true
+
+
+* item[=].item[=].item[=].item[+].type = #group
+* item[=].item[=].item[=].item[=].linkId = "qi-adl-barthel-bladder"
+* item[=].item[=].item[=].item[=].text = "Bladder"
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].item[+].type = #choice
+* item[=].item[=].item[=].item[=].item[=].linkId = "qi-adl-barthel-bladder-1"
+* item[=].item[=].item[=].item[=].item[=].text = "Assessment"
+* item[=].item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "Incontinent, or catheterised and unable to manage"
+* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "Occasional accident (max once per 24 hours)"
+* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "Continent (for over 7 days)"
+* item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression.description = "ADL Bowel Score"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression.expression = "iif (%ADLBladder = 'Incontinent, or catheterised and unable to manage', 0, (iif (%ADLBladder = 'Occasional accident (max once per 24 hours)', 1, (iif(%ADLBladder = 'Continent (for over 7 days)', 2, {})))))"
+* item[=].item[=].item[=].item[=].item[=].type = #integer
+* item[=].item[=].item[=].item[=].item[=].linkId = "qi-adl-barthel-bladder-2"
+* item[=].item[=].item[=].item[=].item[=].text = "Score"
+* item[=].item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].item[=].readOnly = true
+
+
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+* item[=].item[=].item[=].extension[=].valueExpression.description = "ADL Total Score"
+* item[=].item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].extension[=].valueExpression.expression = "%ADLBowelsScore + %ADLBladderScore"
+* item[=].item[=].item[=].type = #integer
+* item[=].item[=].item[=].linkId = "qi-adl-barthel-total"
+* item[=].item[=].item[=].text = "Total Score"
+* item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].readOnly = true
+
+
+
+
+
+// Mark complete
+* item[=].item[=].item[+].linkId = "MarkComplete-5"
+* item[=].item[=].item[=].text = "Mark section as complete"
+* item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item[=].item[=].item[=].text.extension[=].valueString = "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</html>"
+* item[=].item[=].item[=].type = #boolean
+* item[=].item[=].item[=].repeats = false
