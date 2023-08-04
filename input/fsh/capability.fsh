@@ -206,6 +206,11 @@ Usage: #definition
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
+
+* rest.resource[=].versioning = #versioned-update
+* rest.resource[=].versioning.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].versioning.extension[0].valueCode = #SHALL
+
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
