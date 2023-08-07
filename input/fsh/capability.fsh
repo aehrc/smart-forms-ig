@@ -81,6 +81,13 @@ Usage: #definition
 
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[0].valueCode = #SHALL
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHALL
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "clinical-status"
 * rest.resource[=].type = #Condition
 * rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -89,12 +96,18 @@ Usage: #definition
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
-* rest.resource[=].searchParam[0].name = "patient"
-* rest.resource[=].searchParam[0].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-* rest.resource[=].searchParam[0].type = #reference
-* rest.resource[=].searchParam[0].documentation = "<div><p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p></div>"
-* rest.resource[=].searchParam[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[0].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[+].name = "patient"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[=].documentation = "<div><p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p></div>"
+* rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[+].name = "clinical-status"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Condition-clinical-status"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a code value and <strong>MAY</strong> provide both the code and system values. The server <strong>SHALL</strong> support both.</p></div>"
+* rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
@@ -301,7 +314,6 @@ Usage: #definition
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
 
 
-
 Instance: SmartFormsApplication
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -340,7 +352,13 @@ Usage: #definition
 * rest.resource[=].supportedProfile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
 * rest.resource[=].interaction[0].code = #read
 
-* rest.resource[+].type = #Condition
+
+* rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "clinical-status"
+* rest.resource[=].type = #Condition
 * rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Condition"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 * rest.resource[=].interaction[0].code = #search-type
@@ -348,6 +366,10 @@ Usage: #definition
 * rest.resource[=].searchParam[0].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[0].type = #reference
 * rest.resource[=].searchParam[0].documentation = "<div><p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p></div>"
+* rest.resource[=].searchParam[+].name = "clinical-status"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Condition-clinical-status"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a code value and <strong>MAY</strong> provide both the code and system values. The server <strong>SHALL</strong> support both.</p></div>"
 
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].extension[=].extension[+].url = "required"
@@ -473,4 +495,5 @@ Usage: #definition
 
 * rest.interaction[+].code = #transaction
 * rest.interaction[+].code = #batch
+
 */
