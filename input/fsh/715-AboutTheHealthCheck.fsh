@@ -91,6 +91,13 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
       * answerDecimal = 25
 */
   * item[+]
+    * linkId = "RecordUpdate-About"
+    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    </div>"    
+    * type = #display 
+  * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "3da318f1-a5dd-4c8f-b258-99d83872a4f2"
@@ -104,9 +111,20 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
       * text = "not claimed 715 or 228 in past nine months"
       * type = #display
   * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%QuestionnaireResponseLatestComplete.entry.resource.authored"
     * linkId = "5960c096-d5f7-4745-bd74-44ff2775bde9"
     * text = "Date of last health check"
-    * type = #date
+    * type = #dateTime
+    * repeats = false
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "now()"
+    * linkId = "63fe14f3-2374-4382-bce7-180e2747c97f"
+    * text = "Date this health check commenced"
+    * type = #dateTime
     * repeats = false
 
   * item[+]

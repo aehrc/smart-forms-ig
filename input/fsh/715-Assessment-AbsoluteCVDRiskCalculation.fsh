@@ -80,6 +80,13 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * operator = #=
       * answerBoolean = true
   * item[+]
+    * linkId = "RecordUpdate-CVDRisk"
+    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    </div>"    
+    * type = #display 
+  * item[+]
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"

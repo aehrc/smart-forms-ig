@@ -80,6 +80,13 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * operator = #=
       * answerBoolean = true
   * item[+]
+    * linkId = "RecordUpdate-Patient"
+    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    </div>"    
+    * type = #display 
+  * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | %patient.name.select((family | (given | prefix).join(' ')).join(', ') | text)).first()"

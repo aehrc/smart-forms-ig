@@ -56,6 +56,12 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
+    * name = "QuestionnaireResponseLatestComplete"
+    * language = #application/x-fhir-query
+    * expression = "QuestionnaireResponse?status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
     * name = "Condition"
     * language = #application/x-fhir-query
     * expression = "Condition?patient={{%patient.id}}"
