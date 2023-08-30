@@ -113,9 +113,18 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%QuestionnaireResponseLatestComplete.entry.resource.authored"
+      * expression = "%QuestionnaireResponseLatest.entry.resource.where(status=in-progress).exists()"
     * linkId = "5960c096-d5f7-4745-bd74-44ff2775bde9"
-    * text = "Date of last health check"
+    * text = "Health check already in progress?"
+    * type = #boolean
+    * repeats = false
+    * readOnly = true
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
+    * linkId = "5960c096-d5f7-4745-bd74-44ff2775bde9"
+    * text = "Date of last completed health check"
     * type = #dateTime
     * repeats = false
   * item[+]

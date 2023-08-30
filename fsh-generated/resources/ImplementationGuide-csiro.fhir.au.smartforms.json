@@ -331,6 +331,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/biological-sex-1"
+        },
+        "name": "Biological Sex",
+        "description": "The Biological Sex value set includes values that represent the biological sex of an individual.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/condition-clinical"
         },
         "name": "Condition Clinical Status Codes",
@@ -343,6 +351,14 @@
         },
         "name": "Contained Resource Reference",
         "description": "This extension is intended to be used as a work around to a known bug whereby contained resources that are not referenced with the type, 'Reference' are removed before a resource is created in a HAPI FHIR server. This is problematic when referencing with the type, 'canonical'. The extension can be used to reference contained resources so they are retained when added to a HAPI FHIR server.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/gender-identity-response-1"
+        },
+        "name": "Gender Identity Response",
+        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual’s gender. A person's gender is a social and cultural identity, expression and experience.",
         "exampleBoolean": false
       },
       {
@@ -383,6 +399,14 @@
         },
         "name": "Medical History Short List for Primary School Children",
         "description": "The Medical History Short List for Primary School Children value set includes values to represent conditions for use in a pick list for the MBS 715 Health Check for Primary School Children.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pronouns"
+        },
+        "name": "Personal Pronouns",
+        "description": "Codes that indicate the pronouns to be used when communicating with or about an individual.",
         "exampleBoolean": false
       },
       {

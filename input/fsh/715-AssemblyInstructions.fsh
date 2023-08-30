@@ -56,15 +56,27 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "QuestionnaireResponseLatestComplete"
+    * name = "QuestionnaireResponseLatestCompleted"
     * language = #application/x-fhir-query
     * expression = "QuestionnaireResponse?status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "QuestionnaireResponseLatest"
+    * language = #application/x-fhir-query
+    * expression = "QuestionnaireResponse?_count=1&_sort=-authored&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "Condition"
     * language = #application/x-fhir-query
     * expression = "Condition?patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsSex"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=1515311000168102&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -188,7 +200,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "female"
     * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='418e4a02-de77-48a0-a92a-fe8fcc52b1aa').answer.value.code='female', 1, 0)"
+    * expression = "iif(item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value.code='248152002', 1, 0)"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "age"
     * language = #text/fhirpath

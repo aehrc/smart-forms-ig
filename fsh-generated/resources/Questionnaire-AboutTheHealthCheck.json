@@ -152,12 +152,28 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%QuestionnaireResponseLatestComplete.entry.resource.authored"
+                "expression": "%QuestionnaireResponseLatest.entry.resource.where(status=in-progress).exists()"
               }
             }
           ],
           "linkId": "5960c096-d5f7-4745-bd74-44ff2775bde9",
-          "text": "Date of last health check",
+          "text": "Health check already in progress?",
+          "type": "boolean",
+          "repeats": false,
+          "readOnly": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
+              }
+            }
+          ],
+          "linkId": "5960c096-d5f7-4745-bd74-44ff2775bde9",
+          "text": "Date of last completed health check",
           "type": "dateTime",
           "repeats": false
         },
@@ -167,7 +183,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "today()"
+                "expression": "now()"
               }
             }
           ],

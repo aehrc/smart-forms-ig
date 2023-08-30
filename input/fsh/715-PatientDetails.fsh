@@ -97,6 +97,49 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
+      * expression = "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns').extension.where(url='value').value.coding"
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+    * linkId = "540b1034-7c9a-4aba-a9ef-afb77d445a58"
+    * text = "Preferred pronouns"
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "http://terminology.hl7.org/ValueSet/pronouns"
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/patient-genderIdentity').value.coding"
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+    * linkId = "f669a4fe-4818-429a-8847-d20da88d2bb3"
+    * text = "Gender identity"
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%patient.gender"
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
+    * linkId = "418e4a02-de77-48a0-a92a-fe8fcc52b1aa"
+    * text = "Administrative gender"
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "http://hl7.org/fhir/ValueSet/administrative-gender"
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%ObsSex.entry.resource.value.coding"
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+    * linkId = "56ef44bb-3d1d-4972-aad1-834b69185d61"
+    * text = "Sex assigned at birth"
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+  
+
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
       * expression = "%patient.birthDate"
     * linkId = "90ad8f16-16e4-4438-a7aa-b3189f510da2"
     * text = "Date of birth"
@@ -110,17 +153,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Age"
     * type = #integer
     * repeats = false
-  * item[+]
-    /*Should this be administrative gender or sex for clinical use?*/
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%patient.gender"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * linkId = "418e4a02-de77-48a0-a92a-fe8fcc52b1aa"
-    * text = "Gender"
-    * type = #choice
-    * repeats = false
-    * answerValueSet = "http://hl7.org/fhir/ValueSet/administrative-gender"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath

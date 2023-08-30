@@ -34,13 +34,16 @@
 [SubstanceUse]: Questionnaire-SubstanceUse.html
 [AboriginalTorresStraitIslander]: ValueSet-AboriginalTorresStraitIslander.html
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
+[BiologicalSex]: ValueSet-biological-sex-1.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
+[GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
 [MedicalHistory]: ValueSet-MedicalHistory.html
 [MedicalHistoryShortListAdolescents]: ValueSet-MedicalHistoryShortListAdolescents.html
 [MedicalHistoryShortListAdultsAndOlderPeople]: ValueSet-MedicalHistoryShortListAdultsAndOlderPeople.html
 [MedicalHistoryShortListInfants]: ValueSet-MedicalHistoryShortListInfants.html
 [MedicalHistoryShortListPrimarySchool]: ValueSet-MedicalHistoryShortListPrimarySchool.html
+[PersonalPronouns]: ValueSet-pronouns.html
 [PhysicalActivityAndScreenTime]: Questionnaire-PhysicalActivityAndScreenTime.html
 [PrimaryCarerParentGrandparent]: ValueSet-PrimaryCarerParentGrandparent.html
 [QuestionnaireItemControlExtended]: CodeSystem-QuestionnaireItemControlExtended.html

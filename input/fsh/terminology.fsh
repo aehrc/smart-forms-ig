@@ -526,3 +526,150 @@ Description: "The Australian States and Territories value set includes values th
 * $australian-states-territories-1#TAS
 * $australian-states-territories-1#VIC
 * $australian-states-territories-1#WA
+
+
+ValueSet: PersonalPronouns
+Id: pronouns
+Title: "Personal Pronouns"
+Description: "Codes that indicate the pronouns to be used when communicating with or about an individual."
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension[=].valueCode = #pa
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #trial-use
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* ^extension[=].valueInteger = 2
+* ^url = "http://terminology.hl7.org/ValueSet/pronouns"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.3.3290"
+* ^version = "4.1.1"
+* ^status = #draft
+* ^experimental = false
+* ^date = "2023-03-26T09:00:24+11:00"
+* ^publisher = "HL7 Australia"
+* ^contact[0].name = "HL7 Australia Patient Administration Working Group"
+* ^contact[=].telecom.system = #url
+* ^contact[=].telecom.value = "http://confluence.hl7australia.com/display/PA"
+* ^contact[=].telecom.use = #work
+* ^contact[+].name = "HL7 Australia Orders and Observations Working Group"
+* ^contact[=].telecom.system = #url
+* ^contact[=].telecom.value = "https://confluence.hl7australia.com/display/OO"
+* ^contact[=].telecom.use = #work
+* ^contact[+].name = "HL7 Australia Medications Working Group"
+* ^contact[=].telecom.system = #url
+* ^contact[=].telecom.value = "https://confluence.hl7australia.com/display/MED"
+* ^contact[=].telecom.use = #work
+* ^jurisdiction = urn:iso:std:iso:3166#AU
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\n\nThis value set is an R4 (4.0.1) conversion of the canonical value set published in the R5 [FHIR Extensions Pack](http://hl7.org/fhir/extensions/ValueSet-pronouns.html)."
+* ^expansion.identifier = "urn:uuid:cc2618eb-542e-48a4-b2af-c55fd0548906"
+* ^expansion.timestamp = "2023-08-29T10:16:17+10:00"
+* ^expansion.total = 3
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://loinc.org|2.75"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://loinc.org|2.75"
+* ^expansion.contains[0].system = "http://loinc.org"
+* ^expansion.contains[=].code = #LA29518-0
+* ^expansion.contains[=].display = "he/him/his/his/himself"
+* ^expansion.contains[+].system = "http://loinc.org"
+* ^expansion.contains[=].code = #LA29519-8
+* ^expansion.contains[=].display = "she/her/her/hers/herself"
+* ^expansion.contains[+].system = "http://loinc.org"
+* ^expansion.contains[=].code = #LA29520-6
+* ^expansion.contains[=].display = "they/them/their/theirs/themselves"
+* LOINC#LA29518-0 "he/him/his/his/himself"
+* LOINC#LA29519-8 "she/her/her/hers/herself"
+* LOINC#LA29520-6 "they/them/their/theirs/themselves"
+
+ValueSet: GenderIdentityResponse
+Id: gender-identity-response-1
+Title: "Gender Identity Response"
+Description: "The Gender Identity Response value set includes values that may be used to represent a response for an individual’s gender. A person's gender is a social and cultural identity, expression and experience."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10271"
+* ^version = "1.0.0"
+* ^status = #active
+* ^experimental = false
+* ^date = "2022-09-30"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.n\n\"This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data."
+* ^expansion.identifier = "urn:uuid:85c2e561-69ac-41f6-8e9e-07b3072ef48f"
+* ^expansion.timestamp = "2023-08-30T10:18:47+10:00"
+* ^expansion.total = 5
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[=].code = #446151000124109
+* ^expansion.contains[=].display = "Identifies as male gender"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[=].code = #446141000124107
+* ^expansion.contains[=].display = "Identifies as female gender"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[=].code = #33791000087105
+* ^expansion.contains[=].display = "Identifies as nonbinary gender"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #unknown
+* ^expansion.contains[=].display = "Unknown"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #asked-declined
+* ^expansion.contains[=].display = "Asked But Declined"
+* $SCT#446151000124109
+* $SCT#446141000124107
+* $SCT#33791000087105
+* DataAbsentReason#unknown
+* DataAbsentReason#asked-declined
+
+ValueSet: BiologicalSex
+Id: biological-sex-1
+Title: "Biological Sex"
+Description: "The Biological Sex value set includes values that represent the biological sex of an individual."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10198"
+* ^version = "1.0.0"
+* ^status = #active
+* ^experimental = false
+* ^date = "2020-12-31"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
+* ^expansion.identifier = "urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b"
+* ^expansion.timestamp = "2023-08-30T10:41:59+10:00"
+* ^expansion.total = 4
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #248152002
+* ^expansion.contains[=].display = "Female"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #32570681000036106
+* ^expansion.contains[=].display = "Indeterminate sex"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #32570691000036108
+* ^expansion.contains[=].display = "Intersex"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #248153007
+* ^expansion.contains[=].display = "Male"
+* include codes from system $SCT
+    where constraint = "^ 32570631000036107|Sex reference set|"
