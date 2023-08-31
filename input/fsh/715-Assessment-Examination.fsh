@@ -93,6 +93,366 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * linkId = "d15824f8-eafc-4fa0-80a2-82f0ec7f8728"
     * text = "Growth measures recorded on Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO) growth charts for centile and tracking overtime"
     * type = #display
+
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+    * linkId = "53d5d5a6-3198-4bec-92ac-03fe7d77fb68"
+    * type = #group 
+    * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 5"
+      * linkId = "4e32e9b2-82e6-41ea-9545-79e928f7d6c2"
+      * text = "Length/Height"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeight.entry.resource.value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "837cd0ce-4a9e-4c8b-8679-007ed961f121"
+        * text = "Value"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "e73c3643-8898-4ef8-8bc9-b4b3826ab790"
+          * text = "cm"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeight.entry.resource.effective"
+        * linkId = "b9faf79e-b5f7-443a-9203-67532e3a381f"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 5"
+      * linkId = "6226a5c5-b5c3-4ebb-a689-2b286322cfe0"
+      * text = "Height"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeight.entry.resource.value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea"
+        * text = "Value"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "387c95f0-8b54-4ad7-992d-8ab26a34fd77"
+          * text = "cm"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeight.entry.resource.effective"
+        * linkId = "c666ac96-1e64-40e2-8e0b-7d0187bb3e50"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * linkId = "97ed4c86-8820-4e4d-9234-0e0e8b6ca44a"
+      * text = "Weight"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyWeight.entry.resource.value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+        * linkId = "443bd584-684a-449c-ab6e-9d07da4df9fa"
+        * text = "Value"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "5ba0d699-bc2a-45d0-8f40-f53cb21dc911"
+          * text = "kg"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyWeight.entry.resource.effective"
+        * linkId = "92cdc1c7-eb6c-4f6d-9bd9-ae726a0e0d3d"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
+      * linkId = "bc209c5e-ed28-48e3-b1a1-55cb7e435d8b"
+      * text = "BMI"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * description = "BMI calculation"
+          * language = #text/fhirpath
+          * expression = "(%weight/((%height/100).power(2))).round(1)"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
+        * linkId = "2ada6633-03c6-4b05-bc23-18dec84ec150"
+        * text = "Value"
+        * type = #decimal
+        * repeats = false
+        * readOnly = true
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "a709b8ec-9e65-40f0-a781-500cb3e56f3c"
+          * text = "kg/m2"
+          * type = #display
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age <= 12"
+      * linkId = "d3557f55-1abf-401c-aada-2d4380151c56"
+      * text = "Head circumference"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeadCircumference.entry.resource.value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "7a4a6aac-558e-4bec-86c5-326ae07e37d6"
+        * text = "Value"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "73937983-65a0-4d40-8600-de7ca3277d5e"
+          * text = "cm"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeadCircumference.entry.resource.effective"
+        * linkId = "b8da15e7-8648-492b-9e82-ad5ab7cad179"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age >= 18"
+      * linkId = "ec884b64-ed8d-485b-930f-e7ac18ad4cc9"
+      * text = "Waist circumference"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsWaistCircumference.entry.resource.value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "8df0f5d8-821d-4f71-b3c1-d164616ea2f5"
+        * text = "Value"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "19aeb0ab-7494-4bac-8b2d-d7d2527c1f4a"
+          * text = "cm"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsWaistCircumference.entry.resource.effective"
+        * linkId = "3eb3b929-e67a-4331-8949-b8447b66a4c7"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
+      * linkId = "ec014d71-e10a-41da-a4a8-0add0118cef5"
+      * text = "Blood pressure (Systolic)"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * linkId = "d2a1a937-4197-4df5-82d4-16ef0936ca18"
+        * text = "Value"
+        * type = #integer
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "24dbd7e4-1cf9-4ec8-a248-2e6ec21749f4"
+          * text = "mm Hg"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressure.entry.resource.effective"
+        * linkId = "f3f2c3e5-5571-4e18-b24b-a84f26433d29"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%age > 12"
+      * linkId = "0b734ca6-801e-47a7-924b-6d50cfe9f832"
+      * text = "Blood pressure (Diastolic)"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8462-4')).value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * linkId = "0ae24ee3-de38-449f-9f82-571a18d7a58c"
+        * text = "Value"
+        * type = #integer
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "93d792ae-90c2-4e4c-a61e-4b5ec45355e1"
+          * text = "mm Hg"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressure.entry.resource.effective"
+        * linkId = "ee38182d-0c70-49ae-a816-4138ea752a32"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * linkId = "3d3e1079-d225-447b-959b-4caddc057f7d"
+      * text = "Heart rate"
+      * type = #group
+      * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeartRate.entry.resource.value.value"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
+        * linkId = "49029ef0-eaa8-44f8-b26a-177820c82dfd"
+        * text = "Value"
+        * type = #integer
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "090964b9-be33-438b-8465-2a2a09632fde"
+          * text = "/min"
+          * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressure.entry.resource.effective"
+        * linkId = "feeac08f-2ba6-4048-80a2-10b3f90cf5e3"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+    * item[+]
+      * linkId = "8d3d05cc-64bc-47ae-b989-060bac838d1c"
+      * text = "Heart rhythm"
+      * type = #group
+      * repeats = false
+      * item[+]       
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * linkId = "99a8eb6f-a36a-4daf-99d7-27bfde0d4bb1"
+        * text = "Value"
+        * type = #choice
+        * repeats = false
+        * answerOption[+].valueCoding = $SCT#271636001 "Pulse Regular"
+        * answerOption[+].valueCoding = $SCT#61086009 "Pulse Irregular"
+      * item[+]
+        * linkId = "eeb56682-0eae-4428-9c37-0e63852026c0"
+        * text = "Date performed"
+        * type = #date
+        * repeats = false
+
+      
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 12"
+    * linkId = "f86650cf-f185-4518-918e-d1ee0a40682c"
+    * text = "Blood pressure"
+    * type = #group
+    * repeats = false
+    * item[+]      
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+      * linkId = "cf909836-b63f-4e8e-8df7-80637f21ec54"
+      * text = "Systolic"
+      * type = #integer
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "42004290-adb6-49a3-898a-c93cacdbefa9"
+        * text = "mm Hg"
+        * type = #display
+    * item[+]      
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8462-4')).value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+      * linkId = "709ef0e5-f4bf-4896-bf23-f3d8cc0f3d70"
+      * text = "Diastolic"
+      * type = #integer
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "3781fd9a-4621-4f65-a57f-12a9db2c7712"
+        * text = "mm Hg"
+        * type = #display
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBloodPressure.entry.resource.effective"
+      * linkId = "cfe919d2-30e5-4324-a76f-285f870cff5c"
+      * text = "Date performed"
+      * type = #date
+      * repeats = false
+
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age >= 18"
+    * linkId = "fe2489d9-4e36-43ed-8869-d649e6a25ed2"
+    * text = "Waist circumference"
+    * type = #group
+    * repeats = false
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsWaistCircumference.entry.resource.value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+      * linkId = "6e5048db-e0be-44a0-9908-b21b89f7dfd2"
+      * type = #decimal
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "45832e72-4342-4972-89b6-f9d7e5427a87"
+        * text = "cm"
+        * type = #display
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsWaistCircumference.entry.resource.effective"
+      * linkId = "fd589810-0850-436b-85c0-ee5d05e630c3"
+      * text = "Date performed"
+      * type = #date
+      * repeats = false
+
+
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
@@ -197,6 +557,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * linkId = "a9fad80e-aee6-41bd-b82d-f31ede4dbc45"
       * text = "cm"
       * type = #display
+
 /*
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -253,6 +614,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "eb022a99-7bd0-4635-aaad-04ac0d0334c8"
         * text = "mm Hg"
         * type = #display
+
 
     
   * item[+]
