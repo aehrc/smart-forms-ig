@@ -11,6 +11,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 //* contained[+] = PrePopQuery
 * contained[+] = YesNo
 * contained[+] = YesNoNA
+* contained[+] = YesNoNotAskedDeclined
 * contained[+] = MedicalHistory
 * contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool

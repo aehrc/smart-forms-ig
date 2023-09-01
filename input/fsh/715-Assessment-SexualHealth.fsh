@@ -9,6 +9,7 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Sexual Health"
 Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
+* contained[+] = YesNoNotAskedDeclined
 
 //assemble expectation
 * extension[+]
@@ -108,7 +109,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
       * text = "Is there anything that you are worried about in relation to puberty/your sexual health?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNo"
+      * answerValueSet = "#YesNoNotAskedDeclined"
     * item[+]
       * linkId = "d7b92cad-4aa8-47d3-975c-92563f132325"
       * text = "Details"
@@ -192,7 +193,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
       * text = "Is there anything that you are worried about in relation to your sexual health?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNo"
+      * answerValueSet = "#YesNoNotAskedDeclined"
     * item[+]
       * linkId = "5148c6c6-c99f-480d-bb05-569064ba7118"
       * text = "Details"
@@ -302,7 +303,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
       * text = "Consider asking when appropriate: Is there anything that you are worried about in relation to your sexual health?"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#YesNo"
+      * answerValueSet = "#YesNoNotAskedDeclined"
     * item[+]
       * linkId = "f93fe768-9215-4a15-9376-686e9530ea79"
       * text = "Details"

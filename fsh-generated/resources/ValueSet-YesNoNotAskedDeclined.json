@@ -1,0 +1,89 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "YesNoNotAskedDeclined",
+  "id": "YesNoNotAskedDeclined",
+  "title": "Yes/No/Not Asked/Asked But Declined",
+  "description": "Concepts for Yes, No, Not Asked and Asked But Declined",
+  "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
+  "experimental": false,
+  "expansion": {
+    "identifier": "urn:uuid:8eda7c3c-cc35-49fa-ac6c-c0e4f0a4e203",
+    "timestamp": "2023-09-01T11:17:57+10:00",
+    "total": 4,
+    "parameter": [
+      {
+        "name": "version",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+      },
+      {
+        "name": "used-codesystem",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+      },
+      {
+        "name": "version",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+      },
+      {
+        "name": "used-codesystem",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+      }
+    ],
+    "contains": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "version": "2.1.0",
+        "code": "Y",
+        "display": "Yes"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "version": "2.1.0",
+        "code": "N",
+        "display": "No"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "version": "2.1.0",
+        "code": "NASK",
+        "display": "Not Asked"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "version": "5.0.0-ballot",
+        "code": "asked-declined",
+        "display": "Asked But Declined"
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "concept": [
+          {
+            "code": "Y",
+            "display": "Yes"
+          },
+          {
+            "code": "N",
+            "display": "No"
+          },
+          {
+            "code": "NASK",
+            "display": "Not Asked"
+          }
+        ]
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "concept": [
+          {
+            "code": "asked-declined",
+            "display": "Asked But Declined"
+          }
+        ]
+      }
+    ]
+  }
+}

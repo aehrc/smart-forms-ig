@@ -477,7 +477,7 @@
         "reference": {
           "reference": "ValueSet/YesNo"
         },
-        "name": "Yes No",
+        "name": "Yes/No",
         "description": "Concepts for Yes and No",
         "exampleBoolean": false
       },
@@ -485,8 +485,16 @@
         "reference": {
           "reference": "ValueSet/YesNoNA"
         },
-        "name": "Yes No NA",
+        "name": "Yes/No/NA",
         "description": "Concepts for Yes, No and Not applicable",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/YesNoNotAskedDeclined"
+        },
+        "name": "Yes/No/Not Asked/Asked But Declined",
+        "description": "Concepts for Yes, No, Not Asked and Asked But Declined",
         "exampleBoolean": false
       }
     ],

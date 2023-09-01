@@ -54,3 +54,4 @@
 [SmartFormsServer]: CapabilityStatement-SmartFormsServer.html
 [YesNo]: ValueSet-YesNo.html
 [YesNoNA]: ValueSet-YesNoNA.html
+[YesNoNotAskedDeclined]: ValueSet-YesNoNotAskedDeclined.html

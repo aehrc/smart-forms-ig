@@ -29,11 +29,18 @@
       "item": [
         {
           "linkId": "f948fb81-48e9-4bc6-bf81-8d778ac4375a",
-          "text": "The following information is a read-only collection of the 'Health priorities, actions and follow-up' sections entered in the previous tabs.",
+          "text": "The following information is a read-only collection of the 'Health priorities, actions and follow-up' sections entered in the previous tabs. Only sections where previous information entered will be displayed here.",
           "type": "display"
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryCurrentPriorities.exists()"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
@@ -52,6 +59,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryMedicalHistory.exists()"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
                 "description": "Medical history calculation",
@@ -68,6 +82,13 @@
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryRegularMedications.exists()"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
@@ -86,6 +107,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryAllergiesAdverseReactions.exists()"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
                 "description": "Allergies/adverse reactions calculation",
@@ -102,6 +130,13 @@
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryFamilyHistory.exists()"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
@@ -123,7 +158,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age > 12"
+                "expression": "%age > 12 and %HealthPrioritiesSummarySocialEmotionalWellbeing.exists()"
               }
             },
             {
@@ -147,7 +182,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age <= 12"
+                "expression": "%age <= 12 and %HealthPrioritiesSummarySocialHistory.exists()"
               }
             },
             {
@@ -171,7 +206,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age > 12"
+                "expression": "%age > 12 and %HealthPrioritiesSummaryHomeFamily.exists()"
               }
             },
             {
@@ -195,7 +230,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age <= 12"
+                "expression": "%age <= 12 and %HealthPrioritiesSummaryLearningDevelopment.exists()"
               }
             },
             {
@@ -219,7 +254,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age > 12).intersect(%age < 50)"
+                "expression": "(%age > 12).intersect(%age < 50) and %HealthPrioritiesSummaryLearningWorkAdults.exists()"
               }
             },
             {
@@ -243,7 +278,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 50"
+                "expression": "%age >= 50 and %HealthPrioritiesSummaryLearningWorkOlder.exists()"
               }
             },
             {
@@ -267,7 +302,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age > 12"
+                "expression": "%age > 12 and %HealthPrioritiesSummaryMood.exists()"
               }
             },
             {
@@ -291,7 +326,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 50"
+                "expression": "%age >= 50 and %HealthPrioritiesSummaryMemoryThinking.exists()"
               }
             },
             {
@@ -315,7 +350,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 50"
+                "expression": "%age >= 50 and %HealthPrioritiesSummaryChronicDiseaseAgeing.exists()"
               }
             },
             {
@@ -339,7 +374,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age >= 50.intersect(%age <= 74)"
+                "expression": "(%age >= 50.intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
               }
             },
             {
@@ -359,6 +394,13 @@
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryHealthyEating.exists()"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
@@ -380,7 +422,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age < 50"
+                "expression": "%age < 50 and %HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder.exists()"
               }
             },
             {
@@ -404,7 +446,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 50"
+                "expression": "%age >= 50 and %HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder.exists()"
               }
             },
             {
@@ -428,7 +470,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 12"
+                "expression": "%age >= 12 and %HealthPrioritiesSummarySubstanceUse.exists()"
               }
             },
             {
@@ -452,7 +494,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age > 12"
+                "expression": "%age > 12 and %HealthPrioritiesSummaryGambling.exists()"
               }
             },
             {
@@ -476,7 +518,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age > 12).intersect(%age <= 24)"
+                "expression": "(%age > 12).intersect(%age <= 24) and %HealthPrioritiesSummarySexualHealthAdolescents.exists()"
               }
             },
             {
@@ -500,7 +542,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age > 24).intersect(%age <= 49)"
+                "expression": "(%age > 24).intersect(%age <= 49) and %HealthPrioritiesSummarySexualHealthAdults.exists()"
               }
             },
             {
@@ -524,7 +566,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 50"
+                "expression": "%age >= 50 and %HealthPrioritiesSummarySexualHealthOlder.exists()"
               }
             },
             {
@@ -545,6 +587,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryEyeHealth.exists()"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
                 "description": "Eye health calculation",
@@ -562,6 +611,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryEarHealthHearing.exists()"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
                 "description": "Ear health and hearing calculation",
@@ -578,6 +634,13 @@
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryOralDentalHealth.exists()"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
@@ -599,7 +662,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age <= 24"
+                "expression": "%age <= 24 and %HealthPrioritiesSummarySkin.exists()"
               }
             },
             {
@@ -620,6 +683,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryImmunisation.exists()"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
                 "description": "Immunisation calculation",
@@ -636,6 +706,13 @@
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%HealthPrioritiesSummaryExamination.exists()"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
               "valueExpression": {
@@ -657,7 +734,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 25"
+                "expression": "%age >= 25 and %HealthPrioritiesSummaryAbsoluteCVDRisk.exists()"
               }
             },
             {
@@ -681,7 +758,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >= 12"
+                "expression": "%age >= 12 and %HealthPrioritiesSummaryInvestigations.exists()"
               }
             },
             {

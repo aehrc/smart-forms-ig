@@ -1,7 +1,7 @@
 Alias: $SCT = http://snomed.info/sct
 
-Alias: $v2-0136 = http://terminology.hl7.org/CodeSystem/v2-0136
-Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
+Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
+Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
 CodeSystem: QuestionnaireItemControlExtended
 Id: QuestionnaireItemControlExtended
@@ -12,63 +12,89 @@ Description: "The Questionnaire Item Control Extension code system defines conce
 * ^caseSensitive = true
 * #context-display "context-display" "An display item rendered adjacent (horizontally or vertically) to the text of the parent item."
 
-ValueSet: YesNoNA
-Id: YesNoNA
-Title: "Yes No NA"
-Description: "Concepts for Yes, No and Not applicable"
+ValueSet: YesNoNotAskedDeclined
+Id: YesNoNotAskedDeclined
+Title: "Yes/No/Not Asked/Asked But Declined"
+Description: "Concepts for Yes, No, Not Asked and Asked But Declined"
 * ^experimental = false
-* ^expansion.identifier = "7709b027-415d-4eff-abf0-dc8edb2dc8fa"
-* ^expansion.timestamp = "2022-10-20T09:39:51+10:00"
-* ^expansion.total = 3
-* ^expansion.offset = 0
+* ^expansion.identifier = "urn:uuid:8eda7c3c-cc35-49fa-ac6c-c0e4f0a4e203"
+* ^expansion.timestamp = "2023-09-01T11:17:57+10:00"
+* ^expansion.total = 4
 * ^expansion.parameter[0].name = "version"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"
-* ^expansion.parameter[+].name = "count"
-* ^expansion.parameter[=].valueInteger = 2147483647
-* ^expansion.parameter[+].name = "offset"
-* ^expansion.parameter[=].valueInteger = 0
-* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-* ^expansion.contains[=].version = "2.9"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].version = "2.1.0"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
-* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
-* ^expansion.contains[=].version = "2.9"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].version = "2.1.0"
 * ^expansion.contains[=].code = #N
 * ^expansion.contains[=].display = "No"
-* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
-* ^expansion.contains[=].version = "2018-08-12"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].version = "2.1.0"
+* ^expansion.contains[=].code = #NASK
+* ^expansion.contains[=].display = "Not Asked"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #asked-declined
+* ^expansion.contains[=].display = "Asked But Declined"
+* $v2-0532#Y "Yes"
+* $v2-0532#N "No"
+* $v2-0532#NASK "Not Asked"
+* $data-empty#asked-declined "Asked But Declined"
+
+ValueSet: YesNoNA
+Id: YesNoNA
+Title: "Yes/No/NA"
+Description: "Concepts for Yes, No and Not applicable"
+* ^experimental = false
+* ^expansion.identifier = "urn:uuid:5baa5444-e553-4412-a08c-9ce93d3271e0"
+* ^expansion.timestamp = "2023-09-01T11:16:50+10:00"
+* ^expansion.total = 3
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].code = #Y
+* ^expansion.contains[=].display = "Yes"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].code = #N
+* ^expansion.contains[=].display = "No"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
 * ^expansion.contains[=].code = #NA
-* ^expansion.contains[=].display = "not applicable"
-* $v2-0136#Y "Yes"
-* $v2-0136#N "No"
-* $v3-NullFlavor#NA "N/A"
+* ^expansion.contains[=].display = "N/A"
+* $v2-0532#Y "Yes"
+* $v2-0532#N "No"
+* $v2-0532#NA "N/A"
 
 
 ValueSet: YesNo
 Id: YesNo
-Title: "Yes No"
+Title: "Yes/No"
 Description: "Concepts for Yes and No"
 * ^experimental = false
-* ^expansion.identifier = "91d952b0-22ed-474a-aad7-da1db1d7dcc7"
-* ^expansion.timestamp = "2022-10-20T09:43:07+10:00"
+* ^expansion.identifier = "urn:uuid:06bfacf3-ef16-4470-86a0-a2a22f49ff91"
+* ^expansion.timestamp = "2023-09-01T11:15:01+10:00"
 * ^expansion.total = 2
-* ^expansion.offset = 0
 * ^expansion.parameter[0].name = "version"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
-* ^expansion.parameter[+].name = "count"
-* ^expansion.parameter[=].valueInteger = 2147483647
-* ^expansion.parameter[+].name = "offset"
-* ^expansion.parameter[=].valueInteger = 0
-* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
-* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0136"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
 * ^expansion.contains[=].code = #N
 * ^expansion.contains[=].display = "No"
-* $v2-0136#Y "Yes"
-* $v2-0136#N "No"
+* $v2-0532#Y "Yes"
+* $v2-0532#N "No"
 
 Alias: $australian-indigenous-status-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1
 

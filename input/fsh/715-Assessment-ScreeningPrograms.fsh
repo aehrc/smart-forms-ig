@@ -97,6 +97,11 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
       * answerOption[+].valueString = "Declined"
       * answerOption[+].valueString = "Next due" 
     * item[+]
+      * linkId = "4bd712ec-b11b-4ef9-aa0e-2cd2c02cf8bd"
+      * text = "Cervical screening next due"
+      * type = #date
+      * repeats = false
+    * item[+]
       * linkId = "4e0c55a0-c559-45fd-b165-5aaea3451423"
       * text = "Cervical screening details"
       * type = #text
@@ -118,6 +123,11 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
       * answerOption[+].valueString = "Declined"
       * answerOption[+].valueString = "Next due" 
     * item[+]
+      * linkId = "9410ff22-86a4-4d01-b6ff-da9b1e7d17da"
+      * text = "Breast screening next due"
+      * type = #date
+      * repeats = false
+    * item[+]
       * linkId = "b63a03c8-2c7b-46a5-8f13-ebc7fb8b91ee"
       * text = "Breast screening details"
       * type = #text
@@ -138,6 +148,11 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
       * answerOption[+].valueString = "Not required"
       * answerOption[+].valueString = "Declined"
       * answerOption[+].valueString = "Next due" 
+    * item[+]
+      * linkId = "df2fbba0-cb6f-4fb8-a413-e3acf1a3a98e"
+      * text = "Bowel cancer screening next due"
+      * type = #date
+      * repeats = false
     * item[+]
       * linkId = "0d59513c-7a77-4752-9c4e-492a54412731"
       * text = "Bowel cancer screening details"

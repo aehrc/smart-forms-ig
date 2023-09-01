@@ -407,37 +407,32 @@
       "id": "YesNo",
       "status": "draft",
       "name": "YesNo",
-      "title": "Yes No",
+      "title": "Yes/No",
       "description": "Concepts for Yes and No",
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
       "experimental": false,
       "expansion": {
-        "identifier": "91d952b0-22ed-474a-aad7-da1db1d7dcc7",
-        "timestamp": "2022-10-20T09:43:07+10:00",
+        "identifier": "urn:uuid:06bfacf3-ef16-4470-86a0-a2a22f49ff91",
+        "timestamp": "2023-09-01T11:15:01+10:00",
         "total": 2,
-        "offset": 0,
         "parameter": [
           {
             "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
           },
           {
-            "name": "count",
-            "valueInteger": 2147483647
-          },
-          {
-            "name": "offset",
-            "valueInteger": 0
+            "name": "used-codesystem",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
           }
         ],
         "contains": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "code": "Y",
             "display": "Yes"
           },
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "code": "N",
             "display": "No"
           }
@@ -446,7 +441,7 @@
       "compose": {
         "include": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "concept": [
               {
                 "code": "Y",
@@ -466,58 +461,46 @@
       "id": "YesNoNA",
       "status": "draft",
       "name": "YesNoNA",
-      "title": "Yes No NA",
+      "title": "Yes/No/NA",
       "description": "Concepts for Yes, No and Not applicable",
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
       "experimental": false,
       "expansion": {
-        "identifier": "7709b027-415d-4eff-abf0-dc8edb2dc8fa",
-        "timestamp": "2022-10-20T09:39:51+10:00",
+        "identifier": "urn:uuid:5baa5444-e553-4412-a08c-9ce93d3271e0",
+        "timestamp": "2023-09-01T11:16:50+10:00",
         "total": 3,
-        "offset": 0,
         "parameter": [
           {
             "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0136|2.9"
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
           },
           {
-            "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"
-          },
-          {
-            "name": "count",
-            "valueInteger": 2147483647
-          },
-          {
-            "name": "offset",
-            "valueInteger": 0
+            "name": "used-codesystem",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
           }
         ],
         "contains": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-            "version": "2.9",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "code": "Y",
             "display": "Yes"
           },
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
-            "version": "2.9",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "code": "N",
             "display": "No"
           },
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-            "version": "2018-08-12",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "code": "NA",
-            "display": "not applicable"
+            "display": "N/A"
           }
         ]
       },
       "compose": {
         "include": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0136",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
             "concept": [
               {
                 "code": "Y",
@@ -526,12 +509,7 @@
               {
                 "code": "N",
                 "display": "No"
-              }
-            ]
-          },
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-            "concept": [
+              },
               {
                 "code": "NA",
                 "display": "N/A"
