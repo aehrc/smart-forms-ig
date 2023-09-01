@@ -1016,6 +1016,143 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
+                "expression": "%age > 5"
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%ObsBodyHeight.entry.resource.value.value"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "cm",
+                    "system": "http://unitsofmeasure.org"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "unit",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "7c4c2f2a-3770-45be-80b3-928cde592ae2",
+                  "text": "cm",
+                  "type": "display"
+                }
+              ],
+              "linkId": "6c1197d8-4638-4e41-8f1a-9f9c1f1aed91",
+              "type": "decimal",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%ObsBodyHeight.entry.resource.effective"
+                  }
+                }
+              ],
+              "linkId": "b8e89abe-8c97-460d-a2fe-8f265b82d176",
+              "text": "Date performed",
+              "type": "date",
+              "repeats": false
+            }
+          ],
+          "linkId": "73eb273b-ac4c-4315-8654-1e5ecca6abda",
+          "text": "Height",
+          "type": "group",
+          "repeats": false
+        },
+        {
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%ObsBodyWeight.entry.resource.value.value"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "unit",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "993f1e91-3304-4770-8acf-ef291a486166",
+                  "text": "kg",
+                  "type": "display"
+                }
+              ],
+              "linkId": "5ebd1250-93c9-4edd-bd6d-944bbf0dc4fc",
+              "type": "decimal",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%ObsBodyWeight.entry.resource.effective"
+                  }
+                }
+              ],
+              "linkId": "1f3b61a9-ac33-4a10-b4d4-5b234fefa981",
+              "text": "Date performed",
+              "type": "date",
+              "repeats": false
+            }
+          ],
+          "linkId": "c0deac90-a843-427e-ab4b-c51d0a775d6c",
+          "text": "Weight",
+          "type": "group",
+          "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
                 "expression": "%age <= 5"
               }
             },

@@ -94,6 +94,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * text = "Growth measures recorded on Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO) growth charts for centile and tracking overtime"
     * type = #display
 
+// Observations table with dates
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
     * linkId = "53d5d5a6-3198-4bec-92ac-03fe7d77fb68"
@@ -376,7 +377,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
 
-      
+// Individual observation groups with date      
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
@@ -421,7 +422,6 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * text = "Date performed"
       * type = #date
       * repeats = false
-
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
@@ -451,8 +451,64 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * text = "Date performed"
       * type = #date
       * repeats = false
+  * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%age > 5"
+    * linkId = "73eb273b-ac4c-4315-8654-1e5ecca6abda"
+    * text = "Height"
+    * type = #group
+    * repeats = false
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBodyHeight.entry.resource.value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+      * linkId = "6c1197d8-4638-4e41-8f1a-9f9c1f1aed91"
+      * type = #decimal
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "7c4c2f2a-3770-45be-80b3-928cde592ae2"
+        * text = "cm"
+        * type = #display
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBodyHeight.entry.resource.effective"
+      * linkId = "b8e89abe-8c97-460d-a2fe-8f265b82d176"
+      * text = "Date performed"
+      * type = #date
+      * repeats = false
+  * item[+]
+    * linkId = "c0deac90-a843-427e-ab4b-c51d0a775d6c"
+    * text = "Weight"
+    * type = #group
+    * repeats = false
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBodyWeight.entry.resource.value.value"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+      * linkId = "5ebd1250-93c9-4edd-bd6d-944bbf0dc4fc"
+      * type = #decimal
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "993f1e91-3304-4770-8acf-ef291a486166"
+        * text = "kg"
+        * type = #display
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsBodyWeight.entry.resource.effective"
+      * linkId = "1f3b61a9-ac33-4a10-b4d4-5b234fefa981"
+      * text = "Date performed"
+      * type = #date
+      * repeats = false
 
 
+// Original observations single items with no date
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
