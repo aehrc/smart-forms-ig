@@ -113,7 +113,7 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%QuestionnaireResponseLatest.entry.resource.where(status=in-progress).exists()"
+      * expression = "%QuestionnaireResponseLatest.entry.resource.where(status='in-progress').exists()"
     * linkId = "5960c096-d5f7-4745-bd74-44ff2775bde9"
     * text = "Health check already in progress?"
     * type = #boolean
@@ -123,17 +123,17 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
-    * linkId = "5960c096-d5f7-4745-bd74-44ff2775bde9"
+    * linkId = "01418489-1ec4-4c3b-b96a-7c14c3e21cfe"
     * text = "Date of last completed health check"
-    * type = #dateTime
+    * type = #date
     * repeats = false
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "now()"
+      * expression = "today()"
     * linkId = "63fe14f3-2374-4382-bce7-180e2747c97f"
     * text = "Date this health check commenced"
-    * type = #dateTime
+    * type = #date
     * repeats = false
 
   * item[+]
