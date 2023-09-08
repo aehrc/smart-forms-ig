@@ -193,11 +193,11 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "weight"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2136abeb-d75d-475d-9cc7-eeda8d131b95').answer.value"
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='443bd584-684a-449c-ab6e-9d07da4df9fa').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "height"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='2d68889b-88c1-4c6d-8b00-db4178dc1f52').answer.value"
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "female"
     * language = #text/fhirpath
