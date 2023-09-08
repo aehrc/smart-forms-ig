@@ -249,7 +249,7 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age >= 50.intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
+      * expression = "(%age >= 50).intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
       * description = "Participation in screening programs calculation"
       * language = #text/fhirpath

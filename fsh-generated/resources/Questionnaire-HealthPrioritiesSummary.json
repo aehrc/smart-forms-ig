@@ -374,7 +374,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age >= 50.intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
+                "expression": "(%age >= 50).intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
               }
             },
             {

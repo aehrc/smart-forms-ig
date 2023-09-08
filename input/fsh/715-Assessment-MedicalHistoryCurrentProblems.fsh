@@ -233,14 +233,14 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * expression = "%ConditionRepeat.onset.ofType(dateTime)"
       * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
       * text = "Onset Date"
-      * type = #dateTime
+      * type = #date
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%ConditionRepeat.recordedDate"
       * linkId = "18b9e159-2ed7-4047-82b7-deb2a171de4f"
       * text = "Recorded Date"
-      * type = #dateTime
+      * type = #date
 
 
   * item[+]
