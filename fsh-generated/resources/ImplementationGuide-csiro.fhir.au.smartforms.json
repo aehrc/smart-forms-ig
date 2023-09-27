@@ -59,6 +59,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/ACQIEncounterStatus"
+        },
+        "name": "ACQI Encounter Status",
+        "description": "ACQI Encounter Status.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/AgedCareQIPrototype"
         },
         "name": "Aged Care QI Prototype",
@@ -88,6 +96,14 @@
         "name": "Contained Resource Reference",
         "description": "This extension is intended to be used as a work around to a known bug whereby contained resources that are not referenced with the type, 'Reference' are removed before a resource is created in a HAPI FHIR server. This is problematic when referencing with the type, 'canonical'. The extension can be used to reference contained resources so they are retained when added to a HAPI FHIR server.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/encounter-status"
+        },
+        "description": "Current state of the encounter.",
+        "exampleBoolean": false,
+        "name": "EncounterStatus"
       },
       {
         "reference": {

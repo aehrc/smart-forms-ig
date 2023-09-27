@@ -1,4 +1,5 @@
 Alias: $ICD-10-AM = http://hl7.org/fhir/sid/icd-10-am
+Alias: $encounter-status = http://hl7.org/fhir/encounter-status
 
 ValueSet: PressureInjuryClassification
 Id: PressureInjuryClassification
@@ -31,3 +32,12 @@ Description: "Pressure Injury Classification."
 * $ICD-10-AM#L89.3 "Pressure injury, stage IV"
 * $ICD-10-AM#L89.4 "Pressure injury, unstageable, so stated"
 * $ICD-10-AM#L89.5 "Suspected deep tissue injury, depth unknown, so stated"
+
+ValueSet: ACQIEncounterStatus
+Id: ACQIEncounterStatus
+Title: "ACQI Encounter Status"
+Description: "ACQI Encounter Status."
+
+* $encounter-status#in-progress
+* $encounter-status#onleave
+* $encounter-status#finished

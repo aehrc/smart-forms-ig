@@ -87,6 +87,33 @@
           }
         ]
       }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "ACQIEncounterStatus",
+      "status": "draft",
+      "name": "ACQIEncounterStatus",
+      "title": "ACQI Encounter Status",
+      "description": "ACQI Encounter Status.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/ACQIEncounterStatus",
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/encounter-status",
+            "concept": [
+              {
+                "code": "in-progress"
+              },
+              {
+                "code": "onleave"
+              },
+              {
+                "code": "finished"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "extension": [
@@ -127,6 +154,26 @@
         {
           "url": "description",
           "valueString": "The practitioner user that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "encounter",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Encounter"
+        },
+        {
+          "url": "description",
+          "valueString": "The encounter that is to be used to pre-populate the form"
         }
       ]
     },
@@ -543,6 +590,35 @@
           "repeats": false,
           "item": [
             {
+              "linkId": "client-period",
+              "text": "Reporting Period",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "client-period-start",
+                  "text": "Start Date",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ReportingStartDate + 3 months"
+                      }
+                    }
+                  ],
+                  "linkId": "client-period-end",
+                  "text": "End Date",
+                  "type": "date",
+                  "repeats": false
+                }
+              ]
+            },
+            {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -612,6 +688,158 @@
               "answerValueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
             },
             {
+              "linkId": "client-encounter",
+              "text": "Encounter details",
+              "type": "group",
+              "repeats": false,
+              "readOnly": true,
+              "item": [
+                {
+                  "linkId": "client-encounter-1",
+                  "text": "Current encounter",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%encounter.status"
+                          }
+                        }
+                      ],
+                      "linkId": "client-encounter-1-1",
+                      "text": "Status",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "#ACQIEncounterStatus"
+                    },
+                    {
+                      "linkId": "client-encounter-1-2",
+                      "text": "Period",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%encounter.period.start"
+                              }
+                            }
+                          ],
+                          "linkId": "client-encounter-1-2-1",
+                          "text": "Start",
+                          "type": "date",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%encounter.period.end"
+                              }
+                            }
+                          ],
+                          "linkId": "client-encounter-1-2-2",
+                          "text": "End",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                      "valueExpression": {
+                        "name": "EncounterHistory",
+                        "language": "text/fhirpath",
+                        "expression": "%encounter.statusHistory"
+                      }
+                    }
+                  ],
+                  "linkId": "client-encounter-2",
+                  "text": "Encounter history",
+                  "type": "group",
+                  "repeats": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%EncounterHistory.status"
+                          }
+                        }
+                      ],
+                      "linkId": "client-encounter-2-1",
+                      "text": "Status",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "#ACQIEncounterStatus"
+                    },
+                    {
+                      "linkId": "client-encounter-2-2",
+                      "text": "Period",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%EncounterHistory.period.start"
+                              }
+                            }
+                          ],
+                          "linkId": "client-encounter-2-2-1",
+                          "text": "Start",
+                          "type": "date",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%EncounterHistory.period.end"
+                              }
+                            }
+                          ],
+                          "linkId": "client-encounter-2-2-2",
+                          "text": "End",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "(%encounter.status = 'onleave' and %encounter.period.start <= %reportingStartDate and (%encounter.period.end >= %reportingEndDate or %encounter.period.end.empty())) or\r\n(%encounter.status = 'in-progress' and %encounter.statusHistory.status = 'onleave' and %encounter.statusHistory.period.start <= %reportingStartDate and %encounter.statusHistory.period.end >= %reportingEndDate)"
+                  }
+                }
+              ],
               "linkId": "client-absent",
               "text": "Absent from service for the entire quarter",
               "type": "boolean",
@@ -622,35 +850,6 @@
               "text": "Receiving end-of-life care",
               "type": "boolean",
               "repeats": false
-            },
-            {
-              "linkId": "client-period",
-              "text": "Reporting Period",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "client-period-start",
-                  "text": "Start Date",
-                  "type": "date",
-                  "repeats": false
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ReportingStartDate + 3 months"
-                      }
-                    }
-                  ],
-                  "linkId": "client-period-end",
-                  "text": "End Date",
-                  "type": "date",
-                  "repeats": false
-                }
-              ]
             }
           ]
         },

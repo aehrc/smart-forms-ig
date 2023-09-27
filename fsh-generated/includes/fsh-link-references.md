@@ -1,9 +1,11 @@
 [AboriginalTorresStraitIslanderHealthCheck]: Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html
 [AboriginalTorresStraitIslander]: ValueSet-AboriginalTorresStraitIslander.html
+[ACQIEncounterStatus]: ValueSet-ACQIEncounterStatus.html
 [AgedCareQIPrototype]: Questionnaire-AgedCareQIPrototype.html
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
+[EncounterStatus]: ValueSet-encounter-status.html
 [MedicalHistory]: ValueSet-MedicalHistory.html
 [MedicalHistoryShortListAdolescents]: ValueSet-MedicalHistoryShortListAdolescents.html
 [MedicalHistoryShortListAdultsAndOlderPeople]: ValueSet-MedicalHistoryShortListAdultsAndOlderPeople.html
