@@ -1,4 +1,5 @@
 Alias: $SCT = http://snomed.info/sct
+Alias: $LOINC = http://loinc.org
 
 Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
 Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason
@@ -603,9 +604,9 @@ Description: "Codes that indicate the pronouns to be used when communicating wit
 * ^expansion.contains[+].system = "http://loinc.org"
 * ^expansion.contains[=].code = #LA29520-6
 * ^expansion.contains[=].display = "they/them/their/theirs/themselves"
-* LOINC#LA29518-0 "he/him/his/his/himself"
-* LOINC#LA29519-8 "she/her/her/hers/herself"
-* LOINC#LA29520-6 "they/them/their/theirs/themselves"
+* $LOINC#LA29518-0 "he/him/his/his/himself"
+* $LOINC#LA29519-8 "she/her/her/hers/herself"
+* $LOINC#LA29520-6 "they/them/their/theirs/themselves"
 
 ValueSet: GenderIdentityResponse
 Id: gender-identity-response-1

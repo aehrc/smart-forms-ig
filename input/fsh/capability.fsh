@@ -202,6 +202,17 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "questionnaire"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHALL
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #QuestionnaireResponse
 * rest.resource[=].profile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -234,6 +245,12 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p> <p>The client and server <strong>SHALL</strong> support chained search questionnaire.title using the :contains modifier.</p></div>"
+* rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[+].name = "status"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a code value and <strong>MAY</strong> provide both the code and system values. The server <strong>SHALL</strong> support both.</p></div>"
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "_count"
@@ -392,6 +409,7 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-sexassignedatbirth"
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
@@ -466,6 +484,15 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "questionnaire"
+* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_sort"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #QuestionnaireResponse
 * rest.resource[=].profile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse"
 * rest.resource[=].interaction[+].code = #read
@@ -480,6 +507,10 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a id value and <strong>MAY</strong> provide both the Type and id values. The server <strong>SHALL</strong> support both.</p> <p>The client and server <strong>SHALL</strong> support chained search questionnaire.title using the :contains modifier.</p></div>"
+* rest.resource[=].searchParam[+].name = "status"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "<div> <p>The client <strong>SHALL</strong> provide at least a code value and <strong>MAY</strong> provide both the code and system values. The server <strong>SHALL</strong> support both.</p></div>"
 * rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "<div> <p>The client supports search result limiting.</p></div>"
@@ -495,5 +526,6 @@ Usage: #definition
 
 * rest.interaction[+].code = #transaction
 * rest.interaction[+].code = #batch
+
 
 */
