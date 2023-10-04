@@ -2056,6 +2056,12 @@
     {
       "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
       "valueReference": {
+        "reference": "#YesNoNotAskedDeclined"
+      }
+    },
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+      "valueReference": {
         "reference": "#MedicalHistory"
       }
     },

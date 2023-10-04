@@ -148,6 +148,9 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueReference.reference = "#YesNo"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#YesNoNotAskedDeclined"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#MedicalHistory"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
