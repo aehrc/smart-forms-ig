@@ -202,17 +202,23 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * language = #text/fhirpath
     * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "female"
-    * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value.code='248152002', 1, 0)"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "age"
     * language = #text/fhirpath
     * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cvdAge"
+    * name = "sex"
     * language = #text/fhirpath
-    * expression = "iif(%age > 74, 74, iif(%age < 35, 35, %age))"
+    * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "smoker"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "postcode"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='f1262ade-843c-4eba-a86d-51a9c97d134b').item.where(linkId='4e0dc185-f83e-4027-b7a8-ecb543d42c6d').item.where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.value"
+
+ /* Deprecated CVD risk algorithm
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "systolicBP"
     * language = #text/fhirpath
@@ -233,6 +239,14 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "diabetes"
     * language = #text/fhirpath
     * expression = "iif(item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='e8fed84e-6c15-4f62-bc95-cd08033af3f7').answer.value = true,1,0)"
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "female"
+    * language = #text/fhirpath
+    * expression = "iif(item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value.code='248152002', 1, 0)"  
+  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
+    * name = "cvdAge"
+    * language = #text/fhirpath
+    * expression = "iif(%age > 74, 74, iif(%age < 35, 35, %age))"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "ecgLvh"
     * language = #text/fhirpath
@@ -293,6 +307,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "cvdScore"
     * language = #text/fhirpath
     * expression = "(1 - (%cvdU.exp()*-1).exp()) * 100"
+  */
   // Health priorities summary variables
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "HealthPrioritiesSummaryCurrentPriorities"

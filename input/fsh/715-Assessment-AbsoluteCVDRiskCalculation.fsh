@@ -56,7 +56,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
     * language = #text/fhirpath
     * expression = "%age >= 25"
   * linkId = "d95abe99-8ef2-4b97-bc88-a2901e2ebc9c"
-  * text = "Absolute cardiovascular risk calculation"
+  * text = "Absolute cardiovascular disease risk calculation"
   * type = #group
   * repeats = false
   * item[+] //in-progress
@@ -81,11 +81,182 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * answerBoolean = true
   * item[+]
     * linkId = "RecordUpdate-CVDRisk"
-    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first."
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there."
+    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
     </div>"    
     * type = #display 
+  * item[+]
+    * linkId = "Guidance-CVDRisk"
+    * text = "Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator"
+    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+        <p style=\"font-size:1.3em\"><a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a></p>
+        <p>The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online Australian CVD risk calculator and can be accessed via the link above. The items included in this section are a subset of variables that can be used as inputs for the online calculator. The final CVD risk result can be entered in the item at the bottom of this section.
+        </p></div>"
+    * type = #display
+  * item[+]
+    * linkId = "8d02ef36-3f48-4912-b001-e9fec6aa7101"
+    * text = "CVD risk calculator variables"
+    * type = #group
+    * repeats = false
+    * readOnly = true
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * description = "CVD Risk Age"
+        * language = #text/fhirpath
+        * expression = "%age"
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#a
+      * linkId = "6909cb38-a6f4-44c9-abae-0e5d697a21f5"
+      * text = "Age"
+      * type = #integer
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "b9aba16c-f910-4948-9267-e07851f69572"
+        * text = "years"
+        * type = #display
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * description = "CVD Risk Sex At Birth"
+        * language = #text/fhirpath
+        * expression = "%sex"
+      * linkId = "3dbb0e63-3b28-4567-8ef3-bac242fd95f6"
+      * text = "Sex at birth"
+      * type = #choice
+      * repeats = false
+      * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * description = "CVD Risk Smoking Status"
+        * language = #text/fhirpath
+        * expression = "%smoker"
+      * linkId = "bac0f824-3784-400e-80f9-ad18d46bd8cb"
+      * text = "Smoking status"
+      * type = #choice
+      * repeats = false
+      // better as a standard answerValueSet when missing concepts are available
+      * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never smoked"
+      * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Smoker"
+      * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-Smoker"
+      * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Environmental exposure to tobacco smoke (home, car, etc)"
+      * answerOption[+].valueString = "Wants to quit"
+      * answerOption[+].valueString = "Other tobacco use"
+
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+      * linkId = "fe9feec6-593a-4106-8a7d-f9965a632ea2"
+      * type = #group 
+      * repeats = false
+      * item[+]
+        * linkId = "fa4f73a3-7633-410c-9177-8aa43b117122"
+        * text = "Systolic Blood Pressure"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+          * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
+          * text = "Value"
+          * type = #integer
+          * repeats = false
+          * item[+]
+            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+            * linkId = "ddea5a62-a8c1-4b15-b667-7b69babec8cd"
+            * text = "mm Hg"
+            * type = #display
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsBloodPressure.entry.resource.effective"
+          * linkId = "85d8faf7-ddb0-446c-b489-28d786d6de50"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
+      * item[+]
+        * linkId = "e693c7d2-be69-4f1f-b72d-7ff2ea3cd536"
+        * text = "Total Cholesterol"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTotalCholesterol.entry.resource.value.value"
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
+          * linkId = "99932a93-8135-47b2-933b-fd751b34b7af"
+          * text = "Value"
+          * type = #decimal
+          * repeats = false
+          * item[+]
+            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+            * linkId = "fcfbfc9f-e400-4aae-993f-ea54096e7361"
+            * text = "mmol/L"
+            * type = #display
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTotalCholesterol.entry.resource.effective"
+          * linkId = "16cbe87b-5c8d-4385-b7d9-da3f07f63f8a"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
+      * item[+]
+        * linkId = "87eefaf6-010f-4b0d-9f51-2c33e46e6c69"
+        * text = "HDL Cholesterol"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsHDLCholesterol.entry.resource.value.value"
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
+          * linkId = "c14b4513-1e20-461d-97f4-4631711adc65"
+          * text = "Value"
+          * type = #decimal
+          * repeats = false
+          * item[+]
+            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+            * linkId = "2ba61002-b642-4b28-9e66-dc2b060c4e0e"
+            * text = "mmol/L"
+            * type = #display
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsHDLCholesterol.entry.resource.effective"
+          * linkId = "6407e0a7-c416-4a75-933b-904c0dcf88ca"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * description = "CVD Risk Postcode"
+        * language = #text/fhirpath
+        * expression = "%postcode"
+      * linkId = "fa8f03ca-9a5a-4ed1-a866-db26e567352a"
+      * text = "Postcode"
+      * type = #string
+    * item[+]
+      * extension[+][sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%Condition.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()" //type 2 diabetes
+      * linkId = "1c1eea28-6c82-4b7b-aaa3-8655ce70f2fd"
+      * text = "Type 2 diabetes mellitus"
+      * type = #boolean
+      * repeats = false
+
+  * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#%
+    * linkId = "4c52fcec-0695-4916-b185-24a5c2711631"
+    * text = "CVD risk result"
+    * type = #integer   
+    * repeats = false
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+      * linkId = "0162854e-c124-4b58-acd9-93c17562d407"
+      * text = "%"
+      * type = #display
+
+/* Deprecated CVD Risk calculator
   * item[+]
     * extension[+][sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -169,6 +340,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * linkId = "1d0b746d-70a3-4c09-a33b-f67fd6db63a0"
       * text = "https://auscvdrisk.com.au/risk-calculator"
       * type = #display
+*/
 
   * item[+]
     * linkId = "f8022f3f-21fe-42c0-8abd-95f24e2e37e5"
