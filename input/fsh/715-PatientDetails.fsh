@@ -89,9 +89,17 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ') | text) | %patient.name.select((family | (given | prefix).join(' ')).join(', ') | text)).first()"
+      * expression = "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text) | %patient.name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)).first()"
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
     * text = "Name"
+    * type = #string
+    * repeats = false
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "(%patient.name.where(use='usual').select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)).first()"
+    * linkId = "57093a06-62f7-4b8b-8cb4-2c9f451ac851"
+    * text = "Preferred name"
     * type = #string
     * repeats = false
   * item[+]
