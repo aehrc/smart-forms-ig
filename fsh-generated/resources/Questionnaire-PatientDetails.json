@@ -419,6 +419,16 @@
           ]
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+              "valueExpression": {
+                "name": "HomeAddressRepeat",
+                "language": "text/fhirpath",
+                "expression": "%patient.address.where(use='home'and (type.empty() or type!='postal'))"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -426,7 +436,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.address.extension('http://hl7.org.au/fhir/StructureDefinition/no-fixed-address').value"
+                    "expression": "%HomeAddressRepeat.extension('http://hl7.org.au/fhir/StructureDefinition/no-fixed-address').value"
                   }
                 },
                 {
@@ -455,7 +465,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%patient.address.select(line.join(', '))"
+                        "expression": "%HomeAddressRepeat.select(line.join(', '))"
                       }
                     }
                   ],
@@ -463,7 +473,7 @@
                   "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line",
                   "text": "Street address",
                   "type": "string",
-                  "repeats": true
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -471,7 +481,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%patient.address.city"
+                        "expression": "%HomeAddressRepeat.city"
                       }
                     }
                   ],
@@ -487,7 +497,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%patient.address.state"
+                        "expression": "%HomeAddressRepeat.state"
                       }
                     },
                     {
@@ -515,7 +525,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%patient.address.postalCode"
+                        "expression": "%HomeAddressRepeat.postalCode"
                       }
                     },
                     {
@@ -535,7 +545,6 @@
                 }
               ],
               "linkId": "4e0dc185-f83e-4027-b7a8-ecb543d42c6d",
-              "text": "Address",
               "type": "group",
               "repeats": true,
               "enableWhen": [
@@ -551,6 +560,131 @@
           "text": "Home address",
           "type": "group",
           "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+              "valueExpression": {
+                "name": "PostalAddressRepeat",
+                "language": "text/fhirpath",
+                "expression": "%patient.address.where(type='postal')"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%PostalAddress.exists()"
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%PostalAddressRepeat.use"
+                  }
+                }
+              ],
+              "linkId": "622970f1-3cf1-4f0a-bf05-b00a08046eba",
+              "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.use",
+              "text": "Purpose of use",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%PostalAddressRepeat.select(line.join(', '))"
+                  }
+                }
+              ],
+              "linkId": "2e8437cd-5ea0-4d44-8ab2-d2aa9ef18ba7",
+              "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line",
+              "text": "Address",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%PostalAddressRepeat.city"
+                  }
+                }
+              ],
+              "linkId": "2bde25e5-2c4c-4c0c-b6f3-c6859535a764",
+              "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city",
+              "text": "City",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%PostalAddressRepeat.state"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "drop-down",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "b41a8b11-8dbf-4999-9d0a-71d39240fed1",
+              "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state",
+              "text": "State",
+              "type": "choice",
+              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%PostalAddressRepeat.postalCode"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/regex",
+                  "valueString": "matches('^[0-9]{4}$')"
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                  "valueString": "####"
+                }
+              ],
+              "linkId": "28b58e50-2a04-4192-9655-efc8d72f32fa",
+              "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode",
+              "text": "Postcode",
+              "type": "string",
+              "repeats": false
+            }
+          ],
+          "linkId": "edc081ea-b5ba-4234-9234-8ee598c2f95f",
+          "text": "Postal address",
+          "type": "group",
+          "repeats": true
         },
         {
           "extension": [

@@ -29,6 +29,14 @@
         {
           "url": "http://hl7.org/fhir/StructureDefinition/variable",
           "valueExpression": {
+            "name": "PostalAddress",
+            "language": "text/fhirpath",
+            "expression": "%patient.address.where(type='postal')"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/variable",
+          "valueExpression": {
             "name": "weight",
             "language": "text/fhirpath",
             "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='443bd584-684a-449c-ab6e-9d07da4df9fa').answer.value"

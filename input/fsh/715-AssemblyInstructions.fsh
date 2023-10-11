@@ -53,7 +53,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 //Prepop query
 //* extension[sdc-questionnaire-sourceQueries].valueReference = Reference(PrePopQuery)
 
-//prepop variables
+//fhir query variables
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -192,7 +192,11 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * linkId = "fd5af92e-c248-497a-8007-ee0952ccd4d9"  
   * type = #group
   * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#tab-container
- //Non-prepop variables
+ //fhirpath variables
+  * extension[http://hl7.org/fhir/StructureDefinition/variable].valueExpression
+    * name = "PostalAddress"
+    * language = #text/fhirpath
+    * expression = "%patient.address.where(type='postal')"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "weight"
     * language = #text/fhirpath
