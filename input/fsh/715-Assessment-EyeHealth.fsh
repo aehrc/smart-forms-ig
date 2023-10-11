@@ -120,89 +120,94 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * enableBehavior = #any  
+      
+// table
   * item[+]
-    * linkId = "0a68e069-0a54-4f02-b17e-dec22f008082"
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+    * linkId = "25d3e4b6-8c71-4c17-8f5a-aca90e232ed2"
     * text = "Eye examination"
-    * type = #group
+    * type = #group 
     * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age < 1"
-      * linkId = "58e29c14-e279-4a1d-a7d6-b9d92b60d0e2"
+      * linkId = "cb1b9349-2dd1-4bdd-904b-a529458e3b98"
       * text = "Red reflex (up to six months)"
       * type = #group
       * repeats = false
       * item[+]
-        * linkId = "021437bf-b9ca-43e9-804c-affe84f84497"
-        * text = "Right eye"
+        * linkId = "47ce0b44-ac12-4a1d-8657-2cc741a29d3a"
+        * text = "Left eye"
         * type = #string
         * repeats = false
       * item[+]
-        * linkId = "a295c5bd-972a-41d4-9844-a5d30478cd99"
-        * text = "Left eye"
+        * linkId = "3f192141-0845-44d6-85ad-94f0295e062f"
+        * text = "Right eye"
         * type = #string
         * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age <= 12"
-      * linkId = "70773cba-54b0-43bc-b1f2-2942693957ce"
+      * linkId = "3ff41163-549f-4834-8817-151144613988"
       * text = "Evidence of squint or other abnormality"
       * type = #group
       * repeats = false
       * item[+]
-        * linkId = "6c552a96-4929-458a-97b5-418a7069d9c2"
-        * text = "Right eye"
+        * linkId = "83e65791-a04a-42e4-b3f2-1e552b8e8044"
+        * text = "Left eye"
         * type = #string
         * repeats = false
       * item[+]
-        * linkId = "24ffc08e-dbde-43d9-ac48-7f7dba7cf396"
-        * text = "Left eye"
+        * linkId = "2dd18bad-9491-436f-a2db-a4ed6022ac5c"
+        * text = "Right eye"
         * type = #string
         * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age >= 3"
-      * linkId = "3424f8ef-d17c-4ad6-ba09-60a0d0b7a1d2"
+      * linkId = "2c0e12a5-2650-4886-8f50-405dc0ead9c5"
       * text = "Visual acuity"
       * type = #group
       * repeats = false
       * item[+]
-        * linkId = "ed7900c2-8912-42e1-80f1-9ed09f8e00f8"
-        * text = "Right eye"
+        * linkId = "43825f29-c720-40a5-9fd1-de50ee35479c"
+        * text = "Left eye"
         * type = #string
         * repeats = false
       * item[+]
-        * linkId = "887b031c-d47e-42a1-aee5-4befda25ba22"
-        * text = "Left eye"
+        * linkId = "e98428b4-bc8d-4272-a803-757a84813c3c"
+        * text = "Right eye"
         * type = #string
         * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age >= 25"
-      * linkId = "f6603a1c-7176-4121-8df5-03433cdc36db"
+      * linkId = "bac129ef-a5c0-4d94-915c-ceadc6016594"
       * text = "Trachoma Check (endemic areas)"
       * type = #group
       * repeats = false
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
-        * linkId = "c76f02fb-2021-4462-b6ca-1da14b772c11"
-        * text = "Right eye"
-        * type = #choice
-        * repeats = false
-        * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
-        * answerOption[+].valueCoding = $SCT#95726001 "Corneal scarring"
-      * item[+]  
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
-        * linkId = "ae82cf54-17a3-421f-b6f6-5ee87631e281"
+        * linkId = "202b5b91-541e-4a72-b1f6-1d474b59b7a3"
         * text = "Left eye"
         * type = #choice
         * repeats = false
         * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
         * answerOption[+].valueCoding = $SCT#95726001 "Corneal scarring"
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
+        * linkId = "6ae69487-345e-46a0-a8db-b1356671ee59"
+        * text = "Right eye"
+        * type = #choice
+        * repeats = false
+        * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
+        * answerOption[+].valueCoding = $SCT#95726001 "Corneal scarring"
+
+
   * item[+]
     * linkId = "8dcdc04c-7655-4b47-88eb-8425f0cdc0d0"
     * text = "Health priorities, actions and follow-up"

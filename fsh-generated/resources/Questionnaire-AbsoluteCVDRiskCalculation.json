@@ -97,7 +97,7 @@
             }
           ],
           "linkId": "RecordUpdate-CVDRisk",
-          "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.",
+          "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there.",
           "type": "display"
         },
         {
@@ -478,8 +478,37 @@
           "readOnly": true
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "%",
+                "system": "http://unitsofmeasure.org"
+              }
+            }
+          ],
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "unit",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "0162854e-c124-4b58-acd9-93c17562d407",
+              "text": "%",
+              "type": "display"
+            }
+          ],
           "linkId": "4c52fcec-0695-4916-b185-24a5c2711631",
-          "text": "Cardiovascular disease risk calculated result",
+          "text": "CVD risk result",
           "type": "integer",
           "repeats": false
         },
@@ -505,7 +534,7 @@
         }
       ],
       "linkId": "d95abe99-8ef2-4b97-bc88-a2901e2ebc9c",
-      "text": "Absolute cardiovascular risk calculation",
+      "text": "Absolute cardiovascular disease risk calculation",
       "type": "group",
       "repeats": false
     }
