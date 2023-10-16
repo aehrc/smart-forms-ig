@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "21",
-        "lastUpdated": "2023-10-16T02:29:04.495+00:00",
-        "source": "#nuDNUMcOv0yQmxSD",
+        "versionId": "22",
+        "lastUpdated": "2023-10-16T03:46:15.034+00:00",
+        "source": "#9QAiPkxGiLGOjMs3",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
@@ -1830,12 +1830,12 @@
                         },
                         {
                             "linkId": "RecordUpdate-About",
-                            "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
                             "_text": {
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
                                     }
                                 ]
                             },
@@ -2425,12 +2425,12 @@
                         },
                         {
                             "linkId": "RecordUpdate-Patient",
-                            "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
                             "_text": {
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
                                     }
                                 ]
                             },
@@ -4110,12 +4110,12 @@
                         },
                         {
                             "linkId": "RecordUpdate-MedHistory",
-                            "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
                             "_text": {
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
                                     }
                                 ]
                             },
@@ -7140,6 +7140,19 @@
                             ]
                         },
                         {
+                            "linkId": "RecordUpdate-ScreeningPrograms",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                    }
+                                ]
+                            },
+                            "type": "display"
+                        },
+                        {
                             "linkId": "ed15e82b-803a-4d21-9344-9110b57b2313",
                             "text": "Cervical screening (age <=74 years)",
                             "type": "group",
@@ -9717,6 +9730,19 @@
                                     "answerBoolean": true
                                 }
                             ]
+                        },
+                        {
+                            "linkId": "RecordUpdate-SubstanceUse",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                    }
+                                ]
+                            },
+                            "type": "display"
                         },
                         {
                             "linkId": "515eda6e-973a-4b10-910a-0d4bf4f2efff",
@@ -12618,12 +12644,12 @@
                         },
                         {
                             "linkId": "RecordUpdate-Exam",
-                            "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
                             "_text": {
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
                                     }
                                 ]
                             },
@@ -13519,11 +13545,11 @@
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
                                 }
                             ],
                             "linkId": "RecordUpdate-CVDRisk",
-                            "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there.",
+                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there.",
                             "type": "display"
                         },
                         {
