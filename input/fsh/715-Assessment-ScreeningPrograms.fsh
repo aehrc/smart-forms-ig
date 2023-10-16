@@ -79,6 +79,13 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
       * question = "MarkComplete-24" // Section complete item
       * operator = #=
       * answerBoolean = true
+  * item[+]
+    * linkId = "RecordUpdate-ScreeningPrograms"
+    * text = "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    </div>"    
+    * type = #display 
 // following items require coded answers. Either <|Context values for actions (qualifier value)| or <|Chronic disease monitoring status (finding)|
   * item[+]
     * linkId = "ed15e82b-803a-4d21-9344-9110b57b2313"

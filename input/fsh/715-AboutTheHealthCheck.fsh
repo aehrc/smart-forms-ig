@@ -92,9 +92,9 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
 */
   * item[+]
     * linkId = "RecordUpdate-About"
-    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first."
+    * text = "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first."
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
     </div>"    
     * type = #display 
   * item[+]

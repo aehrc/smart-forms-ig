@@ -93,18 +93,18 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
             }
           ],
           "linkId": "RecordUpdate-CVDRisk",
-          "text": "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there.",
+          "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there.",
           "type": "display"
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p style=\"font-size:1.3em\"><a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a></p>\r\n        <p>The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online Australian CVD risk calculator and can be accessed via the link above. The items included in this section are a subset of variables that can be used as inputs for the online calculator. The final CVD risk result can be entered in the item at the bottom of this section.\r\n        </p></div>"
+              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p style=\"font-size:1.2em\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a>.</p>\r\n        <p>The items included in this section are a subset of variables that can be used as inputs for the online calculator.</p>\r\n        <p>The final CVD risk result can be entered in the item at the bottom of this section.</p>\r\n        </div>"
             }
           ],
           "linkId": "Guidance-CVDRisk",

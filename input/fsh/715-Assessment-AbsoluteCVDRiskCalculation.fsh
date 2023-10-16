@@ -81,18 +81,19 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * answerBoolean = true
   * item[+]
     * linkId = "RecordUpdate-CVDRisk"
-    * text = "Important: The patient record will not be updated with information entered here. Information intended for the patient record should be entered there."
+    * text = "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there."
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <strong>Important:</strong> <em>The patient record will not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
     </div>"    
     * type = #display 
   * item[+]
     * linkId = "Guidance-CVDRisk"
     * text = "Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator"
     * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-        <p style=\"font-size:1.3em\"><a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a></p>
-        <p>The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online Australian CVD risk calculator and can be accessed via the link above. The items included in this section are a subset of variables that can be used as inputs for the online calculator. The final CVD risk result can be entered in the item at the bottom of this section.
-        </p></div>"
+        <p style=\"font-size:1.2em\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a>.</p>
+        <p>The items included in this section are a subset of variables that can be used as inputs for the online calculator.</p>
+        <p>The final CVD risk result can be entered in the item at the bottom of this section.</p>
+        </div>"
     * type = #display
   * item[+]
     * linkId = "8d02ef36-3f48-4912-b001-e9fec6aa7101"

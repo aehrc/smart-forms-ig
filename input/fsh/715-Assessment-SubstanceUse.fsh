@@ -80,6 +80,13 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
       * operator = #=
       * answerBoolean = true
   * item[+]
+    * linkId = "RecordUpdate-SubstanceUse"
+    * text = "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
+    </div>"    
+    * type = #display 
+  * item[+]
     * linkId = "515eda6e-973a-4b10-910a-0d4bf4f2efff"
     * text = "Smoking"
     * type = #group
