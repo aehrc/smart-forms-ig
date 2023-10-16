@@ -94,6 +94,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Name"
     * type = #string
     * repeats = false
+    * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -102,6 +103,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Preferred name"
     * type = #string
     * repeats = false
+    * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -111,6 +113,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Preferred pronouns"
     * type = #choice
     * repeats = false
+    * readOnly = true
     * answerValueSet = "http://terminology.hl7.org/ValueSet/pronouns"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -121,6 +124,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Gender identity"
     * type = #choice
     * repeats = false
+    * readOnly = true
     * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -142,6 +146,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Sex assigned at birth"
     * type = #choice
     * repeats = false
+    * readOnly = true
     * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
   
 
@@ -153,6 +158,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Date of birth"
     * type = #date
     * repeats = false
+    * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -161,6 +167,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Age"
     * type = #integer
     * repeats = false
+    * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -170,6 +177,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Aboriginal and/or Torres Strait Islander status"
     * type = #choice
     * repeats = false
+    * readOnly = true
     * answerValueSet[+] = "#AboriginalTorresStraitIslander"
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -304,6 +312,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Postal address"
     * type = #group
     * repeats = true
+    * readOnly = true
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
