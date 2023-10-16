@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "22",
-        "lastUpdated": "2023-10-16T03:46:15.034+00:00",
-        "source": "#9QAiPkxGiLGOjMs3",
+        "versionId": "25",
+        "lastUpdated": "2023-10-16T04:37:24.774+00:00",
+        "source": "#7ad8y3Tud75mQnKy",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
@@ -2449,7 +2449,8 @@
                             "linkId": "17596726-34cf-4133-9960-7081e1d63558",
                             "text": "Name",
                             "type": "string",
-                            "repeats": false
+                            "repeats": false,
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -2464,7 +2465,8 @@
                             "linkId": "57093a06-62f7-4b8b-8cb4-2c9f451ac851",
                             "text": "Preferred name",
                             "type": "string",
-                            "repeats": false
+                            "repeats": false,
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -2491,6 +2493,7 @@
                             "text": "Preferred pronouns",
                             "type": "choice",
                             "repeats": false,
+                            "readOnly": true,
                             "answerValueSet": "http://terminology.hl7.org/ValueSet/pronouns"
                         },
                         {
@@ -2518,6 +2521,7 @@
                             "text": "Gender identity",
                             "type": "choice",
                             "repeats": false,
+                            "readOnly": true,
                             "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
                         },
                         {
@@ -2576,6 +2580,7 @@
                             "text": "Sex assigned at birth",
                             "type": "choice",
                             "repeats": false,
+                            "readOnly": true,
                             "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
                         },
                         {
@@ -2591,7 +2596,8 @@
                             "linkId": "90ad8f16-16e4-4438-a7aa-b3189f510da2",
                             "text": "Date of birth",
                             "type": "date",
-                            "repeats": false
+                            "repeats": false,
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -2606,7 +2612,8 @@
                             "linkId": "e2a16e4d-2765-4b61-b286-82cfc6356b30",
                             "text": "Age",
                             "type": "integer",
-                            "repeats": false
+                            "repeats": false,
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -2633,6 +2640,7 @@
                             "text": "Aboriginal and/or Torres Strait Islander status",
                             "type": "choice",
                             "repeats": false,
+                            "readOnly": true,
                             "answerValueSet": "#AboriginalTorresStraitIslander"
                         },
                         {
@@ -2926,6 +2934,7 @@
                             "text": "Postal address",
                             "type": "group",
                             "repeats": true,
+                            "readOnly": true,
                             "item": [
                                 {
                                     "extension": [
