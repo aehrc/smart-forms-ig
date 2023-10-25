@@ -95,7 +95,7 @@ parameters:
     - 'http://www.health.gov.au/assessments/mbs/715/Consent'
     - 'http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck'
     - 'http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary'
-    - 'http://www.health.gov.au/assessments/mbs/715/PatientDetails'
+    - 'http://www.health.gov.au/assessments/mbs/715/PatientDetails'    
     - 'http://hl7.org/fhir/questionnaire-item-control'
     - 'http://hl7.org/fhir/ValueSet/questionnaire-item-control'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1'
@@ -130,6 +130,7 @@ menu:
 #      Must Support: must-support.html
   Guidance: #guidance.html
       Reference Implementation: reference-implementation.html
+      Smart Health Check Application Integration: smart-health-check-application-integration.html
 #      General Guidance: general-guidance.html
   FHIR Artefacts: #artifact.html
       Artefact Summary: artifacts.html
