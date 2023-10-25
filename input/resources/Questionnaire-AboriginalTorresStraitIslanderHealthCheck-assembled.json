@@ -2,10 +2,11 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "28",
-        "lastUpdated": "2023-10-17T04:50:46.977+00:00",
-        "source": "#XNEQY8IavbGA4Hja",
+        "versionId": "29",
+        "lastUpdated": "2023-10-25T04:41:05.436+00:00",
+        "source": "#9mBaD5ofvbWnSumU",
         "profile": [
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
         ]
@@ -9771,7 +9772,7 @@
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                             "valueExpression": {
                                                 "language": "text/fhirpath",
-                                                "expression": "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding"
+                                                "expression": "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding.where(system='http://snomed.info/sct')"
                                             }
                                         },
                                         {
@@ -13179,7 +13180,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsBloodPressure.entry.resource.effective"
+                                                        "expression": "%ObsHeartRate.entry.resource.effective"
                                                     }
                                                 }
                                             ],
