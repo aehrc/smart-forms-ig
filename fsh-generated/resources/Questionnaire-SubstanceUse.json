@@ -110,7 +110,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding"
+                    "expression": "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding.where(system='http://snomed.info/sct')"
                   }
                 },
                 {

@@ -293,7 +293,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBloodPressure.entry.resource.effective"
+          * expression = "%ObsHeartRate.entry.resource.effective"
         * linkId = "feeac08f-2ba6-4048-80a2-10b3f90cf5e3"
         * text = "Date performed"
         * type = #date

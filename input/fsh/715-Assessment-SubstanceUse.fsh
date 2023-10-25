@@ -94,7 +94,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding"
+        * expression = "%ObsTobaccoSmokingStatus.entry.resource.valueCodeableConcept.coding.where(system='http://snomed.info/sct')"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
       * text = "Smoking status"
