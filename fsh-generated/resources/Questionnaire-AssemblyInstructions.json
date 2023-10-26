@@ -2417,6 +2417,24 @@
       "valueReference": {
         "reference": "#pronouns"
       }
+    },
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+      "valueReference": {
+        "reference": "#australian-states-territories-2"
+      }
+    },
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+      "valueReference": {
+        "reference": "#gender-identity-response-1"
+      }
+    },
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+      "valueReference": {
+        "reference": "#biological-sex-1"
+      }
     }
   ],
   "version": "0.1.0",

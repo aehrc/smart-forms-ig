@@ -728,11 +728,35 @@
         "value": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
       },
       {
+        "code": "apply-publisher",
+        "value": "false"
+      },
+      {
+        "code": "default-publisher",
+        "value": "true"
+      },
+      {
         "code": "apply-version",
         "value": "false"
       },
       {
         "code": "default-version",
+        "value": "true"
+      },
+      {
+        "code": "apply-contact",
+        "value": "false"
+      },
+      {
+        "code": "default-contact",
+        "value": "true"
+      },
+      {
+        "code": "apply-copyright",
+        "value": "false"
+      },
+      {
+        "code": "default-copyright",
         "value": "true"
       }
     ]

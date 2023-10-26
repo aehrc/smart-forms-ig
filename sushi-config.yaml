@@ -103,8 +103,15 @@ parameters:
     - 'https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1'
     - 'http://terminology.hl7.org/ValueSet/pronouns'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2'
+  apply-publisher: false
+  default-publisher: true
   apply-version: false
   default-version: true
+  apply-contact: false
+  default-contact: true
+  apply-copyright: false
+  default-copyright: true
+  
   
     
 

@@ -100,7 +100,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
       * text = "Smoking status"
       * type = #choice
       * repeats = false
-      // better as a standard answerValueSet when missing concepts are available
+      // better as a standard answerValueSet when missing concepts are available or national standard adoption
       * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never smoked"
       * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Smoker"
       * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-Smoker"
