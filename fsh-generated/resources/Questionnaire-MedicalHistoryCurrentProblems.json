@@ -377,7 +377,7 @@
               "valueExpression": {
                 "name": "ConditionRepeat",
                 "language": "text/fhirpath",
-                "expression": "%Condition.entry.resource"
+                "expression": "%Condition.entry.resource.where(category.coding.code='problem-list-item')"
               }
             }
           ],

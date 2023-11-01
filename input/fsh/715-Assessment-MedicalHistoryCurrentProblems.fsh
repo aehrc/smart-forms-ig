@@ -198,13 +198,13 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     * type = #text
     * repeats = false 
 
-// experimental table of medical history
+// table of medical history
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ConditionRepeat"
       * language = #text/fhirpath
-      * expression = "%Condition.entry.resource"
+      * expression = "%Condition.entry.resource.where(category.coding.code='problem-list-item')"
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
     * type = #group
