@@ -1220,6 +1220,14 @@
           "valueString": "The practitioner user that is to be used to pre-populate the form"
         }
       ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "age"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "Condition"
     }
   ],
   "name": "MedicalHistoryCurrentProblems",

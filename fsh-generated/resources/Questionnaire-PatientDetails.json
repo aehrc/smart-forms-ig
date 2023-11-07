@@ -1648,6 +1648,26 @@
           "valueString": "The practitioner user that is to be used to pre-populate the form"
         }
       ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "age"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsSex",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=1515311000168102&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "PostalAddress",
+        "language": "text/fhirpath",
+        "expression": "%patient.address.where(type='postal')"
+      }
     }
   ],
   "name": "PatientDetails",

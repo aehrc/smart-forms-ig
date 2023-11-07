@@ -37,6 +37,105 @@ Description: "Health Priorities, Actions And Follow-Up Summary sub-questionnaire
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+    
+//assemble context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "age"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryCurrentPriorities"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryMedicalHistory"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryRegularMedications"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryAllergiesAdverseReactions"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryFamilyHistory"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySocialEmotionalWellbeing"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySocialHistory"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryHomeFamily"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryLearningDevelopment"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryLearningWorkAdults"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryLearningWorkOlder"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryMood"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryMemoryThinking"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryChronicDiseaseAgeing"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryScreeningPrograms"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryHealthyEating"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySubstanceUse"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryGambling"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySexualHealthAdolescents"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySexualHealthAdults"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySexualHealthOlder"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryEyeHealth"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryEarHealthHearing"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryOralDentalHealth"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummarySkin"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryImmunisation"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryExamination"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryAbsoluteCVDRisk"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "HealthPrioritiesSummaryInvestigations"
+
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

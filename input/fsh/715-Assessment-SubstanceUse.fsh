@@ -37,6 +37,19 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+    
+//assemble context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "age"
+    
+//fhir query variables
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTobaccoSmokingStatus"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

@@ -15,6 +15,11 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
   * valueCode = #assemble-child
 
+//assemble context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "age"
+
 //launch context
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
@@ -38,6 +43,20 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+
+//fhir query variables
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "QuestionnaireResponseLatestCompleted"
+    * language = #application/x-fhir-query
+    * expression = "QuestionnaireResponse?status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "QuestionnaireResponseLatest"
+    * language = #application/x-fhir-query
+    * expression = "QuestionnaireResponse?_count=1&_sort=-authored&patient={{%patient.id}}"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

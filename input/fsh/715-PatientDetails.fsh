@@ -40,6 +40,28 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+    
+//assemble context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "age"
+
+//fhir query variables
+
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsSex"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=1515311000168102&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
+        
+ //fhirpath variables
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "PostalAddress"
+    * language = #text/fhirpath
+    * expression = "%patient.address.where(type='postal')"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

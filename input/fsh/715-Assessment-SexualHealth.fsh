@@ -39,6 +39,11 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+    
+//assemble context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "age"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"

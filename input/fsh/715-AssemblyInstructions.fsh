@@ -61,87 +61,17 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "QuestionnaireResponseLatestCompleted"
-    * language = #application/x-fhir-query
-    * expression = "QuestionnaireResponse?status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "QuestionnaireResponseLatest"
-    * language = #application/x-fhir-query
-    * expression = "QuestionnaireResponse?_count=1&_sort=-authored&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
     * name = "Condition"
     * language = #application/x-fhir-query
     * expression = "Condition?patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "ObsSex"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=1515311000168102&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsTobaccoSmokingStatus"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBodyHeight"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=8302-2&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBodyWeight"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=29463-7&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBMI"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=39156-5&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsHeadCircumference"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsWaistCircumference"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=8280-0&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
     * name = "ObsBloodPressure"
     * language = #application/x-fhir-query
     * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsHeartRate"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=8867-4&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsTotalCholesterol"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=14647-2&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsHDLCholesterol"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
+
+
 
 //workaround to stop server stripping of value sets referenced as canonical
 * extension[+]
@@ -210,18 +140,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * type = #group
   * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#tab-container
  //fhirpath variables
-  * extension[http://hl7.org/fhir/StructureDefinition/variable].valueExpression
-    * name = "PostalAddress"
-    * language = #text/fhirpath
-    * expression = "%patient.address.where(type='postal')"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "weight"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='443bd584-684a-449c-ab6e-9d07da4df9fa').answer.value"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "height"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "age"
     * language = #text/fhirpath

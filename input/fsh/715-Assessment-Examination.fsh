@@ -38,6 +38,64 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
 
+//assemble context
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsBloodPressure"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "age"
+
+//fhir query variables
+
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsWaistCircumference"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=8280-0&_count=1&_sort=-date&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHeartRate"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=8867-4&_count=1&_sort=-date&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyHeight"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=8302-2&_count=1&_sort=-date&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyWeight"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=29463-7&_count=1&_sort=-date&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHeadCircumference"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"
+
+
+
+//fhirpath variables
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "weight"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='443bd584-684a-449c-ab6e-9d07da4df9fa').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "height"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
+
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
@@ -51,7 +109,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 
-* item[+]
+* item[+] 
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"

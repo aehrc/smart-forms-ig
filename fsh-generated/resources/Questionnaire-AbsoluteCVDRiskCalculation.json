@@ -583,6 +583,46 @@
           "valueString": "The practitioner user that is to be used to pre-populate the form"
         }
       ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "age"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "Condition"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "ObsBloodPressure"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "sex"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "smoker"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "postcode"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsTotalCholesterol",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=14647-2&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsHDLCholesterol",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
     }
   ],
   "name": "AbsoluteCVDRiskCalculation",

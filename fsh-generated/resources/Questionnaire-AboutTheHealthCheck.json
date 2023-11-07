@@ -284,6 +284,10 @@
       "valueCode": "assemble-child"
     },
     {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "age"
+    },
+    {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
       "extension": [
         {
@@ -322,6 +326,22 @@
           "valueString": "The practitioner user that is to be used to pre-populate the form"
         }
       ]
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "QuestionnaireResponseLatestCompleted",
+        "language": "application/x-fhir-query",
+        "expression": "QuestionnaireResponse?status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "QuestionnaireResponseLatest",
+        "language": "application/x-fhir-query",
+        "expression": "QuestionnaireResponse?_count=1&_sort=-authored&patient={{%patient.id}}"
+      }
     }
   ],
   "name": "AboutTheHealthCheck",
