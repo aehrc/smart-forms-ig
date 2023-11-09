@@ -9,10 +9,12 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Medical History"
 Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = MedicalHistory
+/*
 * contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
+*/
 * contained[+] = condition-clinical
 
 //assemble expectation
@@ -128,6 +130,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * text = "kg"
       * type = #display
   
+  /* Agreed to replace this section with medical history table. Commenting out for now.
   // for infants 0-5
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -206,6 +209,8 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     * type = #text
     * repeats = false 
 
+*/
+
 // table of medical history
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
@@ -215,6 +220,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * expression = "%Condition.entry.resource.where(category.coding.code='problem-list-item')"
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p><h3>Medical history and current problems list</h3></p>
+    <p><em>This list includes items from the clinical record. If you wish to enter additional diagnoses, either update the clinical record and repopulate this form or add them to the \"New diagnoses list\" below and later update the clinical record as required.</em></p>
+    </div>"
     * type = #group
     * repeats = true
     * item[+]
@@ -250,13 +259,39 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * text = "Recorded Date"
       * type = #date
 
+// table for new diagnoses
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
+    * linkId = "4484cacd-a260-4e5f-83c1-168ca2396c04"
+    * text = "New diagnoses list"
+    * type = #group
+    * repeats = true
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+      * linkId = "2da85994-2d5e-42f1-8a81-abf44f397468"
+      * text = "Condition"
+      * type = #open-choice
+      * answerValueSet = "#MedicalHistory"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+      * linkId = "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3"
+      * text = "Clinical Status"
+      * type = #choice
+      * answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical"
+    * item[+]
+      * linkId = "e4524654-f6de-4717-b288-34919394d46b"
+      * text = "Onset Date"
+      * type = #date
+    * item[+]
+      * linkId = "5bc1d8f4-6e8c-4695-916c-1ef767306e46"
+      * text = "Recorded Date"
+      * type = #date
 
   * item[+]
     * linkId = "62774152-8a6e-4449-af9f-87bdce8b9bf5"
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false
-
 
   * item[+]
     * linkId = "MarkComplete-17"

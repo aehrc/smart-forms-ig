@@ -177,6 +177,7 @@ Description: "The Medical History value set includes values that may be used to 
 
 * include codes from system $SCT where constraint = "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
 
+/* Agreed to replace picklists with medical history table. Commenting out for now.
 ValueSet: MedicalHistoryShortListInfants
 Id: MedicalHistoryShortListInfants
 Title: "Medical History Short List for Infants"
@@ -436,6 +437,7 @@ Description: "The Medical History Short List for Adults and Older People value s
 * $SCT#66071002 // "HBV"
 * $SCT#82271004 // "Significant head trauma" // the concept id is "Head inujury", which is more broad in meaning
 * $SCT#413307004 // "Mental health"
+*/
 
 
 ValueSet: ConditionClinicalStatusCodes

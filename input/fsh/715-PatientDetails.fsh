@@ -75,7 +75,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * date = "2022-05-24"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
-// do we want the main demographics "read-only"? Not sure we want to change these during the assessment. They are in the main patient record and we're not (yet) writing back
 * item[+]
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
   * text = "Patient Details"

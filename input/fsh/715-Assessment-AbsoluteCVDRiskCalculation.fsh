@@ -280,16 +280,39 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * repeats = false
 
   * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#%
-    * linkId = "4c52fcec-0695-4916-b185-24a5c2711631"
+    * linkId = "dabdc7b4-51db-44a0-9d59-77a88587cbe9"
     * text = "CVD risk result"
-    * type = #integer   
-    * repeats = false
+    * type = #group   
+    * repeats = false  
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-      * linkId = "0162854e-c124-4b58-acd9-93c17562d407"
-      * text = "%"
-      * type = #display
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#%
+      * linkId = "4c52fcec-0695-4916-b185-24a5c2711631"
+      * text = "Calculated risk"
+      * type = #integer   
+      * repeats = false
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+        * linkId = "0162854e-c124-4b58-acd9-93c17562d407"
+        * text = "%"
+        * type = #display
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "28ff9463-b77f-435d-9ba7-427682a61f96"
+      * text = "Assessed risk category"
+      * type = #choice   
+      * repeats = false
+      * answerOption[+].valueString = "High Risk"
+      * answerOption[+].valueString = "Intermediate Risk"
+      * answerOption[+].valueString = "Low Risk"
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * linkId = "041a589e-7bb5-441d-a4ba-a22db8040b3f"
+      * text = "Reclassification decision"
+      * type = #choice   
+      * repeats = false
+      * answerOption[+].valueString = "Reclassified up"
+      * answerOption[+].valueString = "Reclassified down"
+      * answerOption[+].valueString = "Did not reclassify"
 
 /* Deprecated CVD Risk calculator
   * item[+]

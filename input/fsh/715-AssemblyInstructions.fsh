@@ -13,10 +13,10 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = YesNoNA
 * contained[+] = YesNoNotAskedDeclined
 * contained[+] = MedicalHistory
-* contained[+] = MedicalHistoryShortListInfants
+/** contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
-* contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
+* contained[+] = MedicalHistoryShortListAdultsAndOlderPeople*/
 * contained[+] = condition-clinical
 * contained[+] = AboriginalTorresStraitIslander
 * contained[+] = PrimaryCarerParentGrandparent
@@ -86,7 +86,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#MedicalHistory"
-* extension[+]
+/** extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#MedicalHistoryShortListInfants"
 * extension[+]
@@ -97,7 +97,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueReference.reference = "#MedicalHistoryShortListAdolescents"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"
+  * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"*/
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#condition-clinical"

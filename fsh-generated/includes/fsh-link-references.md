@@ -39,10 +39,6 @@
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
 [GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
 [MedicalHistory]: ValueSet-MedicalHistory.html
-[MedicalHistoryShortListAdolescents]: ValueSet-MedicalHistoryShortListAdolescents.html
-[MedicalHistoryShortListAdultsAndOlderPeople]: ValueSet-MedicalHistoryShortListAdultsAndOlderPeople.html
-[MedicalHistoryShortListInfants]: ValueSet-MedicalHistoryShortListInfants.html
-[MedicalHistoryShortListPrimarySchool]: ValueSet-MedicalHistoryShortListPrimarySchool.html
 [PersonalPronouns]: ValueSet-pronouns.html
 [PhysicalActivityAndScreenTime]: Questionnaire-PhysicalActivityAndScreenTime.html
 [PrimaryCarerParentGrandparent]: ValueSet-PrimaryCarerParentGrandparent.html
