@@ -17,6 +17,13 @@ assembledQuestionnaireReference = (
     "Questionnaire/AboriginalTorresStraitIslanderHealthCheck"
 )
 
+# Define colors for console output
+ERROR_RED = '\033[91m'
+WARNING_YELLOW = '\033[93m'
+OK_GREEN = '\033[92m'
+
+END_C = '\033[0m'
+
 def getQuestionnairesFromPackage():
     questionnaires = {}
     implementationGuide = None
@@ -25,7 +32,7 @@ def getQuestionnairesFromPackage():
     response = requests.get(ig_package_url)
 
     if response.status_code != 200:
-        print(f"Failed to download the .tgz file. Status code: {response.status_code}")
+        print(f"{ERROR_RED}ERROR: Failed to download the .tgz file. Status code: {response.status_code} {END_C}")
         return questionnaires, implementationGuide
 
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -89,23 +96,21 @@ def updateRootAndSubquestionnaires(questionnaires, implementationGuide):
                 # Check the response status code
                 if str(response.status_code).startswith("2"):
                     print(
-                        f"PUT request for {reference} successful at {formsServerEndpoint}:",
-                        response.status_code,
+                        f"{OK_GREEN}PUT request for {reference} successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
                     )
                 else:
                     print(
-                        f"PUT request for {reference} failed with status code at {formsServerEndpoint}:",
-                        response.status_code,
+                        f"{ERROR_RED}ERROR: PUT request for {reference} failed with status code at {formsServerEndpoint}: {response.status_code} ERR {END_C}"
                     )
 
             except KeyError as e:
                 print(
-                    f"ERROR: Fail to find {reference} in local files, questionnaire not updated in server."
+                    f"{ERROR_RED}ERROR: Fail to find {reference} in local files, questionnaire not updated in server. {END_C}"
                 )
             except requests.exceptions.HTTPError as e:
-                print(e)
+                print(f"{ERROR_RED}ERROR: HTTP ERROR THROWN:{END_C}", e, '\n')
             except Exception as e:
-                print(f"An error occured, details:", e)
+                print(f"{ERROR_RED}ERROR: An error occurred, details:{END_C}", e, '\n')
 
 
 
@@ -126,6 +131,12 @@ def assembleQuestionnaire(questionnaires):
         # Check the response status code
         if str(response.status_code).startswith("2"):
             assembleOutputParams = response.json()
+
+            # Return bare questionnaire
+            if assembleOutputParams["resourceType"] == "Questionnaire":
+                return assembleOutputParams
+
+            # Output params is not a bare questionnaire
             try:
                 assembledQuestionnaire = assembleOutputParams["parameter"][0][
                     "resource"
@@ -133,20 +144,19 @@ def assembleQuestionnaire(questionnaires):
                 return assembledQuestionnaire
             except Exception as e:
                 print(
-                    f"Unable to retrieve assembled questionnaire from output parameters",
-                    e,
+                    f"{ERROR_RED}ERROR: Unable to retrieve assembled questionnaire from output parameters{END_C}",
+                    e, '\n'
                 )
 
         else:
             print(
-                f"$assemble failed with status code at {formsServerEndpoint}:",
-                response.status_code,
+                f"{ERROR_RED}ERROR: $assemble failed with status code at {formsServerEndpoint}: {response.status_code} ERR {END_C}"
             )
 
     except requests.exceptions.HTTPError as e:
-        print(e)
+        print(f"{ERROR_RED}ERROR: HTTP ERROR THROWN:{END_C}",e, '\n')
     except Exception as e:
-        print(f"An error occured, details:", e)
+        print(f"{ERROR_RED}ERROR: An error occurred, details:", e, '\n')
 
     return None
 
@@ -168,19 +178,17 @@ def updateAssembledQuestionnaire(questionnaire):
         # Check the response status code
         if str(response.status_code).startswith("2"):
             print(
-                f"PUT request for {assembledQuestionnaireReference} successful at {formsServerEndpoint}:",
-                response.status_code,
+                f"{OK_GREEN} PUT request for {assembledQuestionnaireReference} successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
             )
         else:
             print(
-                f"PUT request for {assembledQuestionnaireReference} failed at {formsServerEndpoint}:",
-                response.status_code,
+                f"{OK_GREEN} PUT request for {assembledQuestionnaireReference} failed at {formsServerEndpoint}: {response.status_code} OK{END_C}"
             )
 
     except requests.exceptions.HTTPError as e:
-        print(e)
+        print(f"{ERROR_RED}ERROR: HTTP ERROR THROWN:{END_C}",e, '\n')
     except Exception as e:
-        print(f"An error occured, details:", e)
+        print(f"{ERROR_RED}ERROR: An error occurred, details:", e, '\n')
 
 
 # Main function
@@ -189,7 +197,7 @@ def main():
     questionnaires, implementationGuide = getQuestionnairesFromPackage()
 
     if len(questionnaires) == 0:
-        print("No questionnaires found, exiting.")
+        print(f"{WARNING_YELLOW}WARNING: No questionnaires found, exiting.{END_C}")
         return
 
     # update server's root and subquestionnaire with PUT requests
