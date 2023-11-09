@@ -1,15 +1,11 @@
 import json
 import os
 import requests
-import tempfile
-import io
-import tarfile
+import subprocess
+import sys
 
 formsServerEndpoint = "https://api.smartforms.io/fhir"
-
-ig_package_url = "http://build.fhir.org/ig/aehrc/smart-forms-ig/package.tgz"
-
-implementationGuideFileName = "ImplementationGuide-csiro.fhir.au.smartforms.json"
+implementationGuideOutputDirectory = "output"
 
 # Define assembly instructions and
 assemblyInstructionsReference = "Questionnaire/AssemblyInstructions"
@@ -18,55 +14,41 @@ assembledQuestionnaireReference = (
 )
 
 # Define colors for console output
+HEADER = '\033[95m'
 ERROR_RED = '\033[91m'
 WARNING_YELLOW = '\033[93m'
 OK_GREEN = '\033[92m'
+INFO_BLUE = '\033[94m'
 
 END_C = '\033[0m'
 
-def getQuestionnairesFromPackage():
+# Get questionnaire resources from a defined output directory
+def getQuestionnairesFromLocalIg():
     questionnaires = {}
     implementationGuide = None
 
-    # Download the zip file
-    response = requests.get(ig_package_url)
+    for file in os.listdir(implementationGuideOutputDirectory):
+        if file.startswith("Questionnaire") and file.endswith(".json"):
+            file_path = os.path.join(implementationGuideOutputDirectory, file)
 
-    if response.status_code != 200:
-        print(f"{ERROR_RED}ERROR: Failed to download the .tgz file. Status code: {response.status_code} {END_C}")
-        return questionnaires, implementationGuide
+            # Open and process the JSON file
+            with open(file_path, "r", encoding="utf-8") as json_file:
+                resource = json.load(json_file)
 
-    with tempfile.TemporaryDirectory() as temp_dir:
-        # Create a BytesIO object to work with the zip data
-        tgz_data = io.BytesIO(response.content)
+                # Construct reference name
+                reference = file.replace(
+                    "Questionnaire-", "Questionnaire/"
+                ).replace(".json", "")
 
-        # Extract the zip file to the temporary directory
-        with tarfile.open(fileobj=tgz_data, mode="r:gz") as tar_ref:
-            tar_ref.extractall(temp_dir)
+                # Store reference and resource in dict
+                questionnaires[reference] = resource
 
-            # List the files in the temporary directory
-            for root, dirs, files in os.walk(temp_dir):
-                for file in files:
-                    if file.startswith("Questionnaire") and file.endswith(".json"):
-                        file_path = os.path.join(root, file)
+        if file.startswith("ImplementationGuide-") and file.endswith(".json"):
+            file_path = os.path.join(implementationGuideOutputDirectory, file)
 
-                        # Open and process the JSON file
-                        with open(file_path, "r", encoding="utf-8") as json_file:
-                            resource = json.load(json_file)
-
-                            # Construct reference name
-                            reference = file.replace(
-                                "Questionnaire-", "Questionnaire/"
-                            ).replace(".json", "")
-
-                            # Store reference and resource in dict
-                            questionnaires[reference] = resource
-
-                    if file == implementationGuideFileName:
-                        file_path = os.path.join(root, file)
-
-                        # Open and process the JSON file
-                        with open(file_path, "r", encoding="utf-8") as json_file:
-                            implementationGuide = json.load(json_file)
+            # Open and process the JSON file
+            with open(file_path, "r", encoding="utf-8") as json_file:
+                implementationGuide = json.load(json_file)
     return questionnaires, implementationGuide
 
 # update server's root and subquestionnaire with PUT requests
@@ -100,7 +82,7 @@ def updateRootAndSubquestionnaires(questionnaires, implementationGuide):
                     )
                 else:
                     print(
-                        f"{ERROR_RED}ERROR: PUT request for {reference} failed with status code at {formsServerEndpoint}: {response.status_code} ERR {END_C}"
+                        f"{ERROR_RED}ERROR: PUT request for {reference} failed at {formsServerEndpoint}: {response.status_code} ERR {END_C}"
                     )
 
             except KeyError as e:
@@ -130,6 +112,9 @@ def assembleQuestionnaire(questionnaires):
 
         # Check the response status code
         if str(response.status_code).startswith("2"):
+            print(
+                f"{OK_GREEN}POST request Questionnaire/$assemble successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
+            )
             assembleOutputParams = response.json()
 
             # Return bare questionnaire
@@ -178,11 +163,11 @@ def updateAssembledQuestionnaire(questionnaire):
         # Check the response status code
         if str(response.status_code).startswith("2"):
             print(
-                f"{OK_GREEN} PUT request for {assembledQuestionnaireReference} successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
+                f"{OK_GREEN}PUT request for {assembledQuestionnaireReference} successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
             )
         else:
             print(
-                f"{OK_GREEN} PUT request for {assembledQuestionnaireReference} failed at {formsServerEndpoint}: {response.status_code} OK{END_C}"
+                f"{ERROR_RED}ERROR: PUT request for {assembledQuestionnaireReference} failed at {formsServerEndpoint}: {response.status_code} ERR{END_C}"
             )
 
     except requests.exceptions.HTTPError as e:
@@ -193,21 +178,41 @@ def updateAssembledQuestionnaire(questionnaire):
 
 # Main function
 def main():
+    if len(sys.argv) != 2 or (sys.argv[1] != "skip" and sys.argv[1] != "build"):
+        print(f"Run {INFO_BLUE}python bulk-import-ci.py build{END_C} to run _genonce.sh before running the bulk import.")
+        print(f"Run {INFO_BLUE}python bulk-import-ci.py skip{END_C} to run the bulk import only.")
+        return
+
+
+    if (sys.argv[1] == "skip"):
+        print(f"{HEADER}Skipping IG build...{END_C}")
+    else:
+        print(f"{HEADER}Running _genonce.sh...{END_C}")
+        subprocess.run(["./_genonce.sh"], shell=True)
+        print(f"New IG built locally in /output.\n")
+
     # get questionnaires from directory
-    questionnaires, implementationGuide = getQuestionnairesFromPackage()
+    print(f"{HEADER}Reading questionnaires from /output...{END_C}")
+    questionnaires, implementationGuide = getQuestionnairesFromLocalIg()
 
     if len(questionnaires) == 0:
         print(f"{WARNING_YELLOW}WARNING: No questionnaires found, exiting.{END_C}")
         return
 
+
     # update server's root and subquestionnaire with PUT requests
+    print(f"{HEADER}Uploading subquestionnaires...{END_C}")
     updateRootAndSubquestionnaires(questionnaires, implementationGuide)
 
     # assemble questionnaire
+    print(f"{HEADER}Asssembling subquestionnaires...{END_C}")
     assembledQuestionnaire = assembleQuestionnaire(questionnaires)
 
+    # update assembled questionnaire
+    print(f"{HEADER}Uploading assembled questionnaire...{END_C}")
     if assembledQuestionnaire != None:
         updateAssembledQuestionnaire(assembledQuestionnaire)
+    print(f"{HEADER}Bulk import done. Exiting.{END_C}")
 
 
 # Entry point of script
