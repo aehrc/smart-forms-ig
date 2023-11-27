@@ -386,7 +386,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.telecom.where(system = 'phone' and use = 'home').value"
+      * expression = "%patient.telecom.where(exists(system = 'phone' and use = 'home')).value"
     * linkId = "9541f0b0-f5ba-4fe7-a8e9-ad003cef897b"
     * text = "Home phone"
     * type = #string
@@ -394,7 +394,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.telecom.where(system = 'phone' and use = 'mobile').value"
+      * expression = "%patient.telecom.where(exists(system = 'phone' and use = 'mobile')).value"
     * linkId = "4037a02b-4a85-40e0-9be6-5b17df1aac56"
     * text = "Mobile phone"
     * type = #string
@@ -407,7 +407,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.contact.where(relationship.coding.code = 'C').name.select(given.first() | family).join(' ')"
+        * expression = "%patient.contact.where(relationship.coding.code = 'C').name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
       * linkId = "d7f2dd75-20c8-480f-8c22-71d604ebee8d"
       * text = "Name"
       * type = #string
