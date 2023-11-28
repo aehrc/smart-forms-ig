@@ -3,6 +3,7 @@ import os
 import requests
 import subprocess
 import sys
+import platform
 
 formsServerEndpoint = "https://smartforms.csiro.au/api/fhir"
 implementationGuideOutputDirectory = "output"
@@ -13,14 +14,23 @@ assembledQuestionnaireReference = (
     "Questionnaire/AboriginalTorresStraitIslanderHealthCheck"
 )
 
-# Define colors for console output
-HEADER = '\033[95m'
-ERROR_RED = '\033[91m'
-WARNING_YELLOW = '\033[93m'
-OK_GREEN = '\033[92m'
-INFO_BLUE = '\033[94m'
+if platform.system() == "Windows":
+    # ANSI doesn't work on Windows
+    HEADER = ''
+    ERROR_RED = ''
+    WARNING_YELLOW = ''
+    OK_GREEN = ''
+    INFO_BLUE = ''
+    END_C = ''
+else:
+    # Define colors for console output
+    HEADER = '\033[95m'
+    ERROR_RED = '\033[91m'
+    WARNING_YELLOW = '\033[93m'
+    OK_GREEN = '\033[92m'
+    INFO_BLUE = '\033[94m'
+    END_C = '\033[0m'
 
-END_C = '\033[0m'
 
 HEADERS = {"Content-Type": "application/json"}
 
@@ -116,6 +126,7 @@ def assembleQuestionnaire(questionnaires):
                 f"{OK_GREEN}POST request Questionnaire/$assemble successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
             )
             assembleOutputParams = response.json()
+            print(assembleOutputParams)
 
             # Return bare questionnaire
             if assembleOutputParams["resourceType"] == "Questionnaire":
