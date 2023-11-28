@@ -393,7 +393,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+          * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "e68b660d-cfd2-4b89-957a-c96a4c73a5fd"
         * text = "Systolic"
@@ -407,7 +407,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]      
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8462-4')).value.value"
+          * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "867b0022-f812-4f80-b287-79686c972b15"
         * text = "Diastolic"
