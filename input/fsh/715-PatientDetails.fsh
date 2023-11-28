@@ -258,7 +258,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "HomeAddressRepeat"
       * language = #text/fhirpath
-      * expression = "%patient.address.where(use='home'and (type.empty() or type!='postal'))"
+      * expression = "%patient.address.where(use='home' and (type.empty() or type!='postal'))"
     * linkId = "f1262ade-843c-4eba-a86d-51a9c97d134b"
     * text = "Home address"
     * type = #group
@@ -407,7 +407,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.contact.where(relationship.coding.code = 'C').name.select(given.first() | family).join(' ')"
+        * expression = "%patient.contact.where(relationship.coding.exists(code = 'C')).name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
       * linkId = "d7f2dd75-20c8-480f-8c22-71d604ebee8d"
       * text = "Name"
       * type = #string
@@ -431,7 +431,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.contact.where(relationship.coding.code = 'C').telecom.value"
+        * expression = "%patient.contact.where(relationship.coding.exists(code = 'C')).telecom.value"
       * linkId = "626e3723-6310-4b99-81c1-525676b027c8"
       * text = "Phone"
       * type = #string
@@ -444,7 +444,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.where(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(0,10)"
+        * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(0,10)"
       * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{10}$')"
       * linkId = "eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf"
       * text = "Number"
@@ -453,7 +453,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').value.substring(10,1)"
+        * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(10,1)"
       * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{1}$')"
       * linkId = "d6253253-a124-494e-a1d8-7ce02c69ec11"
       * text = "Reference number"
@@ -462,7 +462,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').period.end.toString()"
+        * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).period.end.toString()"
       * linkId = "c520e213-5313-42c3-860a-d30206620290"
       * text = "Expiry"
       * type = #string
@@ -470,7 +470,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='PEN').value"
+      * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='PEN')).value"
     * linkId = "c1e4e967-c0aa-4280-b5d4-ab1f375ed9ac"
     * text = "Pensioner Card Number"
     * type = #string
@@ -479,7 +479,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='HC').value"
+      * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='HC')).value"
     * linkId = "a7e97574-3cea-4dfa-bef2-2665e7748364"
     * text = "Health Care Card Number"
     * type = #string

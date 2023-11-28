@@ -433,7 +433,7 @@
               "valueExpression": {
                 "name": "HomeAddressRepeat",
                 "language": "text/fhirpath",
-                "expression": "%patient.address.where(use='home'and (type.empty() or type!='postal'))"
+                "expression": "%patient.address.where(use='home' and (type.empty() or type!='postal'))"
               }
             }
           ],
@@ -733,7 +733,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.contact.where(relationship.coding.code = 'C').name.select(given.first() | family).join(' ')"
+                    "expression": "%patient.contact.where(relationship.coding.exists(code = 'C')).name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
                   }
                 }
               ],
@@ -778,7 +778,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.contact.where(relationship.coding.code = 'C').telecom.value"
+                    "expression": "%patient.contact.where(relationship.coding.exists(code = 'C')).telecom.value"
                   }
                 }
               ],
@@ -801,7 +801,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.identifier.where(type.coding.where(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(0,10)"
+                    "expression": "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(0,10)"
                   }
                 },
                 {
@@ -820,7 +820,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').value.substring(10,1)"
+                    "expression": "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(10,1)"
                   }
                 },
                 {
@@ -839,7 +839,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='MC').period.end.toString()"
+                    "expression": "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).period.end.toString()"
                   }
                 }
               ],
@@ -860,7 +860,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='PEN').value"
+                "expression": "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='PEN')).value"
               }
             }
           ],
@@ -876,7 +876,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%patient.identifier.where(type.coding.system='http://terminology.hl7.org/CodeSystem/v2-0203' and type.coding.code='HC').value"
+                "expression": "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='HC')).value"
               }
             }
           ],
