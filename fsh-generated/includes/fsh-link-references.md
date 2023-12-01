@@ -33,6 +33,7 @@
 [SocialHistoryChild]: Questionnaire-SocialHistoryChild.html
 [SubstanceUse]: Questionnaire-SubstanceUse.html
 [AboriginalTorresStraitIslander]: ValueSet-AboriginalTorresStraitIslander.html
+[AgedCareCMSFacade]: Questionnaire-AgedCareCMSFacade.html
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
 [BiologicalSex]: ValueSet-biological-sex-1.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
