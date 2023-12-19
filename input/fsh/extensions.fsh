@@ -7,8 +7,8 @@ Description: "This extension is intended to be used as a work around to a known 
 
 Extension: ConditionEnvironmentAcquired
 Id: ConditionEnvironmentAcquired
-Title: "Condition Location"
-Description: "The location where the condition was acquired."
+Title: "Condition Environment Acquired"
+Description: "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment."
 
 * ^context.type = #element
 * ^context.expression = "Condition"

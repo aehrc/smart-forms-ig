@@ -3,9 +3,9 @@
   "id": "ConditionEnvironmentAcquired",
   "url": "https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired",
   "name": "ConditionEnvironmentAcquired",
-  "title": "Condition Location",
+  "title": "Condition Environment Acquired",
   "status": "draft",
-  "description": "The location where the condition was acquired.",
+  "description": "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -30,8 +30,8 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "Condition Location",
-        "definition": "The location where the condition was acquired."
+        "short": "Condition Environment Acquired",
+        "definition": "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment."
       },
       {
         "id": "Extension.extension",
