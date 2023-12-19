@@ -37,6 +37,7 @@
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
 [BiologicalSex]: ValueSet-biological-sex-1.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
+[ConditionEnvironmentAcquired]: StructureDefinition-ConditionEnvironmentAcquired.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
 [GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
 [MedicalHistory]: ValueSet-MedicalHistory.html

@@ -74,9 +74,9 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/variable",
       "valueExpression": {
-        "name": "EncounterAll",
+        "name": "Hospitalisation",
         "language": "application/x-fhir-query",
-        "expression": "Encounter?patient={{%patient.id}}"
+        "expression": "Encounter?class=IMP,EMER,SS&patient={{%patient.id}}"
       }
     },
     {
@@ -84,7 +84,31 @@
       "valueExpression": {
         "name": "Weight",
         "language": "application/x-fhir-query",
-        "expression": "Observation?code=29463-7&patient={{%patient.id}}"
+        "expression": "Observation?code=27113001&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "UrinaryContinence",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=129009001&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "BowelContinence",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=129008009&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "BarthelIndex",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=443653008&_count=1&_sort=-date&patient={{%patient.id}}"
       }
     },
     {
@@ -93,6 +117,30 @@
         "name": "ProblemListItem",
         "language": "application/x-fhir-query",
         "expression": "Condition?category=problem-list-item&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "PressureInjury",
+        "language": "application/x-fhir-query",
+        "expression": "Condition?category=416462003&code=1163215007&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "IAD",
+        "language": "application/x-fhir-query",
+        "expression": "Condition?category=416462003&code=402275006&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "RestrictivePractice",
+        "language": "application/x-fhir-query",
+        "expression": "Procedure?code=386423001,90278001,386517008,68894007&patient={{%patient.id}}"
       }
     }
   ],
@@ -122,7 +170,8 @@
             "coding": [
               {
                 "code": "tab-container",
-                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "version": "1.0.0"
               }
             ]
           }
@@ -225,7 +274,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%patient.name.where(use='usual').select(given[0])"
+                        "expression": "(%patient.name.where(use='usual').select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)).first()"
                       }
                     }
                   ],
@@ -273,7 +322,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.deceased.ofType(Boolean)"
+                    "expression": "%patient.deceased.ofType(boolean)"
                   }
                 }
               ],
@@ -729,7 +778,7 @@
                   "valueExpression": {
                     "name": "HospitalisationRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%EncounterAll.entry.resource.where(class='IMP' or class='EMER' or class='SS')"
+                    "expression": "%Hospitalisation.entry.resource"
                   }
                 }
               ],
@@ -744,13 +793,13 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/encounter-description').value"
+                        "expression": "%HospitalisationRepeat.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/encounter-description').value"
                       }
                     }
                   ],
                   "linkId": "hospitalisation-encounter-description",
                   "text": "Text description of encounter",
-                  "type": "string",
+                  "type": "text",
                   "repeats": false
                 },
                 {
@@ -759,7 +808,18 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.class"
+                        "expression": "%HospitalisationRepeat.class"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
                       }
                     }
                   ],
@@ -794,7 +854,18 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.status"
+                        "expression": "%HospitalisationRepeat.status"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
                       }
                     }
                   ],
@@ -812,9 +883,9 @@
                     },
                     {
                       "valueCoding": {
-                        "code": "onleave",
+                        "code": "finished",
                         "system": "http://hl7.org/fhir/encounter-status",
-                        "display": "On Leave"
+                        "display": "Finished"
                       }
                     }
                   ]
@@ -825,7 +896,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.period.start"
+                        "expression": "%HospitalisationRepeat.period.start"
                       }
                     }
                   ],
@@ -840,7 +911,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.period.end"
+                        "expression": "%HospitalisationRepeat.period.end"
                       }
                     }
                   ],
@@ -855,7 +926,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.where(class='IMP').length.value"
+                        "expression": "%HospitalisationRepeat.where(class.exists(code='IMP')).length.value.round(0)"
                       }
                     },
                     {
@@ -868,7 +939,7 @@
                   ],
                   "linkId": "hospitalisation-encounter-duration",
                   "text": "Duration",
-                  "type": "decimal",
+                  "type": "integer",
                   "repeats": false,
                   "item": [
                     {
@@ -897,7 +968,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.reasonCode.text"
+                        "expression": "%HospitalisationRepeat.reasonCode.text"
                       }
                     }
                   ],
@@ -912,12 +983,27 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%EncounterAll.serviceProvider.reference"
+                        "expression": "%HospitalisationRepeat.serviceProvider.display"
                       }
                     }
                   ],
-                  "linkId": "hospitalisation-encounter-serviceprovider",
-                  "text": "Facility managing encounter (id only)",
+                  "linkId": "hospitalisation-encounter-serviceprovidername",
+                  "text": "Service provider name",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%HospitalisationRepeat.serviceProvider.identifier.value"
+                      }
+                    }
+                  ],
+                  "linkId": "hospitalisation-encounter-serviceprovideridentifier",
+                  "text": "Service provider identifier",
                   "type": "string",
                   "repeats": false
                 }
@@ -927,7 +1013,7 @@
         },
         {
           "linkId": "medicalhistory",
-          "text": "Medical History",
+          "text": "Medical history",
           "type": "group",
           "repeats": false,
           "item": [
@@ -965,7 +1051,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "drop-down",
+                            "code": "autocomplete",
                             "system": "http://hl7.org/fhir/questionnaire-item-control"
                           }
                         ]
@@ -1017,12 +1103,12 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ProblemListItemRepeat.status"
+                        "expression": "%ProblemListItemRepeat.clinicalStatus.coding"
                       }
                     }
                   ],
-                  "linkId": "medicalhistory-condition-status",
-                  "text": "Status",
+                  "linkId": "medicalhistory-condition-clinicalstatus",
+                  "text": "Clinical status",
                   "type": "choice",
                   "repeats": false,
                   "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
@@ -1039,7 +1125,7 @@
                   ],
                   "linkId": "medicalhistory-condition-onsetdate",
                   "text": "Onset date",
-                  "type": "date",
+                  "type": "dateTime",
                   "repeats": false
                 },
                 {
@@ -1054,7 +1140,7 @@
                   ],
                   "linkId": "medicalhistory-condition-abatementdate",
                   "text": "Abatement date",
-                  "type": "date",
+                  "type": "dateTime",
                   "repeats": false
                 },
                 {
@@ -1069,8 +1155,2120 @@
                   ],
                   "linkId": "medicalhistory-condition-recordeddate",
                   "text": "Recorded date",
-                  "type": "date",
+                  "type": "dateTime",
                   "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "pressureinjuries",
+          "text": "Pressure injuries",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "PressureInjuryRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%PressureInjury.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "pressureinjuries-wound",
+              "text": "Pressure injury wound",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.stage.summary.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-stage",
+                  "text": "Stage",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "1163217004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pressure injury stage I"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "1163220007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pressure injury stage II"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "1163222004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pressure injury stage III"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "1163224003",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pressure injury stage IV"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "723071003",
+                        "system": "http://snomed.info/sct",
+                        "display": "Deep tissue pressure injury"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "723073000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Suspected deep tissue pressure injury"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "1163226001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Unstageable pressure injury"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.stage.summary.text"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-stage-text",
+                  "text": "Stage text",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.clinicalStatus.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-clinicalstatus",
+                  "text": "Clinical status",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.onset.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-onsetdate",
+                  "text": "Onset date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.abatement.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-abatementdate",
+                  "text": "Abatement date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.recordedDate"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-recordeddate",
+                  "text": "Recorded date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.extension.where(url='https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired').value.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-environmentacquired",
+                  "text": "Environment acquired",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "22232009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Hospital"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "285202004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Community environment"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "257652008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Aged care facility"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.evidence.code.text"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-description",
+                  "text": "Description",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PressureInjuryRepeat.bodySite.text"
+                      }
+                    }
+                  ],
+                  "linkId": "pressureinjuries-wound-bodysite",
+                  "text": "Body site",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "restrictivepractice",
+          "text": "Restrictive practice",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "RestrictivePracticeRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%RestrictivePractice.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "restrictivepractice-intervention",
+              "text": "Restrictive practice intervention",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.code.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-code",
+                  "text": "Code",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "386423001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Physical restraint"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "90278001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Secluding patient"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "386517008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Area restriction (Environmental)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "68894007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Placing restraint (Mechanical)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.status"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "in-progress",
+                        "system": "http://hl7.org/fhir/event-status",
+                        "display": "In Progress"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "on-hold",
+                        "system": "http://hl7.org/fhir/event-status",
+                        "display": "On Hold"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "completed",
+                        "system": "http://hl7.org/fhir/event-status",
+                        "display": "Completed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.select(performed.start | performed.ofType(dateTime))"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-performedstartdate",
+                  "text": "Performed start date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.select(performed.end)"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-performedenddate",
+                  "text": "Performed end date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.usedCode.coding.system"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-restraintsubtypecode-system",
+                  "text": "Restraint subtype code system",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.usedCode.coding.code"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-restraintsubtypecode-code",
+                  "text": "Restraint subtype code code",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.usedCode.coding.display"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-restraintsubtypecode-display",
+                  "text": "Restraint subtype code display",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.usedCode.text"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-restraintsubtypetext",
+                  "text": "Restraint subtype text",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                      "valueExpression": {
+                        "name": "RestrictivePracticeNoteRepeat",
+                        "language": "text/fhirpath",
+                        "expression": "%RestrictivePracticeRepeat.note"
+                      }
+                    }
+                  ],
+                  "linkId": "restrictivepractice-intervention-note",
+                  "text": "Note",
+                  "type": "group",
+                  "repeats": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%RestrictivePracticeNoteRepeat.time"
+                          }
+                        }
+                      ],
+                      "linkId": "restrictivepractice-intervention-note-time",
+                      "text": "Time",
+                      "type": "dateTime",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%RestrictivePracticeNoteRepeat.text"
+                          }
+                        }
+                      ],
+                      "linkId": "restrictivepractice-intervention-note-text",
+                      "text": "Text",
+                      "type": "text",
+                      "repeats": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "bodyweight",
+          "text": "Body weight",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "gtable",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "WeightRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%Weight.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "bodyweight-observation",
+              "text": "Body weight observation",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%WeightRepeat.effective.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "bodyweight-observation-effectivedate",
+                  "text": "Effective date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%WeightRepeat.value.ofType(Quantity).value"
+                      }
+                    }
+                  ],
+                  "linkId": "bodyweight-observation-value",
+                  "text": "Value",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%WeightRepeat.value.ofType(Quantity).code"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "bodyweight-observation-unitcode",
+                  "text": "Unit code",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueString": "kg",
+                      "initialSelected": true
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%WeightRepeat.issued"
+                      }
+                    }
+                  ],
+                  "linkId": "bodyweight-observation-issued",
+                  "text": "Issued",
+                  "type": "dateTime",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "continence",
+          "text": "Continence",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "continence-urinary",
+              "text": "Urinary continence",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%UrinaryContinence.entry.resource.effective.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-urinary-effectivedate",
+                  "text": "Effective date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%UrinaryContinence.entry.resource.value.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-urinary-code",
+                  "text": "Code",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA126-5",
+                        "system": "http://loinc.org",
+                        "display": "CONTINENT-Complete control [includes use of indwelling urinary catheter or ostomy device that does not leak urine or stool]"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA127-3",
+                        "system": "http://loinc.org",
+                        "display": "USUALLY CONTINENT-BLADDER, incontinent episodes once a week or less; BOWEL, less than weekly"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA128-1",
+                        "system": "http://loinc.org",
+                        "display": "OCCASIONALLY INCONTINENT-BLADDER, 2 or more times a week but not daily; BOWEL, once a week"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA129-9",
+                        "system": "http://loinc.org",
+                        "display": "FREQUENTLY INCONTINENT-BLADDER, tended to be incontinent daily, but some control present (e.g., on day shift); BOWEL, 2-3 times a week"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA130-7",
+                        "system": "http://loinc.org",
+                        "display": "INCONTINENT-Had inadequate control BLADDER, multiple daily episodes; BOWEL, all (or almost all) of the time"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%UrinaryContinence.entry.resource.value.text"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-urinary-text",
+                  "text": "Text",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%UrinaryContinence.entry.resource.issued"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-urinary-issued",
+                  "text": "Issued",
+                  "type": "dateTime",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "continence-bowel",
+              "text": "Bowel continence",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%BowelContinence.entry.resource.effective.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-bowel-effectivedate",
+                  "text": "Effective date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%BowelContinence.entry.resource.value.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-bowel-code",
+                  "text": "Code",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "LA126-5",
+                        "system": "http://loinc.org",
+                        "display": "CONTINENT-Complete control [includes use of indwelling urinary catheter or ostomy device that does not leak urine or stool]"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA127-3",
+                        "system": "http://loinc.org",
+                        "display": "USUALLY CONTINENT-BLADDER, incontinent episodes once a week or less; BOWEL, less than weekly"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA128-1",
+                        "system": "http://loinc.org",
+                        "display": "OCCASIONALLY INCONTINENT-BLADDER, 2 or more times a week but not daily; BOWEL, once a week"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA129-9",
+                        "system": "http://loinc.org",
+                        "display": "FREQUENTLY INCONTINENT-BLADDER, tended to be incontinent daily, but some control present (e.g., on day shift); BOWEL, 2-3 times a week"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "LA130-7",
+                        "system": "http://loinc.org",
+                        "display": "INCONTINENT-Had inadequate control BLADDER, multiple daily episodes; BOWEL, all (or almost all) of the time"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%BowelContinence.entry.resource.value.text"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-bowel-text",
+                  "text": "Text",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%BowelContinence.entry.resource.issued"
+                      }
+                    }
+                  ],
+                  "linkId": "continence-bowel-issued",
+                  "text": "Issued",
+                  "type": "dateTime",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "iad",
+          "text": "Incontinence associated dermatitis",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "IADRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%IAD.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "iad-wound",
+              "text": "Incontinence associated dermatitis wound",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.stage.summary.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-stage",
+                  "text": "Stage",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "264653008",
+                        "system": "http://snomed.info/sct",
+                        "display": "1A"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "264654002",
+                        "system": "http://snomed.info/sct",
+                        "display": "1B"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "264662005",
+                        "system": "http://snomed.info/sct",
+                        "display": "2A"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "264663000",
+                        "system": "http://snomed.info/sct",
+                        "display": "2B"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.stage.summary.text"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-stage-text",
+                  "text": "Stage text",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.clinicalStatus.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-clinicalstatus",
+                  "text": "Clinical status",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.onset.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-onsetdate",
+                  "text": "Onset date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.abatement.ofType(dateTime)"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-abatementdate",
+                  "text": "Abatement date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.recordedDate"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-recordeddate",
+                  "text": "Recorded date",
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.evidence.code.text"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-description",
+                  "text": "Description",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%IADRepeat.bodySite.text"
+                      }
+                    }
+                  ],
+                  "linkId": "iad-wound-bodysite",
+                  "text": "Body site",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "barthel",
+          "text": "Barthel index",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "grid",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "barthel-modified",
+              "text": "Modified Barthel index of activities of daily living score",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "barthel-modified-score",
+                  "text": "Modified Barthel index score",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.effective.ofType(dateTime)"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-modified-effectivedate",
+                      "text": "Effective date",
+                      "type": "dateTime",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-modified-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-modified-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.issued"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-modified-issued",
+                      "text": "Issued",
+                      "type": "dateTime",
+                      "repeats": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "grid",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "barthel-components",
+              "text": "Modified Barthel index of activities of daily living component questions",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "barthel-components-feeding",
+                  "text": "Feeding",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[0].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-feeding-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "83184-2",
+                            "system": "http://loinc.org",
+                            "display": "Feeding or eating - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[0].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-feeding-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[0].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-feeding-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-transfer",
+                  "text": "Transfer",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[1].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-transfer-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "83185-9",
+                            "system": "http://loinc.org",
+                            "display": "Transferring - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[1].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-transfer-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[1].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-transfer-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-grooming",
+                  "text": "Grooming",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[2].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-grooming-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "96767-9",
+                            "system": "http://loinc.org",
+                            "display": "Grooming - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[2].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-grooming-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[2].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-grooming-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-toiletuse",
+                  "text": "Toilet Use",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[3].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-toiletuse-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "83183-4",
+                            "system": "http://loinc.org",
+                            "display": "Toileting - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[3].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-toiletuse-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[3].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-toiletuse-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-bathing",
+                  "text": "Bathing",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[4].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bathing-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "83181-8",
+                            "system": "http://loinc.org",
+                            "display": "Bathing - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[4].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bathing-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[4].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bathing-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-mobility",
+                  "text": "Mobility",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[5].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-mobility-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "83186-7",
+                            "system": "http://loinc.org",
+                            "display": "Ambulation - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[5].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-mobility-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[5].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-mobility-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-stairs",
+                  "text": "Stairs",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[6].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-stairs-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "96758-8",
+                            "system": "http://loinc.org",
+                            "display": "Stairs - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[6].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-stairs-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[6].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-stairs-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-dressing",
+                  "text": "Dressing",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[7].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-dressing-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "83182-6",
+                            "system": "http://loinc.org",
+                            "display": "Dressing - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[7].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-dressing-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[7].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-dressing-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-bowels",
+                  "text": "Bowels",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[8].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bowels-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "96759-6",
+                            "system": "http://loinc.org",
+                            "display": "Bowel control - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[8].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bowels-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[8].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bowels-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "barthel-components-bladder",
+                  "text": "Bladder",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[9].code.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bladder-code",
+                      "text": "Code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "96760-4",
+                            "system": "http://loinc.org",
+                            "display": "Bladder control - functional ability"
+                          },
+                          "initialSelected": true
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[9].value.value"
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bladder-value",
+                      "text": "Value",
+                      "type": "integer",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%BarthelIndex.entry.resource.component[9].value.code"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "barthel-components-bladder-unitcode",
+                      "text": "Unit code",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "{score}",
+                          "initialSelected": true
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

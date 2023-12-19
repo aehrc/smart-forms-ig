@@ -356,6 +356,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ConditionEnvironmentAcquired"
+        },
+        "name": "Condition Location",
+        "description": "The location where the condition was acquired.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ContainedResourceReference"
         },
         "name": "Contained Resource Reference",
