@@ -204,7 +204,7 @@
               "valueExpression": {
                 "name": "ConditionRepeat",
                 "language": "text/fhirpath",
-                "expression": "%Condition.entry.resource.where(category.coding.code='problem-list-item')"
+                "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
               }
             }
           ],

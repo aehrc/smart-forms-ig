@@ -3,8 +3,9 @@ import os
 import requests
 import subprocess
 import sys
+import platform
 
-formsServerEndpoint = "https://api.smartforms.io/fhir"
+formsServerEndpoint = "https://smartforms.csiro.au/api/fhir"
 implementationGuideOutputDirectory = "output"
 
 # Define assembly instructions and
@@ -13,14 +14,25 @@ assembledQuestionnaireReference = (
     "Questionnaire/AboriginalTorresStraitIslanderHealthCheck"
 )
 
-# Define colors for console output
-HEADER = '\033[95m'
-ERROR_RED = '\033[91m'
-WARNING_YELLOW = '\033[93m'
-OK_GREEN = '\033[92m'
-INFO_BLUE = '\033[94m'
+if platform.system() == "Windows":
+    # ANSI doesn't work on Windows
+    HEADER = ''
+    ERROR_RED = ''
+    WARNING_YELLOW = ''
+    OK_GREEN = ''
+    INFO_BLUE = ''
+    END_C = ''
+else:
+    # Define colors for console output
+    HEADER = '\033[95m'
+    ERROR_RED = '\033[91m'
+    WARNING_YELLOW = '\033[93m'
+    OK_GREEN = '\033[92m'
+    INFO_BLUE = '\033[94m'
+    END_C = '\033[0m'
 
-END_C = '\033[0m'
+
+HEADERS = {"Content-Type": "application/json"}
 
 # Get questionnaire resources from a defined output directory
 def getQuestionnairesFromLocalIg():
@@ -53,8 +65,6 @@ def getQuestionnairesFromLocalIg():
 
 # update server's root and subquestionnaire with PUT requests
 def updateRootAndSubquestionnaires(questionnaires, implementationGuide):
-    headers = {"Content-Type": "application/json"}
-
     # Iterate all resources in implementation guide
     for resource in implementationGuide["definition"]["resource"]:
         reference = resource["reference"]["reference"]
@@ -71,7 +81,7 @@ def updateRootAndSubquestionnaires(questionnaires, implementationGuide):
                 response = requests.put(
                     f"{formsServerEndpoint}/{reference}",
                     json=questionnaireToBeUpdated,
-                    headers=headers,
+                    headers=HEADERS,
                 )
                 response.raise_for_status()
 
@@ -116,6 +126,7 @@ def assembleQuestionnaire(questionnaires):
                 f"{OK_GREEN}POST request Questionnaire/$assemble successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
             )
             assembleOutputParams = response.json()
+            print(assembleOutputParams)
 
             # Return bare questionnaire
             if assembleOutputParams["resourceType"] == "Questionnaire":
@@ -156,7 +167,7 @@ def updateAssembledQuestionnaire(questionnaire):
         response = requests.put(
             f"{formsServerEndpoint}/{assembledQuestionnaireReference}",
             json=questionnaire,
-            headers=headers,
+            headers=HEADERS,
         )
         response.raise_for_status()
 

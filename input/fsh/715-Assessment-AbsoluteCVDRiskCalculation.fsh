@@ -189,7 +189,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.where(code='8480-6')).value.value"
+            * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
           * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
           * text = "Value"

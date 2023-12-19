@@ -217,7 +217,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ConditionRepeat"
       * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.where(category.coding.code='problem-list-item')"
+      * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
