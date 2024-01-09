@@ -7,12 +7,9 @@ See [Reference Implementation](reference-implementation.html).
 
 ### Dependencies
 
-Smart Forms is dependent on:
-- [FHIR R4](http://hl7.org/fhir/R4/)
-- [HL7 Terminology](https://terminology.hl7.org/5.0.0/)
-- [Structured Data Capture](http://build.fhir.org/ig/HL7/sdc/index.html)
-- [AU Base](http://build.fhir.org/ig/hl7au/au-fhir-base/)
-- [AU Core](https://build.fhir.org/ig/hl7au/au-fhir-core/)
+{% include dependency-table.xhtml %}
+
+Smart Forms is also dependent on:
 - Terminology published in Australia's [National Clinical Terminology Service](https://www.healthterminologies.gov.au/access-clinical-terminology/access-fhir-terminology-resources/)
 
 In addition, the following FHIR implementation guides are referenced:
