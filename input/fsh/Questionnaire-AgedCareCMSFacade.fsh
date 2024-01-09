@@ -290,13 +290,17 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].text = "Period end"
 * item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[+].linkId = "encounter-statushistory"
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
+* item[=].item[=].item[=].extension[=].valueExpression[+].name = "EncounterStatusHistory"
+* item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%encounter.statusHistory"
+* item[=].item[=].item[=].linkId = "encounter-statushistory"
 * item[=].item[=].item[=].text = "Status history"
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%encounter.statusHistory.status"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%EncounterStatusHistory.status"
 * item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
 * item[=].item[=].item[=].item[=].linkId = "encounter-statushistory-status"
@@ -307,14 +311,14 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/encounter-status#onleave "On Leave"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%encounter.statusHistory.period.start"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%EncounterStatusHistory.period.start"
 * item[=].item[=].item[=].item[=].linkId = "encounter-statushistory-periodstart"
 * item[=].item[=].item[=].item[=].text = "Period start"
 * item[=].item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%encounter.statusHistory.period.end"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%EncounterStatusHistory.period.end"
 * item[=].item[=].item[=].item[=].linkId = "encounter-statushistory-periodend"
 * item[=].item[=].item[=].item[=].text = "Period end"
 * item[=].item[=].item[=].item[=].type = #date

@@ -597,6 +597,16 @@
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "EncounterStatusHistory",
+                    "language": "text/fhirpath",
+                    "expression": "%encounter.statusHistory"
+                  }
+                }
+              ],
               "linkId": "encounter-statushistory",
               "text": "Status history",
               "type": "group",
@@ -608,7 +618,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%encounter.statusHistory.status"
+                        "expression": "%EncounterStatusHistory.status"
                       }
                     },
                     {
@@ -650,7 +660,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%encounter.statusHistory.period.start"
+                        "expression": "%EncounterStatusHistory.period.start"
                       }
                     }
                   ],
@@ -665,7 +675,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%encounter.statusHistory.period.end"
+                        "expression": "%EncounterStatusHistory.period.end"
                       }
                     }
                   ],
