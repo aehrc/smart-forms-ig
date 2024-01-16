@@ -4,20 +4,26 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# Slice matching
-# There are several extensions used that either match slices in other profiles stated in meta or are permitted for use by the extension itself.
+# Slice matching - There are several extensions used that either match slices in other profiles stated in meta or are permitted for use by the extension itself.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render|3.0.0
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular|3.0.0
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp|3.0.0
-# CapabilityStatement slice warning
+
+# Slice matching - CapabilityStatement
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|4.0.1
 
-# EnableWhen target comes after the question
-# This is intentional design for marking Questionnaire sections as complete
+# EnableWhen target comes after the question - This is intentional design for marking Questionnaire sections as complete
 %The target of this enableWhen rule (MarkComplete-%
 
 # ContainedResourceReference extension defined as intended
-WARNING: StructureDefinition/ContainedResourceReference: StructureDefinition.context[0]: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+Review the extension type for ContainedResourceReference: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+
+# Modular Questionnaire - URL of assembled questionnaire SHALL be the same as its base questionnnaire
+%The URL 'http://www.health.gov.au/assessments/mbs/715' has already been used by AssemblyInstructions%
+%The URL 'http://www.health.gov.au/assessments/mbs/715' is also used by AboriginalTorresStraitIslanderHealthCheck%
+
+# Draft code systems referenced as intended
+Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext|3.0.0
 
 # HL7 core warnings
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
