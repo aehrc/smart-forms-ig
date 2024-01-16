@@ -199,7 +199,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #choice
     * repeats = false
     * readOnly = true
-    * answerValueSet[+] = "#AboriginalTorresStraitIslander"
+    * answerValueSet = "#AboriginalTorresStraitIslander"
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
@@ -209,7 +209,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Parents/primary carer/s"
     * type = #choice
     * repeats = true
-    * answerValueSet[+] = "#PrimaryCarerParentGrandparent"
+    * answerValueSet = "#PrimaryCarerParentGrandparent"
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath

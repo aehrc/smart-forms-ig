@@ -15,7 +15,6 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
 */
-* contained[+] = condition-clinical
 
 //assemble expectation
 * extension[+]
