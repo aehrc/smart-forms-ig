@@ -126,7 +126,6 @@ def assembleQuestionnaire(questionnaires):
                 f"{OK_GREEN}POST request Questionnaire/$assemble successful at {formsServerEndpoint}: {response.status_code} OK{END_C}"
             )
             assembleOutputParams = response.json()
-            print(assembleOutputParams)
 
             # Return bare questionnaire
             if assembleOutputParams["resourceType"] == "Questionnaire":
