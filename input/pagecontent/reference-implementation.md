@@ -15,7 +15,7 @@ If you are interested in using the rendering engine in your projects, a standalo
 
 #### Smart Forms Server
 
-Publicly available endpoint here: <https://api.smartforms.io/fhir>
+Publicly available endpoint here: <https://smartforms.csiro.au/api/fhir>
 
 A Questionnaire-hosting Forms Server API that supports the [$assemble](http://hl7.org/fhir/uv/sdc/OperationDefinition-Questionnaire-assemble.html) operation. This API is built on the [HAPI-FHIR Starter Project](https://github.com/hapifhir/hapi-fhir-jpaserver-starter).
 
