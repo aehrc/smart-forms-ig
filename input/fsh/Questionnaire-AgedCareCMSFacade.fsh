@@ -102,10 +102,60 @@ Description: "Aged Care CMS Facade."
 * item[=].repeats = false
 
 //Patient
-* item[=].item[+].linkId = "patient"
+* item[=].item[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "familyNameSecondLetter"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "(%patient.name.where(use='official').select(family).replaceMatches('[^A-Za-z]','').substring(1,1) | '2').first()"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "familyNameThirdLetter"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "(%patient.name.where(use='official').select(family).replaceMatches('[^A-Za-z]','').substring(2,1) | '2').first()"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "familyNameFifthLetter"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "(%patient.name.where(use='official').select(family).replaceMatches('[^A-Za-z]','').substring(4,1) | '2').first()"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "givenNameSecondLetter"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "(%patient.name.where(use='official').select(given[0]).replaceMatches('[^A-Za-z]','').substring(1,1) | '2').first()"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "givenNameThirdLetter"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "(%patient.name.where(use='official').select(given[0]).replaceMatches('[^A-Za-z]','').substring(2,1) | '2').first()"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "birthDateString"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "%patient.birthDate.split('-').join()"
+
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "genderMaleCode"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "iif(%patient.gender = 'male', 1, 0)"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "genderFemaleCode"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "iif(%patient.gender = 'female', 2, 0)"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "genderOtherCode"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "iif(%patient.gender = 'other', 3, 0)"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression.name = "genderUnknown"
+* item[=].item[=].extension[=].valueExpression.language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression.expression = "iif(%patient.gender = 'unknown' or %patient.gender.empty(), 9, 0)"
+* item[=].item[=].linkId = "patient"
 * item[=].item[=].text = "Patient"
 * item[=].item[=].type = #group
 * item[=].item[=].repeats = false
+
+* item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+* item[=].item[=].item[=].extension.valueExpression.description = "SLK Score"
+* item[=].item[=].item[=].extension.valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].extension.valueExpression.expression = "iif(%patient.name.where(use='official').family.empty(), '999', (%familyNameSecondLetter +  %familyNameThirdLetter +  %familyNameFifthLetter).upper()) + iif(%patient.name.where(use='official').given[0].empty(), '99', (%givenNameSecondLetter + %givenNameThirdLetter).upper()) + %birthDateString.substring(6, 2) + %birthDateString.substring(4, 2) + %birthDateString.substring(0, 4) + (%genderMaleCode + %genderFemaleCode + %genderOtherCode + %genderUnknown).toString()"
+* item[=].item[=].item[=].linkId = "patient-slk"
+* item[=].item[=].item[=].text = "SLK"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MR')).value"

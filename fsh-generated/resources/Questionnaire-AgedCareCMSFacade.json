@@ -182,11 +182,109 @@
       "repeats": false,
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "familyNameSecondLetter",
+                "language": "text/fhirpath",
+                "expression": "(%patient.name.where(use='official').select(family).replaceMatches('[^A-Za-z]','').substring(1,1) | '2').first()"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "familyNameThirdLetter",
+                "language": "text/fhirpath",
+                "expression": "(%patient.name.where(use='official').select(family).replaceMatches('[^A-Za-z]','').substring(2,1) | '2').first()"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "familyNameFifthLetter",
+                "language": "text/fhirpath",
+                "expression": "(%patient.name.where(use='official').select(family).replaceMatches('[^A-Za-z]','').substring(4,1) | '2').first()"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "givenNameSecondLetter",
+                "language": "text/fhirpath",
+                "expression": "(%patient.name.where(use='official').select(given[0]).replaceMatches('[^A-Za-z]','').substring(1,1) | '2').first()"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "givenNameThirdLetter",
+                "language": "text/fhirpath",
+                "expression": "(%patient.name.where(use='official').select(given[0]).replaceMatches('[^A-Za-z]','').substring(2,1) | '2').first()"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "birthDateString",
+                "language": "text/fhirpath",
+                "expression": "%patient.birthDate.split('-').join()"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "genderMaleCode",
+                "language": "text/fhirpath",
+                "expression": "iif(%patient.gender = 'male', 1, 0)"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "genderFemaleCode",
+                "language": "text/fhirpath",
+                "expression": "iif(%patient.gender = 'female', 2, 0)"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "genderOtherCode",
+                "language": "text/fhirpath",
+                "expression": "iif(%patient.gender = 'other', 3, 0)"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "genderUnknown",
+                "language": "text/fhirpath",
+                "expression": "iif(%patient.gender = 'unknown' or %patient.gender.empty(), 9, 0)"
+              }
+            }
+          ],
           "linkId": "patient",
           "text": "Patient",
           "type": "group",
           "repeats": false,
           "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                  "valueExpression": {
+                    "description": "SLK Score",
+                    "language": "text/fhirpath",
+                    "expression": "iif(%patient.name.where(use='official').family.empty(), '999', (%familyNameSecondLetter +  %familyNameThirdLetter +  %familyNameFifthLetter).upper()) + iif(%patient.name.where(use='official').given[0].empty(), '99', (%givenNameSecondLetter + %givenNameThirdLetter).upper()) + %birthDateString.substring(6, 2) + %birthDateString.substring(4, 2) + %birthDateString.substring(0, 4) + (%genderMaleCode + %genderFemaleCode + %genderOtherCode + %genderUnknown).toString()"
+                  }
+                }
+              ],
+              "linkId": "patient-slk",
+              "text": "SLK",
+              "type": "string",
+              "repeats": false
+            },
             {
               "extension": [
                 {
