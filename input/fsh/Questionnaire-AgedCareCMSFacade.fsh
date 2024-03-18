@@ -153,6 +153,7 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].extension.valueExpression.language = #text/fhirpath
 * item[=].item[=].item[=].extension.valueExpression.expression = "iif(%patient.name.where(use='official').family.empty(), '999', (%familyNameSecondLetter +  %familyNameThirdLetter +  %familyNameFifthLetter).upper()) + iif(%patient.name.where(use='official').given[0].empty(), '99', (%givenNameSecondLetter + %givenNameThirdLetter).upper()) + %birthDateString.substring(6, 2) + %birthDateString.substring(4, 2) + %birthDateString.substring(0, 4) + (%genderMaleCode + %genderFemaleCode + %genderOtherCode + %genderUnknown).toString()"
 * item[=].item[=].item[=].linkId = "patient-slk"
+* item[=].item[=].item[=].definition = "https://smartforms.csiro.au/ig/StructureDefinition/slk581#Identifier.value"
 * item[=].item[=].item[=].text = "SLK"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].repeats = false

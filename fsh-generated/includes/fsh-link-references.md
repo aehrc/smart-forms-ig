@@ -50,6 +50,7 @@
 [SmartFormsApplication]: CapabilityStatement-SmartFormsApplication.html
 [SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck]: CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html
 [SmartFormsServer]: CapabilityStatement-SmartFormsServer.html
+[SLK581]: StructureDefinition-slk581.html
 [YesNo]: ValueSet-YesNo.html
 [YesNoNA]: ValueSet-YesNoNA.html
 [YesNoNotAskedDeclined]: ValueSet-YesNoNotAskedDeclined.html
