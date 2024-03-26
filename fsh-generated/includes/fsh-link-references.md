@@ -37,6 +37,7 @@
 [BiologicalSex]: ValueSet-biological-sex-1.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
+[eRequest]: Questionnaire-eRequest.html
 [GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
 [MedicalHistory]: ValueSet-MedicalHistory.html
 [PersonalPronouns]: ValueSet-pronouns.html
