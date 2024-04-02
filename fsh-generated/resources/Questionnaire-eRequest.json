@@ -361,331 +361,6 @@
           ]
         },
         {
-          "linkId": "radiology",
-          "text": "Radiology",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "radiology-provider",
-              "text": "Provider",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "version": "1.0.0"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-provider-name",
-                  "text": "Provider name",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerOption": [
-                    {
-                      "valueString": "Scans-R-Us"
-                    },
-                    {
-                      "valueString": "Imaging Hub"
-                    },
-                    {
-                      "valueString": "Radiology Bros"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "linkId": "radiology-service",
-              "text": "Service details",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-examination",
-                  "text": "Examination",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "http://csiro.au/sparked/vs/SparkedRadiologyReferralValueSet"
-                },
-                {
-                  "linkId": "radiology-service-examinationcategory",
-                  "text": "Examination category",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "linkId": "radiology-service-precondition",
-                  "text": "Examination precondition",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-reasonforrequest",
-                  "text": "Reason for request",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-clinicalindication",
-                  "text": "Clinical indication",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-priority",
-                  "text": "Priority",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
-                },
-                {
-                  "linkId": "radiology-service-timing",
-                  "text": "Timing",
-                  "type": "string",
-                  "repeats": false
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId": "pathology",
-          "text": "Pathology",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "pathology-provider",
-              "text": "Provider",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "version": "1.0.0"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-provider-name",
-                  "text": "Provider name",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerOption": [
-                    {
-                      "valueString": "Tests-R-Us"
-                    },
-                    {
-                      "valueString": "Diagnostics Hub"
-                    },
-                    {
-                      "valueString": "Pathology Bros"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "linkId": "pathology-service",
-              "text": "Service details",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-examination",
-                  "text": "Tests",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
-                },
-                {
-                  "linkId": "pathology-service-testcategory",
-                  "text": "Test category",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "version": "1.0.0"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-precondition",
-                  "text": "Test precondition",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerOption": [
-                    {
-                      "valueString": "Fasting"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-reasonforrequest",
-                  "text": "Reason for request",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-clinicalindication",
-                  "text": "Clinical indication",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-priority",
-                  "text": "Priority",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
-                },
-                {
-                  "linkId": "pathology-service-timing",
-                  "text": "Timing",
-                  "type": "string",
-                  "repeats": false
-                }
-              ]
-            }
-          ]
-        },
-        {
           "linkId": "clinicalsummary",
           "text": "Clinical summary",
           "type": "group",
@@ -1321,6 +996,517 @@
                   ],
                   "linkId": "clinicalsummary-adversereaction-comment",
                   "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "radiology",
+          "text": "Radiology",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "radiology-provider",
+              "text": "Provider",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "version": "1.0.0"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-provider-name",
+                  "text": "Provider name",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueString": "Scans-R-Us"
+                    },
+                    {
+                      "valueString": "Imaging Hub"
+                    },
+                    {
+                      "valueString": "Radiology Bros"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "radiology-service",
+              "text": "Service details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "radiology-service-examination",
+                  "type": "group",
+                  "repeats": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "descendants().where(linkId = 'radiology-service-examination-components').repeat(item).select(answer).empty()"
+                          }
+                        }
+                      ],
+                      "linkId": "radiology-service-examination-procedure",
+                      "text": "Examination procedure",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "instructions",
+                                    "system": "http://hl7.org/fhir/questionnaire-display-category"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-procedure-instructions",
+                          "text": "Use this item to represent the examination procedure as a single field, otherwise use \"Examination components\".",
+                          "_text": {
+                            "extension": [
+                              {
+                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <em>Use this item to represent the examination procedure as a single field.</em>\r\n    </div>"
+                              }
+                            ]
+                          },
+                          "type": "display"
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "autocomplete",
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-procedure-procedure",
+                          "text": "Procedure",
+                          "type": "open-choice",
+                          "repeats": false,
+                          "answerValueSet": "http://csiro.au/sparked/vs/SparkedRadiologyReferralValueSet"
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "descendants().where(linkId = 'radiology-service-examination-procedure').repeat(item).select(answer).empty()"
+                          }
+                        }
+                      ],
+                      "linkId": "radiology-service-examination-components",
+                      "text": "Examination components",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "instructions",
+                                    "system": "http://hl7.org/fhir/questionnaire-display-category"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-components-instructions",
+                          "text": "Use this groups of items to represent the examination procedure as multiple components, otherwise use \"Examination procedure\".",
+                          "_text": {
+                            "extension": [
+                              {
+                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <em>Use this groups of items to represent the examination procedure as multiple components.</em>\r\n    </div>"
+                              }
+                            ]
+                          },
+                          "type": "display"
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "drop-down",
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-components-servicetype",
+                          "text": "Service type",
+                          "type": "open-choice",
+                          "repeats": false,
+                          "answerValueSet": "https://smartforms.csiro.au/ig/ValueSet/RadiologyModality"
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "autocomplete",
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-components-bodysite",
+                          "text": "Body site",
+                          "type": "open-choice",
+                          "repeats": false,
+                          "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/105891000036102"
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "drop-down",
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-components-laterality",
+                          "text": "Laterality",
+                          "type": "choice",
+                          "repeats": false,
+                          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/laterality-1"
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "check-box",
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "radiology-service-examination-components-contrast",
+                          "text": "Contrast",
+                          "type": "boolean",
+                          "repeats": false
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "radiology-service-precondition",
+                      "text": "Examination precondition",
+                      "type": "string",
+                      "repeats": true
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-reasonforrequest",
+                  "text": "Reason for request",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-clinicalindication",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-priority",
+                  "text": "Priority",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                },
+                {
+                  "linkId": "radiology-service-timing",
+                  "text": "Timing",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "pathology",
+          "text": "Pathology",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "pathology-provider",
+              "text": "Provider",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-provider-name",
+                  "text": "Provider name",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueString": "Tests-R-Us"
+                    },
+                    {
+                      "valueString": "Diagnostics Hub"
+                    },
+                    {
+                      "valueString": "Pathology Bros"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "pathology-service",
+              "text": "Service details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "pathology-service-testdetails",
+                  "text": "Test details",
+                  "type": "group",
+                  "repeats": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "pathology-service-testdetails-testname",
+                      "text": "Name",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerValueSet": "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "pathology-service-testdetails-testcategory",
+                      "text": "Category",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/pathology-diagnostic-service-category-1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "pathology-service-testdetails-testprecondition",
+                      "text": "Precondition",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueString": "Fasting"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-service-reasonforrequest",
+                  "text": "Reason for request",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-service-clinicalindication",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-service-priority",
+                  "text": "Priority",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                },
+                {
+                  "linkId": "pathology-service-timing",
+                  "text": "Timing",
                   "type": "string",
                   "repeats": false
                 }

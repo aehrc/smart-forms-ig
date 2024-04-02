@@ -284,8 +284,8 @@
     "fshName": "eRequest",
     "fshType": "Instance",
     "fshFile": "Questionnaire-eRequest.fsh",
-    "startLine": 6,
-    "endLine": 785
+    "startLine": 7,
+    "endLine": 865
   },
   {
     "outputFile": "StructureDefinition-ContainedResourceReference.json",
@@ -318,6 +318,14 @@
     "fshFile": "terminology.fsh",
     "startLine": 133,
     "endLine": 169
+  },
+  {
+    "outputFile": "ValueSet-RadiologyModality.json",
+    "fshName": "RadiologyModality",
+    "fshType": "ValueSet",
+    "fshFile": "terminology.fsh",
+    "startLine": 699,
+    "endLine": 711
   },
   {
     "outputFile": "ValueSet-YesNo.json",

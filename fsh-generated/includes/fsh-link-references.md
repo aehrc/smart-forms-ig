@@ -46,6 +46,7 @@
 [QuestionnaireItemControlExtended]: CodeSystem-QuestionnaireItemControlExtended.html
 [QuestionnaireItemUIControlCodes]: CodeSystem-questionnaire-item-control.html
 [QuestionnaireItemUIControlCodes]: ValueSet-questionnaire-item-control.html
+[RadiologyModality]: ValueSet-RadiologyModality.html
 [SmartFormsApplication]: CapabilityStatement-SmartFormsApplication.html
 [SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck]: CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html
 [SmartFormsServer]: CapabilityStatement-SmartFormsServer.html

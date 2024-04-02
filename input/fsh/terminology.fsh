@@ -693,3 +693,19 @@ Description: "The Biological Sex value set includes values that represent the bi
 * ^expansion.contains[=].display = "Male"
 * include codes from system $SCT
     where constraint = "^ 32570631000036107|Sex reference set|"
+
+
+// Radiology
+ValueSet: RadiologyModality
+Id: RadiologyModality
+Title: "Radiology Modality"
+Description: "Radiology modality."
+
+* ^experimental = true
+* $SCT#168537006 "Plain X-Ray"
+* $SCT#77477000 "CT"
+* $SCT#717193008 "Cone Beam CT"
+* $SCT#113091000 "MRI"
+* $SCT#16310003 "Ultrasound imaging"
+* $SCT#71651007 "Mammography"
+* $SCT#77343006 "Angiography"

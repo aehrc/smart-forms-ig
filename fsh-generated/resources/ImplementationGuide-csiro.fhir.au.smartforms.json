@@ -428,6 +428,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/RadiologyModality"
+        },
+        "name": "Radiology Modality",
+        "description": "Radiology modality.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/SmartFormsApplication"
         },
         "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation and completion of forms.",

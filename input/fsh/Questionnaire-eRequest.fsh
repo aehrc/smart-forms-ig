@@ -2,6 +2,7 @@ Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $questionnaire-item-control = http://hl7.org/fhir/questionnaire-item-control
+Alias: $display-category = http://hl7.org/fhir/questionnaire-display-category
 
 Instance: eRequest
 InstanceOf: Questionnaire
@@ -344,162 +345,9 @@ Description: "eRequest."
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%PractitionerRole.entry.resource.organization.identifier.where(system = 'http://ns.electronichealth.net.au/id/hi/hpio/1.0').value"
-// whiifier system to filter?
+// which identifier system to filter?
 * item.item[=].item[=].item[=].linkId = "radiology-requester-organisation-identifier"
 * item.item[=].item[=].item[=].text = "Requester organisation identifier"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = false
-
-//Radiology
-* item.item[+].linkId = "radiology"
-* item.item[=].text = "Radiology"
-* item.item[=].type = #group
-* item.item[=].repeats = false
-
-    // Provider
-* item.item[=].item[+].linkId = "radiology-provider"
-* item.item[=].item[=].text = "Provider"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#drop-down
-* item.item[=].item[=].item[=].linkId = "radiology-provider-name"
-* item.item[=].item[=].item[=].text = "Provider name"
-* item.item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Scans-R-Us"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Imaging Hub"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Radiology Bros"
-
-    // Service details
-* item.item[=].item[+].linkId = "radiology-service"
-* item.item[=].item[=].text = "Service details"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "radiology-service-examination"
-* item.item[=].item[=].item[=].text = "Examination"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "http://csiro.au/sparked/vs/SparkedRadiologyReferralValueSet"
-
-* item.item[=].item[=].item[+].linkId = "radiology-service-examinationcategory"
-* item.item[=].item[=].item[=].text = "Examination category"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = true
-
-* item.item[=].item[=].item[+].linkId = "radiology-service-precondition"
-* item.item[=].item[=].item[=].text = "Examination precondition"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = true
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "radiology-service-reasonforrequest"
-* item.item[=].item[=].item[=].text = "Reason for request"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "radiology-service-clinicalindication"
-* item.item[=].item[=].item[=].text = "Clinical indication"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].linkId = "radiology-service-priority"
-* item.item[=].item[=].item[=].text = "Priority"
-* item.item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
-
-* item.item[=].item[=].item[+].linkId = "radiology-service-timing"
-* item.item[=].item[=].item[=].text = "Timing"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = false
-
-//Pathology
-* item.item[+].linkId = "pathology"
-* item.item[=].text = "Pathology"
-* item.item[=].type = #group
-* item.item[=].repeats = false
-
-    // Provider
-* item.item[=].item[+].linkId = "pathology-provider"
-* item.item[=].item[=].text = "Provider"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#drop-down
-* item.item[=].item[=].item[=].linkId = "pathology-provider-name"
-* item.item[=].item[=].item[=].text = "Provider name"
-* item.item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Tests-R-Us"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Diagnostics Hub"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Pathology Bros"
-
-    // Service details
-* item.item[=].item[+].linkId = "pathology-service"
-* item.item[=].item[=].text = "Service details"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "pathology-service-examination"
-* item.item[=].item[=].item[=].text = "Tests"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
-
-* item.item[=].item[=].item[+].linkId = "pathology-service-testcategory"
-* item.item[=].item[=].item[=].text = "Test category"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = true
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#drop-down
-* item.item[=].item[=].item[=].linkId = "pathology-service-precondition"
-* item.item[=].item[=].item[=].text = "Test precondition"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Fasting"
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "pathology-service-reasonforrequest"
-* item.item[=].item[=].item[=].text = "Reason for request"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "pathology-service-clinicalindication"
-* item.item[=].item[=].item[=].text = "Clinical indication"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].linkId = "pathology-service-priority"
-* item.item[=].item[=].item[=].text = "Priority"
-* item.item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
-
-* item.item[=].item[=].item[+].linkId = "pathology-service-timing"
-* item.item[=].item[=].item[=].text = "Timing"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
 
@@ -784,6 +632,237 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
 
+
+
+
+//Radiology
+* item.item[+].linkId = "radiology"
+* item.item[=].text = "Radiology"
+* item.item[=].type = #group
+* item.item[=].repeats = false
+
+    // Provider
+* item.item[=].item[+].linkId = "radiology-provider"
+* item.item[=].item[=].text = "Provider"
+* item.item[=].item[=].type = #group
+* item.item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#drop-down
+* item.item[=].item[=].item[=].linkId = "radiology-provider-name"
+* item.item[=].item[=].item[=].text = "Provider name"
+* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerOption[+].valueString = "Scans-R-Us"
+* item.item[=].item[=].item[=].answerOption[+].valueString = "Imaging Hub"
+* item.item[=].item[=].item[=].answerOption[+].valueString = "Radiology Bros"
+
+    // Service details
+* item.item[=].item[+].linkId = "radiology-service"
+* item.item[=].item[=].text = "Service details"
+* item.item[=].item[=].type = #group
+* item.item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[+].linkId = "radiology-service-examination"
+//* item.item[=].item[=].item[=].text = "Examination"
+* item.item[=].item[=].item[=].type = #group
+* item.item[=].item[=].item[=].repeats = true
+
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "descendants().where(linkId = 'radiology-service-examination-components').repeat(item).select(answer).empty()"
+* item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure"
+* item.item[=].item[=].item[=].item[=].text = "Examination procedure"
+* item.item[=].item[=].item[=].item[=].type = #group
+* item.item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure-instructions"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Use this item to represent the examination procedure as a single field, otherwise use \"Examination components\"."
+* item.item[=].item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item.item[=].item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <em>Use this item to represent the examination procedure as a single field.</em>
+    </div>"
+* item.item[=].item[=].item[=].item[=].item[=].type = #display
+
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure-procedure"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Procedure"
+* item.item[=].item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://csiro.au/sparked/vs/SparkedRadiologyReferralValueSet"
+
+
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "descendants().where(linkId = 'radiology-service-examination-procedure').repeat(item).select(answer).empty()"
+* item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components"
+* item.item[=].item[=].item[=].item[=].text = "Examination components"
+* item.item[=].item[=].item[=].item[=].type = #group
+* item.item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-instructions"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Use this groups of items to represent the examination procedure as multiple components, otherwise use \"Examination procedure\"."
+* item.item[=].item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+* item.item[=].item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <em>Use this groups of items to represent the examination procedure as multiple components.</em>
+    </div>"
+* item.item[=].item[=].item[=].item[=].item[=].type = #display
+
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-servicetype"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Service type"
+* item.item[=].item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "https://smartforms.csiro.au/ig/ValueSet/RadiologyModality"
+
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-bodysite"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Body site"
+* item.item[=].item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/105891000036102"
+
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-laterality"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Laterality"
+* item.item[=].item[=].item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/laterality-1"
+
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#check-box
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-contrast"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Contrast"
+* item.item[=].item[=].item[=].item[=].item[=].type = #boolean
+* item.item[=].item[=].item[=].item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-precondition"
+* item.item[=].item[=].item[=].item[=].text = "Examination precondition"
+* item.item[=].item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].item[=].repeats = true
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].linkId = "radiology-service-reasonforrequest"
+* item.item[=].item[=].item[=].text = "Reason for request"
+* item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].linkId = "radiology-service-clinicalindication"
+* item.item[=].item[=].item[=].text = "Clinical indication"
+* item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].linkId = "radiology-service-priority"
+* item.item[=].item[=].item[=].text = "Priority"
+* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+
+* item.item[=].item[=].item[+].linkId = "radiology-service-timing"
+* item.item[=].item[=].item[=].text = "Timing"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = false
+
+
+
+//Pathology
+* item.item[+].linkId = "pathology"
+* item.item[=].text = "Pathology"
+* item.item[=].type = #group
+* item.item[=].repeats = false
+
+    // Provider
+* item.item[=].item[+].linkId = "pathology-provider"
+* item.item[=].item[=].text = "Provider"
+* item.item[=].item[=].type = #group
+* item.item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].linkId = "pathology-provider-name"
+* item.item[=].item[=].item[=].text = "Provider name"
+* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerOption[+].valueString = "Tests-R-Us"
+* item.item[=].item[=].item[=].answerOption[+].valueString = "Diagnostics Hub"
+* item.item[=].item[=].item[=].answerOption[+].valueString = "Pathology Bros"
+
+    // Service details
+* item.item[=].item[+].linkId = "pathology-service"
+* item.item[=].item[=].text = "Service details"
+* item.item[=].item[=].type = #group
+* item.item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[+].linkId = "pathology-service-testdetails"
+* item.item[=].item[=].item[=].text = "Test details"
+* item.item[=].item[=].item[=].type = #group
+* item.item[=].item[=].item[=].repeats = true
+
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-testdetails-testname"
+* item.item[=].item[=].item[=].item[=].text = "Name"
+* item.item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].answerValueSet = "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
+
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-testdetails-testcategory"
+* item.item[=].item[=].item[=].item[=].text = "Category"
+* item.item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].repeats = false 
+* item.item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/pathology-diagnostic-service-category-1"
+
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-testdetails-testprecondition"
+* item.item[=].item[=].item[=].item[=].text = "Precondition"
+* item.item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].answerOption[+].valueString = "Fasting"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].linkId = "pathology-service-reasonforrequest"
+* item.item[=].item[=].item[=].text = "Reason for request"
+* item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].linkId = "pathology-service-clinicalindication"
+* item.item[=].item[=].item[=].text = "Clinical indication"
+* item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item.item[=].item[=].item[=].linkId = "pathology-service-priority"
+* item.item[=].item[=].item[=].text = "Priority"
+* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+
+* item.item[=].item[=].item[+].linkId = "pathology-service-timing"
+* item.item[=].item[=].item[=].text = "Timing"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = false
 
 
 

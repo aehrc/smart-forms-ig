@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "RadiologyModality",
+  "id": "RadiologyModality",
+  "title": "Radiology Modality",
+  "description": "Radiology modality.",
+  "url": "https://smartforms.csiro.au/ig/ValueSet/RadiologyModality",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "168537006",
+            "display": "Plain X-Ray"
+          },
+          {
+            "code": "77477000",
+            "display": "CT"
+          },
+          {
+            "code": "717193008",
+            "display": "Cone Beam CT"
+          },
+          {
+            "code": "113091000",
+            "display": "MRI"
+          },
+          {
+            "code": "16310003",
+            "display": "Ultrasound imaging"
+          },
+          {
+            "code": "71651007",
+            "display": "Mammography"
+          },
+          {
+            "code": "77343006",
+            "display": "Angiography"
+          }
+        ]
+      }
+    ]
+  }
+}
