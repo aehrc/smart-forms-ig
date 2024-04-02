@@ -131,7 +131,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns').extension.where(url='value').value.coding"
+                "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns') and extension.where(url='period').valuePeriod.end.empty()).extension.where(url='value').value.coding"
               }
             },
             {
@@ -151,7 +151,7 @@
           "type": "choice",
           "repeats": false,
           "readOnly": true,
-          "answerValueSet": "http://terminology.hl7.org/ValueSet/pronouns"
+          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
         },
         {
           "extension": [
@@ -159,7 +159,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/patient-genderIdentity').value.coding"
+                "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-genderIdentity') and extension.where(url='period').valuePeriod.end.empty()).extension.where(url='value').value.coding"
               }
             },
             {
@@ -218,7 +218,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsSex.entry.resource.value.coding"
+                "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and valueCodeableConcept.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').valuePeriod.end.empty())).extension.where(url='value').value.coding"
               }
             },
             {
@@ -726,6 +726,16 @@
           "repeats": true
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+              "valueExpression": {
+                "name": "EmergencyContactRepeat",
+                "language": "text/fhirpath",
+                "expression": "%patient.contact.where(relationship.coding.exists(code = 'C'))"
+              }
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -733,7 +743,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.contact.where(relationship.coding.exists(code = 'C')).name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
+                    "expression": "%EmergencyContactRepeat.name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
                   }
                 }
               ],
@@ -778,7 +788,7 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%patient.contact.where(relationship.coding.exists(code = 'C')).telecom.value"
+                    "expression": "%EmergencyContactRepeat.telecom.value"
                   }
                 }
               ],
@@ -1676,7 +1686,7 @@
   "subjectType": [
     "Patient"
   ],
-  "date": "2022-05-24",
+  "date": "2024-04-02",
   "jurisdiction": [
     {
       "coding": [

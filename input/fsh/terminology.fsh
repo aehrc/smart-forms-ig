@@ -439,12 +439,9 @@ Description: "The Medical History Short List for Adults and Older People value s
 * $SCT#413307004 // "Mental health"
 */
 
-
 ValueSet: ConditionClinicalStatusCodes
 Id: condition-clinical
 Title: "Condition Clinical Status Codes"
-Description: "Preferred value set for Condition Clinical Status."
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #pc
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
@@ -454,23 +451,24 @@ Description: "Preferred value set for Condition Clinical Status."
 * ^url = "http://hl7.org/fhir/ValueSet/condition-clinical"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.3.164"
-* ^version = "4.3.0"
+* ^version = "4.0.1"
 * ^status = #draft
 * ^experimental = false
-* ^publisher = "FHIR Project team"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://hl7.org/fhir"
-* ^copyright = "Copyright © 2011+ HL7. Creative Commons 'No Rights Reserved' (CC0)"
-* ^expansion.identifier = "5d4bed14-061a-42c4-853d-e6a624c4f483"
-* ^expansion.timestamp = "2022-10-20T09:32:48+10:00"
+* ^expansion.identifier = "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8"
+* ^expansion.timestamp = "2024-04-02T14:17:12+10:00"
 * ^expansion.total = 6
-* ^expansion.offset = 0
 * ^expansion.parameter[0].name = "version"
 * ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
-* ^expansion.parameter[+].name = "count"
-* ^expansion.parameter[=].valueInteger = 2147483647
-* ^expansion.parameter[+].name = "offset"
-* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-trial-use"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-trial-use"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
 * ^expansion.contains[=].code = #active
 * ^expansion.contains[=].display = "Active"
@@ -490,7 +488,6 @@ Description: "Preferred value set for Condition Clinical Status."
 * ^expansion.contains[=].code = #resolved
 * ^expansion.contains[=].display = "Resolved"
 * include codes from system ConditionClinicalStatusCodes
-
 
 Alias: $australian-states-territories-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1
 
@@ -562,41 +559,34 @@ Description: "The Australian States and Territories value set includes values th
 ValueSet: GenderIdentityResponse
 Id: gender-identity-response-1
 Title: "Gender Identity Response"
-Description: "The Gender Identity Response value set includes values that may be used to represent a response for an individual’s gender. A person's gender is a social and cultural identity, expression and experience."
-* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
 * ^url = "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10271"
-* ^version = "1.0.0"
+* ^version = "1.1.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2022-09-30"
-* ^publisher = "Australian Digital Health Agency"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "help@digitalhealth.gov.au"
-* ^copyright = "Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.n\n\"This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data."
-* ^expansion.identifier = "urn:uuid:85c2e561-69ac-41f6-8e9e-07b3072ef48f"
-* ^expansion.timestamp = "2023-08-30T10:18:47+10:00"
-* ^expansion.total = 5
+* ^copyright = "Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.\n\n\"This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data. \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license."
+* ^expansion.identifier = "urn:uuid:a35fc104-184f-476e-a7a2-e3f3af66a3eb"
+* ^expansion.timestamp = "2024-04-02T14:21:20+10:00"
+* ^expansion.total = 6
 * ^expansion.parameter[0].name = "version"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20240331"
 * ^expansion.contains[=].code = #446151000124109
 * ^expansion.contains[=].display = "Identifies as male gender"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20240331"
 * ^expansion.contains[=].code = #446141000124107
 * ^expansion.contains[=].display = "Identifies as female gender"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20230831"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20240331"
 * ^expansion.contains[=].code = #33791000087105
 * ^expansion.contains[=].display = "Identifies as nonbinary gender"
 * ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
@@ -607,53 +597,73 @@ Description: "The Gender Identity Response value set includes values that may be
 * ^expansion.contains[=].version = "5.0.0-ballot"
 * ^expansion.contains[=].code = #asked-declined
 * ^expansion.contains[=].display = "Asked But Declined"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #not-asked
+* ^expansion.contains[=].display = "Not Asked"
 * $SCT#446151000124109
 * $SCT#446141000124107
 * $SCT#33791000087105
 * DataAbsentReason#unknown
 * DataAbsentReason#asked-declined
+* DataAbsentReason#not-asked
 
-ValueSet: PersonalPronouns
-Id: pronouns
-Title: "Personal Pronouns"
-Description: "Codes that indicate the pronouns to be used when communicating with or about an individual."
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension[=].valueCode = #pa
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
-* ^extension[=].valueCode = #trial-use
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-* ^extension[=].valueInteger = 1
-* ^url = "http://terminology.hl7.org/ValueSet/pronouns"
+ValueSet: AustralianPronouns
+Id: AustralianPronouns
+Title: "Australian Pronouns"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
 * ^identifier.system = "urn:ietf:rfc:3986"
-* ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.3.3290"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10284"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2023-07-17T22:16:15-06:00"
-* ^publisher = "FHIR Project team"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://hl7.org/fhir"
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
-* ^expansion.identifier = "urn:uuid:220b830c-6a1b-43e7-81e0-ccf92485fcdf"
-* ^expansion.timestamp = "2023-10-17T10:42:37+10:00"
-* ^expansion.total = 3
+* ^copyright = "Copyright © 2024 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis material contains content from LOINC (http://loinc.org). LOINC is copyright 1995-2024, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\n\nThis material contains information which is protected by copyright. You may download, display, print and reproduce any material for your personal, non-commercial use or use within your organisation subject to the following terms and conditions: \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license."
+* ^expansion.identifier = "urn:uuid:ca145c1c-4915-4957-888a-39e69de8b1ad"
+* ^expansion.timestamp = "2024-04-02T14:25:01+10:00"
+* ^expansion.total = 7
 * ^expansion.parameter[0].name = "version"
-* ^expansion.parameter[=].valueUri = "http://loinc.org|2.76"
+* ^expansion.parameter[=].valueUri = "http://loinc.org|2.77"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://loinc.org|2.76"
+* ^expansion.parameter[=].valueUri = "http://loinc.org|2.77"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
 * ^expansion.contains[0].system = "http://loinc.org"
+* ^expansion.contains[=].version = "2.77"
 * ^expansion.contains[=].code = #LA29518-0
 * ^expansion.contains[=].display = "he/him/his/his/himself"
 * ^expansion.contains[+].system = "http://loinc.org"
+* ^expansion.contains[=].version = "2.77"
 * ^expansion.contains[=].code = #LA29519-8
 * ^expansion.contains[=].display = "she/her/her/hers/herself"
 * ^expansion.contains[+].system = "http://loinc.org"
+* ^expansion.contains[=].version = "2.77"
 * ^expansion.contains[=].code = #LA29520-6
 * ^expansion.contains[=].display = "they/them/their/theirs/themselves"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #asked-declined
+* ^expansion.contains[=].display = "Asked But Declined"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #asked-unknown
+* ^expansion.contains[=].display = "Asked But Unknown"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #not-asked
+* ^expansion.contains[=].display = "Not Asked"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].version = "5.0.0-ballot"
+* ^expansion.contains[=].code = #unknown
+* ^expansion.contains[=].display = "Unknown"
 * LOINC#LA29518-0 "he/him/his/his/himself"
 * LOINC#LA29519-8 "she/her/her/hers/herself"
 * LOINC#LA29520-6 "they/them/their/theirs/themselves"
+* DataAbsentReason#unknown
+* DataAbsentReason#asked-declined
+* DataAbsentReason#not-asked
+* DataAbsentReason#asked-unknown
 
 ValueSet: BiologicalSex
 Id: biological-sex-1

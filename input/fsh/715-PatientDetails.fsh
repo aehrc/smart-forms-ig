@@ -72,7 +72,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2022-05-24"
+* date = "2024-04-02"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
@@ -128,18 +128,18 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns').extension.where(url='value').value.coding"
+      * expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns') and extension.where(url='period').valuePeriod.end.empty()).extension.where(url='value').value.coding"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
     * linkId = "540b1034-7c9a-4aba-a9ef-afb77d445a58"
     * text = "Preferred pronouns"
     * type = #choice
     * repeats = false
     * readOnly = true
-    * answerValueSet = "http://terminology.hl7.org/ValueSet/pronouns"
+    * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/patient-genderIdentity').value.coding"
+      * expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-genderIdentity') and extension.where(url='period').valuePeriod.end.empty()).extension.where(url='value').value.coding"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
     * linkId = "f669a4fe-4818-429a-8847-d20da88d2bb3"
     * text = "Gender identity"
@@ -161,7 +161,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%ObsSex.entry.resource.value.coding"
+      * expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and valueCodeableConcept.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').valuePeriod.end.empty())).extension.where(url='value').value.coding"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
     * linkId = "56ef44bb-3d1d-4972-aad1-834b69185d61"
     * text = "Sex assigned at birth"
@@ -400,6 +400,10 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #string
     * repeats = true
   * item[+]
+    * extension[sdc-questionnaire-itemPopulationContext].valueExpression
+      * name = "EmergencyContactRepeat"
+      * language = #text/fhirpath
+      * expression = "%patient.contact.where(relationship.coding.exists(code = 'C'))"
     * linkId = "c22390d3-1be6-4fd1-b775-6443b7239a6b"
     * text = "Emergency contact"
     * type = #group
@@ -407,7 +411,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.contact.where(relationship.coding.exists(code = 'C')).name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
+        * expression = "%EmergencyContactRepeat.name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
       * linkId = "d7f2dd75-20c8-480f-8c22-71d604ebee8d"
       * text = "Name"
       * type = #string
@@ -431,7 +435,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.contact.where(relationship.coding.exists(code = 'C')).telecom.value"
+        * expression = "%EmergencyContactRepeat.telecom.value"
       * linkId = "626e3723-6310-4b99-81c1-525676b027c8"
       * text = "Phone"
       * type = #string
