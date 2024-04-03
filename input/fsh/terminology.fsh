@@ -442,6 +442,7 @@ Description: "The Medical History Short List for Adults and Older People value s
 ValueSet: ConditionClinicalStatusCodes
 Id: condition-clinical
 Title: "Condition Clinical Status Codes"
+Description: "Preferred value set for Condition Clinical Status."
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #pc
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
@@ -454,6 +455,10 @@ Title: "Condition Clinical Status Codes"
 * ^version = "4.0.1"
 * ^status = #draft
 * ^experimental = false
+* ^publisher = "FHIR Project team"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "http://hl7.org/fhir"
+
 * ^expansion.identifier = "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8"
 * ^expansion.timestamp = "2024-04-02T14:17:12+10:00"
 * ^expansion.total = 6
@@ -559,6 +564,7 @@ Description: "The Australian States and Territories value set includes values th
 ValueSet: GenderIdentityResponse
 Id: gender-identity-response-1
 Title: "Gender Identity Response"
+Description: "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience."
 * ^url = "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10271"
@@ -609,8 +615,9 @@ Title: "Gender Identity Response"
 * DataAbsentReason#not-asked
 
 ValueSet: AustralianPronouns
-Id: AustralianPronouns
+Id: australian-pronouns-1
 Title: "Australian Pronouns"
+Description: "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual."
 * ^url = "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10284"
