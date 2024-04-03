@@ -29,7 +29,7 @@
   "dependsOn": [
     {
       "packageId": "hl7.fhir.au.core",
-      "version": "0.2.0-preview",
+      "version": "0.3.0-ballot",
       "uri": "http://hl7.org.au/fhir/core/ImplementationGuide/hl7.fhir.au.core",
       "id": "hl7_fhir_au_core"
     },
@@ -324,6 +324,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/australian-pronouns-1"
+        },
+        "name": "Australian Pronouns",
+        "description": "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/australian-states-territories-2"
         },
         "name": "Australian States and Territories",
@@ -359,7 +367,7 @@
           "reference": "ValueSet/gender-identity-response-1"
         },
         "name": "Gender Identity Response",
-        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual’s gender. A person's gender is a social and cultural identity, expression and experience.",
+        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
         "exampleBoolean": false
       },
       {
@@ -368,14 +376,6 @@
         },
         "name": "Medical History",
         "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/pronouns"
-        },
-        "name": "Personal Pronouns",
-        "description": "Codes that indicate the pronouns to be used when communicating with or about an individual.",
         "exampleBoolean": false
       },
       {

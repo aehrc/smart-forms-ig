@@ -49,7 +49,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * valueExpression
     * name = "ObsTobaccoSmokingStatus"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=266918002&_count=1&_sort=-date&patient={{%patient.id}}"
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
@@ -60,7 +60,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2022-05-24"
+* date = "2024-04-02"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 // some linkIds maintained from full assessment questionnaire

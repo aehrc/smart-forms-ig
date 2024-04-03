@@ -27,7 +27,7 @@ See the [FHIR terminology section]({{site.data.fhir.path}}terminologies-systems.
 - [Yes/No/NA](ValueSet-YesNoNA.html)
 - [Yes/No/Not Asked/Asked But Declined](ValueSet-YesNoNotAskedDeclined.html)
 - [Australian States and Territories](ValueSet-australian-states-territories-2.html)
-- [Personal Pronouns](ValueSet-pronouns.html)
+- [Australian Pronouns](ValueSet-australian-pronouns-1.html)
 - [Gender Identity Response](ValueSet-gender-identity-response-1.html)
 - [Biological Sex](ValueSet-biological-sex-1.html)
 

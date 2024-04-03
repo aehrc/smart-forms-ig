@@ -36,7 +36,7 @@ Usage: #definition
 * implementationGuide[=].extension[0].valueCode = #SHOULD
 
 * rest.mode = #server
-* rest.documentation = "<div><p>A Smart Forms Launcher Server <strong>SHALL</strong>:</p><ol><li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-patient.html\">AU Core Patient resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-practitioner.html\">AU Core Practitioner resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-encounter.html\">AU Core Encounter resource profile</a>.</li><li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-condition.html\">AU Core Condition resource profile</a>.</li> <li>Support the <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-core/profiles-and-extensions.html#observation\">AU Core Observation resource profiles</a>.</li><li>Implement the RESTful behavior according to the FHIR specification.</li><li>Support JSON source formats for all interactions.</li></ol></div>"
+* rest.documentation = "<div><p>A Smart Forms Launcher Server <strong>SHALL</strong>:</p><ol><li>Support the <a href=\"http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-patient.html\">AU Core Patient resource profile</a>.</li> <li>Support the <a href=\"http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-practitioner.html\">AU Core Practitioner resource profile</a>.</li> <li>Support the <a href=\"http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-encounter.html\">AU Core Encounter resource profile</a>.</li><li>Support the <a href=\"http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-condition.html\">AU Core Condition resource profile</a>.</li> <li>Support the <a href=\"http://hl7.org.au/fhir/core/0.3.0-ballot/profiles-and-extensions.html#observation\">AU Core Observation resource profiles</a>.</li><li>Implement the RESTful behavior according to the FHIR specification.</li><li>Support JSON source formats for all interactions.</li></ol></div>"
 
 * rest.security.cors = true
 * rest.security.cors.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -123,9 +123,6 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].type = #Observation
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-observation"
-* rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].profile.extension[0].valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
@@ -135,10 +132,7 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bmi"
-* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
@@ -150,7 +144,7 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "<div> <p>The server <strong>SHALL</strong> support the Observation resource, the AU Core profiles listed and the conformance expectations for the Observation resource.</p></div>"
@@ -398,18 +392,14 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 * rest.resource[=].type = #Observation
-* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-observation"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bmi"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-sexassignedatbirth"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview"
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
@@ -526,6 +516,5 @@ Usage: #definition
 
 * rest.interaction[+].code = #transaction
 * rest.interaction[+].code = #batch
-
 
 */

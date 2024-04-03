@@ -20,7 +20,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = condition-clinical
 * contained[+] = AboriginalTorresStraitIslander
 * contained[+] = PrimaryCarerParentGrandparent
-* contained[+] = pronouns
+* contained[+] = australian-pronouns-1
 * contained[+] = australian-states-territories-2
 * contained[+] = gender-identity-response-1
 * contained[+] = biological-sex-1
@@ -109,7 +109,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueReference.reference = "#PrimaryCarerParentGrandparent"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#pronouns"
+  * valueReference.reference = "#australian-pronouns-1"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#australian-states-territories-2"
@@ -131,7 +131,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2022-05-24"
+* date = "2024-04-02"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 // Root 
