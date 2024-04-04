@@ -101,8 +101,9 @@ parameters:
     - 'https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1'
     - 'http://hl7.org/fhir/ValueSet/condition-clinical'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1'
-    - 'http://terminology.hl7.org/ValueSet/pronouns'
+    - 'https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2'
+
   apply-publisher: false
   default-publisher: true
   apply-version: false
