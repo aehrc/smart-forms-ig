@@ -202,7 +202,7 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * type = #choice
         * repeats = false
         * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
-        * answerOption[+].valueCoding = $SCT#95726001 "Corneal scarring"
+        * answerOption[+].valueCoding = $SCT#95726001 "Corneal scar"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
         * linkId = "6ae69487-345e-46a0-a8db-b1356671ee59"
@@ -210,7 +210,7 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * type = #choice
         * repeats = false
         * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
-        * answerOption[+].valueCoding = $SCT#95726001 "Corneal scarring"
+        * answerOption[+].valueCoding = $SCT#95726001 "Corneal scar"
 
 
   * item[+]

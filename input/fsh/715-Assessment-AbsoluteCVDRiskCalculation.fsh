@@ -171,7 +171,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       // better as a standard answerValueSet when missing concepts are available
       * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never smoked"
       * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Smoker"
-      * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-Smoker"
+      * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-smoker"
       * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Environmental exposure to tobacco smoke (home, car, etc)"
       * answerOption[+].valueString = "Wants to quit"
       * answerOption[+].valueString = "Other tobacco use"

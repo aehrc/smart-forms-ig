@@ -367,8 +367,8 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Value"
         * type = #choice
         * repeats = false
-        * answerOption[+].valueCoding = $SCT#271636001 "Pulse Regular"
-        * answerOption[+].valueCoding = $SCT#61086009 "Pulse Irregular"
+        * answerOption[+].valueCoding = $SCT#271636001 "Pulse regular"
+        * answerOption[+].valueCoding = $SCT#61086009 "Pulse irregular"
       * item[+]
         * linkId = "eeb56682-0eae-4428-9c37-0e63852026c0"
         * text = "Date performed"
