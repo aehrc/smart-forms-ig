@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "11",
-        "lastUpdated": "2024-04-04T02:51:25.955+00:00",
-        "source": "#HE6iRtnNvR4rbTv8",
+        "versionId": "12",
+        "lastUpdated": "2024-04-04T06:10:32.535+00:00",
+        "source": "#grqZ2xSgx1fDAU96",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -230,6 +230,567 @@
         },
         {
             "resourceType": "ValueSet",
+            "id": "administrative-gender",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+                    "valueCode": "pa"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                    "valueCode": "normative"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+                    "valueInteger": 5
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+                    "valueCode": "4.0.0"
+                }
+            ],
+            "url": "https://smartforms.csiro.au/ig/ValueSet/administrative-gender",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:2.16.840.1.113883.4.642.3.1"
+                }
+            ],
+            "version": "4.0.1",
+            "name": "AdministrativeGender",
+            "title": "AdministrativeGender",
+            "status": "active",
+            "experimental": false,
+            "date": "2019-11-01T09:29:23+11:00",
+            "publisher": "HL7 (FHIR Project)",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "url",
+                            "value": "http://hl7.org/fhir"
+                        },
+                        {
+                            "system": "email",
+                            "value": "fhir@lists.hl7.org"
+                        }
+                    ]
+                }
+            ],
+            "description": "The gender of a person used for administrative purposes.",
+            "immutable": true,
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender"
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:797238aa-61be-4165-9fa6-3595bbfd16f6",
+                "timestamp": "2024-04-04T05:36:01+00:00",
+                "total": 4,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.3.0"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.3.0"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "female",
+                        "display": "Female"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "male",
+                        "display": "Male"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "other",
+                        "display": "Other"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "australian-pronouns-1",
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10284"
+                }
+            ],
+            "version": "1.0.0",
+            "name": "AustralianPronouns",
+            "title": "Australian Pronouns",
+            "status": "active",
+            "experimental": false,
+            "description": "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+            "copyright": "Copyright © 2024 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis material contains content from LOINC (http://loinc.org). LOINC is copyright 1995-2024, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\n\nThis material contains information which is protected by copyright. You may download, display, print and reproduce any material for your personal, non-commercial use or use within your organisation subject to the following terms and conditions: \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://loinc.org",
+                        "concept": [
+                            {
+                                "code": "LA29518-0",
+                                "display": "he/him/his/his/himself"
+                            },
+                            {
+                                "code": "LA29519-8",
+                                "display": "she/her/her/hers/herself"
+                            },
+                            {
+                                "code": "LA29520-6",
+                                "display": "they/them/their/theirs/themselves"
+                            }
+                        ]
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "concept": [
+                            {
+                                "code": "unknown"
+                            },
+                            {
+                                "code": "asked-declined"
+                            },
+                            {
+                                "code": "not-asked"
+                            },
+                            {
+                                "code": "asked-unknown"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:ca145c1c-4915-4957-888a-39e69de8b1ad",
+                "timestamp": "2024-04-02T14:25:01+10:00",
+                "total": 7,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://loinc.org|2.77"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://loinc.org|2.77"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.77",
+                        "code": "LA29518-0",
+                        "display": "he/him/his/his/himself"
+                    },
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.77",
+                        "code": "LA29519-8",
+                        "display": "she/her/her/hers/herself"
+                    },
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.77",
+                        "code": "LA29520-6",
+                        "display": "they/them/their/theirs/themselves"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "asked-declined",
+                        "display": "Asked But Declined"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "asked-unknown",
+                        "display": "Asked But Unknown"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "not-asked",
+                        "display": "Not Asked"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "gender-identity-response-1",
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10271"
+                }
+            ],
+            "version": "1.1.0",
+            "name": "GenderIdentityResponse",
+            "title": "Gender Identity Response",
+            "status": "active",
+            "experimental": false,
+            "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+            "copyright": "Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.\n\n\"This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data. \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "446151000124109"
+                            },
+                            {
+                                "code": "446141000124107"
+                            },
+                            {
+                                "code": "33791000087105"
+                            }
+                        ]
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "concept": [
+                            {
+                                "code": "unknown"
+                            },
+                            {
+                                "code": "asked-declined"
+                            },
+                            {
+                                "code": "not-asked"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:a35fc104-184f-476e-a7a2-e3f3af66a3eb",
+                "timestamp": "2024-04-02T14:21:20+10:00",
+                "total": 6,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20240331",
+                        "code": "446151000124109",
+                        "display": "Identifies as male gender"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20240331",
+                        "code": "446141000124107",
+                        "display": "Identifies as female gender"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20240331",
+                        "code": "33791000087105",
+                        "display": "Identifies as nonbinary gender"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "asked-declined",
+                        "display": "Asked But Declined"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "not-asked",
+                        "display": "Not Asked"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "biological-sex-1",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10198"
+                }
+            ],
+            "version": "1.0.0",
+            "name": "BiologicalSex",
+            "title": "Biological Sex",
+            "status": "active",
+            "experimental": false,
+            "date": "2020-12-31",
+            "publisher": "Australian Digital Health Agency",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "email",
+                            "value": "help@digitalhealth.gov.au"
+                        }
+                    ]
+                }
+            ],
+            "description": "The Biological Sex value set includes values that represent the biological sex of an individual.",
+            "copyright": "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "filter": [
+                            {
+                                "property": "constraint",
+                                "op": "=",
+                                "value": "^ 32570631000036107|Sex reference set|"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b",
+                "timestamp": "2023-08-30T10:41:59+10:00",
+                "total": 4,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "248152002",
+                        "display": "Female"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "32570681000036106",
+                        "display": "Indeterminate sex"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "32570691000036108",
+                        "display": "Intersex"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "248153007",
+                        "display": "Male"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "australian-states-territories-2",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10026"
+                }
+            ],
+            "version": "2.0.2",
+            "name": "AustralianStatesAndTerritories",
+            "title": "Australian States and Territories",
+            "status": "active",
+            "experimental": false,
+            "date": "2020-05-31",
+            "publisher": "Australian Digital Health Agency",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "email",
+                            "value": "help@digitalhealth.gov.au"
+                        }
+                    ]
+                }
+            ],
+            "description": "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+            "copyright": "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "concept": [
+                            {
+                                "code": "ACT"
+                            },
+                            {
+                                "code": "NSW"
+                            },
+                            {
+                                "code": "NT"
+                            },
+                            {
+                                "code": "OTHER"
+                            },
+                            {
+                                "code": "QLD"
+                            },
+                            {
+                                "code": "SA"
+                            },
+                            {
+                                "code": "TAS"
+                            },
+                            {
+                                "code": "VIC"
+                            },
+                            {
+                                "code": "WA"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "e9439195-c1d8-4069-a349-98c1d552a351",
+                "timestamp": "2023-06-20T04:20:58+00:00",
+                "total": 9,
+                "offset": 0,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"
+                    },
+                    {
+                        "name": "count",
+                        "valueInteger": 2147483647
+                    },
+                    {
+                        "name": "offset",
+                        "valueInteger": 0
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "ACT",
+                        "display": "Australian Capital Territory"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "NSW",
+                        "display": "New South Wales"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "NT",
+                        "display": "Northern Territory"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "OTHER",
+                        "display": "Other territories"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "QLD",
+                        "display": "Queensland"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "SA",
+                        "display": "South Australia"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "TAS",
+                        "display": "Tasmania"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "VIC",
+                        "display": "Victoria"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "WA",
+                        "display": "Western Australia"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
             "id": "YesNo",
             "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
             "name": "YesNo",
@@ -302,6 +863,118 @@
                                 "value": "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
                             }
                         ]
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "condition-clinical",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+                    "valueCode": "pc"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                    "valueCode": "trial-use"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+                    "valueInteger": 3
+                }
+            ],
+            "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
+                }
+            ],
+            "version": "4.0.1",
+            "name": "ConditionClinicalStatusCodes",
+            "title": "Condition Clinical Status Codes",
+            "status": "draft",
+            "experimental": false,
+            "publisher": "FHIR Project team",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "url",
+                            "value": "http://hl7.org/fhir"
+                        }
+                    ]
+                }
+            ],
+            "description": "Preferred value set for Condition Clinical Status.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8",
+                "timestamp": "2024-04-02T14:17:12+10:00",
+                "total": 6,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-trial-use",
+                        "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-trial-use",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "active",
+                        "display": "Active"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "inactive",
+                        "display": "Inactive"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "recurrence",
+                        "display": "Recurrence"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "relapse",
+                        "display": "Relapse"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "remission",
+                        "display": "Remission"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "resolved",
+                        "display": "Resolved"
                     }
                 ]
             }
@@ -435,6 +1108,12 @@
             "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
             "valueReference": {
                 "reference": "#MedicalHistory"
+            }
+        },
+        {
+            "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+            "valueReference": {
+                "reference": "#administrative-gender"
             }
         },
         {
@@ -1844,7 +2523,7 @@
                             "type": "choice",
                             "repeats": false,
                             "readOnly": true,
-                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
+                            "answerValueSet": "#australian-pronouns-1"
                         },
                         {
                             "extension": [
@@ -1872,7 +2551,7 @@
                             "type": "choice",
                             "repeats": false,
                             "readOnly": true,
-                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+                            "answerValueSet": "#gender-identity-response-1"
                         },
                         {
                             "extension": [
@@ -1903,7 +2582,7 @@
                             "text": "Administrative gender",
                             "type": "choice",
                             "repeats": false,
-                            "answerValueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+                            "answerValueSet": "#administrative-gender"
                         },
                         {
                             "extension": [
@@ -1931,7 +2610,7 @@
                             "type": "choice",
                             "repeats": false,
                             "readOnly": true,
-                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+                            "answerValueSet": "#biological-sex-1"
                         },
                         {
                             "extension": [
@@ -2232,7 +2911,7 @@
                                             "text": "State",
                                             "type": "choice",
                                             "repeats": false,
-                                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+                                            "answerValueSet": "#australian-states-territories-2"
                                         },
                                         {
                                             "extension": [
@@ -2360,7 +3039,7 @@
                                     "text": "State",
                                     "type": "choice",
                                     "repeats": false,
-                                    "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+                                    "answerValueSet": "#australian-states-territories-2"
                                 },
                                 {
                                     "extension": [
@@ -3659,7 +4338,7 @@
                                     "linkId": "88bcfad7-386b-4d87-b34b-2e50482e4d2c",
                                     "text": "Clinical Status",
                                     "type": "choice",
-                                    "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                                    "answerValueSet": "#condition-clinical"
                                 },
                                 {
                                     "extension": [
@@ -3746,7 +4425,7 @@
                                     "linkId": "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3",
                                     "text": "Clinical Status",
                                     "type": "choice",
-                                    "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                                    "answerValueSet": "#condition-clinical"
                                 },
                                 {
                                     "linkId": "e4524654-f6de-4717-b288-34919394d46b",
@@ -12932,7 +13611,7 @@
                                     "text": "Sex at birth",
                                     "type": "choice",
                                     "repeats": false,
-                                    "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+                                    "answerValueSet": "#biological-sex-1"
                                 },
                                 {
                                     "extension": [
