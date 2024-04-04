@@ -94,10 +94,6 @@
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
               "valueString": "Assessment of chronic disease associated with ageing"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
             }
           ],
           "item": [
@@ -122,6 +118,14 @@
           ],
           "linkId": "12e244c0-2887-4230-8792-9521d4f1ab33",
           "text": "For older people with chronic disease and/or conditions associated with ageing, consider assessing: Osteoporosis risk; Falls risk; Balance, coordination and mobility; Pain; Nutrition; Regularity of chronic disease management and review",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
+              }
+            ]
+          },
           "type": "text",
           "repeats": false
         },

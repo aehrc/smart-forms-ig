@@ -85,7 +85,9 @@ Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres
       * answerBoolean = true
   * item[+]
     * extension[sdc-questionnaire-shortText].valueString = "Assessment of chronic disease associated with ageing"
-    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    * linkId = "12e244c0-2887-4230-8792-9521d4f1ab33"
+    * text = "For older people with chronic disease and/or conditions associated with ageing, consider assessing: Osteoporosis risk; Falls risk; Balance, coordination and mobility; Pain; Nutrition; Regularity of chronic disease management and review"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>
     <ul>
       <li>Osteoporosis risk</li>
@@ -96,8 +98,6 @@ Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres
       <li>Regularity of chronic disease management and review</li>
     </ul>
     </div>"
-    * linkId = "12e244c0-2887-4230-8792-9521d4f1ab33"
-    * text = "For older people with chronic disease and/or conditions associated with ageing, consider assessing: Osteoporosis risk; Falls risk; Balance, coordination and mobility; Pain; Nutrition; Regularity of chronic disease management and review"
     * type = #text
     * repeats = false
     * item[+]

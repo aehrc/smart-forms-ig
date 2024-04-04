@@ -281,10 +281,6 @@
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                  "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
-                },
-                {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                   "valueString": "Quantity and frequency of substance use"
                 }
@@ -311,6 +307,14 @@
               ],
               "linkId": "ea73d52c-f831-46be-a45d-2c42250a5210",
               "text": "Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
+                  }
+                ]
+              },
               "type": "text",
               "repeats": false
             }

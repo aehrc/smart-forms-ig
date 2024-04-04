@@ -210,7 +210,9 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
-    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    * linkId = "9f6adf74-f240-41a2-a509-d216d5308911"
+    * text = "Document conversation about age-appropriate healthy eating, which could include: current diet; transition to solids; dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <div>Document conversation about age-appropriate healthy eating, which could include:</div>
     <ul>
       <li>current diet</li>
@@ -218,8 +220,6 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
       <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>
     </ul>
     </div>"
-    * linkId = "9f6adf74-f240-41a2-a509-d216d5308911"
-    * text = "Document conversation about age-appropriate healthy eating, which could include: current diet; transition to solids; dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks"
     * type = #text
     * repeats = false
     * item[+]
@@ -231,15 +231,15 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 5"
-    * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    * linkId = "7a22a4c4-6611-4687-af00-37c80c3f8fc0"
+    * text = "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <div>Document conversation about health eating which could include:</div>
     <ul>
       <li>current diet including food and drinks</li>
       <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>
     </ul>
     </div>"
-    * linkId = "7a22a4c4-6611-4687-af00-37c80c3f8fc0"
-    * text = "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
     * type = #text
     * repeats = false
     * item[+]

@@ -24,6 +24,15 @@ Review the extension type for ContainedResourceReference: extensions should not 
 
 # Draft code systems referenced as intended
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext|3.0.0
+Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended|0.1.0
+Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-item-control|4.0.1
+Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-display-category|4.0.1
+
+# Embedded HTML warnings checked
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+# Invalid errors - invariant bug
+The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'')
 
 # HL7 core warnings
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide

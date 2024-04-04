@@ -144,16 +144,20 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
-            },
-            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
               "valueString": "Consider discussing items relevant to age/sex/gender"
             }
           ],
           "linkId": "0fba3972-faa3-4f40-940c-c2f1c9b55329",
           "text": "Consider discussing as relevant to age/sex/gender: menstruation (including risk of anaemia); current sexual activity; contraception; safe sex practice (eg use of condoms); sexually transmitted infection symptoms and screening; blood-borne virus screening",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
+              }
+            ]
+          },
           "type": "text",
           "repeats": false
         },
@@ -380,16 +384,20 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
-            },
-            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
               "valueString": "Consider discussing items relevant to age/sex/gender"
             }
           ],
           "linkId": "39b02169-ea34-4af9-aa35-1c47f7f39333",
           "text": "Consider discussing as relevant to age/sex/gender: contraception; menstruation; sexually transmitted infection symptoms and screening; blood-borne virus screening; continence; menopause; erectile dysfunction",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
+              }
+            ]
+          },
           "type": "text",
           "repeats": false
         },
@@ -595,16 +603,20 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-              "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
-            },
-            {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
               "valueString": "Consider discussing items relevant to age/sex/gender"
             }
           ],
           "linkId": "8d75d1f1-290b-41fc-8e32-ad0681c650bb",
           "text": "Consider discussing as relevant to age/sex/gender: menopause; erectile dysfunction; prostatic symptoms",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
+              }
+            ]
+          },
           "type": "text",
           "repeats": false
         },
