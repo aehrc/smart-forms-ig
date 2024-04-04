@@ -21,7 +21,7 @@
     "fshType": "Instance",
     "fshFile": "715-Assessment-AbsoluteCVDRiskCalculation.fsh",
     "startLine": 5,
-    "endLine": 415
+    "endLine": 418
   },
   {
     "outputFile": "Questionnaire-AllergiesAdverseReactions.json",
@@ -37,7 +37,7 @@
     "fshType": "Instance",
     "fshFile": "715-AssemblyInstructions.fsh",
     "startLine": 5,
-    "endLine": 577
+    "endLine": 581
   },
   {
     "outputFile": "Questionnaire-ChronicDiseaseAgeing.json",
@@ -173,7 +173,7 @@
     "fshType": "Instance",
     "fshFile": "715-Assessment-MedicalHistoryCurrentProblems.fsh",
     "startLine": 5,
-    "endLine": 300
+    "endLine": 301
   },
   {
     "outputFile": "Questionnaire-MemoryAndThinking.json",
@@ -205,7 +205,7 @@
     "fshType": "Instance",
     "fshFile": "715-PatientDetails.fsh",
     "startLine": 5,
-    "endLine": 713
+    "endLine": 718
   },
   {
     "outputFile": "Questionnaire-PhysicalActivityAndScreenTime.json",
@@ -336,43 +336,51 @@
     "endLine": 51
   },
   {
+    "outputFile": "ValueSet-administrative-gender.json",
+    "fshName": "AdministrativeGender",
+    "fshType": "ValueSet",
+    "fshFile": "terminology.fsh",
+    "startLine": 444,
+    "endLine": 489
+  },
+  {
     "outputFile": "ValueSet-australian-pronouns-1.json",
     "fshName": "AustralianPronouns",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 617,
-    "endLine": 673
+    "startLine": 666,
+    "endLine": 722
   },
   {
     "outputFile": "ValueSet-australian-states-territories-2.json",
     "fshName": "AustralianStatesAndTerritories",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 499,
-    "endLine": 561
+    "startLine": 548,
+    "endLine": 610
   },
   {
     "outputFile": "ValueSet-biological-sex-1.json",
     "fshName": "BiologicalSex",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 675,
-    "endLine": 712
+    "startLine": 724,
+    "endLine": 761
   },
   {
     "outputFile": "ValueSet-condition-clinical.json",
     "fshName": "ConditionClinicalStatusCodes",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 442,
-    "endLine": 495
+    "startLine": 491,
+    "endLine": 544
   },
   {
     "outputFile": "ValueSet-gender-identity-response-1.json",
     "fshName": "GenderIdentityResponse",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 564,
-    "endLine": 615
+    "startLine": 613,
+    "endLine": 664
   }
 ]

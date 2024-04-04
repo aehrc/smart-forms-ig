@@ -259,7 +259,7 @@
               "linkId": "88bcfad7-386b-4d87-b34b-2e50482e4d2c",
               "text": "Clinical Status",
               "type": "choice",
-              "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+              "answerValueSet": "#condition-clinical"
             },
             {
               "extension": [
@@ -354,7 +354,7 @@
               "linkId": "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3",
               "text": "Clinical Status",
               "type": "choice",
-              "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+              "answerValueSet": "#condition-clinical"
             },
             {
               "linkId": "e4524654-f6de-4717-b288-34919394d46b",
@@ -420,6 +420,118 @@
                 "value": "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
               }
             ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "condition-clinical",
+      "status": "draft",
+      "name": "ConditionClinicalStatusCodes",
+      "title": "Condition Clinical Status Codes",
+      "description": "Preferred value set for Condition Clinical Status.",
+      "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "pc"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "trial-use"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 3
+        }
+      ],
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
+        }
+      ],
+      "version": "4.0.1",
+      "experimental": false,
+      "publisher": "FHIR Project team",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            }
+          ]
+        }
+      ],
+      "expansion": {
+        "identifier": "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8",
+        "timestamp": "2024-04-02T14:17:12+10:00",
+        "total": 6,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+          },
+          {
+            "name": "warning-trial-use",
+            "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+          },
+          {
+            "name": "warning-trial-use",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "inactive",
+            "display": "Inactive"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "recurrence",
+            "display": "Recurrence"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "relapse",
+            "display": "Relapse"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "remission",
+            "display": "Remission"
+          },
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "resolved",
+            "display": "Resolved"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
           }
         ]
       }

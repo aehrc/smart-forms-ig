@@ -439,6 +439,55 @@ Description: "The Medical History Short List for Adults and Older People value s
 * $SCT#413307004 // "Mental health"
 */
 
+Alias: $administrative-gender = http://hl7.org/fhir/administrative-gender
+
+ValueSet: AdministrativeGender
+Id: administrative-gender
+Title: "AdministrativeGender"
+Description: "The gender of a person used for administrative purposes."
+* ^contact.telecom[0].system = #url
+* ^contact.telecom[=].value = "http://hl7.org/fhir"
+* ^contact.telecom[+].system = #email
+* ^contact.telecom[=].value = "fhir@lists.hl7.org"
+* ^date = "2019-11-01T09:29:23+11:00"
+* ^experimental = false
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension[=].valueCode = #pa
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #normative
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* ^extension[=].valueInteger = 5
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"
+* ^extension[=].valueCode = #4.0.0
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.3.1"
+* ^immutable = true
+* ^meta.lastUpdated = "2019-11-01T09:29:23.356+11:00"
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^publisher = "HL7 (FHIR Project)"
+* ^status = #active
+* ^version = "4.0.1"
+* ^expansion.identifier = "urn:uuid:797238aa-61be-4165-9fa6-3595bbfd16f6"
+* ^expansion.timestamp = "2024-04-04T05:36:01+00:00"
+* ^expansion.total = 4
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/administrative-gender|4.3.0"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/administrative-gender|4.3.0"
+* ^expansion.contains[0].system = "http://hl7.org/fhir/administrative-gender"
+* ^expansion.contains[=].code = #female
+* ^expansion.contains[=].display = "Female"
+* ^expansion.contains[+].system = "http://hl7.org/fhir/administrative-gender"
+* ^expansion.contains[=].code = #male
+* ^expansion.contains[=].display = "Male"
+* ^expansion.contains[+].system = "http://hl7.org/fhir/administrative-gender"
+* ^expansion.contains[=].code = #other
+* ^expansion.contains[=].display = "Other"
+* ^expansion.contains[+].system = "http://hl7.org/fhir/administrative-gender"
+* ^expansion.contains[=].code = #unknown
+* ^expansion.contains[=].display = "Unknown"
+* include codes from system $administrative-gender
+
 ValueSet: ConditionClinicalStatusCodes
 Id: condition-clinical
 Title: "Condition Clinical Status Codes"

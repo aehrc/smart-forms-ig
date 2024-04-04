@@ -9,6 +9,9 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Absolute Cardiovasc
 Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 
+* contained[+] = biological-sex-1
+
+
 //assemble expectation
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
@@ -158,7 +161,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * text = "Sex at birth"
       * type = #choice
       * repeats = false
-      * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+      * answerValueSet = "#biological-sex-1"
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Smoking Status"

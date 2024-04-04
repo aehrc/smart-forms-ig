@@ -909,6 +909,108 @@
     },
     {
       "resourceType": "ValueSet",
+      "id": "administrative-gender",
+      "meta": {
+        "lastUpdated": "2019-11-01T09:29:23.356+11:00",
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "status": "active",
+      "name": "AdministrativeGender",
+      "title": "AdministrativeGender",
+      "description": "The gender of a person used for administrative purposes.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/administrative-gender",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            },
+            {
+              "system": "email",
+              "value": "fhir@lists.hl7.org"
+            }
+          ]
+        }
+      ],
+      "date": "2019-11-01T09:29:23+11:00",
+      "experimental": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "pa"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "normative"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 5
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+          "valueCode": "4.0.0"
+        }
+      ],
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.1"
+        }
+      ],
+      "immutable": true,
+      "publisher": "HL7 (FHIR Project)",
+      "version": "4.0.1",
+      "expansion": {
+        "identifier": "urn:uuid:797238aa-61be-4165-9fa6-3595bbfd16f6",
+        "timestamp": "2024-04-04T05:36:01+00:00",
+        "total": 4,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://hl7.org/fhir/administrative-gender|4.3.0"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://hl7.org/fhir/administrative-gender|4.3.0"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "female",
+            "display": "Female"
+          },
+          {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "male",
+            "display": "Male"
+          },
+          {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "other",
+            "display": "Other"
+          },
+          {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "unknown",
+            "display": "Unknown"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/administrative-gender"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
       "id": "condition-clinical",
       "status": "draft",
       "name": "ConditionClinicalStatusCodes",
@@ -1717,6 +1819,12 @@
       "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
       "valueReference": {
         "reference": "#MedicalHistory"
+      }
+    },
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+      "valueReference": {
+        "reference": "#administrative-gender"
       }
     },
     {

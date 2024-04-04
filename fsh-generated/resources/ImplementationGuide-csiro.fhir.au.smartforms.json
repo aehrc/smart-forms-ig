@@ -324,6 +324,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/administrative-gender"
+        },
+        "name": "AdministrativeGender",
+        "description": "The gender of a person used for administrative purposes.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/australian-pronouns-1"
         },
         "name": "Australian Pronouns",
@@ -681,6 +689,10 @@
       },
       {
         "code": "special-url",
+        "value": "http://hl7.org/fhir/ValueSet/administrative-gender"
+      },
+      {
+        "code": "special-url",
         "value": "http://hl7.org/fhir/ValueSet/condition-clinical"
       },
       {
@@ -689,7 +701,7 @@
       },
       {
         "code": "special-url",
-        "value": "http://terminology.hl7.org/ValueSet/pronouns"
+        "value": "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
       },
       {
         "code": "special-url",

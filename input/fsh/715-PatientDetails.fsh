@@ -11,6 +11,11 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * contained[+] = YesNoNA
 * contained[+] = AboriginalTorresStraitIslander
 * contained[+] = PrimaryCarerParentGrandparent
+* contained[+] = administrative-gender
+* contained[+] = australian-pronouns-1
+* contained[+] = gender-identity-response-1
+* contained[+] = biological-sex-1
+* contained[+] = australian-states-territories-2
 
 //assemble expectation
 * extension[+]
@@ -135,7 +140,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #choice
     * repeats = false
     * readOnly = true
-    * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
+    * answerValueSet = "#australian-pronouns-1"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -146,7 +151,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #choice
     * repeats = false
     * readOnly = true
-    * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+    * answerValueSet = "#gender-identity-response-1"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -157,7 +162,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Administrative gender"
     * type = #choice
     * repeats = false
-    * answerValueSet = "http://hl7.org/fhir/ValueSet/administrative-gender"
+    * answerValueSet = "#administrative-gender"
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -168,7 +173,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #choice
     * repeats = false
     * readOnly = true
-    * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+    * answerValueSet = "#biological-sex-1"
   
 
   * item[+]
@@ -308,7 +313,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state"
         * text = "State"
         * type = #choice
-        * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+        * answerValueSet = "#australian-states-territories-2"
         * repeats = false
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -370,7 +375,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state"
       * text = "State"
       * type = #choice
-      * answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+      * answerValueSet = "#australian-states-territories-2"
       * repeats = false
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression

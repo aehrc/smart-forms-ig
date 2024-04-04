@@ -9,6 +9,7 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Medical History"
 Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = MedicalHistory
+* contained[+] = condition-clinical
 /*
 * contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
@@ -242,7 +243,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
       * text = "Clinical Status"
       * type = #choice
-      * answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical"
+      * answerValueSet = "#condition-clinical"
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -276,7 +277,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3"
       * text = "Clinical Status"
       * type = #choice
-      * answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical"
+      * answerValueSet = "#condition-clinical"
     * item[+]
       * linkId = "e4524654-f6de-4717-b288-34919394d46b"
       * text = "Onset Date"
