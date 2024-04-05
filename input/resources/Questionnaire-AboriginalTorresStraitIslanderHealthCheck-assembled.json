@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "14",
-        "lastUpdated": "2024-04-05T03:59:42.302+00:00",
-        "source": "#1EysdimOTKWcWJDs",
+        "versionId": "15",
+        "lastUpdated": "2024-04-05T05:17:18.147+00:00",
+        "source": "#FxlSV4OVRPbxYkDd",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -1819,8 +1819,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-1",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -2019,8 +2019,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-30",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -2414,8 +2414,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-32",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -3809,8 +3809,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-5",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4118,8 +4118,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-17",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4508,8 +4508,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-23",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4739,8 +4739,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-3",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4861,8 +4861,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-9",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5038,8 +5038,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-27",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5242,8 +5242,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-28",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5454,8 +5454,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-12",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5679,8 +5679,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-15",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6114,8 +6114,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-33",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6355,8 +6355,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-16",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6502,8 +6502,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-19",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6689,8 +6689,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-18",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6914,8 +6914,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-4",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -7057,8 +7057,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-24",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -7341,8 +7341,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-11",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -7866,8 +7866,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-34",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -8201,8 +8201,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-21",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -8378,8 +8378,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-22",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -9657,8 +9657,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-29",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -9995,8 +9995,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-10",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -10150,8 +10150,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-36",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -10321,8 +10321,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-35",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -10561,8 +10561,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-25",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -10780,8 +10780,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-8",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -11174,8 +11174,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-6",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -11811,8 +11811,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-20",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -12086,8 +12086,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-26",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -12347,8 +12347,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-13",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -12584,8 +12584,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-7",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -13483,8 +13483,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-2",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -14081,8 +14081,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-14",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -15015,8 +15015,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-31",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },

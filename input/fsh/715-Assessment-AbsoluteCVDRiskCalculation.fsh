@@ -104,8 +104,8 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-2" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-2"

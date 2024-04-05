@@ -73,8 +73,8 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-28" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-28"

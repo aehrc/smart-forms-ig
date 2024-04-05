@@ -74,8 +74,8 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-34" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-34"
@@ -216,8 +216,8 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-21" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-21"

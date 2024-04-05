@@ -71,8 +71,8 @@ Description: "Family History sub-questionnaire for Aboriginal and Torres Strait 
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-9" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-9"

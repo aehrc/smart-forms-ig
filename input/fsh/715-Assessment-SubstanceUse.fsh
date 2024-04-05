@@ -80,8 +80,8 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-29" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-29"

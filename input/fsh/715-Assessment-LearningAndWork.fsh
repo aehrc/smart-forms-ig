@@ -74,8 +74,8 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-33" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-33"
@@ -180,8 +180,8 @@ Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Stra
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-16" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-16"

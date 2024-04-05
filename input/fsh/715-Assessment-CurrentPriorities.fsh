@@ -73,8 +73,8 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-5" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-5"

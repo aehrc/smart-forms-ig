@@ -75,8 +75,8 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-36" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-36"
@@ -174,8 +174,8 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-35" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-35"
@@ -284,8 +284,8 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-25" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-25"

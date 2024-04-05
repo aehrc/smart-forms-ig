@@ -70,8 +70,8 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-3" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-3"

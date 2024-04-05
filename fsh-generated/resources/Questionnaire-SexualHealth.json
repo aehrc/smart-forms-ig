@@ -55,8 +55,8 @@
           "enableWhen": [
             {
               "question": "MarkComplete-36",
-              "operator": "=",
-              "answerBoolean": false
+              "operator": "!=",
+              "answerBoolean": true
             }
           ]
         },
@@ -226,8 +226,8 @@
           "enableWhen": [
             {
               "question": "MarkComplete-35",
-              "operator": "=",
-              "answerBoolean": false
+              "operator": "!=",
+              "answerBoolean": true
             }
           ]
         },
@@ -466,8 +466,8 @@
           "enableWhen": [
             {
               "question": "MarkComplete-25",
-              "operator": "=",
-              "answerBoolean": false
+              "operator": "!=",
+              "answerBoolean": true
             }
           ]
         },

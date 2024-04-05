@@ -51,8 +51,8 @@
           "enableWhen": [
             {
               "question": "MarkComplete-9",
-              "operator": "=",
-              "answerBoolean": false
+              "operator": "!=",
+              "answerBoolean": true
             }
           ]
         },

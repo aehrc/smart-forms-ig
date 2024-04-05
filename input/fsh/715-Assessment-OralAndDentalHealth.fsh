@@ -72,8 +72,8 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-20" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-20"

@@ -72,8 +72,8 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-8" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-8"

@@ -70,8 +70,8 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-22" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-22"

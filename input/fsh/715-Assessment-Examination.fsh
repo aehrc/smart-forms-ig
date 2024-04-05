@@ -125,8 +125,8 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-7" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-7"

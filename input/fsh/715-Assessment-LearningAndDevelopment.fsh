@@ -71,8 +71,8 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-15" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-15"
