@@ -445,10 +445,13 @@ ValueSet: AdministrativeGender
 Id: administrative-gender
 Title: "AdministrativeGender"
 Description: "The gender of a person used for administrative purposes."
+
+* ^url = "http://hl7.org/fhir/ValueSet/administrative-gender"
 * ^contact.telecom[0].system = #url
 * ^contact.telecom[=].value = "http://hl7.org/fhir"
 * ^contact.telecom[+].system = #email
 * ^contact.telecom[=].value = "fhir@lists.hl7.org"
+* ^copyright = "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\"."
 * ^date = "2019-11-01T09:29:23+11:00"
 * ^experimental = false
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -506,6 +509,7 @@ Description: "Preferred value set for Condition Clinical Status."
 * ^publisher = "FHIR Project team"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://hl7.org/fhir"
+* ^copyright = "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\"."
 * ^expansion.identifier = "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8"
 * ^expansion.timestamp = "2024-04-02T14:17:12+10:00"
 * ^expansion.total = 6
