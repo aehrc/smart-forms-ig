@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "12",
-        "lastUpdated": "2024-04-04T06:10:32.535+00:00",
-        "source": "#grqZ2xSgx1fDAU96",
+        "versionId": "14",
+        "lastUpdated": "2024-04-05T03:59:42.302+00:00",
+        "source": "#1EysdimOTKWcWJDs",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -292,17 +292,17 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:797238aa-61be-4165-9fa6-3595bbfd16f6",
-                "timestamp": "2024-04-04T05:36:01+00:00",
+                "identifier": "urn:uuid:50f050c9-3975-48d6-bdb7-baae4ebc70cd",
+                "timestamp": "2024-04-05T12:31:27+10:00",
                 "total": 4,
                 "parameter": [
                     {
                         "name": "version",
-                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.3.0"
+                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.0.1"
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.3.0"
+                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.0.1"
                     }
                 ],
                 "contains": [
@@ -2503,7 +2503,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns') and extension.where(url='period').valuePeriod.end.empty()).extension.where(url='value').value.coding"
+                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns') and extension.where(url='period').value.end.empty()).extension.where(url='value').value.coding"
                                     }
                                 },
                                 {
@@ -2531,7 +2531,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-genderIdentity') and extension.where(url='period').valuePeriod.end.empty()).extension.where(url='value').value.coding"
+                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-genderIdentity') and extension.where(url='period').value.end.empty()).extension.where(url='value').value.coding"
                                     }
                                 },
                                 {
@@ -2590,7 +2590,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and valueCodeableConcept.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').valuePeriod.end.empty())).extension.where(url='value').value.coding"
+                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
                                     }
                                 },
                                 {
