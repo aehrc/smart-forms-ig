@@ -204,7 +204,7 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * repeats = false
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
-    * answerOption[+].valueCoding = $SCT#413817003 "Early learning centre" //concept id for child day care. Would be better with a new specific SCTAU concept. Could even remove conditional questioning and create a single value set to support the answer. 
+    * answerOption[+].valueCoding = $SCT#413817003 "Child day care centre" //may require more specific "Early learning centre" concept created
 
 
 
