@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "15",
-        "lastUpdated": "2024-04-05T05:17:18.147+00:00",
-        "source": "#FxlSV4OVRPbxYkDd",
+        "versionId": "16",
+        "lastUpdated": "2024-04-08T03:28:22.147+00:00",
+        "source": "#rg8YaN4DUJY8o7Qe",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -254,7 +254,7 @@
                     "valueCode": "4.0.0"
                 }
             ],
-            "url": "https://smartforms.csiro.au/ig/ValueSet/administrative-gender",
+            "url": "http://hl7.org/fhir/ValueSet/administrative-gender",
             "identifier": [
                 {
                     "system": "urn:ietf:rfc:3986",
@@ -284,6 +284,7 @@
             ],
             "description": "The gender of a person used for administrative purposes.",
             "immutable": true,
+            "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
             "compose": {
                 "include": [
                     {
@@ -908,6 +909,7 @@
                 }
             ],
             "description": "Preferred value set for Condition Clinical Status.",
+            "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
             "compose": {
                 "include": [
                     {
@@ -975,6 +977,66 @@
                         "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                         "code": "resolved",
                         "display": "Resolved"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "SmokingQuitStatus-1",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+                }
+            ],
+            "url": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+            "name": "SmokingQuitStatus",
+            "title": "Smoking Quit Status",
+            "status": "draft",
+            "experimental": false,
+            "description": "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "48031000119106",
+                                "display": "Quit >12 months"
+                            },
+                            {
+                                "code": "735128000",
+                                "display": "Quit <12 months"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db",
+                "timestamp": "2024-04-08T12:56:59+10:00",
+                "total": 2,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "48031000119106",
+                        "display": "Quit >12 months"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "735128000",
+                        "display": "Quit <12 months"
                     }
                 ]
             }
@@ -1064,6 +1126,84 @@
                         "version": "5.0.0-ballot",
                         "code": "asked-declined",
                         "display": "Asked But Declined"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "CervicalScreeningStatus-1",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+                }
+            ],
+            "url": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+            "name": "CervicalScreeningStatus",
+            "title": "Cervical Screening Status",
+            "status": "draft",
+            "experimental": false,
+            "description": "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "736595007",
+                                "display": "Declined"
+                            },
+                            {
+                                "code": "410527000",
+                                "display": "Offered"
+                            },
+                            {
+                                "code": "171154002",
+                                "display": "Not required"
+                            },
+                            {
+                                "code": "171155001",
+                                "display": "Up to date"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
+                "timestamp": "2024-04-08T10:41:42+10:00",
+                "total": 4,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "736595007",
+                        "display": "Declined"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "410527000",
+                        "display": "Offered"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "171154002",
+                        "display": "Not required"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "171155001",
+                        "display": "Up to date"
                     }
                 ]
             }
@@ -2359,7 +2499,7 @@
                                     "valueCoding": {
                                         "system": "http://snomed.info/sct",
                                         "code": "413817003",
-                                        "display": "Early learning centre"
+                                        "display": "Child day care centre"
                                     }
                                 }
                             ]
@@ -9765,7 +9905,7 @@
                                             "valueCoding": {
                                                 "system": "http://snomed.info/sct",
                                                 "code": "16090371000119103",
-                                                "display": "Environmental exposure to tobacco smoke (home, car, etc)"
+                                                "display": "Exposure to second hand tobacco smoke"
                                             }
                                         },
                                         {
@@ -9804,22 +9944,7 @@
                                         }
                                     ],
                                     "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "48031000119106",
-                                                "display": "Quit >=12 months"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "735128000",
-                                                "display": "Quit <12 months"
-                                            }
-                                        }
-                                    ]
+                                    "answerValueSet": "#SmokingQuitStatus-1"
                                 },
                                 {
                                     "linkId": "9e86387d-1be4-4c26-9047-9dd6b03e1ee0",
@@ -10431,36 +10556,7 @@
                                     "text": "Cervical screening status",
                                     "type": "choice",
                                     "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "736595007",
-                                                "display": "Declined"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "410527000",
-                                                "display": "Offered"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "171154002",
-                                                "display": "Not required"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "171155001",
-                                                "display": "Up to date"
-                                            }
-                                        }
-                                    ]
+                                    "answerValueSet": "#CervicalScreeningStatus-1"
                                 },
                                 {
                                     "linkId": "f93eb998-1502-4d8a-88a4-986117a387c5",
@@ -13654,7 +13750,7 @@
                                             "valueCoding": {
                                                 "system": "http://snomed.info/sct",
                                                 "code": "16090371000119103",
-                                                "display": "Environmental exposure to tobacco smoke (home, car, etc)"
+                                                "display": "Exposure to second hand tobacco smoke"
                                             }
                                         },
                                         {
