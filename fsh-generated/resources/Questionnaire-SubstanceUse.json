@@ -194,22 +194,7 @@
                   }
                 }
               ],
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "code": "48031000119106",
-                    "system": "http://snomed.info/sct",
-                    "display": "Quit >=12 months"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "735128000",
-                    "system": "http://snomed.info/sct",
-                    "display": "Quit <12 months"
-                  }
-                }
-              ]
+              "answerValueSet": "#SmokingQuitStatus-1"
             },
             {
               "linkId": "9e86387d-1be4-4c26-9047-9dd6b03e1ee0",
@@ -349,6 +334,68 @@
       "text": "Substance use, including tobacco",
       "type": "group",
       "repeats": false
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "SmokingQuitStatus-1",
+      "status": "draft",
+      "name": "SmokingQuitStatus",
+      "title": "Smoking Quit Status",
+      "description": "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+      "experimental": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+        }
+      ],
+      "expansion": {
+        "identifier": "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db",
+        "timestamp": "2024-04-08T12:56:59+10:00",
+        "total": 2,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "48031000119106",
+            "display": "Quit >12 months"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "735128000",
+            "display": "Quit <12 months"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "48031000119106",
+                "display": "Quit >12 months"
+              },
+              {
+                "code": "735128000",
+                "display": "Quit <12 months"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "extension": [

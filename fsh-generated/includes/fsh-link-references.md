@@ -37,6 +37,7 @@
 [AustralianPronouns]: ValueSet-australian-pronouns-1.html
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
 [BiologicalSex]: ValueSet-biological-sex-1.html
+[CervicalScreeningStatus]: ValueSet-CervicalScreeningStatus-1.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
 [GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
@@ -49,6 +50,8 @@
 [SmartFormsApplication]: CapabilityStatement-SmartFormsApplication.html
 [SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck]: CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html
 [SmartFormsServer]: CapabilityStatement-SmartFormsServer.html
+[SmokingQuitStatus]: ValueSet-SmokingQuitStatus-1.html
+[HealthChecksSCTSupplement]: CodeSystem-HealthChecksSCTSupplement.html
 [YesNo]: ValueSet-YesNo.html
 [YesNoNA]: ValueSet-YesNoNA.html
 [YesNoNotAskedDeclined]: ValueSet-YesNoNotAskedDeclined.html

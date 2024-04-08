@@ -1,5 +1,13 @@
 [
   {
+    "outputFile": "CodeSystem-HealthChecksSCTSupplement.json",
+    "fshName": "HealthChecksSCTSupplement",
+    "fshType": "CodeSystem",
+    "fshFile": "terminology.fsh",
+    "startLine": 766,
+    "endLine": 777
+  },
+  {
     "outputFile": "CodeSystem-QuestionnaireItemControlExtended.json",
     "fshName": "QuestionnaireItemControlExtended",
     "fshType": "CodeSystem",
@@ -245,7 +253,7 @@
     "fshType": "Instance",
     "fshFile": "715-Assessment-SexualHealth.fsh",
     "startLine": 5,
-    "endLine": 370
+    "endLine": 368
   },
   {
     "outputFile": "Questionnaire-Skin.json",
@@ -296,6 +304,14 @@
     "endLine": 128
   },
   {
+    "outputFile": "ValueSet-CervicalScreeningStatus-1.json",
+    "fshName": "CervicalScreeningStatus",
+    "fshType": "ValueSet",
+    "fshFile": "terminology.fsh",
+    "startLine": 780,
+    "endLine": 809
+  },
+  {
     "outputFile": "ValueSet-MedicalHistory.json",
     "fshName": "MedicalHistory",
     "fshType": "ValueSet",
@@ -310,6 +326,14 @@
     "fshFile": "terminology.fsh",
     "startLine": 133,
     "endLine": 169
+  },
+  {
+    "outputFile": "ValueSet-SmokingQuitStatus-1.json",
+    "fshName": "SmokingQuitStatus",
+    "fshType": "ValueSet",
+    "fshFile": "terminology.fsh",
+    "startLine": 811,
+    "endLine": 832
   },
   {
     "outputFile": "ValueSet-YesNo.json",
@@ -341,46 +365,46 @@
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
     "startLine": 444,
-    "endLine": 488
+    "endLine": 491
   },
   {
     "outputFile": "ValueSet-australian-pronouns-1.json",
     "fshName": "AustralianPronouns",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 664,
-    "endLine": 720
+    "startLine": 668,
+    "endLine": 724
   },
   {
     "outputFile": "ValueSet-australian-states-territories-2.json",
     "fshName": "AustralianStatesAndTerritories",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 546,
-    "endLine": 608
+    "startLine": 550,
+    "endLine": 612
   },
   {
     "outputFile": "ValueSet-biological-sex-1.json",
     "fshName": "BiologicalSex",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 722,
-    "endLine": 759
+    "startLine": 726,
+    "endLine": 763
   },
   {
     "outputFile": "ValueSet-condition-clinical.json",
     "fshName": "ConditionClinicalStatusCodes",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 490,
-    "endLine": 542
+    "startLine": 493,
+    "endLine": 546
   },
   {
     "outputFile": "ValueSet-gender-identity-response-1.json",
     "fshName": "GenderIdentityResponse",
     "fshType": "ValueSet",
     "fshFile": "terminology.fsh",
-    "startLine": 611,
-    "endLine": 662
+    "startLine": 615,
+    "endLine": 666
   }
 ]

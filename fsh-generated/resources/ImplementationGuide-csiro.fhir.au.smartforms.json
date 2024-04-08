@@ -356,6 +356,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/CervicalScreeningStatus-1"
+        },
+        "name": "Cervical Screening Status",
+        "description": "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/condition-clinical"
         },
         "name": "Condition Clinical Status Codes",
@@ -449,6 +457,22 @@
         "description": "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters.",
         "exampleBoolean": false,
         "name": "Smart Forms Server"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/SmokingQuitStatus-1"
+        },
+        "name": "Smoking Quit Status",
+        "description": "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/HealthChecksSCTSupplement"
+        },
+        "name": "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
+        "description": "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire.",
+        "exampleBoolean": false
       },
       {
         "reference": {

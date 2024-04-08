@@ -332,36 +332,7 @@
               "text": "Cervical screening status",
               "type": "choice",
               "repeats": false,
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "code": "736595007",
-                    "system": "http://snomed.info/sct",
-                    "display": "Declined"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "410527000",
-                    "system": "http://snomed.info/sct",
-                    "display": "Offered"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "171154002",
-                    "system": "http://snomed.info/sct",
-                    "display": "Not required"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "171155001",
-                    "system": "http://snomed.info/sct",
-                    "display": "Up to date"
-                  }
-                }
-              ]
+              "answerValueSet": "#CervicalScreeningStatus-1"
             },
             {
               "linkId": "f93eb998-1502-4d8a-88a4-986117a387c5",
@@ -785,6 +756,84 @@
               {
                 "code": "asked-declined",
                 "display": "Asked But Declined"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "CervicalScreeningStatus-1",
+      "status": "draft",
+      "name": "CervicalScreeningStatus",
+      "title": "Cervical Screening Status",
+      "description": "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+      "experimental": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+        }
+      ],
+      "expansion": {
+        "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
+        "timestamp": "2024-04-08T10:41:42+10:00",
+        "total": 4,
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "736595007",
+            "display": "Declined"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "410527000",
+            "display": "Offered"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "171154002",
+            "display": "Not required"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "171155001",
+            "display": "Up to date"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "736595007",
+                "display": "Declined"
+              },
+              {
+                "code": "410527000",
+                "display": "Offered"
+              },
+              {
+                "code": "171154002",
+                "display": "Not required"
+              },
+              {
+                "code": "171155001",
+                "display": "Up to date"
               }
             ]
           }

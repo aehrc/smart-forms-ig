@@ -10,6 +10,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 
 * contained[+] = YesNo
 * contained[+] = YesNoNotAskedDeclined
+* contained[+] = CervicalScreeningStatus-1
 
 //assemble expectation
 * extension[+]
@@ -219,10 +220,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
       * text = "Cervical screening status"
       * type = #choice
       * repeats = false
-      * answerOption[+].valueCoding = $SCT#736595007 "Declined"
-      * answerOption[+].valueCoding = http://snomed.info/sct#410527000 "Offered" // a better concept is required
-      * answerOption[+].valueCoding = $SCT#171154002 "Not required"
-      * answerOption[+].valueCoding = $SCT#171155001 "Up to date"
+      * answerValueSet = "#CervicalScreeningStatus-1"
     * item[+]
       * linkId = "f93eb998-1502-4d8a-88a4-986117a387c5"
       * text = "Next due"

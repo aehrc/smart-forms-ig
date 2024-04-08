@@ -1625,7 +1625,7 @@
       "name": "AdministrativeGender",
       "title": "AdministrativeGender",
       "description": "The gender of a person used for administrative purposes.",
-      "url": "https://smartforms.csiro.au/ig/ValueSet/administrative-gender",
+      "url": "http://hl7.org/fhir/ValueSet/administrative-gender",
       "contact": [
         {
           "telecom": [
@@ -1640,6 +1640,7 @@
           ]
         }
       ],
+      "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
       "date": "2019-11-01T09:29:23+11:00",
       "experimental": false,
       "extension": [

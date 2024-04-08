@@ -761,3 +761,72 @@ Description: "The Biological Sex value set includes values that represent the bi
 * ^expansion.contains[=].display = "Male"
 * include codes from system $SCT
     where constraint = "^ 32570631000036107|Sex reference set|"
+
+
+CodeSystem: HealthChecksSCTSupplement
+Id: HealthChecksSCTSupplement
+Title: "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check"
+Description: "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire."
+* ^experimental = false
+* ^content = #supplement
+* ^supplements = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
+* #736595007 "Declined"
+* #171154002 "Not required"
+* #171155001 "Up to date"
+* #48031000119106 "Quit >12 months"
+* #735128000 "Quit <12 months"
+
+
+ValueSet: CervicalScreeningStatus
+Id: CervicalScreeningStatus-1
+Title: "Cervical Screening Status"
+Description: "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program."
+* ^experimental = false
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+* $SCT#736595007 "Declined"
+* $SCT#410527000 "Offered" // a better concept is required
+* $SCT#171154002 "Not required"
+* $SCT#171155001 "Up to date"
+* ^expansion.identifier = "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d"
+* ^expansion.timestamp = "2024-04-08T10:41:42+10:00"
+* ^expansion.total = 4
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #736595007
+* ^expansion.contains[=].display = "Declined"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #410527000
+* ^expansion.contains[=].display = "Offered"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #171154002
+* ^expansion.contains[=].display = "Not required"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #171155001
+* ^expansion.contains[=].display = "Up to date"
+
+ValueSet: SmokingQuitStatus
+Id: SmokingQuitStatus-1
+Title: "Smoking Quit Status"
+Description: "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking."
+* ^experimental = false
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+* ^expansion.identifier = "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db"
+* ^expansion.timestamp = "2024-04-08T12:56:59+10:00"
+* ^expansion.total = 2
+* ^expansion.parameter[0].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #48031000119106
+* ^expansion.contains[=].display = "Quit >12 months"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #735128000
+* ^expansion.contains[=].display = "Quit <12 months"
+* $SCT#48031000119106 "Quit >12 months"
+* $SCT#735128000 "Quit <12 months"

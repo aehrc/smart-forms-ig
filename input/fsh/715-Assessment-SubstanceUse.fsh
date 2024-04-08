@@ -8,6 +8,7 @@ Usage: #definition
 Title: "Aboriginal and Torres Strait Islander Health Check - Substance Use"
 Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = SmokingQuitStatus-1
 
 //assemble expectation
 * extension[+]
@@ -130,8 +131,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
         * answerCoding = http://snomed.info/sct#8517006
-      * answerOption[+].valueCoding = http://snomed.info/sct#48031000119106 "Quit >=12 months"
-      * answerOption[+].valueCoding = http://snomed.info/sct#735128000 "Quit <12 months"
+      * answerValueSet = "#SmokingQuitStatus-1"
       
     * item[+]
       * linkId = "9e86387d-1be4-4c26-9047-9dd6b03e1ee0"
