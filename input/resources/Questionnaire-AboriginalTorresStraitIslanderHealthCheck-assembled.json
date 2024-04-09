@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "16",
-        "lastUpdated": "2024-04-08T03:28:22.147+00:00",
-        "source": "#rg8YaN4DUJY8o7Qe",
+        "versionId": "17",
+        "lastUpdated": "2024-04-08T23:49:42.142+00:00",
+        "source": "#qG2CoPlXjUZJvCJd",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -1296,6 +1296,18 @@
             "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
             "valueReference": {
                 "reference": "#biological-sex-1"
+            }
+        },
+        {
+            "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+            "valueReference": {
+                "reference": "#SmokingQuitStatus-1"
+            }
+        },
+        {
+            "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+            "valueReference": {
+                "reference": "#CervicalScreeningStatus-1"
             }
         },
         {

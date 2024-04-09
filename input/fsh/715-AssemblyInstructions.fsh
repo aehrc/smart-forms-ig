@@ -25,6 +25,8 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = australian-states-territories-2
 * contained[+] = gender-identity-response-1
 * contained[+] = biological-sex-1
+* contained[+] = SmokingQuitStatus-1
+* contained[+] = CervicalScreeningStatus-1
 
 //assemble expectation
 * extension[+]
@@ -123,6 +125,12 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#biological-sex-1"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#SmokingQuitStatus-1"
+* extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#CervicalScreeningStatus-1"
 
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
