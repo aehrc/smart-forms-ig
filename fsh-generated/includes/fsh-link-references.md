@@ -33,6 +33,7 @@
 [SocialHistoryChild]: Questionnaire-SocialHistoryChild.html
 [SubstanceUse]: Questionnaire-SubstanceUse.html
 [AboriginalTorresStraitIslander]: ValueSet-AboriginalTorresStraitIslander.html
+[ACDCPlusNQIPClinicalQIe]: Questionnaire-ACDCPlusNQIPClinicalQI.html
 [AdministrativeGender]: ValueSet-administrative-gender.html
 [AustralianPronouns]: ValueSet-australian-pronouns-1.html
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
