@@ -1118,7 +1118,7 @@
                           "text": "Procedure",
                           "type": "open-choice",
                           "repeats": false,
-                          "answerValueSet": "http://csiro.au/sparked/vs/SparkedRadiologyReferralValueSet"
+                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-services-1"
                         }
                       ]
                     },
@@ -1178,10 +1178,10 @@
                             }
                           ],
                           "linkId": "radiology-service-examination-components-servicetype",
-                          "text": "Service type",
+                          "text": "Procedure focus",
                           "type": "open-choice",
                           "repeats": false,
-                          "answerValueSet": "https://smartforms.csiro.au/ig/ValueSet/RadiologyModality"
+                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-procedure-1"
                         },
                         {
                           "extension": [
@@ -1201,7 +1201,7 @@
                           "text": "Body site",
                           "type": "open-choice",
                           "repeats": false,
-                          "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/105891000036102"
+                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-body-structure-1"
                         },
                         {
                           "extension": [
@@ -1221,7 +1221,7 @@
                           "text": "Laterality",
                           "type": "choice",
                           "repeats": false,
-                          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/laterality-1"
+                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-laterality-1"
                         },
                         {
                           "extension": [
@@ -1249,6 +1249,32 @@
                       "text": "Examination precondition",
                       "type": "string",
                       "repeats": true
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "radiology-service-priority",
+                      "text": "Priority",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                    },
+                    {
+                      "linkId": "radiology-service-timing",
+                      "text": "Timing",
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -1293,29 +1319,9 @@
                   "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
                 },
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-priority",
-                  "text": "Priority",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
-                },
-                {
-                  "linkId": "radiology-service-timing",
-                  "text": "Timing",
-                  "type": "string",
+                  "linkId": "radiology-service-clinicalnotes",
+                  "text": "Clinical notes",
+                  "type": "text",
                   "repeats": false
                 }
               ]
@@ -1441,6 +1447,32 @@
                           "valueString": "Fasting"
                         }
                       ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "pathology-service-priority",
+                      "text": "Priority",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                    },
+                    {
+                      "linkId": "pathology-service-timing",
+                      "text": "Timing",
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -1485,29 +1517,9 @@
                   "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
                 },
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-priority",
-                  "text": "Priority",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
-                },
-                {
-                  "linkId": "pathology-service-timing",
-                  "text": "Timing",
-                  "type": "string",
+                  "linkId": "pathology-service-clinicalnotes",
+                  "text": "Clinical notes",
+                  "type": "text",
                   "repeats": false
                 }
               ]
