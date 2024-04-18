@@ -163,7 +163,6 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * text = "Date"
     * type = #date
     * repeats = false
-    * required = true
   * item[+]
     * linkId = "0f92eb2d-4629-4215-96f8-46722a2efa73"
     * text = "Doctor"

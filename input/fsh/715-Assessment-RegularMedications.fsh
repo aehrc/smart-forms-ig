@@ -114,7 +114,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
     * text = "Up to date in the health record?"
     * type = #boolean
     * repeats = false
-    * required = true
     * enableWhen[+]
       * question = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
       * operator = #=
@@ -130,7 +129,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
     * extension[sdc-questionnaire-shortText].valueString = "Understanding and adherence checked"
     * type = #boolean
     * repeats = false
-    * required = true
     * enableWhen[+]
       * question = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
       * operator = #=

@@ -168,7 +168,6 @@
           "text": "Up to date in the health record?",
           "type": "boolean",
           "repeats": false,
-          "required": true,
           "enableWhen": [
             {
               "question": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
@@ -200,7 +199,6 @@
           "text": "Medication understanding and adherence has been checked with patient",
           "type": "boolean",
           "repeats": false,
-          "required": true,
           "enableWhen": [
             {
               "question": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
