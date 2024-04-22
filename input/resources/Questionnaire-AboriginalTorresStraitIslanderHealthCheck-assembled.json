@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "17",
-        "lastUpdated": "2024-04-08T23:49:42.142+00:00",
-        "source": "#qG2CoPlXjUZJvCJd",
+        "versionId": "18",
+        "lastUpdated": "2024-04-22T05:11:07.440+00:00",
+        "source": "#TZohXBVe35PdsfUc",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -1351,6 +1351,26 @@
             ]
         },
         {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+            "extension": [
+                {
+                    "url": "name",
+                    "valueCoding": {
+                        "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
+                        "code": "encounter"
+                    }
+                },
+                {
+                    "url": "type",
+                    "valueCode": "Encounter"
+                },
+                {
+                    "url": "description",
+                    "valueString": "The encounter that is to be used to pre-populate the form"
+                }
+            ]
+        },
+        {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
             "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.1.0"
         },
@@ -2389,7 +2409,6 @@
                             "linkId": "84162f36-f4af-4509-b178-ef2a3849d0b6",
                             "text": "Date",
                             "type": "date",
-                            "required": true,
                             "repeats": false
                         },
                         {
@@ -4791,7 +4810,6 @@
                                 }
                             ],
                             "enableBehavior": "any",
-                            "required": true,
                             "repeats": false
                         },
                         {
@@ -4823,7 +4841,6 @@
                                 }
                             ],
                             "enableBehavior": "any",
-                            "required": true,
                             "repeats": false
                         },
                         {
