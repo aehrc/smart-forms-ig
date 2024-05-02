@@ -371,358 +371,6 @@
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
                   "valueExpression": {
-                    "name": "ObsPregnancyStatusCurrent",
-                    "language": "text/fhirpath",
-                    "expression": "%ObsPregnancyStatus.entry.resource.where(effectiveDateTime > (today() - 10 months))"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "version": "1.0.0"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "clinicalsummary-pregnancy-table",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "clinicalsummary-pregnancy-table-row",
-                  "text": "Current pregnancy",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsPregnancyStatusCurrent.value.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "radio-button",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-pregnancy-table-column-status",
-                      "text": "Status",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "77386006",
-                            "system": "http://snomed.info/sct",
-                            "display": "Pregnant"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "code": "60001007",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not pregnant"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsPregnancyStatusCurrent.effectiveDateTime"
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-pregnancy-table-column-observationdate",
-                      "text": "Observation date",
-                      "type": "dateTime",
-                      "repeats": false
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-                  "valueExpression": {
-                    "name": "ObsEstimatedDateOfDeliveryCurrent",
-                    "language": "text/fhirpath",
-                    "expression": "%ObsEstimatedDateOfDelivery.entry.resource.where(effectiveDateTime > (today() - 10 months))"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "version": "1.0.0"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "clinicalsummary-edd-table",
-              "type": "group",
-              "repeats": false,
-              "enableWhen": [
-                {
-                  "question": "clinicalsummary-pregnancy-table-column-status",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "77386006",
-                    "system": "http://snomed.info/sct",
-                    "display": "Pregnant"
-                  }
-                }
-              ],
-              "item": [
-                {
-                  "linkId": "clinicalsummary-edd-table-row",
-                  "text": "Estimated date of delivery",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsEstimatedDateOfDeliveryCurrent.valueDateTime"
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-edd-table-column-deliverydate",
-                      "text": "Delivery date",
-                      "type": "dateTime",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsEstimatedDateOfDeliveryCurrent.effectiveDateTime"
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-edd-table-column-observationdate",
-                      "text": "Observation date",
-                      "type": "dateTime",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsEstimatedDateOfDeliveryCurrent.code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "radio-button",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-edd-table-column-estimationmethod",
-                      "text": "Estimation method",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "738070007",
-                            "system": "http://snomed.info/sct",
-                            "display": "Antenatal ultrasound scan"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "code": "289206005",
-                            "system": "http://snomed.info/sct",
-                            "display": "Last period"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "version": "1.0.0"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "clinicalsummary-lmp-table",
-              "type": "group",
-              "repeats": false,
-              "enableWhen": [
-                {
-                  "question": "clinicalsummary-pregnancy-table-column-status",
-                  "operator": "=",
-                  "answerCoding": {
-                    "code": "77386006",
-                    "system": "http://snomed.info/sct",
-                    "display": "Pregnant"
-                  }
-                }
-              ],
-              "item": [
-                {
-                  "linkId": "clinicalsummary-lmp-table-row",
-                  "text": "Last menstrual period",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsLastMenstrualPeriod.entry.resource.valueDateTime"
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-lmp-table-column-lmpdate",
-                      "text": "LMP date",
-                      "type": "dateTime",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsLastMenstrualPeriod.entry.resource.valueDateTime"
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-lmp-table-column-observationdate",
-                      "text": "Observation date",
-                      "type": "dateTime",
-                      "repeats": false
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "version": "1.0.0"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "clinicalsummary-menstruation-table",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "clinicalsummary-menstruation-table-row",
-                  "text": "Menstruation summary",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "clinicalsummary-menstruation-table-column-status",
-                      "text": "Status",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "Premenarchal"
-                        },
-                        {
-                          "valueString": "Premenopausal"
-                        },
-                        {
-                          "valueString": "Perimenopausal"
-                        },
-                        {
-                          "valueString": "Postmenopausal"
-                        }
-                      ]
-                    },
-                    {
-                      "linkId": "clinicalsummary-menstruation-table-column-observationdate",
-                      "text": "Observation date",
-                      "type": "dateTime",
-                      "repeats": false
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-                  "valueExpression": {
                     "name": "DeviceRepeat",
                     "language": "text/fhirpath",
                     "expression": "%Device.entry.resource"
@@ -741,7 +389,7 @@
                 }
               ],
               "linkId": "clinicalsummary-device-table",
-              "text": "Medical device summary",
+              "text": "Implanted medical device summary",
               "type": "group",
               "repeats": true,
               "item": [
@@ -758,7 +406,8 @@
                   "linkId": "clinicalsummary-device-table-type",
                   "text": "Type",
                   "type": "string",
-                  "repeats": false
+                  "repeats": false,
+                  "required": true
                 },
                 {
                   "extension": [
@@ -785,7 +434,39 @@
                   "text": "Status",
                   "type": "choice",
                   "repeats": false,
-                  "answerValueSet": "http://hl7.org/fhir/ValueSet/device-status|4.0.1"
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "active",
+                        "system": "http://hl7.org/fhir/device-status",
+                        "version": "4.0.1",
+                        "display": "Current"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "inactive",
+                        "system": "http://hl7.org/fhir/device-status",
+                        "version": "4.0.1",
+                        "display": "Past"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%DeviceRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-device-table-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
                 }
               ]
             },
@@ -841,6 +522,7 @@
                   "text": "Name",
                   "type": "open-choice",
                   "repeats": false,
+                  "required": true,
                   "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
                 },
                 {
@@ -955,6 +637,7 @@
                   "text": "Substance",
                   "type": "open-choice",
                   "repeats": false,
+                  "required": true,
                   "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
                 },
                 {
@@ -982,7 +665,7 @@
                   "text": "Manifestation",
                   "type": "open-choice",
                   "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
+                  "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
                 },
                 {
                   "extension": [
@@ -1005,7 +688,7 @@
         },
         {
           "linkId": "radiology",
-          "text": "Radiology",
+          "text": "Medical imaging",
           "type": "group",
           "repeats": false,
           "item": [
@@ -1052,7 +735,7 @@
               "linkId": "radiology-service",
               "text": "Service details",
               "type": "group",
-              "repeats": false,
+              "repeats": true,
               "item": [
                 {
                   "linkId": "radiology-service-examination",
@@ -1115,7 +798,7 @@
                             }
                           ],
                           "linkId": "radiology-service-examination-procedure-procedure",
-                          "text": "Procedure",
+                          "text": "Test name",
                           "type": "open-choice",
                           "repeats": false,
                           "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-services-1"
@@ -1178,7 +861,7 @@
                             }
                           ],
                           "linkId": "radiology-service-examination-components-servicetype",
-                          "text": "Procedure focus",
+                          "text": "Modality",
                           "type": "open-choice",
                           "repeats": false,
                           "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-procedure-1"
@@ -1201,54 +884,55 @@
                           "text": "Body site",
                           "type": "open-choice",
                           "repeats": false,
-                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-body-structure-1"
+                          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1",
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "code": "instructions",
+                                        "system": "http://hl7.org/fhir/questionnaire-display-category"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "radiology-service-examination-components-bodysite-instructions",
+                              "text": "Include lateralised body site where appropriate",
+                              "type": "display"
+                            }
+                          ]
                         },
                         {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "drop-down",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "radiology-service-examination-components-laterality",
-                          "text": "Laterality",
-                          "type": "choice",
-                          "repeats": false,
-                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-laterality-1"
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "check-box",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
                           "linkId": "radiology-service-examination-components-contrast",
                           "text": "Contrast",
                           "type": "boolean",
-                          "repeats": false
+                          "repeats": false,
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "code": "instructions",
+                                        "system": "http://hl7.org/fhir/questionnaire-display-category"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "radiology-service-examination-components-contrast-instructions",
+                              "text": "Leave unanswered if no specific instruction",
+                              "type": "display"
+                            }
+                          ]
                         }
                       ]
-                    },
-                    {
-                      "linkId": "radiology-service-precondition",
-                      "text": "Examination precondition",
-                      "type": "string",
-                      "repeats": true
                     },
                     {
                       "extension": [
@@ -1264,39 +948,44 @@
                           }
                         }
                       ],
-                      "linkId": "radiology-service-priority",
-                      "text": "Priority",
+                      "linkId": "radiology-service-examination-priority",
+                      "text": "Urgency",
                       "type": "choice",
                       "repeats": false,
-                      "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "stat",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Emergency"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "urgent",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Urgent"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "routine",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Routine"
+                          }
+                        }
+                      ]
                     },
                     {
-                      "linkId": "radiology-service-timing",
-                      "text": "Timing",
+                      "linkId": "radiology-service-examination-timing",
+                      "text": "Service due",
                       "type": "string",
                       "repeats": false
                     }
                   ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-reasonforrequest",
-                  "text": "Reason for request",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
                 },
                 {
                   "extension": [
@@ -1320,8 +1009,40 @@
                 },
                 {
                   "linkId": "radiology-service-clinicalnotes",
-                  "text": "Clinical notes",
+                  "text": "Clinical context",
                   "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "radiology-service-comment",
+                  "text": "Comment",
+                  "type": "text",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "radiology-protocol",
+              "text": "Protocol",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "radiology-protocol-distributionlist",
+                  "text": "Distribution list",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "linkId": "radiology-protocol-urgentcontact",
+                  "text": "Urgent contact",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "linkId": "radiology-protocol-billingguidance",
+                  "text": "Billing guidance",
+                  "type": "string",
                   "repeats": false
                 }
               ]
@@ -1376,7 +1097,7 @@
               "linkId": "pathology-service",
               "text": "Service details",
               "type": "group",
-              "repeats": false,
+              "repeats": true,
               "item": [
                 {
                   "linkId": "pathology-service-testdetails",
@@ -1399,52 +1120,35 @@
                         }
                       ],
                       "linkId": "pathology-service-testdetails-testname",
-                      "text": "Name",
+                      "text": "Test name",
                       "type": "open-choice",
                       "repeats": false,
+                      "required": true,
                       "answerValueSet": "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
                     },
                     {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "pathology-service-testdetails-testcategory",
-                      "text": "Category",
-                      "type": "open-choice",
+                      "linkId": "pathology-service-testdetails-fasting",
+                      "text": "Fasting",
+                      "type": "boolean",
                       "repeats": false,
-                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/pathology-diagnostic-service-category-1"
-                    },
-                    {
-                      "extension": [
+                      "item": [
                         {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "code": "instructions",
+                                    "system": "http://hl7.org/fhir/questionnaire-display-category"
+                                  }
+                                ]
                               }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "pathology-service-testdetails-testprecondition",
-                      "text": "Precondition",
-                      "type": "open-choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "Fasting"
+                            }
+                          ],
+                          "linkId": "pathology-service-testdetails-fasting-instructions",
+                          "text": "Leave unanswered if no specific instruction",
+                          "type": "display"
                         }
                       ]
                     },
@@ -1462,39 +1166,41 @@
                           }
                         }
                       ],
-                      "linkId": "pathology-service-priority",
-                      "text": "Priority",
+                      "linkId": "pathology-service-testdetails-priority",
+                      "text": "Urgency",
                       "type": "choice",
                       "repeats": false,
-                      "answerValueSet": "http://hl7.org/fhir/ValueSet/request-priority|4.0.1"
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "stat",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "display": "Emergency"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "urgent",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "display": "Urgent"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "routine",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "display": "Routine"
+                          }
+                        }
+                      ]
                     },
                     {
-                      "linkId": "pathology-service-timing",
-                      "text": "Timing",
+                      "linkId": "pathology-service-testdetails-timing",
+                      "text": "Service due",
                       "type": "string",
                       "repeats": false
                     }
                   ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "pathology-service-reasonforrequest",
-                  "text": "Reason for request",
-                  "type": "open-choice",
-                  "repeats": true,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
                 },
                 {
                   "extension": [
@@ -1518,8 +1224,40 @@
                 },
                 {
                   "linkId": "pathology-service-clinicalnotes",
-                  "text": "Clinical notes",
+                  "text": "Clinical context",
                   "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "pathology-service-comment",
+                  "text": "Comment",
+                  "type": "text",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "pathology-protocol",
+              "text": "Protocol",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "pathology-protocol-distributionlist",
+                  "text": "Distribution list",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "linkId": "pathology-protocol-urgentcontact",
+                  "text": "Urgent contact",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "linkId": "pathology-protocol-billingguidance",
+                  "text": "Billing guidance",
+                  "type": "string",
                   "repeats": false
                 }
               ]
