@@ -940,19 +940,19 @@
                     {
                       "valueCoding": {
                         "code": "IMP",
-                        "system": "http://terminology.hl7.org.au/CodeSystem/v3-ActCode"
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
                       }
                     },
                     {
                       "valueCoding": {
                         "code": "EMER",
-                        "system": "http://terminology.hl7.org.au/CodeSystem/v3-ActCode"
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
                       }
                     },
                     {
                       "valueCoding": {
                         "code": "SS",
-                        "system": "http://terminology.hl7.org.au/CodeSystem/v3-ActCode"
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
                       }
                     }
                   ]
@@ -2481,43 +2481,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[0].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-feeding-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "83184-2",
-                            "system": "http://loinc.org",
-                            "display": "Feeding or eating - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[0].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83184-2')).value.value"
                           }
                         }
                       ],
@@ -2532,31 +2496,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[0].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83184-2')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-feeding-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -2572,43 +2519,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[1].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-transfer-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "83185-9",
-                            "system": "http://loinc.org",
-                            "display": "Transferring - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[1].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83185-9')).value.value"
                           }
                         }
                       ],
@@ -2623,31 +2534,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[1].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83185-9')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-transfer-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -2663,43 +2557,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[2].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-grooming-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "96767-9",
-                            "system": "http://loinc.org",
-                            "display": "Grooming - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[2].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96767-9')).value.value"
                           }
                         }
                       ],
@@ -2714,31 +2572,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[2].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96767-9')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-grooming-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -2754,43 +2595,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[3].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-toiletuse-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "83183-4",
-                            "system": "http://loinc.org",
-                            "display": "Toileting - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[3].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83183-4')).value.value"
                           }
                         }
                       ],
@@ -2805,31 +2610,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[3].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83183-4')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-toiletuse-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -2845,43 +2633,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[4].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-bathing-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "83181-8",
-                            "system": "http://loinc.org",
-                            "display": "Bathing - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[4].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83181-8')).value.value"
                           }
                         }
                       ],
@@ -2896,31 +2648,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[4].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83181-8')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-bathing-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -2936,43 +2671,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[5].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-mobility-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "83186-7",
-                            "system": "http://loinc.org",
-                            "display": "Ambulation - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[5].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83186-7')).value.value"
                           }
                         }
                       ],
@@ -2987,31 +2686,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[5].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83186-7')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-mobility-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -3027,43 +2709,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[6].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-stairs-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "96758-8",
-                            "system": "http://loinc.org",
-                            "display": "Stairs - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[6].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96758-8')).value.value"
                           }
                         }
                       ],
@@ -3078,31 +2724,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[6].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96758-8')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-stairs-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -3118,43 +2747,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[7].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-dressing-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "83182-6",
-                            "system": "http://loinc.org",
-                            "display": "Dressing - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[7].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83182-6')).value.value"
                           }
                         }
                       ],
@@ -3169,31 +2762,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[7].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83182-6')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-dressing-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -3209,43 +2785,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[8].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-bowels-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "96759-6",
-                            "system": "http://loinc.org",
-                            "display": "Bowel control - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[8].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96759-6')).value.value"
                           }
                         }
                       ],
@@ -3260,31 +2800,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[8].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96759-6')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-bowels-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 },
@@ -3300,43 +2823,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[9].code.coding"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "barthel-components-bladder-code",
-                      "text": "Code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueCoding": {
-                            "code": "96760-4",
-                            "system": "http://loinc.org",
-                            "display": "Bladder control - functional ability"
-                          },
-                          "initialSelected": true
-                        }
-                      ]
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[9].value.value"
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96760-4')).value.value"
                           }
                         }
                       ],
@@ -3351,31 +2838,14 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%BarthelIndex.entry.resource.component[9].value.code"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "drop-down",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
+                            "expression": "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96760-4')).value.code"
                           }
                         }
                       ],
                       "linkId": "barthel-components-bladder-unitcode",
                       "text": "Unit code",
-                      "type": "choice",
-                      "repeats": false,
-                      "answerOption": [
-                        {
-                          "valueString": "{score}",
-                          "initialSelected": true
-                        }
-                      ]
+                      "type": "string",
+                      "repeats": false
                     }
                   ]
                 }

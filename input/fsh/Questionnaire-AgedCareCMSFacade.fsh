@@ -435,9 +435,9 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].text = "Class"
 * item[=].item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org.au/CodeSystem/v3-ActCode#IMP
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org.au/CodeSystem/v3-ActCode#EMER
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org.au/CodeSystem/v3-ActCode#SS
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-ActCode#EMER
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/v3-ActCode#SS
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%HospitalisationRepeat.status"
@@ -1027,6 +1027,7 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].text = "Feeding"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[0].code.coding"
@@ -1038,28 +1039,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#83184-2 "Feeding or eating - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[0].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83184-2')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-feeding-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[0].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83184-2')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-feeding-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-transfer"
 * item[=].item[=].item[=].item[=].text = "Transfer"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[1].code.coding"
@@ -1071,28 +1070,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#83185-9 "Transferring - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[1].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83185-9')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-transfer-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[1].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83185-9')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-transfer-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-grooming"
 * item[=].item[=].item[=].item[=].text = "Grooming"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[2].code.coding"
@@ -1104,28 +1101,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#96767-9 "Grooming - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[2].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96767-9')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-grooming-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[2].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96767-9')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-grooming-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-toiletuse"
 * item[=].item[=].item[=].item[=].text = "Toilet Use"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[3].code.coding"
@@ -1137,28 +1132,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#83183-4 "Toileting - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[3].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83183-4')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-toiletuse-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[3].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83183-4')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-toiletuse-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-bathing"
 * item[=].item[=].item[=].item[=].text = "Bathing"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[4].code.coding"
@@ -1170,28 +1163,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#83181-8 "Bathing - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[4].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83181-8')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-bathing-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[4].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83181-8')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-bathing-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-mobility"
 * item[=].item[=].item[=].item[=].text = "Mobility"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[5].code.coding"
@@ -1203,28 +1194,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#83186-7 "Ambulation - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[5].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83186-7')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-mobility-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[5].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83186-7')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-mobility-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-stairs"
 * item[=].item[=].item[=].item[=].text = "Stairs"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[6].code.coding"
@@ -1236,28 +1225,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#96758-8 "Stairs - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[6].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96758-8')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-stairs-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[6].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96758-8')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-stairs-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-dressing"
 * item[=].item[=].item[=].item[=].text = "Dressing"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[7].code.coding"
@@ -1269,28 +1256,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#83182-6 "Dressing - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[7].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83182-6')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-dressing-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[7].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='83182-6')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-dressing-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-bowels"
 * item[=].item[=].item[=].item[=].text = "Bowels"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[8].code.coding"
@@ -1302,28 +1287,26 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#96759-6 "Bowel control - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[8].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96759-6')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-bowels-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[8].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96759-6')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-bowels-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
 * item[=].item[=].item[=].item[+].linkId = "barthel-components-bladder"
 * item[=].item[=].item[=].item[=].text = "Bladder"
 * item[=].item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].item[=].repeats = false
+/*
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[9].code.coding"
@@ -1335,21 +1318,18 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $LNC#96760-4 "Bladder control - functional ability"
 * item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
+*/
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[9].value.value"
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96760-4')).value.value"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-bladder-value"
 * item[=].item[=].item[=].item[=].item[=].text = "Value"
 * item[=].item[=].item[=].item[=].item[=].type = #integer
 * item[=].item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component[9].value.code"
-* item[=].item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%BarthelIndex.entry.resource.component.where(code.coding.exists(code='96760-4')).value.code"
 * item[=].item[=].item[=].item[=].item[=].linkId = "barthel-components-bladder-unitcode"
 * item[=].item[=].item[=].item[=].item[=].text = "Unit code"
-* item[=].item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerOption[+].valueString = "{score}"
-* item[=].item[=].item[=].item[=].item[=].answerOption[=].initialSelected = true
