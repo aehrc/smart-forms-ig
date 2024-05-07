@@ -743,15 +743,6 @@
                   "repeats": true,
                   "item": [
                     {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "descendants().where(linkId = 'radiology-service-examination-components').repeat(item).select(answer).empty()"
-                          }
-                        }
-                      ],
                       "linkId": "radiology-service-examination-procedure",
                       "text": "Examination procedure",
                       "type": "group",
@@ -806,15 +797,6 @@
                       ]
                     },
                     {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "descendants().where(linkId = 'radiology-service-examination-procedure').repeat(item).select(answer).empty()"
-                          }
-                        }
-                      ],
                       "linkId": "radiology-service-examination-components",
                       "text": "Examination components",
                       "type": "group",

@@ -681,11 +681,12 @@ Description: "eRequest."
 //* item.item[=].item[=].item[=].text = "Examination"
 * item.item[=].item[=].item[=].type = #group
 * item.item[=].item[=].item[=].repeats = true
-
+/*
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
 * item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "descendants().where(linkId = 'radiology-service-examination-components').repeat(item).select(answer).empty()"
-* item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure"
+*/
+* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-procedure"
 * item.item[=].item[=].item[=].item[=].text = "Examination procedure"
 * item.item[=].item[=].item[=].item[=].type = #group
 * item.item[=].item[=].item[=].item[=].repeats = false
@@ -707,11 +708,12 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-services-1"
 
-
+/*
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
 * item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "descendants().where(linkId = 'radiology-service-examination-procedure').repeat(item).select(answer).empty()"
-* item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components"
+*/
+* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-components"
 * item.item[=].item[=].item[=].item[=].text = "Examination components"
 * item.item[=].item[=].item[=].item[=].type = #group
 * item.item[=].item[=].item[=].item[=].repeats = false
