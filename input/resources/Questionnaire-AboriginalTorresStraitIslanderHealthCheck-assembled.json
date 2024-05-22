@@ -2,9 +2,9 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "19",
-        "lastUpdated": "2024-05-08T00:07:47.227+00:00",
-        "source": "#0rt8Jr4QoWfsKLzM",
+        "versionId": "2",
+        "lastUpdated": "2024-05-22T04:37:21.015+00:00",
+        "source": "#Uqg3SXr9AG5neDqu",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -1869,7 +1869,7 @@
                     "valueExpression": {
                         "name": "ObsTobaccoSmokingStatus",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=266918002&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
