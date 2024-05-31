@@ -750,6 +750,13 @@
                         "system": "http://hl7.org/fhir/encounter-status",
                         "display": "On Leave"
                       }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "finished",
+                        "system": "http://hl7.org/fhir/encounter-status",
+                        "display": "Finished"
+                      }
                     }
                   ]
                 },

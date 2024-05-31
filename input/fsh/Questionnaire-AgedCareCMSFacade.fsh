@@ -360,6 +360,7 @@ Description: "Aged Care CMS Facade."
 * item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/encounter-status#in-progress "In Progress"
 * item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/encounter-status#onleave "On Leave"
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/encounter-status#finished "Finished"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%EncounterStatusHistory.period.start"
