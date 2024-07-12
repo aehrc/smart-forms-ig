@@ -1,0 +1,33 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "SmartFormsDiagnosticOrderIdentifier",
+  "description": "Smart Forms Diagnostic Order Identifier.",
+  "name": "SmartFormsDiagnosticOrderIdentifier",
+  "status": "draft",
+  "kind": "identifier",
+  "date": "2024-07-11",
+  "type": {
+    "coding": [
+      {
+        "code": "PLAC",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      }
+    ]
+  },
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "AU",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "https://smartforms.csiro.au/id/DiagnosticOrder"
+    }
+  ]
+}

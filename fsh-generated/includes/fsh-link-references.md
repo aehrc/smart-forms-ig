@@ -47,7 +47,9 @@
 [QuestionnaireItemUIControlCodes]: CodeSystem-questionnaire-item-control.html
 [QuestionnaireItemUIControlCodes]: ValueSet-questionnaire-item-control.html
 [RadiologyModality]: ValueSet-RadiologyModality.html
+[RadiologyRequestForm]: Questionnaire-RadiologyRequestForm.html
 [SmartFormsApplication]: CapabilityStatement-SmartFormsApplication.html
+[SmartFormsDiagnosticOrderIdentifier]: NamingSystem-SmartFormsDiagnosticOrderIdentifier.html
 [SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck]: CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html
 [SmartFormsServer]: CapabilityStatement-SmartFormsServer.html
 [YesNo]: ValueSet-YesNo.html
