@@ -8,9 +8,10 @@ Usage: #definition
 Title: "Aboriginal and Torres Strait Islander Health Check - Medical History"
 Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
-* contained[+] = MedicalHistory
 * contained[+] = condition-clinical
+* contained[+] = clinical-condition-1
 /*
+* contained[+] = MedicalHistory
 * contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
@@ -245,7 +246,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"
       * text = "Condition"
       * type = #open-choice
-      * answerValueSet = "#MedicalHistory"
+      * answerValueSet = "#clinical-condition-1"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
       * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -282,7 +283,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "2da85994-2d5e-42f1-8a81-abf44f397468"
       * text = "Condition"
       * type = #open-choice
-      * answerValueSet = "#MedicalHistory"
+      * answerValueSet = "#clinical-condition-1"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
       * linkId = "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3"

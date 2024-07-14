@@ -2,9 +2,6 @@
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
     "meta": {
-        "versionId": "2",
-        "lastUpdated": "2024-05-22T04:37:21.015+00:00",
-        "source": "#Uqg3SXr9AG5neDqu",
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
@@ -846,30 +843,6 @@
         },
         {
             "resourceType": "ValueSet",
-            "id": "MedicalHistory",
-            "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistory",
-            "name": "MedicalHistory",
-            "title": "Medical History",
-            "status": "draft",
-            "experimental": false,
-            "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
-            "compose": {
-                "include": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "filter": [
-                            {
-                                "property": "constraint",
-                                "op": "=",
-                                "value": "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "resourceType": "ValueSet",
             "id": "condition-clinical",
             "extension": [
                 {
@@ -977,6 +950,56 @@
                         "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                         "code": "resolved",
                         "display": "Resolved"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "clinical-condition-1",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10035"
+                }
+            ],
+            "version": "1.0.2",
+            "name": "ClinicalCondition",
+            "title": "Clinical Condition",
+            "status": "active",
+            "experimental": false,
+            "date": "2020-05-31",
+            "publisher": "Australian Digital Health Agency",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "email",
+                            "value": "help@digitalhealth.gov.au"
+                        }
+                    ]
+                }
+            ],
+            "description": "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+            "copyright": "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "filter": [
+                            {
+                                "property": "concept",
+                                "op": "in",
+                                "value": "32570581000036105"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1247,7 +1270,7 @@
         {
             "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
             "valueReference": {
-                "reference": "#MedicalHistory"
+                "reference": "#clinical-condition-1"
             }
         },
         {
@@ -1526,16 +1549,6 @@
         }
     ],
     "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
-    "jurisdiction": [
-        {
-            "coding": [
-                {
-                    "system": "urn:iso:std:iso:3166",
-                    "code": "AU"
-                }
-            ]
-        }
-    ],
     "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
     "item": [
         {
@@ -4483,7 +4496,7 @@
                                     "linkId": "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e",
                                     "text": "Condition",
                                     "type": "open-choice",
-                                    "answerValueSet": "#MedicalHistory"
+                                    "answerValueSet": "#clinical-condition-1"
                                 },
                                 {
                                     "extension": [
@@ -4577,7 +4590,7 @@
                                     "linkId": "2da85994-2d5e-42f1-8a81-abf44f397468",
                                     "text": "Condition",
                                     "type": "open-choice",
-                                    "answerValueSet": "#MedicalHistory"
+                                    "answerValueSet": "#clinical-condition-1"
                                 },
                                 {
                                     "extension": [

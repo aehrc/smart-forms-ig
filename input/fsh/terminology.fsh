@@ -169,6 +169,27 @@ Description: "The Primary Carer Of Parent Or Grandparent value set includes valu
 * $v3-NullFlavor#NA
 
 
+ValueSet: ClinicalCondition
+Id: clinical-condition-1
+Title: "Clinical Condition"
+Description: "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders."
+
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10035"
+* ^version = "1.0.2"
+* ^status = #active
+* ^experimental = false
+* ^date = "2020-05-31"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
+* include codes from system $SCT where concept in "32570581000036105"
+
+/*
 ValueSet: MedicalHistory
 Id: MedicalHistory
 Title: "Medical History"
@@ -176,7 +197,7 @@ Description: "The Medical History value set includes values that may be used to 
 * ^experimental = false
 
 * include codes from system $SCT where constraint = "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
-
+*/
 /* Agreed to replace picklists with medical history table. Commenting out for now.
 ValueSet: MedicalHistoryShortListInfants
 Id: MedicalHistoryShortListInfants

@@ -364,6 +364,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/clinical-condition-1"
+        },
+        "name": "Clinical Condition",
+        "description": "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/condition-clinical"
         },
         "name": "Condition Clinical Status Codes",
@@ -384,14 +392,6 @@
         },
         "name": "Gender Identity Response",
         "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/MedicalHistory"
-        },
-        "name": "Medical History",
-        "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
         "exampleBoolean": false
       },
       {

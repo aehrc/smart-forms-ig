@@ -38,10 +38,10 @@
 [AustralianStatesAndTerritories]: ValueSet-australian-states-territories-2.html
 [BiologicalSex]: ValueSet-biological-sex-1.html
 [CervicalScreeningStatus]: ValueSet-CervicalScreeningStatus-1.html
+[ClinicalCondition]: ValueSet-clinical-condition-1.html
 [ConditionClinicalStatusCodes]: ValueSet-condition-clinical.html
 [ContainedResourceReference]: StructureDefinition-ContainedResourceReference.html
 [GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
-[MedicalHistory]: ValueSet-MedicalHistory.html
 [PhysicalActivityAndScreenTime]: Questionnaire-PhysicalActivityAndScreenTime.html
 [PrimaryCarerParentGrandparent]: ValueSet-PrimaryCarerParentGrandparent.html
 [QuestionnaireItemControlExtended]: CodeSystem-QuestionnaireItemControlExtended.html

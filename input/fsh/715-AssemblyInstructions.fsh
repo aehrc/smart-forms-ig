@@ -12,8 +12,9 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = YesNo
 * contained[+] = YesNoNA
 * contained[+] = YesNoNotAskedDeclined
-* contained[+] = MedicalHistory
-/** contained[+] = MedicalHistoryShortListInfants
+* contained[+] = clinical-condition-1
+/** contained[+] = MedicalHistory
+* contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople*/
@@ -99,8 +100,12 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueReference.reference = "#YesNoNotAskedDeclined"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistory"
+  * valueReference.reference = "#clinical-condition-1"
+  
 /** extension[+]
+  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
+  * valueReference.reference = "#MedicalHistory"
+* extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#MedicalHistoryShortListInfants"
 * extension[+]
