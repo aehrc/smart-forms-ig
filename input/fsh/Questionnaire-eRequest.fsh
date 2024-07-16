@@ -36,23 +36,11 @@ Description: "eRequest."
 * extension[=].extension[+].url = "description"
 * extension[=].extension[=].valueString = "The encounter that is to be used to pre-populate the form"
 
-//prepop variables
+//fhir query variables
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression[+].name = "PractitionerRole"
 * extension[=].valueExpression[=].language = #application/x-fhir-query
 * extension[=].valueExpression[=].expression = "PractitionerRole?practitioner={{%user.id}}"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension[=].valueExpression[+].name = "ObsPregnancyStatus"
-* extension[=].valueExpression[=].language = #application/x-fhir-query
-* extension[=].valueExpression[=].expression = "Observation?code=82810-3&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension[=].valueExpression[+].name = "ObsEstimatedDateOfDelivery"
-* extension[=].valueExpression[=].language = #application/x-fhir-query
-* extension[=].valueExpression[=].expression = "Observation?code=161714006&_count=1&_sort=-date&patient={{%patient.id}}"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension[=].valueExpression[+].name = "ObsLastMenstrualPeriod"
-* extension[=].valueExpression[=].language = #application/x-fhir-query
-* extension[=].valueExpression[=].expression = "Observation?code=21840007&_count=1&_sort=-date&patient={{%patient.id}}"
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression[+].name = "Condition"
 * extension[=].valueExpression[=].language = #application/x-fhir-query
@@ -351,158 +339,14 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
 
+
+
 // Clinical summary
 * item.item[+].linkId = "clinicalsummary"
 * item.item[=].text = "Clinical summary"
 * item.item[=].type = #group
 * item.item[=].repeats = false
-/*
-//Pregnancy
-* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-* item.item[=].item[=].extension[=].valueExpression[+].name = "ObsPregnancyStatusCurrent"
-* item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[=].extension[=].valueExpression[=].expression = "%ObsPregnancyStatus.entry.resource.where(effectiveDateTime > (today() - 10 months))"
-* item.item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#grid
-* item.item[=].item[=].linkId = "clinicalsummary-pregnancy-table"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
 
-* item.item[=].item[=].item[+].linkId = "clinicalsummary-pregnancy-table-row"
-* item.item[=].item[=].item[=].text = "Current pregnancy"
-* item.item[=].item[=].item[=].type = #group
-* item.item[=].item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsPregnancyStatusCurrent.value.coding"
-* item.item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#radio-button
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-pregnancy-table-column-status"
-* item.item[=].item[=].item[=].item[=].text = "Status"
-* item.item[=].item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $SCT#77386006 "Pregnant"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $SCT#60001007 "Not pregnant"
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsPregnancyStatusCurrent.effectiveDateTime"
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-pregnancy-table-column-observationdate"
-* item.item[=].item[=].item[=].item[=].text = "Observation date"
-* item.item[=].item[=].item[=].item[=].type = #dateTime
-* item.item[=].item[=].item[=].item[=].repeats = false
-
-
-// EDD
-* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-* item.item[=].item[=].extension[=].valueExpression[+].name = "ObsEstimatedDateOfDeliveryCurrent"
-* item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[=].extension[=].valueExpression[=].expression = "%ObsEstimatedDateOfDelivery.entry.resource.where(effectiveDateTime > (today() - 10 months))"
-* item.item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#grid
-* item.item[=].item[=].linkId = "clinicalsummary-edd-table"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-* item.item[=].item[=].enableWhen[+].question = "clinicalsummary-pregnancy-table-column-status"
-* item.item[=].item[=].enableWhen[=].operator = #=
-* item.item[=].item[=].enableWhen[=].answerCoding = $SCT#77386006 "Pregnant"
-
-* item.item[=].item[=].item[+].linkId = "clinicalsummary-edd-table-row"
-* item.item[=].item[=].item[=].text = "Estimated date of delivery"
-* item.item[=].item[=].item[=].type = #group
-* item.item[=].item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsEstimatedDateOfDeliveryCurrent.valueDateTime"
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-edd-table-column-deliverydate"
-* item.item[=].item[=].item[=].item[=].text = "Delivery date"
-* item.item[=].item[=].item[=].item[=].type = #dateTime
-* item.item[=].item[=].item[=].item[=].repeats = false
-
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsEstimatedDateOfDeliveryCurrent.effectiveDateTime"
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-edd-table-column-observationdate"
-* item.item[=].item[=].item[=].item[=].text = "Observation date"
-* item.item[=].item[=].item[=].item[=].type = #dateTime
-* item.item[=].item[=].item[=].item[=].repeats = false
-
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsEstimatedDateOfDeliveryCurrent.code.coding"
-* item.item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#radio-button
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-edd-table-column-estimationmethod"
-* item.item[=].item[=].item[=].item[=].text = "Estimation method"
-* item.item[=].item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $SCT#738070007 "Antenatal ultrasound scan"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $SCT#289206005 "Last period"
-
-// LMP
-* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#grid
-* item.item[=].item[=].linkId = "clinicalsummary-lmp-table"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-* item.item[=].item[=].enableWhen[+].question = "clinicalsummary-pregnancy-table-column-status"
-* item.item[=].item[=].enableWhen[=].operator = #=
-* item.item[=].item[=].enableWhen[=].answerCoding = $SCT#77386006 "Pregnant"
-
-* item.item[=].item[=].item[+].linkId = "clinicalsummary-lmp-table-row"
-* item.item[=].item[=].item[=].text = "Last menstrual period"
-* item.item[=].item[=].item[=].type = #group
-* item.item[=].item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsLastMenstrualPeriod.entry.resource.valueDateTime"
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-lmp-table-column-lmpdate"
-* item.item[=].item[=].item[=].item[=].text = "LMP date"
-* item.item[=].item[=].item[=].item[=].type = #dateTime
-* item.item[=].item[=].item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%ObsLastMenstrualPeriod.entry.resource.valueDateTime"
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-lmp-table-column-observationdate"
-* item.item[=].item[=].item[=].item[=].text = "Observation date"
-* item.item[=].item[=].item[=].item[=].type = #dateTime
-* item.item[=].item[=].item[=].item[=].repeats = false
-
-// Menstruation summary
-* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#grid
-* item.item[=].item[=].linkId = "clinicalsummary-menstruation-table"
-* item.item[=].item[=].type = #group
-* item.item[=].item[=].repeats = false
-
-* item.item[=].item[=].item[+].linkId = "clinicalsummary-menstruation-table-row"
-* item.item[=].item[=].item[=].text = "Menstruation summary"
-* item.item[=].item[=].item[=].type = #group
-* item.item[=].item[=].item[=].repeats = false
-
-
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].item[=].linkId = "clinicalsummary-menstruation-table-column-status"
-* item.item[=].item[=].item[=].item[=].text = "Status"
-* item.item[=].item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueString = "Premenarchal"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueString = "Premenopausal"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueString = "Perimenopausal"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueString = "Postmenopausal"
-
-* item.item[=].item[=].item[=].item[+].linkId = "clinicalsummary-menstruation-table-column-observationdate"
-* item.item[=].item[=].item[=].item[=].text = "Observation date"
-* item.item[=].item[=].item[=].item[=].type = #dateTime
-* item.item[=].item[=].item[=].item[=].repeats = false
-*/
 // Medical device summary
 * item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
 * item.item[=].item[=].extension[=].valueExpression[+].name = "DeviceRepeat"
@@ -648,126 +492,95 @@ Description: "eRequest."
 
 
 
-
 //Radiology
 * item.item[+].linkId = "radiology"
-* item.item[=].text = "Medical imaging"
+* item.item[=].text = "Radiology"
 * item.item[=].type = #group
 * item.item[=].repeats = false
 
     // Provider
-* item.item[=].item[+].linkId = "radiology-provider"
-* item.item[=].item[=].text = "Provider"
+* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
+* item.item[=].item[=].extension[=].valueExpression[+].name = "PractitionerRoleRepeat"
+* item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item.item[=].item[=].extension[=].valueExpression[=].expression = "%PractitionerRole.entry.resource"
+* item.item[=].item[=].linkId = "radiology-order"
+* item.item[=].item[=].text = "Order details"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = false
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control|1.0.0#drop-down
-* item.item[=].item[=].item[=].linkId = "radiology-provider-name"
-* item.item[=].item[=].item[=].text = "Provider name"
-* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "now().toString()"
+* item.item[=].item[=].item[=].linkId = "radiology-order-number"
+* item.item[=].item[=].item[=].text = "Order number"
+* item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Scans-R-Us"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Imaging Hub"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Radiology Bros"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item.item[=].item[=].item[=].extension[=].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "radiology-order-requesterreference"
+* item.item[=].item[=].item[=].text = "Requester reference"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item.item[=].item[=].item[=].extension[=].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "radiology-order-requesterdisplay"
+* item.item[=].item[=].item[=].text = "Requester display"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = false
 
     // Service details
 * item.item[=].item[+].linkId = "radiology-service"
 * item.item[=].item[=].text = "Service details"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
+* item.item[=].item[=].required = true
 
 * item.item[=].item[=].item[+].linkId = "radiology-service-examination"
-//* item.item[=].item[=].item[=].text = "Examination"
+* item.item[=].item[=].item[=].text = "Examination"
 * item.item[=].item[=].item[=].type = #group
 * item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].required = true
+
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure"
+* item.item[=].item[=].item[=].item[=].text = "Procedure"
+* item.item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].required = true
+* item.item[=].item[=].item[=].item[=].answerValueSet = "http://erequestingexample.org.au/fhir/ValueSet/radiology-services-1"
 /*
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "descendants().where(linkId = 'radiology-service-examination-components').repeat(item).select(answer).empty()"
-*/
-* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-procedure"
-* item.item[=].item[=].item[=].item[=].text = "Examination procedure"
-* item.item[=].item[=].item[=].item[=].type = #group
+* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-bodysite"
+* item.item[=].item[=].item[=].item[=].text = "Body site"
+* item.item[=].item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
+* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
+* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-bodysite-instructions"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Include lateralised body site where appropriate"
+* item.item[=].item[=].item[=].item[=].item[=].type = #display
+
+* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-contrast"
+* item.item[=].item[=].item[=].item[=].text = "Contrast"
+* item.item[=].item[=].item[=].item[=].type = #boolean
 * item.item[=].item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
 * item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure-instructions"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Use this item to represent the examination procedure as a single field, otherwise use \"Examination components\"."
-* item.item[=].item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
-* item.item[=].item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <em>Use this item to represent the examination procedure as a single field.</em>
-    </div>"
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-contrast-instructions"
+* item.item[=].item[=].item[=].item[=].item[=].text = "Leave unanswered if no specific instruction"
 * item.item[=].item[=].item[=].item[=].item[=].type = #display
-
-* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-procedure-procedure"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Test name"
-* item.item[=].item[=].item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-services-1"
-
-/*
-* item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "descendants().where(linkId = 'radiology-service-examination-procedure').repeat(item).select(answer).empty()"
 */
-* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-components"
-* item.item[=].item[=].item[=].item[=].text = "Examination components"
-* item.item[=].item[=].item[=].item[=].type = #group
-* item.item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
-* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-instructions"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Use this groups of items to represent the examination procedure as multiple components, otherwise use \"Examination procedure\"."
-* item.item[=].item[=].item[=].item[=].item[=].text.extension[+].url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
-* item.item[=].item[=].item[=].item[=].item[=].text.extension[=].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <em>Use this groups of items to represent the examination procedure as multiple components.</em>
-    </div>"
-* item.item[=].item[=].item[=].item[=].item[=].type = #display
-
-* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-servicetype"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Modality"
-* item.item[=].item[=].item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-procedure-1"
-
-* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-bodysite"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Body site"
-* item.item[=].item[=].item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].item[=].item[=].repeats = false
-// * item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-body-structure-1"
-* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
-* item.item[=].item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
-* item.item[=].item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item.item[=].item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-bodysite-instructions"
-* item.item[=].item[=].item[=].item[=].item[=].item[=].text = "Include lateralised body site where appropriate"
-* item.item[=].item[=].item[=].item[=].item[=].item[=].type = #display
-/*
-* item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-laterality"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Laterality"
-* item.item[=].item[=].item[=].item[=].item[=].type = #choice
-* item.item[=].item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-laterality-1"
-*/
-
-* item.item[=].item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-components-contrast"
-* item.item[=].item[=].item[=].item[=].item[=].text = "Contrast"
-* item.item[=].item[=].item[=].item[=].item[=].type = #boolean
-* item.item[=].item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
-* item.item[=].item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item.item[=].item[=].item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-contrast-instructions"
-* item.item[=].item[=].item[=].item[=].item[=].item[=].text = "Leave unanswered if no specific instruction"
-* item.item[=].item[=].item[=].item[=].item[=].item[=].type = #display
-
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
 * item.item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-priority"
@@ -780,7 +593,7 @@ Description: "eRequest."
 
 * item.item[=].item[=].item[=].item[+].linkId = "radiology-service-examination-timing"
 * item.item[=].item[=].item[=].item[=].text = "Service due"
-* item.item[=].item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].item[=].type = #dateTime
 * item.item[=].item[=].item[=].item[=].repeats = false
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
@@ -801,6 +614,7 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
+/*
 // Radiology protocol
 * item.item[=].item[+].linkId = "radiology-protocol"
 * item.item[=].item[=].text = "Protocol"
@@ -821,19 +635,6 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].text = "Billing guidance"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
-/*
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "radiology-service-reasonforrequest"
-* item.item[=].item[=].item[=].text = "Reason for request"
-* item.item[=].item[=].item[=].type = #open-choice
-* item.item[=].item[=].item[=].repeats = true
-* item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
-
-* item.item[=].item[=].item[=].item[+].linkId = "radiology-service-precondition"
-* item.item[=].item[=].item[=].item[=].text = "Examination precondition"
-* item.item[=].item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].item[=].repeats = true
 
 */
 
@@ -844,66 +645,89 @@ Description: "eRequest."
 * item.item[=].text = "Pathology"
 * item.item[=].type = #group
 * item.item[=].repeats = false
-
     // Provider
-* item.item[=].item[+].linkId = "pathology-provider"
-* item.item[=].item[=].text = "Provider"
+* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
+* item.item[=].item[=].extension[=].valueExpression[+].name = "PractitionerRoleRepeat"
+* item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item.item[=].item[=].extension[=].valueExpression[=].expression = "%PractitionerRole.entry.resource"
+* item.item[=].item[=].linkId = "pathology-order"
+* item.item[=].item[=].text = "Order details"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = false
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].linkId = "pathology-provider-name"
-* item.item[=].item[=].item[=].text = "Provider name"
-* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "now().toString()"
+* item.item[=].item[=].item[=].linkId = "pathology-order-number"
+* item.item[=].item[=].item[=].text = "Order number"
+* item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Tests-R-Us"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Diagnostics Hub"
-* item.item[=].item[=].item[=].answerOption[+].valueString = "Pathology Bros"
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item.item[=].item[=].item[=].extension[=].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "pathology-order-requesterreference"
+* item.item[=].item[=].item[=].text = "Requester reference"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = false
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item.item[=].item[=].item[=].extension[=].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "pathology-order-requesterdisplay"
+* item.item[=].item[=].item[=].text = "Requester display"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = false
 
     // Service details
 * item.item[=].item[+].linkId = "pathology-service"
 * item.item[=].item[=].text = "Service details"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
+* item.item[=].item[=].required = true
 
-* item.item[=].item[=].item[+].linkId = "pathology-service-testdetails"
-* item.item[=].item[=].item[=].text = "Test details"
+* item.item[=].item[=].item[+].linkId = "pathology-service-test"
+* item.item[=].item[=].item[=].text = "Test"
 * item.item[=].item[=].item[=].type = #group
 * item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].required = true
 
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-testdetails-testname"
+* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-test-testname"
 * item.item[=].item[=].item[=].item[=].text = "Test name"
 * item.item[=].item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].item[=].required = true
 * item.item[=].item[=].item[=].item[=].answerValueSet = "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
-
-* item.item[=].item[=].item[=].item[+].linkId = "pathology-service-testdetails-fasting"
+/*
+* item.item[=].item[=].item[=].item[+].linkId = "pathology-service-test-fasting"
 * item.item[=].item[=].item[=].item[=].text = "Fasting"
 * item.item[=].item[=].item[=].item[=].type = #boolean
 * item.item[=].item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
 * item.item[=].item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item.item[=].item[=].item[=].item[=].item[=].linkId = "pathology-service-testdetails-fasting-instructions"
+* item.item[=].item[=].item[=].item[=].item[=].linkId = "pathology-service-test-fasting-instructions"
 * item.item[=].item[=].item[=].item[=].item[=].text = "Leave unanswered if no specific instruction"
 * item.item[=].item[=].item[=].item[=].item[=].type = #display
-
+*/
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
-* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-testdetails-priority"
+* item.item[=].item[=].item[=].item[=].linkId = "pathology-service-examination-priority"
 * item.item[=].item[=].item[=].item[=].text = "Urgency"
 * item.item[=].item[=].item[=].item[=].type = #choice
 * item.item[=].item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/request-priority#stat "Emergency"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/request-priority#urgent "Urgent"
-* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/request-priority#routine "Routine"
+* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/request-priority|4.0.1#stat "Emergency"
+* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/request-priority|4.0.1#urgent "Urgent"
+* item.item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/request-priority|4.0.1#routine "Routine"
 
-* item.item[=].item[=].item[=].item[+].linkId = "pathology-service-testdetails-timing"
+* item.item[=].item[=].item[=].item[+].linkId = "pathology-service-examination-timing"
 * item.item[=].item[=].item[=].item[=].text = "Service due"
-* item.item[=].item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].item[=].type = #dateTime
 * item.item[=].item[=].item[=].item[=].repeats = false
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
@@ -924,6 +748,7 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
+/*
 // Pathology protocol
 * item.item[=].item[+].linkId = "pathology-protocol"
 * item.item[=].item[=].text = "Protocol"
@@ -944,7 +769,7 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].text = "Billing guidance"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
-
+*/
 /*
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down

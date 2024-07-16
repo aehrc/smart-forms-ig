@@ -82,30 +82,6 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/variable",
       "valueExpression": {
-        "name": "ObsPregnancyStatus",
-        "language": "application/x-fhir-query",
-        "expression": "Observation?code=82810-3&_count=1&_sort=-date&patient={{%patient.id}}"
-      }
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "ObsEstimatedDateOfDelivery",
-        "language": "application/x-fhir-query",
-        "expression": "Observation?code=161714006&_count=1&_sort=-date&patient={{%patient.id}}"
-      }
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "ObsLastMenstrualPeriod",
-        "language": "application/x-fhir-query",
-        "expression": "Observation?code=21840007&_count=1&_sort=-date&patient={{%patient.id}}"
-      }
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
         "name": "Condition",
         "language": "application/x-fhir-query",
         "expression": "Condition?patient={{%patient.id}}"
@@ -688,46 +664,78 @@
         },
         {
           "linkId": "radiology",
-          "text": "Medical imaging",
+          "text": "Radiology",
           "type": "group",
           "repeats": false,
           "item": [
             {
-              "linkId": "radiology-provider",
-              "text": "Provider",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "PractitionerRoleRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%PractitionerRole.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "radiology-order",
+              "text": "Order details",
               "type": "group",
               "repeats": false,
               "item": [
                 {
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "version": "1.0.0"
-                          }
-                        ]
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "now().toString()"
                       }
                     }
                   ],
-                  "linkId": "radiology-provider-name",
-                  "text": "Provider name",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerOption": [
+                  "linkId": "radiology-order-number",
+                  "text": "Order number",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
                     {
-                      "valueString": "Scans-R-Us"
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+                      }
                     },
                     {
-                      "valueString": "Imaging Hub"
-                    },
-                    {
-                      "valueString": "Radiology Bros"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
                     }
-                  ]
+                  ],
+                  "linkId": "radiology-order-requesterreference",
+                  "text": "Requester reference",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "radiology-order-requesterdisplay",
+                  "text": "Requester display",
+                  "type": "string",
+                  "repeats": false
                 }
               ]
             },
@@ -736,185 +744,35 @@
               "text": "Service details",
               "type": "group",
               "repeats": true,
+              "required": true,
               "item": [
                 {
                   "linkId": "radiology-service-examination",
+                  "text": "Examination",
                   "type": "group",
                   "repeats": true,
+                  "required": true,
                   "item": [
                     {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
                       "linkId": "radiology-service-examination-procedure",
-                      "text": "Examination procedure",
-                      "type": "group",
+                      "text": "Procedure",
+                      "type": "open-choice",
                       "repeats": false,
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "instructions",
-                                    "system": "http://hl7.org/fhir/questionnaire-display-category"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "radiology-service-examination-procedure-instructions",
-                          "text": "Use this item to represent the examination procedure as a single field, otherwise use \"Examination components\".",
-                          "_text": {
-                            "extension": [
-                              {
-                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <em>Use this item to represent the examination procedure as a single field.</em>\r\n    </div>"
-                              }
-                            ]
-                          },
-                          "type": "display"
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "autocomplete",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "radiology-service-examination-procedure-procedure",
-                          "text": "Test name",
-                          "type": "open-choice",
-                          "repeats": false,
-                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-services-1"
-                        }
-                      ]
-                    },
-                    {
-                      "linkId": "radiology-service-examination-components",
-                      "text": "Examination components",
-                      "type": "group",
-                      "repeats": false,
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "instructions",
-                                    "system": "http://hl7.org/fhir/questionnaire-display-category"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "radiology-service-examination-components-instructions",
-                          "text": "Use this groups of items to represent the examination procedure as multiple components, otherwise use \"Examination procedure\".",
-                          "_text": {
-                            "extension": [
-                              {
-                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <em>Use this groups of items to represent the examination procedure as multiple components.</em>\r\n    </div>"
-                              }
-                            ]
-                          },
-                          "type": "display"
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "drop-down",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "radiology-service-examination-components-servicetype",
-                          "text": "Modality",
-                          "type": "open-choice",
-                          "repeats": false,
-                          "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-procedure-1"
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "autocomplete",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "radiology-service-examination-components-bodysite",
-                          "text": "Body site",
-                          "type": "open-choice",
-                          "repeats": false,
-                          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1",
-                          "item": [
-                            {
-                              "extension": [
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                                  "valueCodeableConcept": {
-                                    "coding": [
-                                      {
-                                        "code": "instructions",
-                                        "system": "http://hl7.org/fhir/questionnaire-display-category"
-                                      }
-                                    ]
-                                  }
-                                }
-                              ],
-                              "linkId": "radiology-service-examination-components-bodysite-instructions",
-                              "text": "Include lateralised body site where appropriate",
-                              "type": "display"
-                            }
-                          ]
-                        },
-                        {
-                          "linkId": "radiology-service-examination-components-contrast",
-                          "text": "Contrast",
-                          "type": "boolean",
-                          "repeats": false,
-                          "item": [
-                            {
-                              "extension": [
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                                  "valueCodeableConcept": {
-                                    "coding": [
-                                      {
-                                        "code": "instructions",
-                                        "system": "http://hl7.org/fhir/questionnaire-display-category"
-                                      }
-                                    ]
-                                  }
-                                }
-                              ],
-                              "linkId": "radiology-service-examination-components-contrast-instructions",
-                              "text": "Leave unanswered if no specific instruction",
-                              "type": "display"
-                            }
-                          ]
-                        }
-                      ]
+                      "required": true,
+                      "answerValueSet": "http://erequestingexample.org.au/fhir/ValueSet/radiology-services-1"
                     },
                     {
                       "extension": [
@@ -964,7 +822,7 @@
                     {
                       "linkId": "radiology-service-examination-timing",
                       "text": "Service due",
-                      "type": "string",
+                      "type": "dateTime",
                       "repeats": false
                     }
                   ]
@@ -1002,32 +860,6 @@
                   "repeats": false
                 }
               ]
-            },
-            {
-              "linkId": "radiology-protocol",
-              "text": "Protocol",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "radiology-protocol-distributionlist",
-                  "text": "Distribution list",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "linkId": "radiology-protocol-urgentcontact",
-                  "text": "Urgent contact",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "linkId": "radiology-protocol-billingguidance",
-                  "text": "Billing guidance",
-                  "type": "string",
-                  "repeats": false
-                }
-              ]
             }
           ]
         },
@@ -1038,40 +870,73 @@
           "repeats": false,
           "item": [
             {
-              "linkId": "pathology-provider",
-              "text": "Provider",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "PractitionerRoleRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%PractitionerRole.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "pathology-order",
+              "text": "Order details",
               "type": "group",
               "repeats": false,
               "item": [
                 {
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "now().toString()"
                       }
                     }
                   ],
-                  "linkId": "pathology-provider-name",
-                  "text": "Provider name",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerOption": [
+                  "linkId": "pathology-order-number",
+                  "text": "Order number",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
                     {
-                      "valueString": "Tests-R-Us"
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+                      }
                     },
                     {
-                      "valueString": "Diagnostics Hub"
-                    },
-                    {
-                      "valueString": "Pathology Bros"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
                     }
-                  ]
+                  ],
+                  "linkId": "pathology-order-requesterreference",
+                  "text": "Requester reference",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "pathology-order-requesterdisplay",
+                  "text": "Requester display",
+                  "type": "string",
+                  "repeats": false
                 }
               ]
             },
@@ -1080,12 +945,14 @@
               "text": "Service details",
               "type": "group",
               "repeats": true,
+              "required": true,
               "item": [
                 {
-                  "linkId": "pathology-service-testdetails",
-                  "text": "Test details",
+                  "linkId": "pathology-service-test",
+                  "text": "Test",
                   "type": "group",
                   "repeats": true,
+                  "required": true,
                   "item": [
                     {
                       "extension": [
@@ -1101,38 +968,12 @@
                           }
                         }
                       ],
-                      "linkId": "pathology-service-testdetails-testname",
+                      "linkId": "pathology-service-test-testname",
                       "text": "Test name",
                       "type": "open-choice",
                       "repeats": false,
                       "required": true,
                       "answerValueSet": "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
-                    },
-                    {
-                      "linkId": "pathology-service-testdetails-fasting",
-                      "text": "Fasting",
-                      "type": "boolean",
-                      "repeats": false,
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "instructions",
-                                    "system": "http://hl7.org/fhir/questionnaire-display-category"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "pathology-service-testdetails-fasting-instructions",
-                          "text": "Leave unanswered if no specific instruction",
-                          "type": "display"
-                        }
-                      ]
                     },
                     {
                       "extension": [
@@ -1148,7 +989,7 @@
                           }
                         }
                       ],
-                      "linkId": "pathology-service-testdetails-priority",
+                      "linkId": "pathology-service-examination-priority",
                       "text": "Urgency",
                       "type": "choice",
                       "repeats": false,
@@ -1157,6 +998,7 @@
                           "valueCoding": {
                             "code": "stat",
                             "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
                             "display": "Emergency"
                           }
                         },
@@ -1164,6 +1006,7 @@
                           "valueCoding": {
                             "code": "urgent",
                             "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
                             "display": "Urgent"
                           }
                         },
@@ -1171,15 +1014,16 @@
                           "valueCoding": {
                             "code": "routine",
                             "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
                             "display": "Routine"
                           }
                         }
                       ]
                     },
                     {
-                      "linkId": "pathology-service-testdetails-timing",
+                      "linkId": "pathology-service-examination-timing",
                       "text": "Service due",
-                      "type": "string",
+                      "type": "dateTime",
                       "repeats": false
                     }
                   ]
@@ -1214,32 +1058,6 @@
                   "linkId": "pathology-service-comment",
                   "text": "Comment",
                   "type": "text",
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "linkId": "pathology-protocol",
-              "text": "Protocol",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "pathology-protocol-distributionlist",
-                  "text": "Distribution list",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "linkId": "pathology-protocol-urgentcontact",
-                  "text": "Urgent contact",
-                  "type": "string",
-                  "repeats": true
-                },
-                {
-                  "linkId": "pathology-protocol-billingguidance",
-                  "text": "Billing guidance",
-                  "type": "string",
                   "repeats": false
                 }
               ]

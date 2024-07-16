@@ -40,6 +40,7 @@
 [eRequest]: Questionnaire-eRequest.html
 [GenderIdentityResponse]: ValueSet-gender-identity-response-1.html
 [MedicalHistory]: ValueSet-MedicalHistory.html
+[PathologyRequestForm]: Questionnaire-PathologyRequestForm.html
 [PersonalPronouns]: ValueSet-pronouns.html
 [PhysicalActivityAndScreenTime]: Questionnaire-PhysicalActivityAndScreenTime.html
 [PrimaryCarerParentGrandparent]: ValueSet-PrimaryCarerParentGrandparent.html

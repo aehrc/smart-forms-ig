@@ -1,0 +1,321 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "PathologyRequestForm",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+    ]
+  },
+  "url": "https://smartforms.csiro.au/ig/Questionnaire/PathologyRequestForm",
+  "title": "Pathology Request Form",
+  "description": "Pathology request form.",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "The patient that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "user",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Practitioner"
+        },
+        {
+          "url": "description",
+          "valueString": "The practitioner user that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "encounter",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Encounter"
+        },
+        {
+          "url": "description",
+          "valueString": "The encounter that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "PractitionerRole",
+        "language": "application/x-fhir-query",
+        "expression": "PractitionerRole?practitioner={{%user.id}}"
+      }
+    }
+  ],
+  "name": "PathologyRequestForm",
+  "status": "draft",
+  "experimental": true,
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2024-07-16",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "AU",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+          "valueExpression": {
+            "name": "PractitionerRoleRepeat",
+            "language": "text/fhirpath",
+            "expression": "%PractitionerRole.entry.resource"
+          }
+        }
+      ],
+      "linkId": "pathology-order",
+      "text": "Order details",
+      "type": "group",
+      "repeats": false,
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "now().toString()"
+              }
+            }
+          ],
+          "linkId": "pathology-order-number",
+          "text": "Order number",
+          "type": "string",
+          "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "pathology-order-requesterreference",
+          "text": "Requester reference",
+          "type": "string",
+          "repeats": false
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "pathology-order-requesterdisplay",
+          "text": "Requester display",
+          "type": "string",
+          "repeats": false
+        }
+      ]
+    },
+    {
+      "linkId": "pathology-service",
+      "text": "Service details",
+      "type": "group",
+      "repeats": true,
+      "required": true,
+      "item": [
+        {
+          "linkId": "pathology-service-test",
+          "text": "Test",
+          "type": "group",
+          "repeats": true,
+          "required": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "autocomplete",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "pathology-service-test-testname",
+              "text": "Test name",
+              "type": "open-choice",
+              "repeats": false,
+              "required": true,
+              "answerValueSet": "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
+            },
+            {
+              "linkId": "pathology-service-test-fasting",
+              "text": "Fasting",
+              "type": "boolean",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "instructions",
+                            "system": "http://hl7.org/fhir/questionnaire-display-category"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-service-test-fasting-instructions",
+                  "text": "Leave unanswered if no specific instruction",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "drop-down",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "pathology-service-examination-priority",
+              "text": "Urgency",
+              "type": "choice",
+              "repeats": false,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "stat",
+                    "system": "http://hl7.org/fhir/request-priority",
+                    "version": "4.0.1",
+                    "display": "Emergency"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "urgent",
+                    "system": "http://hl7.org/fhir/request-priority",
+                    "version": "4.0.1",
+                    "display": "Urgent"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "routine",
+                    "system": "http://hl7.org/fhir/request-priority",
+                    "version": "4.0.1",
+                    "display": "Routine"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "pathology-service-examination-timing",
+              "text": "Service due",
+              "type": "dateTime",
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "autocomplete",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "pathology-service-clinicalindication",
+          "text": "Clinical indication",
+          "type": "open-choice",
+          "repeats": true,
+          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+        },
+        {
+          "linkId": "pathology-service-clinicalnotes",
+          "text": "Clinical context",
+          "type": "text",
+          "repeats": false
+        },
+        {
+          "linkId": "pathology-service-comment",
+          "text": "Comment",
+          "type": "text",
+          "repeats": false
+        }
+      ]
+    }
+  ]
+}
