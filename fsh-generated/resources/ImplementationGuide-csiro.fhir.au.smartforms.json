@@ -372,15 +372,7 @@
       },
       {
         "reference": {
-          "reference": "Questionnaire/eRequest"
-        },
-        "name": "eRequest",
-        "description": "eRequest.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/gender-identity-response-1"
+          "reference": "ValueSet/condition-clinical"
         },
         "name": "Condition Clinical Status Codes",
         "description": "Preferred value set for Condition Clinical Status.",
@@ -396,15 +388,26 @@
       },
       {
         "reference": {
+          "reference": "Questionnaire/eRequest"
+        },
+        "name": "eRequest",
+        "description": "eRequest.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/gender-identity-response-1"
+        },
+        "name": "Gender Identity Response",
+        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/PathologyRequestForm"
         },
         "name": "Pathology Request Form",
         "description": "Pathology request form.",
-        "exampleBoolean": false
-      
-        },
-        "name": "Gender Identity Response",
-        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
         "exampleBoolean": false
       },
       {
@@ -446,14 +449,6 @@
         "description": "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire.",
         "exampleBoolean": false,
         "name": "Questionnaire Item UI Control Codes"
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/RadiologyModality"
-        },
-        "name": "Radiology Modality",
-        "description": "Radiology modality.",
-        "exampleBoolean": false
       },
       {
         "reference": {
