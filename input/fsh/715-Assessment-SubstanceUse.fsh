@@ -8,6 +8,7 @@ Usage: #definition
 Title: "Aboriginal and Torres Strait Islander Health Check - Substance Use"
 Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = SmokingQuitStatus-1
 
 //assemble expectation
 * extension[+]
@@ -37,6 +38,17 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[+]
+    * url = "name"
+    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#encounter
+  * extension[+]
+    * url = "type"
+    * valueCode = #Encounter
+  * extension[+]
+    * url = "description"
+    * valueString = "The encounter that is to be used to pre-populate the form"
     
 //assemble context
 * extension[+]
@@ -60,7 +72,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2022-05-24"
+* date = "2024-04-02"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 // some linkIds maintained from full assessment questionnaire
@@ -80,13 +92,13 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-29" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-29"
     * text = "Complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-29" // Section complete item
@@ -116,8 +128,8 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
       // better as a standard answerValueSet when missing concepts are available or national standard adoption
       * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never smoked"
       * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Smoker"
-      * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-Smoker"
-      * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Environmental exposure to tobacco smoke (home, car, etc)"
+      * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-smoker"
+      * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Exposure to second hand tobacco smoke"
       * answerOption[+].valueString = "Wants to quit"
       * answerOption[+].valueString = "Other tobacco use"
     * item[+]
@@ -130,8 +142,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
         * answerCoding = http://snomed.info/sct#8517006
-      * answerOption[+].valueCoding = http://snomed.info/sct#48031000119106 "Quit >=12 months"
-      * answerOption[+].valueCoding = http://snomed.info/sct#735128000 "Quit <12 months"
+      * answerValueSet = "#SmokingQuitStatus-1"
       
     * item[+]
       * linkId = "9e86387d-1be4-4c26-9047-9dd6b03e1ee0"
@@ -174,7 +185,10 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * type = #group
     * repeats = false
     * item[+]
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+      * extension[sdc-questionnaire-shortText].valueString = "Quantity and frequency of substance use" 
+      * linkId = "ea73d52c-f831-46be-a45d-2c42250a5210"
+      * text = "Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other"
+        * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
         <div>Quantity and frequency of:</div>
         <ul>
           <li>alcohol</li>
@@ -183,9 +197,6 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>
         </ul>
 	      </div>"
-      * extension[sdc-questionnaire-shortText].valueString = "Quantity and frequency of substance use" 
-      * linkId = "ea73d52c-f831-46be-a45d-2c42250a5210"
-      * text = "Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other"
       * type = #text
       * repeats = false
       * item[+]

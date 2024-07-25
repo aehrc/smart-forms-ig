@@ -8,8 +8,10 @@ Usage: #definition
 Title: "Aboriginal and Torres Strait Islander Health Check - Medical History"
 Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
-* contained[+] = MedicalHistory
+* contained[+] = condition-clinical
+* contained[+] = clinical-condition-1
 /*
+* contained[+] = MedicalHistory
 * contained[+] = MedicalHistoryShortListInfants
 * contained[+] = MedicalHistoryShortListPrimarySchool
 * contained[+] = MedicalHistoryShortListAdolescents
@@ -44,6 +46,17 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
   * extension[+]
     * url = "description"
     * valueString = "The practitioner user that is to be used to pre-populate the form"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[+]
+    * url = "name"
+    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#encounter
+  * extension[+]
+    * url = "type"
+    * valueCode = #Encounter
+  * extension[+]
+    * url = "description"
+    * valueString = "The encounter that is to be used to pre-populate the form"
 
 //assemble context
 * extension[+]
@@ -62,7 +75,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2022-05-24"
+* date = "2024-04-02"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
@@ -81,13 +94,13 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-17" // Section complete item
-      * operator = #=
-      * answerBoolean = false  
+      * operator = #!=
+      * answerBoolean = true  
   * item[+] //complete
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-17"
     * text = "Complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
     * type = #display
     * enableWhen[+]
       * question = "MarkComplete-17" // Section complete item
@@ -233,7 +246,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"
       * text = "Condition"
       * type = #open-choice
-      * answerValueSet = "#MedicalHistory"
+      * answerValueSet = "#clinical-condition-1"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
       * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -242,7 +255,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
       * text = "Clinical Status"
       * type = #choice
-      * answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical"
+      * answerValueSet = "#condition-clinical"
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -270,13 +283,13 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "2da85994-2d5e-42f1-8a81-abf44f397468"
       * text = "Condition"
       * type = #open-choice
-      * answerValueSet = "#MedicalHistory"
+      * answerValueSet = "#clinical-condition-1"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
       * linkId = "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3"
       * text = "Clinical Status"
       * type = #choice
-      * answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical"
+      * answerValueSet = "#condition-clinical"
     * item[+]
       * linkId = "e4524654-f6de-4717-b288-34919394d46b"
       * text = "Onset Date"

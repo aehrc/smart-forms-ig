@@ -20,16 +20,16 @@
     }
   ],
   "description": "Smart Forms FHIR Implementation Guide.",
-  "copyright": "CSIRO © 2022+; Licensed under Apache License, Version 2.0",
+  "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
   "packageId": "csiro.fhir.au.smartforms",
-  "license": "Apache-2.0",
+  "license": "CC-BY-SA-4.0",
   "fhirVersion": [
     "4.0.1"
   ],
   "dependsOn": [
     {
       "packageId": "hl7.fhir.au.core",
-      "version": "0.2.0-preview",
+      "version": "0.3.0-ballot",
       "uri": "http://hl7.org.au/fhir/core/ImplementationGuide/hl7.fhir.au.core",
       "id": "hl7_fhir_au_core"
     },
@@ -324,6 +324,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/administrative-gender"
+        },
+        "name": "AdministrativeGender",
+        "description": "The gender of a person used for administrative purposes.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/australian-pronouns-1"
+        },
+        "name": "Australian Pronouns",
+        "description": "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/australian-states-territories-2"
         },
         "name": "Australian States and Territories",
@@ -340,7 +356,31 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/condition-clinical"
+          "reference": "ValueSet/CervicalScreeningStatus-1"
+        },
+        "name": "Cervical Screening Status",
+        "description": "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/clinical-condition-1"
+        },
+        "name": "Clinical Condition",
+        "description": "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/eRequest"
+        },
+        "name": "eRequest",
+        "description": "eRequest.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/gender-identity-response-1"
         },
         "name": "Condition Clinical Status Codes",
         "description": "Preferred value set for Condition Clinical Status.",
@@ -356,42 +396,15 @@
       },
       {
         "reference": {
-          "reference": "Questionnaire/eRequest"
-        },
-        "name": "eRequest",
-        "description": "eRequest.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/gender-identity-response-1"
-        },
-        "name": "Gender Identity Response",
-        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual’s gender. A person's gender is a social and cultural identity, expression and experience.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/MedicalHistory"
-        },
-        "name": "Medical History",
-        "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Questionnaire/PathologyRequestForm"
         },
         "name": "Pathology Request Form",
         "description": "Pathology request form.",
         "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/pronouns"
+      
         },
-        "name": "Personal Pronouns",
-        "description": "Codes that indicate the pronouns to be used when communicating with or about an individual.",
+        "name": "Gender Identity Response",
+        "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
         "exampleBoolean": false
       },
       {
@@ -481,6 +494,22 @@
         "description": "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters.",
         "exampleBoolean": false,
         "name": "Smart Forms Server"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/SmokingQuitStatus-1"
+        },
+        "name": "Smoking Quit Status",
+        "description": "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/HealthChecksSCTSupplement"
+        },
+        "name": "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
+        "description": "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire.",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -721,6 +750,10 @@
       },
       {
         "code": "special-url",
+        "value": "http://hl7.org/fhir/ValueSet/administrative-gender"
+      },
+      {
+        "code": "special-url",
         "value": "http://hl7.org/fhir/ValueSet/condition-clinical"
       },
       {
@@ -729,11 +762,15 @@
       },
       {
         "code": "special-url",
-        "value": "http://terminology.hl7.org/ValueSet/pronouns"
+        "value": "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
       },
       {
         "code": "special-url",
         "value": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+      },
+      {
+        "code": "special-url",
+        "value": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
       },
       {
         "code": "apply-publisher",

@@ -1,0 +1,78 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "CervicalScreeningStatus",
+  "id": "CervicalScreeningStatus-1",
+  "title": "Cervical Screening Status",
+  "description": "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+  "url": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+      "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+    }
+  ],
+  "expansion": {
+    "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
+    "timestamp": "2024-04-08T10:41:42+10:00",
+    "total": 4,
+    "parameter": [
+      {
+        "name": "version",
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+      },
+      {
+        "name": "used-codesystem",
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+      }
+    ],
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "736595007",
+        "display": "Declined"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "410527000",
+        "display": "Offered"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "171154002",
+        "display": "Not required"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "171155001",
+        "display": "Up to date"
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "736595007",
+            "display": "Declined"
+          },
+          {
+            "code": "410527000",
+            "display": "Offered"
+          },
+          {
+            "code": "171154002",
+            "display": "Not required"
+          },
+          {
+            "code": "171155001",
+            "display": "Up to date"
+          }
+        ]
+      }
+    ]
+  }
+}

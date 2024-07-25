@@ -13,7 +13,7 @@ version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2022+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
-license: Apache-2.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+license: CC-BY-SA-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: AEHRC CSIRO
@@ -26,7 +26,7 @@ publisher:
 #
 dependencies:
 
-  hl7.fhir.au.core: 0.2.0-preview
+  hl7.fhir.au.core: 0.3.0-ballot
   hl7.fhir.uv.sdc: 3.0.0
 #
 #
@@ -99,10 +99,13 @@ parameters:
     - 'http://hl7.org/fhir/questionnaire-item-control'
     - 'http://hl7.org/fhir/ValueSet/questionnaire-item-control'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1'
+    - 'http://hl7.org/fhir/ValueSet/administrative-gender'
     - 'http://hl7.org/fhir/ValueSet/condition-clinical'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1'
-    - 'http://terminology.hl7.org/ValueSet/pronouns'
+    - 'https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1'
     - 'https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2'
+    - 'https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1'
+
   apply-publisher: false
   default-publisher: true
   apply-version: false
@@ -239,7 +242,7 @@ menu:
 # * modifierExtension
 experimental: false
 # * useContext
-copyright: CSIRO © 2022+; Licensed under Apache License, Version 2.0
+copyright: Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.
 packageId: csiro.fhir.au.smartforms
 #
 #

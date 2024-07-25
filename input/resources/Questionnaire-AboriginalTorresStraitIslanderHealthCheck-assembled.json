@@ -227,6 +227,568 @@
         },
         {
             "resourceType": "ValueSet",
+            "id": "administrative-gender",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+                    "valueCode": "pa"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                    "valueCode": "normative"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+                    "valueInteger": 5
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+                    "valueCode": "4.0.0"
+                }
+            ],
+            "url": "http://hl7.org/fhir/ValueSet/administrative-gender",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:2.16.840.1.113883.4.642.3.1"
+                }
+            ],
+            "version": "4.0.1",
+            "name": "AdministrativeGender",
+            "title": "AdministrativeGender",
+            "status": "active",
+            "experimental": false,
+            "date": "2019-11-01T09:29:23+11:00",
+            "publisher": "HL7 (FHIR Project)",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "url",
+                            "value": "http://hl7.org/fhir"
+                        },
+                        {
+                            "system": "email",
+                            "value": "fhir@lists.hl7.org"
+                        }
+                    ]
+                }
+            ],
+            "description": "The gender of a person used for administrative purposes.",
+            "immutable": true,
+            "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender"
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:50f050c9-3975-48d6-bdb7-baae4ebc70cd",
+                "timestamp": "2024-04-05T12:31:27+10:00",
+                "total": 4,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.0.1"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://hl7.org/fhir/administrative-gender|4.0.1"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "female",
+                        "display": "Female"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "male",
+                        "display": "Male"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "other",
+                        "display": "Other"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/administrative-gender",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "australian-pronouns-1",
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10284"
+                }
+            ],
+            "version": "1.0.0",
+            "name": "AustralianPronouns",
+            "title": "Australian Pronouns",
+            "status": "active",
+            "experimental": false,
+            "description": "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+            "copyright": "Copyright © 2024 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis material contains content from LOINC (http://loinc.org). LOINC is copyright 1995-2024, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\n\nThis material contains information which is protected by copyright. You may download, display, print and reproduce any material for your personal, non-commercial use or use within your organisation subject to the following terms and conditions: \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://loinc.org",
+                        "concept": [
+                            {
+                                "code": "LA29518-0",
+                                "display": "he/him/his/his/himself"
+                            },
+                            {
+                                "code": "LA29519-8",
+                                "display": "she/her/her/hers/herself"
+                            },
+                            {
+                                "code": "LA29520-6",
+                                "display": "they/them/their/theirs/themselves"
+                            }
+                        ]
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "concept": [
+                            {
+                                "code": "unknown"
+                            },
+                            {
+                                "code": "asked-declined"
+                            },
+                            {
+                                "code": "not-asked"
+                            },
+                            {
+                                "code": "asked-unknown"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:ca145c1c-4915-4957-888a-39e69de8b1ad",
+                "timestamp": "2024-04-02T14:25:01+10:00",
+                "total": 7,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://loinc.org|2.77"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://loinc.org|2.77"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.77",
+                        "code": "LA29518-0",
+                        "display": "he/him/his/his/himself"
+                    },
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.77",
+                        "code": "LA29519-8",
+                        "display": "she/her/her/hers/herself"
+                    },
+                    {
+                        "system": "http://loinc.org",
+                        "version": "2.77",
+                        "code": "LA29520-6",
+                        "display": "they/them/their/theirs/themselves"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "asked-declined",
+                        "display": "Asked But Declined"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "asked-unknown",
+                        "display": "Asked But Unknown"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "not-asked",
+                        "display": "Not Asked"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "gender-identity-response-1",
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10271"
+                }
+            ],
+            "version": "1.1.0",
+            "name": "GenderIdentityResponse",
+            "title": "Gender Identity Response",
+            "status": "active",
+            "experimental": false,
+            "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+            "copyright": "Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.\n\n\"This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data. \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "446151000124109"
+                            },
+                            {
+                                "code": "446141000124107"
+                            },
+                            {
+                                "code": "33791000087105"
+                            }
+                        ]
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "concept": [
+                            {
+                                "code": "unknown"
+                            },
+                            {
+                                "code": "asked-declined"
+                            },
+                            {
+                                "code": "not-asked"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:a35fc104-184f-476e-a7a2-e3f3af66a3eb",
+                "timestamp": "2024-04-02T14:21:20+10:00",
+                "total": 6,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20240331",
+                        "code": "446151000124109",
+                        "display": "Identifies as male gender"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20240331",
+                        "code": "446141000124107",
+                        "display": "Identifies as female gender"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20240331",
+                        "code": "33791000087105",
+                        "display": "Identifies as nonbinary gender"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "asked-declined",
+                        "display": "Asked But Declined"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "version": "5.0.0-ballot",
+                        "code": "not-asked",
+                        "display": "Not Asked"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "biological-sex-1",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10198"
+                }
+            ],
+            "version": "1.0.0",
+            "name": "BiologicalSex",
+            "title": "Biological Sex",
+            "status": "active",
+            "experimental": false,
+            "date": "2020-12-31",
+            "publisher": "Australian Digital Health Agency",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "email",
+                            "value": "help@digitalhealth.gov.au"
+                        }
+                    ]
+                }
+            ],
+            "description": "The Biological Sex value set includes values that represent the biological sex of an individual.",
+            "copyright": "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "filter": [
+                            {
+                                "property": "constraint",
+                                "op": "=",
+                                "value": "^ 32570631000036107|Sex reference set|"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b",
+                "timestamp": "2023-08-30T10:41:59+10:00",
+                "total": 4,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "248152002",
+                        "display": "Female"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "32570681000036106",
+                        "display": "Indeterminate sex"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "32570691000036108",
+                        "display": "Intersex"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "248153007",
+                        "display": "Male"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "australian-states-territories-2",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10026"
+                }
+            ],
+            "version": "2.0.2",
+            "name": "AustralianStatesAndTerritories",
+            "title": "Australian States and Territories",
+            "status": "active",
+            "experimental": false,
+            "date": "2020-05-31",
+            "publisher": "Australian Digital Health Agency",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "email",
+                            "value": "help@digitalhealth.gov.au"
+                        }
+                    ]
+                }
+            ],
+            "description": "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+            "copyright": "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "concept": [
+                            {
+                                "code": "ACT"
+                            },
+                            {
+                                "code": "NSW"
+                            },
+                            {
+                                "code": "NT"
+                            },
+                            {
+                                "code": "OTHER"
+                            },
+                            {
+                                "code": "QLD"
+                            },
+                            {
+                                "code": "SA"
+                            },
+                            {
+                                "code": "TAS"
+                            },
+                            {
+                                "code": "VIC"
+                            },
+                            {
+                                "code": "WA"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "e9439195-c1d8-4069-a349-98c1d552a351",
+                "timestamp": "2023-06-20T04:20:58+00:00",
+                "total": 9,
+                "offset": 0,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"
+                    },
+                    {
+                        "name": "count",
+                        "valueInteger": 2147483647
+                    },
+                    {
+                        "name": "offset",
+                        "valueInteger": 0
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "ACT",
+                        "display": "Australian Capital Territory"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "NSW",
+                        "display": "New South Wales"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "NT",
+                        "display": "Northern Territory"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "OTHER",
+                        "display": "Other territories"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "QLD",
+                        "display": "Queensland"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "SA",
+                        "display": "South Australia"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "TAS",
+                        "display": "Tasmania"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "VIC",
+                        "display": "Victoria"
+                    },
+                    {
+                        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+                        "code": "WA",
+                        "display": "Western Australia"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
             "id": "YesNo",
             "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
             "name": "YesNo",
@@ -281,24 +843,223 @@
         },
         {
             "resourceType": "ValueSet",
-            "id": "MedicalHistory",
-            "url": "https://smartforms.csiro.au/ig/ValueSet/MedicalHistory",
-            "name": "MedicalHistory",
-            "title": "Medical History",
+            "id": "condition-clinical",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+                    "valueCode": "pc"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                    "valueCode": "trial-use"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+                    "valueInteger": 3
+                }
+            ],
+            "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
+                }
+            ],
+            "version": "4.0.1",
+            "name": "ConditionClinicalStatusCodes",
+            "title": "Condition Clinical Status Codes",
             "status": "draft",
             "experimental": false,
-            "description": "The Medical History value set includes values that may be used to represent medical history, operations and hospital admissions.",
+            "publisher": "FHIR Project team",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "url",
+                            "value": "http://hl7.org/fhir"
+                        }
+                    ]
+                }
+            ],
+            "description": "Preferred value set for Condition Clinical Status.",
+            "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8",
+                "timestamp": "2024-04-02T14:17:12+10:00",
+                "total": 6,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-trial-use",
+                        "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-trial-use",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "active",
+                        "display": "Active"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "inactive",
+                        "display": "Inactive"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "recurrence",
+                        "display": "Recurrence"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "relapse",
+                        "display": "Relapse"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "remission",
+                        "display": "Remission"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "resolved",
+                        "display": "Resolved"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "clinical-condition-1",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+            "identifier": [
+                {
+                    "system": "urn:ietf:rfc:3986",
+                    "value": "urn:oid:1.2.36.1.2001.1004.201.10035"
+                }
+            ],
+            "version": "1.0.2",
+            "name": "ClinicalCondition",
+            "title": "Clinical Condition",
+            "status": "active",
+            "experimental": false,
+            "date": "2020-05-31",
+            "publisher": "Australian Digital Health Agency",
+            "contact": [
+                {
+                    "telecom": [
+                        {
+                            "system": "email",
+                            "value": "help@digitalhealth.gov.au"
+                        }
+                    ]
+                }
+            ],
+            "description": "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+            "copyright": "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
             "compose": {
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
                         "filter": [
                             {
-                                "property": "constraint",
-                                "op": "=",
-                                "value": "^32570581000036105|Problem/Diagnosis reference set| OR ^32570141000036105|Procedure foundation reference set|"
+                                "property": "concept",
+                                "op": "in",
+                                "value": "32570581000036105"
                             }
                         ]
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "SmokingQuitStatus-1",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+                }
+            ],
+            "url": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+            "name": "SmokingQuitStatus",
+            "title": "Smoking Quit Status",
+            "status": "draft",
+            "experimental": false,
+            "description": "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "48031000119106",
+                                "display": "Quit >12 months"
+                            },
+                            {
+                                "code": "735128000",
+                                "display": "Quit <12 months"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db",
+                "timestamp": "2024-04-08T12:56:59+10:00",
+                "total": 2,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "48031000119106",
+                        "display": "Quit >12 months"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "735128000",
+                        "display": "Quit <12 months"
                     }
                 ]
             }
@@ -391,6 +1152,84 @@
                     }
                 ]
             }
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "CervicalScreeningStatus-1",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+                }
+            ],
+            "url": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+            "name": "CervicalScreeningStatus",
+            "title": "Cervical Screening Status",
+            "status": "draft",
+            "experimental": false,
+            "description": "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "736595007",
+                                "display": "Declined"
+                            },
+                            {
+                                "code": "410527000",
+                                "display": "Offered"
+                            },
+                            {
+                                "code": "171154002",
+                                "display": "Not required"
+                            },
+                            {
+                                "code": "171155001",
+                                "display": "Up to date"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
+                "timestamp": "2024-04-08T10:41:42+10:00",
+                "total": 4,
+                "parameter": [
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "736595007",
+                        "display": "Declined"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "410527000",
+                        "display": "Offered"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "171154002",
+                        "display": "Not required"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "171155001",
+                        "display": "Up to date"
+                    }
+                ]
+            }
         }
     ],
     "extension": [
@@ -431,7 +1270,13 @@
         {
             "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
             "valueReference": {
-                "reference": "#MedicalHistory"
+                "reference": "#clinical-condition-1"
+            }
+        },
+        {
+            "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+            "valueReference": {
+                "reference": "#administrative-gender"
             }
         },
         {
@@ -455,7 +1300,7 @@
         {
             "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
             "valueReference": {
-                "reference": "#pronouns"
+                "reference": "#australian-pronouns-1"
             }
         },
         {
@@ -474,6 +1319,18 @@
             "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
             "valueReference": {
                 "reference": "#biological-sex-1"
+            }
+        },
+        {
+            "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+            "valueReference": {
+                "reference": "#SmokingQuitStatus-1"
+            }
+        },
+        {
+            "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+            "valueReference": {
+                "reference": "#CervicalScreeningStatus-1"
             }
         },
         {
@@ -513,6 +1370,26 @@
                 {
                     "url": "description",
                     "valueString": "The practitioner user that is to be used to pre-populate the form"
+                }
+            ]
+        },
+        {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+            "extension": [
+                {
+                    "url": "name",
+                    "valueCoding": {
+                        "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
+                        "code": "encounter"
+                    }
+                },
+                {
+                    "url": "type",
+                    "valueCode": "Encounter"
+                },
+                {
+                    "url": "description",
+                    "valueString": "The encounter that is to be used to pre-populate the form"
                 }
             ]
         },
@@ -658,7 +1535,7 @@
     "subjectType": [
         "Patient"
     ],
-    "date": "2022-05-24",
+    "date": "2024-04-02",
     "publisher": "AEHRC CSIRO",
     "contact": [
         {
@@ -672,17 +1549,7 @@
         }
     ],
     "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
-    "jurisdiction": [
-        {
-            "coding": [
-                {
-                    "system": "urn:iso:std:iso:3166",
-                    "code": "AU"
-                }
-            ]
-        }
-    ],
-    "copyright": "CSIRO © 2022+; Licensed under Apache License, Version 2.0",
+    "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
     "item": [
         {
             "extension": [
@@ -1137,8 +2004,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-1",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -1162,7 +2029,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -1337,8 +2204,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-30",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -1362,7 +2229,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -1555,7 +2422,6 @@
                             "linkId": "84162f36-f4af-4509-b178-ef2a3849d0b6",
                             "text": "Date",
                             "type": "date",
-                            "required": true,
                             "repeats": false
                         },
                         {
@@ -1677,7 +2543,7 @@
                                     "valueCoding": {
                                         "system": "http://snomed.info/sct",
                                         "code": "413817003",
-                                        "display": "Early learning centre"
+                                        "display": "Child day care centre"
                                     }
                                 }
                             ]
@@ -1732,8 +2598,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-32",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -1757,7 +2623,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -1821,7 +2687,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns').extension.where(url='value').value.coding"
+                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-pronouns') and extension.where(url='period').value.end.empty()).extension.where(url='value').value.coding"
                                     }
                                 },
                                 {
@@ -1841,7 +2707,7 @@
                             "type": "choice",
                             "repeats": false,
                             "readOnly": true,
-                            "answerValueSet": "http://terminology.hl7.org/ValueSet/pronouns"
+                            "answerValueSet": "#australian-pronouns-1"
                         },
                         {
                             "extension": [
@@ -1849,7 +2715,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%patient.extension.where(url='http://hl7.org/fhir/StructureDefinition/patient-genderIdentity').value.coding"
+                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-genderIdentity') and extension.where(url='period').value.end.empty()).extension.where(url='value').value.coding"
                                     }
                                 },
                                 {
@@ -1869,7 +2735,7 @@
                             "type": "choice",
                             "repeats": false,
                             "readOnly": true,
-                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+                            "answerValueSet": "#gender-identity-response-1"
                         },
                         {
                             "extension": [
@@ -1900,7 +2766,7 @@
                             "text": "Administrative gender",
                             "type": "choice",
                             "repeats": false,
-                            "answerValueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+                            "answerValueSet": "#administrative-gender"
                         },
                         {
                             "extension": [
@@ -1908,7 +2774,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%ObsSex.entry.resource.value.coding"
+                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
                                     }
                                 },
                                 {
@@ -1928,7 +2794,7 @@
                             "type": "choice",
                             "repeats": false,
                             "readOnly": true,
-                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+                            "answerValueSet": "#biological-sex-1"
                         },
                         {
                             "extension": [
@@ -2229,7 +3095,7 @@
                                             "text": "State",
                                             "type": "choice",
                                             "repeats": false,
-                                            "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+                                            "answerValueSet": "#australian-states-territories-2"
                                         },
                                         {
                                             "extension": [
@@ -2357,7 +3223,7 @@
                                     "text": "State",
                                     "type": "choice",
                                     "repeats": false,
-                                    "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+                                    "answerValueSet": "#australian-states-territories-2"
                                 },
                                 {
                                     "extension": [
@@ -2416,6 +3282,16 @@
                             "repeats": true
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                                    "valueExpression": {
+                                        "name": "EmergencyContactRepeat",
+                                        "language": "text/fhirpath",
+                                        "expression": "%patient.contact.where(relationship.coding.exists(code = 'C'))"
+                                    }
+                                }
+                            ],
                             "linkId": "c22390d3-1be6-4fd1-b775-6443b7239a6b",
                             "text": "Emergency contact",
                             "type": "group",
@@ -2427,7 +3303,7 @@
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                             "valueExpression": {
                                                 "language": "text/fhirpath",
-                                                "expression": "%patient.contact.where(relationship.coding.exists(code = 'C')).name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
+                                                "expression": "%EmergencyContactRepeat.name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)"
                                             }
                                         }
                                     ],
@@ -2472,7 +3348,7 @@
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                             "valueExpression": {
                                                 "language": "text/fhirpath",
-                                                "expression": "%patient.contact.where(relationship.coding.exists(code = 'C')).telecom.value"
+                                                "expression": "%EmergencyContactRepeat.telecom.value"
                                             }
                                         }
                                     ],
@@ -3117,8 +3993,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-5",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -3142,7 +4018,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -3426,8 +4302,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-17",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -3451,7 +4327,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -3620,7 +4496,7 @@
                                     "linkId": "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e",
                                     "text": "Condition",
                                     "type": "open-choice",
-                                    "answerValueSet": "#MedicalHistory"
+                                    "answerValueSet": "#clinical-condition-1"
                                 },
                                 {
                                     "extension": [
@@ -3646,7 +4522,7 @@
                                     "linkId": "88bcfad7-386b-4d87-b34b-2e50482e4d2c",
                                     "text": "Clinical Status",
                                     "type": "choice",
-                                    "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                                    "answerValueSet": "#condition-clinical"
                                 },
                                 {
                                     "extension": [
@@ -3714,7 +4590,7 @@
                                     "linkId": "2da85994-2d5e-42f1-8a81-abf44f397468",
                                     "text": "Condition",
                                     "type": "open-choice",
-                                    "answerValueSet": "#MedicalHistory"
+                                    "answerValueSet": "#clinical-condition-1"
                                 },
                                 {
                                     "extension": [
@@ -3733,7 +4609,7 @@
                                     "linkId": "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3",
                                     "text": "Clinical Status",
                                     "type": "choice",
-                                    "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                                    "answerValueSet": "#condition-clinical"
                                 },
                                 {
                                     "linkId": "e4524654-f6de-4717-b288-34919394d46b",
@@ -3816,8 +4692,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-23",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -3841,7 +4717,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -3947,7 +4823,6 @@
                                 }
                             ],
                             "enableBehavior": "any",
-                            "required": true,
                             "repeats": false
                         },
                         {
@@ -3979,7 +4854,6 @@
                                 }
                             ],
                             "enableBehavior": "any",
-                            "required": true,
                             "repeats": false
                         },
                         {
@@ -4047,8 +4921,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-3",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4072,7 +4946,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -4169,8 +5043,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-9",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4194,7 +5068,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -4346,8 +5220,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-27",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4371,7 +5245,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -4550,8 +5424,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-28",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4575,7 +5449,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -4762,8 +5636,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-12",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -4787,7 +5661,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -4987,8 +5861,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-15",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5012,7 +5886,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -5422,8 +6296,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-33",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5447,7 +6321,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -5663,8 +6537,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-16",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5688,7 +6562,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -5810,8 +6684,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-19",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -5835,7 +6709,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -5997,8 +6871,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-18",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6022,7 +6896,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -6222,8 +7096,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-4",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6247,7 +7121,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -6265,14 +7139,18 @@
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Assessment of chronic disease associated with ageing"
-                                },
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
                                 }
                             ],
                             "linkId": "12e244c0-2887-4230-8792-9521d4f1ab33",
                             "text": "For older people with chronic disease and/or conditions associated with ageing, consider assessing: Osteoporosis risk; Falls risk; Balance, coordination and mobility; Pain; Nutrition; Regularity of chronic disease management and review",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>For older people with chronic disease and/or conditions associated with ageing, consider assessing:</div>\r\n    <ul>\r\n      <li>Osteoporosis risk</li>\r\n      <li>Falls risk</li>\r\n      <li>Balance, coordination and mobility</li>\r\n      <li>Pain</li>\r\n      <li>Nutrition</li>\r\n      <li>Regularity of chronic disease management and review</li>\r\n    </ul>\r\n    </div>"
+                                    }
+                                ]
+                            },
                             "type": "text",
                             "repeats": false,
                             "item": [
@@ -6361,8 +7239,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-24",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6386,7 +7264,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -6645,8 +7523,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-11",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -6670,7 +7548,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -6979,14 +7857,18 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
-                                },
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about age-appropriate healthy eating, which could include:</div>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
                                 }
                             ],
                             "linkId": "9f6adf74-f240-41a2-a509-d216d5308911",
                             "text": "Document conversation about age-appropriate healthy eating, which could include: current diet; transition to solids; dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about age-appropriate healthy eating, which could include:</div>\r\n    <ul>\r\n      <li>current diet</li>\r\n      <li>transition to solids</li>\r\n      <li>dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks</li>\r\n    </ul>\r\n    </div>"
+                                    }
+                                ]
+                            },
                             "type": "text",
                             "repeats": false,
                             "item": [
@@ -7018,14 +7900,18 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
-                                },
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
                                 }
                             ],
                             "linkId": "7a22a4c4-6611-4687-af00-37c80c3f8fc0",
                             "text": "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
+                                    }
+                                ]
+                            },
                             "type": "text",
                             "repeats": false,
                             "item": [
@@ -7162,8 +8048,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-34",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -7187,7 +8073,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -7497,8 +8383,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-21",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -7522,7 +8408,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -7674,8 +8560,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-22",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -7699,7 +8585,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -8953,8 +9839,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-29",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -8978,7 +9864,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -9054,14 +9940,14 @@
                                             "valueCoding": {
                                                 "system": "http://snomed.info/sct",
                                                 "code": "8517006",
-                                                "display": "Ex-Smoker"
+                                                "display": "Ex-smoker"
                                             }
                                         },
                                         {
                                             "valueCoding": {
                                                 "system": "http://snomed.info/sct",
                                                 "code": "16090371000119103",
-                                                "display": "Environmental exposure to tobacco smoke (home, car, etc)"
+                                                "display": "Exposure to second hand tobacco smoke"
                                             }
                                         },
                                         {
@@ -9100,22 +9986,7 @@
                                         }
                                     ],
                                     "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "48031000119106",
-                                                "display": "Quit >=12 months"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "735128000",
-                                                "display": "Quit <12 months"
-                                            }
-                                        }
-                                    ]
+                                    "answerValueSet": "#SmokingQuitStatus-1"
                                 },
                                 {
                                     "linkId": "9e86387d-1be4-4c26-9047-9dd6b03e1ee0",
@@ -9187,16 +10058,20 @@
                                 {
                                     "extension": [
                                         {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
-                                        },
-                                        {
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                             "valueString": "Quantity and frequency of substance use"
                                         }
                                     ],
                                     "linkId": "ea73d52c-f831-46be-a45d-2c42250a5210",
                                     "text": "Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <div>Quantity and frequency of:</div>\r\n        <ul>\r\n          <li>alcohol</li>\r\n          <li>caffeine (coffee, soft drinks, iced coffee)</li>\r\n          <li>cannabis/yarndi/gunja</li>\r\n          <li>other substance use: IVDU, methamphetamine, opiates, solvents, other</li>\r\n        </ul>\r\n\t      </div>"
+                                            }
+                                        ]
+                                    },
                                     "type": "text",
                                     "repeats": false,
                                     "item": [
@@ -9287,8 +10162,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-10",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -9312,7 +10187,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -9442,8 +10317,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-36",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -9467,7 +10342,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -9531,16 +10406,20 @@
                         {
                             "extension": [
                                 {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
-                                },
-                                {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Consider discussing items relevant to age/sex/gender"
                                 }
                             ],
                             "linkId": "0fba3972-faa3-4f40-940c-c2f1c9b55329",
                             "text": "Consider discussing as relevant to age/sex/gender: menstruation (including risk of anaemia); current sexual activity; contraception; safe sex practice (eg use of condoms); sexually transmitted infection symptoms and screening; blood-borne virus screening",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menstruation (including risk of anaemia)</li>\r\n        <li>current sexual activity</li>\r\n        <li>contraception</li>\r\n        <li>safe sex practice (eg use of condoms)</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n      </ul>\r\n      </div>"
+                                    }
+                                ]
+                            },
                             "type": "text",
                             "repeats": false
                         },
@@ -9609,8 +10488,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-35",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -9634,7 +10513,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -9719,36 +10598,7 @@
                                     "text": "Cervical screening status",
                                     "type": "choice",
                                     "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "736595007",
-                                                "display": "Declined"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "410527000",
-                                                "display": "Offered"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "171154002",
-                                                "display": "Not required"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "171155001",
-                                                "display": "Up to date"
-                                            }
-                                        }
-                                    ]
+                                    "answerValueSet": "#CervicalScreeningStatus-1"
                                 },
                                 {
                                     "linkId": "f93eb998-1502-4d8a-88a4-986117a387c5",
@@ -9767,16 +10617,20 @@
                         {
                             "extension": [
                                 {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
-                                },
-                                {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Consider discussing items relevant to age/sex/gender"
                                 }
                             ],
                             "linkId": "39b02169-ea34-4af9-aa35-1c47f7f39333",
                             "text": "Consider discussing as relevant to age/sex/gender: contraception; menstruation; sexually transmitted infection symptoms and screening; blood-borne virus screening; continence; menopause; erectile dysfunction",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>contraception</li>\r\n        <li>menstruation</li>\r\n        <li>sexually transmitted infection symptoms and screening</li>\r\n        <li>blood-borne virus screening</li>\r\n        <li>continence</li>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n      </ul>\r\n      </div>"
+                                    }
+                                ]
+                            },
                             "type": "text",
                             "repeats": false
                         },
@@ -9845,8 +10699,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-25",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -9870,7 +10724,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -9982,16 +10836,20 @@
                         {
                             "extension": [
                                 {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
-                                },
-                                {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Consider discussing items relevant to age/sex/gender"
                                 }
                             ],
                             "linkId": "8d75d1f1-290b-41fc-8e32-ad0681c650bb",
                             "text": "Consider discussing as relevant to age/sex/gender: menopause; erectile dysfunction; prostatic symptoms",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <div>Consider discussing as relevant to age/sex/gender:</div>\r\n      <ul>\r\n        <li>menopause</li>\r\n        <li>erectile dysfunction</li>\r\n        <li>prostatic symptoms</li>\r\n      </ul>\r\n\t    </div>"
+                                    }
+                                ]
+                            },
                             "type": "text",
                             "repeats": false
                         },
@@ -10060,8 +10918,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-8",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -10085,7 +10943,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -10345,7 +11203,7 @@
                                                     "valueCoding": {
                                                         "system": "http://snomed.info/sct",
                                                         "code": "95726001",
-                                                        "display": "Corneal scarring"
+                                                        "display": "Corneal scar"
                                                     }
                                                 }
                                             ]
@@ -10380,7 +11238,7 @@
                                                     "valueCoding": {
                                                         "system": "http://snomed.info/sct",
                                                         "code": "95726001",
-                                                        "display": "Corneal scarring"
+                                                        "display": "Corneal scar"
                                                     }
                                                 }
                                             ]
@@ -10454,8 +11312,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-6",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -10479,7 +11337,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -11091,8 +11949,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-20",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -11116,7 +11974,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -11366,8 +12224,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-26",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -11391,7 +12249,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -11627,8 +12485,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-13",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -11652,7 +12510,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -11864,8 +12722,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-7",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -11889,7 +12747,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -12464,14 +13322,14 @@
                                                     "valueCoding": {
                                                         "system": "http://snomed.info/sct",
                                                         "code": "271636001",
-                                                        "display": "Pulse Regular"
+                                                        "display": "Pulse regular"
                                                     }
                                                 },
                                                 {
                                                     "valueCoding": {
                                                         "system": "http://snomed.info/sct",
                                                         "code": "61086009",
-                                                        "display": "Pulse Irregular"
+                                                        "display": "Pulse irregular"
                                                     }
                                                 }
                                             ]
@@ -12763,8 +13621,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-2",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -12788,7 +13646,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -12802,25 +13660,29 @@
                             ]
                         },
                         {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
-                                }
-                            ],
                             "linkId": "RecordUpdate-CVDRisk",
                             "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there.",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                    }
+                                ]
+                            },
                             "type": "display"
                         },
                         {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                    "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p style=\"font-size:1.2em\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a>.</p>\r\n        <p>The items included in this section are a subset of variables that can be used as inputs for the online calculator.</p>\r\n        <p>The final CVD risk result can be entered in the item at the bottom of this section.</p>\r\n        </div>"
-                                }
-                            ],
                             "linkId": "Guidance-CVDRisk",
                             "text": "Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p style=\"font-size:1.2em\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a>.</p>\r\n        <p>The items included in this section are a subset of variables that can be used as inputs for the online calculator.</p>\r\n        <p>The final CVD risk result can be entered in the item at the bottom of this section.</p>\r\n        </div>"
+                                    }
+                                ]
+                            },
                             "type": "display"
                         },
                         {
@@ -12887,7 +13749,7 @@
                                     "text": "Sex at birth",
                                     "type": "choice",
                                     "repeats": false,
-                                    "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+                                    "answerValueSet": "#biological-sex-1"
                                 },
                                 {
                                     "extension": [
@@ -12923,14 +13785,14 @@
                                             "valueCoding": {
                                                 "system": "http://snomed.info/sct",
                                                 "code": "8517006",
-                                                "display": "Ex-Smoker"
+                                                "display": "Ex-smoker"
                                             }
                                         },
                                         {
                                             "valueCoding": {
                                                 "system": "http://snomed.info/sct",
                                                 "code": "16090371000119103",
-                                                "display": "Environmental exposure to tobacco smoke (home, car, etc)"
+                                                "display": "Exposure to second hand tobacco smoke"
                                             }
                                         },
                                         {
@@ -13357,8 +14219,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-14",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -13382,7 +14244,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },
@@ -14291,8 +15153,8 @@
                             "enableWhen": [
                                 {
                                     "question": "MarkComplete-31",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "operator": "!=",
+                                    "answerBoolean": true
                                 }
                             ]
                         },
@@ -14316,7 +15178,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>\r\n"
+                                        "valueString": "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
                                     }
                                 ]
                             },

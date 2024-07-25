@@ -17,7 +17,8 @@ See the [FHIR terminology section]({{site.data.fhir.path}}terminologies-systems.
 **Value sets contained in the Aboriginal and Torres Strait Islander Health Check Questionnaire**
 - [Aboriginal and/or Torres Strait Islander](ValueSet-AboriginalTorresStraitIslander.html)
 - [Condition Clinical Status Codes](ValueSet-condition-clinical.html)
-- [Medical History](ValueSet-MedicalHistory.html)
+- [Clinical condition](ValueSet-clinical-condition-1.html)
+<!-- - [Medical History](ValueSet-MedicalHistory.html)-->
 <!-- - [Medical History Short List for Infants](ValueSet-MedicalHistoryShortListInfants.html)-->
 <!-- - [Medical History Short List for Primary School Children](ValueSet-MedicalHistoryShortListPrimarySchool.html)-->
 <!-- - [Medical History Short List for Adolescents](ValueSet-MedicalHistoryShortListAdolescents.html)-->
@@ -27,9 +28,12 @@ See the [FHIR terminology section]({{site.data.fhir.path}}terminologies-systems.
 - [Yes/No/NA](ValueSet-YesNoNA.html)
 - [Yes/No/Not Asked/Asked But Declined](ValueSet-YesNoNotAskedDeclined.html)
 - [Australian States and Territories](ValueSet-australian-states-territories-2.html)
-- [Personal Pronouns](ValueSet-pronouns.html)
+- [Australian Pronouns](ValueSet-australian-pronouns-1.html)
 - [Gender Identity Response](ValueSet-gender-identity-response-1.html)
 - [Biological Sex](ValueSet-biological-sex-1.html)
+- [AdministrativeGender](ValueSet-administrative-gender.html)
+- [Cervical Screening Status](ValueSet-CervicalScreeningStatus-1.html)
+- [Smoking Quit Status](ValueSet-SmokingQuitStatus-1.html)
 
 
 ### Code systems

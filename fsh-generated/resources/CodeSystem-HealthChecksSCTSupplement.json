@@ -1,0 +1,34 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "supplement",
+  "name": "HealthChecksSCTSupplement",
+  "id": "HealthChecksSCTSupplement",
+  "title": "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
+  "description": "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire.",
+  "url": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement",
+  "concept": [
+    {
+      "code": "736595007",
+      "display": "Declined"
+    },
+    {
+      "code": "171154002",
+      "display": "Not required"
+    },
+    {
+      "code": "171155001",
+      "display": "Up to date"
+    },
+    {
+      "code": "48031000119106",
+      "display": "Quit >12 months"
+    },
+    {
+      "code": "735128000",
+      "display": "Quit <12 months"
+    }
+  ],
+  "experimental": false,
+  "supplements": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
+}

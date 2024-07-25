@@ -6,11 +6,6 @@
   "title": "Condition Clinical Status Codes",
   "description": "Preferred value set for Condition Clinical Status.",
   "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-    ]
-  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
@@ -31,7 +26,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
     }
   ],
-  "version": "4.3.0",
+  "version": "4.0.1",
   "experimental": false,
   "publisher": "FHIR Project team",
   "contact": [
@@ -44,24 +39,35 @@
       ]
     }
   ],
-  "copyright": "Copyright © 2011+ HL7. Creative Commons 'No Rights Reserved' (CC0)",
+  "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
   "expansion": {
-    "identifier": "5d4bed14-061a-42c4-853d-e6a624c4f483",
-    "timestamp": "2022-10-20T09:32:48+10:00",
+    "identifier": "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8",
+    "timestamp": "2024-04-02T14:17:12+10:00",
     "total": 6,
-    "offset": 0,
     "parameter": [
       {
         "name": "version",
         "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
       },
       {
-        "name": "count",
-        "valueInteger": 2147483647
+        "name": "used-codesystem",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
       },
       {
-        "name": "offset",
-        "valueInteger": 0
+        "name": "warning-draft",
+        "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+      },
+      {
+        "name": "warning-trial-use",
+        "valueUri": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+      },
+      {
+        "name": "warning-trial-use",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+      },
+      {
+        "name": "warning-draft",
+        "valueUri": "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
       }
     ],
     "contains": [
