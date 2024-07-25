@@ -36,6 +36,10 @@ Description: "Radiology request form."
 * extension[=].extension[+].url = "description"
 * extension[=].extension[=].valueString = "The encounter that is to be used to pre-populate the form"
 
+// Structure Map
+* extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap"
+* extension[=].valueCanonical = "https://smartforms.csiro.au/ig/StructureMap/AURadiologyReqFormExtract"
+
 // Metadata
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
