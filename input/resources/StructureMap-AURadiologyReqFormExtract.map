@@ -4,15 +4,15 @@ uses "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" as source
 uses "http://hl7.org/fhir/StructureDefinition/Bundle" as target
 
 group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
-    src -> bundle.type = "transaction";
-    src -> bundle.entry as entry then {
-        src ->  entry.request as request then {
-            src -> request.method = 'POST';
-            src -> request.url = 'ServiceRequest';
+    src.item -> bundle.type = "transaction";
+    src.item -> bundle.entry as entry then {
+        src.item ->  entry.request as request then {
+            src.item -> request.method = 'POST';
+            src.item -> request.url = 'ServiceRequest';
         };
-        src -> entry.resource = create("ServiceRequest") as service then {
+        src.item -> entry.resource = create("ServiceRequest") as service then {
             src.subject as subject -> service.subject = subject;
-            src -> service.authoredOn = (now().toString().substring(0,10));
+            src.item -> service.authoredOn = (now().toString().substring(0,10));
             src.item as orderItem where linkId = 'radiology-order' -> service.requisition = create("Identifier") as requisition then {
                 orderItem.linkId -> requisition.system = "https://smartforms.csiro.au/id/DiagnosticOrder";
                 orderItem.linkId -> requisition.value = (%src.repeat(item).where(linkId='radiology-order-number').answer.value);

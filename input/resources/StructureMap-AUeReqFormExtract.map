@@ -12,7 +12,7 @@ group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
             radiologyItem.linkId ->  entry.resource = create("ServiceRequest") as service then {
             radiologyItem.linkId -> service.requisition = create("Identifier") as requisition then {
                 radiologyItem.linkId -> requisition.system = "https://smartforms.csiro.au/id/DiagnosticOrder";
-                radiologyItem.linkId -> requisition.value = (%src.repeat(radiologyItem).where(linkId='radiology-order-number').answer.value);
+                radiologyItem.linkId -> requisition.value = (%src.repeat(item).where(linkId='radiology-order-number').answer.value);
                 radiologyItem.linkId -> requisition.assigner as assigner then {
                     radiologyItem.linkId -> assigner.display = "AEHRC CSIRO";
                 };	
