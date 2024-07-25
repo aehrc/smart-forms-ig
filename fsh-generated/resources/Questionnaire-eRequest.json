@@ -1,0 +1,1070 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "eRequest",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+    ]
+  },
+  "url": "https://smartforms.csiro.au/ig/Questionnaire/eRequest",
+  "title": "eRequest",
+  "description": "eRequest.",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "The patient that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "user",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Practitioner"
+        },
+        {
+          "url": "description",
+          "valueString": "The practitioner user that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "encounter",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Encounter"
+        },
+        {
+          "url": "description",
+          "valueString": "The encounter that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "PractitionerRole",
+        "language": "application/x-fhir-query",
+        "expression": "PractitionerRole?practitioner={{%user.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "Condition",
+        "language": "application/x-fhir-query",
+        "expression": "Condition?patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "AllergyIntolerance",
+        "language": "application/x-fhir-query",
+        "expression": "AllergyIntolerance?patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "Device",
+        "language": "application/x-fhir-query",
+        "expression": "Device?patient={{%patient.id}}"
+      }
+    }
+  ],
+  "name": "eRequest",
+  "status": "draft",
+  "experimental": true,
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2024-03-18",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "AU",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "tab-container",
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "version": "1.0.0"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "tab-container",
+      "type": "group",
+      "repeats": false,
+      "item": [
+        {
+          "linkId": "patient",
+          "text": "Patient Details",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.id"
+                  }
+                }
+              ],
+              "linkId": "id",
+              "definition": "http://hl7.org.au/fhir/StructureDefinition/au-patient#Patient.id",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "(%patient.name.where(use='official').select(((prefix | given).join(' ') | family).join(' ').where($this != '') | text) | %patient.name.select(((prefix | given).join(' ') | family).join(' ').where($this != '') | text)).first()"
+                  }
+                }
+              ],
+              "linkId": "patient-name",
+              "text": "Name",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.gender"
+                  }
+                }
+              ],
+              "linkId": "patient-gender",
+              "text": "Administrative gender",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and valueCodeableConcept.coding.code='1515311000168102')))).extension.where(url='value').valueCodeableConcept.coding"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "drop-down",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "patient-sex",
+              "text": "Sex assigned at birth",
+              "type": "choice",
+              "repeats": false,
+              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%patient.birthDate"
+                  }
+                }
+              ],
+              "linkId": "patient-dob",
+              "text": "Date of birth",
+              "type": "date",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "iif(today().toString().select(substring(5,2) & substring(8,2)).toInteger() > %patient.birthDate.toString().select(substring(5,2) & substring(8,2)).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger() - %patient.birthDate.toString().substring(0,4).toInteger() - 1)"
+                  }
+                }
+              ],
+              "linkId": "patient-age",
+              "text": "Age",
+              "type": "integer",
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "linkId": "radiology-requester",
+          "text": "Requester details",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%user.name.text"
+                  }
+                }
+              ],
+              "linkId": "radiology-requester-name",
+              "text": "Practitioner name",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%PractitionerRole.entry.resource.identifier.where(system = 'http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+                  }
+                }
+              ],
+              "linkId": "radiology-requester-providernumber",
+              "text": "Provider number",
+              "type": "string",
+              "repeats": true
+            },
+            {
+              "linkId": "radiology-requester-organisation",
+              "text": "Requester organisation",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PractitionerRole.entry.resource.organization.display"
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-requester-organisation-name",
+                  "text": "Requester organisation name",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PractitionerRole.entry.resource.organization.identifier.where(system = 'http://ns.electronichealth.net.au/id/hi/hpio/1.0').value"
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-requester-organisation-identifier",
+                  "text": "Requester organisation identifier",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "clinicalsummary",
+          "text": "Clinical summary",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "DeviceRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%Device.entry.resource"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "gtable",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "clinicalsummary-device-table",
+              "text": "Implanted medical device summary",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%DeviceRepeat.type.text"
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-device-table-type",
+                  "text": "Type",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%DeviceRepeat.status"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-device-table-status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "active",
+                        "system": "http://hl7.org/fhir/device-status",
+                        "version": "4.0.1",
+                        "display": "Current"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "inactive",
+                        "system": "http://hl7.org/fhir/device-status",
+                        "version": "4.0.1",
+                        "display": "Past"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%DeviceRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-device-table-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "ConditionRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "gtable",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "clinicalsummary-problemdiagnosis-table",
+              "text": "Problem/diagnosis summary",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-problemdiagnosis-table-name",
+                  "text": "Name",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "required": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.bodySite[0].coding"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-problemdiagnosis-table-bodysite",
+                  "text": "Body site",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.clinicalStatus.coding"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-problemdiagnosis-table-status",
+                  "text": "Clinical status",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-problemdiagnosis-table-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "AllergyIntoleranceRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+                  }
+                }
+              ],
+              "linkId": "clinicalsummary-adversereaction",
+              "text": "Adverse reaction risk summary",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-adversereaction-substance",
+                  "text": "Substance",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "required": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-adversereaction-manifestation",
+                  "text": "Manifestation",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "clinicalsummary-adversereaction-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "radiology",
+          "text": "Radiology",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "PractitionerRoleRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%PractitionerRole.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "radiology-order",
+              "text": "Order details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "now().toString()"
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-order-number",
+                  "text": "Order number",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "radiology-order-requesterreference",
+                  "text": "Requester reference",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "radiology-order-requesterdisplay",
+                  "text": "Requester display",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "radiology-service",
+              "text": "Service details",
+              "type": "group",
+              "repeats": true,
+              "required": true,
+              "item": [
+                {
+                  "linkId": "radiology-service-examination",
+                  "text": "Examination",
+                  "type": "group",
+                  "repeats": true,
+                  "required": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "radiology-service-examination-procedure",
+                      "text": "Procedure",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "required": true,
+                      "answerValueSet": "http://erequestingexample.org.au/fhir/ValueSet/radiology-services-1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "radiology-service-examination-priority",
+                      "text": "Urgency",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "stat",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Emergency"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "urgent",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Urgent"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "routine",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Routine"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "radiology-service-examination-timing",
+                      "text": "Service due",
+                      "type": "dateTime",
+                      "repeats": false
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-clinicalindication",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+                },
+                {
+                  "linkId": "radiology-service-clinicalnotes",
+                  "text": "Clinical context",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "radiology-service-comment",
+                  "text": "Comment",
+                  "type": "text",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "pathology",
+          "text": "Pathology",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "PractitionerRoleRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%PractitionerRole.entry.resource"
+                  }
+                }
+              ],
+              "linkId": "pathology-order",
+              "text": "Order details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "now().toString()"
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-order-number",
+                  "text": "Order number",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "'PractitionerRole/' + %PractitionerRoleRepeat.id"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "pathology-order-requesterreference",
+                  "text": "Requester reference",
+                  "type": "string",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "pathology-order-requesterdisplay",
+                  "text": "Requester display",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "pathology-service",
+              "text": "Service details",
+              "type": "group",
+              "repeats": true,
+              "required": true,
+              "item": [
+                {
+                  "linkId": "pathology-service-test",
+                  "text": "Test",
+                  "type": "group",
+                  "repeats": true,
+                  "required": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "pathology-service-test-testname",
+                      "text": "Test name",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "required": true,
+                      "answerValueSet": "https://www.rcpa.edu.au/fhir/ValueSet/spia-requesting-refset-3"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "pathology-service-examination-priority",
+                      "text": "Urgency",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "stat",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Emergency"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "urgent",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Urgent"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "code": "routine",
+                            "system": "http://hl7.org/fhir/request-priority",
+                            "version": "4.0.1",
+                            "display": "Routine"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "pathology-service-examination-timing",
+                      "text": "Service due",
+                      "type": "dateTime",
+                      "repeats": false
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "pathology-service-clinicalindication",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/reason-for-request-1"
+                },
+                {
+                  "linkId": "pathology-service-clinicalnotes",
+                  "text": "Clinical context",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "pathology-service-comment",
+                  "text": "Comment",
+                  "type": "text",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -784,6 +784,7 @@ Description: "The Biological Sex value set includes values that represent the bi
     where constraint = "^ 32570631000036107|Sex reference set|"
 
 
+
 CodeSystem: HealthChecksSCTSupplement
 Id: HealthChecksSCTSupplement
 Title: "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check"
@@ -851,3 +852,4 @@ Description: "The Smoking Quit Status value set includes values that can indicat
 * ^expansion.contains[=].display = "Quit <12 months"
 * $SCT#48031000119106 "Quit >12 months"
 * $SCT#735128000 "Quit <12 months"
+

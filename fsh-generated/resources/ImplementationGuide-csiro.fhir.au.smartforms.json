@@ -372,7 +372,15 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/condition-clinical"
+          "reference": "Questionnaire/eRequest"
+        },
+        "name": "eRequest",
+        "description": "eRequest.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/gender-identity-response-1"
         },
         "name": "Condition Clinical Status Codes",
         "description": "Preferred value set for Condition Clinical Status.",
@@ -388,7 +396,12 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/gender-identity-response-1"
+          "reference": "Questionnaire/PathologyRequestForm"
+        },
+        "name": "Pathology Request Form",
+        "description": "Pathology request form.",
+        "exampleBoolean": false
+      
         },
         "name": "Gender Identity Response",
         "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
@@ -436,11 +449,35 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/RadiologyModality"
+        },
+        "name": "Radiology Modality",
+        "description": "Radiology modality.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/RadiologyRequestForm"
+        },
+        "name": "Radiology Request Form",
+        "description": "Radiology request form.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/SmartFormsApplication"
         },
         "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation and completion of forms.",
         "exampleBoolean": false,
         "name": "Smart Forms Application"
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/SmartFormsDiagnosticOrderIdentifier"
+        },
+        "name": "Smart Forms Diagnostic Order Identifier",
+        "description": "Smart Forms Diagnostic Order Identifier.",
+        "exampleBoolean": false
       },
       {
         "reference": {
