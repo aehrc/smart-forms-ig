@@ -1,14 +1,13 @@
-bulk-import.py
 .DS_Store
 Thumbs.db
-/assembler
-# /fsh-generated
-/fsh-generated/fsh-index.json
-/fsh-generated/fsh-index.txt
-/input-cache
-/node_modules
-/output
-/temp
-/template
-/.vscode
+bulk-import.py
+assembler/
+fsh-generated/fsh-index.*
+fsh-generated/includes/
+input-cache/
+node_modules/
+output/
+temp/
+template/
+.vscode/
 fhir.schema.json
