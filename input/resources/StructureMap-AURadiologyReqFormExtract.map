@@ -5,7 +5,7 @@ uses "http://hl7.org/fhir/StructureDefinition/Bundle" as target
 
 group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
     src.item -> bundle.type = "transaction";
-    src.item -> bundle.entry as entry then {
+    src.item first -> bundle.entry as entry then {
         src.item ->  entry.request as request then {
             src.item -> request.method = 'POST';
             src.item -> request.url = 'ServiceRequest';

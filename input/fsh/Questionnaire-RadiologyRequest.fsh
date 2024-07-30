@@ -66,6 +66,7 @@ Description: "Radiology request form."
 * item[=].text = "Order details"
 * item[=].type = #group
 * item[=].repeats = false
+* item[=].required = true
 
 * item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
@@ -74,6 +75,7 @@ Description: "Radiology request form."
 * item[=].item[=].text = "Order number"
 * item[=].item[=].type = #string
 * item[=].item[=].repeats = false
+* item[=].item[=].required = true
 
 * item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath

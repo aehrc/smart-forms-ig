@@ -38,7 +38,7 @@ Description: "eRequest."
 
 // Structure Map
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap"
-* extension[=].valueCanonical = "https://smartforms.csiro.au/ig/StructureMap/AUeReqFormExtract"
+* extension[=].valueCanonical = "https://smartforms.csiro.au/ig/StructureMap/AUeReqFormExtract" 
 
 //fhir query variables
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
@@ -172,7 +172,7 @@ Description: "eRequest."
 
 * item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].extension[=].valueExpression[=].expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and valueCodeableConcept.coding.code='1515311000168102')))).extension.where(url='value').valueCodeableConcept.coding"
+* item.item[=].item[=].extension[=].valueExpression[=].expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
 * item.item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
 * item.item[=].item[=].linkId = "patient-sex"
@@ -511,6 +511,7 @@ Description: "eRequest."
 * item.item[=].item[=].text = "Order details"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = false
+* item.item[=].item[=].required = true
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
@@ -519,6 +520,7 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].text = "Order number"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].required = true
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
@@ -658,6 +660,7 @@ Description: "eRequest."
 * item.item[=].item[=].text = "Order details"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = false
+* item.item[=].item[=].required = true
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
@@ -666,6 +669,7 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].text = "Order number"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].required = true
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath

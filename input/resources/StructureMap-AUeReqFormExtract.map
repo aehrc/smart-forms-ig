@@ -6,69 +6,83 @@ uses "http://hl7.org/fhir/StructureDefinition/Bundle" as target
 group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
     src.item -> bundle.type = 'transaction';
     src.item as rootItem then {
-      rootItem.item as radiologyItem where linkId = 'radiology' -> bundle.entry as entry then{
-        radiologyItem.linkId ->  entry.request as request then {
-            radiologyItem.linkId -> request.method = 'POST';
-            radiologyItem.linkId ->  entry.resource = create("ServiceRequest") as service then {
-            radiologyItem.linkId -> service.requisition = create("Identifier") as requisition then {
-                radiologyItem.linkId -> requisition.system = "https://smartforms.csiro.au/id/DiagnosticOrder";
-                radiologyItem.linkId -> requisition.value = (%src.repeat(item).where(linkId='radiology-order-number').answer.value);
-                radiologyItem.linkId -> requisition.assigner as assigner then {
-                    radiologyItem.linkId -> assigner.display = "AEHRC CSIRO";
+      rootItem.item as radiologyItem where linkId = 'radiology' -> bundle.entry as entry then {
+        radiologyItem.item ->  entry.request as request then {
+            radiologyItem.item -> request.method = 'POST';
+            radiologyItem.item -> request.url = 'ServiceRequest';
+        };
+        radiologyItem.item -> entry.resource = create("ServiceRequest") as service then {
+            src.subject as subject -> service.subject = subject;
+            radiologyItem.item -> service.authoredOn = (now().toString().substring(0,10));
+            radiologyItem.item as orderItem where linkId = 'radiology-order' -> service.requisition = create("Identifier") as requisition then {
+                orderItem.linkId -> requisition.system = "https://smartforms.csiro.au/id/DiagnosticOrder";
+                orderItem.linkId -> requisition.value = (%orderItem.repeat(item).where(linkId='radiology-order-number').answer.value);
+                orderItem.linkId -> requisition.assigner as assigner then {
+                    orderItem.linkId -> assigner.display = "AEHRC CSIRO";
                 };	
-                radiologyItem.linkId -> requisition.type as type then {
-                    radiologyItem.linkId -> type.coding = create("Coding") as coding then {
-                        radiologyItem.linkId -> coding.code = "PGN";
-                        radiologyItem.linkId -> coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203";
-                        radiologyItem.linkId -> coding.display = "Placer Group Number";
+                orderItem.linkId -> requisition.type as type then {
+                    orderItem.linkId -> type.coding = create("Coding") as coding then {
+                        orderItem.linkId -> coding.code = "PGN";
+                        orderItem.linkId -> coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203";
+                        orderItem.linkId -> coding.display = "Placer Group Number";
                     };
                 };
-            };
-            radiologyItem.linkId -> service.status = 'draft';
-            radiologyItem.linkId -> service.intent = 'order';
-            radiologyItem.linkId -> service.priority = (%radiologyItem.repeat(item).where(linkId='radiology-service-examination-priority').answer.value.code);
-            radiologyItem.linkId -> service.category = create("CodeableConcept") as category then {
-                radiologyItem.linkId -> category.text = "Imaging";
-                radiologyItem.linkId -> category.coding = create("Coding") as coding then {
-                    radiologyItem.linkId -> coding.code = "363679005";
-                    radiologyItem.linkId -> coding.system = "http://snomed.info/sct";
-                    radiologyItem.linkId -> coding.display = "Imaging";
+                orderItem.linkId -> service.requester as requester then {
+                    orderItem.linkId -> requester.reference = (%orderItem.repeat(item).where(linkId='radiology-order-requesterreference').answer.value);
+                    orderItem.linkId -> requester.display = (%orderItem.repeat(item).where(linkId='radiology-order-requesterdisplay').answer.value);
                 };
             };
-            radiologyItem.linkId -> service.code = create("CodeableConcept") as code then {
-                radiologyItem.linkId -> code.text = (%radiologyItem.repeat(item).where(linkId='radiology-service-examination-procedure').answer.value.display);
-                radiologyItem.linkId -> code.coding = (%radiologyItem.repeat(item).where(linkId='radiology-service-examination-procedure').answer.value);
+            radiologyItem.item as serviceItem where linkId = 'radiology-service' then {
+                serviceItem.linkId -> service.status = 'active';
+                serviceItem.linkId -> service.intent = 'order';
+                
+                serviceItem.linkId -> service.category = create("CodeableConcept") as category then {
+                    serviceItem.linkId -> category.text = "Imaging";
+                    serviceItem.linkId -> category.coding = create("Coding") as coding then {
+                        serviceItem.linkId -> coding.code = "363679005";
+                        serviceItem.linkId -> coding.system = "http://snomed.info/sct";
+                        serviceItem.linkId -> coding.display = "Imaging";
+                        };   
+                    };
+                serviceItem.item as examinationItem where linkId = 'radiology-service-examination' then {
+                    examinationItem.item as procedureItem where linkId = 'radiology-service-examination-procedure' -> service.code = create("CodeableConcept") as code then {
+                        procedureItem.answer -> code.text = (%procedureItem.answer.value.display);
+                        procedureItem.answer -> code.coding = (%procedureItem.answer.value);
+                    };
+                    examinationItem.item as bodySiteItem where linkId = 'radiology-service-examination-bodysite' -> service.bodySite = create("CodeableConcept") as bodySite then {
+                        bodySiteItem.answer -> bodySite.text = (%bodySiteItem.answer.value.display);
+                        bodySiteItem.answer -> bodySite.coding = (%bodySiteItem.answer.value);
+                    };
+                    examinationItem.item as urgencyItem where linkId = 'radiology-service-examination-priority' -> service.priority = (%urgencyItem.answer.value.code);
+                    examinationItem.item as serviceDueItem where linkId = 'radiology-service-examination-timing' -> service.occurrence = create("Timing") as timing then {
+                        serviceDueItem.answer -> timing.repeat as timingRepeat, timingRepeat.bounds = create("Period") as timingBounds, timingBounds.end = (%serviceDueItem.answer.value);
+                        };
+                    };
+                serviceItem.item as clinicalIndicationItem where linkId = 'radiology-service-clinicalindication' then {
+                    clinicalIndicationItem.answer as clinicalIndicationItemAnswer -> service.reasonCode as reasonCode then {
+                            clinicalIndicationItemAnswer.value as clinicalIndicationItemAnswerValue -> reasonCode.coding = clinicalIndicationItemAnswerValue then {
+                                clinicalIndicationItemAnswerValue.display as clinicalIndicationItemAnswerValueDisplay -> reasonCode.text = clinicalIndicationItemAnswerValueDisplay;
+                            };
+                    };
+                    };
+                serviceItem.item as clinicalContextItem where linkId = 'radiology-service-clinicalnotes' -> service.note = create("Annotation") as annotation then {
+                    clinicalContextItem.answer -> annotation.text = (%clinicalContextItem.answer.value);
+                };
+                serviceItem.item as commentItem where linkId = 'radiology-service-comment' -> service.note = create("Annotation") as annotation then {
+                    commentItem.answer -> annotation.text = (%commentItem.answer.value);
+                };
+                };
             };
-            radiologyItem.linkId -> service.authoredOn = (now().toString().substring(0,10));
-            radiologyItem.linkId -> service.bodySite = create("CodeableConcept") as code then {
-                radiologyItem.linkId -> code.text = (%radiologyItem.repeat(item).where(linkId='radiology-service-examination-bodysite').answer.value.display);
-                radiologyItem.linkId -> code.coding = (%radiologyItem.repeat(item).where(linkId='radiology-service-examination-bodysite').answer.value);
-            };
-            radiologyItem.linkId -> service.reasonCode = create("CodeableConcept") as code then {
-                radiologyItem.linkId -> code.text = (%radiologyItem.repeat(item).where(linkId='radiology-service-clinicalindication').answer.value.display);
-                radiologyItem.linkId -> code.coding = (%radiologyItem.repeat(item).where(linkId='radiology-service-clinicalindication').answer.value);
-            };
-            radiologyItem.linkId -> service.note = create("Annotation") as annotation then {
-                radiologyItem.linkId -> annotation.text = (%radiologyItem.repeat(item).where(linkId='radiology-service-comment').answer.value);
-            };
-            radiologyItem.linkId -> service.note = create("Annotation") as annotation then {
-                radiologyItem.linkId -> annotation.text = (%radiologyItem.repeat(item).where(linkId='radiology-service-clinicalnotes').answer.value);
-            };
-            radiologyItem.linkId -> service.requester as requester then {
-                radiologyItem.linkId -> requester.reference = (%radiologyItem.repeat(item).where(linkId='radiology-order-requesterreference').answer.value);
-                radiologyItem.linkId -> requester.display = (%radiologyItem.repeat(item).where(linkId='radiology-order-requesterdisplay').answer.value);
-            };
-            src.subject -> service.subject = (%src.subject);
-            radiologyItem.linkId -> service.occurrence = (%src.repeat(item).where(linkId='radiology-service-examination-timing').answer.value);
+
 
         };
-        };
-      };
-
+      
+  
       rootItem.item as clinicalSummaryItem where linkId = 'clinicalsummary' then {
         clinicalSummaryItem.item as adverseReactionItem where linkId = 'clinicalsummary-adversereaction' -> bundle.entry as entry then {
         adverseReactionItem.linkId ->  entry.request as request then {
             adverseReactionItem.linkId -> request.method = 'POST';
+            adverseReactionItem.linkId -> request.url = 'AllergyIntolerance';
             adverseReactionItem.linkId -> entry.resource = create("AllergyIntolerance") as allergy then {
                 adverseReactionItem.item as substanceItem where linkId = 'clinicalsummary-adversereaction-substance' then {
                     substanceItem.answer -> allergy.code = create("CodeableConcept") as code then {
