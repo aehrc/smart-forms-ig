@@ -38,10 +38,23 @@
       "version": "3.0.0",
       "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
       "id": "hl7_fhir_uv_sdc"
+    },
+    {
+      "packageId": "hl7.fhir.au.ereq",
+      "version": "current",
+      "uri": "http://hl7.org.au/fhir/ereq/ImplementationGuide/hl7.fhir.au.ereq",
+      "id": "hl7_fhir_au_ereq"
     }
   ],
   "definition": {
     "resource": [
+      {
+        "reference": {
+          "reference": "ServiceRequest/824"
+        },
+        "name": "824",
+        "exampleCanonical": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"
+      },
       {
         "reference": {
           "reference": "Questionnaire/AssemblyInstructions"

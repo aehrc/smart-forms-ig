@@ -36,6 +36,12 @@ Description: "Radiology request form."
 * extension[=].extension[+].url = "description"
 * extension[=].extension[=].valueString = "The encounter that is to be used to pre-populate the form"
 
+//fhir query variables
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression[+].name = "PractitionerRole"
+* extension[=].valueExpression[=].language = #application/x-fhir-query
+* extension[=].valueExpression[=].expression = "PractitionerRole?practitioner={{%user.id}}"
+
 // Structure Map
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap"
 * extension[=].valueCanonical = "https://smartforms.csiro.au/ig/StructureMap/AURadiologyReqFormExtract"
@@ -50,12 +56,6 @@ Description: "Radiology request form."
 * subjectType[+] = #Patient
 * date = "2024-06-26"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
-
-//fhir query variables
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension[=].valueExpression[+].name = "PractitionerRole"
-* extension[=].valueExpression[=].language = #application/x-fhir-query
-* extension[=].valueExpression[=].expression = "PractitionerRole?practitioner={{%user.id}}"
 
     // Provider
 * item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"

@@ -117,6 +117,7 @@
       "text": "Order details",
       "type": "group",
       "repeats": false,
+      "required": true,
       "item": [
         {
           "extension": [
@@ -131,7 +132,8 @@
           "linkId": "radiology-order-number",
           "text": "Order number",
           "type": "string",
-          "repeats": false
+          "repeats": false,
+          "required": true
         },
         {
           "extension": [
