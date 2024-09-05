@@ -1,0 +1,24 @@
+{
+  "resourceType": "ValueSet",
+  "id": "radiologypoc-bodysite-xray-1",
+  "url": "https://smartforms.csiro.au/ig/ValueSet/radiologypoc-bodysite-xray-1",
+  "version": "1.0.0",
+  "name": "SmartFormsRadiologyPOCSiteXray",
+  "title": "Smart Forms Radiology POC Site X-ray",
+  "status": "draft",
+  "experimental": true,
+  "date": "2024-08-13",
+  "publisher": "CSIRO AEHRC",
+  "description": "Smart Forms Radiology POC Site X-ray.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/32506021000036107",
+        "concept": [
+          {"code": "818982008"},{"code": "85856004"},{"code": "64630009"},{"code": "1148795003"},{"code": "80169004"},{"code": "71854001"},{"code": "127949000"},{"code": "56459004"},{"code": "8205005"},{"code": "85562004"},{"code": "29836001"},{"code": "85050009"},{"code": "122489005"},{"code": "4596009"},{"code": "72001000"},{"code": "91609006"},{"code": "127961008"},{"code": "661005"},{"code": "2095001"},{"code": "12921003"},{"code": "12921003"},{"code": "299701004"},{"code": "1144746008"},{"code": "1144746008"},{"code": "75535001"},{"code": "7874003"},{"code": "16982005"},{"code": "113192009"},{"code": "56873002"},{"code": "53620006"},{"code": "42973007"},{"code": "76505004"},{"code": "8205005"},{"code": "280426002"}
+        ]
+      }
+    ]
+  }
+}

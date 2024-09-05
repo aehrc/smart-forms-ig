@@ -1,0 +1,24 @@
+{
+    "resourceType": "ValueSet",
+    "id": "radiologypoc-bodysite-angio-1",
+    "url": "https://smartforms.csiro.au/ig/ValueSet/radiologypoc-bodysite-angio-1",
+    "version": "1.0.0",
+    "name": "SmartFormsRadiologyPOCSiteAngio",
+    "title": "Smart Forms Radiology POC Site Angio",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-08-13",
+    "publisher": "CSIRO AEHRC",
+    "description": "Smart Forms Radiology POC Site Angio.",
+    "compose": {
+        "include": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/32506021000036107",
+                "concept": [
+                    {"code": "8993003"},{"code": "81040000"},{"code": "128261004"},{"code": "128261004"},{"code": "81040000"},{"code": "2841007"},{"code": "244228006"},{"code": "29092000"},{"code": "64468002"}
+                ]
+            }
+        ]
+    }
+}

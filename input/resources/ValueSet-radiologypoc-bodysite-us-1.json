@@ -1,0 +1,28 @@
+{
+    "resourceType": "ValueSet",
+    "id": "radiologypoc-bodysite-us-1",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2024-08-13T14:13:40.753+10:00"
+    },
+    "url": "https://smartforms.csiro.au/ig/ValueSet/radiologypoc-bodysite-us-1",
+    "version": "1.0.0",
+    "name": "SmartFormsRadiologyPOCSiteUS",
+    "title": "Smart Forms Radiology POC Site US",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-08-13",
+    "publisher": "CSIRO AEHRC",
+    "description": "Smart Forms Radiology POC Site US.",
+    "compose": {
+        "include": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/32506021000036107",
+                "concept": [
+                    {"code": "69695003"},{"code": "69695003"},{"code": "69695003"},{"code": "64131007"},{"code": "64131007"},{"code": "89837001"},{"code": "69695003"},{"code": "64033007"},{"code": "64033007"},{"code": "64033007"},{"code": "64033007"},{"code": "64033007"},{"code": "2841007"},{"code": "2841007"},{"code": "2841007"},{"code": "2841007"},{"code": "52225003"},{"code": "87953007"},{"code": "122489005"},{"code": "59820001"},{"code": "51282000"},{"code": "51114001"},{"code": "34707002"},{"code": "34707002"},{"code": "17232002"}
+                ]
+            }
+        ]
+    }
+}

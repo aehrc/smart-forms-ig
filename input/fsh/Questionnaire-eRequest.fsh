@@ -562,7 +562,7 @@ Description: "eRequest."
 * item.item[=].item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].item[=].required = true
-* item.item[=].item[=].item[=].item[=].answerValueSet = "http://erequestingexample.org.au/fhir/ValueSet/radiology-services-1"
+* item.item[=].item[=].item[=].item[=].answerValueSet = "https://ranzcr.com/fhir/ValueSet/radiology-referral"
 /*
 * item.item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete

@@ -473,6 +473,54 @@
       },
       {
         "reference": {
+          "reference": "Questionnaire/RadiologyRequestFormMultifieldDemonstrator"
+        },
+        "name": "Radiology Request Form (multifield demonstrator)",
+        "description": "Radiology Request Form (multifield demonstrator)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/RadiologyTerminologyPOC"
+        },
+        "name": "Radiology Terminology POC",
+        "description": "Radiology Terminology POC.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/RadiologyTerminologyPOCTesting"
+        },
+        "name": "Radiology Terminology POC Testing",
+        "description": "Radiology Terminology POC Testing.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/RadiologyTerminologyPOCTesting2"
+        },
+        "name": "Radiology Terminology POC Testing 2",
+        "description": "Radiology Terminology POC Testing 2.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/RadiologyTerminologyPOCTesting3"
+        },
+        "name": "Radiology Terminology POC Testing 3",
+        "description": "Radiology Terminology POC Testing 3.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/RadiologyTerminologyPOCTesting5"
+        },
+        "name": "Radiology Terminology POC Testing 5",
+        "description": "Radiology Terminology POC Testing 5.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/SmartFormsApplication"
         },
         "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation and completion of forms.",
@@ -494,6 +542,86 @@
         "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
         "exampleBoolean": false,
         "name": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check"
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/radiologypoc-map-1"
+        },
+        "description": "Radiology Referral Set Concept map to SNOMED CT Procedure",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Map"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-angio-1"
+        },
+        "description": "Smart Forms Radiology POC Site Angio.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site Angio"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-ct-1"
+        },
+        "description": "Smart Forms Radiology POC Site CT.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site CT"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-diagrad-1"
+        },
+        "description": "Smart Forms Radiology POC Site Diag Rad.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site DiagRad"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-fluoro-1"
+        },
+        "description": "Smart Forms Radiology POC Site Fluoro.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site Fluoro"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-mammo-1"
+        },
+        "description": "Smart Forms Radiology POC Site Mammo.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site Mammo"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-mri-1"
+        },
+        "description": "Smart Forms Radiology POC Site MRI.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site MRI"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-plainxray-1"
+        },
+        "description": "Smart Forms Radiology POC Site Plain X-ray.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site Plain X-ray"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-us-1"
+        },
+        "description": "Smart Forms Radiology POC Site US.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site US"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radiologypoc-bodysite-xray-1"
+        },
+        "description": "Smart Forms Radiology POC Site X-ray.",
+        "exampleBoolean": false,
+        "name": "Smart Forms Radiology POC Site X-ray"
       },
       {
         "reference": {

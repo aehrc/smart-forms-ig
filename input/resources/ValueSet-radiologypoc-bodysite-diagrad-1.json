@@ -1,0 +1,24 @@
+{
+    "resourceType": "ValueSet",
+    "id": "radiologypoc-bodysite-diagrad-1",
+    "url": "https://smartforms.csiro.au/ig/ValueSet/radiologypoc-bodysite-diagrad-1",
+    "version": "1.0.0",
+    "name": "SmartFormsRadiologyPOCSiteDiagRad",
+    "title": "Smart Forms Radiology POC Site DiagRad",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-08-13",
+    "publisher": "CSIRO AEHRC",
+    "description": "Smart Forms Radiology POC Site Diag Rad.",
+    "compose": {
+        "include": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/32506021000036107",
+                "concept": [
+                    {"code": "28273000"},{"code": "28273000"},{"code": "28231008"},{"code": "89837001"},{"code": "35039007"},{"code": "122489005"},{"code": "71854001"},{"code": "25990002"},{"code": "25990002"},{"code": "25990002"},{"code": "25990002"},{"code": "32849002"},{"code": "13648007"},{"code": "32849002"},{"code": "28273000"},{"code": "91724006"}
+                ]
+            }
+        ]
+    }
+}

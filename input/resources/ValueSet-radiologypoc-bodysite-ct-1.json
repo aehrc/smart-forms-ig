@@ -1,0 +1,59 @@
+{
+    "resourceType": "ValueSet",
+    "id": "radiologypoc-bodysite-ct-1",
+    "url": "https://smartforms.csiro.au/ig/ValueSet/radiologypoc-bodysite-ct-1",
+    "version": "1.0.0",
+    "name": "SmartFormsRadiologyPOCSiteCT",
+    "title": "Smart Forms Radiology POC Site CT",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-08-13",
+    "publisher": "CSIRO AEHRC",
+    "description": "Smart Forms Radiology POC Site CT.",
+    "compose": {
+        "include": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/32506021000036107",
+                "concept": [
+                    {
+                        "code": "45048000"
+                    },
+                    {
+                        "code": "12738006"
+                    },
+                    {
+                        "code": "12738006"
+                    },
+                    {
+                        "code": "64033007"
+                    },
+                    {
+                        "code": "2095001"
+                    },
+                    {
+                        "code": "80891009"
+                    },
+                    {
+                        "code": "64033007"
+                    },
+                    {
+                        "code": "10200004"
+                    },
+                    {
+                        "code": "15776009"
+                    },
+                    {
+                        "code": "4596009"
+                    },
+                    {
+                        "code": "69105007"
+                    },
+                    {
+                        "code": "81040000"
+                    }
+                ]
+            }
+        ]
+    }
+}

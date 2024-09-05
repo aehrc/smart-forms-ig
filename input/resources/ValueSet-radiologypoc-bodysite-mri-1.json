@@ -1,0 +1,59 @@
+{
+    "resourceType": "ValueSet",
+    "id": "radiologypoc-bodysite-mri-1",
+    "url": "https://smartforms.csiro.au/ig/ValueSet/radiologypoc-bodysite-mri-1",
+    "version": "1.0.0",
+    "name": "SmartFormsRadiologyPOCSiteMRI",
+    "title": "Smart Forms Radiology POC Site MRI",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-08-13",
+    "publisher": "CSIRO AEHRC",
+    "description": "Smart Forms Radiology POC Site MRI.",
+    "compose": {
+        "include": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/32506021000036107",
+                "concept": [
+                    {
+                        "code": "12738006"
+                    },
+                    {
+                        "code": "818981001"
+                    },
+                    {
+                        "code": "816092008"
+                    },
+                    {
+                        "code": "41216001"
+                    },
+                    {
+                        "code": "10200004"
+                    },
+                    {
+                        "code": "15776009"
+                    },
+                    {
+                        "code": "38266002"
+                    },
+                    {
+                        "code": "80891009"
+                    },
+                    {
+                        "code": "30315005"
+                    },
+                    {
+                        "code": "23451007"
+                    },
+                    {
+                        "code": "1141986006"
+                    },
+                    {
+                        "code": "113197003"
+                    }
+                ]
+            }
+        ]
+    }
+}

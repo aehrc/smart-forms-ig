@@ -4,12 +4,37 @@ Alias: $UCUM = http://unitsofmeasure.org
 Alias: $questionnaire-item-control = http://hl7.org/fhir/questionnaire-item-control
 Alias: $display-category = http://hl7.org/fhir/questionnaire-display-category
 
-Instance: RadiologyRequestForm
+Instance: ProcedureForRequest
+InstanceOf: ValueSet
+Usage: #inline
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* extension[=].valueCanonical = "http://sparked.csiro.au/CodeSystem/ranzcr-rrs-snomedct-supplement"
+* status = #draft
+* compose.include.system = "http://snomed.info/sct"
+* compose.include.version = "http://snomed.info/sct/32506021000036107/version/20240630"
+* compose.include.filter[+].property = #RANZCR-Procedure
+* compose.include.filter[=].op = #=
+* compose.include.filter[=].value = "{{%procedureFocus}}"
+* compose.include.filter[+].property = #RANZCR-BodySite
+* compose.include.filter[=].op = #=
+* compose.include.filter[=].value = "{{%bodySite}}"
+* compose.include.filter[+].property = #RANZCR-BodySiteLaterality
+* compose.include.filter[=].op = #=
+* compose.include.filter[=].value = "{{%laterality}}"
+* compose.include.filter[+].property = #RANZCR-Contrast
+* compose.include.filter[=].op = #=
+* compose.include.filter[=].value = "{{%contrast}}"
+* compose.include.valueSet = "https://ranzcr.com/fhir/ValueSet/radiology-referral"
+
+
+Instance: RadiologyTerminologyPOC
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "Radiology Request Form"
-Description: "Radiology request form."
+Title: "Radiology Terminology POC"
+Description: "Radiology Terminology POC."
 
+
+* contained[+] = ProcedureForRequest
 
 //launch context
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
@@ -42,16 +67,6 @@ Description: "Radiology request form."
 * extension[=].valueExpression[=].language = #application/x-fhir-query
 * extension[=].valueExpression[=].expression = "PractitionerRole?practitioner={{%user.id}}"
 
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension[=].valueExpression[+].name = "PatientIHI"
-* extension[=].valueExpression[=].language = #application/x-fhir-query
-* extension[=].valueExpression[=].expression = "%patient.identifier.where(system='http://ns.electronichealth.net.au/id/hi/ihi/1.0')"
-
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension[=].valueExpression[+].name = "PatientName"
-* extension[=].valueExpression[=].language = #application/x-fhir-query
-* extension[=].valueExpression[=].expression = "%patient.name.where(use='official').select(((prefix | given).join(' ') | family).join(' ').where($this != '') | text) | %patient.name.select(((prefix | given).join(' ') | family).join(' ').where($this != '') | text)).first()"
-
 // Structure Map
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap"
 * extension[=].valueCanonical = "https://smartforms.csiro.au/ig/StructureMap/AURadiologyReqFormExtract"
@@ -59,15 +74,15 @@ Description: "Radiology request form."
 // Metadata
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* name = "RadiologyRequestForm"
-* title = "Radiology Request Form"
+* name = "RadiologyTerminologyPOC"
+* title = "Radiology Terminology POC"
 * status = #draft
 * experimental = true
 * subjectType[+] = #Patient
 * date = "2024-06-26"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
-    // Order details
+    // Provider
 * item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
 * item[=].extension[=].valueExpression[+].name = "PractitionerRoleRepeat"
 * item[=].extension[=].valueExpression[=].language = #text/fhirpath
@@ -107,26 +122,6 @@ Description: "Radiology request form."
 * item[=].item[=].type = #string
 * item[=].item[=].repeats = false
 
-* item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].extension[=].valueExpression[=].expression = "{%PatientIHI & %PatientName}"
-* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
-* item[=].item[=].extension[=].valueBoolean = true
-* item[=].item[=].linkId = "radiology-order-patientihi"
-* item[=].item[=].text = "Patient IHI"
-* item[=].item[=].type = #reference
-* item[=].item[=].repeats = false
-
-* item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].extension[=].valueExpression[=].expression = "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
-* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
-* item[=].item[=].extension[=].valueBoolean = true
-* item[=].item[=].linkId = "radiology-order-requesterdisplay"
-* item[=].item[=].text = "Requester display"
-* item[=].item[=].type = #string
-* item[=].item[=].repeats = false
-
     // Service details
 * item[+].linkId = "radiology-service"
 * item[=].text = "Service details"
@@ -134,43 +129,79 @@ Description: "Radiology request form."
 * item[=].repeats = true
 * item[=].required = true
 
-* item[=].item[+].linkId = "radiology-service-examination"
+// Terminology POC variables
+* item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression[+].name = "procedureFocus"
+* item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression[=].expression = "item.repeat(item).where(linkId='radiology-service-examination-components-modality').answer.value.code"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression[+].name = "bodySite"
+* item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression[=].expression = "item.repeat(item).where(linkId='radiology-service-examination-components-bodysite').answer.value.code"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression[+].name = "laterality"
+* item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression[=].expression = "item.repeat(item).where(linkId='radiology-service-examination-components-laterality').answer.value.code"
+* item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* item[=].item[=].extension[=].valueExpression[+].name = "contrast"
+* item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].extension[=].valueExpression[=].expression = "item.repeat(item).where(linkId='radiology-service-examination-components-contrast').answer.value.code"
+
+* item[=].item[=].linkId = "radiology-service-examination"
 * item[=].item[=].text = "Examination"
 * item[=].item[=].type = #group
-* item[=].item[=].repeats = true
+* item[=].item[=].repeats = false
 * item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "radiology-service-examination-components"
+* item[=].item[=].item[=].text = "Procedure components"
+* item[=].item[=].item[=].type = #group
+* item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].required = false
+
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-modality"
+* item[=].item[=].item[=].item[=].text = "Procedure focus"
+* item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-procedure-1"
+
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-bodysite"
+* item[=].item[=].item[=].item[=].text = "Body site"
+* item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-body-structure-1"
+
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#radio-button
+* item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-laterality"
+* item[=].item[=].item[=].item[=].text = "Laterality"
+* item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-laterality-1"
+
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#radio-button
+* item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-contrast"
+* item[=].item[=].item[=].item[=].text = "Contrast"
+* item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].answerValueSet = "http://ranzcr.com/fhir/ValueSet/radiology-contrast-1"
 
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
 * item[=].item[=].item[=].linkId = "radiology-service-examination-procedure"
-* item[=].item[=].item[=].text = "Procedure"
+* item[=].item[=].item[=].text = "Procedure being requested"
 * item[=].item[=].item[=].type = #open-choice
 * item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/imaging-procedure-1"
+* item[=].item[=].item[=].answerValueSet = "#ProcedureForRequest"
 
-* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#autocomplete
-* item[=].item[=].item[=].linkId = "radiology-service-examination-bodysite"
-* item[=].item[=].item[=].text = "Body site"
-* item[=].item[=].item[=].type = #open-choice
-* item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
-* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
-* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-bodysite-instructions"
-* item[=].item[=].item[=].item[=].text = "Include lateralised body site where appropriate"
-* item[=].item[=].item[=].item[=].type = #display
 
-* item[=].item[=].item[+].linkId = "radiology-service-examination-contrast"
-* item[=].item[=].item[=].text = "Contrast"
-* item[=].item[=].item[=].type = #boolean
-* item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"
-* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $display-category#instructions
-* item[=].item[=].item[=].item[=].linkId = "radiology-service-examination-components-contrast-instructions"
-* item[=].item[=].item[=].item[=].text = "Leave unanswered if no specific instruction"
-* item[=].item[=].item[=].item[=].type = #display
 
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#drop-down

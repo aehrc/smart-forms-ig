@@ -1,15 +1,61 @@
 {
   "resourceType": "Questionnaire",
-  "id": "RadiologyRequestForm",
+  "id": "RadiologyTerminologyPOC",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
     ]
   },
-  "url": "https://smartforms.csiro.au/ig/Questionnaire/RadiologyRequestForm",
-  "title": "Radiology Request Form",
-  "description": "Radiology request form.",
+  "url": "https://smartforms.csiro.au/ig/Questionnaire/RadiologyTerminologyPOC",
+  "title": "Radiology Terminology POC",
+  "description": "Radiology Terminology POC.",
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "ProcedureForRequest",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+          "valueCanonical": "http://sparked.csiro.au/CodeSystem/ranzcr-rrs-snomedct-supplement"
+        }
+      ],
+      "status": "draft",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20240630",
+            "filter": [
+              {
+                "property": "RANZCR-Procedure",
+                "op": "=",
+                "value": "{{%procedureFocus}}"
+              },
+              {
+                "property": "RANZCR-BodySite",
+                "op": "=",
+                "value": "{{%bodySite}}"
+              },
+              {
+                "property": "RANZCR-BodySiteLaterality",
+                "op": "=",
+                "value": "{{%laterality}}"
+              },
+              {
+                "property": "RANZCR-Contrast",
+                "op": "=",
+                "value": "{{%contrast}}"
+              }
+            ],
+            "valueSet": [
+              "https://ranzcr.com/fhir/ValueSet/radiology-referral"
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
@@ -80,27 +126,11 @@
       }
     },
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "PatientIHI",
-        "language": "application/x-fhir-query",
-        "expression": "%patient.identifier.where(system='http://ns.electronichealth.net.au/id/hi/ihi/1.0')"
-      }
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "PatientName",
-        "language": "application/x-fhir-query",
-        "expression": "%patient.name.where(use='official').select(((prefix | given).join(' ') | family).join(' ').where($this != '') | text) | %patient.name.select(((prefix | given).join(' ') | family).join(' ').where($this != '') | text)).first()"
-      }
-    },
-    {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap",
       "valueCanonical": "https://smartforms.csiro.au/ig/StructureMap/AURadiologyReqFormExtract"
     }
   ],
-  "name": "RadiologyRequestForm",
+  "name": "RadiologyTerminologyPOC",
   "status": "draft",
   "experimental": true,
   "subjectType": [
@@ -188,44 +218,6 @@
           "text": "Requester display",
           "type": "string",
           "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "{%PatientIHI & %PatientName}"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            }
-          ],
-          "linkId": "radiology-order-patientihi",
-          "text": "Patient IHI",
-          "type": "reference",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%PractitionerRoleRepeat.identifier.where(system='http://ns.electronichealth.net.au/id/medicare-provider-number').value"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            }
-          ],
-          "linkId": "radiology-order-requesterdisplay",
-          "text": "Requester display",
-          "type": "string",
-          "repeats": false
         }
       ]
     },
@@ -237,12 +229,136 @@
       "required": true,
       "item": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "procedureFocus",
+                "language": "text/fhirpath",
+                "expression": "item.repeat(item).where(linkId='radiology-service-examination-components-modality').answer.value.code"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "bodySite",
+                "language": "text/fhirpath",
+                "expression": "item.repeat(item).where(linkId='radiology-service-examination-components-bodysite').answer.value.code"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "laterality",
+                "language": "text/fhirpath",
+                "expression": "item.repeat(item).where(linkId='radiology-service-examination-components-laterality').answer.value.code"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "contrast",
+                "language": "text/fhirpath",
+                "expression": "item.repeat(item).where(linkId='radiology-service-examination-components-contrast').answer.value.code"
+              }
+            }
+          ],
           "linkId": "radiology-service-examination",
           "text": "Examination",
           "type": "group",
-          "repeats": true,
+          "repeats": false,
           "required": true,
           "item": [
+            {
+              "linkId": "radiology-service-examination-components",
+              "text": "Procedure components",
+              "type": "group",
+              "repeats": false,
+              "required": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-examination-components-modality",
+                  "text": "Procedure focus",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": true,
+                  "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-procedure-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-examination-components-bodysite",
+                  "text": "Body site",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-body-structure-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "radio-button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-examination-components-laterality",
+                  "text": "Laterality",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-laterality-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "radio-button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "radiology-service-examination-components-contrast",
+                  "text": "Contrast",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "http://ranzcr.com/fhir/ValueSet/radiology-contrast-1"
+                }
+              ]
+            },
             {
               "extension": [
                 {
@@ -258,77 +374,11 @@
                 }
               ],
               "linkId": "radiology-service-examination-procedure",
-              "text": "Procedure",
+              "text": "Procedure being requested",
               "type": "open-choice",
               "repeats": false,
               "required": true,
-              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/imaging-procedure-1"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "autocomplete",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "radiology-service-examination-bodysite",
-              "text": "Body site",
-              "type": "open-choice",
-              "repeats": false,
-              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1",
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "instructions",
-                            "system": "http://hl7.org/fhir/questionnaire-display-category"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-examination-components-bodysite-instructions",
-                  "text": "Include lateralised body site where appropriate",
-                  "type": "display"
-                }
-              ]
-            },
-            {
-              "linkId": "radiology-service-examination-contrast",
-              "text": "Contrast",
-              "type": "boolean",
-              "repeats": false,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "instructions",
-                            "system": "http://hl7.org/fhir/questionnaire-display-category"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "radiology-service-examination-components-contrast-instructions",
-                  "text": "Leave unanswered if no specific instruction",
-                  "type": "display"
-                }
-              ]
+              "answerValueSet": "#ProcedureForRequest"
             },
             {
               "extension": [

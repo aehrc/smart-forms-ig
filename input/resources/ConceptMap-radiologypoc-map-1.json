@@ -1,0 +1,1372 @@
+{
+    "resourceType": "ConceptMap",
+    "id": "radiologypoc-map-1",
+    "url": "https://smartforms.csiro.au/ig/ConceptMap/radiologypoc-map-1",
+    "version": "1.0.0",
+    "name": "SmartFormsRadiologyPOCMap",
+    "title": "Smart Forms Radiology POC Map",
+    "status": "draft",
+    "experimental": true,
+    "date": "2024-08-13",
+    "publisher": "CSIRO AEHRC",
+    "description": "Radiology Referral Set Concept map to SNOMED CT Procedure",
+    "group": [
+        {
+            "source": "http://snomed.info/sct",
+            "sourceVersion": "http://snomed.info/sct/32506021000036107",
+            "target": "http://snomed.info/sct",
+            "targetVersion": "http://snomed.info/sct/32506021000036107",
+            "element": [
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "168702005",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "818982008"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "426721006",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "419605007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "425703002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "419605007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "426420006",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "419605007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3771000087100",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "16982005"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "4111000087108",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "16982005"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3761000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "16982005"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3531000087108",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "127949000"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3991000087103",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "127949000"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3521000087106",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "127949000"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "431326009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "45048000"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "34227000",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "12738006"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "396207002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "12738006"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "55501000",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "64033007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "241526005",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "2095001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "241547009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "80891009"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "429931008",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "64033007"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "429862006",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "10200004"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "429873004",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "15776009"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "241536002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "4596009"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "417986000",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "69105007"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77477000",
+                    "target": [
+                        {
+                            "code": "16332841000119106",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "81040000"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "816077007",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "12738006"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "241621009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "818981001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "2690005",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "816092008"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "75691003",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "41216001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "241622002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "10200004"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "241625000",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "15776009"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "426252008",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "38266002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "241620005",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "80891009"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "431627008",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "30315005"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "241623007",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "23451007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "168566009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "2095001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "241647000",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "1141986006"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "113091000",
+                    "target": [
+                        {
+                            "code": "446063006",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "113197003"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "45036003",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "818983003"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "24848001",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "12921003"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "268445003",
+                            "equivalence": "equivalent"
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "446045006",
+                            "equivalence": "equivalent"
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "961000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "76752008"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "1571000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "76752008"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "951000087106",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "76752008"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "303917008",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "431938005"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "241462009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7832008"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "713021002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "12921003"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "19731001",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "81745001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "866200001",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "81745001"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "11521000087108",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "64033007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "13301000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "64033007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "11581000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "64033007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "303917008",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "431938005"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "40701008",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "80891009"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "105377009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "10200004"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "169250003",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "28231008"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "16310003",
+                    "target": [
+                        {
+                            "code": "241487002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "41216001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "27483000",
+                    "target": [
+                        {
+                            "code": "168821007",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "32849002"
+                                },
+                                {
+                                    "property": "424361007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "373066001"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77343006",
+                    "target": [
+                        {
+                            "code": "33367005",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "41801008"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3651000087100",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "29836001"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "4051000087106",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "29836001"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3641000087103",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "29836001"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "77343006",
+                    "target": [
+                        {
+                            "code": "308749001",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "86570000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "71651007",
+                    "target": [
+                        {
+                            "code": "572701000119102",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "76752008"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "71651007",
+                    "target": [
+                        {
+                            "code": "566571000119105",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "76752008"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "71651007",
+                    "target": [
+                        {
+                            "code": "43204002",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "76752008"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3631000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "85562004"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "4041000087108",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "85562004"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3621000087107",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "85562004"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3831000087105",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "8205005"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "4141000087109",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "8205005"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "3821000087108",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "8205005"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "426311001",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "56459004"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "24028007"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "426581005",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "419605007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "51440002"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "168537006",
+                    "target": [
+                        {
+                            "code": "426908009",
+                            "equivalence": "equivalent",
+                            "dependsOn": [
+                                {
+                                    "property": "405813007",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "419605007"
+                                },
+                                {
+                                    "property": "272741003",
+                                    "system": "http://snomed.info/sct",
+                                    "value": "7771000"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
