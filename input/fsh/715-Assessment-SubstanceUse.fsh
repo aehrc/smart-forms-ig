@@ -126,8 +126,8 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
       * type = #choice
       * repeats = false
       // better as a standard answerValueSet when missing concepts are available or national standard adoption
-      * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never smoked"
-      * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Smoker"
+      * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Lifetime non-smoker"
+      * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Current smoker"
       * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-smoker"
       * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Exposure to second hand tobacco smoke"
       * answerOption[+].valueString = "Wants to quit"
