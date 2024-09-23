@@ -10,21 +10,21 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp|3.0.0
 
 # Slice matching - CapabilityStatement
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|4.0.1
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination%
 
 # EnableWhen target comes after the question - This is intentional design for marking Questionnaire sections as complete
-%The target of this enableWhen rule (MarkComplete-%
+The target of this enableWhen rule (MarkComplete-%
 
 # ContainedResourceReference extension defined as intended
 Review the extension type for ContainedResourceReference: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 
 # Modular Questionnaire - URL of assembled questionnaire SHALL be the same as its base questionnnaire
-%The URL 'http://www.health.gov.au/assessments/mbs/715' has already been used by AssemblyInstructions%
-%The URL 'http://www.health.gov.au/assessments/mbs/715' is also used by AboriginalTorresStraitIslanderHealthCheck%
+The URL 'http://www.health.gov.au/assessments/mbs/715' has already been used by AssemblyInstructions%
+The URL 'http://www.health.gov.au/assessments/mbs/715' is also used by AboriginalTorresStraitIslanderHealthCheck%
 
 # Draft code systems referenced as intended
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext|3.0.0
-Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended|0.1.0
+Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended%
 Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-item-control|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-display-category|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/choice-list-orientation|5.1.0
