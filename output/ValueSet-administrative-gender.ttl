@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/ValueSet/administrative-gender> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "administrative-gender"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/shareablevalueset"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet administrative-gender</b></p><a name=\"administrative-gender\"> </a><a name=\"hcadministrative-gender\"> </a><a name=\"administrative-gender-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on <a href=\"http://hl7.org/fhir/R4/codesystem-administrative-gender.html\">system AdministrativeGender v4.0.1 (CodeSystem)</a></p><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href=\"http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html\">v2 map for AdministrativeGender</a></b></td><td><b><a href=\"http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html\">v3 map for AdministrativeGender</a></b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"administrative-gender-http://hl7.org/fhir/administrative-gender-female\"> </a>  <a href=\"http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-female\">female</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Female</td><td><div><p>Female.</p>\n</div></td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html\">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html\">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"administrative-gender-http://hl7.org/fhir/administrative-gender-male\"> </a>  <a href=\"http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-male\">male</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Male</td><td><div><p>Male.</p>\n</div></td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html\">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html\">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"administrative-gender-http://hl7.org/fhir/administrative-gender-other\"> </a>  <a href=\"http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-other\">other</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Other</td><td><div><p>Other.</p>\n</div></td><td><span title=\"SOURCEISNARROWERTHANTARGET\">&lt;</span><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html\">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a><br/><span title=\"SOURCEISNARROWERTHANTARGET\">&lt;</span><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html\">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title=\"SOURCEISNARROWERTHANTARGET\">&lt;</span><a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html\">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"administrative-gender-http://hl7.org/fhir/administrative-gender-unknown\"> </a>  <a href=\"http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-unknown\">unknown</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Unknown</td><td><div><p>Unknown.</p>\n</div></td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html\">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title=\"EQUIVALENT\">~</span><a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html\">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "pa" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "normative" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "5"^^xsd:integer ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "4.0.0" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/ValueSet/administrative-gender"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:2.16.840.1.113883.4.642.3.1" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "4.0.1"] ; # 
+  fhir:name [ fhir:v "AdministrativeGender"] ; # 
+  fhir:title [ fhir:v "AdministrativeGender"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2019-11-01T09:29:23+11:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 (FHIR Project)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fhir@lists.hl7.org" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The gender of a person used for administrative purposes."] ; # 
+  fhir:immutable [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\"."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/administrative-gender"^^xsd:anyURI ]
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:identifier [ fhir:v "urn:uuid:50f050c9-3975-48d6-bdb7-baae4ebc70cd"^^xsd:anyURI ] ;
+     fhir:timestamp [ fhir:v "2024-04-05T12:31:27+10:00"^^xsd:dateTime ] ;
+     fhir:total [ fhir:v "4"^^xsd:integer ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/administrative-gender|4.0.1"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "used-codesystem" ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/administrative-gender|4.0.1"^^xsd:anyURI ]
+     ] ) ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/administrative-gender"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "female" ] ;
+       fhir:display [ fhir:v "Female" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/administrative-gender"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "male" ] ;
+       fhir:display [ fhir:v "Male" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/administrative-gender"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "other" ] ;
+       fhir:display [ fhir:v "Other" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/administrative-gender"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "Unknown" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

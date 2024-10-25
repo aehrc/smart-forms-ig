@@ -1,0 +1,854 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/Questionnaire/FinalisingHealthCheck> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FinalisingHealthCheck"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render>
+     ] [
+       fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular>
+     ] [
+       fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Questionnaire FinalisingHealthCheck</b></p><a name=\"FinalisingHealthCheck\"> </a><a name=\"hcFinalisingHealthCheck\"> </a><a name=\"FinalisingHealthCheck-en-US\"> </a><b>Structure</b><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\">LinkID</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\">Text</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\">Cardinality</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Other attributes of the item\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the item\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireRoot\" class=\"hierarchy\"/> FinalisingHealthCheck</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Questionnaire</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck#0.2.0</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" id=\"item.16971bd2-5494-483d-9713-eda182c47f02\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> 16971bd2-5494-483d-9713-eda182c47f02</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Finalising the health check</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.CD-in-progress-31\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> CD-in-progress-31</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In progress</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <span><a href=\"#item.MarkComplete-31\">MarkComplete-31</a> != </span></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.CD-complete-31\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> CD-complete-31</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Complete</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <span><a href=\"#item.MarkComplete-31\">MarkComplete-31</a> = </span></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.30532ad8-3465-4bdd-97ed-ec5664f9d733\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 30532ad8-3465-4bdd-97ed-ec5664f9d733</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Patient priorities and goals: What does the parent/carer say are the important things that have come out of this health check?</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.6aa0a113-4d33-4f6b-9899-fa249674075a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 6aa0a113-4d33-4f6b-9899-fa249674075a</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Patient priorities and goals: What does the parent/carer and child say are the important things that have come out of this health check?</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.71c19d58-a8ae-43ba-8b96-463c108c75dc\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 71c19d58-a8ae-43ba-8b96-463c108c75dc</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Patient priorities and goals: What does the patient say are the important things that have come out of this health check?</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.d0e58402-a08a-49ca-b2ca-9f4bbdb89da0\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> d0e58402-a08a-49ca-b2ca-9f4bbdb89da0</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Brief intervention: advice and information provided during health check</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.d0e58402-a08a-49ca-b2ca-9f4bbdb89da0\">9 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> 0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Brief intervention: advice and information provided during health check</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8\">7 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.eaed9770-95f4-4c6a-b06c-d573427a2616\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> eaed9770-95f4-4c6a-b06c-d573427a2616</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Brief intervention: advice and information provided during health check</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.eaed9770-95f4-4c6a-b06c-d573427a2616\">9 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.25f27e83-fcf0-49c8-86c1-e285e201a043\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> 25f27e83-fcf0-49c8-86c1-e285e201a043</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Brief intervention: advice and information provided during health check</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.25f27e83-fcf0-49c8-86c1-e285e201a043\">10 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.2657da9c-a27e-4939-af7a-08a19b9ab6f7\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> 2657da9c-a27e-4939-af7a-08a19b9ab6f7</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Brief intervention: advice and information provided during health check</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.2657da9c-a27e-4939-af7a-08a19b9ab6f7\">8 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.afbadad6-bef9-4fad-b5f4-111f666ccf11\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> afbadad6-bef9-4fad-b5f4-111f666ccf11</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Care provided as part of the health check (eg immunisations, medication review, investigations requested)</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.4b3015f6-5b0a-4dfa-9791-994e4059f921\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 4b3015f6-5b0a-4dfa-9791-994e4059f921</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Identified needs and plan (including new diagnoses)</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)\" id=\"item.5760a1f9-d725-4b9e-b74d-50800615a689\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> 5760a1f9-d725-4b9e-b74d-50800615a689</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Follow-up</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)\" id=\"item.b4110a63-8547-4aa2-84c6-c1f64f0d24da\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> b4110a63-8547-4aa2-84c6-c1f64f0d24da</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Consider what follow-up appointments can be made at the time of the health check.</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-displayCategory.html\" title=\"Category: instructions \"><img src=\"icon-qi-instructions.png\" alt=\"icon\"/></a><img src=\"icon-qi-instructions.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)\" id=\"item.c47cfd7e-0f15-4dd9-bd53-bb62851b677c\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> c47cfd7e-0f15-4dd9-bd53-bb62851b677c</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Reminder: MBS follow up items for clients at risk of or with chronic disease are available to support follow-up of health checks</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-displayCategory.html\" title=\"Category: instructions \"><img src=\"icon-qi-instructions.png\" alt=\"icon\"/></a><img src=\"icon-qi-instructions.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0101.png)\" id=\"item.1be25c55-2a2d-4b94-b826-bd17d9e35e92\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> 1be25c55-2a2d-4b94-b826-bd17d9e35e92</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Referrals and appointments</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01010.png)\" id=\"item.4044d0b4-94b2-4a89-b826-a14614298511\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> 4044d0b4-94b2-4a89-b826-a14614298511</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Who</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.4044d0b4-94b2-4a89-b826-a14614298511\">12 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01010.png)\" id=\"item.f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Who</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a\">10 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01010.png)\" id=\"item.07cfe077-ba93-4f93-b2a5-027023faa33b\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> 07cfe077-ba93-4f93-b2a5-027023faa33b</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Who</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.07cfe077-ba93-4f93-b2a5-027023faa33b\">11 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01010.png)\" id=\"item.a525c370-d8c3-4764-ab3a-bf62081725e0\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> a525c370-d8c3-4764-ab3a-bf62081725e0</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Who</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.a525c370-d8c3-4764-ab3a-bf62081725e0\">13 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01010.png)\" id=\"item.d68d9693-48d3-4663-9dbb-dd3a7aec5278\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> d68d9693-48d3-4663-9dbb-dd3a7aec5278</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Who</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice\">open-choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.d68d9693-48d3-4663-9dbb-dd3a7aec5278\">16 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01000.png)\" id=\"item.0ef84b09-ca34-44c2-96d1-fcbbea0bae66\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-date.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"date\" class=\"hierarchy\"/> 0ef84b09-ca34-44c2-96d1-fcbbea0bae66</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">When</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-date\">date</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <ul><li><a href=\"#item.4044d0b4-94b2-4a89-b826-a14614298511\">4044d0b4-94b2-4a89-b826-a14614298511</a> exists </li><li><a href=\"#item.f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a\">f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a</a> exists </li><li><a href=\"#item.07cfe077-ba93-4f93-b2a5-027023faa33b\">07cfe077-ba93-4f93-b2a5-027023faa33b</a> exists </li><li><a href=\"#item.a525c370-d8c3-4764-ab3a-bf62081725e0\">a525c370-d8c3-4764-ab3a-bf62081725e0</a> exists </li><li><a href=\"#item.d68d9693-48d3-4663-9dbb-dd3a7aec5278\">d68d9693-48d3-4663-9dbb-dd3a7aec5278</a> exists </li></ul></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)\" id=\"item.a400fe69-c99f-47ed-bee1-083c3e4be467\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> a400fe69-c99f-47ed-bee1-083c3e4be467</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Recalls entered (eg clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations)</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)\" id=\"item.40e3933d-77bb-40f3-8609-0c38ebb4421e\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> 40e3933d-77bb-40f3-8609-0c38ebb4421e</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">recall-subject</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Definition: http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.subject.reference</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)\" id=\"item.fece6a3c-f8f1-4592-a166-5ea5a3c60c8e\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> fece6a3c-f8f1-4592-a166-5ea5a3c60c8e</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Recall</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Definition: http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.title</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.5a0c98f8-5349-4045-9ba0-27a4f35630b9\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 5a0c98f8-5349-4045-9ba0-27a4f35630b9</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Parent/carer actions</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.cde03bf0-182a-4998-a37e-7b3f22786617\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> cde03bf0-182a-4998-a37e-7b3f22786617</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Parent/patient actions</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.51ff0c15-312a-45ce-a25a-6c6a4bf0e17e\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 51ff0c15-312a-45ce-a25a-6c6a4bf0e17e</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Patient actions</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.8176151f-6d86-45eb-91b1-12458d75a181\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> 8176151f-6d86-45eb-91b1-12458d75a181</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">A copy of this health check has been offerered - including details of follow-up and future appointments</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.8176151f-6d86-45eb-91b1-12458d75a181\">3 options</a></td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" id=\"item.MarkComplete-31\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-boolean.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"boolean\" class=\"hierarchy\"/> MarkComplete-31</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Mark section as complete</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-boolean\">boolean</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr><td colspan=\"6\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table><hr/><p><b>Options Sets</b></p><a name=\"opt-item.d0e58402-a08a-49ca-b2ca-9f4bbdb89da0\"> </a><p><b>Answer options for d0e58402-a08a-49ca-b2ca-9f4bbdb89da0 </b></p><ul><li style=\"font-size: 11px\">Sugary drinks</li><li style=\"font-size: 11px\">Screen use</li><li style=\"font-size: 11px\">Healthy eating, including breastfeeding</li><li style=\"font-size: 11px\">Environmental exposure to harmful elements eg tobacco smoke</li><li style=\"font-size: 11px\">Physical activity and exercise</li><li style=\"font-size: 11px\">Sun protection</li><li style=\"font-size: 11px\">Parenting advice</li><li style=\"font-size: 11px\">Safe sleeping practices</li><li style=\"font-size: 11px\">Developmental milestones - including language and hearing</li></ul><a name=\"opt-item.0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8\"> </a><p><b>Answer options for 0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8 </b></p><ul><li style=\"font-size: 11px\">Healthy eating</li><li style=\"font-size: 11px\">Screen use</li><li style=\"font-size: 11px\">Sun protection</li><li style=\"font-size: 11px\">Environmental exposure to harmful elements (e.g. tobacco smoke)</li><li style=\"font-size: 11px\">Sugary drinks</li><li style=\"font-size: 11px\">Physical activity and exercise</li><li style=\"font-size: 11px\">Parenting advice</li></ul><a name=\"opt-item.eaed9770-95f4-4c6a-b06c-d573427a2616\"> </a><p><b>Answer options for eaed9770-95f4-4c6a-b06c-d573427a2616 </b></p><ul><li style=\"font-size: 11px\">Healthy eating</li><li style=\"font-size: 11px\">Screen use</li><li style=\"font-size: 11px\">Physical activity and exercise</li><li style=\"font-size: 11px\">Mental health and wellbeing</li><li style=\"font-size: 11px\">Safety/risky behaviours</li><li style=\"font-size: 11px\">Smoking cessation</li><li style=\"font-size: 11px\">Substance use/harm minimisation</li><li style=\"font-size: 11px\">Safe sex/contraception</li><li style=\"font-size: 11px\">Care of teeth and gums</li></ul><a name=\"opt-item.25f27e83-fcf0-49c8-86c1-e285e201a043\"> </a><p><b>Answer options for 25f27e83-fcf0-49c8-86c1-e285e201a043 </b></p><ul><li style=\"font-size: 11px\">Healthy eating</li><li style=\"font-size: 11px\">Screen use</li><li style=\"font-size: 11px\">Physical activity and exercise</li><li style=\"font-size: 11px\">Mental health and wellbeing</li><li style=\"font-size: 11px\">Carer support</li><li style=\"font-size: 11px\">Safety/risky behaviours</li><li style=\"font-size: 11px\">Smoking cessation</li><li style=\"font-size: 11px\">Substance use/harm minimisation</li><li style=\"font-size: 11px\">Safe sex/contraception</li><li style=\"font-size: 11px\">Oral and dental health</li></ul><a name=\"opt-item.2657da9c-a27e-4939-af7a-08a19b9ab6f7\"> </a><p><b>Answer options for 2657da9c-a27e-4939-af7a-08a19b9ab6f7 </b></p><ul><li style=\"font-size: 11px\">Healthy eating</li><li style=\"font-size: 11px\">Physical activity and exercise</li><li style=\"font-size: 11px\">Mental health and wellbeing</li><li style=\"font-size: 11px\">Carer support</li><li style=\"font-size: 11px\">Smoking cessation</li><li style=\"font-size: 11px\">Substance use/harm minimisation</li><li style=\"font-size: 11px\">Social support and services</li><li style=\"font-size: 11px\">Oral and dental health</li></ul><a name=\"opt-item.4044d0b4-94b2-4a89-b826-a14614298511\"> </a><p><b>Answer options for 4044d0b4-94b2-4a89-b826-a14614298511 </b></p><ul><li style=\"font-size: 11px\">GP follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Worker follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Practitioner follow-up</li><li style=\"font-size: 11px\">Practice nurse follow-up</li><li style=\"font-size: 11px\">Child health nurse</li><li style=\"font-size: 11px\">Dentist</li><li style=\"font-size: 11px\">Paediatrician</li><li style=\"font-size: 11px\">Audiology</li><li style=\"font-size: 11px\">Speech pathology</li><li style=\"font-size: 11px\">Mental health</li><li style=\"font-size: 11px\">Early intervention (development) services</li><li style=\"font-size: 11px\">Parenting programs/support services</li></ul><a name=\"opt-item.f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a\"> </a><p><b>Answer options for f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a </b></p><ul><li style=\"font-size: 11px\">GP follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Worker follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Practitioner follow-up</li><li style=\"font-size: 11px\">Practice nurse follow-up</li><li style=\"font-size: 11px\">Dentist</li><li style=\"font-size: 11px\">Paediatrician</li><li style=\"font-size: 11px\">Audiology</li><li style=\"font-size: 11px\">Speech pathology</li><li style=\"font-size: 11px\">Mental health</li><li style=\"font-size: 11px\">Parenting programs/support services</li></ul><a name=\"opt-item.07cfe077-ba93-4f93-b2a5-027023faa33b\"> </a><p><b>Answer options for 07cfe077-ba93-4f93-b2a5-027023faa33b </b></p><ul><li style=\"font-size: 11px\">GP follow-up</li><li style=\"font-size: 11px\">GP review of results of investigations</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Worker follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Practitioner follow-up</li><li style=\"font-size: 11px\">Practice nurse follow-up</li><li style=\"font-size: 11px\">Dentist</li><li style=\"font-size: 11px\">Paediatrician</li><li style=\"font-size: 11px\">Audiology</li><li style=\"font-size: 11px\">Speech pathology</li><li style=\"font-size: 11px\">Parenting programs/support services</li><li style=\"font-size: 11px\">Social and emotional wellbeing/mental health</li></ul><a name=\"opt-item.a525c370-d8c3-4764-ab3a-bf62081725e0\"> </a><p><b>Answer options for a525c370-d8c3-4764-ab3a-bf62081725e0 </b></p><ul><li style=\"font-size: 11px\">GP follow-up</li><li style=\"font-size: 11px\">GP review of results of investigations</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Worker follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Practitioner follow-up</li><li style=\"font-size: 11px\">Practice nurse follow-up</li><li style=\"font-size: 11px\">Dentist</li><li style=\"font-size: 11px\">Medication review</li><li style=\"font-size: 11px\">Smoking cessation</li><li style=\"font-size: 11px\">Audiology</li><li style=\"font-size: 11px\">Dietician</li><li style=\"font-size: 11px\">Physiotherapist or exercise program</li><li style=\"font-size: 11px\">Parenting programs/support services</li><li style=\"font-size: 11px\">Social and emotional wellbeing/mental health</li></ul><a name=\"opt-item.d68d9693-48d3-4663-9dbb-dd3a7aec5278\"> </a><p><b>Answer options for d68d9693-48d3-4663-9dbb-dd3a7aec5278 </b></p><ul><li style=\"font-size: 11px\">GP follow-up</li><li style=\"font-size: 11px\">GP review of results of investigations</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Worker follow-up</li><li style=\"font-size: 11px\">Aboriginal and/or Torres Strait Islander Health Practitioner follow-up</li><li style=\"font-size: 11px\">Practice nurse follow-up</li><li style=\"font-size: 11px\">Dentist</li><li style=\"font-size: 11px\">Medication review</li><li style=\"font-size: 11px\">Geriatrician</li><li style=\"font-size: 11px\">Smoking cessation</li><li style=\"font-size: 11px\">Audiologist</li><li style=\"font-size: 11px\">Dietician</li><li style=\"font-size: 11px\">Physiotherapist or exercise program</li><li style=\"font-size: 11px\">Optometrist</li><li style=\"font-size: 11px\">Podiatrist</li><li style=\"font-size: 11px\">Social and emotional wellbeing/mental health</li><li style=\"font-size: 11px\">Social support and services</li></ul><a name=\"opt-item.8176151f-6d86-45eb-91b1-12458d75a181\"> </a><p><b>Answer options for 8176151f-6d86-45eb-91b1-12458d75a181 </b></p><ul><li style=\"font-size: 11px\">Yes, copy taken</li><li style=\"font-size: 11px\">Yes, but declined</li><li style=\"font-size: 11px\">Not offered. Plan to follow up and offer at a later date</li></ul></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "assemble-child" ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "patient" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Patient" ]
+     ] [
+       fhir:url [ fhir:v "description"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "The patient that is to be used to pre-populate the form" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "user" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Practitioner" ]
+     ] [
+       fhir:url [ fhir:v "description"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "The practitioner user that is to be used to pre-populate the form" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "encounter" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Encounter" ]
+     ] [
+       fhir:url [ fhir:v "description"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "The encounter that is to be used to pre-populate the form" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "age" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "FinalisingHealthCheck"] ; # 
+  fhir:title [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:subjectType ( [ fhir:v "Patient"] ) ; # 
+  fhir:date [ fhir:v "2024-04-02"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AEHRC CSIRO" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."] ; # 
+  fhir:item ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Expression ;
+         fhir:language [ fhir:v "text/fhirpath" ] ;
+         fhir:expression [ fhir:v "%age.exists()" ]
+       ]
+     ] ) ;
+     fhir:linkId [ fhir:v "16971bd2-5494-483d-9713-eda182c47f02" ] ;
+     fhir:text [ fhir:v "Finalising the health check" ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:item ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "context-display" ]
+           ] )
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "CD-in-progress-31" ] ;
+       fhir:text [
+         fhir:v "In progress" ;
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n	<div style=\"display: flex; flex-direction: row;\">\r\n		<img width='24' height='24' src='data:image/svg+xml;base64,\r\n		PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n		style=\"align-self: center;\"/>\r\n	</div>\r\n</div>" ]
+         ] )
+       ] ;
+       fhir:type [ fhir:v "display" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "MarkComplete-31" ] ;
+         fhir:operator [ fhir:v "!=" ] ;
+         fhir:answer [ fhir:v "true"^^xsd:boolean ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "context-display" ]
+           ] )
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "CD-complete-31" ] ;
+       fhir:text [
+         fhir:v "Complete" ;
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n	<div style=\"display: flex; flex-direction: row;\">\r\n		<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n		style=\"align-self: center;\"/>\r\n	</div>\r\n</div>" ]
+         ] )
+       ] ;
+       fhir:type [ fhir:v "display" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "MarkComplete-31" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [ fhir:v "true"^^xsd:boolean ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age <= 5" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "30532ad8-3465-4bdd-97ed-ec5664f9d733" ] ;
+       fhir:text [ fhir:v "Patient priorities and goals: What does the parent/carer say are the important things that have come out of this health check?" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age <= 12).intersect(%age > 5)" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "6aa0a113-4d33-4f6b-9899-fa249674075a" ] ;
+       fhir:text [ fhir:v "Patient priorities and goals: What does the parent/carer and child say are the important things that have come out of this health check?" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age > 12" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "71c19d58-a8ae-43ba-8b96-463c108c75dc" ] ;
+       fhir:text [ fhir:v "Patient priorities and goals: What does the patient say are the important things that have come out of this health check?" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age <= 5" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "check-box" ]
+           ] )
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Other" ]
+       ] ) ;
+       fhir:linkId [ fhir:v "d0e58402-a08a-49ca-b2ca-9f4bbdb89da0" ] ;
+       fhir:text [ fhir:v "Brief intervention: advice and information provided during health check" ] ;
+       fhir:type [ fhir:v "open-choice" ] ;
+       fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:answerOption ( [
+         fhir:value [ fhir:v "Sugary drinks" ]
+       ] [
+         fhir:value [ fhir:v "Screen use" ]
+       ] [
+         fhir:value [ fhir:v "Healthy eating, including breastfeeding" ]
+       ] [
+         fhir:value [ fhir:v "Environmental exposure to harmful elements eg tobacco smoke" ]
+       ] [
+         fhir:value [ fhir:v "Physical activity and exercise" ]
+       ] [
+         fhir:value [ fhir:v "Sun protection" ]
+       ] [
+         fhir:value [ fhir:v "Parenting advice" ]
+       ] [
+         fhir:value [ fhir:v "Safe sleeping practices" ]
+       ] [
+         fhir:value [ fhir:v "Developmental milestones - including language and hearing" ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age <= 12).intersect(%age > 5)" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "check-box" ]
+           ] )
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Other" ]
+       ] ) ;
+       fhir:linkId [ fhir:v "0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8" ] ;
+       fhir:text [ fhir:v "Brief intervention: advice and information provided during health check" ] ;
+       fhir:type [ fhir:v "open-choice" ] ;
+       fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:answerOption ( [
+         fhir:value [ fhir:v "Healthy eating" ]
+       ] [
+         fhir:value [ fhir:v "Screen use" ]
+       ] [
+         fhir:value [ fhir:v "Sun protection" ]
+       ] [
+         fhir:value [ fhir:v "Environmental exposure to harmful elements (e.g. tobacco smoke)" ]
+       ] [
+         fhir:value [ fhir:v "Sugary drinks" ]
+       ] [
+         fhir:value [ fhir:v "Physical activity and exercise" ]
+       ] [
+         fhir:value [ fhir:v "Parenting advice" ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age <= 24).intersect(%age > 12)" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "check-box" ]
+           ] )
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Other" ]
+       ] ) ;
+       fhir:linkId [ fhir:v "eaed9770-95f4-4c6a-b06c-d573427a2616" ] ;
+       fhir:text [ fhir:v "Brief intervention: advice and information provided during health check" ] ;
+       fhir:type [ fhir:v "open-choice" ] ;
+       fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:answerOption ( [
+         fhir:value [ fhir:v "Healthy eating" ]
+       ] [
+         fhir:value [ fhir:v "Screen use" ]
+       ] [
+         fhir:value [ fhir:v "Physical activity and exercise" ]
+       ] [
+         fhir:value [ fhir:v "Mental health and wellbeing" ]
+       ] [
+         fhir:value [ fhir:v "Safety/risky behaviours" ]
+       ] [
+         fhir:value [ fhir:v "Smoking cessation" ]
+       ] [
+         fhir:value [ fhir:v "Substance use/harm minimisation" ]
+       ] [
+         fhir:value [ fhir:v "Safe sex/contraception" ]
+       ] [
+         fhir:value [ fhir:v "Care of teeth and gums" ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age <= 49).intersect(%age > 24)" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "check-box" ]
+           ] )
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Other" ]
+       ] ) ;
+       fhir:linkId [ fhir:v "25f27e83-fcf0-49c8-86c1-e285e201a043" ] ;
+       fhir:text [ fhir:v "Brief intervention: advice and information provided during health check" ] ;
+       fhir:type [ fhir:v "open-choice" ] ;
+       fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:answerOption ( [
+         fhir:value [ fhir:v "Healthy eating" ]
+       ] [
+         fhir:value [ fhir:v "Screen use" ]
+       ] [
+         fhir:value [ fhir:v "Physical activity and exercise" ]
+       ] [
+         fhir:value [ fhir:v "Mental health and wellbeing" ]
+       ] [
+         fhir:value [ fhir:v "Carer support" ]
+       ] [
+         fhir:value [ fhir:v "Safety/risky behaviours" ]
+       ] [
+         fhir:value [ fhir:v "Smoking cessation" ]
+       ] [
+         fhir:value [ fhir:v "Substance use/harm minimisation" ]
+       ] [
+         fhir:value [ fhir:v "Safe sex/contraception" ]
+       ] [
+         fhir:value [ fhir:v "Oral and dental health" ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age > 49" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "check-box" ]
+           ] )
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Other" ]
+       ] ) ;
+       fhir:linkId [ fhir:v "2657da9c-a27e-4939-af7a-08a19b9ab6f7" ] ;
+       fhir:text [ fhir:v "Brief intervention: advice and information provided during health check" ] ;
+       fhir:type [ fhir:v "open-choice" ] ;
+       fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:answerOption ( [
+         fhir:value [ fhir:v "Healthy eating" ]
+       ] [
+         fhir:value [ fhir:v "Physical activity and exercise" ]
+       ] [
+         fhir:value [ fhir:v "Mental health and wellbeing" ]
+       ] [
+         fhir:value [ fhir:v "Carer support" ]
+       ] [
+         fhir:value [ fhir:v "Smoking cessation" ]
+       ] [
+         fhir:value [ fhir:v "Substance use/harm minimisation" ]
+       ] [
+         fhir:value [ fhir:v "Social support and services" ]
+       ] [
+         fhir:value [ fhir:v "Oral and dental health" ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "afbadad6-bef9-4fad-b5f4-111f666ccf11" ] ;
+       fhir:text [ fhir:v "Care provided as part of the health check (eg immunisations, medication review, investigations requested)" ] ;
+       fhir:type [ fhir:v "text" ]
+     ] [
+       fhir:linkId [ fhir:v "4b3015f6-5b0a-4dfa-9791-994e4059f921" ] ;
+       fhir:text [ fhir:v "Identified needs and plan (including new diagnoses)" ] ;
+       fhir:type [ fhir:v "text" ]
+     ] [
+       fhir:linkId [ fhir:v "5760a1f9-d725-4b9e-b74d-50800615a689" ] ;
+       fhir:text [ fhir:v "Follow-up" ] ;
+       fhir:type [ fhir:v "group" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:item ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-display-category"^^xsd:anyURI ] ;
+               fhir:code [ fhir:v "instructions" ]
+             ] )
+           ]
+         ] ) ;
+         fhir:linkId [ fhir:v "b4110a63-8547-4aa2-84c6-c1f64f0d24da" ] ;
+         fhir:text [ fhir:v "Consider what follow-up appointments can be made at the time of the health check." ] ;
+         fhir:type [ fhir:v "display" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-display-category"^^xsd:anyURI ] ;
+               fhir:code [ fhir:v "instructions" ]
+             ] )
+           ]
+         ] ) ;
+         fhir:linkId [ fhir:v "c47cfd7e-0f15-4dd9-bd53-bb62851b677c" ] ;
+         fhir:text [ fhir:v "Reminder: MBS follow up items for clients at risk of or with chronic disease are available to support follow-up of health checks" ] ;
+         fhir:type [ fhir:v "display" ]
+       ] [
+         fhir:linkId [ fhir:v "1be25c55-2a2d-4b94-b826-bd17d9e35e92" ] ;
+         fhir:text [ fhir:v "Referrals and appointments" ] ;
+         fhir:type [ fhir:v "group" ] ;
+         fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+         fhir:item ( [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:Expression ;
+               fhir:language [ fhir:v "text/fhirpath" ] ;
+               fhir:expression [ fhir:v "%age <= 5" ]
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:CodeableConcept ;
+               fhir:coding ( [
+                 fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+                 fhir:code [ fhir:v "drop-down" ]
+               ] )
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "Other" ]
+           ] ) ;
+           fhir:linkId [ fhir:v "4044d0b4-94b2-4a89-b826-a14614298511" ] ;
+           fhir:text [ fhir:v "Who" ] ;
+           fhir:type [ fhir:v "open-choice" ] ;
+           fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+           fhir:answerOption ( [
+             fhir:value [ fhir:v "GP follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Worker follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Practitioner follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Practice nurse follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Child health nurse" ]
+           ] [
+             fhir:value [ fhir:v "Dentist" ]
+           ] [
+             fhir:value [ fhir:v "Paediatrician" ]
+           ] [
+             fhir:value [ fhir:v "Audiology" ]
+           ] [
+             fhir:value [ fhir:v "Speech pathology" ]
+           ] [
+             fhir:value [ fhir:v "Mental health" ]
+           ] [
+             fhir:value [ fhir:v "Early intervention (development) services" ]
+           ] [
+             fhir:value [ fhir:v "Parenting programs/support services" ]
+           ] )
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:Expression ;
+               fhir:language [ fhir:v "text/fhirpath" ] ;
+               fhir:expression [ fhir:v "(%age <= 12).intersect(%age > 5)" ]
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:CodeableConcept ;
+               fhir:coding ( [
+                 fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+                 fhir:code [ fhir:v "drop-down" ]
+               ] )
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "Other" ]
+           ] ) ;
+           fhir:linkId [ fhir:v "f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a" ] ;
+           fhir:text [ fhir:v "Who" ] ;
+           fhir:type [ fhir:v "open-choice" ] ;
+           fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+           fhir:answerOption ( [
+             fhir:value [ fhir:v "GP follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Worker follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Practitioner follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Practice nurse follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Dentist" ]
+           ] [
+             fhir:value [ fhir:v "Paediatrician" ]
+           ] [
+             fhir:value [ fhir:v "Audiology" ]
+           ] [
+             fhir:value [ fhir:v "Speech pathology" ]
+           ] [
+             fhir:value [ fhir:v "Mental health" ]
+           ] [
+             fhir:value [ fhir:v "Parenting programs/support services" ]
+           ] )
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:Expression ;
+               fhir:language [ fhir:v "text/fhirpath" ] ;
+               fhir:expression [ fhir:v "(%age <= 24).intersect(%age > 12)" ]
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:CodeableConcept ;
+               fhir:coding ( [
+                 fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+                 fhir:code [ fhir:v "drop-down" ]
+               ] )
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "Other" ]
+           ] ) ;
+           fhir:linkId [ fhir:v "07cfe077-ba93-4f93-b2a5-027023faa33b" ] ;
+           fhir:text [ fhir:v "Who" ] ;
+           fhir:type [ fhir:v "open-choice" ] ;
+           fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+           fhir:answerOption ( [
+             fhir:value [ fhir:v "GP follow-up" ]
+           ] [
+             fhir:value [ fhir:v "GP review of results of investigations" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Worker follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Practitioner follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Practice nurse follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Dentist" ]
+           ] [
+             fhir:value [ fhir:v "Paediatrician" ]
+           ] [
+             fhir:value [ fhir:v "Audiology" ]
+           ] [
+             fhir:value [ fhir:v "Speech pathology" ]
+           ] [
+             fhir:value [ fhir:v "Parenting programs/support services" ]
+           ] [
+             fhir:value [ fhir:v "Social and emotional wellbeing/mental health" ]
+           ] )
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:Expression ;
+               fhir:language [ fhir:v "text/fhirpath" ] ;
+               fhir:expression [ fhir:v "(%age <= 49).intersect(%age > 24)" ]
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:CodeableConcept ;
+               fhir:coding ( [
+                 fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+                 fhir:code [ fhir:v "drop-down" ]
+               ] )
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "Other" ]
+           ] ) ;
+           fhir:linkId [ fhir:v "a525c370-d8c3-4764-ab3a-bf62081725e0" ] ;
+           fhir:text [ fhir:v "Who" ] ;
+           fhir:type [ fhir:v "open-choice" ] ;
+           fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+           fhir:answerOption ( [
+             fhir:value [ fhir:v "GP follow-up" ]
+           ] [
+             fhir:value [ fhir:v "GP review of results of investigations" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Worker follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Practitioner follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Practice nurse follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Dentist" ]
+           ] [
+             fhir:value [ fhir:v "Medication review" ]
+           ] [
+             fhir:value [ fhir:v "Smoking cessation" ]
+           ] [
+             fhir:value [ fhir:v "Audiology" ]
+           ] [
+             fhir:value [ fhir:v "Dietician" ]
+           ] [
+             fhir:value [ fhir:v "Physiotherapist or exercise program" ]
+           ] [
+             fhir:value [ fhir:v "Parenting programs/support services" ]
+           ] [
+             fhir:value [ fhir:v "Social and emotional wellbeing/mental health" ]
+           ] )
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:Expression ;
+               fhir:language [ fhir:v "text/fhirpath" ] ;
+               fhir:expression [ fhir:v "%age > 49" ]
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+             fhir:value [
+               a fhir:CodeableConcept ;
+               fhir:coding ( [
+                 fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+                 fhir:code [ fhir:v "drop-down" ]
+               ] )
+             ]
+           ] [
+             fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "Other" ]
+           ] ) ;
+           fhir:linkId [ fhir:v "d68d9693-48d3-4663-9dbb-dd3a7aec5278" ] ;
+           fhir:text [ fhir:v "Who" ] ;
+           fhir:type [ fhir:v "open-choice" ] ;
+           fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+           fhir:answerOption ( [
+             fhir:value [ fhir:v "GP follow-up" ]
+           ] [
+             fhir:value [ fhir:v "GP review of results of investigations" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Worker follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Aboriginal and/or Torres Strait Islander Health Practitioner follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Practice nurse follow-up" ]
+           ] [
+             fhir:value [ fhir:v "Dentist" ]
+           ] [
+             fhir:value [ fhir:v "Medication review" ]
+           ] [
+             fhir:value [ fhir:v "Geriatrician" ]
+           ] [
+             fhir:value [ fhir:v "Smoking cessation" ]
+           ] [
+             fhir:value [ fhir:v "Audiologist" ]
+           ] [
+             fhir:value [ fhir:v "Dietician" ]
+           ] [
+             fhir:value [ fhir:v "Physiotherapist or exercise program" ]
+           ] [
+             fhir:value [ fhir:v "Optometrist" ]
+           ] [
+             fhir:value [ fhir:v "Podiatrist" ]
+           ] [
+             fhir:value [ fhir:v "Social and emotional wellbeing/mental health" ]
+           ] [
+             fhir:value [ fhir:v "Social support and services" ]
+           ] )
+         ] [
+           fhir:linkId [ fhir:v "0ef84b09-ca34-44c2-96d1-fcbbea0bae66" ] ;
+           fhir:text [ fhir:v "When" ] ;
+           fhir:type [ fhir:v "date" ] ;
+           fhir:enableWhen ( [
+             fhir:question [ fhir:v "4044d0b4-94b2-4a89-b826-a14614298511" ] ;
+             fhir:operator [ fhir:v "exists" ] ;
+             fhir:answer [ fhir:v "true"^^xsd:boolean ]
+           ] [
+             fhir:question [ fhir:v "f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a" ] ;
+             fhir:operator [ fhir:v "exists" ] ;
+             fhir:answer [ fhir:v "true"^^xsd:boolean ]
+           ] [
+             fhir:question [ fhir:v "07cfe077-ba93-4f93-b2a5-027023faa33b" ] ;
+             fhir:operator [ fhir:v "exists" ] ;
+             fhir:answer [ fhir:v "true"^^xsd:boolean ]
+           ] [
+             fhir:question [ fhir:v "a525c370-d8c3-4764-ab3a-bf62081725e0" ] ;
+             fhir:operator [ fhir:v "exists" ] ;
+             fhir:answer [ fhir:v "true"^^xsd:boolean ]
+           ] [
+             fhir:question [ fhir:v "d68d9693-48d3-4663-9dbb-dd3a7aec5278" ] ;
+             fhir:operator [ fhir:v "exists" ] ;
+             fhir:answer [ fhir:v "true"^^xsd:boolean ]
+           ] ) ;
+           fhir:enableBehavior [ fhir:v "any" ] ;
+           fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+         ] )
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "a400fe69-c99f-47ed-bee1-083c3e4be467" ] ;
+       fhir:text [ fhir:v "Recalls entered (eg clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations)" ] ;
+       fhir:type [ fhir:v "group" ] ;
+       fhir:repeats [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:item ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "true"^^xsd:boolean ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:Expression ;
+             fhir:language [ fhir:v "text/fhirpath" ] ;
+             fhir:expression [ fhir:v "%patient.id" ]
+           ]
+         ] ) ;
+         fhir:linkId [ fhir:v "40e3933d-77bb-40f3-8609-0c38ebb4421e" ] ;
+         fhir:definition [ fhir:v "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.subject.reference"^^xsd:anyURI ] ;
+         fhir:text [ fhir:v "recall-subject" ] ;
+         fhir:type [ fhir:v "string" ]
+       ] [
+         fhir:linkId [ fhir:v "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e" ] ;
+         fhir:definition [ fhir:v "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.title"^^xsd:anyURI ] ;
+         fhir:text [ fhir:v "Recall" ] ;
+         fhir:type [ fhir:v "text" ] ;
+         fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age <= 5" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "5a0c98f8-5349-4045-9ba0-27a4f35630b9" ] ;
+       fhir:text [ fhir:v "Parent/carer actions" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age <= 12).intersect(%age > 5)" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "cde03bf0-182a-4998-a37e-7b3f22786617" ] ;
+       fhir:text [ fhir:v "Parent/patient actions" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >12" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "51ff0c15-312a-45ce-a25a-6c6a4bf0e17e" ] ;
+       fhir:text [ fhir:v "Patient actions" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/questionnaire-item-control"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "radio-button" ]
+           ] )
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Copy of health check" ]
+       ] ) ;
+       fhir:linkId [ fhir:v "8176151f-6d86-45eb-91b1-12458d75a181" ] ;
+       fhir:text [ fhir:v "A copy of this health check has been offerered - including details of follow-up and future appointments" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:answerOption ( [
+         fhir:value [ fhir:v "Yes, copy taken" ]
+       ] [
+         fhir:value [ fhir:v "Yes, but declined" ]
+       ] [
+         fhir:value [ fhir:v "Not offered. Plan to follow up and offer at a later date" ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "MarkComplete-31" ] ;
+       fhir:text [
+         fhir:v "Mark section as complete" ;
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>" ]
+         ] )
+       ] ;
+       fhir:type [ fhir:v "boolean" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

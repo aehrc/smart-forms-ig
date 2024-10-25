@@ -1,0 +1,91 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "PrimaryCarerParentGrandparent",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PrimaryCarerParentGrandparent</b></p><a name=\"PrimaryCarerParentGrandparent\"> </a><a name=\"hcPrimaryCarerParentGrandparent\"> </a><a name=\"PrimaryCarerParentGrandparent-en-US\"> </a><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on:</p><ul><li>system NullFlavor version2018-08-12</li><li>system RoleCode version2018-08-12</li></ul></div><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-MTH\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-MTH\">MTH</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>mother</td><td><div><p>The player of the role is a female who conceives, gives birth to, or raises and nurtures the scoping entity (child).</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-FTH\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-FTH\">FTH</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>father</td><td><div><p>The player of the role is a male who begets or raises or nurtures the scoping entity (child).</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-GRPRN\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-GRPRN\">GRPRN</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>grandparent</td><td><div><p>The player of the role is a parent of the scoping person's mother or father.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-NA\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-NA\">NA</a></td><td>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</td><td>not applicable</td><td><div><p>Known to have no proper value (e.g., last menstrual period for a male).</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
+  "version" : "0.2.0",
+  "name" : "PrimaryCarerParentGrandparent",
+  "title" : "Primary Carer Of Parent Or Grandparent",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2024-10-25T12:49:36+10:00",
+  "publisher" : "AEHRC CSIRO",
+  "contact" : [{
+    "name" : "AEHRC CSIRO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"
+    }]
+  }],
+  "description" : "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
+  "copyright" : "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "concept" : [{
+        "code" : "MTH"
+      },
+      {
+        "code" : "FTH"
+      },
+      {
+        "code" : "GRPRN"
+      }]
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept" : [{
+        "code" : "NA"
+      }]
+    }]
+  },
+  "expansion" : {
+    "identifier" : "2809c2fa-28ec-4def-9b16-93a611d29da3",
+    "timestamp" : "2022-10-20T11:42:30+10:00",
+    "total" : 4,
+    "offset" : 0,
+    "parameter" : [{
+      "name" : "version",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode|2018-08-12"
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"
+    },
+    {
+      "name" : "count",
+      "valueInteger" : 2147483647
+    },
+    {
+      "name" : "offset",
+      "valueInteger" : 0
+    }],
+    "contains" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "version" : "2018-08-12",
+      "code" : "MTH",
+      "display" : "mother"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "version" : "2018-08-12",
+      "code" : "FTH",
+      "display" : "father"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "version" : "2018-08-12",
+      "code" : "GRPRN",
+      "display" : "grandparent"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "version" : "2018-08-12",
+      "code" : "NA",
+      "display" : "not applicable"
+    }]
+  }
+}

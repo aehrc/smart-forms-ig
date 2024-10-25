@@ -1,0 +1,85 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/ValueSet/biological-sex-1> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "biological-sex-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/shareablevalueset"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ] [
+       fhir:v "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"^^xsd:anyURI ;
+       fhir:link <https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet biological-sex-1</b></p><a name=\"biological-sex-1\"> </a><a name=\"hcbiological-sex-1\"> </a><a name=\"biological-sex-1-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 31-Aug 2023</p><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-248152002\"> </a>  <a href=\"http://snomed.info/id/248152002\">248152002</a></td><td>http://snomed.info/sct</td><td>Female</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-32570681000036106\"> </a>  <a href=\"http://snomed.info/id/32570681000036106\">32570681000036106</a></td><td>http://snomed.info/sct</td><td>Indeterminate sex</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-32570691000036108\"> </a>  <a href=\"http://snomed.info/id/32570691000036108\">32570691000036108</a></td><td>http://snomed.info/sct</td><td>Intersex</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-248153007\"> </a>  <a href=\"http://snomed.info/id/248153007\">248153007</a></td><td>http://snomed.info/sct</td><td>Male</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:1.2.36.1.2001.1004.201.10198" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BiologicalSex"] ; # 
+  fhir:title [ fhir:v "Biological Sex"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2020-12-31"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Australian Digital Health Agency"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "help@digitalhealth.gov.au" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The Biological Sex value set includes values that represent the biological sex of an individual."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:filter ( [
+         fhir:property [ fhir:v "constraint" ] ;
+         fhir:op [ fhir:v "=" ] ;
+         fhir:value [ fhir:v "^ 32570631000036107|Sex reference set|" ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:identifier [ fhir:v "urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b"^^xsd:anyURI ] ;
+     fhir:timestamp [ fhir:v "2023-08-30T10:41:59+10:00"^^xsd:dateTime ] ;
+     fhir:total [ fhir:v "4"^^xsd:integer ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "used-codesystem" ] ;
+       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"^^xsd:anyURI ]
+     ] ) ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "248152002" ] ;
+       fhir:display [ fhir:v "Female" ]
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "32570681000036106" ] ;
+       fhir:display [ fhir:v "Indeterminate sex" ]
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "32570691000036108" ] ;
+       fhir:display [ fhir:v "Intersex" ]
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "248153007" ] ;
+       fhir:display [ fhir:v "Male" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

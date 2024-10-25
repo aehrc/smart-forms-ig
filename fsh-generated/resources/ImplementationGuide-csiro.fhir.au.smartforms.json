@@ -338,6 +338,14 @@
       },
       {
         "reference": {
+          "reference": "Questionnaire/AgedCareCMSFacade"
+        },
+        "name": "Aged Care QI Prototype",
+        "description": "Aged Care CMS Facade.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/australian-pronouns-1"
         },
         "name": "Australian Pronouns",
@@ -382,6 +390,14 @@
         },
         "name": "Condition Clinical Status Codes",
         "description": "Preferred value set for Condition Clinical Status.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ConditionEnvironmentAcquired"
+        },
+        "name": "Condition Environment Acquired",
+        "description": "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment.",
         "exampleBoolean": false
       },
       {
@@ -478,6 +494,14 @@
         },
         "name": "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
         "description": "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/slk581"
+        },
+        "name": "Statistical Linkage Key 581",
+        "description": "Statistical linkage key 581 represented as an identifier datatype. Specification for generating the SLK581 is definied by the Australian Institute of Health and Welfare, https://meteor.aihw.gov.au/content/750410",
         "exampleBoolean": false
       },
       {

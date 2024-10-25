@@ -1,0 +1,444 @@
+[
+  {
+    "id" : "administrative-gender",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+    "version" : "4.0.1",
+    "name" : "AdministrativeGender",
+    "oids" : ["2.16.840.1.113883.4.642.3.1"]
+  },
+  {
+    "id" : "condition-clinical",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+    "version" : "4.0.1",
+    "name" : "ConditionClinicalStatusCodes",
+    "oids" : ["2.16.840.1.113883.4.642.3.164"]
+  },
+  {
+    "id" : "questionnaire-item-control",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+    "version" : "1.0.0",
+    "name" : "QuestionnaireItemUIControlCodes",
+    "oids" : [
+      "2.16.840.1.113883.4.642.3.931",
+      "2.16.840.1.113883.4.642.3.848"
+    ]
+  },
+  {
+    "id" : "questionnaire-item-control",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/questionnaire-item-control",
+    "version" : "1.0.0",
+    "name" : "QuestionnaireItemUIControlCodes",
+    "oids" : [
+      "2.16.840.1.113883.4.642.4.932",
+      "2.16.840.1.113883.4.642.1.849"
+    ]
+  },
+  {
+    "id" : "AssemblyInstructions",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715",
+    "version" : "0.1.0",
+    "name" : "AboriginalTorresStraitIslanderHealthCheck"
+  },
+  {
+    "id" : "AboriginalTorresStraitIslanderHealthCheck",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715",
+    "version" : "0.1.0-assembled",
+    "name" : "AboriginalTorresStraitIslanderHealthCheck"
+  },
+  {
+    "id" : "AboutTheHealthCheck",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck",
+    "version" : "0.2.0",
+    "name" : "AboutTheHealthCheck"
+  },
+  {
+    "id" : "AbsoluteCVDRiskCalculation",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation",
+    "version" : "0.2.0",
+    "name" : "AbsoluteCVDRiskCalculation"
+  },
+  {
+    "id" : "AllergiesAdverseReactions",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions",
+    "version" : "0.2.0",
+    "name" : "AllergiesAdverseReactions"
+  },
+  {
+    "id" : "ChronicDiseaseAgeing",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing",
+    "version" : "0.2.0",
+    "name" : "ChronicDiseaseAgeing"
+  },
+  {
+    "id" : "Consent",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Consent",
+    "version" : "0.2.0",
+    "name" : "Consent"
+  },
+  {
+    "id" : "CurrentPriorities",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities",
+    "version" : "0.2.0",
+    "name" : "CurrentPriorities"
+  },
+  {
+    "id" : "EarHealthAndHearing",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing",
+    "version" : "0.2.0",
+    "name" : "EarHealthAndHearing"
+  },
+  {
+    "id" : "Examination",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Examination",
+    "version" : "0.2.0",
+    "name" : "Examination"
+  },
+  {
+    "id" : "EyeHealth",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/EyeHealth",
+    "version" : "0.2.0",
+    "name" : "EyeHealth"
+  },
+  {
+    "id" : "FamilyHistory",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/FamilyHistory",
+    "version" : "0.2.0",
+    "name" : "FamilyHistory"
+  },
+  {
+    "id" : "FinalisingHealthCheck",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck",
+    "version" : "0.2.0",
+    "name" : "FinalisingHealthCheck"
+  },
+  {
+    "id" : "Gambling",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Gambling",
+    "version" : "0.2.0",
+    "name" : "Gambling"
+  },
+  {
+    "id" : "HealthPrioritiesSummary",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary",
+    "version" : "0.2.0",
+    "name" : "HealthPrioritiesActionsAndFollowUpSummary"
+  },
+  {
+    "id" : "HealthyEating",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/HealthyEating",
+    "version" : "0.2.0",
+    "name" : "HealthyEating"
+  },
+  {
+    "id" : "HomeAndFamily",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily",
+    "version" : "0.2.0",
+    "name" : "HomeAndFamily"
+  },
+  {
+    "id" : "Immunisation",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Immunisation",
+    "version" : "0.2.0",
+    "name" : "Immunisation"
+  },
+  {
+    "id" : "Investigations",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Investigations",
+    "version" : "0.2.0",
+    "name" : "Investigations"
+  },
+  {
+    "id" : "LearningAndDevelopment",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment",
+    "version" : "0.2.0",
+    "name" : "LearningAndDevelopment"
+  },
+  {
+    "id" : "LearningAndWork",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/LearningAndWork",
+    "version" : "0.2.0",
+    "name" : "LearningAndWork"
+  },
+  {
+    "id" : "MedicalHistoryCurrentProblems",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems",
+    "version" : "0.2.0",
+    "name" : "MedicalHistoryCurrentProblems"
+  },
+  {
+    "id" : "MemoryAndThinking",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking",
+    "version" : "0.2.0",
+    "name" : "MemoryAndThinking"
+  },
+  {
+    "id" : "Mood",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Mood",
+    "version" : "0.2.0",
+    "name" : "Mood"
+  },
+  {
+    "id" : "OralAndDentalHealth",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth",
+    "version" : "0.2.0",
+    "name" : "OralAndDentalHealth"
+  },
+  {
+    "id" : "PatientDetails",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/PatientDetails",
+    "version" : "0.2.0",
+    "name" : "PatientDetails"
+  },
+  {
+    "id" : "PhysicalActivityAndScreenTime",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime",
+    "version" : "0.2.0",
+    "name" : "PhysicalActivityAndScreenTime"
+  },
+  {
+    "id" : "RedFlagsEarlyIdentificationGuide",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide",
+    "version" : "0.2.0",
+    "name" : "RedFlagsEarlyIdentificationGuideForChildren"
+  },
+  {
+    "id" : "RegularMedications",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/RegularMedications",
+    "version" : "0.2.0",
+    "name" : "RegularMedications"
+  },
+  {
+    "id" : "ScreeningPrograms",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms",
+    "version" : "0.2.0",
+    "name" : "ScreeningPrograms"
+  },
+  {
+    "id" : "SexualHealth",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/SexualHealth",
+    "version" : "0.2.0",
+    "name" : "SexualHealth"
+  },
+  {
+    "id" : "Skin",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/Skin",
+    "version" : "0.2.0",
+    "name" : "Skin"
+  },
+  {
+    "id" : "SocialAndEmotionalWellbeing",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing",
+    "version" : "0.2.0",
+    "name" : "SocialAndEmotionalWellbeing"
+  },
+  {
+    "id" : "SocialHistoryChild",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild",
+    "version" : "0.2.0",
+    "name" : "SocialHistoryChild"
+  },
+  {
+    "id" : "SubstanceUse",
+    "type" : "Questionnaire",
+    "url" : "http://www.health.gov.au/assessments/mbs/715/SubstanceUse",
+    "version" : "0.2.0",
+    "name" : "SubstanceUse"
+  },
+  {
+    "id" : "australian-pronouns-1",
+    "type" : "ValueSet",
+    "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+    "version" : "1.0.0",
+    "name" : "AustralianPronouns",
+    "oids" : ["1.2.36.1.2001.1004.201.10284"]
+  },
+  {
+    "id" : "australian-states-territories-2",
+    "type" : "ValueSet",
+    "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+    "version" : "2.0.2",
+    "name" : "AustralianStatesAndTerritories",
+    "oids" : ["1.2.36.1.2001.1004.201.10026"]
+  },
+  {
+    "id" : "biological-sex-1",
+    "type" : "ValueSet",
+    "url" : "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+    "version" : "1.0.0",
+    "name" : "BiologicalSex",
+    "oids" : ["1.2.36.1.2001.1004.201.10198"]
+  },
+  {
+    "id" : "clinical-condition-1",
+    "type" : "ValueSet",
+    "url" : "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+    "version" : "1.0.2",
+    "name" : "ClinicalCondition",
+    "oids" : ["1.2.36.1.2001.1004.201.10035"]
+  },
+  {
+    "id" : "gender-identity-response-1",
+    "type" : "ValueSet",
+    "url" : "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+    "version" : "1.1.0",
+    "name" : "GenderIdentityResponse",
+    "oids" : ["1.2.36.1.2001.1004.201.10271"]
+  },
+  {
+    "id" : "SFLauncherServerAboriginalTorresStraitIslanderHealthCheck",
+    "type" : "CapabilityStatement",
+    "url" : "https://smartforms.csiro.au/ig/CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck",
+    "version" : "0.2.0",
+    "name" : "SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+  },
+  {
+    "id" : "SmartFormsApplication",
+    "type" : "CapabilityStatement",
+    "url" : "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsApplication",
+    "version" : "0.2.0",
+    "name" : "SmartFormsApplication"
+  },
+  {
+    "id" : "SmartFormsServer",
+    "type" : "CapabilityStatement",
+    "url" : "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer",
+    "version" : "0.2.0",
+    "name" : "SmartFormsServer"
+  },
+  {
+    "id" : "HealthChecksSCTSupplement",
+    "type" : "CodeSystem",
+    "url" : "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement",
+    "version" : "0.2.0",
+    "name" : "HealthChecksSCTSupplement"
+  },
+  {
+    "id" : "QuestionnaireItemControlExtended",
+    "type" : "CodeSystem",
+    "url" : "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended",
+    "version" : "0.2.0",
+    "name" : "QuestionnaireItemControlExtended"
+  },
+  {
+    "id" : "csiro.fhir.au.smartforms",
+    "type" : "ImplementationGuide",
+    "url" : "https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms",
+    "version" : "0.2.0",
+    "name" : "SmartForms"
+  },
+  {
+    "id" : "AgedCareCMSFacade",
+    "type" : "Questionnaire",
+    "url" : "https://smartforms.csiro.au/ig/Questionnaire/AgedCareCMSFacade",
+    "version" : "0.2.0",
+    "name" : "AgedCareCMSFacade"
+  },
+  {
+    "id" : "ConditionEnvironmentAcquired",
+    "type" : "StructureDefinition",
+    "url" : "https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired",
+    "version" : "0.2.0",
+    "name" : "ConditionEnvironmentAcquired"
+  },
+  {
+    "id" : "ContainedResourceReference",
+    "type" : "StructureDefinition",
+    "url" : "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+    "version" : "0.2.0",
+    "name" : "ContainedResourceReference"
+  },
+  {
+    "id" : "slk581",
+    "type" : "StructureDefinition",
+    "url" : "https://smartforms.csiro.au/ig/StructureDefinition/slk581",
+    "version" : "0.2.0",
+    "name" : "SLK581"
+  },
+  {
+    "id" : "AboriginalTorresStraitIslander",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
+    "version" : "0.2.0",
+    "name" : "AboriginalTorresStraitIslander"
+  },
+  {
+    "id" : "CervicalScreeningStatus-1",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+    "version" : "0.2.0",
+    "name" : "CervicalScreeningStatus"
+  },
+  {
+    "id" : "PrimaryCarerParentGrandparent",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
+    "version" : "0.2.0",
+    "name" : "PrimaryCarerParentGrandparent"
+  },
+  {
+    "id" : "SmokingQuitStatus-1",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+    "version" : "0.2.0",
+    "name" : "SmokingQuitStatus"
+  },
+  {
+    "id" : "YesNo",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+    "version" : "0.2.0",
+    "name" : "YesNo"
+  },
+  {
+    "id" : "YesNoNA",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+    "version" : "0.2.0",
+    "name" : "YesNoNA"
+  },
+  {
+    "id" : "YesNoNotAskedDeclined",
+    "type" : "ValueSet",
+    "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
+    "version" : "0.2.0",
+    "name" : "YesNoNotAskedDeclined"
+  }
+]

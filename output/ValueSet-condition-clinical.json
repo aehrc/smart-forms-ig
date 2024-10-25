@@ -1,0 +1,104 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "condition-clinical",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet condition-clinical</b></p><a name=\"condition-clinical\"> </a><a name=\"hccondition-clinical\"> </a><a name=\"condition-clinical-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on system Condition Clinical Status Codes version4.0.1</p><p>This value set contains 6 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-active\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-active\">active</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Active</td><td><div><p>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-inactive\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-inactive\">inactive</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Inactive</td><td><div><p>The subject is no longer experiencing the condition or situation and there is no longer evidence or appreciable risk of the condition or situation.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-recurrence\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-recurrence\">recurrence</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Recurrence</td><td><div><p>The subject is experiencing a reoccurence or repeating of a previously resolved condition or situation, e.g. urinary tract infection, food insecurity.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-relapse\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-relapse\">relapse</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Relapse</td><td><div><p>The subject is experiencing a return of a condition or situation after a period of improvement or remission, e.g. relapse of cancer, alcoholism.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-remission\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-remission\">remission</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Remission</td><td><div><p>The subject is not presently experiencing the condition or situation, but there is a risk of the condition or situation returning.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-resolved\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-resolved\">resolved</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Resolved</td><td><div><p>The subject is not presently experiencing the condition or situation and there is a negligible perceived risk of the condition or situation returning.</p>\n</div></td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "pc"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 3
+  }],
+  "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.3.164"
+  }],
+  "version" : "4.0.1",
+  "name" : "ConditionClinicalStatusCodes",
+  "title" : "Condition Clinical Status Codes",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2019-11-01T09:29:23+11:00",
+  "publisher" : "FHIR Project team",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7.org/fhir"
+    }]
+  }],
+  "description" : "Preferred value set for Condition Clinical Status.",
+  "copyright" : "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical"
+    }]
+  },
+  "expansion" : {
+    "identifier" : "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8",
+    "timestamp" : "2024-04-02T14:17:12+10:00",
+    "total" : 6,
+    "parameter" : [{
+      "name" : "version",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+    },
+    {
+      "name" : "warning-trial-use",
+      "valueUri" : "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+    },
+    {
+      "name" : "warning-trial-use",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+    },
+    {
+      "name" : "warning-draft",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"
+    }],
+    "contains" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "active",
+      "display" : "Active"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "inactive",
+      "display" : "Inactive"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "recurrence",
+      "display" : "Recurrence"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "relapse",
+      "display" : "Relapse"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "remission",
+      "display" : "Remission"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "resolved",
+      "display" : "Resolved"
+    }]
+  }
+}

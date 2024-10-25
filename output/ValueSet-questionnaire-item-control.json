@@ -1,0 +1,50 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "questionnaire-item-control",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-questionnaire-item-control.html\"><code>http://hl7.org/fhir/questionnaire-item-control</code></a></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fhir"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 3
+  }],
+  "url" : "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.3.931"
+  },
+  {
+    "use" : "old",
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.3.848"
+  }],
+  "version" : "1.0.0",
+  "name" : "QuestionnaireItemUIControlCodes",
+  "title" : "Questionnaire Item UI Control Codes",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-03-26T09:00:24+11:00",
+  "publisher" : "HL7 International / FHIR Infrastructure",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7.org/Special/committees/fhir-i"
+    }]
+  }],
+  "description" : "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire.",
+  "copyright" : "Copyright © 2011+ HL7. Creative Commons 'No Rights Reserved' (CC0)",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/questionnaire-item-control"
+    }]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://hl7.org/fhir/questionnaire-item-control",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "QuestionnaireItemUIControlCodes",
+      "title" : "Questionnaire Item UI Control Codes",
+      "description" : "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire.",
+      "oids" : [
+        "2.16.840.1.113883.4.642.4.932",
+        "2.16.840.1.113883.4.642.1.849"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "HealthChecksSCTSupplement",
+      "title" : "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
+      "description" : "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire."
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "QuestionnaireItemControlExtended",
+      "title" : "Questionnaire Item Control Extension",
+      "description" : "The Questionnaire Item Control Extension code system defines concepts that extend the HL7 questionnaire item control concepts in http://hl7.org/fhir/questionnaire-item-control. They represent interface control/display mechanisms interface control/display mechanisms that might be used when rendering an item in a questionnaire."
+    }
+  ]
+}

@@ -1,0 +1,899 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/Questionnaire/HealthPrioritiesSummary> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HealthPrioritiesSummary"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render>
+     ] [
+       fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular>
+     ] [
+       fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Questionnaire HealthPrioritiesSummary</b></p><a name=\"HealthPrioritiesSummary\"> </a><a name=\"hcHealthPrioritiesSummary\"> </a><a name=\"HealthPrioritiesSummary-en-US\"> </a><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\">LinkID</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\">Text</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\">Cardinality</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Other attributes of the item\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the item\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireRoot\" class=\"hierarchy\"/> HealthPrioritiesActionsAndFollowUpSummary</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Health Priorities, Actions And Follow-Up Summary sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Questionnaire</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary#0.2.0</td></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" id=\"item.e2c778e2-83df-40d5-89ea-f0f91b666b04\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> e2c778e2-83df-40d5-89ea-f0f91b666b04</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Health Priorities, Actions And Follow-Up Summary</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.f948fb81-48e9-4bc6-bf81-8d778ac4375a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> f948fb81-48e9-4bc6-bf81-8d778ac4375a</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">The following information is a read-only collection of the 'Health priorities, actions and follow-up' sections entered in the previous tabs. Only sections where previous information entered will be displayed here.</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.4b03d116-84ee-488c-b132-427472d21fcd\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 4b03d116-84ee-488c-b132-427472d21fcd</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Current health/patient priorities</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.c848098c-85f3-487b-91af-01da4eba3aba\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> c848098c-85f3-487b-91af-01da4eba3aba</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Medical history and current problems</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.0c0a389e-c23a-4687-84d9-e00c5a258c7a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 0c0a389e-c23a-4687-84d9-e00c5a258c7a</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Regular medications</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.34b7c4f3-c848-4dcb-ba9b-0b4c5ccd0785\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 34b7c4f3-c848-4dcb-ba9b-0b4c5ccd0785</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Allergies/adverse reactions</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.f81c85c7-587e-47de-8b02-9c1eeee13949\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> f81c85c7-587e-47de-8b02-9c1eeee13949</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Family history</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.a57d29d3-b875-47ac-b8ed-c95eaa6a027d\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> a57d29d3-b875-47ac-b8ed-c95eaa6a027d</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Social and emotional wellbeing</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.ad9b85fc-24fe-495d-a980-941e2ad16533\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> ad9b85fc-24fe-495d-a980-941e2ad16533</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Social history</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.622f0877-80ec-4b91-bb1c-e741e5657e4c\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 622f0877-80ec-4b91-bb1c-e741e5657e4c</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Home and family</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.9a88bdf6-e97a-4c54-96ff-1dad9701b5ab\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 9a88bdf6-e97a-4c54-96ff-1dad9701b5ab</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Learning and development</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.aefbee8b-64fc-4cdc-9902-d6c3f50a2e18\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> aefbee8b-64fc-4cdc-9902-d6c3f50a2e18</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Learning and work</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.a96cce74-cda3-4b6b-adc4-1b7d73df2317\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> a96cce74-cda3-4b6b-adc4-1b7d73df2317</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Work</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.58bf5a0f-6c68-4d1f-b352-bfcba8e1e05e\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 58bf5a0f-6c68-4d1f-b352-bfcba8e1e05e</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Mood</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.d963364a-e2d3-4382-8430-c47c19fc206c\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> d963364a-e2d3-4382-8430-c47c19fc206c</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Memory and thinking</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.1877223d-8cae-48af-8add-fd6b10b37209\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 1877223d-8cae-48af-8add-fd6b10b37209</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Chronic disease associated with ageing</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.b031bccf-5413-4c57-8e70-f464d24a6e6c\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> b031bccf-5413-4c57-8e70-f464d24a6e6c</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Participation in screening programs</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.6ef556cb-2a69-4d28-a6cf-b4866303a564\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 6ef556cb-2a69-4d28-a6cf-b4866303a564</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Healthy eating</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.b7e32f62-a4e7-4419-a728-6addceefeb02\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> b7e32f62-a4e7-4419-a728-6addceefeb02</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Physical activity and screen time</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.f1c3d1ba-240c-4e68-8afc-62c50cc313d1\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> f1c3d1ba-240c-4e68-8afc-62c50cc313d1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Physical activity</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.c94f2749-4353-4f51-9c75-106f81c5b69f\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> c94f2749-4353-4f51-9c75-106f81c5b69f</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Substance use, including tobacco</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.931457d4-0de0-434c-88af-eb1b17746953\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 931457d4-0de0-434c-88af-eb1b17746953</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Gambling</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.797402ac-95de-4c0b-a04f-44b669755f7c\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 797402ac-95de-4c0b-a04f-44b669755f7c</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Sexual health</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.e4df6f14-7a9c-445c-8cf5-3fc489db7307\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> e4df6f14-7a9c-445c-8cf5-3fc489db7307</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Genitourinary and sexual health</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.23e293c4-537f-46ca-90f9-c8dfb7630211\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 23e293c4-537f-46ca-90f9-c8dfb7630211</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Genitourinary and sexual health</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.4b1bf353-a422-40fb-a6d3-42807ebf1a6a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 4b1bf353-a422-40fb-a6d3-42807ebf1a6a</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Eye health</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.c292557b-2798-4b45-854d-58c20ecf8233\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> c292557b-2798-4b45-854d-58c20ecf8233</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Ear health and hearing</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.93c33ba0-e4cc-4e9d-978b-49f57ce4a5eb\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 93c33ba0-e4cc-4e9d-978b-49f57ce4a5eb</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Oral and dental health</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.0ccc2bce-899f-42b0-9100-05e6874372a3\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 0ccc2bce-899f-42b0-9100-05e6874372a3</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Skin</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.8a33280b-19b9-4e0f-a26f-d9a0f95a7714\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 8a33280b-19b9-4e0f-a26f-d9a0f95a7714</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Immunisation</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.a889034b-7942-460d-ada6-b728a9f57dc0\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> a889034b-7942-460d-ada6-b728a9f57dc0</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Examination</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.fd51cc3f-f53d-4a7d-a3a3-4a3b7232d4ee\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> fd51cc3f-f53d-4a7d-a3a3-4a3b7232d4ee</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Absolute cardiovascular risk calculation</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" id=\"item.84fa4cca-aff7-4357-8d92-bb827074dc6a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-text.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"text\" class=\"hierarchy\"/> 84fa4cca-aff7-4357-8d92-bb827074dc6a</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Investigations</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text\">text</a></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr><td colspan=\"6\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "assemble-child" ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "patient" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Patient" ]
+     ] [
+       fhir:url [ fhir:v "description"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "The patient that is to be used to pre-populate the form" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "user" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Practitioner" ]
+     ] [
+       fhir:url [ fhir:v "description"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "The practitioner user that is to be used to pre-populate the form" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "encounter" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "type"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Encounter" ]
+     ] [
+       fhir:url [ fhir:v "description"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "The encounter that is to be used to pre-populate the form" ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "age" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryCurrentPriorities" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryMedicalHistory" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryRegularMedications" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryAllergiesAdverseReactions" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryFamilyHistory" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySocialEmotionalWellbeing" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySocialHistory" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryHomeFamily" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryLearningDevelopment" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryLearningWorkAdults" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryLearningWorkOlder" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryMood" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryMemoryThinking" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryChronicDiseaseAgeing" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryScreeningPrograms" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryHealthyEating" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySubstanceUse" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryGambling" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySexualHealthAdolescents" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySexualHealthAdults" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySexualHealthOlder" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryEyeHealth" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryEarHealthHearing" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryOralDentalHealth" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummarySkin" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryImmunisation" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryExamination" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryAbsoluteCVDRisk" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "HealthPrioritiesSummaryInvestigations" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "HealthPrioritiesActionsAndFollowUpSummary"] ; # 
+  fhir:title [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Health Priorities, Actions And Follow-Up Summary"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:subjectType ( [ fhir:v "Patient"] ) ; # 
+  fhir:date [ fhir:v "2024-04-02"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AEHRC CSIRO" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Health Priorities, Actions And Follow-Up Summary sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."] ; # 
+  fhir:item ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Expression ;
+         fhir:language [ fhir:v "text/fhirpath" ] ;
+         fhir:expression [ fhir:v "%age.exists()" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Health Priorities Summary" ]
+     ] ) ;
+     fhir:linkId [ fhir:v "e2c778e2-83df-40d5-89ea-f0f91b666b04" ] ;
+     fhir:text [ fhir:v "Health Priorities, Actions And Follow-Up Summary" ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "f948fb81-48e9-4bc6-bf81-8d778ac4375a" ] ;
+       fhir:text [ fhir:v "The following information is a read-only collection of the 'Health priorities, actions and follow-up' sections entered in the previous tabs. Only sections where previous information entered will be displayed here." ] ;
+       fhir:type [ fhir:v "display" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryCurrentPriorities.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Current priorities calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryCurrentPriorities" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "4b03d116-84ee-488c-b132-427472d21fcd" ] ;
+       fhir:text [ fhir:v "Current health/patient priorities" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryMedicalHistory.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Medical history calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryMedicalHistory" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "c848098c-85f3-487b-91af-01da4eba3aba" ] ;
+       fhir:text [ fhir:v "Medical history and current problems" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryRegularMedications.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Regular medications calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryRegularMedications" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "0c0a389e-c23a-4687-84d9-e00c5a258c7a" ] ;
+       fhir:text [ fhir:v "Regular medications" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryAllergiesAdverseReactions.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Allergies/adverse reactions calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryAllergiesAdverseReactions" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "34b7c4f3-c848-4dcb-ba9b-0b4c5ccd0785" ] ;
+       fhir:text [ fhir:v "Allergies/adverse reactions" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryFamilyHistory.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Family history Calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryFamilyHistory" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "f81c85c7-587e-47de-8b02-9c1eeee13949" ] ;
+       fhir:text [ fhir:v "Family history" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age > 12 and %HealthPrioritiesSummarySocialEmotionalWellbeing.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Social and emotional wellbeing calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySocialEmotionalWellbeing" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "a57d29d3-b875-47ac-b8ed-c95eaa6a027d" ] ;
+       fhir:text [ fhir:v "Social and emotional wellbeing" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age <= 12 and %HealthPrioritiesSummarySocialHistory.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Social history calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySocialHistory" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "ad9b85fc-24fe-495d-a980-941e2ad16533" ] ;
+       fhir:text [ fhir:v "Social history" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age > 12 and %HealthPrioritiesSummaryHomeFamily.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Home and family calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryHomeFamily" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "622f0877-80ec-4b91-bb1c-e741e5657e4c" ] ;
+       fhir:text [ fhir:v "Home and family" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age <= 12 and %HealthPrioritiesSummaryLearningDevelopment.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Learning and development calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryLearningDevelopment" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "9a88bdf6-e97a-4c54-96ff-1dad9701b5ab" ] ;
+       fhir:text [ fhir:v "Learning and development" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age > 12).intersect(%age < 50) and %HealthPrioritiesSummaryLearningWorkAdults.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Learning and work for adolescents and adults calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryLearningWorkAdults" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "aefbee8b-64fc-4cdc-9902-d6c3f50a2e18" ] ;
+       fhir:text [ fhir:v "Learning and work" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 50 and %HealthPrioritiesSummaryLearningWorkOlder.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Learning and work calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryLearningWorkOlder" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "a96cce74-cda3-4b6b-adc4-1b7d73df2317" ] ;
+       fhir:text [ fhir:v "Work" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age > 12 and %HealthPrioritiesSummaryMood.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Mood calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryMood" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "58bf5a0f-6c68-4d1f-b352-bfcba8e1e05e" ] ;
+       fhir:text [ fhir:v "Mood" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 50 and %HealthPrioritiesSummaryMemoryThinking.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Memory and thinking calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryMemoryThinking" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "d963364a-e2d3-4382-8430-c47c19fc206c" ] ;
+       fhir:text [ fhir:v "Memory and thinking" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 50 and %HealthPrioritiesSummaryChronicDiseaseAgeing.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Chronic disease associated with ageing calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryChronicDiseaseAgeing" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "1877223d-8cae-48af-8add-fd6b10b37209" ] ;
+       fhir:text [ fhir:v "Chronic disease associated with ageing" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age >= 50).intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Participation in screening programs calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryScreeningPrograms" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "b031bccf-5413-4c57-8e70-f464d24a6e6c" ] ;
+       fhir:text [ fhir:v "Participation in screening programs" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryHealthyEating.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Healthy eating calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryHealthyEating" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "6ef556cb-2a69-4d28-a6cf-b4866303a564" ] ;
+       fhir:text [ fhir:v "Healthy eating" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age < 50 and %HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Physical activity and screen time calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "b7e32f62-a4e7-4419-a728-6addceefeb02" ] ;
+       fhir:text [ fhir:v "Physical activity and screen time" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 50 and %HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Physical activity and screen time calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "f1c3d1ba-240c-4e68-8afc-62c50cc313d1" ] ;
+       fhir:text [ fhir:v "Physical activity" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 12 and %HealthPrioritiesSummarySubstanceUse.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Substance use, including tobacco calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySubstanceUse" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "c94f2749-4353-4f51-9c75-106f81c5b69f" ] ;
+       fhir:text [ fhir:v "Substance use, including tobacco" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age > 12 and %HealthPrioritiesSummaryGambling.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Gambling calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryGambling" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "931457d4-0de0-434c-88af-eb1b17746953" ] ;
+       fhir:text [ fhir:v "Gambling" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age > 12).intersect(%age <= 24) and %HealthPrioritiesSummarySexualHealthAdolescents.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Sexual health calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySexualHealthAdolescents" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "797402ac-95de-4c0b-a04f-44b669755f7c" ] ;
+       fhir:text [ fhir:v "Sexual health" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "(%age > 24).intersect(%age <= 49) and %HealthPrioritiesSummarySexualHealthAdults.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Sexual health calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySexualHealthAdults" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "e4df6f14-7a9c-445c-8cf5-3fc489db7307" ] ;
+       fhir:text [ fhir:v "Genitourinary and sexual health" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 50 and %HealthPrioritiesSummarySexualHealthOlder.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Sexual health calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySexualHealthOlder" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "23e293c4-537f-46ca-90f9-c8dfb7630211" ] ;
+       fhir:text [ fhir:v "Genitourinary and sexual health" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryEyeHealth.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Eye health calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryEyeHealth" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "4b1bf353-a422-40fb-a6d3-42807ebf1a6a" ] ;
+       fhir:text [ fhir:v "Eye health" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryEarHealthHearing.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Ear health and hearing calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryEarHealthHearing" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "c292557b-2798-4b45-854d-58c20ecf8233" ] ;
+       fhir:text [ fhir:v "Ear health and hearing" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryOralDentalHealth.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Oral and dental health calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryOralDentalHealth" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "93c33ba0-e4cc-4e9d-978b-49f57ce4a5eb" ] ;
+       fhir:text [ fhir:v "Oral and dental health" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age <= 24 and %HealthPrioritiesSummarySkin.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Skin calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummarySkin" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "0ccc2bce-899f-42b0-9100-05e6874372a3" ] ;
+       fhir:text [ fhir:v "Skin" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryImmunisation.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Immunisation calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryImmunisation" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "8a33280b-19b9-4e0f-a26f-d9a0f95a7714" ] ;
+       fhir:text [ fhir:v "Immunisation" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryExamination.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Examination calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryExamination" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "a889034b-7942-460d-ada6-b728a9f57dc0" ] ;
+       fhir:text [ fhir:v "Examination" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 25 and %HealthPrioritiesSummaryAbsoluteCVDRisk.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Absolute cardiovascular risk calculation calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryAbsoluteCVDRisk" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "fd51cc3f-f53d-4a7d-a3a3-4a3b7232d4ee" ] ;
+       fhir:text [ fhir:v "Absolute cardiovascular risk calculation" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%age >= 12 and %HealthPrioritiesSummaryInvestigations.exists()" ]
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Investigations calculation" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%HealthPrioritiesSummaryInvestigations" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "84fa4cca-aff7-4357-8d92-bb827074dc6a" ] ;
+       fhir:text [ fhir:v "Investigations" ] ;
+       fhir:type [ fhir:v "text" ] ;
+       fhir:repeats [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:readOnly [ fhir:v "true"^^xsd:boolean ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

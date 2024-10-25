@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CervicalScreeningStatus-1"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet CervicalScreeningStatus-1</b></p><a name=\"CervicalScreeningStatus-1\"> </a><a name=\"hcCervicalScreeningStatus-1\"> </a><a name=\"CervicalScreeningStatus-1-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"CervicalScreeningStatus-1-http://snomed.info/sct-736595007\"> </a>  <a href=\"http://snomed.info/id/736595007\">736595007</a></td><td>http://snomed.info/sct</td><td>Declined</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"CervicalScreeningStatus-1-http://snomed.info/sct-410527000\"> </a>  <a href=\"http://snomed.info/id/410527000\">410527000</a></td><td>http://snomed.info/sct</td><td>Offered</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"CervicalScreeningStatus-1-http://snomed.info/sct-171154002\"> </a>  <a href=\"http://snomed.info/id/171154002\">171154002</a></td><td>http://snomed.info/sct</td><td>Not required</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"CervicalScreeningStatus-1-http://snomed.info/sct-171155001\"> </a>  <a href=\"http://snomed.info/id/171155001\">171155001</a></td><td>http://snomed.info/sct</td><td>Up to date</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/valueset-supplement"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"^^xsd:anyURI ;
+       fhir:link <https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement>
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "CervicalScreeningStatus"] ; # 
+  fhir:title [ fhir:v "Cervical Screening Status"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AEHRC CSIRO" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "736595007" ] ;
+         fhir:display [ fhir:v "Declined" ]
+       ] [
+         fhir:code [ fhir:v "410527000" ] ;
+         fhir:display [ fhir:v "Offered" ]
+       ] [
+         fhir:code [ fhir:v "171154002" ] ;
+         fhir:display [ fhir:v "Not required" ]
+       ] [
+         fhir:code [ fhir:v "171155001" ] ;
+         fhir:display [ fhir:v "Up to date" ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:identifier [ fhir:v "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d"^^xsd:anyURI ] ;
+     fhir:timestamp [ fhir:v "2024-04-08T10:41:42+10:00"^^xsd:dateTime ] ;
+     fhir:total [ fhir:v "4"^^xsd:integer ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "used-codesystem" ] ;
+       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"^^xsd:anyURI ]
+     ] ) ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "736595007" ] ;
+       fhir:display [ fhir:v "Declined" ]
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "410527000" ] ;
+       fhir:display [ fhir:v "Offered" ]
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "171154002" ] ;
+       fhir:display [ fhir:v "Not required" ]
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "171155001" ] ;
+       fhir:display [ fhir:v "Up to date" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

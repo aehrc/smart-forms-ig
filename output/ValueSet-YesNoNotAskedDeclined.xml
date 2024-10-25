@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="YesNoNotAskedDeclined"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet YesNoNotAskedDeclined</b></p><a name="YesNoNotAskedDeclined"> </a><a name="hcYesNoNotAskedDeclined"> </a><a name="YesNoNotAskedDeclined-en-US"> </a><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion based on:</p><ul><li>system DataAbsentReason version5.0.0-ballot</li><li><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></li></ul></div><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-Y"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td><div><p>Yes</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-N"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td><div><p>No</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-NASK"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-NASK">NASK</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Not Asked</td><td><div><p>not asked</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td><div><p>The source was asked but declined to answer.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined"/>
+  <version value="0.2.0"/>
+  <name value="YesNoNotAskedDeclined"/>
+  <title value="Yes/No/Not Asked/Asked But Declined"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-10-25T12:49:36+10:00"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="Concepts for Yes, No, Not Asked and Asked But Declined"/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <compose>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+      <concept>
+        <code value="Y"/>
+        <display value="Yes"/>
+      </concept>
+      <concept>
+        <code value="N"/>
+        <display value="No"/>
+      </concept>
+      <concept>
+        <code value="NASK"/>
+        <display value="Not Asked"/>
+      </concept>
+    </include>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+      <concept>
+        <code value="asked-declined"/>
+        <display value="Asked But Declined"/>
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="urn:uuid:8eda7c3c-cc35-49fa-ac6c-c0e4f0a4e203"/>
+    <timestamp value="2023-09-01T11:17:57+10:00"/>
+    <total value="4"/>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+    </parameter>
+    <parameter>
+      <name value="used-codesystem"/>
+      <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+    </parameter>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+    </parameter>
+    <parameter>
+      <name value="used-codesystem"/>
+      <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+    </parameter>
+    <contains>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+      <version value="2.1.0"/>
+      <code value="Y"/>
+      <display value="Yes"/>
+    </contains>
+    <contains>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+      <version value="2.1.0"/>
+      <code value="N"/>
+      <display value="No"/>
+    </contains>
+    <contains>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+      <version value="2.1.0"/>
+      <code value="NASK"/>
+      <display value="Not Asked"/>
+    </contains>
+    <contains>
+      <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+      <version value="5.0.0-ballot"/>
+      <code value="asked-declined"/>
+      <display value="Asked But Declined"/>
+    </contains>
+  </expansion>
+</ValueSet>

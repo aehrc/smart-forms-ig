@@ -1,0 +1,887 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- broken links = 8, errors = 12, warn = 52, info = 13-->
+<head>
+  <title>SmartForms : Validation Results</title>
+  <link href="fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+    span.toggle  { background-color: #e6f2ff; color: black; border: solid 1px #0056b3; padding: 2px; font-size: 10px }
+    span.toggle  { font-size: 10px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+    function toggle(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Validation Information') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Validation Information';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Validation Information';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results for SmartForms</h1>
+ <p>Generated Fri Oct 25 12:53:55 AEST 2024, FHIR version 4.0.1 for csiro.fhir.au.smartforms#0.2.0 (canonical = <a href="https://smartforms.csiro.au/ig">https://smartforms.csiro.au/ig</a> (<a href="https://smartforms.csiro.au/ig/history.html">history</a>)). See <a href="qa.html">Full QA Report</a></p>
+<table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.7.0</span></td></tr>
+ <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = csiro.fhir.au.smartforms, Canonical = https://smartforms.csiro.au/ig</td></tr>
+ <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
+ <tr><td>Publication Request:</td><td><table class="grid">
+ <tr><td>package-id</d><td>csiro.fhir.au.smartforms</td></tr>
+ <tr><td>path</d><td>https://smartforms.csiro.au/ig/0.x.0-draft</td></tr>
+ <tr><td>Pub-Mode</d><td>working release</td></tr>
+ <tr><td>status</d><td>draft</td></tr>
+ <tr><td>Release-Label</d><td>ci-build</td></tr>
+ <tr><td>sequence</d><td>R1</td></tr>
+ <tr><td>desc</d><td>This draft is published for trial use and review.</td></tr>
+</table>
+<ul><li>Error fetching package-list from https://smartforms.csiro.au/ig: Error parsing JSON source: Unexpected content at start of JSON at Line 1 (path=[null]) from 'https://smartforms.csiro.au/ig/package-list.json' <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>This IG has never been published, so the version should start with '0.' or include a patch version e.g. '-ballot' <img src="icon-warning.png" height="16px" width="16px"/></li>
+<li>This appears to be the first publication, so first must be true <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>Publication Request is for v'0.x.0-draft' but package version is v0.2.0 <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>Proposed path for this publication should usually be the canonical with the version or sequence appended and then some kind of label (typically '-snapshot') <img src="icon-warning.png" height="16px" width="16px"/></li>
+<li>This release is not labelled as a milestone or technical correction, so should have a patch version (0.2.0) <img src="icon-warning.png" height="16px" width="16px"/></li>
+<li>This IG is not yet published at all, so there must be "first" : true in the publication request <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>No publication request category found (needed for first publication - consult FHIR product director for a value <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>No publication request title found (needed for first publication) <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>No publication request introduction found (needed for first publication) <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>No publication request ci-build found (needed for first publication) <img src="icon-error.gif" height="16px" width="16px"/></li>
+</ul>
+</td></tr>
+ <tr><td>Supressed Messages:</td><td><a href="#suppressed">24 Suppressed Issues</a>
+</td></tr>
+ <tr><td>Dependency Checks:</td><td><div><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of the package">Version</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Canonical URL">Canonical</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Web Reference Base">Web Base</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Comments about this entry">Comment</span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> csiro.fhir.au.smartforms</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0.2.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">https://smartforms.csiro.au/ig</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.terminology.r4</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">6.0.2 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org/6.0.2</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.extensions.r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">5.1.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions/5.1.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.au.core</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0.3.0-ballot <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org.au/fhir/core</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org.au/fhir/core/0.3.0-ballot</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is null</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAMUlEQVR4Xu3LMQoAIBADwftr/v8GtdbqEAthAtMspJJUx9rYW8ftHwAA+NcRAAAAXplLq0BWj/rZigAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.terminology.r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">5.3.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org/5.3.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 6.0.2</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAMUlEQVR4Xu3LMQoAIBADwftr/v8GtdbqEAthAtMspJJUx9rYW8ftHwAA+NcRAAAAXplLq0BWj/rZigAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.extensions.r4</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1.0.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions/1.0.0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 5.1.0</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.au.base</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.2.0-preview <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org.au/fhir</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org.au/fhir/4.2.0-preview</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 4.1.0</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAMUlEQVR4Xu3NoQ0AIBRDwb9r958B0KAgAcw1OfNMK0ntGGtze+n3PwAAcG4JAAAAt3RWK0BWYk6o4QAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIZgEiYEgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAIElEQVQ4y2P8//8/AyWAiYFCMGrAqAGjBowaMGoAAgAALL0DKYQ0DPIAAAAASUVORK5CYII=" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.terminology.r4</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">5.3.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org/5.3.0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">see above. Latest Release is 6.0.2</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIZgEiYEgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAIElEQVQ4y2P8//8/AyWAiYFCMGrAqAGjBowaMGoAAgAALL0DKYQ0DPIAAAAASUVORK5CYII=" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.extensions.r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1.0.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions/1.0.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">see above. Latest Release is 5.1.0</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.sdc</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">3.0.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/uv/sdc</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/uv/sdc/STU3</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzMPbYccAgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y+3OQREAIBDDwAv+PQcFFN5MIyCzqHMKUGVCpMFLK97heq+gggoq+EiwAVjvMhFGmlEUAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64," alt="." style="background-color: white; background-color: inherit" title="NPM Package (not loaded)" class="hierarchy"/> hl7.fhir.r4.examples</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.0.1 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/R4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 5.0.0</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.smart-app-launch</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">2.1.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/smart-app-launch</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/smart-app-launch/STU2.1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 2.2.0</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIZgEiYEgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAIElEQVQ4y2P8//8/AyWAiYFCMGrAqAGjBowaMGoAAgAALL0DKYQ0DPIAAAAASUVORK5CYII=" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.terminology.r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">5.0.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org/5.0.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 6.0.2</td></tr>
+</table><para>Templates: 715.fhir.template#0.1.0 -&gt; fhir.base.template#current. Tools: 0.2.0</para></div></td></tr>
+ <tr><td>Dependent IGs:</td><td><a href="qa-dep.html">no references</a></td></tr>
+ <tr><td>Global Profiles:</td><td>(none declared)</td></tr>
+ <tr><td>Terminology Server(s):</td><td><a href="http://tx.fhir.org/r4">http://tx.fhir.org/r4</a> (<a href="qa-txservers.html">details</a>)</td></tr>
+ <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
+ <tr><td>R5 Dependencies:</td><td><span style="color: grey">(none)</span></td></tr>
+ <tr><td>Draft Dependencies:</td><td><ul>
+  <li>
+hl7.fhir.au.core#0.3.0-ballot:     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/ImplementationGuide-hl7.fhir.au.core.html">AUCoreImplementationGuide</a>
+ (1 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/CapabilityStatement-au-core-server.html">AUCoreServerCapabilityStatement</a>
+ (1 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-patient.html">AUCorePatient</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-practitioner.html">AUCorePractitioner</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-encounter.html">AUCoreEncounter</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-condition.html">AUCoreCondition</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-smokingstatus.html">AUCoreSmokingStatus</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-bodyheight.html">AUCoreBodyHeight</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-bodyweight.html">AUCoreBodyWeight</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-waistcircum.html">AUCoreWaistCircumference</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-bloodpressure.html">AUCoreBloodPressure</a>
+ (2 uses),     <a href="http://hl7.org.au/fhir/core/0.3.0-ballot/StructureDefinition-au-core-heartrate.html">AUCoreHeartRate</a>
+ (2 uses)
+  </li>
+  <li>
+hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-parameter-code.html">GuideParameterCode</a>
+ (15 uses),     <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a>
+ (17 uses),     <a href="http://hl7.org/fhir/R4/codesystem-encounter-status.html">EncounterStatus</a>
+ (8 uses),     <a href="http://hl7.org/fhir/R4/codesystem-event-status.html">EventStatus</a>
+ (3 uses),     <a href="http://hl7.org/fhir/R4/extension-regex.html">regex</a>
+ (8 uses),     <a href="http://hl7.org/fhir/R4/location.html">Location</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/organization.html">Organization</a>
+ (1 uses),     <code>patient</code>
+ (4 uses),     <code>clinical-status</code>
+ (2 uses),     <code>code</code>
+ (2 uses),     <code>patient</code>
+ (2 uses),     <code>questionnaire</code>
+ (2 uses),     <code>status</code>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/practitioner.html">Practitioner</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/condition.html">Condition</a>
+ (1 uses),     <code>url</code>
+ (2 uses),     <code>version</code>
+ (2 uses),     <code>title</code>
+ (2 uses),     <code>Value Set Expansion</code>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/questionnaire.html">Questionnaire</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/codesystem-concept-properties.html">FHIR Defined Concept Properties</a>
+ (2 uses)
+  </li>
+  <li>
+hl7.fhir.uv.sdc#3.0.0:     <a href="http://hl7.org/fhir/uv/sdc/STU3/ImplementationGuide-hl7.fhir.uv.sdc.html">StructuredDataCapture</a>
+ (2 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">SDCQuestionnaireRender</a>
+ (36 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDCModularQuestionnaire</a>
+ (35 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">SDCQuestionnairePopulateExpression</a>
+ (36 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-assemble-expectation.html">AssembleExpectation</a>
+ (34 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-assembleContext.html">AssembleContextExtension</a>
+ (71 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/CodeSystem-launchContext.html">LaunchContext</a>
+ (108 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-launchContext.html">LaunchContextExtension</a>
+ (108 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-enableWhenExpression.html">EnableWhenExpressionExtension</a>
+ (354 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-initialExpression.html">InitialExpressionExtension</a>
+ (225 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-calculatedExpression.html">CalculatedExpressionExtension</a>
+ (73 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-itemPopulationContext.html">ItemPopulationContextExtension</a>
+ (16 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-subQuestionnaire.html">SubQuestionnaireExtension</a>
+ (33 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-shortText.html">ShortTextExtension</a>
+ (36 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-openLabel.html">SDCOpenLabel</a>
+ (32 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/CapabilityStatement-sdc-form-response-manager.html">SDCFormResponseManager</a>
+ (1 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/CapabilityStatement-sdc-form-archiver.html">SDCFormArchiver</a>
+ (1 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaireresponse.html">SDCQuestionnaireResponse</a>
+ (2 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/CapabilityStatement-sdc-form-filler.html">SDCFormFiller</a>
+ (1 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire.html">SDCBaseQuestionnaire</a>
+ (1 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/OperationDefinition-Questionnaire-assemble.html">SDCAssemble</a>
+ (2 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/OperationDefinition-Questionnaire-populate.html">SDCPopulateQuestionnaire</a>
+ (1 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/CapabilityStatement-sdc-form-manager.html">SDCFormManager</a>
+ (1 uses),     <a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-assembledFrom.html">AssembledFromExtension</a>
+ (33 uses)
+  </li>
+  <li>
+hl7.fhir.uv.tools#0.2.0:     <a href="http://hl7.org/fhir/tools/0.2.0/StructureDefinition-resource-sort.html">ResourceSortExt</a>
+ (60 uses)
+  </li>
+</ul>
+</td></tr>
+ <tr><td>Modifier Extensions:</td><td><span style="color: grey">(none)</span></td></tr>
+ <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at https://smartforms.csiro.au/ig (Problem #1 with package-list.json at https://smartforms.csiro.au/ig: Error parsing JSON source: Unexpected content at start of JSON at Line 1 (path=[null]) from 'https://smartforms.csiro.au/ig/package-list.json')</td></tr>
+ <tr><td>IPA Comparison:</td><td> n/a</td></tr>
+ <tr><td>IPS Comparison:</td><td> n/a</td></tr>
+ <tr><td>Validation Flags:</td><td> On: autoLoad; Off: hintAboutNonMustSupport, anyExtensionsAllowed, checkAggregation, showReferenceMessages, noExperimentalContent, displayWarnings</td></tr>
+ <tr><td>Summary:</td><td> errors = 12, warn = 52, info = 13, broken links = 8</td></tr>
+</table>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>8</b></td><td><b>0</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_CodeSystem-HealthChecksSCTSupplement"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\CodeSystem-HealthChecksSCTSupplement</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-AbsoluteCVDRiskCalculation"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\Questionnaire-AbsoluteCVDRiskCalculation</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-AgedCareCMSFacade"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\Questionnaire-AgedCareCMSFacade</b></a></td><td><b>4</b></td><td><b>0</b></td><td><b>11</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-AssemblyInstructions"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\Questionnaire-AssemblyInstructions</b></a></td><td><b>0</b></td><td><b>3</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-MedicalHistoryCurrentProblems"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\Questionnaire-MedicalHistoryCurrentProblems</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-PatientDetails"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\Questionnaire-PatientDetails</b></a></td><td><b>0</b></td><td><b>2</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_StructureDefinition-ConditionEnvironmentAcquired"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\StructureDefinition-ConditionEnvironmentAcquired</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_StructureDefinition-slk581"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\StructureDefinition-slk581</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_ValueSet-australian-states-territories-2"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\ValueSet-australian-states-territories-2</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_ValueSet-biological-sex-1"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\ValueSet-biological-sex-1</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_ValueSet-clinical-condition-1"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\fsh-generated\resources\ValueSet-clinical-condition-1</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck</b></a></td><td><b>4</b></td><td><b>19</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_CapabilityStatement-SmartFormsApplication"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\input\resources\CapabilityStatement-SmartFormsApplication</b></a></td><td><b>4</b></td><td><b>14</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_CapabilityStatement-SmartFormsServer"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\input\resources\CapabilityStatement-SmartFormsServer</b></a></td><td><b>0</b></td><td><b>3</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled"><b>C:\Users\bar872\Documents\fhir\smart-forms\smart-health-checks-fhir-ig\input\resources\Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled</b></a></td><td><b>0</b></td><td><b>3</b></td><td><b>0</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="internal"> </a>
+<h2><a href="">n/a</a> <span id="sv" class="toggle" onclick="toggle('v')">Show Validation Information</span> <span class="vcount" onclick="toggle('v')"></span></h2>
+ <div style="border: 1px grey solid; display: none" id="v"></div>
+ <table class="grid">
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>This IG is version 4.0.1, while the IG 'hl7.fhir.uv.tools' is from version 5.0.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html#l768">output\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 7231</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html#l784">output\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 7952</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html#l1225">output\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 15408</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html#l1241">output\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 16129</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SmartFormsApplication.html#l749">output\CapabilityStatement-SmartFormsApplication&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 6451</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SmartFormsApplication.html#l765">output\CapabilityStatement-SmartFormsApplication&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 7172</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SmartFormsApplication.html#l1185">output\CapabilityStatement-SmartFormsApplication&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 14396</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="CapabilityStatement-SmartFormsApplication.html#l1201">output\CapabilityStatement-SmartFormsApplication&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/a at Line 260, column 15117</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' for &quot;http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview&quot; cannot be resolved</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_CodeSystem-HealthChecksSCTSupplement"> </a>
+<h2><a href="CodeSystem-HealthChecksSCTSupplement.html">fsh-generated\resources\CodeSystem-HealthChecksSCTSupplement.json</a> <span id="svi1" class="toggle" onclick="toggle('vi1')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi1')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi1"><ul style="font-size: 7px"><li>CodeSystem: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CodeSystem</b></td><td><b>warning</b></td><td title=""><b>CodeSystem http://snomed.info/sct|http://snomed.info/sct/32506021000036107 cannot be found, so can't check if concepts are valid</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-AbsoluteCVDRiskCalculation"> </a>
+<h2><a href="Questionnaire-AbsoluteCVDRiskCalculation.html">fsh-generated\resources\Questionnaire-AbsoluteCVDRiskCalculation.json</a> <span id="svi2" class="toggle" onclick="toggle('vi2')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi2')">(8)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi2"><ul style="font-size: 7px"><li>Questionnaire: Validated against <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> (per meta) and <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a></li><li>Questionnaire.contained[0]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[0]&#8203;/*ValueSet&#8203;/biological-sex-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c72315)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-AgedCareCMSFacade"> </a>
+<h2><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a> <span id="svi3" class="toggle" onclick="toggle('vi3')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi3')">(4)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi3"><ul style="font-size: 7px"><li>Questionnaire: Validated against <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> and <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> (per meta)</li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[2]&#8203;.item[2]&#8203;.answerOption[0]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c280381)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[2]&#8203;.item[2]&#8203;.answerOption[1]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c280485)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[2]&#8203;.item[2]&#8203;.answerOption[2]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c280590)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[2]&#8203;.item[5]&#8203;.item[0]&#8203;.answerOption[0]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c282083)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[2]&#8203;.item[5]&#8203;.item[0]&#8203;.answerOption[1]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c282187)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[2]&#8203;.item[5]&#8203;.item[0]&#8203;.answerOption[2]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c282292)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[3]&#8203;.item[0]&#8203;.item[2]&#8203;.answerOption[0]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c286734)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[3]&#8203;.item[0]&#8203;.item[2]&#8203;.answerOption[1]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c286839)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[6]&#8203;.item[0]&#8203;.item[0]&#8203;.answerOption[2]&#8203;.value&#8203;.ofType(Coding)&#8203;.display (l1&#8203;/c298684)</b></td><td><b>error</b></td><td><b>Wrong Display Name 'Area restriction (Environmental)' for http://snomed.info/sct#386517008. Valid display is one of 4 choices: ['Area restriction (procedure)' (en), 'Area restriction' (en-x-sctlang-32570271-00003610-6), 'Area restriction' (en-x-sctlang-90000000-00005090-07), 'Area restriction' (en-x-sctlang-90000000-00005080-04)] (for the language(s) 'en-AU')</b> (from <a href="qa-txservers.html#https://tx.ontoserver.csiro.au/fhir">https://tx.ontoserver.csiro.au/fhir<ta>)</td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[6]&#8203;.item[0]&#8203;.item[0]&#8203;.answerOption[3]&#8203;.value&#8203;.ofType(Coding)&#8203;.display (l1&#8203;/c298797)</b></td><td><b>error</b></td><td><b>Wrong Display Name 'Placing restraint (Mechanical)' for http://snomed.info/sct#68894007. Valid display is one of 3 choices: ['Placing restraint (procedure)' (en), 'Placing restraint' (en-x-sctlang-90000000-00005090-07), 'Placing restraint' (en-x-sctlang-32570271-00003610-6)] (for the language(s) 'en-AU')</b> (from <a href="qa-txservers.html#https://tx.ontoserver.csiro.au/fhir">https://tx.ontoserver.csiro.au/fhir<ta>)</td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[6]&#8203;.item[0]&#8203;.item[1]&#8203;.answerOption[0]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c299416)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/event-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[6]&#8203;.item[0]&#8203;.item[1]&#8203;.answerOption[1]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c299515)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/event-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[6]&#8203;.item[0]&#8203;.item[1]&#8203;.answerOption[2]&#8203;.value&#8203;.ofType(Coding) (l1&#8203;/c299618)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/event-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[9]&#8203;.item[0]&#8203;.item[0]&#8203;.answerOption[2]&#8203;.value&#8203;.ofType(Coding)&#8203;.display (l1&#8203;/c310564)</b></td><td><b>error</b></td><td><b>Wrong Display Name '2A' for http://snomed.info/sct#264662005. Valid display is one of 4 choices: ['2a (qualifier value)' (en), '2a' (en-x-sctlang-90000000-00005090-07), '2a' (en-x-sctlang-32570271-00003610-6), '2a' (en-x-sctlang-90000000-00005080-04)] (for the language(s) 'en-AU')</b> (from <a href="qa-txservers.html#https://tx.ontoserver.csiro.au/fhir">https://tx.ontoserver.csiro.au/fhir<ta>)</td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Questionnaire&#8203;.item[0]&#8203;.item[9]&#8203;.item[0]&#8203;.item[0]&#8203;.answerOption[3]&#8203;.value&#8203;.ofType(Coding)&#8203;.display (l1&#8203;/c310650)</b></td><td><b>error</b></td><td><b>Wrong Display Name '2B' for http://snomed.info/sct#264663000. Valid display is one of 3 choices: ['2b' (en-x-sctlang-90000000-00005080-04), '2b' (en-x-sctlang-90000000-00005090-07), '2b (qualifier value)' (en)] (for the language(s) 'en-AU')</b> (from <a href="qa-txservers.html#https://tx.ontoserver.csiro.au/fhir">https://tx.ontoserver.csiro.au/fhir<ta>)</td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-AssemblyInstructions"> </a>
+<h2><a href="Questionnaire-AssemblyInstructions.html">fsh-generated\resources\Questionnaire-AssemblyInstructions.json</a> <span id="svi4" class="toggle" onclick="toggle('vi4')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi4')">(24)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi4"><ul style="font-size: 7px"><li>Questionnaire: Validated against <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> (per meta) and <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a></li><li>Questionnaire.contained[0]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[1]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[2]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[3]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[4]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[5]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[6]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[7]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[8]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[9]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[10]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[11]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[12]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[13]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[3]&#8203;/*ValueSet&#8203;/clinical-condition-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c102693)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[9]&#8203;/*ValueSet&#8203;/australian-states-territories-2*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c116950)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[11]&#8203;/*ValueSet&#8203;/biological-sex-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c123538)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-MedicalHistoryCurrentProblems"> </a>
+<h2><a href="Questionnaire-MedicalHistoryCurrentProblems.html">fsh-generated\resources\Questionnaire-MedicalHistoryCurrentProblems.json</a> <span id="svi5" class="toggle" onclick="toggle('vi5')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi5')">(9)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi5"><ul style="font-size: 7px"><li>Questionnaire: Validated against <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> (per meta) and <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a></li><li>Questionnaire.contained[0]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[1]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[1]&#8203;/*ValueSet&#8203;/clinical-condition-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c47884)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_Questionnaire-PatientDetails"> </a>
+<h2><a href="Questionnaire-PatientDetails.html">fsh-generated\resources\Questionnaire-PatientDetails.json</a> <span id="svi6" class="toggle" onclick="toggle('vi6')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi6')">(17)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi6"><ul style="font-size: 7px"><li>Questionnaire: Validated against <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">SDC Modular Questionnaire</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> (per meta) and <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a></li><li>Questionnaire.contained[0]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[1]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[2]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[3]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[4]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[5]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[6]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[7]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[6]&#8203;/*ValueSet&#8203;/biological-sex-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c188874)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[7]&#8203;/*ValueSet&#8203;/australian-states-territories-2*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c192055)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_StructureDefinition-ConditionEnvironmentAcquired"> </a>
+<h2><a href="StructureDefinition-ConditionEnvironmentAcquired.html">fsh-generated\resources\StructureDefinition-ConditionEnvironmentAcquired.json</a> <span id="svi7" class="toggle" onclick="toggle('vi7')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi7')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi7"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/smartforms&#8203;.csiro&#8203;.au&#8203;/ig&#8203;/StructureDefinition&#8203;/ConditionEnvironmentAcquired')</b></td><td><b>warning</b></td><td title=""><b>The Implementation Guide contains no examples for this extension</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_StructureDefinition-slk581"> </a>
+<h2><a href="StructureDefinition-slk581.html">fsh-generated\resources\StructureDefinition-slk581.json</a> <span id="svi8" class="toggle" onclick="toggle('vi8')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi8')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi8"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition&#8203;.where(url = 'https:&#8203;/&#8203;/smartforms&#8203;.csiro&#8203;.au&#8203;/ig&#8203;/StructureDefinition&#8203;/slk581')</b></td><td><b>warning</b></td><td title=""><b>The Implementation Guide contains no examples for this data type profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_ValueSet-australian-states-territories-2"> </a>
+<h2><a href="ValueSet-australian-states-territories-2.html">fsh-generated\resources\ValueSet-australian-states-territories-2.json</a> <span id="svi9" class="toggle" onclick="toggle('vi9')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi9')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi9"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>ValueSet.meta.profile[1] (l1/c6688)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_ValueSet-biological-sex-1"> </a>
+<h2><a href="ValueSet-biological-sex-1.html">fsh-generated\resources\ValueSet-biological-sex-1.json</a> <span id="svi10" class="toggle" onclick="toggle('vi10')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi10')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi10"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>ValueSet.meta.profile[1] (l1/c4242)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_fsh-generated_resources_ValueSet-clinical-condition-1"> </a>
+<h2><a href="ValueSet-clinical-condition-1.html">fsh-generated\resources\ValueSet-clinical-condition-1.json</a> <span id="svi11" class="toggle" onclick="toggle('vi11')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi11')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi11"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>ValueSet.meta.profile[1] (l1/c2498)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"> </a>
+<h2><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a> <span id="svi12" class="toggle" onclick="toggle('vi12')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi12')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi12"><ul style="font-size: 7px"><li>CapabilityStatement: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/capabilitystatement.html">CapabilityStatement</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.documentation (l1&#8203;/c28257)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.security&#8203;.description (l1&#8203;/c28997)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[0]&#8203;.documentation (l1&#8203;/c29525)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[1]&#8203;.documentation (l1&#8203;/c30209)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[2]&#8203;.documentation (l1&#8203;/c30881)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[3]&#8203;.documentation (l1&#8203;/c31866)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[3]&#8203;.searchParam[0]&#8203;.documentation (l1&#8203;/c32465)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[3]&#8203;.searchParam[1]&#8203;.documentation (l1&#8203;/c32915)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.documentation (l1&#8203;/c35208)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[0]&#8203;.documentation (l1&#8203;/c35809)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[1]&#8203;.documentation (l1&#8203;/c36236)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[2]&#8203;.documentation (l1&#8203;/c36500)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[3]&#8203;.documentation (l1&#8203;/c36816)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.documentation (l1&#8203;/c38515)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[0]&#8203;.documentation (l1&#8203;/c39693)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[1]&#8203;.documentation (l1&#8203;/c40274)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[2]&#8203;.documentation (l1&#8203;/c40718)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[3]&#8203;.documentation (l1&#8203;/c40982)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[4]&#8203;.documentation (l1&#8203;/c41302)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' at 'div/div/table/tbody/tr/td/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' at 'div/div/table/tbody/tr/td/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' at 'div/div/div/div/div/div/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' at 'div/div/div/div/div/div/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview' does not resolve</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_CapabilityStatement-SmartFormsApplication"> </a>
+<h2><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a> <span id="svi13" class="toggle" onclick="toggle('vi13')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi13')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi13"><ul style="font-size: 7px"><li>CapabilityStatement: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/capabilitystatement.html">CapabilityStatement</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[3]&#8203;.searchParam[0]&#8203;.documentation (l1&#8203;/c29726)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[3]&#8203;.searchParam[1]&#8203;.documentation (l1&#8203;/c30060)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[0]&#8203;.documentation (l1&#8203;/c31356)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[1]&#8203;.documentation (l1&#8203;/c31667)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[2]&#8203;.documentation (l1&#8203;/c31782)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[4]&#8203;.searchParam[3]&#8203;.documentation (l1&#8203;/c31949)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[2]&#8203;.documentation (l1&#8203;/c33168)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[3]&#8203;.documentation (l1&#8203;/c33283)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[5]&#8203;.searchParam[4]&#8203;.documentation (l1&#8203;/c33450)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[6]&#8203;.searchParam[0]&#8203;.documentation (l1&#8203;/c35050)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[6]&#8203;.searchParam[1]&#8203;.documentation (l1&#8203;/c35515)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[6]&#8203;.searchParam[2]&#8203;.documentation (l1&#8203;/c35843)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[6]&#8203;.searchParam[3]&#8203;.documentation (l1&#8203;/c35958)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[6]&#8203;.searchParam[4]&#8203;.documentation (l1&#8203;/c36129)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' at 'div/div/table/tbody/tr/td/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' at 'div/div/table/tbody/tr/td/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-headcircum.html' at 'div/div/div/div/div/div/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>CapabilityStatement.text.div</b></td><td><b>error</b></td><td title=""><b>Hyperlink 'http://hl7.org.au/fhir/core/0.2.2-preview/StructureDefinition-au-core-lipid-result.html' at 'div/div/div/div/div/div/ul/li/a' for 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result|0.2.2-preview' does not resolve</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_CapabilityStatement-SmartFormsServer"> </a>
+<h2><a href="CapabilityStatement-SmartFormsServer.html">input\resources\CapabilityStatement-SmartFormsServer.json</a> <span id="svi14" class="toggle" onclick="toggle('vi14')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi14')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi14"><ul style="font-size: 7px"><li>CapabilityStatement: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/capabilitystatement.html">CapabilityStatement</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[0]&#8203;.searchParam[2]&#8203;.documentation (l1&#8203;/c10595)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[0]&#8203;.searchParam[3]&#8203;.documentation (l1&#8203;/c10710)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>CapabilityStatement&#8203;.rest[0]&#8203;.resource[0]&#8203;.searchParam[4]&#8203;.documentation (l1&#8203;/c10877)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="C__Users_bar872_Documents_fhir_smart-forms_smart-health-checks-fhir-ig_input_resources_Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled"> </a>
+<h2><a href="Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html">input\resources\Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled.json</a> <span id="svi15" class="toggle" onclick="toggle('vi15')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi15')">(22)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi15"><ul style="font-size: 7px"><li>Questionnaire: Validated against <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a>, <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> (per meta), <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire</a> and <a href="http://hl7.org/fhir/uv/sdc/STU3">hl7.fhir.uv.sdc</a>.<a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression</a> (per meta)</li><li>Questionnaire.contained[0]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[1]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[2]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[3]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[4]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[5]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[6]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[7]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[8]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[9]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[10]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a> (per meta)</li><li>Questionnaire.contained[11]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[12]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li><li>Questionnaire.contained[13]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[6]&#8203;/*ValueSet&#8203;/biological-sex-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c1442058)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[7]&#8203;/*ValueSet&#8203;/australian-states-territories-2*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c1445239)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Questionnaire&#8203;.contained[10]&#8203;/*ValueSet&#8203;/clinical-condition-1*&#8203;/&#8203;.meta&#8203;.profile[1] (l1&#8203;/c1450552)</b></td><td><b>warning</b></td><td title="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+<a name="suppressed"> </a>
+<p><b>Suppressed Messages (Warnings, hints, broken links)</b></p>
+<p><b>ContainedResourceReference extension defined as intended</b></p><ul>
+ <li>Review the extension type for ContainedResourceReference: extensions should not have a context of Element unless it's really intended that they can be used anywhere <span style="color: navy">(1 uses)<span></li>
+</ul>
+<p><b>Draft code systems referenced as intended</b></p><ul>
+ <li>Reference to draft CodeSystem http://hl7.org/fhir/choice-list-orientation|5.1.0 <span style="color: navy">(114 uses)<span></li>
+ <li>Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-display-category|4.0.1 <span style="color: maroon">(0 uses)<span></li>
+ <li>Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-item-control|4.0.1 <span style="color: maroon">(0 uses)<span></li>
+ <li>Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext|3.0.0 <span style="color: navy">(108 uses)<span></li>
+ <li>Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended% <span style="color: navy">(144 uses)<span></li>
+</ul>
+<p><b>Embedded HTML warnings checked</b></p><ul>
+ <li>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk <span style="color: navy">(248 uses)<span></li>
+</ul>
+<p><b>EnableWhen target comes after the question - This is intentional design for marking Questionnaire sections as complete</b></p><ul>
+ <li>The target of this enableWhen rule (MarkComplete-% <span style="color: navy">(144 uses)<span></li>
+</ul>
+<p><b>HL7 core warnings</b></p><ul>
+ <li>The nominated WG 'fhir' means that the contact url should be 'http://www.hl7.org/Special/committees/fiwg' but it was not found <span style="color: navy">(2 uses)<span></li>
+ <li>The nominated WG 'pa' means that the contact url should be 'http://www.hl7.org/Special/committees/pafm' but it was not found <span style="color: navy">(4 uses)<span></li>
+ <li>The nominated WG 'pa' means that the publisher should be 'HL7 International / Patient Administration' but 'HL7 (FHIR Project)' was found <span style="color: navy">(4 uses)<span></li>
+ <li>The nominated WG 'pc' means that the contact url should be 'http://www.hl7.org/Special/committees/patientcare' but it was not found <span style="color: navy">(4 uses)<span></li>
+ <li>The nominated WG 'pc' means that the publisher should be 'HL7 International / Patient Care' but 'FHIR Project team' was found <span style="color: navy">(4 uses)<span></li>
+ <li>The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed <span style="color: navy">(4 uses)<span></li>
+ <li>WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide <span style="color: navy">(1 uses)<span></li>
+ <li>WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide <span style="color: navy">(1 uses)<span></li>
+ <li>WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide <span style="color: navy">(1 uses)<span></li>
+</ul>
+<p><b>Invalid errors - invariant bug</b></p><ul>
+ <li>The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'') <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>Modular Questionnaire - URL of assembled questionnaire SHALL be the same as its base questionnnaire</b></p><ul>
+ <li>The URL 'http://www.health.gov.au/assessments/mbs/715' has already been used by AssemblyInstructions% <span style="color: navy">(1 uses)<span></li>
+ <li>The URL 'http://www.health.gov.au/assessments/mbs/715' is also used by AboriginalTorresStraitIslanderHealthCheck% <span style="color: navy">(1 uses)<span></li>
+</ul>
+<p><b>Slice matching - CapabilityStatement</b></p><ul>
+ <li>This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination% <span style="color: navy">(5 uses)<span></li>
+</ul>
+<p><b>Slice matching - There are several extensions used that either match slices in other profiles stated in meta or are permitted for use by the extension itself.</b></p><ul>
+ <li>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular|3.0.0 <span style="color: navy">(466 uses)<span></li>
+ <li>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp|3.0.0 <span style="color: navy">(723 uses)<span></li>
+ <li>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render|3.0.0 <span style="color: navy">(693 uses)<span></li>
+</ul>
+<a name="sorted"> </a>
+<p><b>Errors sorted by type</b></p>
+<hr/>
+<a name="CODESYSTEM_PROPERTY_UNKNOWN_CODE"> </a>
+<h2>CODESYSTEM_PROPERTY_UNKNOWN_CODE</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="CodeSystem-questionnaire-item-control.html">input\resources\CodeSystem-questionnaire-item-control.json</a></td><td><b>This property has only a code ('abstract') and not a URI, so it has no clearly defined meaning in the terminology ecosystem</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="CODESYSTEM_THO_CHECK"> </a>
+<h2>CODESYSTEM_THO_CHECK</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="CodeSystem-questionnaire-item-control.html">input\resources\CodeSystem-questionnaire-item-control.json</a></td><td><b>Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="MSG_DRAFT"> </a>
+<h2>MSG_DRAFT</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/encounter-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/event-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/event-status|4.0.1</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Questionnaire-AgedCareCMSFacade.html">fsh-generated\resources\Questionnaire-AgedCareCMSFacade.json</a></td><td><b>Reference to draft CodeSystem http://hl7.org/fhir/event-status|4.0.1</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML"> </a>
+<h2>TYPE_SPECIFIC_CHECKS_DT_MARKDOWN_HTML</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html">input\resources\CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsApplication.html">input\resources\CapabilityStatement-SmartFormsApplication.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsServer.html">input\resources\CapabilityStatement-SmartFormsServer.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsServer.html">input\resources\CapabilityStatement-SmartFormsServer.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="CapabilityStatement-SmartFormsServer.html">input\resources\CapabilityStatement-SmartFormsServer.json</a></td><td><b>The markdown contains content that appears to be an embedded HTML tag starting at '&lt;d'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY"> </a>
+<h2>VALIDATION_VAL_PROFILE_UNKNOWN_NOT_POLICY</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AbsoluteCVDRiskCalculation.html">fsh-generated\resources\Questionnaire-AbsoluteCVDRiskCalculation.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AssemblyInstructions.html">fsh-generated\resources\Questionnaire-AssemblyInstructions.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AssemblyInstructions.html">fsh-generated\resources\Questionnaire-AssemblyInstructions.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AssemblyInstructions.html">fsh-generated\resources\Questionnaire-AssemblyInstructions.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-MedicalHistoryCurrentProblems.html">fsh-generated\resources\Questionnaire-MedicalHistoryCurrentProblems.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-PatientDetails.html">fsh-generated\resources\Questionnaire-PatientDetails.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-PatientDetails.html">fsh-generated\resources\Questionnaire-PatientDetails.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="ValueSet-australian-states-territories-2.html">fsh-generated\resources\ValueSet-australian-states-territories-2.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="ValueSet-biological-sex-1.html">fsh-generated\resources\ValueSet-biological-sex-1.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="ValueSet-clinical-condition-1.html">fsh-generated\resources\ValueSet-clinical-condition-1.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html">input\resources\Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html">input\resources\Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html">input\resources\Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled.json</a></td><td><b>Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles</b></td>
+   </tr>
+</table>
+</body>
+</html>

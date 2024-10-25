@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="MedicalHistoryCurrentProblems"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"/>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"/>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Questionnaire MedicalHistoryCurrentProblems</b></p><a name="MedicalHistoryCurrentProblems"> </a><a name="hcMedicalHistoryCurrentProblems"> </a><a name="MedicalHistoryCurrentProblems-en-US"> </a><table border="1" cellpadding="0" cellspacing="0" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="The linkID for the item">LinkID</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Text for the item">Text</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Minimum and Maximum # of times the item can appear in the instance">Cardinality</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="The type of the item">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Additional information about the item">Description &amp; Constraints</a><span style="float: right"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_q_root.gif" alt="." style="background-color: white; background-color: inherit" title="QuestionnaireRoot" class="hierarchy"/> MedicalHistoryCurrentProblems</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Questionnaire</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems#0.2.0</td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)" id="item.28d5dbe4-1e65-487c-847a-847f544a6a91" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="group" class="hierarchy"/> 28d5dbe4-1e65-487c-847a-847f544a6a91</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Medical history and current problems</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.CD-in-progress-17" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> CD-in-progress-17</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">In progress</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <span><a href="#item.MarkComplete-17">MarkComplete-17</a> != </span></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.CD-complete-17" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> CD-complete-17</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Complete</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <span><a href="#item.MarkComplete-17">MarkComplete-17</a> = </span></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.RecordUpdate-MedHistory" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> RecordUpdate-MedHistory</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)" id="item.a10a7375-e9d3-4e71-a47a-282e9ba38ec1" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-decimal.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="decimal" class="hierarchy"/> a10a7375-e9d3-4e71-a47a-282e9ba38ec1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Gestation at birth</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal">decimal</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)" id="item.f3899852-36c4-441f-9a7d-544ef1617f08" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> f3899852-36c4-441f-9a7d-544ef1617f08</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">weeks</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)" id="item.29b6d8ea-23b2-4a69-98d9-899198692de7" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-decimal.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="decimal" class="hierarchy"/> 29b6d8ea-23b2-4a69-98d9-899198692de7</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Birth weight</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal">decimal</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)" id="item.87cf1ecd-6d1b-4de1-894d-58bd77dcfde1" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 87cf1ecd-6d1b-4de1-894d-58bd77dcfde1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">kg</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)" id="item.92bd7d05-9b5e-4cf9-900b-703f361dad9d" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="group" class="hierarchy"/> 92bd7d05-9b5e-4cf9-900b-703f361dad9d</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Medical history and current problems list</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-coding.png" alt="." style="background-color: white; background-color: inherit" title="coding" class="hierarchy"/> 59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Condition</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice">open-choice</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Value Set: <a href="ValueSet-MedicalHistoryCurrentProblems_clinical-condition-1.html">Clinical Condition</a></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.88bcfad7-386b-4d87-b34b-2e50482e4d2c" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-coding.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="coding" class="hierarchy"/> 88bcfad7-386b-4d87-b34b-2e50482e4d2c</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Clinical Status</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice">choice</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Value Set: <a href="ValueSet-MedicalHistoryCurrentProblems_condition-clinical.html">Condition Clinical Status Codes</a></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.6ae641ad-95bb-4cdc-8910-5a52077e492c" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-date.png" alt="." style="background-color: white; background-color: inherit" title="date" class="hierarchy"/> 6ae641ad-95bb-4cdc-8910-5a52077e492c</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Onset Date</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-date">date</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)" id="item.18b9e159-2ed7-4047-82b7-deb2a171de4f" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-date.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="date" class="hierarchy"/> 18b9e159-2ed7-4047-82b7-deb2a171de4f</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Recorded Date</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-date">date</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)" id="item.4484cacd-a260-4e5f-83c1-168ca2396c04" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: white; background-color: inherit" title="group" class="hierarchy"/> 4484cacd-a260-4e5f-83c1-168ca2396c04</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">New diagnoses list</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.2da85994-2d5e-42f1-8a81-abf44f397468" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-coding.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="coding" class="hierarchy"/> 2da85994-2d5e-42f1-8a81-abf44f397468</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Condition</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-open-choice">open-choice</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Value Set: <a href="ValueSet-MedicalHistoryCurrentProblems_clinical-condition-1.html">Clinical Condition</a></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.a7e056be-fb6f-4f7f-b04d-5b809e1e18e3" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-coding.png" alt="." style="background-color: white; background-color: inherit" title="coding" class="hierarchy"/> a7e056be-fb6f-4f7f-b04d-5b809e1e18e3</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Clinical Status</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice">choice</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Value Set: <a href="ValueSet-MedicalHistoryCurrentProblems_condition-clinical.html">Condition Clinical Status Codes</a></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.e4524654-f6de-4717-b288-34919394d46b" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-date.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="date" class="hierarchy"/> e4524654-f6de-4717-b288-34919394d46b</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Onset Date</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-date">date</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)" id="item.5bc1d8f4-6e8c-4695-916c-1ef767306e46" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-date.png" alt="." style="background-color: white; background-color: inherit" title="date" class="hierarchy"/> 5bc1d8f4-6e8c-4695-916c-1ef767306e46</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Recorded Date</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-date">date</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.62774152-8a6e-4449-af9f-87bdce8b9bf5" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-text.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="text" class="hierarchy"/> 62774152-8a6e-4449-af9f-87bdce8b9bf5</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Health priorities, actions and follow-up</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text">text</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)" id="item.MarkComplete-17" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-boolean.png" alt="." style="background-color: white; background-color: inherit" title="boolean" class="hierarchy"/> MarkComplete-17</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Mark section as complete</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-boolean">boolean</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table><h2>Contained Resources</h2><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #condition-clinical</b></p><a name="MedicalHistoryCurrentProblems/condition-clinical"> </a><a name="hcMedicalHistoryCurrentProblems/condition-clinical"> </a><a name="MedicalHistoryCurrentProblems/condition-clinical-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on system Condition Clinical Status Codes version4.0.1</p><p>This value set contains 6 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="MedicalHistoryCurrentProblems/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-active"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-active">active</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Active</td><td><div><p>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="MedicalHistoryCurrentProblems/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-inactive"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-inactive">inactive</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Inactive</td><td><div><p>The subject is no longer experiencing the condition or situation and there is no longer evidence or appreciable risk of the condition or situation.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="MedicalHistoryCurrentProblems/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-recurrence"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-recurrence">recurrence</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Recurrence</td><td><div><p>The subject is experiencing a reoccurence or repeating of a previously resolved condition or situation, e.g. urinary tract infection, food insecurity.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="MedicalHistoryCurrentProblems/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-relapse"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-relapse">relapse</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Relapse</td><td><div><p>The subject is experiencing a return of a condition or situation after a period of improvement or remission, e.g. relapse of cancer, alcoholism.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="MedicalHistoryCurrentProblems/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-remission"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-remission">remission</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Remission</td><td><div><p>The subject is not presently experiencing the condition or situation, but there is a risk of the condition or situation returning.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="MedicalHistoryCurrentProblems/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-resolved"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-resolved">resolved</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Resolved</td><td><div><p>The subject is not presently experiencing the condition or situation and there is a negligible perceived risk of the condition or situation returning.</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #clinical-condition-1</b></p><a name="MedicalHistoryCurrentProblems/clinical-condition-1"> </a><a name="hcMedicalHistoryCurrentProblems/clinical-condition-1"> </a><a name="MedicalHistoryCurrentProblems/clinical-condition-1-en-US"> </a><ul><li>Include codes from<a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> where concept  in 32570581000036105 (Problem/Diagnosis reference set)</li></ul></div>
+  </text>
+  <contained>
+    <ValueSet>
+      <id value="condition-clinical"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+        <valueCode value="pc"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="trial-use"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+        <valueInteger value="3"/>
+      </extension>
+      <url value="http://hl7.org/fhir/ValueSet/condition-clinical"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.4.642.3.164"/>
+      </identifier>
+      <version value="4.0.1"/>
+      <name value="ConditionClinicalStatusCodes"/>
+      <title value="Condition Clinical Status Codes"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <date value="2019-11-01T09:29:23+11:00"/>
+      <publisher value="FHIR Project team"/>
+      <contact>
+        <telecom>
+          <system value="url"/>
+          <value value="http://hl7.org/fhir"/>
+        </telecom>
+      </contact>
+      <description value="Preferred value set for Condition Clinical Status."/>
+      <copyright value="Copyright © 2011+ HL7. Licensed under Creative Commons &quot;No Rights Reserved&quot;."/>
+      <compose>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8"/>
+        <timestamp value="2024-04-02T14:17:12+10:00"/>
+        <total value="6"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-draft"/>
+          <valueUri value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-trial-use"/>
+          <valueUri value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-trial-use"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-draft"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="active"/>
+          <display value="Active"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="inactive"/>
+          <display value="Inactive"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="recurrence"/>
+          <display value="Recurrence"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="relapse"/>
+          <display value="Relapse"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="remission"/>
+          <display value="Remission"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="resolved"/>
+          <display value="Resolved"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="clinical-condition-1"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"/>
+      </meta>
+      <url value="https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.36.1.2001.1004.201.10035"/>
+      </identifier>
+      <version value="1.0.2"/>
+      <name value="ClinicalCondition"/>
+      <title value="Clinical Condition"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2020-05-31"/>
+      <publisher value="Australian Digital Health Agency"/>
+      <contact>
+        <telecom>
+          <system value="email"/>
+          <value value="help@digitalhealth.gov.au"/>
+        </telecom>
+      </contact>
+      <description value="The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders."/>
+      <copyright value="Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. &#xA;&#xA;This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. &#xA;&#xA;The rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. &#xA;&#xA;All copies of this resource must include this copyright statement and all information contained in this statement."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <filter>
+            <property value="concept"/>
+            <op value="in"/>
+            <value value="32570581000036105"/>
+          </filter>
+        </include>
+      </compose>
+    </ValueSet>
+  </contained>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation">
+    <valueCode value="assemble-child"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The patient that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="user"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Practitioner"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The practitioner user that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="encounter"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Encounter"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The encounter that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext">
+    <valueString value="age"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext">
+    <valueString value="Condition"/>
+  </extension>
+  <url value="http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems"/>
+  <version value="0.2.0"/>
+  <name value="MedicalHistoryCurrentProblems"/>
+  <title value="Aboriginal and Torres Strait Islander Health Check - Medical History And Current Problems"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2024-04-02"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <item>
+    <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression">
+      <valueExpression>
+        <language value="text/fhirpath"/>
+        <expression value="%age.exists()"/>
+      </valueExpression>
+    </extension>
+    <linkId value="28d5dbe4-1e65-487c-847a-847f544a6a91"/>
+    <text value="Medical history and current problems"/>
+    <type value="group"/>
+    <repeats value="false"/>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"/>
+            <code value="context-display"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <linkId value="CD-in-progress-17"/>
+      <text value="In progress">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div title=&quot;In progress&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;&#x9;&lt;div style=&quot;display: flex; flex-direction: row;&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;img width='24' height='24' src='data:image/svg+xml;base64,&#xD;&#xA;&#x9;&#x9;PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' &#xD;&#xA;&#x9;&#x9;style=&quot;align-self: center;&quot;/&gt;&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="display"/>
+      <enableWhen>
+        <question value="MarkComplete-17"/>
+        <operator value="!="/>
+        <answerBoolean value="true"/>
+      </enableWhen>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"/>
+            <code value="context-display"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <linkId value="CD-complete-17"/>
+      <text value="Complete">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div title=&quot;Section completed&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;&#x9;&lt;div style=&quot;display: flex; flex-direction: row;&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='&#xD;&#xA;&#x9;&#x9;style=&quot;align-self: center;&quot;/&gt;&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="display"/>
+      <enableWhen>
+        <question value="MarkComplete-17"/>
+        <operator value="="/>
+        <answerBoolean value="true"/>
+      </enableWhen>
+    </item>
+    <item>
+      <linkId value="RecordUpdate-MedHistory"/>
+      <text value="Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;    &lt;strong&gt;Important:&lt;/strong&gt; &lt;em&gt;The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.&lt;/em&gt;&#xD;&#xA;    &lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression">
+        <valueExpression>
+          <language value="text/fhirpath"/>
+          <expression value="%age &lt;= 5"/>
+        </valueExpression>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-unit">
+        <valueCoding>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="wk"/>
+        </valueCoding>
+      </extension>
+      <linkId value="a10a7375-e9d3-4e71-a47a-282e9ba38ec1"/>
+      <text value="Gestation at birth"/>
+      <type value="decimal"/>
+      <repeats value="false"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="unit"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <linkId value="f3899852-36c4-441f-9a7d-544ef1617f08"/>
+        <text value="weeks"/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression">
+        <valueExpression>
+          <language value="text/fhirpath"/>
+          <expression value="%age &lt;= 5"/>
+        </valueExpression>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-unit">
+        <valueCoding>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="kg"/>
+        </valueCoding>
+      </extension>
+      <linkId value="29b6d8ea-23b2-4a69-98d9-899198692de7"/>
+      <text value="Birth weight"/>
+      <type value="decimal"/>
+      <repeats value="false"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="unit"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <linkId value="87cf1ecd-6d1b-4de1-894d-58bd77dcfde1"/>
+        <text value="kg"/>
+        <type value="display"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+            <code value="gtable"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext">
+        <valueExpression>
+          <name value="ConditionRepeat"/>
+          <language value="text/fhirpath"/>
+          <expression value="%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"/>
+        </valueExpression>
+      </extension>
+      <linkId value="92bd7d05-9b5e-4cf9-900b-703f361dad9d"/>
+      <text value="Medical history and current problems list">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;    &lt;p&gt;Medical history and current problems list&lt;/p&gt;&#xD;&#xA;    &lt;p style=&quot;font-size:0.9em; font-weight:normal&quot;&gt;&lt;em&gt;This list includes items from the clinical record. If you wish to enter additional diagnoses, either update the clinical record and repopulate this form or add them to the &quot;New diagnoses list&quot; below and later update the clinical record as required.&lt;/em&gt;&lt;/p&gt;&#xD;&#xA;    &lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="group"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="autocomplete"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <language value="text/fhirpath"/>
+            <expression value="%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"/>
+          </valueExpression>
+        </extension>
+        <linkId value="59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"/>
+        <text value="Condition"/>
+        <type value="open-choice"/>
+        <answerValueSet value="#clinical-condition-1"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="drop-down"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <language value="text/fhirpath"/>
+            <expression value="%ConditionRepeat.clinicalStatus.coding"/>
+          </valueExpression>
+        </extension>
+        <linkId value="88bcfad7-386b-4d87-b34b-2e50482e4d2c"/>
+        <text value="Clinical Status"/>
+        <type value="choice"/>
+        <answerValueSet value="#condition-clinical"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <language value="text/fhirpath"/>
+            <expression value="%ConditionRepeat.onset.ofType(dateTime)"/>
+          </valueExpression>
+        </extension>
+        <linkId value="6ae641ad-95bb-4cdc-8910-5a52077e492c"/>
+        <text value="Onset Date"/>
+        <type value="date"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <language value="text/fhirpath"/>
+            <expression value="%ConditionRepeat.recordedDate"/>
+          </valueExpression>
+        </extension>
+        <linkId value="18b9e159-2ed7-4047-82b7-deb2a171de4f"/>
+        <text value="Recorded Date"/>
+        <type value="date"/>
+      </item>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+            <code value="gtable"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <linkId value="4484cacd-a260-4e5f-83c1-168ca2396c04"/>
+      <text value="New diagnoses list"/>
+      <type value="group"/>
+      <repeats value="true"/>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="autocomplete"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <linkId value="2da85994-2d5e-42f1-8a81-abf44f397468"/>
+        <text value="Condition"/>
+        <type value="open-choice"/>
+        <answerValueSet value="#clinical-condition-1"/>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="drop-down"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <linkId value="a7e056be-fb6f-4f7f-b04d-5b809e1e18e3"/>
+        <text value="Clinical Status"/>
+        <type value="choice"/>
+        <answerValueSet value="#condition-clinical"/>
+      </item>
+      <item>
+        <linkId value="e4524654-f6de-4717-b288-34919394d46b"/>
+        <text value="Onset Date"/>
+        <type value="date"/>
+      </item>
+      <item>
+        <linkId value="5bc1d8f4-6e8c-4695-916c-1ef767306e46"/>
+        <text value="Recorded Date"/>
+        <type value="date"/>
+      </item>
+    </item>
+    <item>
+      <linkId value="62774152-8a6e-4449-af9f-87bdce8b9bf5"/>
+      <text value="Health priorities, actions and follow-up"/>
+      <type value="text"/>
+      <repeats value="false"/>
+    </item>
+    <item>
+      <linkId value="MarkComplete-17"/>
+      <text value="Mark section as complete">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;    &lt;style type=&quot;text/css&quot;&gt;&#xD;&#xA;        .alert {&#xD;&#xA;            padding: 0.875rem;&#xD;&#xA;            margin-bottom: 1rem;&#xD;&#xA;            font-size: 0.875rem;&#xD;&#xA;            color: #2E7D32;&#xD;&#xA;            border-radius: 0.5rem;&#xD;&#xA;            background-color: #d5e5d6;&#xD;&#xA;            font-weight: 700;&#xD;&#xA;        }&#xD;&#xA;    &lt;/style&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;&#xD;&#xA;&lt;div class=&quot;alert&quot;&gt;Mark section as complete&lt;/div&gt;&#xD;&#xA;&lt;/body&gt;&#xD;&#xA;&lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="boolean"/>
+      <repeats value="false"/>
+    </item>
+  </item>
+</Questionnaire>

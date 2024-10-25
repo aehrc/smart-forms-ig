@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="AboriginalTorresStraitIslander"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet AboriginalTorresStraitIslander</b></p><a name="AboriginalTorresStraitIslander"> </a><a name="hcAboriginalTorresStraitIslander"> </a><a name="AboriginalTorresStraitIslander-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on system australian-indigenous-status-1 version1.0.3</p><p>This value set contains 3 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-1"> </a>  1</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Aboriginal but not Torres Strait Islander origin</td></tr><tr><td style="white-space:nowrap"><a name="AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-2"> </a>  2</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Torres Strait Islander but not Aboriginal origin</td></tr><tr><td style="white-space:nowrap"><a name="AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-3"> </a>  3</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Both Aboriginal and Torres Strait Islander origin</td></tr></table></div>
+  </text>
+  <url value="https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander"/>
+  <version value="0.2.0"/>
+  <name value="AboriginalTorresStraitIslander"/>
+  <title value="Aboriginal and/or Torres Strait Islander"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-10-25T12:49:36+10:00"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people."/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <compose>
+    <include>
+      <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+      <concept>
+        <code value="1"/>
+        <display value="Aboriginal"/>
+      </concept>
+      <concept>
+        <code value="2"/>
+        <display value="Torres Strait Islander"/>
+      </concept>
+      <concept>
+        <code value="3"/>
+        <display value="Aboriginal and Torres Strait Islander"/>
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="e2b013bd-1725-4299-a7a5-53635d42f1be"/>
+    <timestamp value="2022-10-20T11:38:45+10:00"/>
+    <total value="3"/>
+    <offset value="0"/>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"/>
+    </parameter>
+    <parameter>
+      <name value="count"/>
+      <valueInteger value="2147483647"/>
+    </parameter>
+    <parameter>
+      <name value="offset"/>
+      <valueInteger value="0"/>
+    </parameter>
+    <contains>
+      <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+      <code value="1"/>
+      <display value="Aboriginal but not Torres Strait Islander origin"/>
+    </contains>
+    <contains>
+      <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+      <code value="2"/>
+      <display value="Torres Strait Islander but not Aboriginal origin"/>
+    </contains>
+    <contains>
+      <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+      <code value="3"/>
+      <display value="Both Aboriginal and Torres Strait Islander origin"/>
+    </contains>
+  </expansion>
+</ValueSet>

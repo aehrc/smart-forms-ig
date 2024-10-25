@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="CervicalScreeningStatus-1"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet CervicalScreeningStatus-1</b></p><a name="CervicalScreeningStatus-1"> </a><a name="hcCervicalScreeningStatus-1"> </a><a name="CervicalScreeningStatus-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="CervicalScreeningStatus-1-http://snomed.info/sct-736595007"> </a>  <a href="http://snomed.info/id/736595007">736595007</a></td><td>http://snomed.info/sct</td><td>Declined</td></tr><tr><td style="white-space:nowrap"><a name="CervicalScreeningStatus-1-http://snomed.info/sct-410527000"> </a>  <a href="http://snomed.info/id/410527000">410527000</a></td><td>http://snomed.info/sct</td><td>Offered</td></tr><tr><td style="white-space:nowrap"><a name="CervicalScreeningStatus-1-http://snomed.info/sct-171154002"> </a>  <a href="http://snomed.info/id/171154002">171154002</a></td><td>http://snomed.info/sct</td><td>Not required</td></tr><tr><td style="white-space:nowrap"><a name="CervicalScreeningStatus-1-http://snomed.info/sct-171155001"> </a>  <a href="http://snomed.info/id/171155001">171155001</a></td><td>http://snomed.info/sct</td><td>Up to date</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-supplement">
+    <valueCanonical value="https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"/>
+  </extension>
+  <url value="https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1"/>
+  <version value="0.2.0"/>
+  <name value="CervicalScreeningStatus"/>
+  <title value="Cervical Screening Status"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-10-25T12:49:36+10:00"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program."/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="736595007"/>
+        <display value="Declined"/>
+      </concept>
+      <concept>
+        <code value="410527000"/>
+        <display value="Offered"/>
+      </concept>
+      <concept>
+        <code value="171154002"/>
+        <display value="Not required"/>
+      </concept>
+      <concept>
+        <code value="171155001"/>
+        <display value="Up to date"/>
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d"/>
+    <timestamp value="2024-04-08T10:41:42+10:00"/>
+    <total value="4"/>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+    </parameter>
+    <parameter>
+      <name value="used-codesystem"/>
+      <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+    </parameter>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="736595007"/>
+      <display value="Declined"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="410527000"/>
+      <display value="Offered"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="171154002"/>
+      <display value="Not required"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="171155001"/>
+      <display value="Up to date"/>
+    </contains>
+  </expansion>
+</ValueSet>

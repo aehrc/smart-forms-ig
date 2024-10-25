@@ -1,0 +1,827 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "AdministrativeGender",
+      "title" : "AdministrativeGender",
+      "description" : "The gender of a person used for administrative purposes.",
+      "systems" : ["http://hl7.org/fhir/administrative-gender"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1"],
+      "uses" : {
+      },
+      "Questionnaire-AgedCareCMSFacade.html" : "Aged Care CMS Facade"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "AdministrativeGender",
+      "title" : "AdministrativeGender",
+      "description" : "The gender of a person used for administrative purposes.",
+      "systems" : ["http://hl7.org/fhir/administrative-gender"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1"]
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "AdministrativeGender",
+      "title" : "AdministrativeGender",
+      "description" : "The gender of a person used for administrative purposes.",
+      "systems" : ["http://hl7.org/fhir/administrative-gender"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1"]
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "AdministrativeGender",
+      "title" : "AdministrativeGender",
+      "description" : "The gender of a person used for administrative purposes.",
+      "systems" : ["http://hl7.org/fhir/administrative-gender"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1"]
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConditionClinicalStatusCodes",
+      "title" : "Condition Clinical Status Codes",
+      "description" : "Preferred value set for Condition Clinical Status.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/condition-clinical"],
+      "oids" : ["2.16.840.1.113883.4.642.3.164"],
+      "sources" : ["2.16.840.1.113883.4.642.3.164"],
+      "uses" : {
+      },
+      "Questionnaire-AgedCareCMSFacade.html" : "Aged Care CMS Facade"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConditionClinicalStatusCodes",
+      "title" : "Condition Clinical Status Codes",
+      "description" : "Preferred value set for Condition Clinical Status.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/condition-clinical"],
+      "oids" : ["2.16.840.1.113883.4.642.3.164"],
+      "sources" : ["2.16.840.1.113883.4.642.3.164"]
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConditionClinicalStatusCodes",
+      "title" : "Condition Clinical Status Codes",
+      "description" : "Preferred value set for Condition Clinical Status.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/condition-clinical"],
+      "oids" : ["2.16.840.1.113883.4.642.3.164"],
+      "sources" : ["2.16.840.1.113883.4.642.3.164"]
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConditionClinicalStatusCodes",
+      "title" : "Condition Clinical Status Codes",
+      "description" : "Preferred value set for Condition Clinical Status.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/condition-clinical"],
+      "oids" : ["2.16.840.1.113883.4.642.3.164"],
+      "sources" : ["2.16.840.1.113883.4.642.3.164"]
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "QuestionnaireItemUIControlCodes",
+      "title" : "Questionnaire Item UI Control Codes",
+      "description" : "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire.",
+      "systems" : ["http://hl7.org/fhir/questionnaire-item-control"],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.931",
+        "2.16.840.1.113883.4.642.3.848"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.931",
+        "2.16.840.1.113883.4.642.3.848"
+      ]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "AustralianPronouns",
+      "title" : "Australian Pronouns",
+      "description" : "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+      "systems" : [
+        "http://loinc.org",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10284"],
+      "sources" : ["1.2.36.1.2001.1004.201.10284"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "AustralianPronouns",
+      "title" : "Australian Pronouns",
+      "description" : "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+      "systems" : [
+        "http://loinc.org",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10284"],
+      "sources" : ["1.2.36.1.2001.1004.201.10284"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "AustralianPronouns",
+      "title" : "Australian Pronouns",
+      "description" : "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+      "systems" : [
+        "http://loinc.org",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10284"],
+      "sources" : ["1.2.36.1.2001.1004.201.10284"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "AustralianPronouns",
+      "title" : "Australian Pronouns",
+      "description" : "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual.",
+      "systems" : [
+        "http://loinc.org",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10284"],
+      "sources" : ["1.2.36.1.2001.1004.201.10284"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+      "version" : "2.0.2",
+      "status" : "active",
+      "name" : "AustralianStatesAndTerritories",
+      "title" : "Australian States and Territories",
+      "description" : "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10026"],
+      "sources" : ["1.2.36.1.2001.1004.201.10026"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+      "version" : "2.0.2",
+      "status" : "active",
+      "name" : "AustralianStatesAndTerritories",
+      "title" : "Australian States and Territories",
+      "description" : "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10026"],
+      "sources" : ["1.2.36.1.2001.1004.201.10026"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+      "version" : "2.0.2",
+      "status" : "active",
+      "name" : "AustralianStatesAndTerritories",
+      "title" : "Australian States and Territories",
+      "description" : "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10026"],
+      "sources" : ["1.2.36.1.2001.1004.201.10026"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2",
+      "version" : "2.0.2",
+      "status" : "active",
+      "name" : "AustralianStatesAndTerritories",
+      "title" : "Australian States and Territories",
+      "description" : "The Australian States and Territories value set includes values that represent the Australian states and territories.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10026"],
+      "sources" : ["1.2.36.1.2001.1004.201.10026"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "BiologicalSex",
+      "title" : "Biological Sex",
+      "description" : "The Biological Sex value set includes values that represent the biological sex of an individual.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10198"],
+      "sources" : ["1.2.36.1.2001.1004.201.10198"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "BiologicalSex",
+      "title" : "Biological Sex",
+      "description" : "The Biological Sex value set includes values that represent the biological sex of an individual.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10198"],
+      "sources" : ["1.2.36.1.2001.1004.201.10198"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "BiologicalSex",
+      "title" : "Biological Sex",
+      "description" : "The Biological Sex value set includes values that represent the biological sex of an individual.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10198"],
+      "sources" : ["1.2.36.1.2001.1004.201.10198"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "BiologicalSex",
+      "title" : "Biological Sex",
+      "description" : "The Biological Sex value set includes values that represent the biological sex of an individual.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10198"],
+      "sources" : ["1.2.36.1.2001.1004.201.10198"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "BiologicalSex",
+      "title" : "Biological Sex",
+      "description" : "The Biological Sex value set includes values that represent the biological sex of an individual.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10198"],
+      "sources" : ["1.2.36.1.2001.1004.201.10198"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+      "version" : "1.0.2",
+      "status" : "active",
+      "name" : "ClinicalCondition",
+      "title" : "Clinical Condition",
+      "description" : "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10035"],
+      "sources" : ["1.2.36.1.2001.1004.201.10035"],
+      "uses" : {
+      },
+      "Questionnaire-AgedCareCMSFacade.html" : "Aged Care CMS Facade"
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+      "version" : "1.0.2",
+      "status" : "active",
+      "name" : "ClinicalCondition",
+      "title" : "Clinical Condition",
+      "description" : "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10035"],
+      "sources" : ["1.2.36.1.2001.1004.201.10035"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+      "version" : "1.0.2",
+      "status" : "active",
+      "name" : "ClinicalCondition",
+      "title" : "Clinical Condition",
+      "description" : "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10035"],
+      "sources" : ["1.2.36.1.2001.1004.201.10035"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
+      "version" : "1.0.2",
+      "status" : "active",
+      "name" : "ClinicalCondition",
+      "title" : "Clinical Condition",
+      "description" : "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.36.1.2001.1004.201.10035"],
+      "sources" : ["1.2.36.1.2001.1004.201.10035"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+      "version" : "1.1.0",
+      "status" : "active",
+      "name" : "GenderIdentityResponse",
+      "title" : "Gender Identity Response",
+      "description" : "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+      "systems" : [
+        "http://snomed.info/sct",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10271"],
+      "sources" : ["1.2.36.1.2001.1004.201.10271"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+      "version" : "1.1.0",
+      "status" : "active",
+      "name" : "GenderIdentityResponse",
+      "title" : "Gender Identity Response",
+      "description" : "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+      "systems" : [
+        "http://snomed.info/sct",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10271"],
+      "sources" : ["1.2.36.1.2001.1004.201.10271"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+      "version" : "1.1.0",
+      "status" : "active",
+      "name" : "GenderIdentityResponse",
+      "title" : "Gender Identity Response",
+      "description" : "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+      "systems" : [
+        "http://snomed.info/sct",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10271"],
+      "sources" : ["1.2.36.1.2001.1004.201.10271"]
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1",
+      "version" : "1.1.0",
+      "status" : "active",
+      "name" : "GenderIdentityResponse",
+      "title" : "Gender Identity Response",
+      "description" : "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
+      "systems" : [
+        "http://snomed.info/sct",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "oids" : ["1.2.36.1.2001.1004.201.10271"],
+      "sources" : ["1.2.36.1.2001.1004.201.10271"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
+      "version" : null,
+      "status" : "draft",
+      "name" : "AboriginalTorresStraitIslander",
+      "title" : "Aboriginal and/or Torres Strait Islander",
+      "description" : "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
+      "version" : null,
+      "status" : "draft",
+      "name" : "AboriginalTorresStraitIslander",
+      "title" : "Aboriginal and/or Torres Strait Islander",
+      "description" : "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "AboriginalTorresStraitIslander",
+      "title" : "Aboriginal and/or Torres Strait Islander",
+      "description" : "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
+      "version" : null,
+      "status" : "draft",
+      "name" : "AboriginalTorresStraitIslander",
+      "title" : "Aboriginal and/or Torres Strait Islander",
+      "description" : "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people.",
+      "systems" : [
+        "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+      "version" : null,
+      "status" : "draft",
+      "name" : "CervicalScreeningStatus",
+      "title" : "Cervical Screening Status",
+      "description" : "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+      "version" : null,
+      "status" : "draft",
+      "name" : "CervicalScreeningStatus",
+      "title" : "Cervical Screening Status",
+      "description" : "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "CervicalScreeningStatus",
+      "title" : "Cervical Screening Status",
+      "description" : "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
+      "version" : null,
+      "status" : "draft",
+      "name" : "CervicalScreeningStatus",
+      "title" : "Cervical Screening Status",
+      "description" : "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
+      "version" : null,
+      "status" : "draft",
+      "name" : "PrimaryCarerParentGrandparent",
+      "title" : "Primary Carer Of Parent Or Grandparent",
+      "description" : "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
+      "version" : null,
+      "status" : "draft",
+      "name" : "PrimaryCarerParentGrandparent",
+      "title" : "Primary Carer Of Parent Or Grandparent",
+      "description" : "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "PrimaryCarerParentGrandparent",
+      "title" : "Primary Carer Of Parent Or Grandparent",
+      "description" : "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent",
+      "version" : null,
+      "status" : "draft",
+      "name" : "PrimaryCarerParentGrandparent",
+      "title" : "Primary Carer Of Parent Or Grandparent",
+      "description" : "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+      "version" : null,
+      "status" : "draft",
+      "name" : "SmokingQuitStatus",
+      "title" : "Smoking Quit Status",
+      "description" : "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+      "version" : null,
+      "status" : "draft",
+      "name" : "SmokingQuitStatus",
+      "title" : "Smoking Quit Status",
+      "description" : "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "SmokingQuitStatus",
+      "title" : "Smoking Quit Status",
+      "description" : "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+      "version" : null,
+      "status" : "draft",
+      "name" : "SmokingQuitStatus",
+      "title" : "Smoking Quit Status",
+      "description" : "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNo",
+      "title" : "Yes/No",
+      "description" : "Concepts for Yes and No",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNA",
+      "title" : "Yes/No/NA",
+      "description" : "Concepts for Yes, No and Not applicable",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0532"]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNotAskedDeclined",
+      "title" : "Yes/No/Not Asked/Asked But Declined",
+      "description" : "Concepts for Yes, No, Not Asked and Asked But Declined",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNotAskedDeclined",
+      "title" : "Yes/No/Not Asked/Asked But Declined",
+      "description" : "Concepts for Yes, No, Not Asked and Asked But Declined",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
+      "version" : "0.2.0",
+      "status" : "draft",
+      "name" : "YesNoNotAskedDeclined",
+      "title" : "Yes/No/Not Asked/Asked But Declined",
+      "description" : "Concepts for Yes, No, Not Asked and Asked But Declined",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ]
+    },
+    {
+      "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
+      "version" : null,
+      "status" : "draft",
+      "name" : "YesNoNotAskedDeclined",
+      "title" : "Yes/No/Not Asked/Asked But Declined",
+      "description" : "Concepts for Yes, No, Not Asked and Asked But Declined",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v2-0532",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ]
+    }
+  ]
+}

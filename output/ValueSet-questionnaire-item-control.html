@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Questionnaire Item UI Control Codes - Smart Forms v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/715.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9.53"}
+    h3,h4,h5,h6{--heading-prefix:"9.53"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Smart Forms</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="reference-implementation.html">Reference Implementation</a>
+      </li>
+      <li>
+        <a href="smart-health-check-application-integration.html">Smart Health Check Application Integration</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefact Summary</a>
+      </li>
+      <li>
+        <a href="questionnaires.html">Questionnaires</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Questionnaire Item UI Control Codes</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Smart Forms - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://smartforms.csiro.au/ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-questionnaire-item-control.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-questionnaire-item-control.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-questionnaire-item-control.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Questionnaire Item UI Control Codes
+
+  </h2>
+  <table class="colstu">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/ValueSet/questionnaire-item-control<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/questionnaire-item-control"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/questionnaire-item-control|1.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="2">
+        
+          <i>
+            
+            Standards status:
+          </i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+          
+        
+      </td>
+
+      <td>
+        <a href="http://hl7.org/fhir/versions.html#maturity">Maturity Level</a>: 3
+        
+      </td>
+
+
+      <td>
+        <i>Responsible:</i> 
+
+        <a href="http://hl7.org/Special/committees/fhir-i">HL7 International / FHIR Infrastructure</a>
+
+      </td>
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">QuestionnaireItemUIControlCodes</span></td>
+    </tr>
+
+    <tr>
+      <td colspan="5">
+        <i>Other Identifiers:</i> OID:2.16.840.1.113883.4.642.3.931, OID:2.16.840.1.113883.4.642.3.848 (use: old, )
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Copyright © 2011+ HL7. Creative Commons 'No Rights Reserved' (CC0)</p>
+</td>
+    </tr>
+
+  </table>
+
+<p>
+<p>Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="http://hl7.org/fhir/extensions/5.1.0/StructureDefinition-questionnaire-itemControl.html">Questionnaire Item Control</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet questionnaire-item-control</b></p>
+<ul><li>Include all codes defined in <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html"><code>http://hl7.org/fhir/questionnaire-item-control</code></a></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet </b></p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html">codesystem Questionnaire Item UI Control Codes System v5.1.0 (CodeSystem)</a></p><p>This value set contains 28 concepts</p><table class="codes"><tr><td><b>Level</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Inactive</b></td><td><b>Definition</b></td><td><b><a href="http://hl7.org/fhir/concept-properties#status">status</a></b></td></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-group"> </a>1</td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-group" title="This code is not selectable ('Abstract')"><i>group</i></a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td/><td/><td><div><p>UI controls relevant to organizing groups of questions</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-list"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-list">list</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>List</td><td/><td><div><p>Questions within the group should be listed sequentially</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-table"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-table">table</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Vertical Answer Table</td><td/><td><div><p>Questions within the group are rows in the table with possible answers as columns.  Used for 'choice' questions.  The questions within a group marked with this controlType SHALL provide an enumerated list of options and SHOULD refer to the same set of options, same value set or same expression.  In the case of a 'sparse' table where some options aren't available for some questions, the order of the answers in the table is not defined and some rendering tools may refuse to display the group as a table.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-htable"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-htable">htable</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Horizontal Answer Table</td><td/><td><div><p>Questions within the group are columns in the table with possible answers as rows.  Used for 'choice' questions.  The questions within a group marked with this controlType SHALL provide an enumerated list of options and SHOULD refer to the same set of options, same value set or same expression.  In the case of a 'sparse' table where some options aren't available for some questions, the order of the answers in the table is not defined and some rendering tools may refuse to display the group as a table.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-gtable"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-gtable">gtable</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Group Table</td><td/><td><div><p>Questions within the group are columns in the table with each group repetition as a row.  Used for single-answer questions.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-grid"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-grid">grid</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Group Grid</td><td/><td><div><p>Child items of type='group' within the a 'grid' group are rows, and questions beneath the 'row' groups are organized as columns in the grid. The grid might be fully populated, but could be sparse. Questions may support different data types and/or different answer choices.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-header"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-header">header</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Header</td><td/><td><div><p>The group is to be continuously visible at the top of the questionnaire</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-footer"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-footer">footer</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Footer</td><td/><td><div><p>The group is to be continuously visible at the bottom of the questionnaire</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-page"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-page">page</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Page</td><td/><td><div><p>Indicates that the content within the group should appear as a logical &quot;page&quot; when rendering the form, such that all enabled items        within the page are displayed at once, but items in subsequent groups are not displayed until the user indicates a desire to move to the 'next' group.        (Header and footer items may still be displayed.) This designation may also influence pagination when printing questionnaires. If there are items at the same        level as a 'page' group that are listed before the 'page' group, they will be treated as a separate page.  Header and footer groups for a questionnaire will be rendered on all pages.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-tab-container"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-tab-container">tab-container</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Tab Container</td><td/><td><div><p>Indicates that the group represents a collection of tabs. All child items SHALL be of type 'group' and SHALL NOT declare any item controls themselves. Each child group represents one tab within the tab container, where the item.title is the label for the tab.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-display"> </a>1</td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-display" title="This code is not selectable ('Abstract')"><i>display</i></a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td/><td/><td><div><p>UI controls relevant to rendering questionnaire display items</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-inline"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-inline">inline</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>In-line</td><td/><td><div><p>Display item is rendered as a paragraph in a sequential position between sibling items (default behavior)</p>
+</div></td><td/></tr><tr style="background-color: #ffeeee"><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-prompt"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-prompt">prompt</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Prompt</td><td>inactive</td><td><div><p>Text is displayed immediately below or within the answer-entry area of the containing question item (typically as a guide for what to enter).  <strong>Deprecation Note</strong> - Use the <a href="http://hl7.org/fhir/extensions/5.1.0/StructureDefinition-entryFormat.html">http://hl7.org/fhir/StructureDefinition/entryFormat</a> extension instead.</p>
+</div></td><td>deprecated</td></tr><tr style="background-color: #ffeeee"><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-unit"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-unit">unit</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Unit</td><td>inactive</td><td><div><p>Display item is rendered adjacent (horizontally or vertically) to the answer space for the parent question, typically to indicate a unit of measure.  <strong>Deprecation Note</strong> - The display element of the <a href="http://hl7.org/fhir/extensions/5.1.0/StructureDefinition-questionnaire-unit.html">http://hl7.org/fhir/StructureDefinition/questionnaire-unit</a> should be used instead.</p>
+</div></td><td>deprecated</td></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-lower"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-lower">lower</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Lower-bound</td><td/><td><div><p>Display item is rendered to the left of the set of answer choices or a scaling control for the parent question item to indicate the meaning of the 'lower' bound.  E.g. 'Strongly disagree'</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-upper"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-upper">upper</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Upper-bound</td><td/><td><div><p>Display item is rendered to the right of the set of answer choices or a scaling control for the parent question item to indicate the meaning of the 'upper' bound.  E.g. 'Strongly agree'</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-flyover"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-flyover">flyover</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Fly-over</td><td/><td><div><p>Display item is temporarily visible over top of an item if the mouse is positioned over top of the text for the containing item</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-help"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-help">help</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Help-Button</td><td/><td><div><p>Display item is rendered in a dialog box or similar control if invoked by pushing a button or some other UI-appropriate action to request 'help' for a question, group or the questionnaire as a whole (depending what the display item is nested within)</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-legal"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-legal">legal</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>legal-Button</td><td/><td><div><p>Display item is rendered in a dialog box or similar control if invoked by pushing a button or some other UI-appropriate action to request 'legal' info for a question, group or the questionnaire as a whole (depending what the display item is nested within)</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-question"> </a>1</td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-question" title="This code is not selectable ('Abstract')"><i>question</i></a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td/><td/><td><div><p>UI controls relevant to capturing question data</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-autocomplete"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-autocomplete">autocomplete</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Auto-complete</td><td/><td><div><p>A control which provides a list of potential matches based on text entered into a control.  Used for large choice sets where text-matching is an appropriate discovery mechanism.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-drop-down"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-drop-down">drop-down</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Drop down</td><td/><td><div><p>A control where an item (or multiple items) can be selected from a list that is only displayed when the user is editing the field.  This control is best used for small-to-medium sized lists of options that can reasonably be scanned and selected in a drop-down control.  If the list of options is managed by ValueSet, the designer should be confident that the set of codes will both be fully available and appropriately sized.  For larger lists, the autocomplete control is more appropriate.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-check-box"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-check-box">check-box</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Check-box</td><td/><td><div><p>A control where choices are listed with a box beside them.  The box can be toggled to select or de-select a given choice.  Multiple selections may be possible.  Commonly useful for repeating items of type constrained by answerOption, answerValueset or answerExpression, however can also be used for boolean (if the checkbox is a 3-state control that allows 'unanswered' as a possibility).</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-lookup"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-lookup">lookup</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Lookup</td><td/><td><div><p>A control where editing an item spawns a separate dialog box or screen permitting a user to navigate, filter or otherwise discover an appropriate match.  Useful for large choice sets where text matching is not an appropriate discovery mechanism.  Such screens must generally be tuned for the specific choice list structure.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-radio-button"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-radio-button">radio-button</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Radio Button</td><td/><td><div><p>A control where choices are listed with a button beside them.  The button can be toggled to select or de-select a given choice.  Selecting one item deselects all others.  Used for non-repeating items with 'closed' answerOption, answerValueset or answerExpression constraints.  Can also be used for boolean so long as there is a button for 'unanswered' or it's possible to deselect all items.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-slider"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-slider">slider</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Slider</td><td/><td><div><p>A control where an axis is displayed between the high and low values and the control can be visually manipulated to select a value anywhere on the axis.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-spinner"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-spinner">spinner</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Spinner</td><td/><td><div><p>A control where a list of numeric or other ordered values can be scrolled through via arrows.</p>
+</div></td><td/></tr><tr><td><a name="x-http://hl7.org/fhir/questionnaire-item-control-text-box"> </a>2</td><td style="white-space:nowrap">    <a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-questionnaire-item-control.html#questionnaire-item-control-text-box">text-box</a></td><td>http://hl7.org/fhir/questionnaire-item-control</td><td>Text Box</td><td/><td><div><p>A control where a user can type in their answer freely.</p>
+</div></td><td/></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2">AEHRC CSIRO</a>.  Package csiro.fhir.au.smartforms#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 25, 2024 12:49+1000">2024-10-25</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

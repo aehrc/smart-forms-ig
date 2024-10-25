@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="administrative-gender"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet administrative-gender</b></p><a name="administrative-gender"> </a><a name="hcadministrative-gender"> </a><a name="administrative-gender-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html">system AdministrativeGender v4.0.1 (CodeSystem)</a></p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href="http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html">v2 map for AdministrativeGender</a></b></td><td><b><a href="http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html">v3 map for AdministrativeGender</a></b></td></tr><tr><td style="white-space:nowrap"><a name="administrative-gender-http://hl7.org/fhir/administrative-gender-female"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-female">female</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Female</td><td><div><p>Female.</p>
+</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="administrative-gender-http://hl7.org/fhir/administrative-gender-male"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-male">male</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Male</td><td><div><p>Male.</p>
+</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="administrative-gender-http://hl7.org/fhir/administrative-gender-other"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-other">other</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Other</td><td><div><p>Other.</p>
+</div></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a><br/><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="administrative-gender-http://hl7.org/fhir/administrative-gender-unknown"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-unknown">unknown</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Unknown</td><td><div><p>Unknown.</p>
+</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="pa"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="normative"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="5"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+    <valueCode value="4.0.0"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/administrative-gender"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:2.16.840.1.113883.4.642.3.1"/>
+  </identifier>
+  <version value="4.0.1"/>
+  <name value="AdministrativeGender"/>
+  <title value="AdministrativeGender"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2019-11-01T09:29:23+11:00"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="The gender of a person used for administrative purposes."/>
+  <immutable value="true"/>
+  <copyright value="Copyright © 2011+ HL7. Licensed under Creative Commons &quot;No Rights Reserved&quot;."/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/administrative-gender"/>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="urn:uuid:50f050c9-3975-48d6-bdb7-baae4ebc70cd"/>
+    <timestamp value="2024-04-05T12:31:27+10:00"/>
+    <total value="4"/>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="http://hl7.org/fhir/administrative-gender|4.0.1"/>
+    </parameter>
+    <parameter>
+      <name value="used-codesystem"/>
+      <valueUri value="http://hl7.org/fhir/administrative-gender|4.0.1"/>
+    </parameter>
+    <contains>
+      <system value="http://hl7.org/fhir/administrative-gender"/>
+      <code value="female"/>
+      <display value="Female"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/administrative-gender"/>
+      <code value="male"/>
+      <display value="Male"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/administrative-gender"/>
+      <code value="other"/>
+      <display value="Other"/>
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/administrative-gender"/>
+      <code value="unknown"/>
+      <display value="Unknown"/>
+    </contains>
+  </expansion>
+</ValueSet>

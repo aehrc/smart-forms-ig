@@ -1,0 +1,194 @@
+{
+  "package": "csiro.fhir.au.smartforms",
+  "version": "0.2.0",
+  "fhirVersion": "4.0.1",
+  "extensions": [
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired",
+      "title": "Condition Environment Acquired",
+      "types": [
+        "CodeableConcept",
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
+      "title": "Contained Resource Reference",
+      "types": [
+        "Reference"
+      ]
+    }
+  ],
+  "profiles": {},
+  "usage": {
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.format",
+      "CapabilityStatement.implementationGuide",
+      "CapabilityStatement.instantiates",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.profile",
+      "CapabilityStatement.rest.resource.searchParam",
+      "CapabilityStatement.rest.resource.supportedProfile",
+      "CapabilityStatement.rest.resource.versioning",
+      "CapabilityStatement.rest.security.cors",
+      "CapabilityStatement.rest.security.service"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination": [
+      "CapabilityStatement.rest.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/entryFormat": [
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory": [
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl": [
+      "Questionnaire.item",
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item",
+      "Questionnaire.item.item.item.item.item.item",
+      "Questionnaire.item.item.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-unit": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item",
+      "Questionnaire.item.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/rendering-xhtml": [
+      "Questionnaire.item.item.item.item.text",
+      "Questionnaire.item.item.item.text",
+      "Questionnaire.item.item.text"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm": [
+      "CodeSystem",
+      "Questionnaire.contained",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version": [
+      "Questionnaire.contained",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "CodeSystem",
+      "Questionnaire.contained",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg": [
+      "CodeSystem",
+      "Questionnaire.contained",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/valueset-supplement": [
+      "Questionnaire.contained",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/variable": [
+      "Questionnaire",
+      "Questionnaire.item",
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation": [
+      "Questionnaire"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext": [
+      "Questionnaire"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom": [
+      "Questionnaire"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression": [
+      "Questionnaire.item",
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item",
+      "Questionnaire.item.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext": [
+      "Questionnaire"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel": [
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item",
+      "Questionnaire.item.item.item.item.item",
+      "Questionnaire.item.item.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText": [
+      "Questionnaire.item",
+      "Questionnaire.item.item",
+      "Questionnaire.item.item.item",
+      "Questionnaire.item.item.item.item"
+    ],
+    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire": [
+      "Questionnaire.item.item"
+    ],
+    "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference": [
+      "Questionnaire"
+    ]
+  }
+}

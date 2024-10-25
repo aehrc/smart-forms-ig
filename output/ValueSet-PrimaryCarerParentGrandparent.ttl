@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PrimaryCarerParentGrandparent"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PrimaryCarerParentGrandparent</b></p><a name=\"PrimaryCarerParentGrandparent\"> </a><a name=\"hcPrimaryCarerParentGrandparent\"> </a><a name=\"PrimaryCarerParentGrandparent-en-US\"> </a><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on:</p><ul><li>system NullFlavor version2018-08-12</li><li>system RoleCode version2018-08-12</li></ul></div><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-MTH\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-MTH\">MTH</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>mother</td><td><div><p>The player of the role is a female who conceives, gives birth to, or raises and nurtures the scoping entity (child).</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-FTH\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-FTH\">FTH</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>father</td><td><div><p>The player of the role is a male who begets or raises or nurtures the scoping entity (child).</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-GRPRN\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-GRPRN\">GRPRN</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>grandparent</td><td><div><p>The player of the role is a parent of the scoping person's mother or father.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-NA\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-NA\">NA</a></td><td>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</td><td>not applicable</td><td><div><p>Known to have no proper value (e.g., last menstrual period for a male).</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "PrimaryCarerParentGrandparent"] ; # 
+  fhir:title [ fhir:v "Primary Carer Of Parent Or Grandparent"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AEHRC CSIRO" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "MTH" ]
+       ] [
+         fhir:code [ fhir:v "FTH" ]
+       ] [
+         fhir:code [ fhir:v "GRPRN" ]
+       ] )
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "NA" ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:identifier [ fhir:v "2809c2fa-28ec-4def-9b16-93a611d29da3"^^xsd:anyURI ] ;
+     fhir:timestamp [ fhir:v "2022-10-20T11:42:30+10:00"^^xsd:dateTime ] ;
+     fhir:total [ fhir:v "4"^^xsd:integer ] ;
+     fhir:offset [ fhir:v "0"^^xsd:integer ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode|2018-08-12"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "count" ] ;
+       fhir:value [ fhir:v "2147483647"^^xsd:integer ]
+     ] [
+       fhir:name [ fhir:v "offset" ] ;
+       fhir:value [ fhir:v "0"^^xsd:integer ]
+     ] ) ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "2018-08-12" ] ;
+       fhir:code [ fhir:v "MTH" ] ;
+       fhir:display [ fhir:v "mother" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "2018-08-12" ] ;
+       fhir:code [ fhir:v "FTH" ] ;
+       fhir:display [ fhir:v "father" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "2018-08-12" ] ;
+       fhir:code [ fhir:v "GRPRN" ] ;
+       fhir:display [ fhir:v "grandparent" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "2018-08-12" ] ;
+       fhir:code [ fhir:v "NA" ] ;
+       fhir:display [ fhir:v "not applicable" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

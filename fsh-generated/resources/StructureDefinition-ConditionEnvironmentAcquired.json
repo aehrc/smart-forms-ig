@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ConditionEnvironmentAcquired",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired",
+  "name": "ConditionEnvironmentAcquired",
+  "title": "Condition Environment Acquired",
+  "status": "draft",
+  "description": "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Condition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Condition Environment Acquired",
+        "definition": "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          },
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

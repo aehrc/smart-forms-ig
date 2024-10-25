@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/ValueSet/condition-clinical> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "condition-clinical"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet condition-clinical</b></p><a name=\"condition-clinical\"> </a><a name=\"hccondition-clinical\"> </a><a name=\"condition-clinical-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on system Condition Clinical Status Codes version4.0.1</p><p>This value set contains 6 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-active\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-active\">active</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Active</td><td><div><p>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-inactive\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-inactive\">inactive</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Inactive</td><td><div><p>The subject is no longer experiencing the condition or situation and there is no longer evidence or appreciable risk of the condition or situation.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-recurrence\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-recurrence\">recurrence</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Recurrence</td><td><div><p>The subject is experiencing a reoccurence or repeating of a previously resolved condition or situation, e.g. urinary tract infection, food insecurity.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-relapse\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-relapse\">relapse</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Relapse</td><td><div><p>The subject is experiencing a return of a condition or situation after a period of improvement or remission, e.g. relapse of cancer, alcoholism.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-remission\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-remission\">remission</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Remission</td><td><div><p>The subject is not presently experiencing the condition or situation, but there is a risk of the condition or situation returning.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-resolved\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-resolved\">resolved</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Resolved</td><td><div><p>The subject is not presently experiencing the condition or situation and there is a negligible perceived risk of the condition or situation returning.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "pc" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "trial-use" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "3"^^xsd:integer ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:2.16.840.1.113883.4.642.3.164" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "4.0.1"] ; # 
+  fhir:name [ fhir:v "ConditionClinicalStatusCodes"] ; # 
+  fhir:title [ fhir:v "Condition Clinical Status Codes"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2019-11-01T09:29:23+11:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "FHIR Project team"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Preferred value set for Condition Clinical Status."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\"."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ]
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:identifier [ fhir:v "urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8"^^xsd:anyURI ] ;
+     fhir:timestamp [ fhir:v "2024-04-02T14:17:12+10:00"^^xsd:dateTime ] ;
+     fhir:total [ fhir:v "6"^^xsd:integer ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "used-codesystem" ] ;
+       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "warning-draft" ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "warning-trial-use" ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "warning-trial-use" ] ;
+       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "warning-draft" ] ;
+       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"^^xsd:anyURI ]
+     ] ) ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ] ;
+       fhir:display [ fhir:v "Active" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "inactive" ] ;
+       fhir:display [ fhir:v "Inactive" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "recurrence" ] ;
+       fhir:display [ fhir:v "Recurrence" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "relapse" ] ;
+       fhir:display [ fhir:v "Relapse" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "remission" ] ;
+       fhir:display [ fhir:v "Remission" ]
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "resolved" ] ;
+       fhir:display [ fhir:v "Resolved" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

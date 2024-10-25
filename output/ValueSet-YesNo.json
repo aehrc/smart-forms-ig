@@ -1,0 +1,61 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "YesNo",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet YesNo</b></p><a name=\"YesNo\"> </a><a name=\"hcYesNo\"> </a><a name=\"YesNo-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html\">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></p><p>This value set contains 2 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNo-http://terminology.hl7.org/CodeSystem/v2-0532-Y\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y\">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td><div><p>Yes</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNo-http://terminology.hl7.org/CodeSystem/v2-0532-N\"> </a>\u00a0\u00a0<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N\">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td><div><p>No</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://smartforms.csiro.au/ig/ValueSet/YesNo",
+  "version" : "0.2.0",
+  "name" : "YesNo",
+  "title" : "Yes/No",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2024-10-25T12:49:36+10:00",
+  "publisher" : "AEHRC CSIRO",
+  "contact" : [{
+    "name" : "AEHRC CSIRO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"
+    }]
+  }],
+  "description" : "Concepts for Yes and No",
+  "copyright" : "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0532",
+      "concept" : [{
+        "code" : "Y",
+        "display" : "Yes"
+      },
+      {
+        "code" : "N",
+        "display" : "No"
+      }]
+    }]
+  },
+  "expansion" : {
+    "identifier" : "urn:uuid:06bfacf3-ef16-4470-86a0-a2a22f49ff91",
+    "timestamp" : "2023-09-01T11:15:01+10:00",
+    "total" : 2,
+    "parameter" : [{
+      "name" : "version",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+    }],
+    "contains" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0532",
+      "code" : "Y",
+      "display" : "Yes"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0532",
+      "code" : "N",
+      "display" : "No"
+    }]
+  }
+}

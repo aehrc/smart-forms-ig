@@ -1,0 +1,47 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "HealthChecksSCTSupplement",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem HealthChecksSCTSupplement</b></p><a name=\"HealthChecksSCTSupplement\"> </a><a name=\"hcHealthChecksSCTSupplement\"> </a><a name=\"HealthChecksSCTSupplement-en-US\"> </a><p>This code system <code>https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement</code> defines features on the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">736595007<a name=\"HealthChecksSCTSupplement-736595007\"> </a></td><td>Declined</td></tr><tr><td style=\"white-space:nowrap\">171154002<a name=\"HealthChecksSCTSupplement-171154002\"> </a></td><td>Not required</td></tr><tr><td style=\"white-space:nowrap\">171155001<a name=\"HealthChecksSCTSupplement-171155001\"> </a></td><td>Up to date</td></tr><tr><td style=\"white-space:nowrap\">48031000119106<a name=\"HealthChecksSCTSupplement-48031000119106\"> </a></td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\">735128000<a name=\"HealthChecksSCTSupplement-735128000\"> </a></td><td>Quit &lt;12 months</td></tr></table></div>"
+  },
+  "url" : "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement",
+  "version" : "0.2.0",
+  "name" : "HealthChecksSCTSupplement",
+  "title" : "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2024-10-25T12:49:36+10:00",
+  "publisher" : "AEHRC CSIRO",
+  "contact" : [{
+    "name" : "AEHRC CSIRO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"
+    }]
+  }],
+  "description" : "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire.",
+  "copyright" : "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
+  "content" : "supplement",
+  "supplements" : "http://snomed.info/sct|http://snomed.info/sct/32506021000036107",
+  "concept" : [{
+    "code" : "736595007",
+    "display" : "Declined"
+  },
+  {
+    "code" : "171154002",
+    "display" : "Not required"
+  },
+  {
+    "code" : "171155001",
+    "display" : "Up to date"
+  },
+  {
+    "code" : "48031000119106",
+    "display" : "Quit >12 months"
+  },
+  {
+    "code" : "735128000",
+    "display" : "Quit <12 months"
+  }]
+}

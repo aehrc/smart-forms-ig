@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HealthChecksSCTSupplement"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem HealthChecksSCTSupplement</b></p><a name=\"HealthChecksSCTSupplement\"> </a><a name=\"hcHealthChecksSCTSupplement\"> </a><a name=\"HealthChecksSCTSupplement-en-US\"> </a><p>This code system <code>https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement</code> defines features on the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">736595007<a name=\"HealthChecksSCTSupplement-736595007\"> </a></td><td>Declined</td></tr><tr><td style=\"white-space:nowrap\">171154002<a name=\"HealthChecksSCTSupplement-171154002\"> </a></td><td>Not required</td></tr><tr><td style=\"white-space:nowrap\">171155001<a name=\"HealthChecksSCTSupplement-171155001\"> </a></td><td>Up to date</td></tr><tr><td style=\"white-space:nowrap\">48031000119106<a name=\"HealthChecksSCTSupplement-48031000119106\"> </a></td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\">735128000<a name=\"HealthChecksSCTSupplement-735128000\"> </a></td><td>Quit &lt;12 months</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "HealthChecksSCTSupplement"] ; # 
+  fhir:title [ fhir:v "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AEHRC CSIRO" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."] ; # 
+  fhir:content [ fhir:v "supplement"] ; # 
+  fhir:supplements [
+     fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"^^xsd:anyURI ;
+     fhir:link <http://snomed.info/sct|http://snomed.info/sct/32506021000036107>
+  ] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "736595007" ] ;
+     fhir:display [ fhir:v "Declined" ]
+  ] [
+     fhir:code [ fhir:v "171154002" ] ;
+     fhir:display [ fhir:v "Not required" ]
+  ] [
+     fhir:code [ fhir:v "171155001" ] ;
+     fhir:display [ fhir:v "Up to date" ]
+  ] [
+     fhir:code [ fhir:v "48031000119106" ] ;
+     fhir:display [ fhir:v "Quit >12 months" ]
+  ] [
+     fhir:code [ fhir:v "735128000" ] ;
+     fhir:display [ fhir:v "Quit <12 months" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

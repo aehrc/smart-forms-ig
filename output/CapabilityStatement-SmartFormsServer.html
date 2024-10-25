@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Smart Forms Server - Smart Forms v0.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/715.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9.3"}
+    h3,h4,h5,h6{--heading-prefix:"9.3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Smart Forms</span>
+            <br/>
+            <span style="display:inline-block;">0.2.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="reference-implementation.html">Reference Implementation</a>
+      </li>
+      <li>
+        <a href="smart-health-check-application-integration.html">Smart Health Check Application Integration</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artefacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artefact Summary</a>
+      </li>
+      <li>
+        <a href="questionnaires.html">Questionnaires</a>
+      </li>
+      <li>
+        <a href="capability-statements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="profiles-and-extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Smart Forms Server</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Smart Forms - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://smartforms.csiro.au/ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CapabilityStatement-SmartFormsServer.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-SmartFormsServer.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-SmartFormsServer.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">CapabilityStatement: Smart Forms Server
+
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer|0.2.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2023-06-16
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">SmartFormsServer</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.</p>
+</td>
+    </tr>
+
+  </table>
+
+
+<p>
+<p>This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters.</p>
+
+</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="CapabilityStatement-SmartFormsServer.xml.html">XML</a>, <a href="CapabilityStatement-SmartFormsServer.json.html">JSON</a>, <a href="CapabilityStatement-SmartFormsServer.ttl.html">Turtle</a>
+  </p>-->
+
+  
+  <p>
+      <a href="SmartFormsServer.openapi.json" no-download="true">Raw OpenAPI-Swagger Definition file</a> | <a href="SmartFormsServer.openapi.json" download>Download</a>
+  </p>
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"> <h2>Smart Forms Server Capability Statement</h2> <ul> <li>Kind of capability statement: capability</li><li>FHIR Version: 4.0.1</li><li>Supported Formats: <code>json</code> and <code>xml</code></li><li>Published by: AEHRC CSIRO</li></ul> <blockquote class="impl-note"> <p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Additional FHIR capabilities may be 'allowed' by the system. Only the capabilities relevant to Smart Forms have been included in this capability statement.</p></blockquote> <h3 id="CSs">Implements a Subset of the Following Capability Statements:</h3> <ul> <li><a href="http://hl7.org/fhir/uv/sdc/STU3/CapabilityStatement-sdc-form-manager.html">SDC Form Manager</a> </li></ul> <h2 id="rest">FHIR RESTful Capabilities</h2> <div class="panel panel-default"> <div class="panel-heading"> <h3 id="mode1" class="panel-title">Mode: <code>server</code></h3> </div><div class="panel-body"> <div> <p>The Smart Forms Server provides interactions for hosting Questionnaire resources and the assembly of modular Questionnaires.</p></div><div class="lead"><em>Security</em></div><blockquote> <div> <ul><li>TBD requirements and deployment considerations.</li><li>See the <a href="http://hl7.org/fhir/uv/sdc/STU3/security.html">Structured Data Capture Security Details</a> section for general considerations and recommendations.</li></ul> <p/></div></blockquote> </div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3> <h4 id="resourcesSummary1">Summary</h4> <p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul> <li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul> <div class="table-responsive"> <table class="table table-condensed table-hover"> <thead> <tr> <th><b>Resource Type</b></th> <th><b>Profile</b></th> <th class="text-center"><b title="GET a resource (read interaction)">R</b></th> <th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th> <th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th> <th class="text-center"><b title="POST a new resource (create interaction)">C</b></th> <th><b title="Required and recommended search parameters">Searches</b></th> <th><code><b>_include</b></code></th> <th><code><b>_revinclude</b></code></th> <th><b>Operations</b></th> </tr></thead> <tbody> <tr> <td><a href="#Questionnaire1">Questionnaire</a></td><td><a href="http://hl7.org/fhir/R4/questionnaire.html">http://hl7.org/fhir/StructureDefinition/Questionnaire</a><br/> <em>Additional supported profiles:</em> <ul> <li><a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire.html">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire</a></li><li><a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular</a> </li></ul> </td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"/><td class="text-center"/><td>url, version, title, _count, _sort, url+version, _count+_sort, title+_count+_sort</td><td/> <td/><td><code>$assemble</code></td></tr></tbody> </table> </div><hr/> <div class="panel panel-default"> <div class="panel-heading"> <h4 id="Questionnaire1" class="panel-title">Questionnaire</h4> </div><div class="panel-body"> <div class="container"> <div class="row"> <div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/questionnaire.html">http://hl7.org/fhir/StructureDefinition/Questionnaire</a> </div></div><p/> <div class="row"> <div class="col-6"><span class="lead">Supported Profiles</span> <ul> <li><a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire.html">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire</a> </li><li><a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaire-modular.html">http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular</a> </li></ul> </div></div><div class="row"> <div class="col-lg-6"><span class="lead">Interaction summary</span><br/> <ul> <li>Supports <code>read</code>, <code>search-type</code>.</li></ul> </div></div><p/> <div class="row"> <div class="col-lg-7"><span class="lead">Search Parameters</span> <table class="table table-condensed table-hover"> <thead> <tr> <th>Parameter</th> <th>Type</th> <th>Documentation</th> </tr></thead> <tbody> <tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">url</a></td><td><code>uri</code></td><td> <div> <p/></div></td></tr><tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">version</a></td><td><code>token</code></td><td> <div> <p/></div></td></tr><tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">title</a></td><td><code>string</code></td><td> <div> <p>The server supports search using the :contains modifier.</p></div></td></tr><tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">_count</a></td><td><code>number</code></td><td> <div> <p>The server supports search result limiting.</p></div></td></tr><tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">_sort</a></td><td><code>string</code></td><td> <div> <p>The server supports search result sorting by date and <strong>MAY</strong> support other values.</p></div></td></tr></tbody> </table> </div><div class="col-lg-5"><span class="lead">Combined Search Parameters</span> <table class="table table-condensed table-hover"> <thead> <tr> <th>Parameters</th> <th>Types</th> </tr></thead> <tbody> <tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">url</a>+ <a href="http://hl7.org/fhir/R4/questionnaire.html#search">version</a> </td><td><code>uri</code>+<code>token</code></td></tr><tr> <td><a href="http://hl7.org/fhir/R4/search.html#count">_count</a>+ <a href="http://hl7.org/fhir/R4/search.html#_sort">_sort</a> </td><td><code>number</code>+<code>string</code></td></tr><tr> <td><a href="http://hl7.org/fhir/R4/questionnaire.html#search">title</a>+ <a href="http://hl7.org/fhir/R4/search.html#count">_count</a>+ <a href="http://hl7.org/fhir/R4/search.html#_sort">_sort</a> </td><td><code>string</code>+<code>number</code>+<code>string</code></td></tr></tbody> </table> </div></div><div class="row"> <div class="col-12"><span class="lead">Operations</span> <table class="table table-condensed table-hover"> <thead> <tr> <th>Operation</th> <th>Documentation</th> </tr></thead> <tbody> <tr> <td><a href="http://hl7.org/fhir/uv/sdc/STU3/OperationDefinition-Questionnaire-assemble.html">$assemble</a></td><td> <div> <p/></div></td></tr></tbody> </table> </div></div></div></div></div></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2">AEHRC CSIRO</a>.  Package csiro.fhir.au.smartforms#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 25, 2024 12:49+1000">2024-10-25</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

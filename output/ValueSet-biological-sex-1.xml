@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="biological-sex-1"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+    <profile value="https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet biological-sex-1</b></p><a name="biological-sex-1"> </a><a name="hcbiological-sex-1"> </a><a name="biological-sex-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Aug 2023</p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="biological-sex-1-http://snomed.info/sct-248152002"> </a>  <a href="http://snomed.info/id/248152002">248152002</a></td><td>http://snomed.info/sct</td><td>Female</td></tr><tr><td style="white-space:nowrap"><a name="biological-sex-1-http://snomed.info/sct-32570681000036106"> </a>  <a href="http://snomed.info/id/32570681000036106">32570681000036106</a></td><td>http://snomed.info/sct</td><td>Indeterminate sex</td></tr><tr><td style="white-space:nowrap"><a name="biological-sex-1-http://snomed.info/sct-32570691000036108"> </a>  <a href="http://snomed.info/id/32570691000036108">32570691000036108</a></td><td>http://snomed.info/sct</td><td>Intersex</td></tr><tr><td style="white-space:nowrap"><a name="biological-sex-1-http://snomed.info/sct-248153007"> </a>  <a href="http://snomed.info/id/248153007">248153007</a></td><td>http://snomed.info/sct</td><td>Male</td></tr></table></div>
+  </text>
+  <url value="https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:1.2.36.1.2001.1004.201.10198"/>
+  </identifier>
+  <version value="1.0.0"/>
+  <name value="BiologicalSex"/>
+  <title value="Biological Sex"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2020-12-31"/>
+  <publisher value="Australian Digital Health Agency"/>
+  <contact>
+    <telecom>
+      <system value="email"/>
+      <value value="help@digitalhealth.gov.au"/>
+    </telecom>
+  </contact>
+  <description value="The Biological Sex value set includes values that represent the biological sex of an individual."/>
+  <copyright value="Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. &#xA;&#xA;This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. &#xA;&#xA;The rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. &#xA;&#xA;All copies of this resource must include this copyright statement and all information contained in this statement."/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="constraint"/>
+        <op value="="/>
+        <value value="^ 32570631000036107|Sex reference set|"/>
+      </filter>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b"/>
+    <timestamp value="2023-08-30T10:41:59+10:00"/>
+    <total value="4"/>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"/>
+    </parameter>
+    <parameter>
+      <name value="used-codesystem"/>
+      <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"/>
+    </parameter>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="248152002"/>
+      <display value="Female"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="32570681000036106"/>
+      <display value="Indeterminate sex"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="32570691000036108"/>
+      <display value="Intersex"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="248153007"/>
+      <display value="Male"/>
+    </contains>
+  </expansion>
+</ValueSet>

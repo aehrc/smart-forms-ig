@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="SubstanceUse"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"/>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"/>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Questionnaire SubstanceUse</b></p><a name="SubstanceUse"> </a><a name="hcSubstanceUse"> </a><a name="SubstanceUse-en-US"> </a><b>Structure</b><table border="1" cellpadding="0" cellspacing="0" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="The linkID for the item">LinkID</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Text for the item">Text</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Minimum and Maximum # of times the item can appear in the instance">Cardinality</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="The type of the item">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Additional information about the item">Description &amp; Constraints</a><span style="float: right"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_q_root.gif" alt="." style="background-color: white; background-color: inherit" title="QuestionnaireRoot" class="hierarchy"/> SubstanceUse</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Questionnaire</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://www.health.gov.au/assessments/mbs/715/SubstanceUse#0.2.0</td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)" id="item.14a9fb5f-5b0e-4862-b143-08a11cd3ebf0" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="group" class="hierarchy"/> 14a9fb5f-5b0e-4862-b143-08a11cd3ebf0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Substance use, including tobacco</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.CD-in-progress-29" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> CD-in-progress-29</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">In progress</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <span><a href="#item.MarkComplete-29">MarkComplete-29</a> != </span></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.CD-complete-29" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> CD-complete-29</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Complete</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <span><a href="#item.MarkComplete-29">MarkComplete-29</a> = </span></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.RecordUpdate-SubstanceUse" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> RecordUpdate-SubstanceUse</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)" id="item.515eda6e-973a-4b10-910a-0d4bf4f2efff" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="group" class="hierarchy"/> 515eda6e-973a-4b10-910a-0d4bf4f2efff</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Smoking</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-coding.png" alt="." style="background-color: white; background-color: inherit" title="coding" class="hierarchy"/> b639a3a8-f476-4cc8-b5c7-f5d2abb23511</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Smoking status</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice">choice</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Options: <a href="#opt-item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">6 options</a></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.96dc7c22-d003-459c-8a56-f6cd182fc077" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-coding.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="coding" class="hierarchy"/> 96dc7c22-d003-459c-8a56-f6cd182fc077</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Quit status</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice">choice</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <span><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </span><br/>Value Set: <a href="ValueSet-SubstanceUse_SmokingQuitStatus-1.html">Smoking Quit Status</a></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0110.png)" id="item.9e86387d-1be4-4c26-9047-9dd6b03e1ee0" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-string.png" alt="." style="background-color: white; background-color: inherit" title="string" class="hierarchy"/> 9e86387d-1be4-4c26-9047-9dd6b03e1ee0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">How many?</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string">string</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <ul><li><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </li><li><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </li><li><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </li></ul></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)" id="item.32e71641-f660-4ca2-af99-dff8917f07be" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-string.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="string" class="hierarchy"/> 32e71641-f660-4ca2-af99-dff8917f07be</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">How long as a smoker?</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string">string</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Enable When: <ul><li><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </li><li><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </li><li><a href="#item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511">b639a3a8-f476-4cc8-b5c7-f5d2abb23511</a> = </li></ul></td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)" id="item.34feaee8-8088-43ee-991d-9729990b5550" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: white; background-color: inherit" title="group" class="hierarchy"/> 34feaee8-8088-43ee-991d-9729990b5550</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Alcohol and other substance use</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0101.png)" id="item.ea73d52c-f831-46be-a45d-2c42250a5210" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-text.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="text" class="hierarchy"/> ea73d52c-f831-46be-a45d-2c42250a5210</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text">text</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01000.png)" id="item.232cf24c-db60-4601-869d-525fb6e05988" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 232cf24c-db60-4601-869d-525fb6e05988</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">details</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.f8e1cc1f-f1a1-4eb3-8255-77d600f52831" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-text.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="text" class="hierarchy"/> f8e1cc1f-f1a1-4eb3-8255-77d600f52831</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Health priorities, actions and follow-up</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text">text</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)" id="item.MarkComplete-29" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-boolean.png" alt="." style="background-color: white; background-color: inherit" title="boolean" class="hierarchy"/> MarkComplete-29</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Mark section as complete</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-boolean">boolean</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table><hr/><p><b>Options Sets</b></p><a name="opt-item.b639a3a8-f476-4cc8-b5c7-f5d2abb23511"> </a><p><b>Answer options for b639a3a8-f476-4cc8-b5c7-f5d2abb23511 </b></p><ul><li style="font-size: 11px">http://snomed.info/sct#266919005 (&quot;Lifetime non-smoker&quot;)</li><li style="font-size: 11px">http://snomed.info/sct#77176002 (&quot;Current smoker&quot;)</li><li style="font-size: 11px">http://snomed.info/sct#8517006 (&quot;Ex-smoker&quot;)</li><li style="font-size: 11px">http://snomed.info/sct#16090371000119103 (&quot;Exposure to second hand tobacco smoke&quot;)</li><li style="font-size: 11px">Wants to quit</li><li style="font-size: 11px">Other tobacco use</li></ul><h2>Contained Resources</h2><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #SmokingQuitStatus-1</b></p><a name="SubstanceUse/SmokingQuitStatus-1"> </a><a name="hcSubstanceUse/SmokingQuitStatus-1"> </a><a name="SubstanceUse/SmokingQuitStatus-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="SubstanceUse/SmokingQuitStatus-1-http://snomed.info/sct-48031000119106"> </a>  <a href="http://snomed.info/id/48031000119106">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style="white-space:nowrap"><a name="SubstanceUse/SmokingQuitStatus-1-http://snomed.info/sct-735128000"> </a>  <a href="http://snomed.info/id/735128000">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>
+  </text>
+  <contained>
+    <ValueSet>
+      <id value="SmokingQuitStatus-1"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/valueset-supplement">
+        <valueCanonical value="https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"/>
+      </extension>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1"/>
+      <name value="SmokingQuitStatus"/>
+      <title value="Smoking Quit Status"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <concept>
+            <code value="48031000119106"/>
+            <display value="Quit &gt;12 months"/>
+          </concept>
+          <concept>
+            <code value="735128000"/>
+            <display value="Quit &lt;12 months"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db"/>
+        <timestamp value="2024-04-08T12:56:59+10:00"/>
+        <total value="2"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="48031000119106"/>
+          <display value="Quit &gt;12 months"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="735128000"/>
+          <display value="Quit &lt;12 months"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation">
+    <valueCode value="assemble-child"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The patient that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="user"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Practitioner"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The practitioner user that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="encounter"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Encounter"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The encounter that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext">
+    <valueString value="age"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+    <valueExpression>
+      <name value="ObsTobaccoSmokingStatus"/>
+      <language value="application/x-fhir-query"/>
+      <expression value="Observation?code=72166-2&amp;_count=1&amp;_sort=-date&amp;patient={{%patient.id}}"/>
+    </valueExpression>
+  </extension>
+  <url value="http://www.health.gov.au/assessments/mbs/715/SubstanceUse"/>
+  <version value="0.2.0"/>
+  <name value="SubstanceUse"/>
+  <title value="Aboriginal and Torres Strait Islander Health Check - Substance Use"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2024-04-02"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <item>
+    <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression">
+      <valueExpression>
+        <language value="text/fhirpath"/>
+        <expression value="%age &gt;= 12"/>
+      </valueExpression>
+    </extension>
+    <linkId value="14a9fb5f-5b0e-4862-b143-08a11cd3ebf0"/>
+    <text value="Substance use, including tobacco"/>
+    <type value="group"/>
+    <repeats value="false"/>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"/>
+            <code value="context-display"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <linkId value="CD-in-progress-29"/>
+      <text value="In progress">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div title=&quot;In progress&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;&#x9;&lt;div style=&quot;display: flex; flex-direction: row;&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;img width='24' height='24' src='data:image/svg+xml;base64,&#xD;&#xA;&#x9;&#x9;PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' &#xD;&#xA;&#x9;&#x9;style=&quot;align-self: center;&quot;/&gt;&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="display"/>
+      <enableWhen>
+        <question value="MarkComplete-29"/>
+        <operator value="!="/>
+        <answerBoolean value="true"/>
+      </enableWhen>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended"/>
+            <code value="context-display"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <linkId value="CD-complete-29"/>
+      <text value="Complete">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div title=&quot;Section completed&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;&#x9;&lt;div style=&quot;display: flex; flex-direction: row;&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='&#xD;&#xA;&#x9;&#x9;style=&quot;align-self: center;&quot;/&gt;&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="display"/>
+      <enableWhen>
+        <question value="MarkComplete-29"/>
+        <operator value="="/>
+        <answerBoolean value="true"/>
+      </enableWhen>
+    </item>
+    <item>
+      <linkId value="RecordUpdate-SubstanceUse"/>
+      <text value="Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;    &lt;strong&gt;Important:&lt;/strong&gt; &lt;em&gt;The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.&lt;/em&gt;&#xD;&#xA;    &lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="display"/>
+    </item>
+    <item>
+      <linkId value="515eda6e-973a-4b10-910a-0d4bf4f2efff"/>
+      <text value="Smoking"/>
+      <type value="group"/>
+      <repeats value="false"/>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression">
+          <valueExpression>
+            <language value="text/fhirpath"/>
+            <expression value="%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct')"/>
+          </valueExpression>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="radio-button"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <linkId value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+        <text value="Smoking status"/>
+        <type value="choice"/>
+        <repeats value="false"/>
+        <answerOption>
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="266919005"/>
+            <display value="Lifetime non-smoker"/>
+          </valueCoding>
+        </answerOption>
+        <answerOption>
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="77176002"/>
+            <display value="Current smoker"/>
+          </valueCoding>
+        </answerOption>
+        <answerOption>
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="8517006"/>
+            <display value="Ex-smoker"/>
+          </valueCoding>
+        </answerOption>
+        <answerOption>
+          <valueCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="16090371000119103"/>
+            <display value="Exposure to second hand tobacco smoke"/>
+          </valueCoding>
+        </answerOption>
+        <answerOption>
+          <valueString value="Wants to quit"/>
+        </answerOption>
+        <answerOption>
+          <valueString value="Other tobacco use"/>
+        </answerOption>
+      </item>
+      <item>
+        <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+              <code value="radio-button"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <linkId value="96dc7c22-d003-459c-8a56-f6cd182fc077"/>
+        <text value="Quit status"/>
+        <type value="choice"/>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="8517006"/>
+          </answerCoding>
+        </enableWhen>
+        <repeats value="false"/>
+        <answerValueSet value="#SmokingQuitStatus-1"/>
+      </item>
+      <item>
+        <linkId value="9e86387d-1be4-4c26-9047-9dd6b03e1ee0"/>
+        <text value="How many?"/>
+        <type value="string"/>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="77176002"/>
+          </answerCoding>
+        </enableWhen>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="8517006"/>
+          </answerCoding>
+        </enableWhen>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerString value="Wants to quit"/>
+        </enableWhen>
+        <enableBehavior value="any"/>
+        <repeats value="false"/>
+      </item>
+      <item>
+        <linkId value="32e71641-f660-4ca2-af99-dff8917f07be"/>
+        <text value="How long as a smoker?"/>
+        <type value="string"/>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="77176002"/>
+          </answerCoding>
+        </enableWhen>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerCoding>
+            <system value="http://snomed.info/sct"/>
+            <code value="8517006"/>
+          </answerCoding>
+        </enableWhen>
+        <enableWhen>
+          <question value="b639a3a8-f476-4cc8-b5c7-f5d2abb23511"/>
+          <operator value="="/>
+          <answerString value="Wants to quit"/>
+        </enableWhen>
+        <enableBehavior value="any"/>
+      </item>
+    </item>
+    <item>
+      <linkId value="34feaee8-8088-43ee-991d-9729990b5550"/>
+      <text value="Alcohol and other substance use"/>
+      <type value="group"/>
+      <repeats value="false"/>
+      <item>
+        <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText">
+          <valueString value="Quantity and frequency of substance use"/>
+        </extension>
+        <linkId value="ea73d52c-f831-46be-a45d-2c42250a5210"/>
+        <text value="Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other">
+          <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+            <valueString value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;        &lt;div&gt;Quantity and frequency of:&lt;/div&gt;&#xD;&#xA;        &lt;ul&gt;&#xD;&#xA;          &lt;li&gt;alcohol&lt;/li&gt;&#xD;&#xA;          &lt;li&gt;caffeine (coffee, soft drinks, iced coffee)&lt;/li&gt;&#xD;&#xA;          &lt;li&gt;cannabis/yarndi/gunja&lt;/li&gt;&#xD;&#xA;          &lt;li&gt;other substance use: IVDU, methamphetamine, opiates, solvents, other&lt;/li&gt;&#xD;&#xA;        &lt;/ul&gt;&#xD;&#xA;&#x9;      &lt;/div&gt;"/>
+          </extension>
+        </text>
+        <type value="text"/>
+        <repeats value="false"/>
+        <item>
+          <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+                <code value="prompt"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <linkId value="232cf24c-db60-4601-869d-525fb6e05988"/>
+          <text value="details"/>
+          <type value="display"/>
+        </item>
+      </item>
+    </item>
+    <item>
+      <linkId value="f8e1cc1f-f1a1-4eb3-8255-77d600f52831"/>
+      <text value="Health priorities, actions and follow-up"/>
+      <type value="text"/>
+      <repeats value="false"/>
+    </item>
+    <item>
+      <linkId value="MarkComplete-29"/>
+      <text value="Mark section as complete">
+        <extension url="http://hl7.org/fhir/StructureDefinition/rendering-xhtml">
+          <valueString value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;    &lt;style type=&quot;text/css&quot;&gt;&#xD;&#xA;        .alert {&#xD;&#xA;            padding: 0.875rem;&#xD;&#xA;            margin-bottom: 1rem;&#xD;&#xA;            font-size: 0.875rem;&#xD;&#xA;            color: #2E7D32;&#xD;&#xA;            border-radius: 0.5rem;&#xD;&#xA;            background-color: #d5e5d6;&#xD;&#xA;            font-weight: 700;&#xD;&#xA;        }&#xD;&#xA;    &lt;/style&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;&#xD;&#xA;&lt;div class=&quot;alert&quot;&gt;Mark section as complete&lt;/div&gt;&#xD;&#xA;&lt;/body&gt;&#xD;&#xA;&lt;/div&gt;"/>
+        </extension>
+      </text>
+      <type value="boolean"/>
+      <repeats value="false"/>
+    </item>
+  </item>
+</Questionnaire>

@@ -1,0 +1,2902 @@
+{
+  "date" : "Fri, 25 Oct, 2024 12:49:36 +1000",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [
+    {
+      "name" : "\\fsh-generated\\resources\\ImplementationGuide-csiro.fhir.au.smartforms.json",
+      "size" : 31576,
+      "processes" : [
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 19
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 74,
+          "length" : 102
+        },
+        {
+          "activity" : "validate",
+          "start" : 78,
+          "length" : 2926
+        },
+        {
+          "activity" : "generate1",
+          "start" : 104,
+          "length" : 229
+        },
+        {
+          "activity" : "generate2",
+          "start" : 123,
+          "length" : 220
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 21
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/CodeSystem-HealthChecksSCTSupplement.json",
+      "size" : 1020,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 8
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "loadDepInfo",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "loadInfo",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 9
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 74,
+          "length" : 23
+        },
+        {
+          "activity" : "validate",
+          "start" : 76,
+          "length" : 1125
+        },
+        {
+          "activity" : "generate1",
+          "start" : 104,
+          "length" : 40
+        },
+        {
+          "activity" : "generate2",
+          "start" : 124,
+          "length" : 5845
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/CodeSystem-QuestionnaireItemControlExtended.json",
+      "size" : 939,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 74,
+          "length" : 17
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 5
+        },
+        {
+          "activity" : "generate1",
+          "start" : 104,
+          "length" : 40
+        },
+        {
+          "activity" : "generate2",
+          "start" : 129,
+          "length" : 177
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-AboutTheHealthCheck.json",
+      "size" : 14327,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 16
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 74,
+          "length" : 195
+        },
+        {
+          "activity" : "validate",
+          "start" : 81,
+          "length" : 472
+        },
+        {
+          "activity" : "generate1",
+          "start" : 104,
+          "length" : 137
+        },
+        {
+          "activity" : "generate2",
+          "start" : 130,
+          "length" : 12156
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 5
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-AbsoluteCVDRiskCalculation.json",
+      "size" : 33243,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 10
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 11
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 2
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 74,
+          "length" : 56
+        },
+        {
+          "activity" : "validate",
+          "start" : 82,
+          "length" : 865
+        },
+        {
+          "activity" : "generate1",
+          "start" : 104,
+          "length" : 316
+        },
+        {
+          "activity" : "generate2",
+          "start" : 142,
+          "length" : 278
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 12
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-AgedCareCMSFacade.json",
+      "size" : 115593,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 11
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 24
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 74,
+          "length" : 183
+        },
+        {
+          "activity" : "validate",
+          "start" : 82,
+          "length" : 1523
+        },
+        {
+          "activity" : "scanForUsageStats",
+          "start" : 103,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 104,
+          "length" : 963
+        },
+        {
+          "activity" : "generate2",
+          "start" : 142,
+          "length" : 202
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 39
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-AllergiesAdverseReactions.json",
+      "size" : 8866,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 9
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 24
+        },
+        {
+          "activity" : "validate",
+          "start" : 84,
+          "length" : 332
+        },
+        {
+          "activity" : "generate1",
+          "start" : 105,
+          "length" : 99
+        },
+        {
+          "activity" : "generate2",
+          "start" : 142,
+          "length" : 94
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 285,
+          "length" : 1
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-AssemblyInstructions.json",
+      "size" : 81819,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 10
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 24
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 4
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 115
+        },
+        {
+          "activity" : "validate",
+          "start" : 84,
+          "length" : 884
+        },
+        {
+          "activity" : "generate1",
+          "start" : 105,
+          "length" : 530
+        },
+        {
+          "activity" : "generate2",
+          "start" : 142,
+          "length" : 9308
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 12
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-ChronicDiseaseAgeing.json",
+      "size" : 10200,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 5
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 9
+        },
+        {
+          "activity" : "validate",
+          "start" : 85,
+          "length" : 261
+        },
+        {
+          "activity" : "generate1",
+          "start" : 106,
+          "length" : 100
+        },
+        {
+          "activity" : "generate2",
+          "start" : 152,
+          "length" : 105
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Consent.json",
+      "size" : 20214,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 10
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 17
+        },
+        {
+          "activity" : "validate",
+          "start" : 85,
+          "length" : 428
+        },
+        {
+          "activity" : "scanForUsageStats",
+          "start" : 103,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 106,
+          "length" : 208
+        },
+        {
+          "activity" : "generate2",
+          "start" : 152,
+          "length" : 234
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 5
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-CurrentPriorities.json",
+      "size" : 17080,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 8
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 13
+        },
+        {
+          "activity" : "validate",
+          "start" : 86,
+          "length" : 357
+        },
+        {
+          "activity" : "generate1",
+          "start" : 106,
+          "length" : 184
+        },
+        {
+          "activity" : "generate2",
+          "start" : 152,
+          "length" : 291
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 5
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-EarHealthAndHearing.json",
+      "size" : 29860,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 10
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 8
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 26
+        },
+        {
+          "activity" : "validate",
+          "start" : 86,
+          "length" : 559
+        },
+        {
+          "activity" : "generate1",
+          "start" : 106,
+          "length" : 274
+        },
+        {
+          "activity" : "generate2",
+          "start" : 152,
+          "length" : 234
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 6
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Examination.json",
+      "size" : 41855,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 7
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 11
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 29
+        },
+        {
+          "activity" : "validate",
+          "start" : 87,
+          "length" : 866
+        },
+        {
+          "activity" : "generate1",
+          "start" : 107,
+          "length" : 388
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 123
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 8
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-EyeHealth.json",
+      "size" : 20211,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 8
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 9
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 21
+        },
+        {
+          "activity" : "validate",
+          "start" : 88,
+          "length" : 453
+        },
+        {
+          "activity" : "generate1",
+          "start" : 107,
+          "length" : 248
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 215
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 5
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-FamilyHistory.json",
+      "size" : 10785,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 5
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 9
+        },
+        {
+          "activity" : "validate",
+          "start" : 88,
+          "length" : 304
+        },
+        {
+          "activity" : "generate1",
+          "start" : 107,
+          "length" : 110
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 83
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-FinalisingHealthCheck.json",
+      "size" : 40688,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 8
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 11
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 18
+        },
+        {
+          "activity" : "validate",
+          "start" : 88,
+          "length" : 523
+        },
+        {
+          "activity" : "generate1",
+          "start" : 107,
+          "length" : 298
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 109
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 9
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Gambling.json",
+      "size" : 11328,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 6
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 9
+        },
+        {
+          "activity" : "validate",
+          "start" : 89,
+          "length" : 272
+        },
+        {
+          "activity" : "generate1",
+          "start" : 108,
+          "length" : 115
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 184
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-HealthPrioritiesSummary.json",
+      "size" : 38685,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 11
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 19
+        },
+        {
+          "activity" : "validate",
+          "start" : 89,
+          "length" : 730
+        },
+        {
+          "activity" : "generate1",
+          "start" : 108,
+          "length" : 312
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 108
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 6
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-HealthyEating.json",
+      "size" : 25602,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 8
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 15
+        },
+        {
+          "activity" : "validate",
+          "start" : 90,
+          "length" : 478
+        },
+        {
+          "activity" : "generate1",
+          "start" : 108,
+          "length" : 253
+        },
+        {
+          "activity" : "generate2",
+          "start" : 153,
+          "length" : 184
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 9
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-HomeAndFamily.json",
+      "size" : 13809,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 6
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 13
+        },
+        {
+          "activity" : "validate",
+          "start" : 90,
+          "length" : 374
+        },
+        {
+          "activity" : "generate1",
+          "start" : 108,
+          "length" : 149
+        },
+        {
+          "activity" : "generate2",
+          "start" : 154,
+          "length" : 178
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Immunisation.json",
+      "size" : 14500,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 12
+        },
+        {
+          "activity" : "validate",
+          "start" : 91,
+          "length" : 298
+        },
+        {
+          "activity" : "generate1",
+          "start" : 109,
+          "length" : 136
+        },
+        {
+          "activity" : "generate2",
+          "start" : 154,
+          "length" : 182
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 3
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Investigations.json",
+      "size" : 10713,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 7
+        },
+        {
+          "activity" : "validate",
+          "start" : 91,
+          "length" : 259
+        },
+        {
+          "activity" : "generate1",
+          "start" : 109,
+          "length" : 129
+        },
+        {
+          "activity" : "generate2",
+          "start" : 154,
+          "length" : 76
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 285,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-LearningAndDevelopment.json",
+      "size" : 19539,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 14
+        },
+        {
+          "activity" : "validate",
+          "start" : 91,
+          "length" : 358
+        },
+        {
+          "activity" : "generate1",
+          "start" : 109,
+          "length" : 191
+        },
+        {
+          "activity" : "generate2",
+          "start" : 154,
+          "length" : 83
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 3
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-LearningAndWork.json",
+      "size" : 23129,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 16
+        },
+        {
+          "activity" : "validate",
+          "start" : 92,
+          "length" : 469
+        },
+        {
+          "activity" : "generate1",
+          "start" : 109,
+          "length" : 230
+        },
+        {
+          "activity" : "generate2",
+          "start" : 154,
+          "length" : 377
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 5
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-MedicalHistoryCurrentProblems.json",
+      "size" : 25429,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 8
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 15
+        },
+        {
+          "activity" : "validate",
+          "start" : 92,
+          "length" : 425
+        },
+        {
+          "activity" : "generate1",
+          "start" : 109,
+          "length" : 202
+        },
+        {
+          "activity" : "generate2",
+          "start" : 154,
+          "length" : 7907
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-MemoryAndThinking.json",
+      "size" : 14107,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 13
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 13
+        },
+        {
+          "activity" : "validate",
+          "start" : 93,
+          "length" : 290
+        },
+        {
+          "activity" : "generate1",
+          "start" : 109,
+          "length" : 146
+        },
+        {
+          "activity" : "generate2",
+          "start" : 162,
+          "length" : 159
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 10
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Mood.json",
+      "size" : 11005,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 8
+        },
+        {
+          "activity" : "validate",
+          "start" : 93,
+          "length" : 251
+        },
+        {
+          "activity" : "generate1",
+          "start" : 110,
+          "length" : 117
+        },
+        {
+          "activity" : "generate2",
+          "start" : 163,
+          "length" : 63
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-OralAndDentalHealth.json",
+      "size" : 15948,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 8
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 12
+        },
+        {
+          "activity" : "validate",
+          "start" : 93,
+          "length" : 320
+        },
+        {
+          "activity" : "generate1",
+          "start" : 110,
+          "length" : 166
+        },
+        {
+          "activity" : "generate2",
+          "start" : 163,
+          "length" : 170
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-PatientDetails.json",
+      "size" : 86171,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 10
+        },
+        {
+          "activity" : "scan",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 24
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 5
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 50
+        },
+        {
+          "activity" : "validate",
+          "start" : 93,
+          "length" : 1034
+        },
+        {
+          "activity" : "scanForUsageStats",
+          "start" : 103,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 110,
+          "length" : 686
+        },
+        {
+          "activity" : "generate2",
+          "start" : 163,
+          "length" : 1129
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 13
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-PhysicalActivityAndScreenTime.json",
+      "size" : 25935,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 17
+        },
+        {
+          "activity" : "validate",
+          "start" : 94,
+          "length" : 406
+        },
+        {
+          "activity" : "generate1",
+          "start" : 111,
+          "length" : 261
+        },
+        {
+          "activity" : "generate2",
+          "start" : 164,
+          "length" : 181
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 5
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-RedFlagsEarlyIdentificationGuide.json",
+      "size" : 49721,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 12
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 2
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 22
+        },
+        {
+          "activity" : "validate",
+          "start" : 95,
+          "length" : 467
+        },
+        {
+          "activity" : "generate1",
+          "start" : 111,
+          "length" : 391
+        },
+        {
+          "activity" : "generate2",
+          "start" : 164,
+          "length" : 112
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 6
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-RegularMedications.json",
+      "size" : 14612,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 11
+        },
+        {
+          "activity" : "validate",
+          "start" : 95,
+          "length" : 295
+        },
+        {
+          "activity" : "generate1",
+          "start" : 111,
+          "length" : 111
+        },
+        {
+          "activity" : "generate2",
+          "start" : 164,
+          "length" : 184
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-ScreeningPrograms.json",
+      "size" : 14354,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 10
+        },
+        {
+          "activity" : "validate",
+          "start" : 96,
+          "length" : 257
+        },
+        {
+          "activity" : "generateLogicalMaps",
+          "start" : 103,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 111,
+          "length" : 178
+        },
+        {
+          "activity" : "generate2",
+          "start" : 164,
+          "length" : 96
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 3
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-SexualHealth.json",
+      "size" : 37735,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 9
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 2
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 17
+        },
+        {
+          "activity" : "validate",
+          "start" : 96,
+          "length" : 475
+        },
+        {
+          "activity" : "generate1",
+          "start" : 112,
+          "length" : 324
+        },
+        {
+          "activity" : "generate2",
+          "start" : 164,
+          "length" : 435
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 8
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-Skin.json",
+      "size" : 15349,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 11
+        },
+        {
+          "activity" : "validate",
+          "start" : 96,
+          "length" : 362
+        },
+        {
+          "activity" : "generate1",
+          "start" : 112,
+          "length" : 150
+        },
+        {
+          "activity" : "generate2",
+          "start" : 165,
+          "length" : 175
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 285,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-SocialAndEmotionalWellbeing.json",
+      "size" : 13359,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 5
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 9
+        },
+        {
+          "activity" : "validate",
+          "start" : 97,
+          "length" : 275
+        },
+        {
+          "activity" : "generate1",
+          "start" : 112,
+          "length" : 113
+        },
+        {
+          "activity" : "generate2",
+          "start" : 165,
+          "length" : 176
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-SocialHistoryChild.json",
+      "size" : 13703,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 3
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 11
+        },
+        {
+          "activity" : "validate",
+          "start" : 97,
+          "length" : 320
+        },
+        {
+          "activity" : "generate1",
+          "start" : 112,
+          "length" : 168
+        },
+        {
+          "activity" : "generate2",
+          "start" : 165,
+          "length" : 215
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 289,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Questionnaire-SubstanceUse.json",
+      "size" : 18970,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 8
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 10
+        },
+        {
+          "activity" : "validate",
+          "start" : 97,
+          "length" : 309
+        },
+        {
+          "activity" : "generate1",
+          "start" : 112,
+          "length" : 136
+        },
+        {
+          "activity" : "generate2",
+          "start" : 165,
+          "length" : 220
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 3
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/StructureDefinition-ConditionEnvironmentAcquired.json",
+      "size" : 1691,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "generateSnapshots",
+          "start" : 74,
+          "length" : 10
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 67
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 144
+        },
+        {
+          "activity" : "checkConformanceResources",
+          "start" : 103,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 112,
+          "length" : 103
+        },
+        {
+          "activity" : "generate2",
+          "start" : 166,
+          "length" : 1153
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/StructureDefinition-ContainedResourceReference.json",
+      "size" : 2027,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 3
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "generateSnapshots",
+          "start" : 74,
+          "length" : 14
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 8
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 54
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 103
+        },
+        {
+          "activity" : "generate2",
+          "start" : 167,
+          "length" : 739
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/StructureDefinition-slk581.json",
+      "size" : 2238,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "generateSnapshots",
+          "start" : 74,
+          "length" : 27
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 9
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 100
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 133
+        },
+        {
+          "activity" : "generate2",
+          "start" : 168,
+          "length" : 678
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-AboriginalTorresStraitIslander.json",
+      "size" : 2075,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 72,
+          "length" : 3
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 9
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 7
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 27
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 44
+        },
+        {
+          "activity" : "generate2",
+          "start" : 168,
+          "length" : 194
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-CervicalScreeningStatus-1.json",
+      "size" : 2150,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 3
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 7
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 24
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 44
+        },
+        {
+          "activity" : "generate2",
+          "start" : 168,
+          "length" : 265
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-PrimaryCarerParentGrandparent.json",
+      "size" : 2267,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 7
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 76
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 46
+        },
+        {
+          "activity" : "generate2",
+          "start" : 169,
+          "length" : 185
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-SmokingQuitStatus-1.json",
+      "size" : 1676,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 3
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 8
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 6
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 19
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 40
+        },
+        {
+          "activity" : "generate2",
+          "start" : 169,
+          "length" : 150
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-YesNo.json",
+      "size" : 1253,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 5
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 21
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 39
+        },
+        {
+          "activity" : "responsesForQuestionnaire",
+          "start" : 143,
+          "length" : 1
+        },
+        {
+          "activity" : "generate2",
+          "start" : 169,
+          "length" : 152
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-YesNoNA.json",
+      "size" : 1489,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 7
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 6
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 21
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 43
+        },
+        {
+          "activity" : "generate2",
+          "start" : 169,
+          "length" : 150
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-YesNoNotAskedDeclined.json",
+      "size" : 2388,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 3
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 5
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 22
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 45
+        },
+        {
+          "activity" : "generate2",
+          "start" : 169,
+          "length" : 147
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-administrative-gender.json",
+      "size" : 2620,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 8
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 34
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 56
+        },
+        {
+          "activity" : "generate2",
+          "start" : 169,
+          "length" : 169
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-australian-pronouns-1.json",
+      "size" : 4683,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 7
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 23
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 54
+        },
+        {
+          "activity" : "generate2",
+          "start" : 170,
+          "length" : 172
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-australian-states-territories-2.json",
+      "size" : 4306,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 8
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 8
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 27
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 53
+        },
+        {
+          "activity" : "generate2",
+          "start" : 170,
+          "length" : 212
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 285,
+          "length" : 1
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-biological-sex-1.json",
+      "size" : 3264,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 3
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 11
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 5
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 22
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 43
+        },
+        {
+          "activity" : "generate2",
+          "start" : 170,
+          "length" : 147
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-clinical-condition-1.json",
+      "size" : 2345,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 7
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 14
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 38
+        },
+        {
+          "activity" : "generate2",
+          "start" : 170,
+          "length" : 7622
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-condition-clinical.json",
+      "size" : 3237,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 3
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 6
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 30
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 53
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 150
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-gender-identity-response-1.json",
+      "size" : 4938,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 4
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 6
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 17
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 53
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 144
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "input/resources/CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.json",
+      "size" : 51076,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 7
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 31
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 409
+        },
+        {
+          "activity" : "generate1",
+          "start" : 113,
+          "length" : 149
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 96
+        },
+        {
+          "activity" : "makeDependencies",
+          "start" : 205,
+          "length" : 1
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 4
+        }
+      ]
+    },
+    {
+      "name" : "input/resources/CapabilityStatement-SmartFormsApplication.json",
+      "size" : 42254,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 21
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "validate",
+          "start" : 78,
+          "length" : 213
+        },
+        {
+          "activity" : "generate1",
+          "start" : 114,
+          "length" : 140
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 49
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 3
+        }
+      ]
+    },
+    {
+      "name" : "input/resources/CapabilityStatement-SmartFormsServer.json",
+      "size" : 12258,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 9
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 1
+        },
+        {
+          "activity" : "validate",
+          "start" : 78,
+          "length" : 61
+        },
+        {
+          "activity" : "generate1",
+          "start" : 114,
+          "length" : 61
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 56
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 287,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "input/resources/CodeSystem-questionnaire-item-control.json",
+      "size" : 27574,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 5
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 20
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 1
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 61
+        },
+        {
+          "activity" : "generate1",
+          "start" : 114,
+          "length" : 111
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 109
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 288,
+          "length" : 1
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "input/resources/Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled.json",
+      "size" : 1010399,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 45
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 1
+        },
+        {
+          "activity" : "load",
+          "start" : 74,
+          "length" : 90
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 74,
+          "length" : 25
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 75,
+          "length" : 242
+        },
+        {
+          "activity" : "validate",
+          "start" : 98,
+          "length" : 5400
+        },
+        {
+          "activity" : "scanForUsageStats",
+          "start" : 103,
+          "length" : 2
+        },
+        {
+          "activity" : "generate1",
+          "start" : 114,
+          "length" : 5818
+        },
+        {
+          "activity" : "generate2",
+          "start" : 178,
+          "length" : 9604
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 99
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 330,
+          "length" : 7
+        }
+      ]
+    },
+    {
+      "name" : "input/resources/ValueSet-questionnaire-item-control.json",
+      "size" : 2384,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 73,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 73,
+          "length" : 8
+        },
+        {
+          "activity" : "validate",
+          "start" : 77,
+          "length" : 18
+        },
+        {
+          "activity" : "generate1",
+          "start" : 120,
+          "length" : 39
+        },
+        {
+          "activity" : "generate2",
+          "start" : 188,
+          "length" : 329
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 290,
+          "length" : 1
+        }
+      ]
+    }
+  ]
+}

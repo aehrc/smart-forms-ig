@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="SmokingQuitStatus-1"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet SmokingQuitStatus-1</b></p><a name="SmokingQuitStatus-1"> </a><a name="hcSmokingQuitStatus-1"> </a><a name="SmokingQuitStatus-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="SmokingQuitStatus-1-http://snomed.info/sct-48031000119106"> </a>  <a href="http://snomed.info/id/48031000119106">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style="white-space:nowrap"><a name="SmokingQuitStatus-1-http://snomed.info/sct-735128000"> </a>  <a href="http://snomed.info/id/735128000">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-supplement">
+    <valueCanonical value="https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"/>
+  </extension>
+  <url value="https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1"/>
+  <version value="0.2.0"/>
+  <name value="SmokingQuitStatus"/>
+  <title value="Smoking Quit Status"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-10-25T12:49:36+10:00"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking."/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="48031000119106"/>
+        <display value="Quit &gt;12 months"/>
+      </concept>
+      <concept>
+        <code value="735128000"/>
+        <display value="Quit &lt;12 months"/>
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db"/>
+    <timestamp value="2024-04-08T12:56:59+10:00"/>
+    <total value="2"/>
+    <parameter>
+      <name value="version"/>
+      <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+    </parameter>
+    <parameter>
+      <name value="used-codesystem"/>
+      <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+    </parameter>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="48031000119106"/>
+      <display value="Quit &gt;12 months"/>
+    </contains>
+    <contains>
+      <system value="http://snomed.info/sct"/>
+      <code value="735128000"/>
+      <display value="Quit &lt;12 months"/>
+    </contains>
+  </expansion>
+</ValueSet>

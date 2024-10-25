@@ -1,0 +1,123 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://smartforms.csiro.au/ig/ValueSet/australian-states-territories-2> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "australian-states-territories-2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/shareablevalueset"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ] [
+       fhir:v "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"^^xsd:anyURI ;
+       fhir:link <https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet australian-states-territories-2</b></p><a name=\"australian-states-territories-2\"> </a><a name=\"hcaustralian-states-territories-2\"> </a><a name=\"australian-states-territories-2-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on system australian-states-territories-1 version1.1.3</p><p>This value set contains 9 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-ACT\"> </a>  ACT</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Australian Capital Territory</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-NSW\"> </a>  NSW</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>New South Wales</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-NT\"> </a>  NT</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Northern Territory</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-OTHER\"> </a>  OTHER</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Other territories</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-QLD\"> </a>  QLD</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Queensland</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-SA\"> </a>  SA</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>South Australia</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-TAS\"> </a>  TAS</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Tasmania</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-VIC\"> </a>  VIC</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Victoria</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-WA\"> </a>  WA</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Western Australia</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:1.2.36.1.2001.1004.201.10026" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "2.0.2"] ; # 
+  fhir:name [ fhir:v "AustralianStatesAndTerritories"] ; # 
+  fhir:title [ fhir:v "Australian States and Territories"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2020-05-31"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Australian Digital Health Agency"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "help@digitalhealth.gov.au" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The Australian States and Territories value set includes values that represent the Australian states and territories."] ; # 
+  fhir:copyright [ fhir:v "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "ACT" ]
+       ] [
+         fhir:code [ fhir:v "NSW" ]
+       ] [
+         fhir:code [ fhir:v "NT" ]
+       ] [
+         fhir:code [ fhir:v "OTHER" ]
+       ] [
+         fhir:code [ fhir:v "QLD" ]
+       ] [
+         fhir:code [ fhir:v "SA" ]
+       ] [
+         fhir:code [ fhir:v "TAS" ]
+       ] [
+         fhir:code [ fhir:v "VIC" ]
+       ] [
+         fhir:code [ fhir:v "WA" ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:identifier [ fhir:v "e9439195-c1d8-4069-a349-98c1d552a351"^^xsd:anyURI ] ;
+     fhir:timestamp [ fhir:v "2023-06-20T04:20:58+00:00"^^xsd:dateTime ] ;
+     fhir:total [ fhir:v "9"^^xsd:integer ] ;
+     fhir:offset [ fhir:v "0"^^xsd:integer ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "version" ] ;
+       fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "count" ] ;
+       fhir:value [ fhir:v "2147483647"^^xsd:integer ]
+     ] [
+       fhir:name [ fhir:v "offset" ] ;
+       fhir:value [ fhir:v "0"^^xsd:integer ]
+     ] ) ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ACT" ] ;
+       fhir:display [ fhir:v "Australian Capital Territory" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "NSW" ] ;
+       fhir:display [ fhir:v "New South Wales" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "NT" ] ;
+       fhir:display [ fhir:v "Northern Territory" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "OTHER" ] ;
+       fhir:display [ fhir:v "Other territories" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "QLD" ] ;
+       fhir:display [ fhir:v "Queensland" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SA" ] ;
+       fhir:display [ fhir:v "South Australia" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "TAS" ] ;
+       fhir:display [ fhir:v "Tasmania" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "VIC" ] ;
+       fhir:display [ fhir:v "Victoria" ]
+     ] [
+       fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "WA" ] ;
+       fhir:display [ fhir:v "Western Australia" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

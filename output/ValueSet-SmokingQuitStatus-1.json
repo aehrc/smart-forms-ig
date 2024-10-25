@@ -1,0 +1,65 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "SmokingQuitStatus-1",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet SmokingQuitStatus-1</b></p><a name=\"SmokingQuitStatus-1\"> </a><a name=\"hcSmokingQuitStatus-1\"> </a><a name=\"SmokingQuitStatus-1-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-48031000119106\"> </a>\u00a0\u00a0<a href=\"http://snomed.info/id/48031000119106\">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-735128000\"> </a>\u00a0\u00a0<a href=\"http://snomed.info/id/735128000\">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+    "valueCanonical" : "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+  }],
+  "url" : "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
+  "version" : "0.2.0",
+  "name" : "SmokingQuitStatus",
+  "title" : "Smoking Quit Status",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2024-10-25T12:49:36+10:00",
+  "publisher" : "AEHRC CSIRO",
+  "contact" : [{
+    "name" : "AEHRC CSIRO",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"
+    }]
+  }],
+  "description" : "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking.",
+  "copyright" : "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "48031000119106",
+        "display" : "Quit >12 months"
+      },
+      {
+        "code" : "735128000",
+        "display" : "Quit <12 months"
+      }]
+    }]
+  },
+  "expansion" : {
+    "identifier" : "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db",
+    "timestamp" : "2024-04-08T12:56:59+10:00",
+    "total" : 2,
+    "parameter" : [{
+      "name" : "version",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+    },
+    {
+      "name" : "used-codesystem",
+      "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+    }],
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "48031000119106",
+      "display" : "Quit >12 months"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "735128000",
+      "display" : "Quit <12 months"
+    }]
+  }
+}

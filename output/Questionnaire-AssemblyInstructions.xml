@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <id value="AssemblyInstructions"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"/>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"/>
+    <profile value="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Questionnaire AssemblyInstructions</b></p><a name="AssemblyInstructions"> </a><a name="hcAssemblyInstructions"> </a><a name="AssemblyInstructions-en-US"> </a><table border="1" cellpadding="0" cellspacing="0" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="The linkID for the item">LinkID</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Text for the item">Text</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Minimum and Maximum # of times the item can appear in the instance">Cardinality</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="The type of the item">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Additional information about the item">Description &amp; Constraints</a><span style="float: right"><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_q_root.gif" alt="." style="background-color: white; background-color: inherit" title="QuestionnaireRoot" class="hierarchy"/> AboriginalTorresStraitIslanderHealthCheck</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Aboriginal and Torres Strait Islander Health Check assessment form.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Questionnaire</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://www.health.gov.au/assessments/mbs/715#0.1.0</td></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)" id="item.fd5af92e-c248-497a-8007-ee0952ccd4d9" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-group.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="group" class="hierarchy"/> fd5af92e-c248-497a-8007-ee0952ccd4d9</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">null</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group">group</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.cd3303a6-e3b6-4732-80e8-54d2bd740beb" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> cd3303a6-e3b6-4732-80e8-54d2bd740beb</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.fab52f87-22a6-4a54-9797-0bb6b0f5d2a2" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> fab52f87-22a6-4a54-9797-0bb6b0f5d2a2</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Consent|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.1d10910d-c195-4964-bdc6-98310a44719e" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 1d10910d-c195-4964-bdc6-98310a44719e</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.7692f28c-7c0a-48ea-b27d-a8489974377d" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 7692f28c-7c0a-48ea-b27d-a8489974377d</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.15f83d80-f49a-4852-a20f-18db9b951e53" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 15f83d80-f49a-4852-a20f-18db9b951e53</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/MedicalHistory|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.3a7151ef-d63b-4818-8367-03d394383a61" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 3a7151ef-d63b-4818-8367-03d394383a61</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.334853dc-88d4-4cb1-a119-bb0ff6ea0516" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 334853dc-88d4-4cb1-a119-bb0ff6ea0516</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.1ab9b519-85ce-48ee-a408-8f0b9b74d112" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 1ab9b519-85ce-48ee-a408-8f0b9b74d112</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.228b8d31-21e3-49a6-b802-984135908dca" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 228b8d31-21e3-49a6-b802-984135908dca</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.a43517f9-538e-4a4d-8789-b6c3d44206ba" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> a43517f9-538e-4a4d-8789-b6c3d44206ba</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.8decf7bf-e24c-4d3d-815c-c53e269f004b" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 8decf7bf-e24c-4d3d-815c-c53e269f004b</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.3f554c37-7d0e-4b14-8f7f-a9ec665cc0a6" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 3f554c37-7d0e-4b14-8f7f-a9ec665cc0a6</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.362bf381-23e5-4eee-963a-3de73e584da5" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 362bf381-23e5-4eee-963a-3de73e584da5</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.51a545fa-907f-40f0-9304-36bcab5a16b8" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 51a545fa-907f-40f0-9304-36bcab5a16b8</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Mood|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.4217646d-e8e4-4ac5-baa7-fae28937cda7" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 4217646d-e8e4-4ac5-baa7-fae28937cda7</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.070eadcf-9e93-499e-8615-61991ab35b32" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 070eadcf-9e93-499e-8615-61991ab35b32</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.56d4bc0b-3bf1-4d47-ac34-5a1de0902de1" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 56d4bc0b-3bf1-4d47-ac34-5a1de0902de1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.e0962739-c506-41d4-afd7-ab1b90db9cb4" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> e0962739-c506-41d4-afd7-ab1b90db9cb4</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.63cfb279-cd7d-41ed-a54b-0c17b6efe609" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 63cfb279-cd7d-41ed-a54b-0c17b6efe609</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.db70690e-2199-495a-9919-53697efaf913" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> db70690e-2199-495a-9919-53697efaf913</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.d1f66f56-75fa-4498-9c51-eb98e1644243" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> d1f66f56-75fa-4498-9c51-eb98e1644243</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.ea748251-bf77-4085-b912-e9002dfa02ca" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> ea748251-bf77-4085-b912-e9002dfa02ca</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Gambling|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.84bd802b-b3e1-4098-aa2c-2133f0e252f4" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 84bd802b-b3e1-4098-aa2c-2133f0e252f4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.56ad8128-0e12-4779-8ff4-47dcff6b29b5" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 56ad8128-0e12-4779-8ff4-47dcff6b29b5</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.a8161e91-7cff-403f-85e6-982a9bc8fca6" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> a8161e91-7cff-403f-85e6-982a9bc8fca6</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.fe05d868-aaed-4921-9d49-4e7746bbe143" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> fe05d868-aaed-4921-9d49-4e7746bbe143</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.64ec4c1c-0824-4b84-8d3f-40f6e066cb80" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 64ec4c1c-0824-4b84-8d3f-40f6e066cb80</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Skin|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.595737cd-3a94-442b-8be6-ab461c3181d2" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 595737cd-3a94-442b-8be6-ab461c3181d2</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Immunisation|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.3263611d-5813-4393-a660-d10166acd728" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 3263611d-5813-4393-a660-d10166acd728</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Examination|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.3a3b0810-e091-48ad-af50-913b0deaf663" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> 3a3b0810-e091-48ad-af50-913b0deaf663</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.302d9437-25b9-41e3-9d66-138c352d32a8" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> 302d9437-25b9-41e3-9d66-138c352d32a8</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Investigations|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" id="item.ada45623-5e86-49ea-a00b-be0699364281" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="display" class="hierarchy"/> ada45623-5e86-49ea-a00b-be0699364281</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)" id="item.a6395946-872a-4f2e-b697-c74aa1ab9b8d" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon-q-display.png" alt="." style="background-color: white; background-color: inherit" title="display" class="hierarchy"/> a6395946-872a-4f2e-b697-c74aa1ab9b8d</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.1.0] not available. Unable to display all questions.</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display">display</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table><h2>Contained Resources</h2><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #YesNo</b></p><a name="AssemblyInstructions/YesNo"> </a><a name="hcAssemblyInstructions/YesNo"> </a><a name="AssemblyInstructions/YesNo-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></p><p>This value set contains 2 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNo-http://terminology.hl7.org/CodeSystem/v2-0532-Y"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td><div><p>Yes</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNo-http://terminology.hl7.org/CodeSystem/v2-0532-N"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td><div><p>No</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #YesNoNA</b></p><a name="AssemblyInstructions/YesNoNA"> </a><a name="hcAssemblyInstructions/YesNoNA"> </a><a name="AssemblyInstructions/YesNoNA-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></p><p>This value set contains 3 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNA-http://terminology.hl7.org/CodeSystem/v2-0532-Y"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td><div><p>Yes</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNA-http://terminology.hl7.org/CodeSystem/v2-0532-N"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td><div><p>No</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNA-http://terminology.hl7.org/CodeSystem/v2-0532-NA"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-NA">NA</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>N/A</td><td><div><p>not applicable</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #YesNoNotAskedDeclined</b></p><a name="AssemblyInstructions/YesNoNotAskedDeclined"> </a><a name="hcAssemblyInstructions/YesNoNotAskedDeclined"> </a><a name="AssemblyInstructions/YesNoNotAskedDeclined-en-US"> </a><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion based on:</p><ul><li>system DataAbsentReason version5.0.0-ballot</li><li><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></li></ul></div><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-Y"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td><div><p>Yes</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-N"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td><div><p>No</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-NASK"> </a>  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-NASK">NASK</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Not Asked</td><td><div><p>not asked</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td><div><p>The source was asked but declined to answer.</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #clinical-condition-1</b></p><a name="AssemblyInstructions/clinical-condition-1"> </a><a name="hcAssemblyInstructions/clinical-condition-1"> </a><a name="AssemblyInstructions/clinical-condition-1-en-US"> </a><ul><li>Include codes from<a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> where concept  in 32570581000036105 (Problem/Diagnosis reference set)</li></ul><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #administrative-gender</b></p><a name="AssemblyInstructions/administrative-gender"> </a><a name="hcAssemblyInstructions/administrative-gender"> </a><a name="AssemblyInstructions/administrative-gender-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html">system AdministrativeGender v4.0.1 (CodeSystem)</a></p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href="http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html">v2 map for AdministrativeGender</a></b></td><td><b><a href="http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html">v3 map for AdministrativeGender</a></b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/administrative-gender-http://hl7.org/fhir/administrative-gender-female"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-female">female</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Female</td><td><div><p>Female.</p>
+</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/administrative-gender-http://hl7.org/fhir/administrative-gender-male"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-male">male</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Male</td><td><div><p>Male.</p>
+</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/administrative-gender-http://hl7.org/fhir/administrative-gender-other"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-other">other</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Other</td><td><div><p>Other.</p>
+</div></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a><br/><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/administrative-gender-http://hl7.org/fhir/administrative-gender-unknown"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-unknown">unknown</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Unknown</td><td><div><p>Unknown.</p>
+</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #condition-clinical</b></p><a name="AssemblyInstructions/condition-clinical"> </a><a name="hcAssemblyInstructions/condition-clinical"> </a><a name="AssemblyInstructions/condition-clinical-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on system Condition Clinical Status Codes version4.0.1</p><p>This value set contains 6 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-active"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-active">active</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Active</td><td><div><p>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-inactive"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-inactive">inactive</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Inactive</td><td><div><p>The subject is no longer experiencing the condition or situation and there is no longer evidence or appreciable risk of the condition or situation.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-recurrence"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-recurrence">recurrence</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Recurrence</td><td><div><p>The subject is experiencing a reoccurence or repeating of a previously resolved condition or situation, e.g. urinary tract infection, food insecurity.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-relapse"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-relapse">relapse</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Relapse</td><td><div><p>The subject is experiencing a return of a condition or situation after a period of improvement or remission, e.g. relapse of cancer, alcoholism.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-remission"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-remission">remission</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Remission</td><td><div><p>The subject is not presently experiencing the condition or situation, but there is a risk of the condition or situation returning.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/condition-clinical-http://terminology.hl7.org/CodeSystem/condition-clinical-resolved"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html#condition-clinical-resolved">resolved</a></td><td>http://terminology.hl7.org/CodeSystem/condition-clinical</td><td>Resolved</td><td><div><p>The subject is not presently experiencing the condition or situation and there is a negligible perceived risk of the condition or situation returning.</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #AboriginalTorresStraitIslander</b></p><a name="AssemblyInstructions/AboriginalTorresStraitIslander"> </a><a name="hcAssemblyInstructions/AboriginalTorresStraitIslander"> </a><a name="AssemblyInstructions/AboriginalTorresStraitIslander-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on system australian-indigenous-status-1 version1.0.3</p><p>This value set contains 3 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-1"> </a>  1</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Aboriginal but not Torres Strait Islander origin</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-2"> </a>  2</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Torres Strait Islander but not Aboriginal origin</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-3"> </a>  3</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Both Aboriginal and Torres Strait Islander origin</td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #PrimaryCarerParentGrandparent</b></p><a name="AssemblyInstructions/PrimaryCarerParentGrandparent"> </a><a name="hcAssemblyInstructions/PrimaryCarerParentGrandparent"> </a><a name="AssemblyInstructions/PrimaryCarerParentGrandparent-en-US"> </a><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion based on:</p><ul><li>system NullFlavor version2018-08-12</li><li>system RoleCode version2018-08-12</li></ul></div><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-MTH"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-MTH">MTH</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>mother</td><td><div><p>The player of the role is a female who conceives, gives birth to, or raises and nurtures the scoping entity (child).</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-FTH"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-FTH">FTH</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>father</td><td><div><p>The player of the role is a male who begets or raises or nurtures the scoping entity (child).</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-RoleCode-GRPRN"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-RoleCode.html#v3-RoleCode-GRPRN">GRPRN</a></td><td>http://terminology.hl7.org/CodeSystem/v3-RoleCode</td><td>grandparent</td><td><div><p>The player of the role is a parent of the scoping person's mother or father.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/PrimaryCarerParentGrandparent-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-NA"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-NA">NA</a></td><td>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</td><td>not applicable</td><td><div><p>Known to have no proper value (e.g., last menstrual period for a male).</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #australian-pronouns-1</b></p><a name="AssemblyInstructions/australian-pronouns-1"> </a><a name="hcAssemblyInstructions/australian-pronouns-1"> </a><a name="AssemblyInstructions/australian-pronouns-1-en-US"> </a><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion based on:</p><ul><li>Loinc v2.77</li><li>system DataAbsentReason version5.0.0-ballot</li></ul></div><p>This value set contains 7 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://loinc.org-LA29518-0"> </a>  <a href="https://loinc.org/LA29518-0/">LA29518-0</a></td><td>http://loinc.org</td><td>he/him/his/his/himself</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://loinc.org-LA29519-8"> </a>  <a href="https://loinc.org/LA29519-8/">LA29519-8</a></td><td>http://loinc.org</td><td>she/her/her/hers/herself</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://loinc.org-LA29520-6"> </a>  <a href="https://loinc.org/LA29520-6/">LA29520-6</a></td><td>http://loinc.org</td><td>they/them/their/theirs/themselves</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td><div><p>The source was asked but declined to answer.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-unknown"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-unknown">asked-unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Unknown</td><td><div><p>The source was asked but does not know the value.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-not-asked"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-not-asked">not-asked</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Not Asked</td><td><div><p>The workflow didn't lead to this value being known.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-unknown"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-unknown">unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Unknown</td><td><div><p>The value is expected to exist but is not known.</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #australian-states-territories-2</b></p><a name="AssemblyInstructions/australian-states-territories-2"> </a><a name="hcAssemblyInstructions/australian-states-territories-2"> </a><a name="AssemblyInstructions/australian-states-territories-2-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on system australian-states-territories-1 version1.1.3</p><p>This value set contains 9 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-ACT"> </a>  ACT</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Australian Capital Territory</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-NSW"> </a>  NSW</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>New South Wales</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-NT"> </a>  NT</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Northern Territory</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-OTHER"> </a>  OTHER</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Other territories</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-QLD"> </a>  QLD</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Queensland</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-SA"> </a>  SA</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>South Australia</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-TAS"> </a>  TAS</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Tasmania</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-VIC"> </a>  VIC</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Victoria</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/australian-states-territories-2-https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1-WA"> </a>  WA</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1</td><td>Western Australia</td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #gender-identity-response-1</b></p><a name="AssemblyInstructions/gender-identity-response-1"> </a><a name="hcAssemblyInstructions/gender-identity-response-1"> </a><a name="AssemblyInstructions/gender-identity-response-1-en-US"> </a><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion based on:</p><ul><li>SNOMED CT Australian edition 31-Mar 2024</li><li>system DataAbsentReason version5.0.0-ballot</li></ul></div><p>This value set contains 6 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/gender-identity-response-1-http://snomed.info/sct-446151000124109"> </a>  <a href="http://snomed.info/id/446151000124109">446151000124109</a></td><td>http://snomed.info/sct</td><td>Identifies as male gender</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/gender-identity-response-1-http://snomed.info/sct-446141000124107"> </a>  <a href="http://snomed.info/id/446141000124107">446141000124107</a></td><td>http://snomed.info/sct</td><td>Identifies as female gender</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/gender-identity-response-1-http://snomed.info/sct-33791000087105"> </a>  <a href="http://snomed.info/id/33791000087105">33791000087105</a></td><td>http://snomed.info/sct</td><td>Identifies as nonbinary gender</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/gender-identity-response-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-unknown"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-unknown">unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Unknown</td><td><div><p>The value is expected to exist but is not known.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/gender-identity-response-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td><div><p>The source was asked but declined to answer.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/gender-identity-response-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-not-asked"> </a>  <a href="http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-not-asked">not-asked</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Not Asked</td><td><div><p>The workflow didn't lead to this value being known.</p>
+</div></td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #biological-sex-1</b></p><a name="AssemblyInstructions/biological-sex-1"> </a><a name="hcAssemblyInstructions/biological-sex-1"> </a><a name="AssemblyInstructions/biological-sex-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Aug 2023</p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/biological-sex-1-http://snomed.info/sct-248152002"> </a>  <a href="http://snomed.info/id/248152002">248152002</a></td><td>http://snomed.info/sct</td><td>Female</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/biological-sex-1-http://snomed.info/sct-32570681000036106"> </a>  <a href="http://snomed.info/id/32570681000036106">32570681000036106</a></td><td>http://snomed.info/sct</td><td>Indeterminate sex</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/biological-sex-1-http://snomed.info/sct-32570691000036108"> </a>  <a href="http://snomed.info/id/32570691000036108">32570691000036108</a></td><td>http://snomed.info/sct</td><td>Intersex</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/biological-sex-1-http://snomed.info/sct-248153007"> </a>  <a href="http://snomed.info/id/248153007">248153007</a></td><td>http://snomed.info/sct</td><td>Male</td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #SmokingQuitStatus-1</b></p><a name="AssemblyInstructions/SmokingQuitStatus-1"> </a><a name="hcAssemblyInstructions/SmokingQuitStatus-1"> </a><a name="AssemblyInstructions/SmokingQuitStatus-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/SmokingQuitStatus-1-http://snomed.info/sct-48031000119106"> </a>  <a href="http://snomed.info/id/48031000119106">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/SmokingQuitStatus-1-http://snomed.info/sct-735128000"> </a>  <a href="http://snomed.info/id/735128000">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table><hr/><p class="res-header-id"><b>Generated Narrative: ValueSet  #CervicalScreeningStatus-1</b></p><a name="AssemblyInstructions/CervicalScreeningStatus-1"> </a><a name="hcAssemblyInstructions/CervicalScreeningStatus-1"> </a><a name="AssemblyInstructions/CervicalScreeningStatus-1-en-US"> </a><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/CervicalScreeningStatus-1-http://snomed.info/sct-736595007"> </a>  <a href="http://snomed.info/id/736595007">736595007</a></td><td>http://snomed.info/sct</td><td>Declined</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/CervicalScreeningStatus-1-http://snomed.info/sct-410527000"> </a>  <a href="http://snomed.info/id/410527000">410527000</a></td><td>http://snomed.info/sct</td><td>Offered</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/CervicalScreeningStatus-1-http://snomed.info/sct-171154002"> </a>  <a href="http://snomed.info/id/171154002">171154002</a></td><td>http://snomed.info/sct</td><td>Not required</td></tr><tr><td style="white-space:nowrap"><a name="AssemblyInstructions/CervicalScreeningStatus-1-http://snomed.info/sct-171155001"> </a>  <a href="http://snomed.info/id/171155001">171155001</a></td><td>http://snomed.info/sct</td><td>Up to date</td></tr></table></div>
+  </text>
+  <contained>
+    <ValueSet>
+      <id value="YesNo"/>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/YesNo"/>
+      <name value="YesNo"/>
+      <title value="Yes/No"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="Concepts for Yes and No"/>
+      <compose>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <concept>
+            <code value="Y"/>
+            <display value="Yes"/>
+          </concept>
+          <concept>
+            <code value="N"/>
+            <display value="No"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:06bfacf3-ef16-4470-86a0-a2a22f49ff91"/>
+        <timestamp value="2023-09-01T11:15:01+10:00"/>
+        <total value="2"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+        </parameter>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <code value="Y"/>
+          <display value="Yes"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <code value="N"/>
+          <display value="No"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="YesNoNA"/>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/YesNoNA"/>
+      <name value="YesNoNA"/>
+      <title value="Yes/No/NA"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="Concepts for Yes, No and Not applicable"/>
+      <compose>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <concept>
+            <code value="Y"/>
+            <display value="Yes"/>
+          </concept>
+          <concept>
+            <code value="N"/>
+            <display value="No"/>
+          </concept>
+          <concept>
+            <code value="NA"/>
+            <display value="N/A"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:5baa5444-e553-4412-a08c-9ce93d3271e0"/>
+        <timestamp value="2023-09-01T11:16:50+10:00"/>
+        <total value="3"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+        </parameter>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <code value="Y"/>
+          <display value="Yes"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <code value="N"/>
+          <display value="No"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <code value="NA"/>
+          <display value="N/A"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="YesNoNotAskedDeclined"/>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined"/>
+      <name value="YesNoNotAskedDeclined"/>
+      <title value="Yes/No/Not Asked/Asked But Declined"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="Concepts for Yes, No, Not Asked and Asked But Declined"/>
+      <compose>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <concept>
+            <code value="Y"/>
+            <display value="Yes"/>
+          </concept>
+          <concept>
+            <code value="N"/>
+            <display value="No"/>
+          </concept>
+          <concept>
+            <code value="NASK"/>
+            <display value="Not Asked"/>
+          </concept>
+        </include>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <concept>
+            <code value="asked-declined"/>
+            <display value="Asked But Declined"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:8eda7c3c-cc35-49fa-ac6c-c0e4f0a4e203"/>
+        <timestamp value="2023-09-01T11:17:57+10:00"/>
+        <total value="4"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+        </parameter>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"/>
+        </parameter>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <version value="2.1.0"/>
+          <code value="Y"/>
+          <display value="Yes"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <version value="2.1.0"/>
+          <code value="N"/>
+          <display value="No"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0532"/>
+          <version value="2.1.0"/>
+          <code value="NASK"/>
+          <display value="Not Asked"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="asked-declined"/>
+          <display value="Asked But Declined"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="clinical-condition-1"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"/>
+      </meta>
+      <url value="https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.36.1.2001.1004.201.10035"/>
+      </identifier>
+      <version value="1.0.2"/>
+      <name value="ClinicalCondition"/>
+      <title value="Clinical Condition"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2020-05-31"/>
+      <publisher value="Australian Digital Health Agency"/>
+      <contact>
+        <telecom>
+          <system value="email"/>
+          <value value="help@digitalhealth.gov.au"/>
+        </telecom>
+      </contact>
+      <description value="The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders."/>
+      <copyright value="Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. &#xA;&#xA;This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. &#xA;&#xA;The rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. &#xA;&#xA;All copies of this resource must include this copyright statement and all information contained in this statement."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <filter>
+            <property value="concept"/>
+            <op value="in"/>
+            <value value="32570581000036105"/>
+          </filter>
+        </include>
+      </compose>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="administrative-gender"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+      </meta>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+        <valueCode value="pa"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+        <valueInteger value="5"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
+      <url value="http://hl7.org/fhir/ValueSet/administrative-gender"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.4.642.3.1"/>
+      </identifier>
+      <version value="4.0.1"/>
+      <name value="AdministrativeGender"/>
+      <title value="AdministrativeGender"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2019-11-01T09:29:23+11:00"/>
+      <publisher value="HL7 (FHIR Project)"/>
+      <contact>
+        <telecom>
+          <system value="url"/>
+          <value value="http://hl7.org/fhir"/>
+        </telecom>
+        <telecom>
+          <system value="email"/>
+          <value value="fhir@lists.hl7.org"/>
+        </telecom>
+      </contact>
+      <description value="The gender of a person used for administrative purposes."/>
+      <immutable value="true"/>
+      <copyright value="Copyright © 2011+ HL7. Licensed under Creative Commons &quot;No Rights Reserved&quot;."/>
+      <compose>
+        <include>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:50f050c9-3975-48d6-bdb7-baae4ebc70cd"/>
+        <timestamp value="2024-04-05T12:31:27+10:00"/>
+        <total value="4"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://hl7.org/fhir/administrative-gender|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://hl7.org/fhir/administrative-gender|4.0.1"/>
+        </parameter>
+        <contains>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="female"/>
+          <display value="Female"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="male"/>
+          <display value="Male"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="other"/>
+          <display value="Other"/>
+        </contains>
+        <contains>
+          <system value="http://hl7.org/fhir/administrative-gender"/>
+          <code value="unknown"/>
+          <display value="Unknown"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="condition-clinical"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+        <valueCode value="pc"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="trial-use"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+        <valueInteger value="3"/>
+      </extension>
+      <url value="http://hl7.org/fhir/ValueSet/condition-clinical"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.4.642.3.164"/>
+      </identifier>
+      <version value="4.0.1"/>
+      <name value="ConditionClinicalStatusCodes"/>
+      <title value="Condition Clinical Status Codes"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <date value="2019-11-01T09:29:23+11:00"/>
+      <publisher value="FHIR Project team"/>
+      <contact>
+        <telecom>
+          <system value="url"/>
+          <value value="http://hl7.org/fhir"/>
+        </telecom>
+      </contact>
+      <description value="Preferred value set for Condition Clinical Status."/>
+      <copyright value="Copyright © 2011+ HL7. Licensed under Creative Commons &quot;No Rights Reserved&quot;."/>
+      <compose>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:79d21cca-9f34-4cfa-9020-17eee95eeed8"/>
+        <timestamp value="2024-04-02T14:17:12+10:00"/>
+        <total value="6"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-draft"/>
+          <valueUri value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-trial-use"/>
+          <valueUri value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-trial-use"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <parameter>
+          <name value="warning-draft"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1"/>
+        </parameter>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="active"/>
+          <display value="Active"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="inactive"/>
+          <display value="Inactive"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="recurrence"/>
+          <display value="Recurrence"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="relapse"/>
+          <display value="Relapse"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="remission"/>
+          <display value="Remission"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+          <code value="resolved"/>
+          <display value="Resolved"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="AboriginalTorresStraitIslander"/>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander"/>
+      <name value="AboriginalTorresStraitIslander"/>
+      <title value="Aboriginal and/or Torres Strait Islander"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people."/>
+      <compose>
+        <include>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+          <concept>
+            <code value="1"/>
+            <display value="Aboriginal"/>
+          </concept>
+          <concept>
+            <code value="2"/>
+            <display value="Torres Strait Islander"/>
+          </concept>
+          <concept>
+            <code value="3"/>
+            <display value="Aboriginal and Torres Strait Islander"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="e2b013bd-1725-4299-a7a5-53635d42f1be"/>
+        <timestamp value="2022-10-20T11:38:45+10:00"/>
+        <total value="3"/>
+        <offset value="0"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"/>
+        </parameter>
+        <parameter>
+          <name value="count"/>
+          <valueInteger value="2147483647"/>
+        </parameter>
+        <parameter>
+          <name value="offset"/>
+          <valueInteger value="0"/>
+        </parameter>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+          <code value="1"/>
+          <display value="Aboriginal but not Torres Strait Islander origin"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+          <code value="2"/>
+          <display value="Torres Strait Islander but not Aboriginal origin"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"/>
+          <code value="3"/>
+          <display value="Both Aboriginal and Torres Strait Islander origin"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="PrimaryCarerParentGrandparent"/>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent"/>
+      <name value="PrimaryCarerParentGrandparent"/>
+      <title value="Primary Carer Of Parent Or Grandparent"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent."/>
+      <compose>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+          <concept>
+            <code value="MTH"/>
+          </concept>
+          <concept>
+            <code value="FTH"/>
+          </concept>
+          <concept>
+            <code value="GRPRN"/>
+          </concept>
+        </include>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+          <concept>
+            <code value="NA"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="2809c2fa-28ec-4def-9b16-93a611d29da3"/>
+        <timestamp value="2022-10-20T11:42:30+10:00"/>
+        <total value="4"/>
+        <offset value="0"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v3-RoleCode|2018-08-12"/>
+        </parameter>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor|2018-08-12"/>
+        </parameter>
+        <parameter>
+          <name value="count"/>
+          <valueInteger value="2147483647"/>
+        </parameter>
+        <parameter>
+          <name value="offset"/>
+          <valueInteger value="0"/>
+        </parameter>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+          <version value="2018-08-12"/>
+          <code value="MTH"/>
+          <display value="mother"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+          <version value="2018-08-12"/>
+          <code value="FTH"/>
+          <display value="father"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+          <version value="2018-08-12"/>
+          <code value="GRPRN"/>
+          <display value="grandparent"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+          <version value="2018-08-12"/>
+          <code value="NA"/>
+          <display value="not applicable"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="australian-pronouns-1"/>
+      <url value="https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.36.1.2001.1004.201.10284"/>
+      </identifier>
+      <version value="1.0.0"/>
+      <name value="AustralianPronouns"/>
+      <title value="Australian Pronouns"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2024-02-29"/>
+      <publisher value="Australian Digital Health Agency"/>
+      <contact>
+        <telecom>
+          <system value="email"/>
+          <value value="help@digitalhealth.gov.au"/>
+        </telecom>
+      </contact>
+      <description value="The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual."/>
+      <copyright value="Copyright © 2024 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. &#xA;&#xA;This material contains content from LOINC (http://loinc.org). LOINC is copyright 1995-2024, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.&#xA;&#xA;This material contains information which is protected by copyright. You may download, display, print and reproduce any material for your personal, non-commercial use or use within your organisation subject to the following terms and conditions: &#xA;&#xA;This resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license."/>
+      <compose>
+        <include>
+          <system value="http://loinc.org"/>
+          <concept>
+            <code value="LA29518-0"/>
+            <display value="he/him/his/his/himself"/>
+          </concept>
+          <concept>
+            <code value="LA29519-8"/>
+            <display value="she/her/her/hers/herself"/>
+          </concept>
+          <concept>
+            <code value="LA29520-6"/>
+            <display value="they/them/their/theirs/themselves"/>
+          </concept>
+        </include>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <concept>
+            <code value="unknown"/>
+          </concept>
+          <concept>
+            <code value="asked-declined"/>
+          </concept>
+          <concept>
+            <code value="not-asked"/>
+          </concept>
+          <concept>
+            <code value="asked-unknown"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:ca145c1c-4915-4957-888a-39e69de8b1ad"/>
+        <timestamp value="2024-04-02T14:25:01+10:00"/>
+        <total value="7"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://loinc.org|2.77"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://loinc.org|2.77"/>
+        </parameter>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+        </parameter>
+        <contains>
+          <system value="http://loinc.org"/>
+          <version value="2.77"/>
+          <code value="LA29518-0"/>
+          <display value="he/him/his/his/himself"/>
+        </contains>
+        <contains>
+          <system value="http://loinc.org"/>
+          <version value="2.77"/>
+          <code value="LA29519-8"/>
+          <display value="she/her/her/hers/herself"/>
+        </contains>
+        <contains>
+          <system value="http://loinc.org"/>
+          <version value="2.77"/>
+          <code value="LA29520-6"/>
+          <display value="they/them/their/theirs/themselves"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="asked-declined"/>
+          <display value="Asked But Declined"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="asked-unknown"/>
+          <display value="Asked But Unknown"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="not-asked"/>
+          <display value="Not Asked"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="unknown"/>
+          <display value="Unknown"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="australian-states-territories-2"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"/>
+      </meta>
+      <url value="https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.36.1.2001.1004.201.10026"/>
+      </identifier>
+      <version value="2.0.2"/>
+      <name value="AustralianStatesAndTerritories"/>
+      <title value="Australian States and Territories"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2020-05-31"/>
+      <publisher value="Australian Digital Health Agency"/>
+      <contact>
+        <telecom>
+          <system value="email"/>
+          <value value="help@digitalhealth.gov.au"/>
+        </telecom>
+      </contact>
+      <description value="The Australian States and Territories value set includes values that represent the Australian states and territories."/>
+      <copyright value="Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. &#xA;&#xA;This resource includes material that is based on Australian Institute of Health and Welfare material. &#xA;&#xA;All copies of this resource must include this copyright statement and all information contained in this statement."/>
+      <compose>
+        <include>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <concept>
+            <code value="ACT"/>
+          </concept>
+          <concept>
+            <code value="NSW"/>
+          </concept>
+          <concept>
+            <code value="NT"/>
+          </concept>
+          <concept>
+            <code value="OTHER"/>
+          </concept>
+          <concept>
+            <code value="QLD"/>
+          </concept>
+          <concept>
+            <code value="SA"/>
+          </concept>
+          <concept>
+            <code value="TAS"/>
+          </concept>
+          <concept>
+            <code value="VIC"/>
+          </concept>
+          <concept>
+            <code value="WA"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="e9439195-c1d8-4069-a349-98c1d552a351"/>
+        <timestamp value="2023-06-20T04:20:58+00:00"/>
+        <total value="9"/>
+        <offset value="0"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"/>
+        </parameter>
+        <parameter>
+          <name value="count"/>
+          <valueInteger value="2147483647"/>
+        </parameter>
+        <parameter>
+          <name value="offset"/>
+          <valueInteger value="0"/>
+        </parameter>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="ACT"/>
+          <display value="Australian Capital Territory"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="NSW"/>
+          <display value="New South Wales"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="NT"/>
+          <display value="Northern Territory"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="OTHER"/>
+          <display value="Other territories"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="QLD"/>
+          <display value="Queensland"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="SA"/>
+          <display value="South Australia"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="TAS"/>
+          <display value="Tasmania"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="VIC"/>
+          <display value="Victoria"/>
+        </contains>
+        <contains>
+          <system value="https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1"/>
+          <code value="WA"/>
+          <display value="Western Australia"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="gender-identity-response-1"/>
+      <url value="https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.36.1.2001.1004.201.10271"/>
+      </identifier>
+      <version value="1.1.0"/>
+      <name value="GenderIdentityResponse"/>
+      <title value="Gender Identity Response"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2024-02-29"/>
+      <publisher value="Australian Digital Health Agency"/>
+      <contact>
+        <telecom>
+          <system value="email"/>
+          <value value="help@digitalhealth.gov.au"/>
+        </telecom>
+      </contact>
+      <description value="The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience."/>
+      <copyright value="Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.&#xA;&#xA;&quot;This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. &#xA;&#xA;The rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. &#xA;&#xA;This resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data. &#xA;&#xA;This resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <concept>
+            <code value="446151000124109"/>
+          </concept>
+          <concept>
+            <code value="446141000124107"/>
+          </concept>
+          <concept>
+            <code value="33791000087105"/>
+          </concept>
+        </include>
+        <include>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <concept>
+            <code value="unknown"/>
+          </concept>
+          <concept>
+            <code value="asked-declined"/>
+          </concept>
+          <concept>
+            <code value="not-asked"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:a35fc104-184f-476e-a7a2-e3f3af66a3eb"/>
+        <timestamp value="2024-04-02T14:21:20+10:00"/>
+        <total value="6"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"/>
+        </parameter>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <version value="http://snomed.info/sct/32506021000036107/version/20240331"/>
+          <code value="446151000124109"/>
+          <display value="Identifies as male gender"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <version value="http://snomed.info/sct/32506021000036107/version/20240331"/>
+          <code value="446141000124107"/>
+          <display value="Identifies as female gender"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <version value="http://snomed.info/sct/32506021000036107/version/20240331"/>
+          <code value="33791000087105"/>
+          <display value="Identifies as nonbinary gender"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="unknown"/>
+          <display value="Unknown"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="asked-declined"/>
+          <display value="Asked But Declined"/>
+        </contains>
+        <contains>
+          <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          <version value="5.0.0-ballot"/>
+          <code value="not-asked"/>
+          <display value="Not Asked"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="biological-sex-1"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"/>
+      </meta>
+      <url value="https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"/>
+      <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.36.1.2001.1004.201.10198"/>
+      </identifier>
+      <version value="1.0.0"/>
+      <name value="BiologicalSex"/>
+      <title value="Biological Sex"/>
+      <status value="active"/>
+      <experimental value="false"/>
+      <date value="2020-12-31"/>
+      <publisher value="Australian Digital Health Agency"/>
+      <contact>
+        <telecom>
+          <system value="email"/>
+          <value value="help@digitalhealth.gov.au"/>
+        </telecom>
+      </contact>
+      <description value="The Biological Sex value set includes values that represent the biological sex of an individual."/>
+      <copyright value="Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. &#xA;&#xA;This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. &#xA;&#xA;The rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. &#xA;&#xA;All copies of this resource must include this copyright statement and all information contained in this statement."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <filter>
+            <property value="constraint"/>
+            <op value="="/>
+            <value value="^ 32570631000036107|Sex reference set|"/>
+          </filter>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b"/>
+        <timestamp value="2023-08-30T10:41:59+10:00"/>
+        <total value="4"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"/>
+        </parameter>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="248152002"/>
+          <display value="Female"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="32570681000036106"/>
+          <display value="Indeterminate sex"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="32570691000036108"/>
+          <display value="Intersex"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="248153007"/>
+          <display value="Male"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="SmokingQuitStatus-1"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/valueset-supplement">
+        <valueCanonical value="https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"/>
+      </extension>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1"/>
+      <name value="SmokingQuitStatus"/>
+      <title value="Smoking Quit Status"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <concept>
+            <code value="48031000119106"/>
+            <display value="Quit &gt;12 months"/>
+          </concept>
+          <concept>
+            <code value="735128000"/>
+            <display value="Quit &lt;12 months"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db"/>
+        <timestamp value="2024-04-08T12:56:59+10:00"/>
+        <total value="2"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="48031000119106"/>
+          <display value="Quit &gt;12 months"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="735128000"/>
+          <display value="Quit &lt;12 months"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="CervicalScreeningStatus-1"/>
+      <extension url="http://hl7.org/fhir/StructureDefinition/valueset-supplement">
+        <valueCanonical value="https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"/>
+      </extension>
+      <url value="https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1"/>
+      <name value="CervicalScreeningStatus"/>
+      <title value="Cervical Screening Status"/>
+      <status value="draft"/>
+      <experimental value="false"/>
+      <description value="The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program."/>
+      <compose>
+        <include>
+          <system value="http://snomed.info/sct"/>
+          <concept>
+            <code value="736595007"/>
+            <display value="Declined"/>
+          </concept>
+          <concept>
+            <code value="410527000"/>
+            <display value="Offered"/>
+          </concept>
+          <concept>
+            <code value="171154002"/>
+            <display value="Not required"/>
+          </concept>
+          <concept>
+            <code value="171155001"/>
+            <display value="Up to date"/>
+          </concept>
+        </include>
+      </compose>
+      <expansion>
+        <identifier value="urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d"/>
+        <timestamp value="2024-04-08T10:41:42+10:00"/>
+        <total value="4"/>
+        <parameter>
+          <name value="version"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <parameter>
+          <name value="used-codesystem"/>
+          <valueUri value="http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"/>
+        </parameter>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="736595007"/>
+          <display value="Declined"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="410527000"/>
+          <display value="Offered"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="171154002"/>
+          <display value="Not required"/>
+        </contains>
+        <contains>
+          <system value="http://snomed.info/sct"/>
+          <code value="171155001"/>
+          <display value="Up to date"/>
+        </contains>
+      </expansion>
+    </ValueSet>
+  </contained>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation">
+    <valueCode value="assemble-root"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="patient"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Patient"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The patient that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="user"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Practitioner"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The practitioner user that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext">
+    <extension url="name">
+      <valueCoding>
+        <system value="http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"/>
+        <code value="encounter"/>
+      </valueCoding>
+    </extension>
+    <extension url="type">
+      <valueCode value="Encounter"/>
+    </extension>
+    <extension url="description">
+      <valueString value="The encounter that is to be used to pre-populate the form"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+    <valueExpression>
+      <name value="Condition"/>
+      <language value="application/x-fhir-query"/>
+      <expression value="Condition?patient={{%patient.id}}"/>
+    </valueExpression>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+    <valueExpression>
+      <name value="ObsBloodPressure"/>
+      <language value="application/x-fhir-query"/>
+      <expression value="Observation?code=85354-9&amp;_count=1&amp;_sort=-date&amp;patient={{%patient.id}}"/>
+    </valueExpression>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#YesNoNA"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#YesNo"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#YesNoNotAskedDeclined"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#clinical-condition-1"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#administrative-gender"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#condition-clinical"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#AboriginalTorresStraitIslander"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#PrimaryCarerParentGrandparent"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#australian-pronouns-1"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#australian-states-territories-2"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#gender-identity-response-1"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#biological-sex-1"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#SmokingQuitStatus-1"/>
+    </valueReference>
+  </extension>
+  <extension url="https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference">
+    <valueReference>
+      <reference value="#CervicalScreeningStatus-1"/>
+    </valueReference>
+  </extension>
+  <url value="http://www.health.gov.au/assessments/mbs/715"/>
+  <version value="0.1.0"/>
+  <name value="AboriginalTorresStraitIslanderHealthCheck"/>
+  <title value="Aboriginal and Torres Strait Islander Health Check"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <subjectType value="Patient"/>
+  <date value="2024-04-02"/>
+  <publisher value="AEHRC CSIRO"/>
+  <contact>
+    <name value="AEHRC CSIRO"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2"/>
+    </telecom>
+  </contact>
+  <description value="Aboriginal and Torres Strait Islander Health Check assessment form."/>
+  <copyright value="Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/."/>
+  <item>
+    <extension url="http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/questionnaire-item-control"/>
+          <version value="1.0.0"/>
+          <code value="tab-container"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="age"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="sex"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="smoker"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="postcode"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='f1262ade-843c-4eba-a86d-51a9c97d134b').item.where(linkId='4e0dc185-f83e-4027-b7a8-ecb543d42c6d').item.where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryCurrentPriorities"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='b3a3eee2-f340-452e-9d05-d1f54f677b81').item.where(linkId='7cd424e5-7672-4e99-8a99-30b1fb3043fd').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryMedicalHistory"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='28d5dbe4-1e65-487c-847a-847f544a6a91').item.where(linkId='62774152-8a6e-4449-af9f-87bdce8b9bf5').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryRegularMedications"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a').item.where(linkId='aa9ff2ed-bcd2-406d-a9ff-89c201df2605').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryAllergiesAdverseReactions"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='d4e4db07-a795-4a30-bd0f-9c109f96a22b').item.where(linkId='3e689aeb-69a1-4a9b-93bd-50377511dd9b').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryFamilyHistory"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='01f67f0b-e3be-48d8-a2ad-4c54f469cd13').item.where(linkId='49ee4583-c608-41d4-a1e9-c06cf4292369').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySocialEmotionalWellbeing"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='0a3c9c93-5836-4a5b-93e5-d7de559e053a').item.where(linkId='b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySocialHistory"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='a5cc8a8f-89cf-470c-a6bd-ce9da2f64ee9').item.where(linkId='76d51512-b94a-4092-b3ae-a656fbb9c360').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryHomeFamily"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='819b3305-bf93-4502-9986-242ea2ae5f43').item.where(linkId='08d2e80e-3bb4-4f67-8b1c-090b1ace225a').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryLearningDevelopment"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='3e7d7246-98f8-4803-b063-8405ac30b086').item.where(linkId='5ab80929-5901-431d-bf68-67d532f5fa58').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryLearningWorkAdults"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='5437e30d-8a0a-4785-974e-00a10d2a1df0').item.where(linkId='3569e514-a74b-4343-b31b-3395e58d991a').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryLearningWorkOlder"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='dec713ae-246a-4961-95c9-0626bfebfed2').item.where(linkId='ed6f7800-e22a-4639-9d11-faf845513500').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryMood"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='9559242e-9ffe-4e1f-a9fc-86d1fa62c4b9').item.where(linkId='db9a8650-42a2-4bd3-8066-7e09394120d5').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryMemoryThinking"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='1bd58e7b-2cb7-45fb-965f-d5fa33d0bb4c').item.where(linkId='1f0e7fde-e964-4f36-9151-dbdc5e145f94').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryChronicDiseaseAgeing"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='c5da020c-c4f3-437c-b658-ea7e7667514d').item.where(linkId='7292070b-8944-4a40-bcf6-9aaf1721e986').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryScreeningPrograms"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='9674ffa0-2ad9-4ca3-80e6-e8bb0670a802').item.where(linkId='70f82c4b-d1f9-44d5-9903-bd7097799c05').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryHealthyEating"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='ae7a3801-9491-4b1f-820c-678236d18f56').item.where(linkId='301789b0-8c6a-470d-8787-0ac6597e3bea').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryPhysicalActivityScreenTimeNotOlder"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='74736baa-455b-41d2-af98-fb65cd463e97').item.where(linkId='ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryPhysicalActivityScreenTimeOlder"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='d56234a0-aafd-4c22-96c9-00ead8424f0b').item.where(linkId='25b8b8fd-adb1-48ab-aeae-528603668c4b').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySubstanceUse"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='f8e1cc1f-f1a1-4eb3-8255-77d600f52831').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryGambling"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='a7bb0dd2-4b2d-49c2-9da6-3cb0a4dd9240').item.where(linkId='2ab74c97-55d9-4fd9-968f-8962d62ea573').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySexualHealthAdolescents"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='4b49c291-6e93-4b7e-be3b-15ef8bc207ad').item.where(linkId='b41572ba-cf36-4cec-addf-cb0b47fea63f').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySexualHealthAdults"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='589b53a4-ceb2-41c0-850a-69438f9fd1cc').item.where(linkId='efd0735c-c379-471f-83bb-93b0392093aa').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySexualHealthOlder"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='02048954-e9d7-424e-8c7b-6a3c495d7ce4').item.where(linkId='e9936322-e6fe-4cf7-ab61-22846a8fbb95').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryEyeHealth"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='961da481-1698-4a1d-962b-a9c2185e335a').item.where(linkId='8dcdc04c-7655-4b47-88eb-8425f0cdc0d0').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryEarHealthHearing"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='de71bbd0-178c-4974-9c75-55d5a48c66f7').item.where(linkId='ac87b23a-b022-4d62-9e82-1c56583bca34').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryOralDentalHealth"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='bde9ab00-a20f-4a7c-9266-11f53f60c65f').item.where(linkId='875574fa-9769-42ca-8381-9e80c3e5233d').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummarySkin"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='7d4772cb-a1cd-49d9-853f-883ccd8343a6').item.where(linkId='88d23fa4-df88-43ab-a1d0-69315d55c3bf').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryImmunisation"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='205677d6-17c7-4285-a7c4-61aa02b6c816').item.where(linkId='bcd1c9f2-889e-41e5-8c2b-a70221c5cec5').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryExamination"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='fcbfa6e1-c101-4675-969d-aa11027859c2').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryAbsoluteCVDRisk"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='f8022f3f-21fe-42c0-8abd-95f24e2e37e5').answer.value"/>
+      </valueExpression>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/variable">
+      <valueExpression>
+        <name value="HealthPrioritiesSummaryInvestigations"/>
+        <language value="text/fhirpath"/>
+        <expression value="item.where(linkId='918f7f32-cdaf-4742-b33a-8254eda2d8bd').item.where(linkId='96a8d946-6078-4c85-9de8-3bf18d2c8150').answer.value"/>
+      </valueExpression>
+    </extension>
+    <linkId value="fd5af92e-c248-497a-8007-ee0952ccd4d9"/>
+    <type value="group"/>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.1.0"/>
+      </extension>
+      <linkId value="cd3303a6-e3b6-4732-80e8-54d2bd740beb"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Consent|0.1.0"/>
+      </extension>
+      <linkId value="fab52f87-22a6-4a54-9797-0bb6b0f5d2a2"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Consent|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.1.0"/>
+      </extension>
+      <linkId value="1d10910d-c195-4964-bdc6-98310a44719e"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.1.0"/>
+      </extension>
+      <linkId value="7692f28c-7c0a-48ea-b27d-a8489974377d"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems|0.1.0"/>
+      </extension>
+      <linkId value="15f83d80-f49a-4852-a20f-18db9b951e53"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/MedicalHistory|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.1.0"/>
+      </extension>
+      <linkId value="3a7151ef-d63b-4818-8367-03d394383a61"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.1.0"/>
+      </extension>
+      <linkId value="334853dc-88d4-4cb1-a119-bb0ff6ea0516"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.1.0"/>
+      </extension>
+      <linkId value="1ab9b519-85ce-48ee-a408-8f0b9b74d112"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.1.0"/>
+      </extension>
+      <linkId value="228b8d31-21e3-49a6-b802-984135908dca"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.1.0"/>
+      </extension>
+      <linkId value="a43517f9-538e-4a4d-8789-b6c3d44206ba"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.1.0"/>
+      </extension>
+      <linkId value="8decf7bf-e24c-4d3d-815c-c53e269f004b"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.1.0"/>
+      </extension>
+      <linkId value="3f554c37-7d0e-4b14-8f7f-a9ec665cc0a6"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.1.0"/>
+      </extension>
+      <linkId value="362bf381-23e5-4eee-963a-3de73e584da5"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Mood|0.1.0"/>
+      </extension>
+      <linkId value="51a545fa-907f-40f0-9304-36bcab5a16b8"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Mood|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.1.0"/>
+      </extension>
+      <linkId value="4217646d-e8e4-4ac5-baa7-fae28937cda7"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.1.0"/>
+      </extension>
+      <linkId value="070eadcf-9e93-499e-8615-61991ab35b32"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.1.0"/>
+      </extension>
+      <linkId value="56d4bc0b-3bf1-4d47-ac34-5a1de0902de1"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.1.0"/>
+      </extension>
+      <linkId value="e0962739-c506-41d4-afd7-ab1b90db9cb4"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.1.0"/>
+      </extension>
+      <linkId value="63cfb279-cd7d-41ed-a54b-0c17b6efe609"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.1.0"/>
+      </extension>
+      <linkId value="db70690e-2199-495a-9919-53697efaf913"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.1.0"/>
+      </extension>
+      <linkId value="d1f66f56-75fa-4498-9c51-eb98e1644243"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Gambling|0.1.0"/>
+      </extension>
+      <linkId value="ea748251-bf77-4085-b912-e9002dfa02ca"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Gambling|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.1.0"/>
+      </extension>
+      <linkId value="84bd802b-b3e1-4098-aa2c-2133f0e252f4"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.1.0"/>
+      </extension>
+      <linkId value="56ad8128-0e12-4779-8ff4-47dcff6b29b5"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.1.0"/>
+      </extension>
+      <linkId value="a8161e91-7cff-403f-85e6-982a9bc8fca6"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.1.0"/>
+      </extension>
+      <linkId value="fe05d868-aaed-4921-9d49-4e7746bbe143"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Skin|0.1.0"/>
+      </extension>
+      <linkId value="64ec4c1c-0824-4b84-8d3f-40f6e066cb80"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Skin|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Immunisation|0.1.0"/>
+      </extension>
+      <linkId value="595737cd-3a94-442b-8be6-ab461c3181d2"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Immunisation|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Examination|0.1.0"/>
+      </extension>
+      <linkId value="3263611d-5813-4393-a660-d10166acd728"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Examination|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.1.0"/>
+      </extension>
+      <linkId value="3a3b0810-e091-48ad-af50-913b0deaf663"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/Investigations|0.1.0"/>
+      </extension>
+      <linkId value="302d9437-25b9-41e3-9d66-138c352d32a8"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Investigations|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.1.0"/>
+      </extension>
+      <linkId value="ada45623-5e86-49ea-a00b-be0699364281"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+    <item>
+      <extension url="http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire">
+        <valueCanonical value="http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.1.0"/>
+      </extension>
+      <linkId value="a6395946-872a-4f2e-b697-c74aa1ab9b8d"/>
+      <text value="Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.1.0] not available. Unable to display all questions."/>
+      <type value="display"/>
+    </item>
+  </item>
+</Questionnaire>

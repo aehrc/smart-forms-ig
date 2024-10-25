@@ -1,0 +1,73 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "slk581",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/slk581",
+  "name": "SLK581",
+  "title": "Statistical Linkage Key 581",
+  "status": "draft",
+  "description": "Statistical linkage key 581 represented as an identifier datatype. Specification for generating the SLK581 is definied by the Australian Institute of Health and Welfare, https://meteor.aihw.gov.au/content/750410",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "AU",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Identifier",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Identifier",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Identifier",
+        "path": "Identifier",
+        "short": "Statistical Linkage Key 581",
+        "constraint": [
+          {
+            "key": "inv-slk581-value-0",
+            "human": "SLK581 shall be exactly 14 uppercase alphanumeric characters.",
+            "source": "https://smartforms.csiro.au/ig/StructureDefinition/slk581",
+            "severity": "error",
+            "expression": "value.matches('^([A-Z0-9]{14})$')"
+          }
+        ]
+      },
+      {
+        "id": "Identifier.type",
+        "path": "Identifier.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ANON",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Identifier.system",
+        "path": "Identifier.system",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.840.1.113883.3.879.750410"
+      },
+      {
+        "id": "Identifier.value",
+        "path": "Identifier.value",
+        "short": "SLK581",
+        "comment": "This concept is equivalent to Australian Institute of Health and Welfare data element cluster 755410 [Statistical linkage key 581 cluster, https://meteor.aihw.gov.au/content/750410).",
+        "min": 1,
+        "maxLength": 14,
+        "condition": [
+          "inv-slk581-value-0"
+        ]
+      }
+    ]
+  }
+}
