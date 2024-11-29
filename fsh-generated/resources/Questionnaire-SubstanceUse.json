@@ -129,42 +129,7 @@
               "text": "Smoking status",
               "type": "choice",
               "repeats": false,
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "code": "266919005",
-                    "system": "http://snomed.info/sct",
-                    "display": "Lifetime non-smoker"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "77176002",
-                    "system": "http://snomed.info/sct",
-                    "display": "Current smoker"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "8517006",
-                    "system": "http://snomed.info/sct",
-                    "display": "Ex-smoker"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "16090371000119103",
-                    "system": "http://snomed.info/sct",
-                    "display": "Exposure to second hand tobacco smoke"
-                  }
-                },
-                {
-                  "valueString": "Wants to quit"
-                },
-                {
-                  "valueString": "Other tobacco use"
-                }
-              ]
+              "answerValueSet": "#TobaccoUseStatus-1"
             },
             {
               "extension": [
@@ -221,7 +186,10 @@
                 {
                   "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
                   "operator": "=",
-                  "answerString": "Wants to quit"
+                  "answerCoding": {
+                    "code": "394872000",
+                    "system": "http://snomed.info/sct"
+                  }
                 }
               ],
               "enableBehavior": "any"
@@ -250,7 +218,10 @@
                 {
                   "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
                   "operator": "=",
-                  "answerString": "Wants to quit"
+                  "answerCoding": {
+                    "code": "394872000",
+                    "system": "http://snomed.info/sct"
+                  }
                 }
               ],
               "enableBehavior": "any"
@@ -391,6 +362,101 @@
               {
                 "code": "735128000",
                 "display": "Quit <12 months"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "TobaccoUseStatus-1",
+      "status": "draft",
+      "name": "TobaccoUseStatus",
+      "title": "Tobacco Use Status",
+      "description": "The Tobacco Use Status value set includes values that may be used to represent an individual's current tobacco use and exposure status.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1",
+      "experimental": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+        }
+      ],
+      "expansion": {
+        "identifier": "urn:uuid:577a997d-bacd-499f-bae4-aa6efdcca45e",
+        "timestamp": "2024-11-29T10:37:34+10:00",
+        "parameter": [
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241130"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241130"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "266919005",
+            "display": "Never smoked"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "77176002",
+            "display": "Current smoker"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "8517006",
+            "display": "Ex-smoker"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "16090371000119103",
+            "display": "Exposure to second hand tobacco smoke"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "394872000",
+            "display": "Wants to quit"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "713914004",
+            "display": "Other tobacco use"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "266919005",
+                "display": "Never smoked"
+              },
+              {
+                "code": "77176002",
+                "display": "Current smoker"
+              },
+              {
+                "code": "8517006",
+                "display": "Ex-smoker"
+              },
+              {
+                "code": "16090371000119103",
+                "display": "Exposure to second hand tobacco smoke"
+              },
+              {
+                "code": "394872000",
+                "display": "Wants to quit"
+              },
+              {
+                "code": "713914004",
+                "display": "Other tobacco use"
               }
             ]
           }
