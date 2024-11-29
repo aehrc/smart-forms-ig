@@ -34,6 +34,17 @@ else:
 
 HEADERS = {"Content-Type": "application/json"}
 
+# Print out more information if an error occurred
+def printErrorAdditionalDetails(e):
+    print(f"{ERROR_RED}*** Additional error details: ***{END_C}")
+    if e.response is not None:
+        print(f"{ERROR_RED}Status Code: {e.response.status_code}{END_C}")
+        print(f"{ERROR_RED}Reason: {e.response.reason}{END_C}")
+        print(f"{ERROR_RED}Response Text: {e.response.text}{END_C}")
+    else:
+        print(f"{ERROR_RED}No additional error information available.{END_C}")
+    print()
+
 # Get questionnaire resources from a defined output directory
 def getQuestionnairesFromLocalIg():
     questionnaires = {}
@@ -99,10 +110,13 @@ def updateRootAndSubquestionnaires(questionnaires, implementationGuide):
                 print(
                     f"{ERROR_RED}ERROR: Fail to find {reference} in local files, questionnaire not updated in server. {END_C}"
                 )
+                printErrorAdditionalDetails(e)
             except requests.exceptions.HTTPError as e:
                 print(f"{ERROR_RED}ERROR: HTTP ERROR THROWN:{END_C}", e, '\n')
+                printErrorAdditionalDetails(e)
             except Exception as e:
                 print(f"{ERROR_RED}ERROR: An error occurred, details:{END_C}", e, '\n')
+                printErrorAdditionalDetails(e)
 
 
 
@@ -142,6 +156,7 @@ def assembleQuestionnaire(questionnaires):
                     f"{ERROR_RED}ERROR: Unable to retrieve assembled questionnaire from output parameters{END_C}",
                     e, '\n'
                 )
+                printErrorAdditionalDetails(e)
 
         else:
             print(
@@ -150,8 +165,10 @@ def assembleQuestionnaire(questionnaires):
 
     except requests.exceptions.HTTPError as e:
         print(f"{ERROR_RED}ERROR: HTTP ERROR THROWN:{END_C}",e, '\n')
+        printErrorAdditionalDetails(e)
     except Exception as e:
         print(f"{ERROR_RED}ERROR: An error occurred, details:", e, '\n')
+        printErrorAdditionalDetails(e)
 
     return None
 
@@ -182,8 +199,10 @@ def updateAssembledQuestionnaire(questionnaire):
 
     except requests.exceptions.HTTPError as e:
         print(f"{ERROR_RED}ERROR: HTTP ERROR THROWN:{END_C}",e, '\n')
+        printErrorAdditionalDetails(e)
     except Exception as e:
         print(f"{ERROR_RED}ERROR: An error occurred, details:", e, '\n')
+        printErrorAdditionalDetails(e)
 
 
 # Main function
