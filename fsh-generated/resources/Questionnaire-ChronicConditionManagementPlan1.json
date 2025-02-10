@@ -90,9 +90,9 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/variable",
       "valueExpression": {
-        "name": "Medication",
+        "name": "MedicationRequest",
         "language": "application/x-fhir-query",
-        "expression": "MedicationStatement?status=active&patient={{%patient.id}}"
+        "expression": "MedicationRequest?patient={{%patient.id}}"
       }
     },
     {
@@ -126,6 +126,14 @@
         "language": "application/x-fhir-query",
         "expression": "Observation?code=29463-7&_count=1&_sort=-date&patient={{%patient.id}}"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsBloodPressure",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
     }
   ],
   "name": "ChronicConditionManagementPlan1",
@@ -147,14 +155,7 @@
   ],
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-          "valueCode": "default-open"
-        }
-      ],
-      "linkId": "patientsummary",
-      "text": "Patient summary",
+      "linkId": "container",
       "type": "group",
       "repeats": false,
       "item": [
@@ -162,28 +163,727 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-              "valueCode": "default-closed"
+              "valueCode": "default-open"
             }
           ],
-          "linkId": "problemdiagnosis",
-          "text": "Problem/diagnosis summary",
+          "linkId": "patientsummary",
+          "text": "Patient summary",
           "type": "group",
           "repeats": false,
           "item": [
             {
               "extension": [
                 {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                  "valueCode": "default-closed"
+                }
+              ],
+              "linkId": "problemdiagnosis",
+              "text": "Problem/diagnosis summary",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                      "valueExpression": {
+                        "name": "ConditionRepeat",
+                        "language": "text/fhirpath",
+                        "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                      "valueCode": "default-closed"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "gtable",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "problemdiagnosis-table",
+                  "type": "group",
+                  "repeats": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%ConditionRepeat.code.select(coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first())"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "problemdiagnosis-table-item",
+                      "text": "Item",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%ConditionRepeat.bodySite[0].coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "problemdiagnosis-table-bodysite",
+                      "text": "Body site",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%ConditionRepeat.clinicalStatus.coding"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "problemdiagnosis-table-status",
+                      "text": "Clinical status",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%ConditionRepeat.onset.ofType(dateTime)"
+                          }
+                        }
+                      ],
+                      "linkId": "problemdiagnosis-table-onset",
+                      "text": "Onset date",
+                      "type": "date",
+                      "repeats": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                  "valueCode": "default-closed"
+                }
+              ],
+              "linkId": "medicationsummary",
+              "text": "Medication summary (active)",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                      "valueExpression": {
+                        "name": "MedicationRequestRepeat",
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationRequest.entry.resource.where(medication.ofType(CodeableConcept).exists())"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                      "valueCode": "default-closed"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "gtable",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-table",
+                  "type": "group",
+                  "repeats": true,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%MedicationRequestRepeat.medication.ofType(CodeableConcept).select(coding.where(system='http://snomed.info/sct').first())"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "medicationsummary-table-medication",
+                      "text": "Item",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-medication-1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%MedicationRequestRepeat.reasonCode.select(coding.where(system='http://snomed.info/sct').first())"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "autocomplete",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "medicationsummary-table-clinicalindication",
+                      "text": "Clinical indication",
+                      "type": "open-choice",
+                      "repeats": false,
+                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
                   "valueExpression": {
-                    "name": "ConditionRepeat",
+                    "name": "AllergyIntoleranceRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
+                    "expression": "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
                   }
                 },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
                   "valueCode": "default-closed"
+                }
+              ],
+              "linkId": "adversereaction",
+              "text": "Adverse reaction risk summary (active)",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.code.select(coding.where(system='http://snomed.info/sct').first())"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "adversereaction-substance",
+                  "text": "Substance",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
                 },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "adversereaction-manifestation",
+                  "text": "Manifestation",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "adversereaction-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                  "valueExpression": {
+                    "name": "weight",
+                    "language": "text/fhirpath",
+                    "expression": "item.where(linkId='observations-multipletable').item.where(linkId='observations-multipletable-weight').item.where(linkId='observations-multipletable-weight-value').answer.value"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                  "valueExpression": {
+                    "name": "height",
+                    "language": "text/fhirpath",
+                    "expression": "item.where(linkId='observations-multipletable').item.where(linkId='observations-multipletable-height').item.where(linkId='observations-multipletable-height-value').answer.value"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                  "valueCode": "default-closed"
+                }
+              ],
+              "linkId": "observations",
+              "text": "Observations (latest)",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "grid",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "observations-multipletable",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "observations-multipletable-height",
+                      "text": "Height",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBodyHeight.entry.resource.value.value"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "cm",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "cm"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-height-value",
+                          "text": "Value",
+                          "type": "decimal",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBodyHeight.entry.resource.effective"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-height-date",
+                          "text": "Date performed",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "observations-multipletable-weight",
+                      "text": "Weight",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBodyWeight.entry.resource.value.value"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "kg",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "kg"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-weight-value",
+                          "text": "Value",
+                          "type": "decimal",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBodyWeight.entry.resource.effective"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-weight-date",
+                          "text": "Date performed",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "observations-multipletable-bmi",
+                      "text": "BMI",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                              "valueExpression": {
+                                "description": "BMI calculation",
+                                "language": "text/fhirpath",
+                                "expression": "(%weight/((%height/100).power(2))).round(1)"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "kg/m2",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "kg/m2"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-bmi-value",
+                          "text": "Value",
+                          "type": "decimal",
+                          "repeats": false,
+                          "readOnly": true
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "observations-multipletable-waist",
+                      "text": "Waist circumference",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsWaistCircumference.entry.resource.value.value"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "cm",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "cm"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-waist-value",
+                          "text": "Value",
+                          "type": "decimal",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsWaistCircumference.entry.resource.effective"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-waist-date",
+                          "text": "Date performed",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "observations-multipletable-heartrate",
+                      "text": "Heart rate",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsHeartRate.entry.resource.value.value"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "/min",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "/min"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-heartrate-value",
+                          "text": "Value",
+                          "type": "integer",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsHeartRate.entry.resource.effective"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-multipletable-heartrate-date",
+                          "text": "Date performed",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "grid",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "observations-bptable",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "observations-bptable-bloodpressure",
+                      "text": "Blood pressure",
+                      "type": "group",
+                      "repeats": false,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "mm[Hg]",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "mm Hg"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-bptable-bloodpressure-systolic",
+                          "text": "Systolic",
+                          "type": "integer",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
+                              }
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                              "valueCoding": {
+                                "code": "mm[Hg]",
+                                "system": "http://unitsofmeasure.org",
+                                "display": "mm Hg"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-bptable-bloodpressure-diastolic",
+                          "text": "Diastolic",
+                          "type": "integer",
+                          "repeats": false
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                              "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%ObsBloodPressure.entry.resource.effective"
+                              }
+                            }
+                          ],
+                          "linkId": "observations-bptable-bloodpressure-date",
+                          "text": "Date performed",
+                          "type": "date",
+                          "repeats": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/variable",
+              "valueExpression": {
+                "name": "PlanProblem",
+                "language": "text/fhirpath",
+                "expression": "item.where(linkId='plantextreview-table1').item.where(linkId='plantextreview-table-problem').answer.value"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+              "valueCode": "default-closed"
+            }
+          ],
+          "linkId": "plantextreview",
+          "text": "Management plan (text table)",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
@@ -196,104 +896,71 @@
                   }
                 }
               ],
-              "linkId": "problemdiagnosis-table",
+              "linkId": "plantextreview-table1",
+              "text": "Problems and plans",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "plantextreview-table-problem",
+                  "text": "Problem, needs or condition",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plantextreview-table-problem",
+                  "text": "Goals - changes to be achieved",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plantextreview-table-problem",
+                  "text": "Required treatments and services including patient actions",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plantextreview-table-problem",
+                  "text": "Arrangements for treatments/services",
+                  "type": "text",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plantextreview-table-problem",
+                  "text": "Provider(s)",
+                  "type": "text",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                  "valueCode": "default-closed"
+                }
+              ],
+              "linkId": "plantextreview-table2",
+              "text": "Reviews",
               "type": "group",
               "repeats": true,
               "item": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "problemdiagnosis-table-item",
-                  "text": "Item",
-                  "type": "open-choice",
-                  "repeats": false,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ConditionRepeat.bodySite[0].coding"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "problemdiagnosis-table-bodysite",
-                  "text": "Body site",
-                  "type": "open-choice",
-                  "repeats": false,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ConditionRepeat.clinicalStatus.coding"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "drop-down",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "problemdiagnosis-table-status",
-                  "text": "Clinical status",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ConditionRepeat.onset.ofType(dateTime)"
-                      }
-                    }
-                  ],
-                  "linkId": "problemdiagnosis-table-onset",
-                  "text": "Onset date",
+                  "linkId": "plantextreview-table2-scheduleddate",
+                  "text": "Scheduled review date",
                   "type": "date",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plantextreview-table2-actualdate",
+                  "text": "Actual review date",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plantextreview-table-problem",
+                  "text": "Review comments",
+                  "type": "text",
                   "repeats": false
                 }
               ]
@@ -307,129 +974,14 @@
               "valueCode": "default-closed"
             }
           ],
-          "linkId": "medicationsummary",
-          "text": "Medication summary (active)",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-                  "valueExpression": {
-                    "name": "MedicationRepeat",
-                    "language": "text/fhirpath",
-                    "expression": "%Medication.entry.resource"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-                  "valueCode": "default-closed"
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "gtable",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "medicationsummary-table",
-              "type": "group",
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%MedicationRepeat.medication.coding"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "medicationsummary-table-medication",
-                  "text": "Item",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-medication-1"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%MedicationRepeat.reasonCode"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "autocomplete",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "medicationsummary-table-clinicalindication",
-                  "text": "Clinical indication",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-              "valueExpression": {
-                "name": "AllergyIntoleranceRepeat",
-                "language": "text/fhirpath",
-                "expression": "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-              "valueCode": "default-closed"
-            }
-          ],
-          "linkId": "adversereaction",
-          "text": "Adverse reaction risk summary (active)",
+          "linkId": "plan-structuredreview",
+          "text": "Management plan (structured)",
           "type": "group",
           "repeats": true,
           "item": [
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%AllergyIntoleranceRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
-                  }
-                },
-                {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
                     "coding": [
@@ -441,609 +993,65 @@
                   }
                 }
               ],
-              "linkId": "adversereaction-substance",
-              "text": "Substance",
-              "type": "open-choice",
-              "repeats": false,
-              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "autocomplete",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "adversereaction-manifestation",
-              "text": "Manifestation",
-              "type": "open-choice",
-              "repeats": true,
-              "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%AllergyIntoleranceRepeat.note.text"
-                  }
-                }
-              ],
-              "linkId": "adversereaction-comment",
-              "text": "Comment",
-              "type": "string",
-              "repeats": false
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/variable",
-              "valueExpression": {
-                "name": "weight",
-                "language": "text/fhirpath",
-                "expression": "item.where(linkId='observations-multipletable').item.where(linkId='observations-multipletable-weight').item.where(linkId='observations-multipletable-weight-value').answer.value"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/variable",
-              "valueExpression": {
-                "name": "height",
-                "language": "text/fhirpath",
-                "expression": "item.where(linkId='observations-multipletable').item.where(linkId='observations-multipletable-height').item.where(linkId='observations-multipletable-height-value').answer.value"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-              "valueCode": "default-closed"
-            }
-          ],
-          "linkId": "observations",
-          "text": "Observations (latest)",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "observations-multipletable",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "observations-multipletable-height",
-                  "text": "Height",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBodyHeight.entry.resource.value.value"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "cm",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "cm"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-height-value",
-                      "text": "Value",
-                      "type": "decimal",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBodyHeight.entry.resource.effective"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-height-date",
-                      "text": "Date performed",
-                      "type": "date",
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "linkId": "observations-multipletable-weight",
-                  "text": "Weight",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBodyWeight.entry.resource.value.value"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "kg",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "kg"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-weight-value",
-                      "text": "Value",
-                      "type": "decimal",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBodyWeight.entry.resource.effective"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-weight-date",
-                      "text": "Date performed",
-                      "type": "date",
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "linkId": "observations-multipletable-bmi",
-                  "text": "BMI",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                          "valueExpression": {
-                            "description": "BMI calculation",
-                            "language": "text/fhirpath",
-                            "expression": "(%weight/((%height/100).power(2))).round(1)"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "kg/m2",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "kg/m2"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-bmi-value",
-                      "text": "Value",
-                      "type": "decimal",
-                      "repeats": false,
-                      "readOnly": true
-                    }
-                  ]
-                },
-                {
-                  "linkId": "observations-multipletable-waist",
-                  "text": "Waist circumference",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsWaistCircumference.entry.resource.value.value"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "cm",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "cm"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-waist-value",
-                      "text": "Value",
-                      "type": "decimal",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsWaistCircumference.entry.resource.effective"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-waist-date",
-                      "text": "Date performed",
-                      "type": "date",
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "linkId": "observations-multipletable-heartrate",
-                  "text": "Heart rate",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsHeartRate.entry.resource.value.value"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "/min",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "/min"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-heartrate-value",
-                      "text": "Value",
-                      "type": "integer",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsHeartRate.entry.resource.effective"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-multipletable-heartrate-date",
-                      "text": "Date performed",
-                      "type": "date",
-                      "repeats": false
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "observations-bptable",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "observations-bptable-bloodpressure",
-                  "text": "Blood pressure",
-                  "type": "group",
-                  "repeats": false,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "mm[Hg]",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "mm Hg"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-bptable-bloodpressure-systolic",
-                      "text": "Systolic",
-                      "type": "integer",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
-                          }
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                          "valueCoding": {
-                            "code": "mm[Hg]",
-                            "system": "http://unitsofmeasure.org",
-                            "display": "mm Hg"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-bptable-bloodpressure-diastolic",
-                      "text": "Diastolic",
-                      "type": "integer",
-                      "repeats": false
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                          "valueExpression": {
-                            "language": "text/fhirpath",
-                            "expression": "%ObsBloodPressure.entry.resource.effective"
-                          }
-                        }
-                      ],
-                      "linkId": "observations-bptable-bloodpressure-date",
-                      "text": "Date performed",
-                      "type": "date",
-                      "repeats": false
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/variable",
-          "valueExpression": {
-            "name": "PlanProblem",
-            "language": "text/fhirpath",
-            "expression": "item.where(linkId='plantextreview-table1').item.where(linkId='plantextreview-table-problem').answer.value"
-          }
-        },
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-          "valueCode": "default-closed"
-        }
-      ],
-      "linkId": "plantextreview",
-      "text": "Management plan (text table)",
-      "type": "group",
-      "repeats": true,
-      "item": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "gtable",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "plantextreview-table1",
-          "text": "Problems and plans",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "plantextreview-table-problem",
+              "linkId": "plan-structuredreview-problem",
               "text": "Problem, needs or condition",
-              "type": "text",
-              "repeats": false
-            },
-            {
-              "linkId": "plantextreview-table-problem",
-              "text": "Goals - changes to be achieved",
-              "type": "text",
-              "repeats": false
-            },
-            {
-              "linkId": "plantextreview-table-problem",
-              "text": "Required treatments and services including patient actions",
-              "type": "text",
-              "repeats": false
-            },
-            {
-              "linkId": "plantextreview-table-problem",
-              "text": "Arrangements for treatments/services",
-              "type": "text",
-              "repeats": false
-            },
-            {
-              "linkId": "plantextreview-table-problem",
-              "text": "Provider(s)",
-              "type": "text",
-              "repeats": false
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-              "valueCode": "default-closed"
-            }
-          ],
-          "linkId": "plantextreview-table2",
-          "text": "Reviews",
-          "type": "group",
-          "repeats": true,
-          "item": [
-            {
-              "linkId": "plantextreview-table2-scheduleddate",
-              "text": "Scheduled review date",
-              "type": "date",
-              "repeats": false
-            },
-            {
-              "linkId": "plantextreview-table2-actualdate",
-              "text": "Actual review date",
-              "type": "date",
-              "repeats": false
-            },
-            {
-              "linkId": "plantextreview-table-problem",
-              "text": "Review comments",
-              "type": "text",
-              "repeats": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-          "valueCode": "default-closed"
-        }
-      ],
-      "linkId": "plan-structuredreview",
-      "text": "Management plan (structured)",
-      "type": "group",
-      "repeats": true,
-      "item": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "autocomplete",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "plan-structuredreview-problem",
-          "text": "Problem, needs or condition",
-          "type": "open-choice",
-          "repeats": false,
-          "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-                  "valueCode": "default-open"
-                }
-              ],
-              "linkId": "plan-structuredreview-problem-group",
-              "type": "group",
-              "repeats": true,
+              "type": "open-choice",
+              "repeats": false,
+              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1",
               "item": [
                 {
-                  "linkId": "plan-structuredreview-problem-group-goals",
-                  "text": "Goals - changes to be achieved",
-                  "type": "text",
-                  "repeats": false,
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                      "valueCode": "default-open"
+                    }
+                  ],
+                  "linkId": "plan-structuredreview-problem-group",
+                  "type": "group",
+                  "repeats": true,
                   "item": [
                     {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-                          "valueCode": "default-open"
-                        }
-                      ],
-                      "linkId": "plan-structuredreview-problem-group-goals-group",
-                      "type": "group",
-                      "repeats": true,
+                      "linkId": "plan-structuredreview-problem-group-goals",
+                      "text": "Goals - changes to be achieved",
+                      "type": "text",
+                      "repeats": false,
                       "item": [
                         {
-                          "linkId": "plan-structuredreview-problem-group-goals-group-treatments",
-                          "text": "Required treatments and services including patient actions",
-                          "type": "text",
-                          "repeats": false,
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                              "valueCode": "default-open"
+                            }
+                          ],
+                          "linkId": "plan-structuredreview-problem-group-goals-group",
+                          "type": "group",
+                          "repeats": true,
                           "item": [
                             {
-                              "extension": [
-                                {
-                                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-                                  "valueCode": "default-open"
-                                }
-                              ],
-                              "linkId": "plan-structuredreview-problem-group-goals-group-treatments-group",
-                              "type": "group",
+                              "linkId": "plan-structuredreview-problem-group-goals-group-treatments",
+                              "text": "Required treatments and services including patient actions",
+                              "type": "text",
                               "repeats": false,
                               "item": [
                                 {
-                                  "linkId": "plan-structuredreview-problem-group-goals-group-treatments-group-providers",
-                                  "text": "Provider(s)",
-                                  "type": "open-choice",
-                                  "repeats": true,
-                                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/practitioner-role-1"
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                                      "valueCode": "default-open"
+                                    }
+                                  ],
+                                  "linkId": "plan-structuredreview-problem-group-goals-group-treatments-group",
+                                  "type": "group",
+                                  "repeats": false,
+                                  "item": [
+                                    {
+                                      "linkId": "plan-structuredreview-problem-group-goals-group-treatments-group-providers",
+                                      "text": "Provider(s)",
+                                      "type": "open-choice",
+                                      "repeats": true,
+                                      "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/practitioner-role-1"
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -1054,38 +1062,38 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
-              "valueCode": "default-closed"
-            }
-          ],
-          "linkId": "plan-structuredreview-table",
-          "text": "Reviews",
-          "type": "group",
-          "repeats": true,
-          "item": [
-            {
-              "linkId": "plan-structuredreview-table-scheduleddate",
-              "text": "Scheduled review date",
-              "type": "date",
-              "repeats": false
             },
             {
-              "linkId": "plan-structuredreview-table-actualdate",
-              "text": "Actual review date",
-              "type": "date",
-              "repeats": false
-            },
-            {
-              "linkId": "plan-structuredreview-table-problem",
-              "text": "Review comments",
-              "type": "text",
-              "repeats": false
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible",
+                  "valueCode": "default-closed"
+                }
+              ],
+              "linkId": "plan-structuredreview-table",
+              "text": "Reviews",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "plan-structuredreview-table-scheduleddate",
+                  "text": "Scheduled review date",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plan-structuredreview-table-actualdate",
+                  "text": "Actual review date",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "linkId": "plan-structuredreview-table-problem",
+                  "text": "Review comments",
+                  "type": "text",
+                  "repeats": false
+                }
+              ]
             }
           ]
         }
