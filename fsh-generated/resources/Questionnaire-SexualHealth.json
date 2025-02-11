@@ -774,41 +774,56 @@
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
         }
       ],
       "expansion": {
-        "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
-        "timestamp": "2024-04-08T10:41:42+10:00",
-        "total": 4,
+        "identifier": "urn:uuid:0f77365c-ece8-4a85-a257-ec4b8d01e9fb",
+        "timestamp": "2025-02-11T12:45:05+10:00",
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241231"
           },
           {
-            "name": "used-codesystem",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241231"
+          },
+          {
+            "name": "used-supplement",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.2.0"
           }
         ],
         "contains": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "736595007",
             "display": "Declined"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "410527000",
             "display": "Offered"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "171154002",
             "display": "Not required"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "171155001",
             "display": "Up to date"
           }
@@ -818,6 +833,7 @@
         "include": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "concept": [
               {
                 "code": "736595007",

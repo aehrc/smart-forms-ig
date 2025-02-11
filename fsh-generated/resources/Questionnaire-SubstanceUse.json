@@ -320,31 +320,44 @@
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
         }
       ],
       "expansion": {
-        "identifier": "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db",
-        "timestamp": "2024-04-08T12:56:59+10:00",
-        "total": 2,
+        "identifier": "urn:uuid:77a6c0e6-52c8-4acb-a1ff-1edbf9f9ae3c",
+        "timestamp": "2025-02-11T12:50:41+10:00",
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241231"
           },
           {
-            "name": "used-codesystem",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241231"
+          },
+          {
+            "name": "used-supplement",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.2.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
           }
         ],
         "contains": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "48031000119106",
             "display": "Quit >12 months"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "735128000",
             "display": "Quit <12 months"
           }
@@ -354,6 +367,7 @@
         "include": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "concept": [
               {
                 "code": "48031000119106",
@@ -380,50 +394,68 @@
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
         }
       ],
       "expansion": {
-        "identifier": "urn:uuid:577a997d-bacd-499f-bae4-aa6efdcca45e",
-        "timestamp": "2024-11-29T10:37:34+10:00",
+        "identifier": "urn:uuid:c004d978-bb76-4af3-b88a-93c3c3dfd66e",
+        "timestamp": "2025-02-11T12:49:02+10:00",
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241130"
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241231"
           },
           {
-            "name": "used-codesystem",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241130"
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20241231"
+          },
+          {
+            "name": "used-supplement",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.2.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.2.0"
           }
         ],
         "contains": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "266919005",
             "display": "Never smoked"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "77176002",
             "display": "Current smoker"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "8517006",
             "display": "Ex-smoker"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "16090371000119103",
             "display": "Exposure to second hand tobacco smoke"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "394872000",
             "display": "Wants to quit"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "code": "713914004",
             "display": "Other tobacco use"
           }
@@ -433,6 +465,7 @@
         "include": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20241231",
             "concept": [
               {
                 "code": "266919005",
