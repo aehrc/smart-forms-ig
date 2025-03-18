@@ -60,11 +60,10 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing"
 * name = "SocialAndEmotionalWellbeing"
-* title = "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2024-04-02"
+* date = "2025-03-14"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]

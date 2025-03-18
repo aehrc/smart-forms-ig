@@ -58,11 +58,10 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment"
 * name = "LearningAndDevelopment"
-* title = "Aboriginal and Torres Strait Islander Health Check - Learning And Development"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
-* date = "2024-04-02"
+* date = "2025-03-14"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 // This questionnaire attempts to somewhat harmonise the infant and adolescent templates but there are differences that will require confirmation.
