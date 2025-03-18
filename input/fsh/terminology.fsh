@@ -11,7 +11,7 @@ Description: "The Questionnaire Item Control Extension code system defines conce
 
 * ^experimental = false
 * ^caseSensitive = true
-* #context-display "context-display" "An display item rendered adjacent (horizontally or vertically) to the text of the parent item."
+* #context-display "context-display" "Display item is rendered adjacent (horizontally or vertically) to the text of the parent item."
 
 ValueSet: YesNoNotAskedDeclined
 Id: YesNoNotAskedDeclined
