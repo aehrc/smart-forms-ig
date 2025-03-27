@@ -1,6 +1,30 @@
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $sdc-questionnaire-definitionExtractValue = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue
+Alias: $sdc-questionnaire-definitionExtract = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract
+Alias: $sdc-questionnaire-extractAllocateId = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extractAllocateId
+Alias: $au-core-patient = http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+
+
+RuleSet: extractAllocateId(variableName)
+* extension[+].url = $sdc-questionnaire-extractAllocateId
+* extension[=].valueString = "{variableName}"
+
+RuleSet: definitionExtract(resourceCanonical, variableName)
+* extension[+].url = $sdc-questionnaire-definitionExtract
+* extension[=].extension[+].url = "definition"
+* extension[=].extension[=].valueCanonical = "{resourceCanonical}"
+* extension[=].extension[+].url = "fullUrl"
+* extension[=].extension[=].valueString = "%{variableName}"
+
+RuleSet: definitionExtractValueExpression(resourceUri, expression)
+* extension[+].url = $sdc-questionnaire-definitionExtractValue
+* extension[=].extension[+].url = "definition"
+* extension[=].extension[=].valueUri = "{resourceUri}"
+* extension[=].extension[+].url = "expression"
+* extension[=].extension[=].valueExpression.language = #text/fhirpath
+* extension[=].extension[=].valueExpression.expression = "{expression}"
 
 Instance: PatientDetails
 InstanceOf: Questionnaire
@@ -82,6 +106,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * url = "http://www.health.gov.au/assessments/mbs/715/PatientDetails"
 * name = "PatientDetails"
 * status = #draft
@@ -90,11 +115,35 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * date = "2025-03-14"
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
-* item[+]
+* insert extractAllocateId(newPatientId)
+
+
+* item[+] 
+  * insert definitionExtract(http://hl7.org/fhir/StructureDefinition/Patient, newPatientId)
+ // * insert definitionExtractValueExpression(http://hl7.org/fhir/StructureDefinition/Patient#Patient.id, item.where(linkId='patientdetails-id').answer.value)
+ /*
+  * extension[+].url = $sdc-questionnaire-definitionExtractValue
+  * extension[=].extension[+].url = "definition"
+  * extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Patient#Patient.id"
+  * extension[=].extension[+].url = "expression"
+  * extension[=].extension[=].valueExpression.language = #text/fhirpath
+  * extension[=].extension[=].valueExpression.expression = "item.where(linkId='patientdetails-id').answer.value"*/
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
   * text = "Patient Details"
   * type = #group
   * repeats = false
+  * extension[+].url = $sdc-questionnaire-definitionExtractValue
+  * extension[=].extension[+].url = "definition"
+  * extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Patient#Patient.id"
+  * extension[=].extension[+].url = "expression"
+  * extension[=].extension[=].valueExpression.language = #text/fhirpath
+  * extension[=].extension[=].valueExpression.expression = "item.where(linkId='patientdetails-id').answer.value"
+  * item[+].extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
+  * item[=].extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
+  * item[=].extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
+  * item[=].linkId = "patientdetails-id"
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/Patient#Patient.id"
+  * item[=].type = #string
   * item[+] //in-progress
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
     * linkId = "CD-in-progress-32"
@@ -122,15 +171,17 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
     </div>"    
     * type = #display 
+  
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%patient.name.where(use='official').select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text) | %patient.name.select((family | (given | prefix).join(' ')).join(', ').where($this != '') | text)).first()"
     * linkId = "17596726-34cf-4133-9960-7081e1d63558"
+    * definition = "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.text"
     * text = "Name"
     * type = #string
     * repeats = false
-    * readOnly = true
+    // * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -455,7 +506,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * text = "Phone"
       * type = #string
       * repeats = true
-  * item[+]
+  * item[+] 
     * linkId = "df1475ea-bf7e-4bf0-a69f-7f9608c3ed3c"
     * text = "Medicare number"
     * type = #group

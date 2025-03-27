@@ -5,7 +5,8 @@
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
     ]
   },
   "url": "http://www.health.gov.au/assessments/mbs/715/PatientDetails",
@@ -14,6 +15,24 @@
   "item": [
     {
       "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%patient.id"
+              }
+            }
+          ],
+          "linkId": "patientdetails-id",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.id",
+          "type": "string"
+        },
         {
           "extension": [
             {
@@ -104,10 +123,10 @@
             }
           ],
           "linkId": "17596726-34cf-4133-9960-7081e1d63558",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.text",
           "text": "Name",
           "type": "string",
-          "repeats": false,
-          "readOnly": true
+          "repeats": false
         },
         {
           "extension": [
@@ -1389,6 +1408,37 @@
           "repeats": false
         }
       ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract",
+          "extension": [
+            {
+              "url": "definition",
+              "valueCanonical": "http://hl7.org/fhir/StructureDefinition/Patient"
+            },
+            {
+              "url": "fullUrl",
+              "valueString": "%newPatientId"
+            }
+          ]
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue",
+          "extension": [
+            {
+              "url": "definition",
+              "valueUri": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.id"
+            },
+            {
+              "url": "expression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "item.where(linkId='patientdetails-id').answer.value"
+              }
+            }
+          ]
+        }
+      ],
       "linkId": "5b224753-9365-44e3-823b-9c17e7394005",
       "text": "Patient Details",
       "type": "group",
@@ -2284,6 +2334,10 @@
         "language": "text/fhirpath",
         "expression": "%patient.address.where(type='postal')"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extractAllocateId",
+      "valueString": "newPatientId"
     }
   ],
   "name": "PatientDetails",
