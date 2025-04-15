@@ -445,7 +445,7 @@
           "reference": "CapabilityStatement/SmartFormsApplication"
         },
         "name": "Smart Forms Application",
-        "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation and completion of forms.",
+        "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
         "exampleBoolean": false
       },
       {
@@ -453,7 +453,7 @@
           "reference": "CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"
         },
         "name": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check",
-        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
         "exampleBoolean": false
       },
       {

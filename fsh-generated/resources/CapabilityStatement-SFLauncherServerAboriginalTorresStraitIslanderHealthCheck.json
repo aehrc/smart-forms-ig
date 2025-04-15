@@ -4,10 +4,10 @@
   "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck",
   "name": "SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck",
   "title": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check",
-  "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+  "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
   "status": "draft",
   "experimental": false,
-  "date": "2023-06-16",
+  "date": "2025-04-15",
   "publisher": "AEHRC CSIRO",
   "jurisdiction": [
     {
@@ -168,7 +168,8 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
+              ],
+              "documentation": "**SHALL** support `create`, `conditional create`."
             },
             {
               "code": "update",
@@ -177,9 +178,28 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
+              ],
+              "documentation": "**SHALL** support `update`, `conditional update`."
             }
           ],
+          "conditionalCreate": true,
+          "_conditionalCreate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
+          "conditionalUpdate": true,
+          "_conditionalUpdate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
           "searchParam": [
             {
               "name": "patient",
@@ -247,7 +267,8 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
+              ],
+              "documentation": "**SHALL** support `create`, `conditional create`."
             },
             {
               "code": "update",
@@ -256,9 +277,28 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
+              ],
+              "documentation": "**SHALL** support `update`, `conditional update`."
             }
           ],
+          "conditionalCreate": true,
+          "_conditionalCreate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
+          "conditionalUpdate": true,
+          "_conditionalUpdate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
           "searchParam": [
             {
               "name": "patient",
@@ -368,18 +408,19 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
-            },
-            {
-              "code": "update",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
+              ],
+              "documentation": "**SHALL** support `create`, `conditional create`."
             }
           ],
+          "conditionalCreate": true,
+          "_conditionalCreate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
           "searchParam": [
             {
               "name": "patient",
@@ -442,9 +483,19 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
+              ],
+              "documentation": "**SHALL** support `create`, `conditional create`."
             }
-          ]
+          ],
+          "conditionalCreate": true,
+          "_conditionalCreate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          }
         },
         {
           "extension": [
@@ -490,8 +541,46 @@
                   "valueCode": "SHALL"
                 }
               ]
+            },
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "documentation": "**SHALL** support `create`, `conditional create`."
+            },
+            {
+              "code": "update",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "documentation": "**SHALL** support `update`, `conditional update`."
             }
           ],
+          "conditionalCreate": true,
+          "_conditionalCreate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
+          "conditionalUpdate": true,
+          "_conditionalUpdate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
           "searchInclude": [
             "MedicationRequest:medication"
           ],
@@ -652,18 +741,19 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
-            },
-            {
-              "code": "update",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
+              ],
+              "documentation": "**SHALL** support `create`, `conditional create`."
             }
           ],
+          "conditionalCreate": true,
+          "_conditionalCreate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
           "searchParam": [
             {
               "name": "patient",
@@ -726,9 +816,19 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
                 }
-              ]
+              ],
+              "documentation": "**SHALL** support `update`, `conditional update`."
             }
-          ]
+          ],
+          "conditionalUpdate": true,
+          "_conditionalUpdate": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          }
         },
         {
           "extension": [
