@@ -1,0 +1,572 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "SmartFormsApplication",
+  "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsApplication",
+  "name": "SmartFormsApplication",
+  "title": "Smart Forms Application",
+  "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-04-15",
+  "publisher": "AEHRC CSIRO",
+  "kind": "capability",
+  "instantiates": [
+    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-filler"
+  ],
+  "software": {
+    "name": "Smart Forms Application"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json"
+  ],
+  "implementationGuide": [
+    "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch"
+  ],
+  "rest": [
+    {
+      "mode": "client",
+      "documentation": "The Smart Forms Application performs interactions to support SMART App Launch, form prepopulation and form filling. The interactions performed for prepopulation are not listed here as they can vary greatly and are defined in the Questionnaire instance.",
+      "security": {
+        "cors": true,
+        "service": [
+          {
+            "coding": [
+              {
+                "code": "SMART-on-FHIR",
+                "system": "http://terminology.hl7.org/CodeSystem/restful-security-service"
+              }
+            ]
+          }
+        ],
+        "description": "SMART App Launch supported to allow secure data exchange."
+      },
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                }
+              ]
+            }
+          ],
+          "type": "AllergyIntolerance",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+          ],
+          "documentation": "The client supports the AllergyIntolerance resource, the AU Core profile and the conformance expectations for the AllergyIntolerance resource.",
+          "interaction": [
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            }
+          ],
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "searchParam": [
+            {
+              "name": "patient",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both."
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "category"
+                }
+              ]
+            }
+          ],
+          "type": "Condition",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+          ],
+          "documentation": "The client supports the Condition resource, the AU Core profile and the conformance expectations for the Condition resource.",
+          "interaction": [
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            }
+          ],
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "searchParam": [
+            {
+              "name": "patient",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both."
+            },
+            {
+              "name": "category",
+              "definition": "http://hl7.org/fhir/SearchParameter/Condition-category",
+              "type": "token",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the system and code values. \r\n\r\nThe server **SHALL** support both."
+            }
+          ]
+        },
+        {
+          "type": "Encounter",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+          ],
+          "documentation": "The client supports the Encounter resource, the AU Core profile and the conformance expectations for the Encounter resource.",
+          "interaction": [
+            {
+              "code": "read"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "status"
+                }
+              ]
+            }
+          ],
+          "type": "Immunization",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
+          ],
+          "documentation": "The client supports the Immunization resource, the AU Core profile and the conformance expectations for the Immunization resource.",
+          "interaction": [
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            }
+          ],
+          "conditionalCreate": true,
+          "searchParam": [
+            {
+              "name": "patient",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both."
+            },
+            {
+              "name": "status",
+              "definition": "http://hl7.org/fhir/SearchParameter/Immunization-status",
+              "type": "token",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the system and code values. \r\n\r\nThe server **SHALL** support both."
+            }
+          ]
+        },
+        {
+          "type": "Medication",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+          ],
+          "documentation": "The client supports the Medication resource, the AU Core profile and the conformance expectations for the Medication resource.",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            }
+          ],
+          "conditionalCreate": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "status"
+                }
+              ]
+            }
+          ],
+          "type": "MedicationStatement",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+          ],
+          "documentation": "The client supports the MedicationStatement resource, the AU Core profile and the conformance expectations for the MedicationStatement resource.",
+          "interaction": [
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            }
+          ],
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "searchInclude": [
+            "MedicationRequest:medication"
+          ],
+          "searchParam": [
+            {
+              "name": "patient",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both."
+            },
+            {
+              "name": "status",
+              "definition": "http://hl7.org/fhir/SearchParameter/medications-status",
+              "type": "token",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the system and code values.\r\n\r\nThe server **SHALL** support both.\r\n\r\nThe client **SHALL** support `multipleOr`.\r\n\r\nThe server **SHALL** support `multipleOr`."
+            },
+            {
+              "name": "_include",
+              "type": "reference",
+              "documentation": "If a medication in a MedicationStatement resource is represented as an external Medication resource reference, the server **SHOULD** support the `_include` parameter for searching this element (`MedicationRequest:medication`).\r\n\r\nThe client **SHALL** support this method."
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "code"
+                }
+              ]
+            }
+          ],
+          "type": "Observation",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
+          ],
+          "documentation": "The client supports the Observation resource, the AU Core profiles listed and the conformance expectations for the Observation resource.",
+          "interaction": [
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            }
+          ],
+          "conditionalCreate": true,
+          "searchParam": [
+            {
+              "name": "patient",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+            },
+            {
+              "name": "code",
+              "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
+              "type": "token",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+            }
+          ]
+        },
+        {
+          "type": "Patient",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+          ],
+          "documentation": "The client supports the Patient resource, AU Core profile and the conformance expectations for the Patient resource.",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "update"
+            }
+          ],
+          "conditionalUpdate": true
+        },
+        {
+          "type": "Practitioner",
+          "supportedProfile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+          ],
+          "documentation": "The client supports the Practitioner resource, AU Core profile and the conformance expectations for the Practitioner resource.",
+          "interaction": [
+            {
+              "code": "read"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
+                },
+                {
+                  "url": "required",
+                  "valueString": "version"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "title"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                }
+              ]
+            }
+          ],
+          "type": "Questionnaire",
+          "profile": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
+          "documentation": "The client supports the Questionnaire resource, Structured Data Capture profile and the conformance expectations for the QuestionnaireResponse resource.",
+          "interaction": [
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "url",
+              "definition": "http://hl7.org/fhir/SearchParameter/Questionnaire-url",
+              "type": "uri"
+            },
+            {
+              "name": "version",
+              "definition": "http://hl7.org/fhir/SearchParameter/Questionnaire-version",
+              "type": "token"
+            },
+            {
+              "name": "title",
+              "definition": "http://hl7.org/fhir/SearchParameter/Questionnaire-title",
+              "type": "string",
+              "documentation": "The client supports search using the :contains modifier."
+            },
+            {
+              "name": "_count",
+              "type": "number",
+              "documentation": "The client supports search result limiting."
+            },
+            {
+              "name": "_sort",
+              "type": "string",
+              "documentation": "The client supports search result sorting by date and **MAY** support other values."
+            }
+          ],
+          "operation": [
+            {
+              "name": "assemble",
+              "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
+            },
+            {
+              "name": "populate",
+              "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-populate"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                },
+                {
+                  "url": "required",
+                  "valueString": "questionnaire"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                },
+                {
+                  "url": "required",
+                  "valueString": "status"
+                }
+              ]
+            }
+          ],
+          "type": "QuestionnaireResponse",
+          "profile": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse",
+          "documentation": "The client supports the QuestionnaireResponse resource, Structured Data Capture profile and the conformance expectations for the QuestionnaireResponse resource.",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            }
+          ],
+          "versioning": "versioned-update",
+          "searchParam": [
+            {
+              "name": "patient",
+              "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+            },
+            {
+              "name": "questionnaire",
+              "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire",
+              "type": "reference",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both.</p> <p>The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
+            },
+            {
+              "name": "status",
+              "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status",
+              "type": "token",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+            },
+            {
+              "name": "_count",
+              "type": "number",
+              "documentation": "The client and server **SHALL** support search result limiting."
+            },
+            {
+              "name": "_sort",
+              "type": "string",
+              "documentation": "The client and server **SHALL** support search result sorting by authored and **MAY** support other values."
+            }
+          ]
+        },
+        {
+          "type": "ValueSet",
+          "profile": "http://hl7.org/fhir/StructureDefinition/ValueSet",
+          "documentation": "The client supports the ValueSet resource and the conformance expectations for the ValueSet resource.",
+          "operation": [
+            {
+              "name": "expand",
+              "definition": "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "transaction"
+        },
+        {
+          "code": "batch"
+        }
+      ]
+    }
+  ]
+}
