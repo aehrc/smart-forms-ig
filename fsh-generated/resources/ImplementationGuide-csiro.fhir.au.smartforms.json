@@ -29,7 +29,7 @@
   "dependsOn": [
     {
       "packageId": "hl7.fhir.au.core",
-      "version": "0.3.0-ballot",
+      "version": "1.0.0",
       "uri": "http://hl7.org.au/fhir/core/ImplementationGuide/hl7.fhir.au.core",
       "id": "hl7_fhir_au_core"
     },
@@ -41,7 +41,7 @@
     },
     {
       "packageId": "hl7.fhir.uv.smart-app-launch",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "uri": "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch",
       "id": "hl7_fhir_uv_smart_app_launch"
     }
@@ -335,6 +335,30 @@
         "name": "AdministrativeGender",
         "description": "The gender of a person used for administrative purposes.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/au-core-headcircum"
+        },
+        "description": "This profile sets minimum expectations for an Observation resource to record, search, and fetch head circumference observations with standard coding and units of measure. It is based on the [FHIR Head Circumference Profile](http://hl7.org/fhir/R4/headcircum.html) and identifies the *additional* mandatory core elements, extensions, vocabularies and value sets that **SHALL** be present in the Observation resource when conforming to this profile. It provides the floor for standards development for specific uses cases in an Australian context.",
+        "exampleBoolean": false,
+        "name": "AU Core Head Circumference"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/au-core-medicationstatement"
+        },
+        "description": "This profile sets minimum expectations for a MedicationStatement resource to record, search, and fetch summary statements of medication use associated with a patient. It is based on the [AU Base Medication Statement](http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-medicationstatement.html) profile and identifies the *additional* mandatory core elements, extensions, vocabularies and value sets that **SHALL** be present in the MedicationStatement when conforming to this profile. It provides the floor for standards development for specific uses cases in an Australian context.",
+        "exampleBoolean": false,
+        "name": "AU Core MedicationStatement"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/au-core-relatedperson"
+        },
+        "description": "This profile sets minimum expectations for a RelatedPerson resource to record, search, and fetch basic demographics and other administrative information about individual related persons associated with a patient. It is based on the [AU Base Related Person](http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-relatedperson.html) profile and identifies the *additional* mandatory core elements, extensions, vocabularies and value sets that **SHALL** be present in the RelatedPerson resource when conforming to this profile. It provides the floor for standards development for specific uses cases in an Australian context.",
+        "exampleBoolean": false,
+        "name": "AU Core RelatedPerson"
       },
       {
         "reference": {
@@ -748,6 +772,18 @@
       {
         "code": "special-url",
         "value": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson"
+      },
+      {
+        "code": "special-url",
+        "value": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
       },
       {
         "code": "apply-publisher",

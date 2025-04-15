@@ -90,7 +90,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "Smart Forms Launcher Server **SHALL**:\r\n1. Support the [AU Core AllergyIntolerance resource profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-allergyintolerance.html)\r\n1. Support the [AU Core Condition resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-condition.html)\r\n1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-encounter.html)\r\n1. Support the [AU Core Immunization resource profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-immunization.html)\r\n1. Support the [AU Core Medication profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medication.html)\r\n1. Support the [AU Core MedicationStatement profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-medicationstatement.html)\r\n1. Support the [AU Core Observation resource profiles](http://hl7.org.au/fhir/core/1.0.0/profiles-and-extensions.html#observation)\r\n1. Support the [AU Core Patient resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-patient.html)\r\n1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-practitioner.html)\r\n1. Support the [SDC Standard Questionnaire Response profile](https://hl7.org/fhir/uv/sdc/2025Jan/StructureDefinition-sdc-questionnaireresponse.html)\r\n1. Implement the RESTful behavior according to the FHIR specification\r\n1. Support JSON source formats for all interactions",
+      "documentation": "Smart Forms Launcher Server **SHALL**:\r\n1. Support the [AU Core AllergyIntolerance resource profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-allergyintolerance.html)\r\n1. Support the [AU Core Condition resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-condition.html)\r\n1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-encounter.html)\r\n1. Support the [AU Core Immunization resource profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-immunization.html)\r\n1. Support the [AU Core Medication profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medication.html)\r\n1. Support the [AU Core MedicationStatement profile](https://hl7.org.au/fhir/core/1.1.0-preview/StructureDefinition-au-core-medicationstatement.html)\r\n1. Support the [AU Core Observation resource profiles](http://hl7.org.au/fhir/core/1.0.0/profiles-and-extensions.html#observation)\r\n1. Support the [AU Core Patient resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-patient.html)\r\n1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-practitioner.html)\r\n1. Support the [SDC Questionnaire Response profile](https://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaireresponse.html)\r\n1. Implement the RESTful behavior according to the FHIR specification\r\n1. Support JSON source formats for all interactions",
       "security": {
         "cors": true,
         "_cors": {
@@ -642,6 +642,10 @@
                 {
                   "url": "required",
                   "valueString": "code"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
                 }
               ]
             }
@@ -652,7 +656,7 @@
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight",
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight",
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview",
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum",
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate",
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum",
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
@@ -759,7 +763,7 @@
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. ",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both. ",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -771,7 +775,18 @@
               "name": "code",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
               "type": "token",
-              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both.",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "_sort",
+              "type": "string",
+              "documentation": "The client and server **SHALL** support search result sorting by date and **MAY** support other values.",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -1001,7 +1016,7 @@
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient",
               "type": "reference",
-              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. ",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both. ",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -1013,7 +1028,7 @@
               "name": "questionnaire",
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire",
               "type": "reference",
-              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both.</p> <p>The client and server **SHALL** support chained search questionnaire.title using the :contains modifier.",
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both.\r\n\r\nThe client and server **SHALL** support chained search questionnaire.title using the :contains modifier.",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -1025,7 +1040,7 @@
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status",
               "type": "token",
-              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both.",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both.",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",

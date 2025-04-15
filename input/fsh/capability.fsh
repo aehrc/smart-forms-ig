@@ -42,11 +42,11 @@ Usage: #definition
 1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-encounter.html)
 1. Support the [AU Core Immunization resource profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-immunization.html)
 1. Support the [AU Core Medication profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medication.html)
-1. Support the [AU Core MedicationStatement profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-medicationstatement.html)
+1. Support the [AU Core MedicationStatement profile](https://hl7.org.au/fhir/core/1.1.0-preview/StructureDefinition-au-core-medicationstatement.html)
 1. Support the [AU Core Observation resource profiles](http://hl7.org.au/fhir/core/1.0.0/profiles-and-extensions.html#observation)
 1. Support the [AU Core Patient resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-patient.html)
 1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-practitioner.html)
-1. Support the [SDC Standard Questionnaire Response profile](https://hl7.org/fhir/uv/sdc/2025Jan/StructureDefinition-sdc-questionnaireresponse.html)
+1. Support the [SDC Questionnaire Response profile](https://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaireresponse.html)
 1. Implement the RESTful behavior according to the FHIR specification
 1. Support JSON source formats for all interactions"
 
@@ -297,9 +297,10 @@ The client **SHALL** support this method."
 /*
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_count"
+*/
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
-*/
+
 * rest.resource[=].type = #Observation
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -313,7 +314,7 @@ The client **SHALL** support this method."
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
@@ -339,13 +340,17 @@ The client **SHALL** support this method."
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
+
+The server **SHALL** support both. "
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "code"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. 
+
+The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 /*
@@ -354,12 +359,13 @@ The client **SHALL** support this method."
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+*/
 * rest.resource[=].searchParam[+].name = "_sort"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by date and **MAY** support other values."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
-*/
+
 
 //Patient
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -449,19 +455,27 @@ The client **SHALL** support this method."
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
+
+The server **SHALL** support both. "
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "questionnaire"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both.</p> <p>The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
+
+The server **SHALL** support both.
+
+The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "status"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. 
+
+The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "_count"
@@ -557,7 +571,7 @@ Usage: #definition
 * software.name = "Smart Forms Application"
 * fhirVersion = #4.0.1
 * format[0] = #json
-* implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch"
+* implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 
 * rest.mode = #client
 * rest.documentation = "The Smart Forms Application performs interactions to support SMART App Launch, form prepopulation and form filling. The interactions performed for prepopulation are not listed here as they can vary greatly and are defined in the Questionnaire instance."
@@ -699,9 +713,10 @@ The client **SHALL** support this method."
 /*
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_count"
+*/
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
-*/
+
 * rest.resource[=].type = #Observation
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
@@ -718,23 +733,27 @@ The client **SHALL** support this method."
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
+
+The server **SHALL** support both. "
 * rest.resource[=].searchParam[+].name = "code"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. 
+
+The server **SHALL** support both."
 /*
 * rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+*/
 * rest.resource[=].searchParam[+].name = "_sort"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by date and **MAY** support other values."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
-*/
 
 //Patient
 * rest.resource[+].type = #Patient
@@ -832,15 +851,23 @@ The client **SHALL** support this method."
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
+
+The server **SHALL** support both. "
 * rest.resource[=].searchParam[+].name = "questionnaire"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both.</p> <p>The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
+
+The server **SHALL** support both.
+
+The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
 * rest.resource[=].searchParam[+].name = "status"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. 
+
+The server **SHALL** support both."
 * rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."

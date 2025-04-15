@@ -21,7 +21,7 @@
     "json"
   ],
   "implementationGuide": [
-    "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch"
+    "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
   ],
   "rest": [
     {
@@ -272,6 +272,10 @@
                 {
                   "url": "required",
                   "valueString": "code"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
                 }
               ]
             }
@@ -302,13 +306,24 @@
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-patient",
               "type": "reference",
-              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both. "
             },
             {
               "name": "code",
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
               "type": "token",
-              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both."
+            },
+            {
+              "name": "_sort",
+              "type": "string",
+              "documentation": "The client and server **SHALL** support search result sorting by date and **MAY** support other values.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
             }
           ]
         },
@@ -521,19 +536,19 @@
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient",
               "type": "reference",
-              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both. "
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both. "
             },
             {
               "name": "questionnaire",
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire",
               "type": "reference",
-              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. The server **SHALL** support both.</p> <p>The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
+              "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both.\r\n\r\nThe client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
             },
             {
               "name": "status",
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status",
               "type": "token",
-              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. The server **SHALL** support both."
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both."
             },
             {
               "name": "_count",
