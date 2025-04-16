@@ -7,7 +7,7 @@ Usage: #definition
 * description = "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters."
 * status = #draft
 * experimental = false
-* date = "2025-04-15"
+* date = "2025-04-16"
 * publisher = "AEHRC CSIRO"
 * jurisdiction = urn:iso:std:iso:3166#AU
 * kind = #requirements
@@ -499,7 +499,7 @@ Usage: #definition
 * description = "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters."
 * status = #draft
 * experimental = false
-* date = "2025-04-15"
+* date = "2025-04-16"
 * publisher = "AEHRC CSIRO"
 * kind = #capability
 * instantiates[+] = "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-manager"
@@ -564,7 +564,7 @@ Usage: #definition
 * description = "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms."
 * status = #draft
 * experimental = false
-* date = "2025-04-15"
+* date = "2025-04-16"
 * publisher = "AEHRC CSIRO"
 * kind = #capability
 * instantiates[+] = "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-filler"
