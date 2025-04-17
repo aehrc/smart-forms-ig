@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: Investigations
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Investigations"
 Description: "Investigations sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: EarHealthAndHearing
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Ear Health And Hearing"
 Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

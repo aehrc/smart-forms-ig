@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: FamilyHistory
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Family History"
 Description: "Family History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

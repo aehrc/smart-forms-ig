@@ -8,9 +8,6 @@
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck",
-  "title": "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check",
-  "description": "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
   "item": [
     {
       "extension": [
@@ -882,13 +879,11 @@
                 }
               ],
               "linkId": "40e3933d-77bb-40f3-8609-0c38ebb4421e",
-              "definition": "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.subject.reference",
               "text": "recall-subject",
               "type": "string"
             },
             {
               "linkId": "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e",
-              "definition": "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.title",
               "text": "Recall",
               "type": "text",
               "repeats": false
@@ -1069,6 +1064,7 @@
       "valueString": "age"
     }
   ],
+  "url": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck",
   "name": "FinalisingHealthCheck",
   "status": "draft",
   "experimental": false,

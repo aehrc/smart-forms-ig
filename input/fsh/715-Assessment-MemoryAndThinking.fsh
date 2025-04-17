@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: MemoryAndThinking
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Memory And Thinking"
 Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

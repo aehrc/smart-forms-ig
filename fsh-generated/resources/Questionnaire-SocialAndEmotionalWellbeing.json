@@ -8,9 +8,6 @@
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing",
-  "title": "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing",
-  "description": "Social And Emotional Wellbeing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
   "item": [
     {
       "extension": [
@@ -339,6 +336,7 @@
       "valueString": "age"
     }
   ],
+  "url": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing",
   "name": "SocialAndEmotionalWellbeing",
   "status": "draft",
   "experimental": false,

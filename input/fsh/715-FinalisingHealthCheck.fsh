@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: FinalisingHealthCheck
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check"
 Description: "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
@@ -405,12 +405,10 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * language = #text/fhirpath
         * expression = "%patient.id"
       * linkId = "40e3933d-77bb-40f3-8609-0c38ebb4421e"
-      * definition = "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.subject.reference"
       * text = "recall-subject"
       * type = #string
     * item[+]
       * linkId = "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e"
-      * definition = "http://aehrc.com/fhir/StructureDefinition/AUPrimaryCareFollowUp#CarePlan.title"
       * text = "Recall"
       * type = #text
       * repeats = false

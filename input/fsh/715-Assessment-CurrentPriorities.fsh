@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: CurrentPriorities
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Current Priorities"
 Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

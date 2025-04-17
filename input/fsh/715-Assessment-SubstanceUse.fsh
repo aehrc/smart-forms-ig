@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: SubstanceUse
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Substance Use"
 Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

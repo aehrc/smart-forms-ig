@@ -8,9 +8,6 @@
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
     ]
   },
-  "url": "http://www.health.gov.au/assessments/mbs/715/Consent",
-  "title": "Aboriginal and Torres Strait Islander Health Check - Consent",
-  "description": "Consent sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
   "item": [
     {
       "extension": [
@@ -551,6 +548,7 @@
       "valueString": "age"
     }
   ],
+  "url": "http://www.health.gov.au/assessments/mbs/715/Consent",
   "name": "Consent",
   "status": "draft",
   "experimental": false,

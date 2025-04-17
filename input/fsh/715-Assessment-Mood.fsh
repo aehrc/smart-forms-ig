@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: Mood
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Mood"
 Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

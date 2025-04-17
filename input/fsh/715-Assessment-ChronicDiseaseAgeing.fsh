@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: ChronicDiseaseAgeing
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Chronic Disease Ageing"
 Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: RegularMedications
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Regular Medications"
 Description: "Regular Medications sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

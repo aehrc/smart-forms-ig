@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: OralAndDentalHealth
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Oral And Dental Health"
 Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

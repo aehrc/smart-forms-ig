@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: LearningAndWork
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Learning And Work"
 Description: "Learning And Work sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

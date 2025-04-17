@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: Gambling
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Gambling"
 Description: "Gambling sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 

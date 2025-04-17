@@ -4,7 +4,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Instance: PhysicalActivityAndScreenTime
 InstanceOf: Questionnaire
-Usage: #definition
+Usage: #example
 Title: "Physical Activity And Screen Time"
 Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
