@@ -153,15 +153,10 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * description = "CVD Risk Age"
         * language = #text/fhirpath
         * expression = "%age"
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#a
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#a "years"
       * linkId = "6909cb38-a6f4-44c9-abae-0e5d697a21f5"
       * text = "Age"
       * type = #integer
-      * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "b9aba16c-f910-4948-9267-e07851f69572"
-        * text = "years"
-        * type = #display
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Sex At Birth"
@@ -203,16 +198,11 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
             * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
-          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg] "mm Hg"
           * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
           * text = "Value"
           * type = #integer
           * repeats = false
-          * item[+]
-            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-            * linkId = "ddea5a62-a8c1-4b15-b667-7b69babec8cd"
-            * text = "mm Hg"
-            * type = #display
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
@@ -230,16 +220,11 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
             * expression = "%ObsTotalCholesterol.entry.resource.value.value"
-          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L "mmol/L"
           * linkId = "99932a93-8135-47b2-933b-fd751b34b7af"
           * text = "Value"
           * type = #decimal
           * repeats = false
-          * item[+]
-            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-            * linkId = "fcfbfc9f-e400-4aae-993f-ea54096e7361"
-            * text = "mmol/L"
-            * type = #display
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
@@ -257,16 +242,11 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
             * expression = "%ObsHDLCholesterol.entry.resource.value.value"
-          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L "mmol/L"
           * linkId = "c14b4513-1e20-461d-97f4-4631711adc65"
           * text = "Value"
           * type = #decimal
           * repeats = false
-          * item[+]
-            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-            * linkId = "2ba61002-b642-4b28-9e66-dc2b060c4e0e"
-            * text = "mmol/L"
-            * type = #display
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
@@ -298,16 +278,11 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
     * type = #group   
     * repeats = false  
     * item[+]
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#%
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#% "%"
       * linkId = "4c52fcec-0695-4916-b185-24a5c2711631"
       * text = "Calculated risk"
       * type = #integer   
       * repeats = false
-      * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "0162854e-c124-4b58-acd9-93c17562d407"
-        * text = "%"
-        * type = #display
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "28ff9463-b77f-435d-9ba7-427682a61f96"

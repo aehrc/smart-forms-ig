@@ -153,28 +153,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "cm"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "e73c3643-8898-4ef8-8bc9-b4b3826ab790",
-                      "text": "cm",
-                      "type": "display"
                     }
                   ],
                   "linkId": "837cd0ce-4a9e-4c8b-8679-007ed961f121",
@@ -227,28 +208,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "cm"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "387c95f0-8b54-4ad7-992d-8ab26a34fd77",
-                      "text": "cm",
-                      "type": "display"
                     }
                   ],
                   "linkId": "7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea",
@@ -292,28 +254,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "kg",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "kg"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "5ba0d699-bc2a-45d0-8f40-f53cb21dc911",
-                      "text": "kg",
-                      "type": "display"
                     }
                   ],
                   "linkId": "443bd584-684a-449c-ab6e-9d07da4df9fa",
@@ -367,28 +310,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "kg/m2",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "kg/m2"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "a709b8ec-9e65-40f0-a781-500cb3e56f3c",
-                      "text": "kg/m2",
-                      "type": "display"
                     }
                   ],
                   "linkId": "2ada6633-03c6-4b05-bc23-18dec84ec150",
@@ -427,28 +351,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "cm"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "73937983-65a0-4d40-8600-de7ca3277d5e",
-                      "text": "cm",
-                      "type": "display"
                     }
                   ],
                   "linkId": "7a4a6aac-558e-4bec-86c5-326ae07e37d6",
@@ -501,28 +406,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "cm"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "19aeb0ab-7494-4bac-8b2d-d7d2527c1f4a",
-                      "text": "cm",
-                      "type": "display"
                     }
                   ],
                   "linkId": "8df0f5d8-821d-4f71-b3c1-d164616ea2f5",
@@ -566,28 +452,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "/min",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "/min"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "090964b9-be33-438b-8465-2a2a09632fde",
-                      "text": "/min",
-                      "type": "display"
                     }
                   ],
                   "linkId": "49029ef0-eaa8-44f8-b26a-177820c82dfd",
@@ -710,28 +577,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "mm[Hg]",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "mm Hg"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "197d212d-72cc-4c85-91dc-2f030d384391",
-                      "text": "mm Hg",
-                      "type": "display"
                     }
                   ],
                   "linkId": "e68b660d-cfd2-4b89-957a-c96a4c73a5fd",
@@ -752,28 +600,9 @@
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "mm[Hg]",
-                        "system": "http://unitsofmeasure.org"
+                        "system": "http://unitsofmeasure.org",
+                        "display": "mm Hg"
                       }
-                    }
-                  ],
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "code": "unit",
-                                "system": "http://hl7.org/fhir/questionnaire-item-control"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "416ee494-4fa2-4b29-af0b-3d022f686e39",
-                      "text": "mm Hg",
-                      "type": "display"
                     }
                   ],
                   "linkId": "867b0022-f812-4f80-b287-79686c972b15",

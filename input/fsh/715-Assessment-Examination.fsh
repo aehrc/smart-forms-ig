@@ -180,16 +180,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsBodyHeight.entry.resource.value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm "cm"
         * linkId = "837cd0ce-4a9e-4c8b-8679-007ed961f121"
         * text = "Value"
         * type = #decimal
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "e73c3643-8898-4ef8-8bc9-b4b3826ab790"
-          * text = "cm"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -210,16 +205,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsBodyHeight.entry.resource.value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm "cm"
         * linkId = "7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea"
         * text = "Value"
         * type = #decimal
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "387c95f0-8b54-4ad7-992d-8ab26a34fd77"
-          * text = "cm"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -237,16 +227,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsBodyWeight.entry.resource.value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg "kg"
         * linkId = "443bd584-684a-449c-ab6e-9d07da4df9fa"
         * text = "Value"
         * type = #decimal
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "5ba0d699-bc2a-45d0-8f40-f53cb21dc911"
-          * text = "kg"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -268,17 +253,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * description = "BMI calculation"
           * language = #text/fhirpath
           * expression = "(%weight/((%height/100).power(2))).round(1)"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2 "kg/m2"
         * linkId = "2ada6633-03c6-4b05-bc23-18dec84ec150"
         * text = "Value"
         * type = #decimal
         * repeats = false
         * readOnly = true
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "a709b8ec-9e65-40f0-a781-500cb3e56f3c"
-          * text = "kg/m2"
-          * type = #display
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
@@ -291,16 +271,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsHeadCircumference.entry.resource.value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm "cm"
         * linkId = "7a4a6aac-558e-4bec-86c5-326ae07e37d6"
         * text = "Value"
         * type = #decimal
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "73937983-65a0-4d40-8600-de7ca3277d5e"
-          * text = "cm"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -321,16 +296,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsWaistCircumference.entry.resource.value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm "cm"
         * linkId = "8df0f5d8-821d-4f71-b3c1-d164616ea2f5"
         * text = "Value"
         * type = #decimal
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "19aeb0ab-7494-4bac-8b2d-d7d2527c1f4a"
-          * text = "cm"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -348,16 +318,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsHeartRate.entry.resource.value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min "/min"
         * linkId = "49029ef0-eaa8-44f8-b26a-177820c82dfd"
         * text = "Value"
         * type = #integer
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "090964b9-be33-438b-8465-2a2a09632fde"
-          * text = "/min"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -404,30 +369,20 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg] "mm Hg"
         * linkId = "e68b660d-cfd2-4b89-957a-c96a4c73a5fd"
         * text = "Systolic"
         * type = #integer
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "197d212d-72cc-4c85-91dc-2f030d384391"
-          * text = "mm Hg"
-          * type = #display
       * item[+]      
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
-        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg] "mm Hg"
         * linkId = "867b0022-f812-4f80-b287-79686c972b15"
         * text = "Diastolic"
         * type = #integer
         * repeats = false
-        * item[+]
-          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-          * linkId = "416ee494-4fa2-4b29-af0b-3d022f686e39"
-          * text = "mm Hg"
-          * type = #display
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath

@@ -116,30 +116,20 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#wk
+    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#wk "weeks"
     * linkId = "a10a7375-e9d3-4e71-a47a-282e9ba38ec1"
     * text = "Gestation at birth"
     * type = #decimal
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-      * linkId = "f3899852-36c4-441f-9a7d-544ef1617f08"
-      * text = "weeks"
-      * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg "kg"
     * linkId = "29b6d8ea-23b2-4a69-98d9-899198692de7"
     * text = "Birth weight"
     * type = #decimal
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-      * linkId = "87cf1ecd-6d1b-4de1-894d-58bd77dcfde1"
-      * text = "kg"
-      * type = #display
   
   /* Agreed to replace this section with medical history table. Commenting out for now.
   // for infants 0-5

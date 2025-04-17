@@ -128,28 +128,9 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                   "valueCoding": {
                     "code": "a",
-                    "system": "http://unitsofmeasure.org"
+                    "system": "http://unitsofmeasure.org",
+                    "display": "years"
                   }
-                }
-              ],
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "unit",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "b9aba16c-f910-4948-9267-e07851f69572",
-                  "text": "years",
-                  "type": "display"
                 }
               ],
               "linkId": "6909cb38-a6f4-44c9-abae-0e5d697a21f5",
@@ -256,28 +237,9 @@
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                           "valueCoding": {
                             "code": "mm[Hg]",
-                            "system": "http://unitsofmeasure.org"
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mm Hg"
                           }
-                        }
-                      ],
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "unit",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "ddea5a62-a8c1-4b15-b667-7b69babec8cd",
-                          "text": "mm Hg",
-                          "type": "display"
                         }
                       ],
                       "linkId": "818ce640-c8dd-457d-b607-3aaa8da38524",
@@ -321,28 +283,9 @@
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                           "valueCoding": {
                             "code": "mmol/L",
-                            "system": "http://unitsofmeasure.org"
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mmol/L"
                           }
-                        }
-                      ],
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "unit",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "fcfbfc9f-e400-4aae-993f-ea54096e7361",
-                          "text": "mmol/L",
-                          "type": "display"
                         }
                       ],
                       "linkId": "99932a93-8135-47b2-933b-fd751b34b7af",
@@ -386,28 +329,9 @@
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                           "valueCoding": {
                             "code": "mmol/L",
-                            "system": "http://unitsofmeasure.org"
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mmol/L"
                           }
-                        }
-                      ],
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                              "valueCodeableConcept": {
-                                "coding": [
-                                  {
-                                    "code": "unit",
-                                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "linkId": "2ba61002-b642-4b28-9e66-dc2b060c4e0e",
-                          "text": "mmol/L",
-                          "type": "display"
                         }
                       ],
                       "linkId": "c14b4513-1e20-461d-97f4-4631711adc65",
@@ -486,28 +410,9 @@
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                   "valueCoding": {
                     "code": "%",
-                    "system": "http://unitsofmeasure.org"
+                    "system": "http://unitsofmeasure.org",
+                    "display": "%"
                   }
-                }
-              ],
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "unit",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "0162854e-c124-4b58-acd9-93c17562d407",
-                  "text": "%",
-                  "type": "display"
                 }
               ],
               "linkId": "4c52fcec-0695-4916-b185-24a5c2711631",
