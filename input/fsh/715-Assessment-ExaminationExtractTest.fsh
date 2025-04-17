@@ -161,7 +161,7 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%patient.id"
-    * linkId = "patientId"
+    * linkId = "patientIdExamination"
     * type = #string  
   * item[+]
     * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true

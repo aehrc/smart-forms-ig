@@ -107,7 +107,7 @@
               }
             }
           ],
-          "linkId": "patientId",
+          "linkId": "patientIdExamination",
           "type": "string"
         },
         {
@@ -1004,7 +1004,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientId').answer.value"
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
             }
           ]
         }
@@ -1068,7 +1068,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientId').answer.value"
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
             }
           ]
         }
@@ -1132,7 +1132,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientId').answer.value"
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
             }
           ]
         }
@@ -1196,7 +1196,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientId').answer.value"
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
             }
           ]
         }
@@ -1242,7 +1242,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientId').answer.value"
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
             }
           ]
         }
@@ -1363,7 +1363,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientId').answer.value"
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
             }
           ]
         }
