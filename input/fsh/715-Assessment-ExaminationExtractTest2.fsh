@@ -1,12 +1,13 @@
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $sdc-questionnaire-templateExtract = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
 
-Instance: ExaminationExtractTest
+Instance: ExaminationExtractTest2
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "Aboriginal and Torres Strait Islander Health Check - ExaminationExtractTest"
-Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
+Title: "Aboriginal and Torres Strait Islander Health Check - ExaminationExtractTest2"
+Description: "ExaminationExtractTest2 sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = BodyHeight
 * contained[+] = BodyWeight
@@ -49,7 +50,7 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
   * extension[+]
     * url = "description"
     * valueString = "The encounter that is to be used to pre-populate the form"
-
+/*
 //assemble context
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
@@ -57,9 +58,15 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
-
+*/
 //fhir query variables
 
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBloodPressure"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -106,6 +113,18 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
     * name = "height"
     * language = #text/fhirpath
     * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "weight2"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='exam-weight-value-2').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "height2"
+    * language = #text/fhirpath
+    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='exam-height-value-2').answer.value"
 
 
 
@@ -114,7 +133,7 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/Examination"
-* name = "ExaminationExtractTest"
+* name = "ExaminationExtractTest2"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
@@ -164,92 +183,7 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
       * language = #text/fhirpath
       * expression = "%patient.id"
     * linkId = "patientIdExamination"
-    * type = #string  
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsBodyHeight.entry.resource.id"
-    * linkId = "bodyHeightId"
-    * type = #string
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsBodyHeight.entry.resource.effective.toDate()"
-    * linkId = "bodyHeightEffective"
-    * type = #date
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsBodyWeight.entry.resource.id"
-    * linkId = "bodyWeightId"
-    * type = #string
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsBodyWeight.entry.resource.effective.toDate()"
-    * linkId = "bodyWeightEffective"
-    * type = #date
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsWaistCircumference.entry.resource.id"
-    * linkId = "waistCircumferenceId"
-    * type = #string
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsWaistCircumference.entry.resource.effective.toDate()"
-    * linkId = "waistCircumferenceEffective"
-    * type = #date
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsHeartRate.entry.resource.id"
-    * linkId = "heartRateId"
-    * type = #string
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsHeartRate.entry.resource.effective.toDate()"
-    * linkId = "heartRateEffective"
-    * type = #date
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsHeartRate.entry.resource.id"
-    * linkId = "heartRhythmId"
-    * type = #string
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsHeartRate.entry.resource.effective.toDate()"
-    * linkId = "heartRhythmEffective"
-    * type = #date
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsBloodPressure.entry.resource.id"
-    * linkId = "bloodPressureId"
-    * type = #string
-  * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%ObsBloodPressure.entry.resource.effective.toDate()"
-    * linkId = "bloodPressureEffective"
-    * type = #date
-
+    * type = #string 
 
 // Observations table with dates
   * item[+]
@@ -258,11 +192,6 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
     * type = #group 
     * repeats = false
     * item[+]
-      * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-      * extension[=].extension[+].url = "template"
-      * extension[=].extension[=].valueReference.reference = "#BodyHeight"
-      * extension[=].extension[+].url = "ifNoneExist"
-      * extension[=].extension[=].valueString = "iif(%resource.repeat(item).where(linkId='bodyHeightEffective').answer.value =  %resource.repeat(item).where(linkId='c666ac96-1e64-40e2-8e0b-7d0187bb3e50').answer.value, '_id=' + %resource.repeat(item).where(linkId='bodyHeightId').answer.value)"
       // * extension[=].extension[=].valueString = "'date=ge' + %resource.repeat(item).where(linkId='bodyHeightEffective').answer.value.toString()"
       // * extension[=].extension[=].valueString = "'_id=' + %resource.repeat(item).where(linkId='bodyHeightId').answer.value"
       * linkId = "6226a5c5-b5c3-4ebb-a689-2b286322cfe0"
@@ -275,9 +204,10 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "%ObsBodyHeight.entry.resource.value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea"
-        * text = "Value"
+        * text = "Last result"
         * type = #decimal
         * repeats = false
+        * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
           * linkId = "387c95f0-8b54-4ad7-992d-8ab26a34fd77"
@@ -288,15 +218,28 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * language = #text/fhirpath
           * expression = "%ObsBodyHeight.entry.resource.effective"
         * linkId = "c666ac96-1e64-40e2-8e0b-7d0187bb3e50"
-        * text = "Date performed"
+        * text = "Last result date"
+        * type = #date
+        * repeats = false  
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeight"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "exam-height-value-2"
+        * text = "New result"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-height-value-2-unit"
+          * text = "cm"
+          * type = #display
+      * item[+]
+        * linkId = "exam-height-date-2"
+        * text = "New result date"
         * type = #date
         * repeats = false
     * item[+]
-      * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-      * extension[=].extension[+].url = "template"
-      * extension[=].extension[=].valueReference.reference = "#BodyWeight"
-      * extension[=].extension[+].url = "ifNoneExist"
-      * extension[=].extension[=].valueString = "iif(%resource.repeat(item).where(linkId='bodyWeightEffective').answer.value =  %resource.repeat(item).where(linkId='92cdc1c7-eb6c-4f6d-9bd9-ae726a0e0d3d').answer.value, '_id=' + %resource.repeat(item).where(linkId='bodyWeightId').answer.value)"
       * linkId = "97ed4c86-8820-4e4d-9234-0e0e8b6ca44a"
       * text = "Weight"
       * type = #group
@@ -307,9 +250,10 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "%ObsBodyWeight.entry.resource.value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
         * linkId = "443bd584-684a-449c-ab6e-9d07da4df9fa"
-        * text = "Value"
+        * text = "Last result"
         * type = #decimal
         * repeats = false
+        * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
           * linkId = "5ba0d699-bc2a-45d0-8f40-f53cb21dc911"
@@ -320,7 +264,25 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * language = #text/fhirpath
           * expression = "%ObsBodyWeight.entry.resource.effective"
         * linkId = "92cdc1c7-eb6c-4f6d-9bd9-ae726a0e0d3d"
-        * text = "Date performed"
+        * text = "Last result date"
+        * type = #date
+        * repeats = false
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyWeight"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+        * linkId = "exam-weight-value-2"
+        * text = "New result"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-weight-value-2-unit"
+          * text = "kg"
+          * type = #display
+      * item[+]
+        * linkId = "exam-weight-date-2"
+        * text = "New result date"
         * type = #date
         * repeats = false
     * item[+]
@@ -335,7 +297,7 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "(%weight/((%height/100).power(2))).round(1)"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
         * linkId = "2ada6633-03c6-4b05-bc23-18dec84ec150"
-        * text = "Value"
+        * text = "Last result"
         * type = #decimal
         * repeats = false
         * readOnly = true
@@ -344,12 +306,29 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * linkId = "a709b8ec-9e65-40f0-a781-500cb3e56f3c"
           * text = "kg/m2"
           * type = #display
+      * item[+]
+        * linkId = "exam-bmi-spacer"
+        * text = "Last result date"
+        * type = #string
+        * repeats = false
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * description = "BMI calculation"
+          * language = #text/fhirpath
+          * expression = "(%weight2/((%height2/100).power(2))).round(1)"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
+        * linkId = "exam-bmi-value-2"
+        * text = "New result"
+        * type = #decimal
+        * repeats = false
+        * readOnly = true
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-bmi-value-2-unit"
+          * text = "kg/m2"
+          * type = #display
     * item[+]
-      * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-      * extension[=].extension[+].url = "template"
-      * extension[=].extension[=].valueReference.reference = "#WaistCircumference"
-      * extension[=].extension[+].url = "ifNoneExist"
-      * extension[=].extension[=].valueString = "iif(%resource.repeat(item).where(linkId='waistCircumferenceEffective').answer.value =  %resource.repeat(item).where(linkId='3eb3b929-e67a-4331-8949-b8447b66a4c7').answer.value, '_id=' + %resource.repeat(item).where(linkId='waistCircumferenceId').answer.value)"
       * linkId = "ec884b64-ed8d-485b-930f-e7ac18ad4cc9"
       * text = "Waist circumference"
       * type = #group
@@ -360,9 +339,10 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "%ObsWaistCircumference.entry.resource.value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "8df0f5d8-821d-4f71-b3c1-d164616ea2f5"
-        * text = "Value"
+        * text = "Last result"
         * type = #decimal
         * repeats = false
+        * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
           * linkId = "19aeb0ab-7494-4bac-8b2d-d7d2527c1f4a"
@@ -373,15 +353,28 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * language = #text/fhirpath
           * expression = "%ObsWaistCircumference.entry.resource.effective"
         * linkId = "3eb3b929-e67a-4331-8949-b8447b66a4c7"
-        * text = "Date performed"
+        * text = "Last result date"
+        * type = #date
+        * repeats = false
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#WaistCircumference"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "exam-waist-circumference-value-2"
+        * text = "New result"
+        * type = #decimal
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-waist-circumference-value-2-unit"
+          * text = "cm"
+          * type = #display
+      * item[+]
+        * linkId = "exam-waist-circumference-date-2"
+        * text = "New result date"
         * type = #date
         * repeats = false
     * item[+]
-      * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-      * extension[=].extension[+].url = "template"
-      * extension[=].extension[=].valueReference.reference = "#HeartRate"
-      * extension[=].extension[+].url = "ifNoneExist"
-      * extension[=].extension[=].valueString = "iif(%resource.repeat(item).where(linkId='heartRateEffective').answer.value =  %resource.repeat(item).where(linkId='feeac08f-2ba6-4048-80a2-10b3f90cf5e3').answer.value, '_id=' + %resource.repeat(item).where(linkId='heartRateId').answer.value)"
       * linkId = "3d3e1079-d225-447b-959b-4caddc057f7d"
       * text = "Heart rate"
       * type = #group
@@ -392,9 +385,10 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "%ObsHeartRate.entry.resource.value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
         * linkId = "49029ef0-eaa8-44f8-b26a-177820c82dfd"
-        * text = "Value"
+        * text = "Last result"
         * type = #integer
         * repeats = false
+        * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
           * linkId = "090964b9-be33-438b-8465-2a2a09632fde"
@@ -405,15 +399,28 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * language = #text/fhirpath
           * expression = "%ObsHeartRate.entry.resource.effective"
         * linkId = "feeac08f-2ba6-4048-80a2-10b3f90cf5e3"
-        * text = "Date performed"
+        * text = "Last result date"
+        * type = #date
+        * repeats = false
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRate"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
+        * linkId = "exam-heart-rate-value-2"
+        * text = "New result"
+        * type = #integer
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-heart-rate-value-2-unit"
+          * text = "/min"
+          * type = #display
+      * item[+]
+        * linkId = "exam-heart-rate-date-2"
+        * text = "New result date"
         * type = #date
         * repeats = false
     * item[+]
-      * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-      * extension[=].extension[+].url = "template"
-      * extension[=].extension[=].valueReference.reference = "#HeartRhythm"
-      * extension[=].extension[+].url = "ifNoneExist"
-      * extension[=].extension[=].valueString = "iif(%resource.repeat(item).where(linkId='heartRhythmEffective').answer.value =  %resource.repeat(item).where(linkId='eeb56682-0eae-4428-9c37-0e63852026c0').answer.value, '_id=' + %resource.repeat(item).where(linkId='heartRhythmId').answer.value)"
       * linkId = "8d3d05cc-64bc-47ae-b989-060bac838d1c"
       * text = "Heart rhythm"
       * type = #group
@@ -421,14 +428,30 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
       * item[+]       
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
         * linkId = "99a8eb6f-a36a-4daf-99d7-27bfde0d4bb1"
-        * text = "Value"
+        * text = "Last result"
+        * type = #choice
+        * repeats = false
+        * readOnly = true
+        * answerOption[+].valueCoding = $SCT#271636001 "Pulse regular"
+        * answerOption[+].valueCoding = $SCT#61086009 "Pulse irregular"
+      * item[+]
+        * linkId = "eeb56682-0eae-4428-9c37-0e63852026c0"
+        * text = "Last result date"
+        * type = #date
+        * repeats = false
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRhythm"       
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * linkId = "exam-heart-rhythm-value-2"
+        * text = "New result"
         * type = #choice
         * repeats = false
         * answerOption[+].valueCoding = $SCT#271636001 "Pulse regular"
         * answerOption[+].valueCoding = $SCT#61086009 "Pulse irregular"
       * item[+]
-        * linkId = "eeb56682-0eae-4428-9c37-0e63852026c0"
-        * text = "Date performed"
+        * linkId = "exam-heart-rhythm-date-2"
+        * text = "New result date"
         * type = #date
         * repeats = false
 
@@ -440,11 +463,6 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
     * type = #group 
     * repeats = false
     * item[+]
-      * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-      * extension[=].extension[+].url = "template"
-      * extension[=].extension[=].valueReference.reference = "#BloodPressure"
-      * extension[=].extension[+].url = "ifNoneExist"
-      * extension[=].extension[=].valueString = "iif(%resource.repeat(item).where(linkId='bloodPressureEffective').answer.value =  %resource.repeat(item).where(linkId='a005050c-ed79-46ed-ac14-2fc1496059a5').answer.value, '_id=' + %resource.repeat(item).where(linkId='bloodPressureId').answer.value)"
       * linkId = "705f6d04-acab-4d14-baab-98f9bfc4808e"
       * text = "Blood pressure"
       * type = #group
@@ -455,9 +473,10 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "e68b660d-cfd2-4b89-957a-c96a4c73a5fd"
-        * text = "Systolic"
+        * text = "Last systolic"
         * type = #integer
         * repeats = false
+        * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
           * linkId = "197d212d-72cc-4c85-91dc-2f030d384391"
@@ -469,9 +488,10 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "867b0022-f812-4f80-b287-79686c972b15"
-        * text = "Diastolic"
+        * text = "Last diastolic"
         * type = #integer
         * repeats = false
+        * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
           * linkId = "416ee494-4fa2-4b29-af0b-3d022f686e39"
@@ -482,7 +502,36 @@ Description: "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres
           * language = #text/fhirpath
           * expression = "%ObsBloodPressure.entry.resource.effective"
         * linkId = "a005050c-ed79-46ed-ac14-2fc1496059a5"
-        * text = "Date performed"
+        * text = "Last result date"
+        * type = #date
+        * repeats = false
+        * readOnly = true
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BloodPressure"
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * linkId = "exam-blood-pressure-systolic-2"
+        * text = "New systolic"
+        * type = #integer
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-blood-pressure-systolic-2-unit"
+          * text = "mm Hg"
+          * type = #display
+      * item[+]
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * linkId = "exam-blood-pressure-diastolic-2"
+        * text = "New diastolic"
+        * type = #integer
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "exam-blood-pressure-diastolic-2-unit"
+          * text = "mm Hg"
+          * type = #display
+      * item[+]
+        * linkId = "exam-blood-pressure-date-2"
+        * text = "New result date"
         * type = #date
         * repeats = false
 

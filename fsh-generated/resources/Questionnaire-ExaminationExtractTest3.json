@@ -1,6 +1,6 @@
 {
   "resourceType": "Questionnaire",
-  "id": "ExaminationExtractTest",
+  "id": "ExaminationExtractTest3",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
@@ -9,8 +9,8 @@
     ]
   },
   "url": "http://www.health.gov.au/assessments/mbs/715/Examination",
-  "title": "Aboriginal and Torres Strait Islander Health Check - ExaminationExtractTest",
-  "description": "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
+  "title": "Aboriginal and Torres Strait Islander Health Check - ExaminationExtractTest3",
+  "description": "ExaminationExtractTest3 sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
   "item": [
     {
       "item": [
@@ -41,12 +41,12 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsBodyHeight.entry.resource.id"
+                "expression": "%ObsBodyHeight.entry.resource.value.value"
               }
             }
           ],
-          "linkId": "bodyHeightId",
-          "type": "string"
+          "linkId": "bodyHeightResult",
+          "type": "decimal"
         },
         {
           "extension": [
@@ -75,12 +75,12 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsBodyWeight.entry.resource.id"
+                "expression": "%ObsBodyWeight.entry.resource.value.value"
               }
             }
           ],
-          "linkId": "bodyWeightId",
-          "type": "string"
+          "linkId": "bodyWeightResult",
+          "type": "decimal"
         },
         {
           "extension": [
@@ -109,12 +109,12 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsWaistCircumference.entry.resource.id"
+                "expression": "%ObsWaistCircumference.entry.resource.value.value"
               }
             }
           ],
-          "linkId": "waistCircumferenceId",
-          "type": "string"
+          "linkId": "waistCircumferenceResult",
+          "type": "decimal"
         },
         {
           "extension": [
@@ -143,12 +143,12 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.id"
+                "expression": "%ObsHeartRate.entry.resource.value.value"
               }
             }
           ],
-          "linkId": "heartRateId",
-          "type": "string"
+          "linkId": "heartRateResult",
+          "type": "decimal"
         },
         {
           "extension": [
@@ -177,12 +177,12 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.id"
+                "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
               }
             }
           ],
-          "linkId": "heartRhythmId",
-          "type": "string"
+          "linkId": "bloodPressureSystolicResult",
+          "type": "decimal"
         },
         {
           "extension": [
@@ -194,29 +194,12 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.effective.toDate()"
+                "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
               }
             }
           ],
-          "linkId": "heartRhythmEffective",
-          "type": "date"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBloodPressure.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "bloodPressureId",
-          "type": "string"
+          "linkId": "bloodPressureDiastolicResult",
+          "type": "decimal"
         },
         {
           "extension": [
@@ -301,7 +284,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeight.entry.resource.effective"
+                        "expression": "%ObsBodyHeight.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -311,29 +294,114 @@
                   "repeats": false
                 }
               ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#BodyHeight"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='bodyHeightEffective').answer.value =  %resource.repeat(item).where(linkId='c666ac96-1e64-40e2-8e0b-7d0187bb3e50').answer.value, '_id=' + %resource.repeat(item).where(linkId='bodyHeightId').answer.value)"
-                    }
-                  ]
-                }
-              ],
               "linkId": "6226a5c5-b5c3-4ebb-a689-2b286322cfe0",
               "text": "Height",
               "type": "group",
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "(%resource.repeat(item).where(linkId='bodyHeightResult').answer.value !=  %resource.repeat(item).where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value) OR (%resource.repeat(item).where(linkId='bodyHeightEffective').answer.value != %resource.repeat(item).where(linkId='c666ac96-1e64-40e2-8e0b-7d0187bb3e50').answer.value)"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#BodyHeight3"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%resource.repeat(item).where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-height-value-unit-extract",
+                      "text": "cm",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-height-value-extract",
+                  "text": "Value - hidden",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "(%resource.repeat(item).where(linkId='c666ac96-1e64-40e2-8e0b-7d0187bb3e50').answer.value"
+                      }
+                    }
+                  ],
+                  "linkId": "exam-height-date-extract",
+                  "text": "Date performed - hidden",
+                  "type": "date",
+                  "repeats": false
+                }
+              ],
+              "linkId": "exam-height-extract",
+              "text": "Height - hidden",
+              "type": "group",
+              "repeats": false
+            },
+            {
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#BodyWeight"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
               "item": [
                 {
                   "extension": [
@@ -383,7 +451,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyWeight.entry.resource.effective"
+                        "expression": "%ObsBodyWeight.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -391,23 +459,6 @@
                   "text": "Date performed",
                   "type": "date",
                   "repeats": false
-                }
-              ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#BodyWeight"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='bodyWeightEffective').answer.value =  %resource.repeat(item).where(linkId='92cdc1c7-eb6c-4f6d-9bd9-ae726a0e0d3d').answer.value, '_id=' + %resource.repeat(item).where(linkId='bodyWeightId').answer.value)"
-                    }
-                  ]
                 }
               ],
               "linkId": "97ed4c86-8820-4e4d-9234-0e0e8b6ca44a",
@@ -468,6 +519,19 @@
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#WaistCircumference"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
               "item": [
                 {
                   "extension": [
@@ -517,7 +581,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsWaistCircumference.entry.resource.effective"
+                        "expression": "%ObsWaistCircumference.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -527,29 +591,25 @@
                   "repeats": false
                 }
               ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#WaistCircumference"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='waistCircumferenceEffective').answer.value =  %resource.repeat(item).where(linkId='3eb3b929-e67a-4331-8949-b8447b66a4c7').answer.value, '_id=' + %resource.repeat(item).where(linkId='waistCircumferenceId').answer.value)"
-                    }
-                  ]
-                }
-              ],
               "linkId": "ec884b64-ed8d-485b-930f-e7ac18ad4cc9",
               "text": "Waist circumference",
               "type": "group",
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#HeartRate"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
               "item": [
                 {
                   "extension": [
@@ -557,7 +617,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRate.entry.resource.value.value"
+                        "expression": "%ObsHeartRate.entry.resource.value.value.toInteger()"
                       }
                     },
                     {
@@ -599,7 +659,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRate.entry.resource.effective"
+                        "expression": "%ObsHeartRate.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -609,29 +669,25 @@
                   "repeats": false
                 }
               ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#HeartRate"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='heartRateEffective').answer.value =  %resource.repeat(item).where(linkId='feeac08f-2ba6-4048-80a2-10b3f90cf5e3').answer.value, '_id=' + %resource.repeat(item).where(linkId='heartRateId').answer.value)"
-                    }
-                  ]
-                }
-              ],
               "linkId": "3d3e1079-d225-447b-959b-4caddc057f7d",
               "text": "Heart rate",
               "type": "group",
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#HeartRhythm"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
               "item": [
                 {
                   "extension": [
@@ -675,23 +731,6 @@
                   "repeats": false
                 }
               ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#HeartRhythm"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='heartRhythmEffective').answer.value =  %resource.repeat(item).where(linkId='eeb56682-0eae-4428-9c37-0e63852026c0').answer.value, '_id=' + %resource.repeat(item).where(linkId='heartRhythmId').answer.value)"
-                    }
-                  ]
-                }
-              ],
               "linkId": "8d3d05cc-64bc-47ae-b989-060bac838d1c",
               "text": "Heart rhythm",
               "type": "group",
@@ -719,6 +758,19 @@
           ],
           "item": [
             {
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#BloodPressure"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
               "item": [
                 {
                   "extension": [
@@ -726,7 +778,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.toInteger()"
                       }
                     },
                     {
@@ -768,7 +820,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
+                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.toInteger()"
                       }
                     },
                     {
@@ -810,7 +862,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.effective"
+                        "expression": "%ObsBloodPressure.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -818,23 +870,6 @@
                   "text": "Date performed",
                   "type": "date",
                   "repeats": false
-                }
-              ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#BloodPressure"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='bloodPressureEffective').answer.value =  %resource.repeat(item).where(linkId='a005050c-ed79-46ed-ac14-2fc1496059a5').answer.value, '_id=' + %resource.repeat(item).where(linkId='bloodPressureId').answer.value)"
-                    }
-                  ]
                 }
               ],
               "linkId": "705f6d04-acab-4d14-baab-98f9bfc4808e",
@@ -877,7 +912,7 @@
   "contained": [
     {
       "resourceType": "Observation",
-      "id": "BodyHeight",
+      "id": "BodyHeight3",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
@@ -915,7 +950,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value"
+              "valueString": "item.where(linkId='exam-height-value-extract').answer.value"
             }
           ]
         }
@@ -934,7 +969,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-height-date-2').answer.value.toDateTime()"
+            "valueString": "item.where(linkId='exam-height-date-extract').answer.value.toDateTime()"
           }
         ]
       }
@@ -1361,12 +1396,12 @@
       ]
     },
     {
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
-      "valueString": "ObsBloodPressure"
-    },
-    {
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
-      "valueString": "age"
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsBloodPressure",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/variable",
@@ -1423,9 +1458,25 @@
         "language": "text/fhirpath",
         "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "weight2",
+        "language": "text/fhirpath",
+        "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='exam-weight-value-2').answer.value"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "height2",
+        "language": "text/fhirpath",
+        "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='exam-height-value-2').answer.value"
+      }
     }
   ],
-  "name": "ExaminationExtractTest",
+  "name": "ExaminationExtractTest3",
   "status": "draft",
   "experimental": false,
   "subjectType": [

@@ -1,6 +1,6 @@
 {
   "resourceType": "Questionnaire",
-  "id": "ExaminationExtractTest",
+  "id": "ExaminationExtractTest2",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
@@ -9,8 +9,8 @@
     ]
   },
   "url": "http://www.health.gov.au/assessments/mbs/715/Examination",
-  "title": "Aboriginal and Torres Strait Islander Health Check - ExaminationExtractTest",
-  "description": "ExaminationExtractTest sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
+  "title": "Aboriginal and Torres Strait Islander Health Check - ExaminationExtractTest2",
+  "description": "ExaminationExtractTest2 sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
   "item": [
     {
       "item": [
@@ -30,210 +30,6 @@
           ],
           "linkId": "patientIdExamination",
           "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBodyHeight.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "bodyHeightId",
-          "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBodyHeight.entry.resource.effective.toDate()"
-              }
-            }
-          ],
-          "linkId": "bodyHeightEffective",
-          "type": "date"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBodyWeight.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "bodyWeightId",
-          "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBodyWeight.entry.resource.effective.toDate()"
-              }
-            }
-          ],
-          "linkId": "bodyWeightEffective",
-          "type": "date"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsWaistCircumference.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "waistCircumferenceId",
-          "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsWaistCircumference.entry.resource.effective.toDate()"
-              }
-            }
-          ],
-          "linkId": "waistCircumferenceEffective",
-          "type": "date"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "heartRateId",
-          "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.effective.toDate()"
-              }
-            }
-          ],
-          "linkId": "heartRateEffective",
-          "type": "date"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "heartRhythmId",
-          "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsHeartRate.entry.resource.effective.toDate()"
-              }
-            }
-          ],
-          "linkId": "heartRhythmEffective",
-          "type": "date"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBloodPressure.entry.resource.id"
-              }
-            }
-          ],
-          "linkId": "bloodPressureId",
-          "type": "string"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%ObsBloodPressure.entry.resource.effective.toDate()"
-              }
-            }
-          ],
-          "linkId": "bloodPressureEffective",
-          "type": "date"
         },
         {
           "extension": [
@@ -291,9 +87,10 @@
                     }
                   ],
                   "linkId": "7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea",
-                  "text": "Value",
+                  "text": "Last result",
                   "type": "decimal",
-                  "repeats": false
+                  "repeats": false,
+                  "readOnly": true
                 },
                 {
                   "extension": [
@@ -306,26 +103,62 @@
                     }
                   ],
                   "linkId": "c666ac96-1e64-40e2-8e0b-7d0187bb3e50",
-                  "text": "Date performed",
+                  "text": "Last result date",
                   "type": "date",
-                  "repeats": false
-                }
-              ],
-              "extension": [
+                  "repeats": false,
+                  "readOnly": true
+                },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#BodyHeight"
-                      }
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#BodyHeight"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
                     },
                     {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='bodyHeightEffective').answer.value =  %resource.repeat(item).where(linkId='c666ac96-1e64-40e2-8e0b-7d0187bb3e50').answer.value, '_id=' + %resource.repeat(item).where(linkId='bodyHeightId').answer.value)"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
                     }
-                  ]
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-height-value-2-unit",
+                      "text": "cm",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-height-value-2",
+                  "text": "New result",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "linkId": "exam-height-date-2",
+                  "text": "New result date",
+                  "type": "date",
+                  "repeats": false
                 }
               ],
               "linkId": "6226a5c5-b5c3-4ebb-a689-2b286322cfe0",
@@ -373,9 +206,10 @@
                     }
                   ],
                   "linkId": "443bd584-684a-449c-ab6e-9d07da4df9fa",
-                  "text": "Value",
+                  "text": "Last result",
                   "type": "decimal",
-                  "repeats": false
+                  "repeats": false,
+                  "readOnly": true
                 },
                 {
                   "extension": [
@@ -388,26 +222,62 @@
                     }
                   ],
                   "linkId": "92cdc1c7-eb6c-4f6d-9bd9-ae726a0e0d3d",
-                  "text": "Date performed",
+                  "text": "Last result date",
                   "type": "date",
-                  "repeats": false
-                }
-              ],
-              "extension": [
+                  "repeats": false,
+                  "readOnly": true
+                },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#BodyWeight"
-                      }
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#BodyWeight"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
                     },
                     {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='bodyWeightEffective').answer.value =  %resource.repeat(item).where(linkId='92cdc1c7-eb6c-4f6d-9bd9-ae726a0e0d3d').answer.value, '_id=' + %resource.repeat(item).where(linkId='bodyWeightId').answer.value)"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "kg",
+                        "system": "http://unitsofmeasure.org"
+                      }
                     }
-                  ]
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-weight-value-2-unit",
+                      "text": "kg",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-weight-value-2",
+                  "text": "New result",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "linkId": "exam-weight-date-2",
+                  "text": "New result date",
+                  "type": "date",
+                  "repeats": false
                 }
               ],
               "linkId": "97ed4c86-8820-4e4d-9234-0e0e8b6ca44a",
@@ -456,7 +326,58 @@
                     }
                   ],
                   "linkId": "2ada6633-03c6-4b05-bc23-18dec84ec150",
-                  "text": "Value",
+                  "text": "Last result",
+                  "type": "decimal",
+                  "repeats": false,
+                  "readOnly": true
+                },
+                {
+                  "linkId": "exam-bmi-spacer",
+                  "text": "Last result date",
+                  "type": "string",
+                  "repeats": false,
+                  "readOnly": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "description": "BMI calculation",
+                        "language": "text/fhirpath",
+                        "expression": "(%weight2/((%height2/100).power(2))).round(1)"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "kg/m2",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-bmi-value-2-unit",
+                      "text": "kg/m2",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-bmi-value-2",
+                  "text": "New result",
                   "type": "decimal",
                   "repeats": false,
                   "readOnly": true
@@ -507,9 +428,10 @@
                     }
                   ],
                   "linkId": "8df0f5d8-821d-4f71-b3c1-d164616ea2f5",
-                  "text": "Value",
+                  "text": "Last result",
                   "type": "decimal",
-                  "repeats": false
+                  "repeats": false,
+                  "readOnly": true
                 },
                 {
                   "extension": [
@@ -522,26 +444,62 @@
                     }
                   ],
                   "linkId": "3eb3b929-e67a-4331-8949-b8447b66a4c7",
-                  "text": "Date performed",
+                  "text": "Last result date",
                   "type": "date",
-                  "repeats": false
-                }
-              ],
-              "extension": [
+                  "repeats": false,
+                  "readOnly": true
+                },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#WaistCircumference"
-                      }
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#WaistCircumference"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
                     },
                     {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='waistCircumferenceEffective').answer.value =  %resource.repeat(item).where(linkId='3eb3b929-e67a-4331-8949-b8447b66a4c7').answer.value, '_id=' + %resource.repeat(item).where(linkId='waistCircumferenceId').answer.value)"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
                     }
-                  ]
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-waist-circumference-value-2-unit",
+                      "text": "cm",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-waist-circumference-value-2",
+                  "text": "New result",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "linkId": "exam-waist-circumference-date-2",
+                  "text": "New result date",
+                  "type": "date",
+                  "repeats": false
                 }
               ],
               "linkId": "ec884b64-ed8d-485b-930f-e7ac18ad4cc9",
@@ -589,9 +547,10 @@
                     }
                   ],
                   "linkId": "49029ef0-eaa8-44f8-b26a-177820c82dfd",
-                  "text": "Value",
+                  "text": "Last result",
                   "type": "integer",
-                  "repeats": false
+                  "repeats": false,
+                  "readOnly": true
                 },
                 {
                   "extension": [
@@ -604,26 +563,62 @@
                     }
                   ],
                   "linkId": "feeac08f-2ba6-4048-80a2-10b3f90cf5e3",
-                  "text": "Date performed",
+                  "text": "Last result date",
                   "type": "date",
-                  "repeats": false
-                }
-              ],
-              "extension": [
+                  "repeats": false,
+                  "readOnly": true
+                },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#HeartRate"
-                      }
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#HeartRate"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
                     },
                     {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='heartRateEffective').answer.value =  %resource.repeat(item).where(linkId='feeac08f-2ba6-4048-80a2-10b3f90cf5e3').answer.value, '_id=' + %resource.repeat(item).where(linkId='heartRateId').answer.value)"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "/min",
+                        "system": "http://unitsofmeasure.org"
+                      }
                     }
-                  ]
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-heart-rate-value-2-unit",
+                      "text": "/min",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-heart-rate-value-2",
+                  "text": "New result",
+                  "type": "integer",
+                  "repeats": false
+                },
+                {
+                  "linkId": "exam-heart-rate-date-2",
+                  "text": "New result date",
+                  "type": "date",
+                  "repeats": false
                 }
               ],
               "linkId": "3d3e1079-d225-447b-959b-4caddc057f7d",
@@ -648,7 +643,61 @@
                     }
                   ],
                   "linkId": "99a8eb6f-a36a-4daf-99d7-27bfde0d4bb1",
-                  "text": "Value",
+                  "text": "Last result",
+                  "type": "choice",
+                  "repeats": false,
+                  "readOnly": true,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "271636001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pulse regular"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "61086009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pulse irregular"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "eeb56682-0eae-4428-9c37-0e63852026c0",
+                  "text": "Last result date",
+                  "type": "date",
+                  "repeats": false,
+                  "readOnly": true
+                },
+                {
+                  "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#HeartRhythm"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "radio-button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "exam-heart-rhythm-value-2",
+                  "text": "New result",
                   "type": "choice",
                   "repeats": false,
                   "answerOption": [
@@ -669,27 +718,10 @@
                   ]
                 },
                 {
-                  "linkId": "eeb56682-0eae-4428-9c37-0e63852026c0",
-                  "text": "Date performed",
+                  "linkId": "exam-heart-rhythm-date-2",
+                  "text": "New result date",
                   "type": "date",
                   "repeats": false
-                }
-              ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#HeartRhythm"
-                      }
-                    },
-                    {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='heartRhythmEffective').answer.value =  %resource.repeat(item).where(linkId='eeb56682-0eae-4428-9c37-0e63852026c0').answer.value, '_id=' + %resource.repeat(item).where(linkId='heartRhythmId').answer.value)"
-                    }
-                  ]
                 }
               ],
               "linkId": "8d3d05cc-64bc-47ae-b989-060bac838d1c",
@@ -758,9 +790,10 @@
                     }
                   ],
                   "linkId": "e68b660d-cfd2-4b89-957a-c96a4c73a5fd",
-                  "text": "Systolic",
+                  "text": "Last systolic",
                   "type": "integer",
-                  "repeats": false
+                  "repeats": false,
+                  "readOnly": true
                 },
                 {
                   "extension": [
@@ -800,9 +833,10 @@
                     }
                   ],
                   "linkId": "867b0022-f812-4f80-b287-79686c972b15",
-                  "text": "Diastolic",
+                  "text": "Last diastolic",
                   "type": "integer",
-                  "repeats": false
+                  "repeats": false,
+                  "readOnly": true
                 },
                 {
                   "extension": [
@@ -815,26 +849,97 @@
                     }
                   ],
                   "linkId": "a005050c-ed79-46ed-ac14-2fc1496059a5",
-                  "text": "Date performed",
+                  "text": "Last result date",
                   "type": "date",
-                  "repeats": false
-                }
-              ],
-              "extension": [
+                  "repeats": false,
+                  "readOnly": true
+                },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#BloodPressure"
-                      }
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#BloodPressure"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
                     },
                     {
-                      "url": "ifNoneExist",
-                      "valueString": "iif(%resource.repeat(item).where(linkId='bloodPressureEffective').answer.value =  %resource.repeat(item).where(linkId='a005050c-ed79-46ed-ac14-2fc1496059a5').answer.value, '_id=' + %resource.repeat(item).where(linkId='bloodPressureId').answer.value)"
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "mm[Hg]",
+                        "system": "http://unitsofmeasure.org"
+                      }
                     }
-                  ]
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-blood-pressure-systolic-2-unit",
+                      "text": "mm Hg",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-blood-pressure-systolic-2",
+                  "text": "New systolic",
+                  "type": "integer",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "mm[Hg]",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "exam-blood-pressure-diastolic-2-unit",
+                      "text": "mm Hg",
+                      "type": "display"
+                    }
+                  ],
+                  "linkId": "exam-blood-pressure-diastolic-2",
+                  "text": "New diastolic",
+                  "type": "integer",
+                  "repeats": false
+                },
+                {
+                  "linkId": "exam-blood-pressure-date-2",
+                  "text": "New result date",
+                  "type": "date",
+                  "repeats": false
                 }
               ],
               "linkId": "705f6d04-acab-4d14-baab-98f9bfc4808e",
@@ -1361,12 +1466,12 @@
       ]
     },
     {
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
-      "valueString": "ObsBloodPressure"
-    },
-    {
-      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
-      "valueString": "age"
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsBloodPressure",
+        "language": "application/x-fhir-query",
+        "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/variable",
@@ -1423,9 +1528,25 @@
         "language": "text/fhirpath",
         "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "weight2",
+        "language": "text/fhirpath",
+        "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='exam-weight-value-2').answer.value"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "height2",
+        "language": "text/fhirpath",
+        "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='exam-height-value-2').answer.value"
+      }
     }
   ],
-  "name": "ExaminationExtractTest",
+  "name": "ExaminationExtractTest2",
   "status": "draft",
   "experimental": false,
   "subjectType": [

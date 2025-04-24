@@ -11,6 +11,7 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
 * contained[+] = condition-clinical
 * contained[+] = clinical-condition-1
 * contained[+] = Condition
+* contained[+] = Parameters
 /*
 * contained[+] = MedicalHistory
 * contained[+] = MedicalHistoryShortListInfants
@@ -18,47 +19,24 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
 * contained[+] = MedicalHistoryShortListAdolescents
 * contained[+] = MedicalHistoryShortListAdultsAndOlderPeople
 */
-
+/*
 //assemble expectation
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
   * valueCode = #assemble-child
-
+*/
 //launch context
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-  * extension[+]
-    * url = "name"
-    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
-  * extension[+]
-    * url = "type"
-    * valueCode = #Patient
-  * extension[+]
-    * url = "description"
-    * valueString = "The patient that is to be used to pre-populate the form"
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-  * extension[+]
-    * url = "name"
-    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#user
-  * extension[+]
-    * url = "type"
-    * valueCode = #Practitioner
-  * extension[+]
-    * url = "description"
-    * valueString = "The practitioner user that is to be used to pre-populate the form"
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-  * extension[+]
-    * url = "name"
-    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#encounter
-  * extension[+]
-    * url = "type"
-    * valueCode = #Encounter
-  * extension[+]
-    * url = "description"
-    * valueString = "The encounter that is to be used to pre-populate the form"
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][+].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][=].extension[type].valueCode = #Patient
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][=].extension[description].valueString = "The patient that is to be used to pre-populate the form"
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][+].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#user
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][=].extension[type].valueCode = #Practitioner
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][=].extension[description].valueString = "The practitioner user that is to be used to pre-populate the form"
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][+].extension[name].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#encounter
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][=].extension[type].valueCode = #Encounter
+* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext][=].extension[description].valueString = "The encounter that is to be used to pre-populate the form"
 
+/*
 //assemble context
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
@@ -66,9 +44,18 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "Condition"
+*/
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "Condition"
+    * language = #application/x-fhir-query
+    * expression = "Condition?patient={{%patient.id}}"
+
+
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
+//* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryExtractTest"
 * name = "MedicalHistoryExtractTest"
@@ -86,6 +73,7 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
   * text = "Medical history and current problems"
   * type = #group
   * repeats = false
+  
   * item[+] //in-progress
     * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
     * linkId = "CD-in-progress-17"
@@ -113,6 +101,8 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
     <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
     </div>"    
     * type = #display 
+
+    
 /*   * item[+]
    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
@@ -154,6 +144,7 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
 // table of existing medical history
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#Parameters"
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ConditionRepeat"
       * language = #text/fhirpath
@@ -166,6 +157,7 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
     </div>"
     * type = #group
     * repeats = true
+    * readOnly = true
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
       * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -174,7 +166,6 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
       * linkId = "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"
       * text = "Condition"
       * type = #open-choice
-      * readOnly = true
       * answerValueSet = "#clinical-condition-1"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
@@ -192,7 +183,6 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
       * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
       * text = "Onset Date"
       * type = #date
-      * readOnly = true
 /*    * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -230,6 +220,7 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
       * text = "Recorded Date"
       * type = #date
 */
+
   * item[+]
     * linkId = "62774152-8a6e-4449-af9f-87bdce8b9bf5"
     * text = "Health priorities, actions and follow-up"
@@ -242,3 +233,4 @@ Description: "MedicalHistoryExtractTest sub-questionnaire for Aboriginal and Tor
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
     * type = #boolean
     * repeats = false
+
