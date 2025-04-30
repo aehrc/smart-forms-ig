@@ -745,9 +745,9 @@ Description: "The Australian Pronouns value set includes values that indicate th
 * ^expansion.contains[=].version = "5.0.0-ballot"
 * ^expansion.contains[=].code = #unknown
 * ^expansion.contains[=].display = "Unknown"
-* LOINC#LA29518-0 "he/him/his/his/himself"
-* LOINC#LA29519-8 "she/her/her/hers/herself"
-* LOINC#LA29520-6 "they/them/their/theirs/themselves"
+* $LOINC#LA29518-0 "he/him/his/his/himself"
+* $LOINC#LA29519-8 "she/her/her/hers/herself"
+* $LOINC#LA29520-6 "they/them/their/theirs/themselves"
 * DataAbsentReason#unknown
 * DataAbsentReason#asked-declined
 * DataAbsentReason#not-asked

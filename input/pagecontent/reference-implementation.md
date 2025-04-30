@@ -12,6 +12,14 @@ The source code and additional information is available at the [Smart Forms GitH
 
 If you are interested in using the rendering engine in your projects, a standalone package is published on NPM as [@aehrc/smart-forms-renderer](https://www.npmjs.com/package/@aehrc/smart-forms-renderer).
 
+#### Smart Health Checks Application
+
+Try it out here: <https://healthchecks.smartforms.io/>
+
+An instance of the Smart Forms Application is hosted to act in the role of the Smart Health Checks Application. It serves as a Smart Health Checks Commons Services component.
+
+For more information on this specific instance see the [Smart Health Check Integration](smart-health-check-integration.html) page.
+
 
 #### Smart Forms Server
 

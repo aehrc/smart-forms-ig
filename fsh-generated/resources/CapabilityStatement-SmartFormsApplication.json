@@ -65,13 +65,8 @@
             },
             {
               "code": "create"
-            },
-            {
-              "code": "update"
             }
           ],
-          "conditionalCreate": true,
-          "conditionalUpdate": true,
           "searchParam": [
             {
               "name": "patient",
@@ -108,13 +103,8 @@
             },
             {
               "code": "create"
-            },
-            {
-              "code": "update"
             }
           ],
-          "conditionalCreate": true,
-          "conditionalUpdate": true,
           "searchParam": [
             {
               "name": "patient",
@@ -171,7 +161,6 @@
               "code": "create"
             }
           ],
-          "conditionalCreate": true,
           "searchParam": [
             {
               "name": "patient",
@@ -196,12 +185,8 @@
           "interaction": [
             {
               "code": "read"
-            },
-            {
-              "code": "create"
             }
-          ],
-          "conditionalCreate": true
+          ]
         },
         {
           "extension": [
@@ -227,16 +212,8 @@
           "interaction": [
             {
               "code": "search-type"
-            },
-            {
-              "code": "create"
-            },
-            {
-              "code": "update"
             }
           ],
-          "conditionalCreate": true,
-          "conditionalUpdate": true,
           "searchInclude": [
             "MedicationRequest:medication"
           ],
@@ -300,7 +277,6 @@
               "code": "create"
             }
           ],
-          "conditionalCreate": true,
           "searchParam": [
             {
               "name": "patient",
@@ -336,12 +312,8 @@
           "interaction": [
             {
               "code": "read"
-            },
-            {
-              "code": "update"
             }
-          ],
-          "conditionalUpdate": true
+          ]
         },
         {
           "type": "Practitioner",
