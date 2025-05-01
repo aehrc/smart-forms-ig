@@ -91,6 +91,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation"
 * name = "AbsoluteCVDRiskCalculation"
+* title = "Aboriginal and Torres Strait Islander Health Check - Absolute Cardiovascular Disease Risk Calculation"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient

@@ -60,7 +60,6 @@
         "reference": {
           "reference": "Questionnaire/AboriginalTorresStraitIslanderHealthCheck"
         },
-        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
         "exampleBoolean": false,
         "name": "Aboriginal and Torres Strait Islander Health Check"
       },
@@ -258,6 +257,14 @@
       },
       {
         "reference": {
+          "reference": "Questionnaire/PhysicalActivityAndScreenTime"
+        },
+        "name": "Aboriginal and Torres Strait Islander Health Check - Physical Activity And Screen Time",
+        "description": "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/RedFlagsEarlyIdentificationGuide"
         },
         "name": "Aboriginal and Torres Strait Islander Health Check - Red Flags Early Identification Guide For Children",
@@ -423,14 +430,6 @@
         "name": "Gender Identity Response",
         "description": "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience.",
         "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "Questionnaire/PhysicalActivityAndScreenTime"
-        },
-        "name": "Physical Activity And Screen Time",
-        "description": "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
-        "exampleBoolean": true
       },
       {
         "reference": {

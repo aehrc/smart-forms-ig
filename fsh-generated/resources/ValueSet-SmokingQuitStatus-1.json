@@ -10,31 +10,44 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-      "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+      "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
     }
   ],
   "expansion": {
-    "identifier": "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db",
-    "timestamp": "2024-04-08T12:56:59+10:00",
-    "total": 2,
+    "identifier": "urn:uuid:93600010-14a0-4d6e-a82f-15283d13a2cb",
+    "timestamp": "2025-05-01T11:41:24+10:00",
     "parameter": [
       {
-        "name": "version",
-        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+        "name": "used-supplement",
+        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
       },
       {
         "name": "used-codesystem",
-        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+      },
+      {
+        "name": "version",
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+      },
+      {
+        "name": "warning-draft",
+        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+      },
+      {
+        "name": "warning-draft",
+        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.3.0"
       }
     ],
     "contains": [
       {
         "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
         "code": "48031000119106",
         "display": "Quit >12 months"
       },
       {
         "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
         "code": "735128000",
         "display": "Quit <12 months"
       }
@@ -44,6 +57,7 @@
     "include": [
       {
         "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
         "concept": [
           {
             "code": "48031000119106",

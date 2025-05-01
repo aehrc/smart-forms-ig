@@ -409,13 +409,26 @@
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
       "experimental": false,
       "expansion": {
-        "identifier": "urn:uuid:06bfacf3-ef16-4470-86a0-a2a22f49ff91",
-        "timestamp": "2023-09-01T11:15:01+10:00",
+        "identifier": "urn:uuid:41cccc66-fd57-4bc4-bab1-8c5c878d95f7",
+        "timestamp": "2025-05-01T10:00:50+10:00",
         "total": 2,
+        "offset": 0,
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
           },
           {
             "name": "used-codesystem",
@@ -463,13 +476,26 @@
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
       "experimental": false,
       "expansion": {
-        "identifier": "urn:uuid:5baa5444-e553-4412-a08c-9ce93d3271e0",
-        "timestamp": "2023-09-01T11:16:50+10:00",
+        "identifier": "urn:uuid:7fce8cc7-b936-4258-921d-923629b04439",
+        "timestamp": "2025-05-01T10:00:47+10:00",
         "total": 3,
+        "offset": 0,
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
           },
           {
             "name": "used-codesystem",
@@ -589,6 +615,7 @@
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/LearningAndWork",
   "name": "LearningAndWork",
+  "title": "Aboriginal and Torres Strait Islander Health Check - Learning And Work",
   "status": "draft",
   "experimental": false,
   "subjectType": [

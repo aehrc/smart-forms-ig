@@ -626,13 +626,26 @@
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNo",
       "experimental": false,
       "expansion": {
-        "identifier": "urn:uuid:06bfacf3-ef16-4470-86a0-a2a22f49ff91",
-        "timestamp": "2023-09-01T11:15:01+10:00",
+        "identifier": "urn:uuid:41cccc66-fd57-4bc4-bab1-8c5c878d95f7",
+        "timestamp": "2025-05-01T10:00:50+10:00",
         "total": 2,
+        "offset": 0,
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
           },
           {
             "name": "used-codesystem",
@@ -680,49 +693,54 @@
       "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined",
       "experimental": false,
       "expansion": {
-        "identifier": "urn:uuid:8eda7c3c-cc35-49fa-ac6c-c0e4f0a4e203",
-        "timestamp": "2023-09-01T11:17:57+10:00",
+        "identifier": "urn:uuid:20552db7-8def-4e55-a0d2-cb446651929c",
+        "timestamp": "2025-05-01T10:00:51+10:00",
         "total": 4,
+        "offset": 0,
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
           },
           {
             "name": "used-codesystem",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
-          },
-          {
-            "name": "version",
             "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
           },
           {
             "name": "used-codesystem",
-            "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+            "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
           }
         ],
         "contains": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
-            "version": "2.1.0",
             "code": "Y",
             "display": "Yes"
           },
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
-            "version": "2.1.0",
             "code": "N",
             "display": "No"
           },
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
-            "version": "2.1.0",
             "code": "NASK",
             "display": "Not Asked"
           },
           {
             "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-            "version": "5.0.0-ballot",
             "code": "asked-declined",
             "display": "Asked But Declined"
           }
@@ -775,24 +793,44 @@
         }
       ],
       "expansion": {
-        "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
-        "timestamp": "2024-04-08T10:41:42+10:00",
-        "total": 4,
+        "identifier": "urn:uuid:4d42d172-e817-40be-a265-56aebe2f4f10",
+        "timestamp": "2025-05-01T10:01:02+10:00",
+        "offset": 0,
         "parameter": [
           {
-            "name": "version",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
+          },
+          {
+            "name": "used-valueset",
+            "valueUri": "null"
           },
           {
             "name": "used-codesystem",
-            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+          },
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
           }
         ],
         "contains": [
           {
             "system": "http://snomed.info/sct",
             "code": "736595007",
-            "display": "Declined"
+            "display": "Cervical cancer screening refused"
           },
           {
             "system": "http://snomed.info/sct",
@@ -802,12 +840,12 @@
           {
             "system": "http://snomed.info/sct",
             "code": "171154002",
-            "display": "Not required"
+            "display": "Cancer cervix screening - not needed"
           },
           {
             "system": "http://snomed.info/sct",
             "code": "171155001",
-            "display": "Up to date"
+            "display": "Cancer cervix screening - up-to-date"
           }
         ]
       },
@@ -910,6 +948,7 @@
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/SexualHealth",
   "name": "SexualHealth",
+  "title": "Aboriginal and Torres Strait Islander Health Check - Sexual Health",
   "status": "draft",
   "experimental": false,
   "subjectType": [

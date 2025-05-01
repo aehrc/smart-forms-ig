@@ -5,7 +5,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 Instance: PhysicalActivityAndScreenTime
 InstanceOf: Questionnaire
 Usage: #example
-Title: "Physical Activity And Screen Time"
+Title: "Aboriginal and Torres Strait Islander Health Check - Physical Activity And Screen Time"
 Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
@@ -60,6 +60,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime"
 * name = "PhysicalActivityAndScreenTime"
+* title = "Aboriginal and Torres Strait Islander Health Check - Physical Activity And Screen Time"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient

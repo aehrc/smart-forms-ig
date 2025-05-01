@@ -34,22 +34,30 @@
   ],
   "copyright": "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
   "expansion": {
-    "identifier": "e9439195-c1d8-4069-a349-98c1d552a351",
-    "timestamp": "2023-06-20T04:20:58+00:00",
+    "identifier": "urn:uuid:148e9412-a321-4a6f-b911-7e7908be82af",
+    "timestamp": "2025-05-01T10:00:57+10:00",
     "total": 9,
     "offset": 0,
     "parameter": [
       {
-        "name": "version",
-        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"
+        "name": "displayLanguage",
+        "valueCode": "en-US"
       },
       {
         "name": "count",
-        "valueInteger": 2147483647
+        "valueInteger": 1000
       },
       {
         "name": "offset",
         "valueInteger": 0
+      },
+      {
+        "name": "excludeNested",
+        "valueBoolean": false
+      },
+      {
+        "name": "used-codesystem",
+        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1|1.1.3"
       }
     ],
     "contains": [

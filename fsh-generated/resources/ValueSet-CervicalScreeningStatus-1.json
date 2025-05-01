@@ -14,24 +14,44 @@
     }
   ],
   "expansion": {
-    "identifier": "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d",
-    "timestamp": "2024-04-08T10:41:42+10:00",
-    "total": 4,
+    "identifier": "urn:uuid:4d42d172-e817-40be-a265-56aebe2f4f10",
+    "timestamp": "2025-05-01T10:01:02+10:00",
+    "offset": 0,
     "parameter": [
       {
-        "name": "version",
-        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+        "name": "displayLanguage",
+        "valueCode": "en-US"
+      },
+      {
+        "name": "count",
+        "valueInteger": 1000
+      },
+      {
+        "name": "offset",
+        "valueInteger": 0
+      },
+      {
+        "name": "excludeNested",
+        "valueBoolean": false
+      },
+      {
+        "name": "used-valueset",
+        "valueUri": "null"
       },
       {
         "name": "used-codesystem",
-        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+      },
+      {
+        "name": "version",
+        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
       }
     ],
     "contains": [
       {
         "system": "http://snomed.info/sct",
         "code": "736595007",
-        "display": "Declined"
+        "display": "Cervical cancer screening refused"
       },
       {
         "system": "http://snomed.info/sct",
@@ -41,12 +61,12 @@
       {
         "system": "http://snomed.info/sct",
         "code": "171154002",
-        "display": "Not required"
+        "display": "Cancer cervix screening - not needed"
       },
       {
         "system": "http://snomed.info/sct",
         "code": "171155001",
-        "display": "Up to date"
+        "display": "Cancer cervix screening - up-to-date"
       }
     ]
   },

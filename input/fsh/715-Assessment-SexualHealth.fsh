@@ -62,6 +62,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/SexualHealth"
 * name = "SexualHealth"
+* title = "Aboriginal and Torres Strait Islander Health Check - Sexual Health"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient

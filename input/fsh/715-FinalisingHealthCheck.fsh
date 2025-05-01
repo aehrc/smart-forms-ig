@@ -59,6 +59,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck"
 * name = "FinalisingHealthCheck"
+* title = "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient

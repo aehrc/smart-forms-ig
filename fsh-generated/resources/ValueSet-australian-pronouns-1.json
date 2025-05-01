@@ -28,69 +28,79 @@
   ],
   "copyright": "Copyright © 2024 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis material contains content from LOINC (http://loinc.org). LOINC is copyright 1995-2024, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.\n\nThis material contains information which is protected by copyright. You may download, display, print and reproduce any material for your personal, non-commercial use or use within your organisation subject to the following terms and conditions: \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license.",
   "expansion": {
-    "identifier": "urn:uuid:ca145c1c-4915-4957-888a-39e69de8b1ad",
-    "timestamp": "2024-04-02T14:25:01+10:00",
+    "identifier": "urn:uuid:1bc98e8c-511f-4014-a4d9-a48a8db0923d",
+    "timestamp": "2025-05-01T10:00:56+10:00",
     "total": 7,
+    "offset": 0,
     "parameter": [
       {
-        "name": "version",
-        "valueUri": "http://loinc.org|2.77"
+        "name": "displayLanguage",
+        "valueCode": "en-US"
+      },
+      {
+        "name": "count",
+        "valueInteger": 1000
+      },
+      {
+        "name": "offset",
+        "valueInteger": 0
+      },
+      {
+        "name": "excludeNested",
+        "valueBoolean": false
+      },
+      {
+        "name": "used-valueset",
+        "valueUri": "null"
       },
       {
         "name": "used-codesystem",
-        "valueUri": "http://loinc.org|2.77"
+        "valueUri": "http://loinc.org|2.80"
       },
       {
         "name": "version",
-        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+        "valueUri": "http://loinc.org|2.80"
       },
       {
         "name": "used-codesystem",
-        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"
+        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
       }
     ],
     "contains": [
       {
         "system": "http://loinc.org",
-        "version": "2.77",
         "code": "LA29518-0",
         "display": "he/him/his/his/himself"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.77",
         "code": "LA29519-8",
         "display": "she/her/her/hers/herself"
       },
       {
         "system": "http://loinc.org",
-        "version": "2.77",
         "code": "LA29520-6",
         "display": "they/them/their/theirs/themselves"
       },
       {
         "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-        "version": "5.0.0-ballot",
+        "code": "unknown",
+        "display": "Unknown"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
         "code": "asked-declined",
         "display": "Asked But Declined"
       },
       {
         "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-        "version": "5.0.0-ballot",
-        "code": "asked-unknown",
-        "display": "Asked But Unknown"
-      },
-      {
-        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-        "version": "5.0.0-ballot",
         "code": "not-asked",
         "display": "Not Asked"
       },
       {
         "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-        "version": "5.0.0-ballot",
-        "code": "unknown",
-        "display": "Unknown"
+        "code": "asked-unknown",
+        "display": "Asked But Unknown"
       }
     ]
   },

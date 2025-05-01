@@ -74,6 +74,7 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck"
 * name = "AboutTheHealthCheck"
+* title = "Aboriginal and Torres Strait Islander Health Check - About The Health Check"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient

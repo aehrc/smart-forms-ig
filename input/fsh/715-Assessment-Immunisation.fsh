@@ -60,6 +60,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/Immunisation"
 * name = "Immunisation"
+* title = "Aboriginal and Torres Strait Islander Health Check - Immunisation"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient

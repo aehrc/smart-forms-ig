@@ -58,6 +58,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions"
 * name = "AllergiesAdverseReactions"
+* title = "Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
