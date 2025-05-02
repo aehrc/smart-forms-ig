@@ -87,23 +87,161 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "check-box",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
+          "linkId": "allergyinstruction",
+          "text": "Adverse reaction risk summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Adverse reaction risk summary</p>\r\n    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n    </div>"
               }
+            ]
+          },
+          "type": "group",
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "AllergyIntoleranceRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+                  }
+                }
+              ],
+              "linkId": "allergysummary",
+              "type": "group",
+              "repeats": true,
+              "readOnly": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "allergysummary-substance",
+                  "text": "Substance",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "required": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "allergysummary-manifestation",
+                  "text": "Manifestation",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%AllergyIntoleranceRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "allergysummary-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "allergynew",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "allergynew-substance",
+                  "text": "Substance",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "required": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "allergynew-manifestation",
+                  "text": "Manifestation",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
+                },
+                {
+                  "linkId": "allergynew-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
             }
-          ],
-          "linkId": "8a1d70bf-a68b-4b7b-be73-ba6956fccc78",
-          "text": "Up to date in the health record?",
-          "type": "boolean",
-          "repeats": false
+          ]
         },
         {
           "linkId": "3e689aeb-69a1-4a9b-93bd-50377511dd9b",
@@ -126,7 +264,7 @@
           "repeats": false
         }
       ],
-      "linkId": "d4e4db07-a795-4a30-bd0f-9c109f96a22b",
+      "linkId": "allergy",
       "text": "Allergies/adverse reactions",
       "type": "group",
       "repeats": false
@@ -200,6 +338,14 @@
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
       "valueString": "age"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "AllergyIntolerance",
+        "language": "application/x-fhir-query",
+        "expression": "AllergyIntolerance?patient={{%patient.id}}"
+      }
     }
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions",
