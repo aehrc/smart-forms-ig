@@ -47,11 +47,20 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
   * extension[+]
     * url = "description"
     * valueString = "The encounter that is to be used to pre-populate the form"
-    
+ 
 //assemble context
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
+
+//fhir query variables
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "AllergyIntolerance"
+    * language = #application/x-fhir-query
+    * expression = "AllergyIntolerance?patient={{%patient.id}}"
+
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
@@ -69,7 +78,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"
-  * linkId = "d4e4db07-a795-4a30-bd0f-9c109f96a22b"
+  * linkId = "allergy"
   * text = "Allergies/adverse reactions"
   * type = #group
   * repeats = false
@@ -93,22 +102,88 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
       * question = "MarkComplete-3" // Section complete item
       * operator = #=
       * answerBoolean = true
-  * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box    
-    * linkId = "8a1d70bf-a68b-4b7b-be73-ba6956fccc78"
-    * text = "Up to date in the health record?"
-    * type = #boolean
-    * repeats = false
-  * item[+]
-    * linkId = "3e689aeb-69a1-4a9b-93bd-50377511dd9b"
-    * text = "Health priorities, actions and follow-up"
-    * type = #text
-    * repeats = false
 
+  // Adverse reaction risk summary
 
   * item[+]
-    * linkId = "MarkComplete-3"
-    * text = "Mark section as complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
-    * type = #boolean
-    * repeats = false
+    * linkId = "allergyinstruction"
+    * text = "Adverse reaction risk summary"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p>Adverse reaction risk summary</p>
+    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>
+    </div>"    
+    * type = #group 
+//existing adverse reactions
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
+* item[=].item[=].item[=].extension[=].valueExpression[+].name = "AllergyIntoleranceRepeat"
+* item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+* item[=].item[=].item[=].linkId = "allergysummary"
+* item[=].item[=].item[=].type = #group
+* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].readOnly = true
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+* item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item[=].item[=].item[=].item[=].linkId = "allergysummary-substance"
+* item[=].item[=].item[=].item[=].text = "Substance"
+* item[=].item[=].item[=].item[=].type = #open-choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
+* item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item[=].item[=].item[=].item[=].linkId = "allergysummary-manifestation"
+* item[=].item[=].item[=].item[=].text = "Manifestation"
+* item[=].item[=].item[=].item[=].type = #open-choice
+* item[=].item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
+// manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.note.text"
+* item[=].item[=].item[=].item[=].linkId = "allergysummary-comment"
+* item[=].item[=].item[=].item[=].text = "Comment"
+* item[=].item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].item[=].repeats = false
+
+//new adverse reactions
+* item[=].item[=].item[+].linkId = "allergynew"
+* item[=].item[=].item[=].type = #group
+* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item[=].item[=].item[=].item[=].linkId = "allergynew-substance"
+* item[=].item[=].item[=].item[=].text = "Substance"
+* item[=].item[=].item[=].item[=].type = #open-choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item[=].item[=].item[=].item[=].linkId = "allergynew-manifestation"
+* item[=].item[=].item[=].item[=].text = "Manifestation"
+* item[=].item[=].item[=].item[=].type = #open-choice
+* item[=].item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
+// manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+* item[=].item[=].item[=].item[+].linkId = "allergynew-comment"
+* item[=].item[=].item[=].item[=].text = "Comment"
+* item[=].item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].item[=].repeats = false
+
+* item[=].item[+].linkId = "3e689aeb-69a1-4a9b-93bd-50377511dd9b"
+* item[=].item[=].text = "Health priorities, actions and follow-up"
+* item[=].item[=].type = #text
+* item[=].item[=].repeats = false
+
+* item[=].item[+].linkId = "MarkComplete-3"
+* item[=].item[=].text = "Mark section as complete"
+* item[=].item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
+* item[=].item[=].type = #boolean
+* item[=].item[=].repeats = false
