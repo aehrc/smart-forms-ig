@@ -10,15 +10,6 @@
   },
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-          "valueExpression": {
-            "language": "text/fhirpath",
-            "expression": "%age.exists()"
-          }
-        }
-      ],
       "item": [
         {
           "extension": [
@@ -87,17 +78,6 @@
           ]
         },
         {
-          "linkId": "allergyinstruction",
-          "text": "Adverse reaction risk summary",
-          "_text": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Adverse reaction risk summary</p>\r\n    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n    </div>"
-              }
-            ]
-          },
-          "type": "group",
           "item": [
             {
               "extension": [
@@ -188,10 +168,24 @@
               ]
             },
             {
-              "linkId": "allergynew",
-              "type": "group",
-              "repeats": true,
               "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%patient.id"
+                      }
+                    }
+                  ],
+                  "linkId": "patientIdAllergy",
+                  "type": "string"
+                },
                 {
                   "extension": [
                     {
@@ -239,9 +233,36 @@
                   "type": "string",
                   "repeats": false
                 }
-              ]
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#AllergyIntoleranceTemplate"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "linkId": "allergynew",
+              "type": "group",
+              "repeats": true
             }
-          ]
+          ],
+          "linkId": "allergyinstruction",
+          "text": "Adverse reaction risk summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Adverse reaction risk summary</p>\r\n    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n    </div>"
+              }
+            ]
+          },
+          "type": "group"
         },
         {
           "linkId": "3e689aeb-69a1-4a9b-93bd-50377511dd9b",
@@ -268,6 +289,113 @@
       "text": "Allergies/adverse reactions",
       "type": "group",
       "repeats": false
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "AllergyIntolerance",
+      "id": "AllergyIntoleranceTemplate",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+        ]
+      },
+      "clinicalStatus": {
+        "coding": [
+          {
+            "code": "active",
+            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+          }
+        ]
+      },
+      "code": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+            "valueString": "item.where(linkId='allergynew-substance').answer.value"
+          }
+        ],
+        "coding": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "ofType(Coding)"
+              }
+            ]
+          }
+        ],
+        "_text": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "ofType(string)"
+            }
+          ]
+        }
+      },
+      "patient": {
+        "_reference": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "'Patient/' + item.where(linkId='patientIdAllergy').answer.valueString"
+            }
+          ]
+        }
+      },
+      "note": [
+        {
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId='allergynew-comment').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "reaction": [
+        {
+          "manifestation": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+                  "valueString": "item.where(linkId='allergynew-manifestation').answer.value.ofType(Coding)"
+                }
+              ],
+              "coding": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                      "valueString": "$this"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+                  "valueString": "item.where(linkId='allergynew-manifestation').answer.value.ofType(string)"
+                }
+              ],
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "$this"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "extension": [

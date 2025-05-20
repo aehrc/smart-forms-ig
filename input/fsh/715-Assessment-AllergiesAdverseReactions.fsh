@@ -8,6 +8,8 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions"
 Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = AllergyIntoleranceTemplate
+
 //assemble expectation
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
@@ -75,9 +77,9 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "%age.exists()"
+    * expression = "%age.exists()"*/
   * linkId = "allergy"
   * text = "Allergies/adverse reactions"
   * type = #group
@@ -153,9 +155,17 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].repeats = false
 
 //new adverse reactions
-* item[=].item[=].item[+].linkId = "allergynew"
+* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+* item[=].item[=].item[=].extension[=].extension.url = "template"
+* item[=].item[=].item[=].extension[=].extension.valueReference = Reference(AllergyIntoleranceTemplate)
+* item[=].item[=].item[=].linkId = "allergynew"
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].item[+].extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
+* item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
+* item[=].item[=].item[=].item[=].linkId = "patientIdAllergy"
+* item[=].item[=].item[=].item[=].type = #string  
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item[=].item[=].item[=].item[=].linkId = "allergynew-substance"

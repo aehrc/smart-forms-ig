@@ -1366,3 +1366,52 @@ Description: "The Tobacco Use Status value set includes values that may be used 
 * $SCT|http://snomed.info/sct/32506021000036107/version/20250430#394872000 "Wants to quit"
 * $SCT|http://snomed.info/sct/32506021000036107/version/20250430#713914004 "Other tobacco use"
 
+ValueSet: AustralianMedicinesTerminologyVaccine
+Id: amt-vaccine-1
+Title: "Australian Medicines Terminology Vaccine"
+Description: "The Australian Medicines Terminology (AMT) Vaccine value set includes AMT product concepts that may be used to record a vaccine product."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/amt-vaccine-1"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10042"
+* ^version = "1.0.2"
+* ^status = #active
+* ^experimental = false
+* ^date = "2020-05-31"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\n This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
+* include codes from system SNOMED_CT where concept in "1156291000168106"
+
+ValueSet: SmartHealthChecksMedication
+Id: smarthealthchecks-medication
+Title: "Smart Health Checks Medication"
+Description: "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^experimental = false
+* include codes from system http://snomed.info/sct|http://snomed.info/sct/32506021000036107 where constraint = "^ 929360081000036101|Medicinal product pack reference set| AND ^ 929360071000036103|Medicinal product unit of use reference set| AND 929360041000036105|Trade product pack reference set| AND 929360031000036100|Trade product unit of use reference set| AND 929360051000036108|Containered trade product pack reference set|"
+
+Alias: $v3-ObservationValue = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
+
+ValueSet: MedicationReasonTaken
+Id: medication-reason-taken-1
+Title: "Medication Reason Taken"
+Description: "The Medication Reason Taken value set includes values that identify a reason why a medication has been or is being taken."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10048"
+* ^version = "1.1.0"
+* ^status = #active
+* ^experimental = false
+* ^date = "2020-07-31"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted.\n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
+* include codes from system SNOMED_CT
+    where constraint = "^ 32570581000036105|Problem/Diagnosis reference set| OR ^ 1184831000168105|Drug prophylaxis reference set| OR << 399097000|Administration of anaesthesia| OR 169443000|Preventive procedure|"
