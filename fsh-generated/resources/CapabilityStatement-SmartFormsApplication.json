@@ -65,6 +65,9 @@
             },
             {
               "code": "create"
+            },
+            {
+              "code": "patch"
             }
           ],
           "searchParam": [
@@ -103,6 +106,9 @@
             },
             {
               "code": "create"
+            },
+            {
+              "code": "patch"
             }
           ],
           "searchParam": [
@@ -159,6 +165,9 @@
             },
             {
               "code": "create"
+            },
+            {
+              "code": "patch"
             }
           ],
           "searchParam": [
@@ -212,6 +221,12 @@
           "interaction": [
             {
               "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "patch"
             }
           ],
           "searchInclude": [
@@ -312,6 +327,9 @@
           "interaction": [
             {
               "code": "read"
+            },
+            {
+              "code": "patch"
             }
           ]
         },
