@@ -11,6 +11,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * contained[+] = YesNo
 * contained[+] = smarthealthchecks-medication
 * contained[+] = medication-reason-taken-1
+* contained[+] = MedicationStatementTemplate
 
 
 * extension[0].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
@@ -142,27 +143,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
     </div>"    
 * item.item[=].type = #display
 
-* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age <= 12"
-* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-* item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
-* item.item[=].linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
-* item.item[=].text = "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
-* item.item[=].extension[sdc-questionnaire-shortText].valueString = "Does your child take any regular medications?"
-* item.item[=].type = #choice
-* item.item[=].repeats = false 
-* item.item[=].answerValueSet = "#YesNo"
-* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age > 12"
-* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-* item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
-* item.item[=].linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
-* item.item[=].text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
-* item.item[=].extension[sdc-questionnaire-shortText].valueString = "Do you take any regular medications?"
-* item.item[=].type = #choice
-* item.item[=].repeats = false  
-* item.item[=].answerValueSet = "#YesNo"
-
 * item.item[+].linkId = "regularmedications-summary"
 * item.item[=].text = "Medication summary"
 * item.item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
@@ -172,14 +152,15 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].type = #group
 * item.item[=].repeats = false
 
+// Current medications
 * item.item[=].item[0].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
 * item.item[=].item[=].extension[=].valueExpression[+].name = "MedicationStatementRepeat"
 * item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
 * item.item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatement.entry.resource"
 * item.item[=].item[=].linkId = "regularmedications-summary-current"
-* item.item[=].item[=].text = "Current medication summary"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
+* item.item[=].item[=].readOnly = true
 * item.item[=].item[=].item[0].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 /*
@@ -241,6 +222,56 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = true
 
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.reasonCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-reasoncode"
+* item.item[=].item[=].item[=].text = "Clinical indication"
+* item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].answerValueSet = "#medication-reason-taken-1"
+
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].name = "MedicationStatementNoteRepeat"
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementNoteRepeat.text"
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment"
+* item.item[=].item[=].item[=].text = "Comment"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = true
+
+// New medications
+* item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+* item.item[=].item[=].extension[=].extension.url = "template"
+* item.item[=].item[=].extension[=].extension.valueReference = Reference(MedicationStatementTemplate)
+* item.item[=].item[=].linkId = "regularmedications-summary-new"
+* item.item[=].item[=].type = #group
+* item.item[=].item[=].repeats = true
+
+* item.item[=].item[=].item[+].extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
+* item.item[=].item[=].item[=].linkId = "patientIdMedicationStatement"
+* item.item[=].item[=].item[=].type = #string
+
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-medication"
+* item.item[=].item[=].item[=].text = "Medication"
+* item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
+
+* item.item[=].item[=].item[+].linkId = "regularmedications-summary-current-dosage"
+* item.item[=].item[=].item[=].text = "Dosage"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].repeats = true
 
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension.valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
@@ -249,25 +280,48 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = true
 * item.item[=].item[=].item[=].answerValueSet = "#medication-reason-taken-1"
+
 * item.item[=].item[=].item[+].linkId = "regularmedications-summary-current-comment"
 * item.item[=].item[=].item[=].text = "Comment"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
 
+//* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+//* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age <= 12"
+* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+* item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
+* item.item[=].linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
+* item.item[=].text = "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
+* item.item[=].extension[sdc-questionnaire-shortText].valueString = "Does your child take any regular medications?"
+* item.item[=].type = #choice
+* item.item[=].repeats = false 
+* item.item[=].answerValueSet = "#YesNo"
+//* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+//* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age > 12"
+* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+* item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
+* item.item[=].linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
+* item.item[=].text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
+* item.item[=].extension[sdc-questionnaire-shortText].valueString = "Do you take any regular medications?"
+* item.item[=].type = #choice
+* item.item[=].repeats = false  
+* item.item[=].answerValueSet = "#YesNo"
 
+//* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
 * item.item[+].linkId = "874ec8db-95c9-4cc0-95db-e45edaa3cd12"
-* item.item[=].text = "Up to date in the health record?"
+* item.item[=].text = "Check the health record is up to date"
 * item.item[=].type = #boolean
 * item.item[=].repeats = false
-* item.item[=].enableWhen[+].question = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
+/** item.item[=].enableWhen[+].question = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
 * item.item[=].enableWhen[=].operator = #=
 * item.item[=].enableWhen[=].answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 * item.item[=].enableWhen[+].question = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
 * item.item[=].enableWhen[=].operator = #=
 * item.item[=].enableWhen[=].answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-* item.item[=].enableBehavior = #any
+* item.item[=].enableBehavior = #any*/
+//* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
 * item.item[+].linkId = "36290837-ad70-48b2-9c66-31533fec918b"
-* item.item[=].text = "Medication understanding and adherence has been checked with patient"
+* item.item[=].text = "Check medication understanding and adherence with patient"
 * item.item[=].extension[sdc-questionnaire-shortText].valueString = "Understanding and adherence checked"
 * item.item[=].type = #boolean
 * item.item[=].repeats = false

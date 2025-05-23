@@ -1392,7 +1392,7 @@ Description: "The Smart Health Checks Medication value set includes Australian M
 * ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
 * ^experimental = false
-* include codes from system http://snomed.info/sct|http://snomed.info/sct/32506021000036107 where constraint = "^ 929360081000036101|Medicinal product pack reference set| AND ^ 929360071000036103|Medicinal product unit of use reference set| AND 929360041000036105|Trade product pack reference set| AND 929360031000036100|Trade product unit of use reference set| AND 929360051000036108|Containered trade product pack reference set|"
+* include codes from system http://snomed.info/sct|http://snomed.info/sct/32506021000036107 where constraint = "^ 929360081000036101|Medicinal product pack reference set| OR ^ 929360071000036103|Medicinal product unit of use reference set| OR ^ 929360041000036105|Trade product pack reference set| OR ^ 929360031000036100|Trade product unit of use reference set| OR ^ 929360051000036108|Containered trade product pack reference set|"
 
 Alias: $v3-ObservationValue = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 

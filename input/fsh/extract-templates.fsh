@@ -15,6 +15,7 @@ Alias: $au-core-bloodpressure = http://hl7.org.au/fhir/core/StructureDefinition/
 Alias: $au-core-condition = http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition
 Alias: $au-core-allergyintolerance = http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance
 Alias: $au-core-immunization = http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization
+Alias: $au-core-medicationstatement = http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement
 
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 
@@ -248,3 +249,33 @@ Usage:  #inline
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdMedicalHistory').answer.valueString"
 * onsetDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * onsetDateTime.extension[=].valueString = "item.where(linkId='4d55bffb-3286-4a23-a785-3b9c346d464d').answer.value.toDateTime()"
+
+Instance:   MedicationStatementTemplate
+InstanceOf: $au-core-medicationstatement
+Usage:  #inline
+* status = #active
+* medicationCodeableConcept.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
+* medicationCodeableConcept.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-medication').answer.value"
+* medicationCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* medicationCodeableConcept.coding.extension[=].valueString = "ofType(Coding)"
+* medicationCodeableConcept.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* medicationCodeableConcept.text.extension[=].valueString = "ofType(string)"
+* subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdMedicationStatement').answer.valueString"
+* dateAsserted.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* dateAsserted.extension[=].valueString = "now()"
+* reasonCode[+].extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
+* reasonCode[=].extension.valueString = "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(Coding)"
+* reasonCode[=].coding.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* reasonCode[=].coding.extension.valueString = "$this"
+* reasonCode[+].extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
+* reasonCode[=].extension.valueString = "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(string)"
+* reasonCode[=].text.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* reasonCode[=].text.extension.valueString = "$this"
+* note.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* note.text.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-comment').answer.value"
+* dosage[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
+* dosage[=].extension[=].valueString = "item.where(linkId='regularmedications-summary-current-dosage').answer.value"
+* dosage[=].text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* dosage[=].text.extension[=].valueString = "$this"
+

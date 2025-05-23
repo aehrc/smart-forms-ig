@@ -22,7 +22,7 @@
           {
             "property": "constraint",
             "op": "=",
-            "value": "^ 929360081000036101|Medicinal product pack reference set| AND ^ 929360071000036103|Medicinal product unit of use reference set| AND 929360041000036105|Trade product pack reference set| AND 929360031000036100|Trade product unit of use reference set| AND 929360051000036108|Containered trade product pack reference set|"
+            "value": "^ 929360081000036101|Medicinal product pack reference set| OR ^ 929360071000036103|Medicinal product unit of use reference set| OR ^ 929360041000036105|Trade product pack reference set| OR ^ 929360031000036100|Trade product unit of use reference set| OR ^ 929360051000036108|Containered trade product pack reference set|"
           }
         ]
       }

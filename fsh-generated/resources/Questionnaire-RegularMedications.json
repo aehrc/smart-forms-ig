@@ -91,88 +91,6 @@
           "type": "display"
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%age <= 12"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-              "valueCode": "horizontal"
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
-              "valueString": "Does your child take any regular medications?"
-            }
-          ],
-          "linkId": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
-          "text": "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "#YesNo"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%age > 12"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "radio-button",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-              "valueCode": "horizontal"
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
-              "valueString": "Do you take any regular medications?"
-            }
-          ],
-          "linkId": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
-          "text": "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
-          "type": "choice",
-          "repeats": false,
-          "answerValueSet": "#YesNo"
-        },
-        {
-          "linkId": "regularmedications-summary",
-          "text": "Medication summary",
-          "_text": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<p>Medication summary</p>\r\n<p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n</div>"
-              }
-            ]
-          },
-          "type": "group",
-          "repeats": false,
           "item": [
             {
               "extension": [
@@ -186,9 +104,9 @@
                 }
               ],
               "linkId": "regularmedications-summary-current",
-              "text": "Current medication summary",
               "type": "group",
               "repeats": true,
+              "readOnly": true,
               "item": [
                 {
                   "extension": [
@@ -252,6 +170,103 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.reasonCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-reasoncode",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "#medication-reason-taken-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                      "valueExpression": {
+                        "name": "MedicationStatementNoteRepeat",
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.note"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementNoteRepeat.text"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": true
+                }
+              ]
+            },
+            {
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%patient.id"
+                      }
+                    }
+                  ],
+                  "linkId": "patientIdMedicationStatement",
+                  "type": "string"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-medication",
+                  "text": "Medication",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "#smarthealthchecks-medication"
+                },
+                {
+                  "linkId": "regularmedications-summary-current-dosage",
+                  "text": "Dosage",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
                     }
                   ],
                   "linkId": "regularmedications-summary-current-reasoncode",
@@ -266,34 +281,99 @@
                   "type": "string",
                   "repeats": false
                 }
-              ]
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#MedicationStatementTemplate"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "linkId": "regularmedications-summary-new",
+              "type": "group",
+              "repeats": true
             }
-          ]
+          ],
+          "linkId": "regularmedications-summary",
+          "text": "Medication summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<p>Medication summary</p>\r\n<p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n</div>"
+              }
+            ]
+          },
+          "type": "group",
+          "repeats": false
         },
         {
-          "linkId": "874ec8db-95c9-4cc0-95db-e45edaa3cd12",
-          "text": "Up to date in the health record?",
-          "type": "boolean",
-          "repeats": false,
-          "enableWhen": [
+          "extension": [
             {
-              "question": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
-              "operator": "=",
-              "answerCoding": {
-                "code": "Y",
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
               }
             },
             {
-              "question": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
-              "operator": "=",
-              "answerCoding": {
-                "code": "Y",
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+              "valueCode": "horizontal"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
+              "valueString": "Does your child take any regular medications?"
             }
           ],
-          "enableBehavior": "any"
+          "linkId": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
+          "text": "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#YesNo"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "radio-button",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+              "valueCode": "horizontal"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
+              "valueString": "Do you take any regular medications?"
+            }
+          ],
+          "linkId": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
+          "text": "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?",
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#YesNo"
+        },
+        {
+          "linkId": "874ec8db-95c9-4cc0-95db-e45edaa3cd12",
+          "text": "Check the health record is up to date",
+          "type": "boolean",
+          "repeats": false
         },
         {
           "extension": [
@@ -303,7 +383,7 @@
             }
           ],
           "linkId": "36290837-ad70-48b2-9c66-31533fec918b",
-          "text": "Medication understanding and adherence has been checked with patient",
+          "text": "Check medication understanding and adherence with patient",
           "type": "boolean",
           "repeats": false,
           "enableWhen": [
@@ -445,7 +525,7 @@
               {
                 "property": "constraint",
                 "op": "=",
-                "value": "^ 929360081000036101|Medicinal product pack reference set| AND ^ 929360071000036103|Medicinal product unit of use reference set| AND 929360041000036105|Trade product pack reference set| AND 929360031000036100|Trade product unit of use reference set| AND 929360051000036108|Containered trade product pack reference set|"
+                "value": "^ 929360081000036101|Medicinal product pack reference set| OR ^ 929360071000036103|Medicinal product unit of use reference set| OR ^ 929360041000036105|Trade product pack reference set| OR ^ 929360031000036100|Trade product unit of use reference set| OR ^ 929360051000036108|Containered trade product pack reference set|"
               }
             ]
           }
@@ -498,6 +578,126 @@
                 "value": "^ 32570581000036105|Problem/Diagnosis reference set| OR ^ 1184831000168105|Drug prophylaxis reference set| OR << 399097000|Administration of anaesthesia| OR 169443000|Preventive procedure|"
               }
             ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "MedicationStatement",
+      "id": "MedicationStatementTemplate",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+        ]
+      },
+      "status": "active",
+      "medicationCodeableConcept": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+            "valueString": "item.where(linkId='regularmedications-summary-current-medication').answer.value"
+          }
+        ],
+        "coding": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "ofType(Coding)"
+              }
+            ]
+          }
+        ],
+        "_text": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "ofType(string)"
+            }
+          ]
+        }
+      },
+      "subject": {
+        "_reference": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdMedicationStatement').answer.valueString"
+            }
+          ]
+        }
+      },
+      "reasonCode": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(Coding)"
+            }
+          ],
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                  "valueString": "$this"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(string)"
+            }
+          ],
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "$this"
+              }
+            ]
+          }
+        }
+      ],
+      "note": [
+        {
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId='regularmedications-summary-current-comment').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "dosage": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId='regularmedications-summary-current-dosage').answer.value"
+            }
+          ],
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "$this"
+              }
+            ]
+          }
+        }
+      ],
+      "_dateAsserted": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "now()"
           }
         ]
       }
