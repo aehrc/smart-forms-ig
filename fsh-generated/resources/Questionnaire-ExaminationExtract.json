@@ -192,6 +192,17 @@
                 {
                   "extension": [
                     {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#BodyHeightLength"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
@@ -300,6 +311,17 @@
                 {
                   "extension": [
                     {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#BodyHeight"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
@@ -407,6 +429,17 @@
                 },
                 {
                   "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#BodyWeight"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
@@ -619,6 +652,17 @@
                 {
                   "extension": [
                     {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#HeadCircumference"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
@@ -725,6 +769,19 @@
                   "readOnly": true
                 },
                 {
+                  "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#WaistCircumference"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    }
+                  ],
                   "item": [
                     {
                       "extension": [
@@ -826,6 +883,17 @@
                 {
                   "extension": [
                     {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#HeartRate"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "/min",
@@ -917,6 +985,17 @@
                 },
                 {
                   "extension": [
+                    {
+                      "extension": [
+                        {
+                          "url": "template",
+                          "valueReference": {
+                            "reference": "#HeartRhythm"
+                          }
+                        }
+                      ],
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
@@ -1092,6 +1171,19 @@
               "readOnly": true
             },
             {
+              "extension": [
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#BloodPressure"
+                      }
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
               "item": [
                 {
                   "extension": [
@@ -1297,7 +1389,71 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-height-date-2').answer.value.toDateTime()"
+            "valueString": "%resource.repeat(item).where(linkId='obs-height-newdate').answer.value.toDateTime()"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "Observation",
+      "id": "BodyHeightLength",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8302-2"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "50373000"
+          }
+        ],
+        "text": "Height"
+      },
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "unit": "cm",
+        "code": "cm",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
+            }
+          ]
+        }
+      },
+      "status": "final",
+      "subject": {
+        "_reference": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "_effectiveDateTime": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "%resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.toDateTime()"
           }
         ]
       }
@@ -1361,7 +1517,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-weight-date-2').answer.value.toDateTime()"
+            "valueString": "%resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.toDateTime()"
           }
         ]
       }
@@ -1425,7 +1581,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-waist-circumference-date-2').answer.value.toDateTime()"
+            "valueString": "%resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.toDateTime()"
           }
         ]
       }
@@ -1489,7 +1645,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-heart-rate-date-2').answer.value.toDateTime()"
+            "valueString": "%resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.toDateTime()"
           }
         ]
       }
@@ -1547,7 +1703,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-heart-rhythm-date-2').answer.value.toDateTime()"
+            "valueString": "%resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.toDateTime()"
           }
         ]
       }
@@ -1593,7 +1749,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                  "valueString": "$this.answer.value.toDecimal()"
+                  "valueString": "item.where(linkId='bp-newbp-systolic').answer.value.toDecimal()"
                 }
               ]
             }
@@ -1621,7 +1777,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                  "valueString": "%resource.repeat(item).where(linkId='exam-blood-pressure-diastolic-2').answer.value.toDecimal()"
+                  "valueString": "item.where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
                 }
               ]
             }
@@ -1656,7 +1812,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='exam-blood-pressure-date-2').answer.value.toDateTime()"
+            "valueString": "item.where(linkId='bp-newbp-date').answer.value.toDateTime()"
           }
         ]
       }
@@ -1808,7 +1964,7 @@
       }
     }
   ],
-  "url": "http://www.health.gov.au/assessments/mbs/715/Examination",
+  "url": "http://www.health.gov.au/assessments/mbs/715/ExaminationExtract",
   "name": "Examination",
   "title": "Aboriginal and Torres Strait Islander Health Check - Examination",
   "status": "draft",

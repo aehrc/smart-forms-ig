@@ -9,6 +9,7 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Examination"
 Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = BodyHeight
+* contained[+] = BodyHeightLength
 * contained[+] = BodyWeight
 * contained[+] = WaistCircumference
 * contained[+] = HeartRate
@@ -127,7 +128,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715/Examination"
+* url = "http://www.health.gov.au/assessments/mbs/715/ExaminationExtract"
 * name = "Examination"
 * title = "Aboriginal and Torres Strait Islander Health Check - Examination"
 * status = #draft
@@ -230,6 +231,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightLength"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-lengthheight-newresult"
         * text = "New result"
@@ -278,6 +280,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeight"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-height-newresult"
         * text = "New result"
@@ -323,6 +326,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyWeight"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
         * linkId = "obs-weight-newresult"
         * text = "New result"
@@ -417,6 +421,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeadCircumference"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-headcircumference-newresult"
         * text = "New result"
@@ -465,6 +470,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#WaistCircumference"
         * linkId = "obs-waistcircumference-newresult"
         * text = "New result"
         * type = #decimal
@@ -509,6 +515,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
         * linkId = "obs-heartrate-newresult"
         * text = "New result"
@@ -545,6 +552,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
         * readOnly = true
       * item[+]       
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRhythm"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
         * linkId = "obs-heartrhythm-newresult"
         * text = "New result"
@@ -611,6 +619,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BloodPressure"
       * linkId = "705f6d04-acab-4d14-baab-98f9bfc4808e"
       * text = "New blood pressure"
       * type = #group

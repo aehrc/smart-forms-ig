@@ -56,18 +56,18 @@
     "resource": [
       {
         "reference": {
-          "reference": "Questionnaire/AssemblyInstructions"
-        },
-        "name": "Aboriginal and Torres Strait Islander Health Check",
-        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Questionnaire/AboriginalTorresStraitIslanderHealthCheck"
         },
         "exampleBoolean": false,
         "name": "Aboriginal and Torres Strait Islander Health Check"
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/AssemblyInstructions"
+        },
+        "name": "Aboriginal and Torres Strait Islander Health Check (Extract)",
+        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
+        "exampleBoolean": true
       },
       {
         "reference": {

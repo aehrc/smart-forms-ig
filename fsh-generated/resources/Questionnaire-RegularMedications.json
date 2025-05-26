@@ -91,6 +91,18 @@
           "type": "display"
         },
         {
+          "linkId": "regularmedications-summary",
+          "text": "Medication summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<p>Medication summary</p>\r\n<p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n</div>"
+              }
+            ]
+          },
+          "type": "group",
+          "repeats": false,
           "item": [
             {
               "extension": [
@@ -211,24 +223,23 @@
               ]
             },
             {
-              "item": [
+              "extension": [
                 {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                      "valueBoolean": true
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%patient.id"
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#MedicationStatementTemplate"
                       }
                     }
-                  ],
-                  "linkId": "patientIdMedicationStatement",
-                  "type": "string"
-                },
+                  ]
+                }
+              ],
+              "linkId": "regularmedications-summary-new",
+              "type": "group",
+              "repeats": true,
+              "item": [
                 {
                   "extension": [
                     {
@@ -243,14 +254,14 @@
                       }
                     }
                   ],
-                  "linkId": "regularmedications-summary-current-medication",
+                  "linkId": "regularmedications-summary-new-medication",
                   "text": "Medication",
                   "type": "open-choice",
                   "repeats": false,
                   "answerValueSet": "#smarthealthchecks-medication"
                 },
                 {
-                  "linkId": "regularmedications-summary-current-dosage",
+                  "linkId": "regularmedications-summary-new-dosage",
                   "text": "Dosage",
                   "type": "string",
                   "repeats": true
@@ -269,49 +280,21 @@
                       }
                     }
                   ],
-                  "linkId": "regularmedications-summary-current-reasoncode",
+                  "linkId": "regularmedications-summary-new-reasoncode",
                   "text": "Clinical indication",
                   "type": "open-choice",
                   "repeats": true,
                   "answerValueSet": "#medication-reason-taken-1"
                 },
                 {
-                  "linkId": "regularmedications-summary-current-comment",
+                  "linkId": "regularmedications-summary-new-comment",
                   "text": "Comment",
                   "type": "string",
                   "repeats": false
                 }
-              ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#MedicationStatementTemplate"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "linkId": "regularmedications-summary-new",
-              "type": "group",
-              "repeats": true
+              ]
             }
-          ],
-          "linkId": "regularmedications-summary",
-          "text": "Medication summary",
-          "_text": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<p>Medication summary</p>\r\n<p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n</div>"
-              }
-            ]
-          },
-          "type": "group",
-          "repeats": false
+          ]
         },
         {
           "extension": [
@@ -595,7 +578,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-            "valueString": "item.where(linkId='regularmedications-summary-current-medication').answer.value"
+            "valueString": "item.where(linkId='regularmedications-summary-new-medication').answer.value"
           }
         ],
         "coding": [
@@ -622,7 +605,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdMedicationStatement').answer.valueString"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -632,7 +615,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-              "valueString": "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(Coding)"
+              "valueString": "item.where(linkId='regularmedications-summary-new-reasoncode').answer.value.ofType(Coding)"
             }
           ],
           "coding": [
@@ -650,7 +633,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-              "valueString": "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(string)"
+              "valueString": "item.where(linkId='regularmedications-summary-new-reasoncode').answer.value.ofType(string)"
             }
           ],
           "_text": {
@@ -669,7 +652,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                "valueString": "item.where(linkId='regularmedications-summary-current-comment').answer.value"
+                "valueString": "item.where(linkId='regularmedications-summary-new-comment').answer.value"
               }
             ]
           }
@@ -680,7 +663,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-              "valueString": "item.where(linkId='regularmedications-summary-current-dosage').answer.value"
+              "valueString": "item.where(linkId='regularmedications-summary-new-dosage').answer.value"
             }
           ],
           "_text": {

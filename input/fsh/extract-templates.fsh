@@ -9,6 +9,7 @@ Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/alle
 
 Alias: $au-core-bodyheight = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight
 Alias: $au-core-bodyweight = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight
+Alias: $au-core-au-core-headcircum = http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum
 Alias: $au-core-waistcircum = http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum
 Alias: $au-core-heartrate = http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate
 Alias: $au-core-bloodpressure = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure
@@ -17,7 +18,26 @@ Alias: $au-core-allergyintolerance = http://hl7.org.au/fhir/core/StructureDefini
 Alias: $au-core-immunization = http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization
 Alias: $au-core-medicationstatement = http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement
 
+
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+
+Instance:   BodyHeightLength
+InstanceOf: $au-core-bodyheight
+Usage:  #inline  
+* status = #final
+* category[VSCat] = $observation-category#vital-signs
+* code.coding[BodyHeightCode] = $LNC#8302-2
+* code.coding[snomedBodyHeightCode] = $SCT#50373000
+* code.text = "Height"
+* subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* subject.reference.extension[=].valueString = "%resource.subject.reference"
+* effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.toDateTime()"
+* valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueQuantity.value.extension[=].valueString = "$this.answer.value"
+* valueQuantity.unit = "cm"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #cm
 
 Instance:   BodyHeight
 InstanceOf: $au-core-bodyheight
@@ -30,28 +50,9 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-height-date-2').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-height-newdate').answer.value.toDateTime()"
 * valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * valueQuantity.value.extension[=].valueString = "$this.answer.value"
-//* valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
-* valueQuantity.unit = "cm"
-* valueQuantity.system = $UCUM
-* valueQuantity.code = #cm
-
-Instance:   BodyHeight3
-InstanceOf: $au-core-bodyheight
-Usage:  #inline  
-* status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[BodyHeightCode] = $LNC#8302-2
-* code.coding[snomedBodyHeightCode] = $SCT#50373000
-* code.text = "Height"
-* subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
-* effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "item.where(linkId='exam-height-date-extract').answer.value.toDateTime()"
-* valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* valueQuantity.value.extension[=].valueString = "item.where(linkId='exam-height-value-extract').answer.value"
 //* valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea').answer.value"
 * valueQuantity.unit = "cm"
 * valueQuantity.system = $UCUM
@@ -68,13 +69,30 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-weight-date-2').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.toDateTime()"
 * valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * valueQuantity.value.extension[=].valueString = "$this.answer.value"
-//* valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='443bd584-684a-449c-ab6e-9d07da4df9fa').answer.value"
 * valueQuantity.unit = "kg"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #kg
+
+Instance:   HeadCircumference
+InstanceOf: $au-core-au-core-headcircum
+Usage:  #inline  
+* status = #final
+* category[VSCat] = $observation-category#vital-signs
+* code.coding[HeadCircumCode] = $LNC#9843-4
+* code.coding[snomedHeadCircumCode] = $SCT#363812007
+* code.text = "Head circumference"
+* subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+* effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.toDateTime()"
+* valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueQuantity.value.extension[=].valueString = "$this.answer.value"
+* valueQuantity.unit = "cm"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #cm
 
 Instance:   WaistCircumference
 InstanceOf: $au-core-waistcircum
@@ -87,10 +105,9 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-waist-circumference-date-2').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.toDateTime()"
 * valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * valueQuantity.value.extension[=].valueString = "$this.answer.value"
-//* valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='8df0f5d8-821d-4f71-b3c1-d164616ea2f5').answer.value"
 * valueQuantity.unit = "cm"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #cm
@@ -106,10 +123,9 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-heart-rate-date-2').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.toDateTime()"
 * valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * valueQuantity.value.extension[=].valueString = "$this.answer.value.toDecimal()"
-//* valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='49029ef0-eaa8-44f8-b26a-177820c82dfd').answer.value.toDecimal()"
 * valueQuantity.unit = "/min"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #/min
@@ -125,10 +141,9 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-heart-rhythm-date-2').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.toDateTime()"
 * valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * valueCodeableConcept.coding.extension[=].valueString = "$this.answer.value"
-//* valueCodeableConcept.coding.extension[=].valueString = "%resource.repeat(item).where(linkId='99a8eb6f-a36a-4daf-99d7-27bfde0d4bb1').answer.value"
 
 Instance:   BloodPressure
 InstanceOf: $au-core-bloodpressure
@@ -141,13 +156,12 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-blood-pressure-date-2').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "item.where(linkId='bp-newbp-date').answer.value.toDateTime()"
 * component[SystolicBP].code.coding[SBPCode] = $LNC#8480-6
 * component[SystolicBP].code.coding[snomedSBP] = $SCT#271649006
 * component[SystolicBP].code.text = "Systolic"
 * component[SystolicBP].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* component[SystolicBP].valueQuantity.value.extension[=].valueString = "$this.answer.value.toDecimal()"
-//* component[SystolicBP].valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='e68b660d-cfd2-4b89-957a-c96a4c73a5fd').answer.value.toDecimal()"
+* component[SystolicBP].valueQuantity.value.extension[=].valueString = "item.where(linkId='bp-newbp-systolic').answer.value.toDecimal()"
 * component[SystolicBP].valueQuantity.unit = "mm[Hg]"
 * component[SystolicBP].valueQuantity.system = $UCUM
 * component[SystolicBP].valueQuantity.code = #mm[Hg]
@@ -155,7 +169,7 @@ Usage:  #inline
 * component[DiastolicBP].code.coding[snomedDBP] = $SCT#271650006
 * component[DiastolicBP].code.text = "Diastolic"
 * component[DiastolicBP].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* component[DiastolicBP].valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='exam-blood-pressure-diastolic-2').answer.value.toDecimal()"
+* component[DiastolicBP].valueQuantity.value.extension[=].valueString = "item.where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
 * component[DiastolicBP].valueQuantity.unit = "mm[Hg]"
 * component[DiastolicBP].valueQuantity.system = $UCUM
 * component[DiastolicBP].valueQuantity.code = #mm[Hg]
@@ -255,27 +269,29 @@ InstanceOf: $au-core-medicationstatement
 Usage:  #inline
 * status = #active
 * medicationCodeableConcept.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
-* medicationCodeableConcept.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-medication').answer.value"
+* medicationCodeableConcept.extension[=].valueString = "item.where(linkId='regularmedications-summary-new-medication').answer.value"
 * medicationCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * medicationCodeableConcept.coding.extension[=].valueString = "ofType(Coding)"
 * medicationCodeableConcept.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * medicationCodeableConcept.text.extension[=].valueString = "ofType(string)"
+/** subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdMedicationStatement').answer.valueString"*/
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* subject.reference.extension[=].valueString = "'Patient/' + %resource.repeat(item).where(linkId='patientIdMedicationStatement').answer.valueString"
+* subject.reference.extension[=].valueString = "%resource.subject.reference"
 * dateAsserted.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * dateAsserted.extension[=].valueString = "now()"
 * reasonCode[+].extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
-* reasonCode[=].extension.valueString = "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(Coding)"
+* reasonCode[=].extension.valueString = "item.where(linkId='regularmedications-summary-new-reasoncode').answer.value.ofType(Coding)"
 * reasonCode[=].coding.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * reasonCode[=].coding.extension.valueString = "$this"
 * reasonCode[+].extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
-* reasonCode[=].extension.valueString = "item.where(linkId='regularmedications-summary-current-reasoncode').answer.value.ofType(string)"
+* reasonCode[=].extension.valueString = "item.where(linkId='regularmedications-summary-new-reasoncode').answer.value.ofType(string)"
 * reasonCode[=].text.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * reasonCode[=].text.extension.valueString = "$this"
 * note.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* note.text.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-comment').answer.value"
+* note.text.extension[=].valueString = "item.where(linkId='regularmedications-summary-new-comment').answer.value"
 * dosage[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
-* dosage[=].extension[=].valueString = "item.where(linkId='regularmedications-summary-current-dosage').answer.value"
+* dosage[=].extension[=].valueString = "item.where(linkId='regularmedications-summary-new-dosage').answer.value"
 * dosage[=].text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * dosage[=].text.extension[=].valueString = "$this"
 

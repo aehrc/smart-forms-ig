@@ -253,35 +253,35 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].linkId = "regularmedications-summary-new"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
-
+/*
 * item.item[=].item[=].item[+].extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
 * item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
 * item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
 * item.item[=].item[=].item[=].linkId = "patientIdMedicationStatement"
 * item.item[=].item[=].item[=].type = #string
-
+*/
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-medication"
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-new-medication"
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
 
-* item.item[=].item[=].item[+].linkId = "regularmedications-summary-current-dosage"
+* item.item[=].item[=].item[+].linkId = "regularmedications-summary-new-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = true
 
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension.valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-reasoncode"
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-new-reasoncode"
 * item.item[=].item[=].item[=].text = "Clinical indication"
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = true
 * item.item[=].item[=].item[=].answerValueSet = "#medication-reason-taken-1"
 
-* item.item[=].item[=].item[+].linkId = "regularmedications-summary-current-comment"
+* item.item[=].item[=].item[+].linkId = "regularmedications-summary-new-comment"
 * item.item[=].item[=].item[=].text = "Comment"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
