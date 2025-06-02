@@ -78,6 +78,17 @@
           ]
         },
         {
+          "linkId": "allergyinstruction",
+          "text": "Adverse reaction risk summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Adverse reaction risk summary</p>\r\n    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n    </div>"
+              }
+            ]
+          },
+          "type": "group",
           "item": [
             {
               "extension": [
@@ -168,24 +179,23 @@
               ]
             },
             {
-              "item": [
+              "extension": [
                 {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                      "valueBoolean": true
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%patient.id"
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#AllergyIntoleranceTemplate"
                       }
                     }
-                  ],
-                  "linkId": "patientIdAllergy",
-                  "type": "string"
-                },
+                  ]
+                }
+              ],
+              "linkId": "allergynew",
+              "type": "group",
+              "repeats": true,
+              "item": [
                 {
                   "extension": [
                     {
@@ -233,36 +243,9 @@
                   "type": "string",
                   "repeats": false
                 }
-              ],
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#AllergyIntoleranceTemplate"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "linkId": "allergynew",
-              "type": "group",
-              "repeats": true
+              ]
             }
-          ],
-          "linkId": "allergyinstruction",
-          "text": "Adverse reaction risk summary",
-          "_text": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Adverse reaction risk summary</p>\r\n    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n    </div>"
-              }
-            ]
-          },
-          "type": "group"
+          ]
         },
         {
           "linkId": "3e689aeb-69a1-4a9b-93bd-50377511dd9b",
@@ -339,7 +322,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + item.where(linkId='patientIdAllergy').answer.valueString"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }

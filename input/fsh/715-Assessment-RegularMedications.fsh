@@ -156,7 +156,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[0].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
 * item.item[=].item[=].extension[=].valueExpression[+].name = "MedicationStatementRepeat"
 * item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatement.entry.resource"
+* item.item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatement.entry.resource.where(status='active')"
 * item.item[=].item[=].linkId = "regularmedications-summary-current"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
@@ -210,13 +210,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/timing-abbreviation"
 */
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].name = "DosageRepeat"
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage"
-* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%DosageRepeat.text"
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"
 * item.item[=].item[=].item[=].type = #string
@@ -233,14 +229,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].repeats = true
 * item.item[=].item[=].item[=].answerValueSet = "#medication-reason-taken-1"
 
-
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].name = "MedicationStatementNoteRepeat"
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note"
-* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementNoteRepeat.text"
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment"
 * item.item[=].item[=].item[=].text = "Comment"
 * item.item[=].item[=].item[=].type = #string
@@ -253,13 +244,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].linkId = "regularmedications-summary-new"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
-/*
-* item.item[=].item[=].item[+].extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
-* item.item[=].item[=].item[=].linkId = "patientIdMedicationStatement"
-* item.item[=].item[=].item[=].type = #string
-*/
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-new-medication"

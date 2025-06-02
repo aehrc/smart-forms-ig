@@ -83,23 +83,6 @@
           "type": "display"
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%patient.id"
-              }
-            }
-          ],
-          "linkId": "patientIdExamination",
-          "type": "string"
-        },
-        {
           "linkId": "examinationinstruction",
           "text": "The tabled observations will display the most recent results available from the patient record. If required, new observations can be recorded and added to the tables.",
           "_text": {
@@ -179,7 +162,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeight.entry.resource.effective"
+                        "expression": "%ObsBodyHeight.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -196,7 +179,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#BodyHeightLength"
+                            "reference": "#BodyHeightLengthTemplate"
                           }
                         }
                       ],
@@ -298,7 +281,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeight.entry.resource.effective"
+                        "expression": "%ObsBodyHeight.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -315,7 +298,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#BodyHeight"
+                            "reference": "#BodyHeightTemplate"
                           }
                         }
                       ],
@@ -417,7 +400,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyWeight.entry.resource.effective"
+                        "expression": "%ObsBodyWeight.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -434,7 +417,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#BodyWeight"
+                            "reference": "#BodyWeightTemplate"
                           }
                         }
                       ],
@@ -639,7 +622,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeadCircumference.entry.resource.effective"
+                        "expression": "%ObsHeadCircumference.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -656,7 +639,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#HeadCircumference"
+                            "reference": "#HeadCircumferenceTemplate"
                           }
                         }
                       ],
@@ -758,7 +741,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsWaistCircumference.entry.resource.effective"
+                        "expression": "%ObsWaistCircumference.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -775,7 +758,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#WaistCircumference"
+                            "reference": "#WaistCircumferenceTemplate"
                           }
                         }
                       ],
@@ -827,7 +810,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRate.entry.resource.value.value"
+                        "expression": "%ObsHeartRate.entry.resource.value.value.round().toInteger()"
                       }
                     },
                     {
@@ -870,7 +853,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRate.entry.resource.effective"
+                        "expression": "%ObsHeartRate.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -887,7 +870,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#HeartRate"
+                            "reference": "#HeartRateTemplate"
                           }
                         }
                       ],
@@ -990,7 +973,7 @@
                         {
                           "url": "template",
                           "valueReference": {
-                            "reference": "#HeartRhythm"
+                            "reference": "#HeartRhythmTemplate"
                           }
                         }
                       ],
@@ -1070,7 +1053,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.round().toInteger()"
                       }
                     },
                     {
@@ -1112,7 +1095,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value"
+                        "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.round().toInteger()"
                       }
                     },
                     {
@@ -1154,7 +1137,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.effective"
+                        "expression": "%ObsBloodPressure.entry.resource.effective.toDate()"
                       }
                     }
                   ],
@@ -1177,7 +1160,7 @@
                     {
                       "url": "template",
                       "valueReference": {
-                        "reference": "#BloodPressure"
+                        "reference": "#BloodPressureTemplate"
                       }
                     }
                   ],
@@ -1332,7 +1315,7 @@
   "contained": [
     {
       "resourceType": "Observation",
-      "id": "BodyHeight",
+      "id": "BodyHeightTemplate",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
@@ -1380,7 +1363,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -1396,7 +1379,7 @@
     },
     {
       "resourceType": "Observation",
-      "id": "BodyHeightLength",
+      "id": "BodyHeightLengthTemplate",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
@@ -1460,7 +1443,7 @@
     },
     {
       "resourceType": "Observation",
-      "id": "BodyWeight",
+      "id": "BodyWeightTemplate",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
@@ -1508,7 +1491,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -1524,7 +1507,7 @@
     },
     {
       "resourceType": "Observation",
-      "id": "WaistCircumference",
+      "id": "WaistCircumferenceTemplate",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
@@ -1572,7 +1555,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -1588,7 +1571,71 @@
     },
     {
       "resourceType": "Observation",
-      "id": "HeartRate",
+      "id": "HeadCircumferenceTemplate",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "9843-4"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "363812007"
+          }
+        ],
+        "text": "Head circumference"
+      },
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "unit": "cm",
+        "code": "cm",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
+            }
+          ]
+        }
+      },
+      "subject": {
+        "_reference": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "_effectiveDateTime": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "%resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.toDateTime()"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "Observation",
+      "id": "HeartRateTemplate",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
@@ -1636,7 +1683,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -1652,8 +1699,12 @@
     },
     {
       "resourceType": "Observation",
-      "id": "HeartRhythm",
-      "status": "final",
+      "id": "HeartRhythmTemplate",
+      "meta": {
+        "profile": [
+          "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm"
+        ]
+      },
       "category": [
         {
           "coding": [
@@ -1667,22 +1718,23 @@
       "code": {
         "coding": [
           {
-            "code": "8884-9",
-            "system": "http://loinc.org"
+            "system": "http://loinc.org",
+            "code": "8884-9"
           },
           {
-            "code": "364074009",
-            "system": "http://snomed.info/sct"
+            "system": "http://snomed.info/sct",
+            "code": "364074009"
           }
         ],
         "text": "Heart rhythm"
       },
+      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -1710,7 +1762,7 @@
     },
     {
       "resourceType": "Observation",
-      "id": "BloodPressure",
+      "id": "BloodPressureTemplate",
       "meta": {
         "profile": [
           "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
@@ -1803,7 +1855,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "'Patient/' + %resource.repeat(item).where(linkId='patientIdExamination').answer.value"
+              "valueString": "%resource.subject.reference"
             }
           ]
         }
@@ -1965,8 +2017,8 @@
     }
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/ExaminationExtract",
-  "name": "Examination",
-  "title": "Aboriginal and Torres Strait Islander Health Check - Examination",
+  "name": "ExaminationExtract",
+  "title": "Aboriginal and Torres Strait Islander Health Check - Examination Extract",
   "status": "draft",
   "experimental": false,
   "subjectType": [

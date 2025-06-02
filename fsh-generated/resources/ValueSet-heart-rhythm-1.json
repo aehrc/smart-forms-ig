@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "HeartRythym",
+  "id": "heart-rhythm-1",
+  "title": "Heart Rhythm",
+  "description": "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual.",
+  "url": "https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+      "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+    ]
+  },
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "271636001",
+            "display": "Pulse regular"
+          },
+          {
+            "code": "61086009",
+            "display": "Pulse irregular"
+          }
+        ]
+      }
+    ]
+  }
+}

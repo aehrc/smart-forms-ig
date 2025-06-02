@@ -148,13 +148,6 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * type = #display
 
   * item[+]
-    * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-    * extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
-    * extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
-    * linkId = "patientIdImmunization"
-    * type = #string  
-
-  * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ImmunizationRepeat"

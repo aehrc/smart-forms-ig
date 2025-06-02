@@ -586,8 +586,8 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   // Examination extract
   * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/ExaminationExtract|0.3.0"
-    * linkId = "3263611d-5813-4393-a660-d10166acd728"
-    * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0] not available. Unable to display all questions."
+    * linkId = "5d89b095-fa2d-401c-954f-a2e102b77d50"
+    * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ExaminationExtract|0.3.0] not available. Unable to display all questions."
     * type = #display
   // Absolute CVD Risk Calculation
   * item[+] 

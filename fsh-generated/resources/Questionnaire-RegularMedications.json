@@ -111,7 +111,7 @@
                   "valueExpression": {
                     "name": "MedicationStatementRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%MedicationStatement.entry.resource"
+                    "expression": "%MedicationStatement.entry.resource.where(status='active')"
                   }
                 }
               ],
@@ -150,18 +150,10 @@
                 {
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-                      "valueExpression": {
-                        "name": "DosageRepeat",
-                        "language": "text/fhirpath",
-                        "expression": "%MedicationStatementRepeat.dosage"
-                      }
-                    },
-                    {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%DosageRepeat.text"
+                        "expression": "%MedicationStatementRepeat.dosage.text"
                       }
                     }
                   ],
@@ -200,18 +192,10 @@
                 {
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-                      "valueExpression": {
-                        "name": "MedicationStatementNoteRepeat",
-                        "language": "text/fhirpath",
-                        "expression": "%MedicationStatementRepeat.note"
-                      }
-                    },
-                    {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%MedicationStatementNoteRepeat.text"
+                        "expression": "%MedicationStatementRepeat.note.text"
                       }
                     }
                   ],

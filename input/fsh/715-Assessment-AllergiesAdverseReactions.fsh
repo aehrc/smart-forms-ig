@@ -161,11 +161,6 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].linkId = "allergynew"
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
-* item[=].item[=].item[=].item[+].extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-* item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.language = #text/fhirpath
-* item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression].valueExpression.expression = "%patient.id"
-* item[=].item[=].item[=].item[=].linkId = "patientIdAllergy"
-* item[=].item[=].item[=].item[=].type = #string  
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item[=].item[=].item[=].item[=].linkId = "allergynew-substance"
