@@ -216,7 +216,7 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
           * language = #text/fhirpath
           * expression = "%age <= 12"
         * linkId = "fe96046a-a202-4c22-ad3e-00419e717185"
-        * text = "Video otoscopy procedure recommended where possible as it allows for parental education and for images to be saved for tracking over time"
+        * text = "Video otoscopy procedure recommended where possible as it allows for parental education and for images to be saved for tracking over time."
         * type = #display 
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression

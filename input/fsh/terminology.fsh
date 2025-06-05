@@ -1185,41 +1185,39 @@ Title: "Cervical Screening Status"
 Description: "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program."
 * ^experimental = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
-* $SCT#736595007 "Declined"
-* $SCT#410527000 "Offered" // a better concept is required
-* $SCT#171154002 "Not required"
-* $SCT#171155001 "Up to date"
-
-* ^expansion.identifier = "urn:uuid:4d42d172-e817-40be-a265-56aebe2f4f10"
-* ^expansion.timestamp = "2025-05-01T10:01:02+10:00"
-* ^expansion.offset = 0
-* ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
-* ^expansion.parameter[+].name = "count"
-* ^expansion.parameter[=].valueInteger = 1000
-* ^expansion.parameter[+].name = "offset"
-* ^expansion.parameter[=].valueInteger = 0
-* ^expansion.parameter[+].name = "excludeNested"
-* ^expansion.parameter[=].valueBoolean = false
-* ^expansion.parameter[+].name = "used-valueset"
-* ^expansion.parameter[=].valueUri = "null"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#736595007 "Declined"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#410527000 "Offered" // a better concept is required
+* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#171154002 "Not required"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#171155001 "Up to date"
+* ^expansion.identifier = "urn:uuid:3657ae6f-b206-482f-a745-0ff9c99358ef"
+* ^expansion.timestamp = "2025-06-05T13:50:47+10:00"
+* ^expansion.parameter[0].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.parameter[+].name = "version"
 * ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.3.0"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.contains[=].code = #736595007
-* ^expansion.contains[=].display = "Cervical cancer screening refused"
+* ^expansion.contains[=].display = "Declined"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.contains[=].code = #410527000
 * ^expansion.contains[=].display = "Offered"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.contains[=].code = #171154002
-* ^expansion.contains[=].display = "Cancer cervix screening - not needed"
+* ^expansion.contains[=].display = "Not required"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.contains[=].code = #171155001
-* ^expansion.contains[=].display = "Cancer cervix screening - up-to-date"
+* ^expansion.contains[=].display = "Up to date"
 /*
 * ^expansion.identifier = "urn:uuid:7642a243-4f23-4b17-933d-57b448902d5d"
 * ^expansion.timestamp = "2024-04-08T10:41:42+10:00"

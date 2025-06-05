@@ -1,5 +1,3 @@
-// Conditional questions supporting all age groups
-
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
@@ -215,8 +213,6 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
     * answerOption[+].valueCoding = $SCT#413817003 "Child day care centre" //may require more specific "Early learning centre" concept created
-
-
 
   * item[+]
     * linkId = "MarkComplete-30"

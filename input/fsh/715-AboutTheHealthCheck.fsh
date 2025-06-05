@@ -121,13 +121,6 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
       * answerDecimal = 25
 */
   * item[+]
-    * linkId = "RecordUpdate-About"
-    * text = "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first."
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
-    </div>"    
-    * type = #display 
-  * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "3da318f1-a5dd-4c8f-b258-99d83872a4f2"

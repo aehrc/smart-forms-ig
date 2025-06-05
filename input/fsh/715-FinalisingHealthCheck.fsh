@@ -236,7 +236,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * text = "Follow-up"
     * type = #group
     * repeats = false
-    // include these display sub-items using xhtml rendering
     * item[+]
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory].valueCodeableConcept = http://hl7.org/fhir/questionnaire-display-category#instructions
       * linkId = "b4110a63-8547-4aa2-84c6-c1f64f0d24da"
@@ -257,7 +256,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
           * language = #text/fhirpath
           * expression = "%age <= 5"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-        * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "4044d0b4-94b2-4a89-b826-a14614298511"
         * text = "Who"
         * type = #open-choice
@@ -280,7 +278,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
           * language = #text/fhirpath
           * expression = "(%age <= 12).intersect(%age > 5)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-        * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a"
         * text = "Who"
         * type = #open-choice
@@ -301,7 +298,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
           * language = #text/fhirpath
           * expression = "(%age <= 24).intersect(%age > 12)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-        * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "07cfe077-ba93-4f93-b2a5-027023faa33b"
         * text = "Who"
         * type = #open-choice
@@ -323,7 +319,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
           * language = #text/fhirpath
           * expression = "(%age <= 49).intersect(%age > 24)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-        * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "a525c370-d8c3-4764-ab3a-bf62081725e0"
         * text = "Who"
         * type = #open-choice
@@ -347,7 +342,6 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
           * language = #text/fhirpath
           * expression = "%age > 49"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-        * extension[sdc-questionnaire-openLabel].valueString = "Other"
         * linkId = "d68d9693-48d3-4663-9dbb-dd3a7aec5278"
         * text = "Who"
         * type = #open-choice
@@ -397,22 +391,19 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * repeats = false
   * item[+]
     * linkId = "a400fe69-c99f-47ed-bee1-083c3e4be467"
-    * text = "Recalls entered (eg clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations)"
+    * text = "Recalls"
     * type = #group
-    * repeats = true
-    * item[+] //confirm this as a requirement
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-hidden].valueBoolean = true
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%patient.id"
-      * linkId = "40e3933d-77bb-40f3-8609-0c38ebb4421e"
-      * text = "recall-subject"
-      * type = #string
+    * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory].valueCodeableConcept = http://hl7.org/fhir/questionnaire-display-category#instructions
+      * linkId = "b0c69e16-5dc3-481f-8e8f-fc0a93627184"
+      * text = "e.g. clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations"
+      * type = #display
     * item[+]
       * linkId = "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e"
-      * text = "Recall"
-      * type = #text
-      * repeats = false
+      * text = "Recall entered"
+      * type = #string
+      * repeats = true
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath

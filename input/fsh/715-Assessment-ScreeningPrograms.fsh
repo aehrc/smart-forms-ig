@@ -66,7 +66,6 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 
-// should this group be only for >=74?
 * item[+]
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath

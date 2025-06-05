@@ -489,10 +489,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-                      "valueString": "Other"
                     }
                   ],
                   "linkId": "4044d0b4-94b2-4a89-b826-a14614298511",
@@ -557,10 +553,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-                      "valueString": "Other"
                     }
                   ],
                   "linkId": "f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a",
@@ -619,10 +611,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-                      "valueString": "Other"
                     }
                   ],
                   "linkId": "07cfe077-ba93-4f93-b2a5-027023faa33b",
@@ -684,10 +672,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-                      "valueString": "Other"
                     }
                   ],
                   "linkId": "a525c370-d8c3-4764-ab3a-bf62081725e0",
@@ -755,10 +739,6 @@
                           }
                         ]
                       }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-openLabel",
-                      "valueString": "Other"
                     }
                   ],
                   "linkId": "d68d9693-48d3-4663-9dbb-dd3a7aec5278",
@@ -867,32 +847,32 @@
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                  "valueBoolean": true
-                },
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%patient.id"
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "instructions",
+                        "system": "http://hl7.org/fhir/questionnaire-display-category"
+                      }
+                    ]
                   }
                 }
               ],
-              "linkId": "40e3933d-77bb-40f3-8609-0c38ebb4421e",
-              "text": "recall-subject",
-              "type": "string"
+              "linkId": "b0c69e16-5dc3-481f-8e8f-fc0a93627184",
+              "text": "e.g. clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations",
+              "type": "display"
             },
             {
               "linkId": "fece6a3c-f8f1-4592-a166-5ea5a3c60c8e",
-              "text": "Recall",
-              "type": "text",
-              "repeats": false
+              "text": "Recall entered",
+              "type": "string",
+              "repeats": true
             }
           ],
           "linkId": "a400fe69-c99f-47ed-bee1-083c3e4be467",
-          "text": "Recalls entered (eg clinical review, investigations, influenza vaccination, asthma plan/cycle of care, diabetes cycle of care, care plan review, cervical screening, investigations)",
+          "text": "Recalls",
           "type": "group",
-          "repeats": true
+          "repeats": false
         },
         {
           "extension": [
