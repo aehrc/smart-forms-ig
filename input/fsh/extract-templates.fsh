@@ -177,7 +177,7 @@ Usage:  #inline
 * component[SystolicBP].code.coding[snomedSBP] = $SCT#271649006
 * component[SystolicBP].code.text = "Systolic"
 * component[SystolicBP].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* component[SystolicBP].valueQuantity.value.extension[=].valueString = "item.where(linkId='bp-newbp-systolic').answer.value.toDecimal()"
+* component[SystolicBP].valueQuantity.value.extension[=].valueString = "$this.answer.value.toDecimal()"
 * component[SystolicBP].valueQuantity.unit = "mm[Hg]"
 * component[SystolicBP].valueQuantity.system = $UCUM
 * component[SystolicBP].valueQuantity.code = #mm[Hg]
@@ -185,7 +185,7 @@ Usage:  #inline
 * component[DiastolicBP].code.coding[snomedDBP] = $SCT#271650006
 * component[DiastolicBP].code.text = "Diastolic"
 * component[DiastolicBP].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* component[DiastolicBP].valueQuantity.value.extension[=].valueString = "item.where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
+* component[DiastolicBP].valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
 * component[DiastolicBP].valueQuantity.unit = "mm[Hg]"
 * component[DiastolicBP].valueQuantity.system = $UCUM
 * component[DiastolicBP].valueQuantity.code = #mm[Hg]
