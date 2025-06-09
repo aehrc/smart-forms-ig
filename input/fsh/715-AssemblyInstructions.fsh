@@ -8,16 +8,10 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check"
 Description: "Aboriginal and Torres Strait Islander Health Check assessment form."
 
-//* contained[+] = PrePopQuery
 * contained[+] = YesNo
 * contained[+] = YesNoNA
 * contained[+] = YesNoNotAskedDeclined
 * contained[+] = clinical-condition-1
-/** contained[+] = MedicalHistory
-* contained[+] = MedicalHistoryShortListInfants
-* contained[+] = MedicalHistoryShortListPrimarySchool
-* contained[+] = MedicalHistoryShortListAdolescents
-* contained[+] = MedicalHistoryShortListAdultsAndOlderPeople*/
 * contained[+] = administrative-gender
 * contained[+] = condition-clinical
 * contained[+] = AboriginalTorresStraitIslander
@@ -29,7 +23,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = SmokingQuitStatus-1
 * contained[+] = TobaccoUseStatus-1
 * contained[+] = CervicalScreeningStatus-1
-
 
 //assemble expectation
 * extension[+]
@@ -99,22 +92,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#clinical-condition-1"
-  
-/** extension[+]
-  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistory"
-* extension[+]
-  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistoryShortListInfants"
-* extension[+]
-  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistoryShortListPrimarySchool"
-* extension[+]
-  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistoryShortListAdolescents"
-* extension[+]
-  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#MedicalHistoryShortListAdultsAndOlderPeople"*/
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#administrative-gender"
