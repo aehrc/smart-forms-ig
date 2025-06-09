@@ -5,6 +5,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Alias: $sdc-questionnaire-templateExtractContext = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext
 Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
+Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 
 Alias: $au-core-smokingstatus = http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus
@@ -254,8 +255,7 @@ Usage:  #inline
 Instance:   ConditionTemplate
 InstanceOf: $au-core-condition
 Usage:  #inline
-* clinicalStatus.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* clinicalStatus.coding.extension[=].valueString = "item.where(linkId='a7e056be-fb6f-4f7f-b04d-5b809e1e18e3').answer.value.first()"
+* clinicalStatus.coding = $condition-clinical#active
 * category.coding = $condition-category#problem-list-item
 * code.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
 * code.extension[=].valueString = "item.where(linkId='2da85994-2d5e-42f1-8a81-abf44f397468').answer.value"
@@ -267,6 +267,8 @@ Usage:  #inline
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
 * onsetDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * onsetDateTime.extension[=].valueString = "item.where(linkId='4d55bffb-3286-4a23-a785-3b9c346d464d').answer.value.toDateTime()"
+* note.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* note.text.extension[=].valueString = "item.where(linkId='newdiagnosis-comment').answer.value"
 
 Instance:   MedicationStatementTemplate
 InstanceOf: $au-core-medicationstatement

@@ -175,7 +175,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.clinicalStatus.coding"      
         * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
-        * text = "Clinical Status"
+        * text = "Clinical status"
         * type = #choice
         * answerValueSet = "#condition-clinical"
       * item[+]
@@ -183,14 +183,14 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.onset.ofType(dateTime)"
         * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
-        * text = "Onset Date"
+        * text = "Onset date"
         * type = #date
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.abatement.ofType(dateTime)"
         * linkId = "e4524654-f6de-4717-b288-34919394d46b"
-        * text = "Abatement Date"
+        * text = "Abatement date"
         * type = #date
 
 // table for new diagnoses
@@ -208,15 +208,14 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * type = #open-choice
         * answerValueSet = "#clinical-condition-1"
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
-        * linkId = "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3"
-        * text = "Clinical Status"
-        * type = #choice
-        * answerValueSet = "#condition-clinical"
-      * item[+]
         * linkId = "4d55bffb-3286-4a23-a785-3b9c346d464d"
-        * text = "Onset Date"
+        * text = "Onset date"
         * type = #date
+      * item[+]
+        * linkId = "newdiagnosis-comment"
+        * text = "Comment"
+        * type = #string
+      
 
   * item[+]
     * linkId = "62774152-8a6e-4449-af9f-87bdce8b9bf5"
