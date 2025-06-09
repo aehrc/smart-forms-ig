@@ -183,7 +183,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "smoker"
     * language = #text/fhirpath
-    * expression = "item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
+    * expression = "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "postcode"
     * language = #text/fhirpath

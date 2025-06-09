@@ -7,6 +7,7 @@ Alias: $sdc-questionnaire-templateExtractContext = http://hl7.org/fhir/uv/sdc/St
 Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 
+Alias: $au-core-smokingstatus = http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus
 Alias: $au-core-bodyheight = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight
 Alias: $au-core-bodyweight = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight
 Alias: $au-core-au-core-headcircum = http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum
@@ -20,6 +21,21 @@ Alias: $au-core-medicationstatement = http://hl7.org.au/fhir/core/StructureDefin
 
 
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+
+Instance:   SmokingStatusTemplate
+InstanceOf: $au-core-smokingstatus
+Usage:  #inline  
+* status = #final
+* category[socialHistory] = $observation-category#social-history
+* code.coding[+] = $SCT#1747861000168109
+* code.coding[loincSmokingStatus][+] = $LNC#72166-2
+* code.text = "Smoking status"
+* subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* subject.reference.extension[=].valueString = "%resource.subject.reference"
+* effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-date').answer.value.toDateTime()"
+* valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueCodeableConcept.coding.extension[=].valueString = "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
 
 Instance:   BodyHeightLengthTemplate
 InstanceOf: $au-core-bodyheight

@@ -8,6 +8,7 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Substance Use"
 Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = SmokingStatusTemplate
 * contained[+] = SmokingQuitStatus-1
 * contained[+] = TobaccoUseStatus-1
 
@@ -113,20 +114,34 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     </div>"    
     * type = #display 
   * item[+]
-    * linkId = "515eda6e-973a-4b10-910a-0d4bf4f2efff"
+    * linkId = "substanceuse-smoking"
     * text = "Smoking"
     * type = #group
     * repeats = false  
     * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct')"
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-      * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#SmokingStatusTemplate"
+      * linkId = "substanceuse-smoking-smokingstatus"
       * text = "Smoking status"
-      * type = #choice
+      * type = #group
       * repeats = false
-      * answerValueSet = "#TobaccoUseStatus-1"
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct')"
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
+        * text = "Status"
+        * type = #choice
+        * repeats = false
+        * answerValueSet = "#TobaccoUseStatus-1"
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsTobaccoSmokingStatus.entry.resource.effective.ofType(dateTime)"
+        * linkId = "substanceuse-smoking-smokingstatus-date"
+        * text = "Date"
+        * type = #dateTime
+        * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "96dc7c22-d003-459c-8a56-f6cd182fc077"
