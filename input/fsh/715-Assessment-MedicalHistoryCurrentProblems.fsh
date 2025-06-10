@@ -151,10 +151,6 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p>Medical history and current problems list</p>
-    <p style=\"font-size:0.9em; font-weight:normal\"><em>This list includes items from the clinical record. If you wish to enter additional diagnoses, either update the clinical record and repopulate this form or add them to the \"New diagnoses list\" below and later update the clinical record as required.</em></p>
-    </div>"
     * type = #group
     * repeats = true
     * item[+]
