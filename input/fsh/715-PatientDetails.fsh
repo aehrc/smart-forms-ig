@@ -263,7 +263,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "HomeAddressRepeat"
       * language = #text/fhirpath
-      * expression = "%patient.address.where(use='home' and (type.empty() or type!='postal'))"
+      * expression = "%patient.address.where(all(use='home' and (type.empty() or type!='postal')))"
     * linkId = "f1262ade-843c-4eba-a86d-51a9c97d134b"
     * text = "Home address"
     * type = #group

@@ -430,7 +430,7 @@
               "valueExpression": {
                 "name": "HomeAddressRepeat",
                 "language": "text/fhirpath",
-                "expression": "%patient.address.where(use='home' and (type.empty() or type!='postal'))"
+                "expression": "%patient.address.where(all(use='home' and (type.empty() or type!='postal')))"
               }
             }
           ],
