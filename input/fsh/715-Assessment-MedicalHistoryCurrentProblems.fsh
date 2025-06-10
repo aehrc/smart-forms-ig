@@ -142,94 +142,13 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * text = "kg"
       * type = #display
   
-  /* Agreed to replace this section with medical history table. Commenting out for now.
-  // for infants 0-5
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%age <= 5"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.code.select(coding.where(system='http://snomed.info/sct').first())"
-    * linkId = "033db7b3-80da-43e2-9838-88f3d51e5913"
-    * text = "Problems"
-    * type = #choice
-    * repeats = true
-    * answerValueSet = "#MedicalHistoryShortListInfants"
-
-  // for Primary School Children 5-12
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "(%age > 5).intersect(%age <= 12)"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.code.select(coding.where(system='http://snomed.info/sct').first())"
-    * linkId = "384ab440-10ed-4ac1-89da-cd7d24f87a95"
-    * text = "Problems"
-    * type = #choice
-    * repeats = true
-    * answerValueSet = "#MedicalHistoryShortListPrimarySchool"
-
-  // for adolescents 12-24
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "(%age > 12).intersect(%age <= 24)"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.code.select(coding.where(system='http://snomed.info/sct').first())"
-    * linkId = "c24ae0d2-8932-4b87-9b7e-a644b5eb2874"
-    * text = "Problems"
-    * type = #choice
-    * repeats = true
-    * answerValueSet = "#MedicalHistoryShortListAdolescents"
-
- // for adults and older >24
-  * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%age > 24"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.code.select(coding.where(system='http://snomed.info/sct').first())"      
-    * linkId = "bba27ef5-05c5-4e9c-bc9f-cf42091e99cb"
-    * text = "Problems"
-    * type = #choice
-    * repeats = true
-    * answerValueSet = "#MedicalHistoryShortListAdultsAndOlderPeople"
-
-//continue
-  * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-    * extension[sdc-questionnaire-initialExpression].valueExpression
-      * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
-    * linkId = "736f2a51-e04d-4e7f-aef1-c47f3a1f4e3c"
-    * text = "Other relevant medical history, operations, hospital admissions, etc"
-    * extension[sdc-questionnaire-shortText].valueString = "Other relevant medical history"
-    * type = #open-choice
-    * repeats = true
-    * answerValueSet = "#MedicalHistory"
-  * item[+]
-    * linkId = "f00def30-35dd-401a-9a38-12602bd3b8b1"
-    * text = "Provide details of identified problems"
-    * type = #text
-    * repeats = false 
-
-*/
-
 // table of medical history
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ConditionRepeat"
       * language = #text/fhirpath
-      * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
+      * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
     * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
     * text = "Medical history and current problems list"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
