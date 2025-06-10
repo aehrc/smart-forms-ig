@@ -117,7 +117,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
 * item[=].item[=].item[=].extension[=].valueExpression[+].name = "AllergyIntoleranceRepeat"
 * item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+* item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
 * item[=].item[=].item[=].linkId = "allergysummary"
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true

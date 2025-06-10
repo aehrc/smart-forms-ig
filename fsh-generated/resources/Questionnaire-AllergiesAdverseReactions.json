@@ -106,7 +106,7 @@
                   "valueExpression": {
                     "name": "AllergyIntoleranceRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+                    "expression": "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
                   }
                 }
               ],
