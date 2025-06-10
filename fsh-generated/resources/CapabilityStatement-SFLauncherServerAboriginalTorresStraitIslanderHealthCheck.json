@@ -65,6 +65,19 @@
       ]
     }
   ],
+  "patchFormat": [
+    "application/fhir+json"
+  ],
+  "_patchFormat": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ]
+    }
+  ],
   "implementationGuide": [
     "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0",
     "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"

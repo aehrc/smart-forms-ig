@@ -26,6 +26,9 @@ Usage: #definition
 * format[+] = #json
 * format[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * format[=].extension[0].valueCode = #SHALL
+* patchFormat[+] = #application/fhir+json
+* patchFormat[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* patchFormat[=].extension[0].valueCode = #SHALL
 
 * implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 * implementationGuide[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -590,6 +593,7 @@ Usage: #definition
 * software.name = "Smart Forms Application"
 * fhirVersion = #4.0.1
 * format[0] = #json
+* patchFormat[0] = #application/fhir+json
 * implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 
 * rest.mode = #client
