@@ -112,9 +112,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item.linkId = "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a"
-  /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "%age.exists()"*/
+    * expression = "%age.exists()"
 * item.text = "Regular medications"
 * item.type = #group
 * item.repeats = false
@@ -292,9 +292,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[=].repeats = false
 
-//* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-//* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age <= 12"
-* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age <= 12"
+* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
 * item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
 * item.item[=].linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
 * item.item[=].text = "Does your child take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"
@@ -302,9 +302,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].type = #choice
 * item.item[=].repeats = false 
 * item.item[=].answerValueSet = "#YesNo"
-//* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-//* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age > 12"
-* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age > 12"
+* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
 * item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
 * item.item[=].linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
 * item.item[=].text = "Do you take any regular medications (prescribed, over-the-counter, traditional, complementary and alternative)?"

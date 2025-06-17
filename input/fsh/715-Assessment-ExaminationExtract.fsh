@@ -134,9 +134,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 
 * item[+] 
-  /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "%age.exists()"*/
+    * expression = "%age.exists()"
   * linkId = "c587e3b6-b91a-40dc-9a16-179342d001e9"
   * text = "Examination"
   * type = #group
@@ -163,9 +163,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * answerBoolean = true
 
   * item[+]
-   /* * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age <= 12"*/
+      * expression = "%age <= 12"
     * linkId = "d15824f8-eafc-4fa0-80a2-82f0ec7f8728"
     * text = "Growth measures recorded on Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO) growth charts for centile and tracking overtime"
     * type = #display
@@ -185,9 +185,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #group 
     * repeats = false
     * item[+]
-      /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%age <= 5"*/
+        * expression = "%age <= 5"
       * linkId = "4e32e9b2-82e6-41ea-9545-79e928f7d6c2"
       * text = "Length/Height"
       * type = #group
@@ -219,9 +219,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
-      /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%age > 5"*/
+        * expression = "%age > 5"
       * linkId = "6226a5c5-b5c3-4ebb-a689-2b286322cfe0"
       * text = "Height"
       * type = #group
@@ -284,9 +284,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
-      /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%age > 12"*/
+        * expression = "%age > 12"
       * linkId = "bc209c5e-ed28-48e3-b1a1-55cb7e435d8b"
       * text = "BMI (calculated)"
       * type = #group
@@ -317,9 +317,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "kg/m2"
           * type = #display
     * item[+]
-      /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%age <= 12"*/
+        * expression = "%age <= 12"
       * linkId = "d3557f55-1abf-401c-aada-2d4380151c56"
       * text = "Head circumference"
       * type = #group
@@ -351,9 +351,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
-      /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%age >= 18"*/
+        * expression = "%age >= 18"
       * linkId = "ec884b64-ed8d-485b-930f-e7ac18ad4cc9"
       * text = "Waist circumference"
       * type = #group
@@ -446,9 +446,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 // Blood pressure observations table with dates
   * item[+]
-    /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age > 12"*/
+      * expression = "%age > 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
     * linkId = "3639c586-9576-48d3-a52b-e91fd2138581"
     * type = #group
@@ -518,42 +518,42 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 */
   // needs assessment for potentional coded response
   * item[+]
-    /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age <= 12"*/
+      * expression = "%age <= 12"
     * linkId = "213a3eac-e530-4e27-859c-407136c7a0a6"
     * text = "Cardiac auscultation"
     * type = #text
     * repeats = false
   * item[+]
-    /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age <= 12"*/
+      * expression = "%age <= 12"
     * linkId = "8886f3bb-52de-4294-a5cb-8f960e2a6bbe"
     * text = "Abdominal examination"
     * type = #text
     * repeats = false
   * item[+]
-    /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age <= 12"*/
+      * expression = "%age <= 12"
     * linkId = "5e10229c-390d-4968-90d3-f896840f3c50"
     * text = "Gait examination (musculoskeletal structure, balance, coordination)"
     * type = #text
     * repeats = false
   * item[+]
-    /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age < 1"*/
+      * expression = "%age < 1"
     * linkId = "6c69ee91-f777-494c-bf09-d963773cd4ae"
     * text = "Newborn examination (if indicated, infant aged <=6 weeks)"
     * type = #text
     * repeats = false
 // needs assessment for what is being recorded. Actual measurement result or result interpretation?
   * item[+]
-    /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age <= 12"*/
+      * expression = "%age <= 12"
     * linkId = "7a431d03-1726-4905-aae7-49f62a10ce5e"
     * text = "Haemoglobin (children at risk of iron deficiency anaemia)"
     * type = #string

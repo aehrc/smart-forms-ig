@@ -366,6 +366,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -393,6 +400,13 @@
         },
         {
           "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
@@ -478,6 +492,17 @@
         }
       ],
       "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
+      "_linkId": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+            "valueExpression": {
+              "language": "text/fhirpath",
+              "expression": "%age.exists()"
+            }
+          }
+        ]
+      },
       "text": "Regular medications",
       "type": "group",
       "repeats": false

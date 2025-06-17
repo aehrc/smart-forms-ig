@@ -10,6 +10,15 @@
   },
   "item": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
+        }
+      ],
       "item": [
         {
           "extension": [

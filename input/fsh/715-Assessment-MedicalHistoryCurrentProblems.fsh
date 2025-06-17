@@ -82,9 +82,9 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "%age.exists()"*/
+    * expression = "%age.exists()"
   * linkId = "28d5dbe4-1e65-487c-847a-847f544a6a91"
   * text = "Medical history and current problems"
   * type = #group

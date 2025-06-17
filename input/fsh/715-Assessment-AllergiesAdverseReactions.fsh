@@ -78,9 +78,9 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "%age.exists()"*/
+    * expression = "%age.exists()"
   * linkId = "allergy"
   * text = "Allergies/adverse reactions"
   * type = #group

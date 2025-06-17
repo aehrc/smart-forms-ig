@@ -10,6 +10,15 @@
   },
   "item": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
+        }
+      ],
       "item": [
         {
           "extension": [
@@ -78,6 +87,15 @@
           ]
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "linkId": "d15824f8-eafc-4fa0-80a2-82f0ec7f8728",
           "text": "Growth measures recorded on Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO) growth charts for centile and tracking overtime",
           "type": "display"
@@ -112,6 +130,15 @@
           ],
           "item": [
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age <= 5"
+                  }
+                }
+              ],
               "item": [
                 {
                   "linkId": "837cd0ce-4a9e-4c8b-8679-007ed961f121",
@@ -190,6 +217,15 @@
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age > 5"
+                  }
+                }
+              ],
               "item": [
                 {
                   "linkId": "7035c7e7-ada3-4c6b-9ea8-f39666f5d4ea",
@@ -346,6 +382,15 @@
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age > 12"
+                  }
+                }
+              ],
               "item": [
                 {
                   "linkId": "2ada6633-03c6-4b05-bc23-18dec84ec150",
@@ -416,6 +461,15 @@
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age <= 12"
+                  }
+                }
+              ],
               "item": [
                 {
                   "linkId": "7a4a6aac-558e-4bec-86c5-326ae07e37d6",
@@ -494,6 +548,15 @@
               "repeats": false
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "%age >= 18"
+                  }
+                }
+              ],
               "item": [
                 {
                   "linkId": "8df0f5d8-821d-4f71-b3c1-d164616ea2f5",
@@ -728,6 +791,13 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age > 12"
+              }
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -860,30 +930,75 @@
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "linkId": "213a3eac-e530-4e27-859c-407136c7a0a6",
           "text": "Cardiac auscultation",
           "type": "text",
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "linkId": "8886f3bb-52de-4294-a5cb-8f960e2a6bbe",
           "text": "Abdominal examination",
           "type": "text",
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "linkId": "5e10229c-390d-4968-90d3-f896840f3c50",
           "text": "Gait examination (musculoskeletal structure, balance, coordination)",
           "type": "text",
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age < 1"
+              }
+            }
+          ],
           "linkId": "6c69ee91-f777-494c-bf09-d963773cd4ae",
           "text": "Newborn examination (if indicated, infant aged <=6 weeks)",
           "type": "text",
           "repeats": false
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "%age <= 12"
+              }
+            }
+          ],
           "linkId": "7a431d03-1726-4905-aae7-49f62a10ce5e",
           "text": "Haemoglobin (children at risk of iron deficiency anaemia)",
           "type": "string",
