@@ -171,7 +171,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
               }
             ]
           },
@@ -382,7 +382,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
               }
             ]
           },
@@ -601,7 +601,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
               }
             ]
           },
@@ -789,33 +789,16 @@
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"
+          "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
         }
       ],
       "expansion": {
-        "identifier": "urn:uuid:4d42d172-e817-40be-a265-56aebe2f4f10",
-        "timestamp": "2025-05-01T10:01:02+10:00",
-        "offset": 0,
+        "identifier": "urn:uuid:3657ae6f-b206-482f-a745-0ff9c99358ef",
+        "timestamp": "2025-06-05T13:50:47+10:00",
         "parameter": [
           {
-            "name": "displayLanguage",
-            "valueCode": "en-US"
-          },
-          {
-            "name": "count",
-            "valueInteger": 1000
-          },
-          {
-            "name": "offset",
-            "valueInteger": 0
-          },
-          {
-            "name": "excludeNested",
-            "valueBoolean": false
-          },
-          {
-            "name": "used-valueset",
-            "valueUri": "null"
+            "name": "used-supplement",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
           },
           {
             "name": "used-codesystem",
@@ -824,28 +807,40 @@
           {
             "name": "version",
             "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+          },
+          {
+            "name": "warning-draft",
+            "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.3.0"
           }
         ],
         "contains": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20250430",
             "code": "736595007",
-            "display": "Cervical cancer screening refused"
+            "display": "Declined"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20250430",
             "code": "410527000",
             "display": "Offered"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20250430",
             "code": "171154002",
-            "display": "Cancer cervix screening - not needed"
+            "display": "Not required"
           },
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20250430",
             "code": "171155001",
-            "display": "Cancer cervix screening - up-to-date"
+            "display": "Up to date"
           }
         ]
       },
@@ -853,6 +848,7 @@
         "include": [
           {
             "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107/version/20250430",
             "concept": [
               {
                 "code": "736595007",

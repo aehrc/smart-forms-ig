@@ -26,6 +26,9 @@ Usage: #definition
 * format[+] = #json
 * format[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * format[=].extension[0].valueCode = #SHALL
+* patchFormat[+] = #application/fhir+json
+* patchFormat[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* patchFormat[=].extension[0].valueCode = #SHALL
 
 * implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 * implementationGuide[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -80,6 +83,9 @@ Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/1.0.0/s
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
+* rest.resource[=].interaction[+].code = #patch
+* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
 /*
 * rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
 * rest.resource[=].interaction[+].code = #update
@@ -121,6 +127,9 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
 * rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
+* rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
 /*
@@ -186,6 +195,9 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
+* rest.resource[=].interaction[+].code = #patch
+* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
 /*
 * rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
 * rest.resource[=].conditionalCreate = true
@@ -240,6 +252,9 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
 * rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
+* rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
 /*
@@ -380,6 +395,9 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
+* rest.resource[=].interaction[+].code = #patch
+* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
 /*
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -575,6 +593,7 @@ Usage: #definition
 * software.name = "Smart Forms Application"
 * fhirVersion = #4.0.1
 * format[0] = #json
+* patchFormat[0] = #application/fhir+json
 * implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 
 * rest.mode = #client
@@ -594,6 +613,7 @@ Usage: #definition
 * rest.resource[=].documentation = "The client supports the AllergyIntolerance resource, the AU Core profile and the conformance expectations for the AllergyIntolerance resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #patch
 /*
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].conditionalCreate = true
@@ -617,6 +637,7 @@ The server **SHALL** support both."
 * rest.resource[=].documentation = "The client supports the Condition resource, the AU Core profile and the conformance expectations for the Condition resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #patch
 /*
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].conditionalCreate = true
@@ -653,6 +674,7 @@ The server **SHALL** support both."
 * rest.resource[=].documentation = "The client supports the Immunization resource, the AU Core profile and the conformance expectations for the Immunization resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #patch
 //* rest.resource[=].conditionalCreate = true
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
@@ -683,6 +705,8 @@ The server **SHALL** support both."
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
 * rest.resource[=].documentation = "The client supports the MedicationStatement resource, the AU Core profile and the conformance expectations for the MedicationStatement resource."
 * rest.resource[=].interaction[0].code = #search-type
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #patch
 /*
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #update
@@ -768,6 +792,7 @@ The server **SHALL** support both."
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
 * rest.resource[=].documentation = "The client supports the Patient resource, AU Core profile and the conformance expectations for the Patient resource."
 * rest.resource[=].interaction[0].code = #read
+* rest.resource[=].interaction[+].code = #patch
 //* rest.resource[=].interaction[+].code = #update
 //* rest.resource[=].conditionalUpdate = true
 

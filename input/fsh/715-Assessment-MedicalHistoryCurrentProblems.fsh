@@ -140,7 +140,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * linkId = "87cf1ecd-6d1b-4de1-894d-58bd77dcfde1"
         * text = "kg"
         * type = #display
-
+        
 // table of medical history
 
   * item[+]
@@ -156,7 +156,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext][+].valueExpression
         * name = "ConditionRepeat"
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
+        * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
       * extension[TemplateExtractExtensionExtended][+]
         * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
         * extension[resourceId][+].valueString = "item.where(linkId='conditionId').answer.value"
@@ -239,6 +239,6 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * linkId = "MarkComplete-17"
     * text = "Mark section as complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
     * type = #boolean
     * repeats = false

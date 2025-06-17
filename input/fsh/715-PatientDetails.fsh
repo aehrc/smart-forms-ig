@@ -62,15 +62,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
 
-//fhir query variables
-
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsSex"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=1515311000168102&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
-        
  //fhirpath variables
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
@@ -116,13 +107,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * question = "MarkComplete-32" // Section complete item
       * operator = #=
       * answerBoolean = true
-  * item[+]
-    * linkId = "RecordUpdate-Patient"
-    * text = "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first."
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
-    </div>"    
-    * type = #display 
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -185,8 +169,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
     * readOnly = true
     * answerValueSet = "#biological-sex-1"
-  
-
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -274,7 +256,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "HomeAddressRepeat"
       * language = #text/fhirpath
-      * expression = "%patient.address.where(use='home' and (type.empty() or type!='postal'))"
+      * expression = "%patient.address.where(all(use='home' and (type.empty() or type!='postal')))"
     * linkId = "f1262ade-843c-4eba-a86d-51a9c97d134b"
     * text = "Home address"
     * type = #group
@@ -724,7 +706,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * linkId = "MarkComplete-32"
     * text = "Mark section as complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #2E7D32;\r\n            border-radius: 0.5rem;\r\n            background-color: #d5e5d6;\r\n            font-weight: 700;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
     * type = #boolean
     * repeats = false
 
