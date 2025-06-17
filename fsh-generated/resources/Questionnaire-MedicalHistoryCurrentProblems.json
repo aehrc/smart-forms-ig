@@ -373,79 +373,18 @@
               "repeats": true
             }
           ],
-          "linkId": "92bd7d05-9b5e-4cf9-900b-703f361dad9d",
-          "text": "Medical history and current problems list",
-          "type": "group",
-          "repeats": true
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "gtable",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
+          "linkId": "medicalhistorysummary",
+          "text": "Medical history summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <p>Medical history summary</p>\r\n    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n    </div>"
               }
-            }
-          ],
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "autocomplete",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "2da85994-2d5e-42f1-8a81-abf44f397468",
-              "text": "Condition",
-              "type": "open-choice",
-              "answerValueSet": "#clinical-condition-1"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "drop-down",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "a7e056be-fb6f-4f7f-b04d-5b809e1e18e3",
-              "text": "Clinical Status",
-              "type": "choice",
-              "answerValueSet": "#condition-clinical"
-            },
-            {
-              "linkId": "e4524654-f6de-4717-b288-34919394d46b",
-              "text": "Onset Date",
-              "type": "date"
-            },
-            {
-              "linkId": "5bc1d8f4-6e8c-4695-916c-1ef767306e46",
-              "text": "Recorded Date",
-              "type": "date"
-            }
-          ],
-          "linkId": "4484cacd-a260-4e5f-83c1-168ca2396c04",
-          "text": "New diagnoses list",
-          "type": "group",
-          "repeats": true        },
+            ]
+          },
+          "type": "group"
+        },
         {
           "linkId": "62774152-8a6e-4449-af9f-87bdce8b9bf5",
           "text": "Health priorities, actions and follow-up",
