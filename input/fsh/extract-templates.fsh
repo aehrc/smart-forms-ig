@@ -151,9 +151,9 @@ Instance:   HeartRhythmTemplate
 InstanceOf: SmartHealthCheckHeartRhythm
 Usage:  #inline  
 * status = #final
-* category = $observation-category#vital-signs
-* code.coding[+] = $LNC#8884-9
-* code.coding[+] = $SCT#364074009
+* category[vitalSignsCategory] = $observation-category#vital-signs
+* code.coding[loincHeartRhythmCode] = $LNC#8884-9
+* code.coding[snomedHeartRhythmCode] = $SCT#364074009
 * code.text = "Heart rhythm"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"

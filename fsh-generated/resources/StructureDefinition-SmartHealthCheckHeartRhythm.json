@@ -100,41 +100,41 @@
         "mustSupport": true
       },
       {
-        "id": "Observation.code.coding:loincHeartRateCode",
+        "id": "Observation.code.coding:loincHeartRhythmCode",
         "path": "Observation.code.coding",
-        "sliceName": "loincHeartRateCode",
+        "sliceName": "loincHeartRhythmCode",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Observation.code.coding:loincHeartRateCode.system",
+        "id": "Observation.code.coding:loincHeartRhythmCode.system",
         "path": "Observation.code.coding.system",
         "min": 1,
         "fixedUri": "http://loinc.org"
       },
       {
-        "id": "Observation.code.coding:loincHeartRateCode.code",
+        "id": "Observation.code.coding:loincHeartRhythmCode.code",
         "path": "Observation.code.coding.code",
         "min": 1,
-        "fixedCode": "8867-4"
+        "fixedCode": "8884-9"
       },
       {
-        "id": "Observation.code.coding:snomedHeartRateCode",
+        "id": "Observation.code.coding:snomedHeartRhythmCode",
         "path": "Observation.code.coding",
-        "sliceName": "snomedHeartRateCode",
+        "sliceName": "snomedHeartRhythmCode",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Observation.code.coding:snomedHeartRateCode.system",
+        "id": "Observation.code.coding:snomedHeartRhythmCode.system",
         "path": "Observation.code.coding.system",
         "min": 1,
         "fixedUri": "http://snomed.info/sct"
       },
       {
-        "id": "Observation.code.coding:snomedHeartRateCode.code",
+        "id": "Observation.code.coding:snomedHeartRhythmCode.code",
         "path": "Observation.code.coding.code",
         "min": 1,
         "fixedCode": "364074009"

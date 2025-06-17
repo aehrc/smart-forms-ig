@@ -308,6 +308,30 @@
           "repeats": true
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "gtable",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control"
+                  }
+                ]
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "template",
+                  "valueReference": {
+                    "reference": "#ImmunizationTemplate"
+                  }
+                }
+              ],
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+            }
+          ],
           "item": [
             {
               "extension": [
@@ -342,30 +366,6 @@
               "linkId": "vaccinestoday-comment",
               "text": "Comment",
               "type": "string"
-            }
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "gtable",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
-              "extension": [
-                {
-                  "url": "template",
-                  "valueReference": {
-                    "reference": "#ImmunizationTemplate"
-                  }
-                }
-              ]
             }
           ],
           "linkId": "vaccinestoday",

@@ -65,15 +65,15 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * code.coding ^slicing.discriminator[=].path = "system"
 * code.coding ^slicing.ordered = false
 * code.coding ^slicing.rules = #open
-* code.coding contains loincHeartRateCode 1..1 MS and snomedHeartRateCode 1..1 MS
-* code.coding[loincHeartRateCode].system 1..1
-* code.coding[loincHeartRateCode].system = "http://loinc.org" (exactly)
-* code.coding[loincHeartRateCode].code 1..1
-* code.coding[loincHeartRateCode].code = #8867-4 (exactly)
-* code.coding[snomedHeartRateCode].system 1..1
-* code.coding[snomedHeartRateCode].system = "http://snomed.info/sct" (exactly)
-* code.coding[snomedHeartRateCode].code 1..1
-* code.coding[snomedHeartRateCode].code = #364074009 (exactly)
+* code.coding contains loincHeartRhythmCode 1..1 MS and snomedHeartRhythmCode 1..1 MS
+* code.coding[loincHeartRhythmCode].system 1..1
+* code.coding[loincHeartRhythmCode].system = "http://loinc.org" (exactly)
+* code.coding[loincHeartRhythmCode].code 1..1
+* code.coding[loincHeartRhythmCode].code = #8884-9 (exactly)
+* code.coding[snomedHeartRhythmCode].system 1..1
+* code.coding[snomedHeartRhythmCode].system = "http://snomed.info/sct" (exactly)
+* code.coding[snomedHeartRhythmCode].code 1..1
+* code.coding[snomedHeartRhythmCode].code = #364074009 (exactly)
 * subject 1.. MS
 * subject only Reference($au-core-patient)
 * effective[x] 1.. MS

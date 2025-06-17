@@ -207,11 +207,8 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
   
 
   * item[+]
-    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-    * extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable  
-    * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
-    * extension[=].extension[+].url = "template"
-    * extension[=].extension[=].valueReference = Reference(ImmunizationTemplate)
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
+    * extension[sdc-questionnaire-templateExtract].extension[template].valueReference = Reference(ImmunizationTemplate)
     * linkId = "vaccinestoday"
     * text = "Vaccines given today"
     * type = #group
