@@ -40,14 +40,14 @@ Usage: #definition
 * rest.mode = #server
 * rest.documentation = "Smart Forms Launcher Server **SHALL**:
 1. Support the [AU Core AllergyIntolerance resource profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-allergyintolerance.html)
-1. Support the [AU Core Condition resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-condition.html)
-1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-encounter.html)
+1. Support the [AU Core Condition resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-condition.html)
+1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-encounter.html)
 1. Support the [AU Core Immunization resource profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-immunization.html)
 1. Support the [AU Core Medication profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medication.html)
 1. Support the [AU Core MedicationStatement profile](https://hl7.org.au/fhir/core/1.1.0-preview/StructureDefinition-au-core-medicationstatement.html)
-1. Support the [AU Core Observation resource profiles](http://hl7.org.au/fhir/core/1.0.0/profiles-and-extensions.html#observation)
-1. Support the [AU Core Patient resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-patient.html)
-1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-practitioner.html)
+1. Support the [AU Core Observation resource profiles](http://hl7.org.au/fhir/core/1.1.0-previewprofiles-and-extensions.html#observation)
+1. Support the [AU Core Patient resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-patient.html)
+1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-practitioner.html)
 1. Support the [SDC Questionnaire Response profile](https://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaireresponse.html)
 1. Implement the RESTful behavior according to the FHIR specification
 1. Support JSON source formats for all interactions"

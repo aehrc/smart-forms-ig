@@ -8,6 +8,7 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Substance Use"
 Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = SmokingStatusTemplate
 * contained[+] = SmokingQuitStatus-1
 * contained[+] = TobaccoUseStatus-1
 
@@ -104,22 +105,43 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * enableWhen[+]
       * question = "MarkComplete-29" // Section complete item
       * operator = #=
-      * answerBoolean = true
+      * answerBoolean = true  
   * item[+]
-    * linkId = "515eda6e-973a-4b10-910a-0d4bf4f2efff"
+    * linkId = "substanceuse-smoking"
     * text = "Smoking"
     * type = #group
     * repeats = false  
     * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct')"
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-      * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-      * text = "Smoking status"
-      * type = #choice
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+      * linkId = "substanceuse-smoking-smokingstatus"
+      * type = #group
       * repeats = false
-      * answerValueSet = "#TobaccoUseStatus-1"
+      * item[+]
+        * linkId = "substanceuse-smoking-smokingstatus-group"
+        * text = "Smoking status"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * linkId = "substanceuse-smoking-smokingstatus-group-laststatus"
+          * text = "Last status"
+            * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
+              * language = #text/fhirpath
+              * expression = "iif(%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').empty() = true, 'Not available', %ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display) + ' (' + %ObsTobaccoSmokingStatus.entry.resource.effective.toDate().toString() + ')')"
+          * type = #display
+          * repeats = false
+        * item[+]
+          * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#SmokingStatusTemplate"
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+          * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
+          * text = "New status"
+          * type = #choice
+          * repeats = false
+          * answerValueSet = "#TobaccoUseStatus-1"
+        * item[+]
+          * linkId = "substanceuse-smoking-smokingstatus-group-newdate"
+          * text = "New date"
+          * type = #date
+          * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "96dc7c22-d003-459c-8a56-f6cd182fc077"
@@ -196,8 +218,6 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false     
-
-
 
   * item[+]
     * linkId = "MarkComplete-29"

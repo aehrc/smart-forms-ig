@@ -10,19 +10,6 @@
   },
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-          "valueExpression": {
-            "language": "text/fhirpath",
-            "expression": "%age.exists()"
-          }
-        },
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
-          "valueString": "Regular medications"
-        }
-      ],
       "item": [
         {
           "extension": [
@@ -91,14 +78,293 @@
           ]
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%age <= 12"
+          "linkId": "regularmedications-instruction",
+          "text": "Check medications are still required, appropriate dose, understanding of medication and adherence",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n      <em>Check medications are still required, appropriate dose, understanding of medication and adherence</em>\r\n    </div>"
               }
+            ]
+          },
+          "type": "display"
+        },
+        {
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                  "valueExpression": {
+                    "name": "MedicationStatementRepeat",
+                    "language": "text/fhirpath",
+                    "expression": "%MedicationStatement.entry.resource.where(status='active')"
+                  }
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#MedicationStatementPatchTemplate"
+                      }
+                    },
+                    {
+                      "url": "resourceId",
+                      "valueString": "item.where(linkId='medicationStatementId').answer.value"
+                    },
+                    {
+                      "url": "type",
+                      "valueCode": "MedicationStatement"
+                    }
+                  ],
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                }
+              ],
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.id"
+                      }
+                    }
+                  ],
+                  "linkId": "medicationStatementId",
+                  "type": "string"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-medication",
+                  "text": "Medication",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "readOnly": true,
+                  "answerValueSet": "#smarthealthchecks-medication"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.status"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "active",
+                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "display": "Active"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "completed",
+                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "display": "Completed"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "stopped",
+                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "display": "Stopped"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "on-hold",
+                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "display": "On Hold"
+                      }
+                    }
+                  ],
+                  "answerValueSet": "#smarthealthchecks-medication"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.dosage.text"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-dosage",
+                  "text": "Dosage",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.reasonCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-reasoncode",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "readOnly": true,
+                  "answerValueSet": "#medication-reason-taken-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatementRepeat.note.text"
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-current-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": true
+                }
+              ],
+              "linkId": "regularmedications-summary-current",
+              "type": "group",
+              "repeats": true
             },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#MedicationStatementTemplate"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "linkId": "regularmedications-summary-new",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-new-medication",
+                  "text": "Medication",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "#smarthealthchecks-medication"
+                },
+                {
+                  "linkId": "regularmedications-summary-new-dosage",
+                  "text": "Dosage",
+                  "type": "string",
+                  "repeats": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "regularmedications-summary-new-reasoncode",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "#medication-reason-taken-1"
+                },
+                {
+                  "linkId": "regularmedications-summary-new-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ],
+          "linkId": "regularmedications-summary",
+          "text": "Medication summary",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<p>Medication summary</p>\r\n<p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>\r\n</div>"
+              }
+            ]
+          },
+          "type": "group",
+          "repeats": false
+        },
+        {
+          "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
@@ -128,13 +394,6 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%age > 12"
-              }
-            },
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
@@ -162,28 +421,9 @@
         },
         {
           "linkId": "874ec8db-95c9-4cc0-95db-e45edaa3cd12",
-          "text": "Up to date in the health record?",
+          "text": "Check the health record is up to date",
           "type": "boolean",
-          "repeats": false,
-          "enableWhen": [
-            {
-              "question": "6eb59145-ed9a-4184-af83-3506d47e4d4e",
-              "operator": "=",
-              "answerCoding": {
-                "code": "Y",
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-              }
-            },
-            {
-              "question": "3a2d27b6-e918-4df5-aca9-b374fcf9faad",
-              "operator": "=",
-              "answerCoding": {
-                "code": "Y",
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0136"
-              }
-            }
-          ],
-          "enableBehavior": "any"
+          "repeats": false
         },
         {
           "extension": [
@@ -193,7 +433,7 @@
             }
           ],
           "linkId": "36290837-ad70-48b2-9c66-31533fec918b",
-          "text": "Medication understanding and adherence has been checked with patient",
+          "text": "Check medication understanding and adherence with patient",
           "type": "boolean",
           "repeats": false,
           "enableWhen": [
@@ -238,7 +478,7 @@
         }
       ],
       "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
-      "text": "Regular medications: check if still required, appropriate dose, understanding of medication and adherence",
+      "text": "Regular medications",
       "type": "group",
       "repeats": false
     }
@@ -310,6 +550,241 @@
           }
         ]
       }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "smarthealthchecks-medication",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+          "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+        ]
+      },
+      "status": "draft",
+      "name": "SmartHealthChecksMedication",
+      "title": "Smart Health Checks Medication",
+      "description": "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/smarthealthchecks-medication",
+      "experimental": false,
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "version": "http://snomed.info/sct/32506021000036107",
+            "filter": [
+              {
+                "property": "constraint",
+                "op": "=",
+                "value": "^ 929360081000036101|Medicinal product pack reference set| OR ^ 929360071000036103|Medicinal product unit of use reference set| OR ^ 929360041000036105|Trade product pack reference set| OR ^ 929360031000036100|Trade product unit of use reference set| OR ^ 929360051000036108|Containered trade product pack reference set|"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "medication-reason-taken-1",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+          "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+        ]
+      },
+      "status": "active",
+      "name": "MedicationReasonTaken",
+      "title": "Medication Reason Taken",
+      "description": "The Medication Reason Taken value set includes values that identify a reason why a medication has been or is being taken.",
+      "url": "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:1.2.36.1.2001.1004.201.10048"
+        }
+      ],
+      "version": "1.1.0",
+      "experimental": false,
+      "date": "2020-07-31",
+      "publisher": "Australian Digital Health Agency",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "email",
+              "value": "help@digitalhealth.gov.au"
+            }
+          ]
+        }
+      ],
+      "copyright": "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted.\n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "filter": [
+              {
+                "property": "constraint",
+                "op": "=",
+                "value": "^ 32570581000036105|Problem/Diagnosis reference set| OR ^ 1184831000168105|Drug prophylaxis reference set| OR << 399097000|Administration of anaesthesia| OR 169443000|Preventive procedure|"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "MedicationStatement",
+      "id": "MedicationStatementTemplate",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+        ]
+      },
+      "status": "active",
+      "medicationCodeableConcept": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+            "valueString": "item.where(linkId='regularmedications-summary-new-medication').answer.value"
+          }
+        ],
+        "coding": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "ofType(Coding)"
+              }
+            ]
+          }
+        ],
+        "_text": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "ofType(string)"
+            }
+          ]
+        }
+      },
+      "subject": {
+        "_reference": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "reasonCode": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId='regularmedications-summary-new-reasoncode').answer.value.ofType(Coding)"
+            }
+          ],
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                  "valueString": "$this"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId='regularmedications-summary-new-reasoncode').answer.value.ofType(string)"
+            }
+          ],
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "$this"
+              }
+            ]
+          }
+        }
+      ],
+      "note": [
+        {
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId='regularmedications-summary-new-comment').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "dosage": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+              "valueString": "item.where(linkId='regularmedications-summary-new-dosage').answer.value"
+            }
+          ],
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "$this"
+              }
+            ]
+          }
+        }
+      ],
+      "_dateAsserted": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "Parameters",
+      "id": "MedicationStatementPatchTemplate",
+      "parameter": [
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "MedicationStatement.status"
+            },
+            {
+              "name": "name",
+              "valueString": "status"
+            },
+            {
+              "name": "value",
+              "_valueCode": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "item.where(linkId='regularmedications-summary-current-status').answer.value.code"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "extension": [
@@ -376,6 +851,14 @@
           "valueString": "The encounter that is to be used to pre-populate the form"
         }
       ]
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "MedicationStatement",
+        "language": "application/x-fhir-query",
+        "expression": "MedicationStatement?patient={{%patient.id}}"
+      }
     },
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",

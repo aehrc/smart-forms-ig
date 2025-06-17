@@ -10,15 +10,6 @@
   },
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-          "valueExpression": {
-            "language": "text/fhirpath",
-            "expression": "%age.exists()"
-          }
-        }
-      ],
       "item": [
         {
           "extension": [
@@ -87,19 +78,6 @@
           ]
         },
         {
-          "linkId": "RecordUpdate-MedHistory",
-          "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.",
-          "_text": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
-              }
-            ]
-          },
-          "type": "display"
-        },
-        {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
@@ -107,104 +85,86 @@
                 "language": "text/fhirpath",
                 "expression": "%age <= 5"
               }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-              "valueCoding": {
-                "code": "wk",
-                "system": "http://unitsofmeasure.org"
-              }
             }
           ],
           "item": [
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "unit",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "wk",
+                    "system": "http://unitsofmeasure.org"
                   }
                 }
               ],
-              "linkId": "f3899852-36c4-441f-9a7d-544ef1617f08",
-              "text": "weeks",
-              "type": "display"
-            }
-          ],
-          "linkId": "a10a7375-e9d3-4e71-a47a-282e9ba38ec1",
-          "text": "Gestation at birth",
-          "type": "decimal",
-          "repeats": false
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "%age <= 5"
-              }
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "unit",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "f3899852-36c4-441f-9a7d-544ef1617f08",
+                  "text": "weeks",
+                  "type": "display"
+                }
+              ],
+              "linkId": "a10a7375-e9d3-4e71-a47a-282e9ba38ec1",
+              "text": "Gestation at birth",
+              "type": "decimal",
+              "repeats": false
             },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-              "valueCoding": {
-                "code": "kg",
-                "system": "http://unitsofmeasure.org"
-              }
-            }
-          ],
-          "item": [
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "code": "unit",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control"
-                      }
-                    ]
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                  "valueCoding": {
+                    "code": "kg",
+                    "system": "http://unitsofmeasure.org"
                   }
                 }
               ],
-              "linkId": "87cf1ecd-6d1b-4de1-894d-58bd77dcfde1",
-              "text": "kg",
-              "type": "display"
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "unit",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "87cf1ecd-6d1b-4de1-894d-58bd77dcfde1",
+                  "text": "kg",
+                  "type": "display"
+                }
+              ],
+              "linkId": "29b6d8ea-23b2-4a69-98d9-899198692de7",
+              "text": "Birth weight",
+              "type": "decimal",
+              "repeats": false
             }
           ],
-          "linkId": "29b6d8ea-23b2-4a69-98d9-899198692de7",
-          "text": "Birth weight",
-          "type": "decimal",
+          "linkId": "b9de2b58-55e2-436d-95ab-49600508cdf7",
+          "text": "Birth history",
+          "type": "group",
           "repeats": false
         },
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "gtable",
-                    "system": "http://hl7.org/fhir/questionnaire-item-control"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
-              "valueExpression": {
-                "name": "ConditionRepeat",
-                "language": "text/fhirpath",
-                "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
-              }
-            }
-          ],
           "item": [
             {
               "extension": [
@@ -213,24 +173,144 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "autocomplete",
+                        "code": "gtable",
                         "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]
                   }
                 },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
                   "valueExpression": {
+                    "name": "ConditionRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                    "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
                   }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#ConditionPatchTemplate"
+                      }
+                    },
+                    {
+                      "url": "resourceId",
+                      "valueString": "item.where(linkId='conditionId').answer.value"
+                    },
+                    {
+                      "url": "type",
+                      "valueCode": "Condition"
+                    }
+                  ]
                 }
               ],
-              "linkId": "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e",
-              "text": "Condition",
-              "type": "open-choice",
-              "answerValueSet": "#clinical-condition-1"
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.id"
+                      }
+                    }
+                  ],
+                  "linkId": "conditionId",
+                  "type": "string"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                      }
+                    }
+                  ],
+                  "linkId": "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e",
+                  "text": "Condition",
+                  "type": "open-choice",
+                  "answerValueSet": "#clinical-condition-1",
+                  "readOnly": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "drop-down",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.clinicalStatus.coding"
+                      }
+                    }
+                  ],
+                  "linkId": "88bcfad7-386b-4d87-b34b-2e50482e4d2c",
+                  "text": "Clinical status",
+                  "type": "choice",
+                  "answerValueSet": "#condition-clinical"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.onset.ofType(dateTime).toDate()"
+                      }
+                    }
+                  ],
+                  "linkId": "6ae641ad-95bb-4cdc-8910-5a52077e492c",
+                  "text": "Onset date",
+                  "type": "date",
+                  "readOnly": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+                      }
+                    }
+                  ],
+                  "linkId": "e4524654-f6de-4717-b288-34919394d46b",
+                  "text": "Abatement date",
+                  "type": "date"
+                }
+              ],
+              "linkId": "92bd7d05-9b5e-4cf9-900b-703f361dad9d",
+              "type": "group",
+              "repeats": true
             },
             {
               "extension": [
@@ -239,52 +319,58 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "drop-down",
+                        "code": "gtable",
                         "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]
                   }
                 },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%ConditionRepeat.clinicalStatus.coding"
-                  }
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+                  "extension": [
+                    {
+                      "url": "template",
+                      "valueReference": {
+                        "reference": "#ConditionTemplate"
+                      }
+                    }
+                  ]
                 }
               ],
-              "linkId": "88bcfad7-386b-4d87-b34b-2e50482e4d2c",
-              "text": "Clinical Status",
-              "type": "choice",
-              "answerValueSet": "#condition-clinical"
-            },
-            {
-              "extension": [
+              "item": [
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%ConditionRepeat.onset.ofType(dateTime)"
-                  }
-                }
-              ],
-              "linkId": "6ae641ad-95bb-4cdc-8910-5a52077e492c",
-              "text": "Onset Date",
-              "type": "date"
-            },
-            {
-              "extension": [
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "autocomplete",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "2da85994-2d5e-42f1-8a81-abf44f397468",
+                  "text": "Condition",
+                  "type": "open-choice",
+                  "answerValueSet": "#clinical-condition-1"
+                },
                 {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "%ConditionRepeat.recordedDate"
-                  }
+                  "linkId": "4d55bffb-3286-4a23-a785-3b9c346d464d",
+                  "text": "Onset date",
+                  "type": "date"
+                },
+                {
+                  "linkId": "newdiagnosis-comment",
+                  "text": "Comment",
+                  "type": "string"
                 }
               ],
-              "linkId": "18b9e159-2ed7-4047-82b7-deb2a171de4f",
-              "text": "Recorded Date",
-              "type": "date"
+              "linkId": "newdiagnosis",
+              "type": "group",
+              "repeats": true
             }
           ],
           "linkId": "92bd7d05-9b5e-4cf9-900b-703f361dad9d",
@@ -359,8 +445,7 @@
           "linkId": "4484cacd-a260-4e5f-83c1-168ca2396c04",
           "text": "New diagnoses list",
           "type": "group",
-          "repeats": true
-        },
+          "repeats": true        },
         {
           "linkId": "62774152-8a6e-4449-af9f-87bdce8b9bf5",
           "text": "Health priorities, actions and follow-up",
@@ -558,6 +643,155 @@
           }
         ]
       }
+    },
+    {
+      "resourceType": "Condition",
+      "id": "ConditionTemplate",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+        ]
+      },
+      "clinicalStatus": {
+        "coding": [
+          {
+            "code": "active",
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "code": "problem-list-item",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
+            "valueString": "item.where(linkId='2da85994-2d5e-42f1-8a81-abf44f397468').answer.value"
+          }
+        ],
+        "coding": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "ofType(Coding)"
+              }
+            ]
+          }
+        ],
+        "_text": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "ofType(string)"
+            }
+          ]
+        }
+      },
+      "subject": {
+        "_reference": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "note": [
+        {
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId='newdiagnosis-comment').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "_onsetDateTime": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+            "valueString": "item.where(linkId='4d55bffb-3286-4a23-a785-3b9c346d464d').answer.value.toDateTime()"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "Parameters",
+      "id": "ConditionPatchTemplate",
+      "parameter": [
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "Condition.clinicalStatus"
+            },
+            {
+              "name": "name",
+              "valueString": "clinicalStatus"
+            },
+            {
+              "name": "value",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                        "valueString": "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "Condition.abatement"
+            },
+            {
+              "name": "name",
+              "valueString": "abatement"
+            },
+            {
+              "name": "value",
+              "_valueDateTime": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.toDateTime()"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "extension": [
@@ -632,6 +866,14 @@
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
       "valueString": "Condition"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "Condition",
+        "language": "application/x-fhir-query",
+        "expression": "Condition?patient={{%patient.id}}"
+      }
     }
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems",

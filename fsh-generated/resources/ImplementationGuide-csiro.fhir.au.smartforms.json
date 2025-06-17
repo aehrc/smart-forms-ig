@@ -29,13 +29,19 @@
   "dependsOn": [
     {
       "packageId": "hl7.fhir.au.core",
-      "version": "1.0.0",
+      "version": "1.1.0-preview",
       "uri": "http://hl7.org.au/fhir/core/ImplementationGuide/hl7.fhir.au.core",
       "id": "hl7_fhir_au_core"
     },
     {
+      "packageId": "hl7.fhir.au.base",
+      "version": "5.1.0-preview",
+      "uri": "http://hl7.org.au/fhir/ImplementationGuide/hl7.fhir.au.base",
+      "id": "hl7_fhir_au_base"
+    },
+    {
       "packageId": "hl7.fhir.uv.sdc",
-      "version": "3.0.0",
+      "version": "current",
       "uri": "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
       "id": "hl7_fhir_uv_sdc"
     },
@@ -50,18 +56,18 @@
     "resource": [
       {
         "reference": {
-          "reference": "Questionnaire/AssemblyInstructions"
-        },
-        "name": "Aboriginal and Torres Strait Islander Health Check",
-        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Questionnaire/AboriginalTorresStraitIslanderHealthCheck"
         },
         "exampleBoolean": false,
         "name": "Aboriginal and Torres Strait Islander Health Check"
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/AssemblyInstructions"
+        },
+        "name": "Aboriginal and Torres Strait Islander Health Check (Extract)",
+        "description": "Aboriginal and Torres Strait Islander Health Check assessment form.",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -124,6 +130,14 @@
           "reference": "Questionnaire/Examination"
         },
         "name": "Aboriginal and Torres Strait Islander Health Check - Examination",
+        "description": "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/ExaminationExtract"
+        },
+        "name": "Aboriginal and Torres Strait Islander Health Check - Examination (Extract)",
         "description": "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Check.",
         "exampleBoolean": true
       },
@@ -369,6 +383,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/amt-vaccine-1"
+        },
+        "name": "Australian Medicines Terminology Vaccine",
+        "description": "The Australian Medicines Terminology (AMT) Vaccine value set includes AMT product concepts that may be used to record a vaccine product.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/australian-pronouns-1"
         },
         "name": "Australian Pronouns",
@@ -433,6 +455,22 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/heart-rhythm-1"
+        },
+        "name": "Heart Rhythm",
+        "description": "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/medication-reason-taken-1"
+        },
+        "name": "Medication Reason Taken",
+        "description": "The Medication Reason Taken value set includes values that identify a reason why a medication has been or is being taken.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/PrimaryCarerParentGrandparent"
         },
         "name": "Primary Carer Of Parent Or Grandparent",
@@ -489,6 +527,22 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/SmartHealthCheckHeartRhythm"
+        },
+        "name": "Smart Health Check Heart Rhythm",
+        "description": "This profile sets the minimum expectations for an Observation resource to record heart rhythm observations. It is used to represent heart rhythm data captured during a First Nations Health Check that can be used to record the observation in a clinical record.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/smarthealthchecks-medication"
+        },
+        "name": "Smart Health Checks Medication",
+        "description": "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/SmokingQuitStatus-1"
         },
         "name": "Smoking Quit Status",
@@ -501,6 +555,14 @@
         },
         "name": "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check",
         "description": "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/TemplateExtractExtensionExtended"
+        },
+        "name": "Template Extract Extension Extended",
+        "description": "This extension is used to extend the Template Extract Extension to include additional information.",
         "exampleBoolean": false
       },
       {

@@ -43,7 +43,7 @@
           "valueExpression": {
             "name": "smoker",
             "language": "text/fhirpath",
-            "expression": "item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
+            "expression": "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
           }
         },
         {
@@ -616,11 +616,11 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-subQuestionnaire",
-              "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0"
+              "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ExaminationExtract|0.3.0"
             }
           ],
-          "linkId": "3263611d-5813-4393-a660-d10166acd728",
-          "text": "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0] not available. Unable to display all questions.",
+          "linkId": "5d89b095-fa2d-401c-954f-a2e102b77d50",
+          "text": "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ExaminationExtract|0.3.0] not available. Unable to display all questions.",
           "type": "display"
         },
         {
@@ -2348,9 +2348,9 @@
       }
     }
   ],
-  "url": "http://www.health.gov.au/assessments/mbs/715",
-  "name": "AboriginalTorresStraitIslanderHealthCheck",
-  "title": "Aboriginal and Torres Strait Islander Health Check",
+  "url": "http://www.health.gov.au/assessments/mbs/715-extract",
+  "name": "AboriginalTorresStraitIslanderHealthCheck(Extract)",
+  "title": "Aboriginal and Torres Strait Islander Health Check (Extract)",
   "status": "draft",
   "experimental": false,
   "subjectType": [

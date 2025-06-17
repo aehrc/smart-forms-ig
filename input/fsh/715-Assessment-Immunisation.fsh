@@ -9,6 +9,8 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Immunisation"
 Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
+* contained[+] = amt-vaccine-1
+* contained[+] = ImmunizationTemplate
 
 //assemble expectation
 * extension[+]
@@ -55,6 +57,15 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
 
+//fhir query variables
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "Immunization"
+    * language = #application/x-fhir-query
+    * expression = "Immunization?patient={{%patient.id}}"
+
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
@@ -68,9 +79,9 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  /** extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "%age.exists()"
+    * expression = "%age.exists()"*/
   * linkId = "205677d6-17c7-4285-a7c4-61aa02b6c816"
   * text = "Immunisation"
   * type = #group
@@ -101,6 +112,9 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
       * expression = "%age <= 12"
     * linkId = "54de7714-b917-4426-acb4-29d48648a2d8"
     * text = "Check Child Health Record/Book and Australian Immunisation Register"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p style=\"font-size:1.2em; font-weight:normal\"><em>Check Child Health Record/Book and Australian Immunisation Register</em></p>
+    </div>"
     * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -108,6 +122,9 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
       * expression = "%age > 12"
     * linkId = "d77c527d-6fde-4ed7-97b9-c71acf817f39"
     * text = "Eligibility for funded vaccines may vary across jurisdictions"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p style=\"font-size:1.2em; font-weight:normal\"><em>Eligibility for funded vaccines may vary across jurisdictions</em></p>
+    </div>"
     * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -115,6 +132,9 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
       * expression = "(%age > 12).intersect(%age <= 24)"
     * linkId = "77d87581-d4d7-4267-9f3c-ad6541ad0f46"
     * text = "Check Australian Immunisation Register"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p style=\"font-size:1.2em; font-weight:normal\"><em>Check Australian Immunisation Register</em></p>
+    </div>"
     * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -122,42 +142,107 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
       * expression = "(%age > 24).intersect(%age <= 49)"
     * linkId = "a2631d2c-2b5c-4147-9aca-05ae655a56a5"
     * text = "Check recommended primary vaccinations completed and provide catch-up if required"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    <p style=\"font-size:1.2em; font-weight:normal\"><em>Check recommended primary vaccinations completed and provide catch-up if required</em></p>
+    </div>"
     * type = #display
+
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
+    * extension[sdc-questionnaire-itemPopulationContext].valueExpression
+      * name = "ImmunizationRepeat"
+      * language = #text/fhirpath
+      * expression = "%Immunization.entry.resource.where(status='completed')"
+    * linkId = "vaccinesprevious"
+    * text = "Vaccines previously given"
+    * type = #group
+    * repeats = true
+    * readOnly = true
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ImmunizationRepeat.vaccineCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
+      * linkId = "vaccinesprevious-vaccine"
+      * text = "Vaccine"
+      * type = #open-choice
+      * answerValueSet = "#amt-vaccine-1"
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ImmunizationRepeat.lotNumber"
+      * linkId = "vaccinesprevious-batch"
+      * text = "Batch number"
+      * type = #string
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ImmunizationRepeat.occurrence.ofType(dateTime)"
+      * linkId = "vaccinesprevious-date"
+      * text = "Administration date"
+      * type = #dateTime
+    * item[+]
+      * extension[sdc-questionnaire-initialExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ImmunizationRepeat.note.text.first()"
+      * linkId = "vaccinesprevious-comment"
+      * text = "Comment"
+      * type = #string
+
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
-    * linkId = "69a4a459-196b-4931-8336-ea76ab3fccd1"
-    * text = "Immunisations up to date and recorded on Australian Immunisation Register (as per Australian immunisation handbook)?"
+    * linkId = "vaccinesair"
+    * text = "Immunisations are up to date?"
+    * type = #choice
+    * repeats = false
+    * answerValueSet = "#YesNo"  
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+    * linkId = "vaccinesdue"
+    * text = "Immunisations due"
+    * type = #open-choice
+    * answerValueSet = "#amt-vaccine-1"
+    * repeats = true
+  
+
+  * item[+]
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+    * extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable  
+    * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+    * extension[=].extension[+].url = "template"
+    * extension[=].extension[=].valueReference = Reference(ImmunizationTemplate)
+    * linkId = "vaccinestoday"
+    * text = "Vaccines given today"
+    * type = #group
+    * repeats = true
+    * item[+]
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete    
+      * linkId = "vaccinestoday-vaccine"
+      * text = "Vaccine"
+      * type = #open-choice
+      * answerValueSet = "#amt-vaccine-1"
+    * item[+]
+      * linkId = "vaccinestoday-batch"
+      * text = "Batch number"
+      * type = #string
+    * item[+]
+      * linkId = "vaccinestoday-date"
+      * text = "Administration date"
+      * type = #dateTime
+    * item[+]
+      * linkId = "vaccinestoday-comment"
+      * text = "Comment"
+      * type = #string
+
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
+    * linkId = "vaccinesrecorded"
+    * text = "Have all vaccines been recorded on the Australian Immunisation Register?"
     * type = #choice
     * repeats = false
     * answerValueSet = "#YesNo"
-  * item[+]
-    * linkId = "08e8ca54-9af8-4028-be83-aab20bccecc3"
-    * text = "Immunisations due"
-    * type = #string
-    * repeats = true
-  * item[+]
-    * linkId = "cc522cb1-b553-48c7-9028-61d15dd60845"
-    * text = "Vaccines given today"
-    * type = #group
-    * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-      * extension[questionnaire-choiceOrientation].valueCode = #horizontal
-      * linkId = "9f5787e6-8ece-46a4-8d67-e7c3e14daf18"
-      * text = "Vaccines recorded on Australian Immunisation Register?"
-      * type = #choice
-      * repeats = false
-      * answerValueSet = "#YesNo"
-    * item[+]
-      * linkId = "c8da01ec-de58-46e3-81a1-2c49aed8c28e"
-      * text = "Details"
-      * type = #text
-      * repeats = false
-      * enableWhen[+]
-        * question = "9f5787e6-8ece-46a4-8d67-e7c3e14daf18"
-        * operator = #=
-        * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
 
   * item[+]
     * linkId = "bcd1c9f2-889e-41e5-8c2b-a70221c5cec5"
