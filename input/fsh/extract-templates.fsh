@@ -34,9 +34,9 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-date').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.toDateTime()"
 * valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* valueCodeableConcept.coding.extension[=].valueString = "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
+* valueCodeableConcept.coding.extension[=].valueString = "$this.answer.value"
 
 Instance:   BodyHeightLengthTemplate
 InstanceOf: $au-core-bodyheight
@@ -193,23 +193,6 @@ Usage:  #inline
 
 
 
-Instance: ParametersTemplate
-// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
-InstanceOf: Parameters
-Usage: #inline
-* parameter[+].name = "operation"
-* parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
-* parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueString.extension[=].valueString = "Condition.clinicalStatus"
-* parameter[=].part[+].name = "name"
-* parameter[=].part[=].valueString = "coding"
-* parameter[=].part[+].name = "value"
-* parameter[=].part[=].valueCoding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueCoding.extension[=].valueString = "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
-
-
 Instance:   AllergyIntoleranceTemplate
 InstanceOf: $au-core-allergyintolerance
 Usage:  #inline
@@ -232,6 +215,22 @@ Usage:  #inline
 * reaction.manifestation[=].extension.valueString = "item.where(linkId='allergynew-manifestation').answer.value.ofType(string)"
 * reaction.manifestation[=].text.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * reaction.manifestation[=].text.extension.valueString = "$this"
+
+
+Instance: AllergyIntolerancePatchTemplate
+// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
+InstanceOf: Parameters
+Usage: #inline
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "AllergyIntolerance.clinicalStatus"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "clinicalStatus"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
 
 Instance:   ImmunizationTemplate
 InstanceOf: $au-core-immunization
@@ -270,6 +269,32 @@ Usage:  #inline
 * note.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * note.text.extension[=].valueString = "item.where(linkId='newdiagnosis-comment').answer.value"
 
+Instance: ConditionPatchTemplate
+// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
+InstanceOf: Parameters
+Usage: #inline
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "Condition.clinicalStatus"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "clinicalStatus"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "Condition.abatement"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "abatement"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueDateTime.extension[=].valueString = "item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.toDateTime()"
+
+
 Instance:   MedicationStatementTemplate
 InstanceOf: $au-core-medicationstatement
 Usage:  #inline
@@ -299,3 +324,17 @@ Usage:  #inline
 * dosage[=].text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * dosage[=].text.extension[=].valueString = "$this"
 
+Instance: MedicationStatementPatchTemplate
+// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
+InstanceOf: Parameters
+Usage: #inline
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "MedicationStatement.status"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "status"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueCode.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-status').answer.value.code"

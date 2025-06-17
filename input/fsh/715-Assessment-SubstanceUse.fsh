@@ -113,35 +113,43 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>
     </div>"    
     * type = #display 
+  
   * item[+]
     * linkId = "substanceuse-smoking"
     * text = "Smoking"
     * type = #group
     * repeats = false  
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#SmokingStatusTemplate"
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
       * linkId = "substanceuse-smoking-smokingstatus"
-      * text = "Smoking status"
       * type = #group
       * repeats = false
       * item[+]
-        * extension[sdc-questionnaire-initialExpression].valueExpression
-          * language = #text/fhirpath
-          * expression = "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct')"
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-        * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
-        * text = "Status"
-        * type = #choice
+        * linkId = "substanceuse-smoking-smokingstatus-group"
+        * text = "Smoking status"
+        * type = #group
         * repeats = false
-        * answerValueSet = "#TobaccoUseStatus-1"
-      * item[+]
-        * extension[sdc-questionnaire-initialExpression].valueExpression
-          * language = #text/fhirpath
-          * expression = "%ObsTobaccoSmokingStatus.entry.resource.effective.ofType(dateTime)"
-        * linkId = "substanceuse-smoking-smokingstatus-date"
-        * text = "Date"
-        * type = #dateTime
-        * repeats = false
+        * item[+]
+          * linkId = "substanceuse-smoking-smokingstatus-group-laststatus"
+          * text = "Last status"
+            * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
+              * language = #text/fhirpath
+              * expression = "iif(%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').empty() = true, 'Not available', %ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display) + ' (' + %ObsTobaccoSmokingStatus.entry.resource.effective.toDate().toString() + ')')"
+          * type = #display
+          * repeats = false
+        * item[+]
+          * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#SmokingStatusTemplate"
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+          * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
+          * text = "New status"
+          * type = #choice
+          * repeats = false
+          * answerValueSet = "#TobaccoUseStatus-1"
+        * item[+]
+          * linkId = "substanceuse-smoking-smokingstatus-group-newdate"
+          * text = "New date"
+          * type = #date
+          * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
       * linkId = "96dc7c22-d003-459c-8a56-f6cd182fc077"

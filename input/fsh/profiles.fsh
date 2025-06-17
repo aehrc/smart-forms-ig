@@ -89,4 +89,15 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * dataAbsentReason MS
 * dataAbsentReason ^condition = "shc-heartrhythm-01"
 
+Extension: TemplateExtractExtensionExtended
+Parent: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
+Id: TemplateExtractExtensionExtended
+Title: "Template Extract Extension Extended"
+Description: "This extension is used to extend the Template Extract Extension to include additional information."
 
+* extension contains type 0..1
+* extension[type] ^short = "Patch resource type"
+* extension[type] ^definition = "When templating a Parameters resource, this is the kind of resource to be patched. It is used to help populate the request url."
+* extension[type].value[x] 1..
+* extension[type].value[x] only code
+* extension[type].value[x] from ResourceType (required)

@@ -9,6 +9,7 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse R
 Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = AllergyIntoleranceTemplate
+* contained[+] = AllergyIntolerancePatchTemplate
 
 //assemble expectation
 * extension[+]
@@ -116,14 +117,20 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
     </div>"    
     * type = #group 
 //existing adverse reactions
-* item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-* item[=].item[=].item[=].extension[=].valueExpression[+].name = "AllergyIntoleranceRepeat"
-* item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+* item[=].item[=].item[+].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "AllergyIntoleranceRepeat"
+* item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
+* item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active'))"
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(AllergyIntolerancePatchTemplate)
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='allergyIntoleranceId').answer.value"
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
 * item[=].item[=].item[=].linkId = "allergysummary"
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
-* item[=].item[=].item[=].readOnly = true
+* item[=].item[=].item[=].item[0].extension[questionnaire-hidden].valueBoolean = true
+* item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%AllergyIntoleranceRepeat.id"      
+* item[=].item[=].item[=].item[=].linkId = "allergyIntoleranceId"
+* item[=].item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
@@ -133,8 +140,19 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].text = "Substance"
 * item[=].item[=].item[=].item[=].type = #open-choice
 * item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].item[=].readOnly = true
 * item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.clinicalStatus.coding"
+* item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+* item[=].item[=].item[=].item[=].linkId = "allergysummary-status"
+* item[=].item[=].item[=].item[=].text = "Status"
+* item[=].item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].item[=].repeats = false
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active "Active"
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#inactive "inactive"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
@@ -144,6 +162,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].text = "Manifestation"
 * item[=].item[=].item[=].item[=].type = #open-choice
 * item[=].item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].item[=].readOnly = true
 * item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
 // manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"

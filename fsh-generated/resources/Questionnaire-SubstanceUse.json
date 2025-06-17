@@ -104,63 +104,83 @@
             {
               "extension": [
                 {
-                  "extension": [
-                    {
-                      "url": "template",
-                      "valueReference": {
-                        "reference": "#SmokingStatusTemplate"
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "grid",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "version": "1.0.0"
                       }
-                    }
-                  ],
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                    ]
+                  }
                 }
               ],
               "item": [
                 {
-                  "extension": [
+                  "item": [
                     {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct')"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
+                      "linkId": "substanceuse-smoking-smokingstatus-group-laststatus",
+                      "text": "Last status",
+                      "_text": {
+                        "extension": [
                           {
-                            "code": "radio-button",
-                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                            "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                            "valueExpression": {
+                              "language": "text/fhirpath",
+                              "expression": "iif(%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').empty() = true, 'Not available', %ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display) + ' (' + %ObsTobaccoSmokingStatus.entry.resource.effective.toDate().toString() + ')')"
+                            }
                           }
                         ]
-                      }
-                    }
-                  ],
-                  "linkId": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                  "text": "Status",
-                  "type": "choice",
-                  "repeats": false,
-                  "answerValueSet": "#TobaccoUseStatus-1"
-                },
-                {
-                  "extension": [
+                      },
+                      "type": "display",
+                      "repeats": false
+                    },
                     {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.effective.ofType(dateTime)"
-                      }
+                      "extension": [
+                        {
+                          "extension": [
+                            {
+                              "url": "template",
+                              "valueReference": {
+                                "reference": "#SmokingStatusTemplate"
+                              }
+                            }
+                          ],
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
+                      "text": "New status",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "#TobaccoUseStatus-1"
+                    },
+                    {
+                      "linkId": "substanceuse-smoking-smokingstatus-group-newdate",
+                      "text": "New date",
+                      "type": "date",
+                      "repeats": false
                     }
                   ],
-                  "linkId": "substanceuse-smoking-smokingstatus-date",
-                  "text": "Date",
-                  "type": "dateTime",
+                  "linkId": "substanceuse-smoking-smokingstatus-group",
+                  "text": "Smoking status",
+                  "type": "group",
                   "repeats": false
                 }
               ],
               "linkId": "substanceuse-smoking-smokingstatus",
-              "text": "Smoking status",
               "type": "group",
               "repeats": false
             },
@@ -389,7 +409,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                "valueString": "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
+                "valueString": "$this.answer.value"
               }
             ]
           }
@@ -399,7 +419,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-            "valueString": "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-date').answer.value.toDateTime()"
+            "valueString": "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.toDateTime()"
           }
         ]
       }

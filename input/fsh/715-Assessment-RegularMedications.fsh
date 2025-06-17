@@ -12,6 +12,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * contained[+] = smarthealthchecks-medication
 * contained[+] = medication-reason-taken-1
 * contained[+] = MedicationStatementTemplate
+* contained[+] = MedicationStatementPatchTemplate
 
 
 * extension[0].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
@@ -153,15 +154,21 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].repeats = false
 
 // Current medications
-* item.item[=].item[0].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext"
-* item.item[=].item[=].extension[=].valueExpression[+].name = "MedicationStatementRepeat"
-* item.item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatement.entry.resource.where(status='active')"
+* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "MedicationStatementRepeat"
+* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
+* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource.where(status='active')"
+* item.item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(MedicationStatementPatchTemplate)
+* item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='medicationStatementId').answer.value"
+* item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #MedicationStatement
 * item.item[=].item[=].linkId = "regularmedications-summary-current"
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
-* item.item[=].item[=].readOnly = true
-* item.item[=].item[=].item[0].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+* item.item[=].item[=].item[0].extension[questionnaire-hidden].valueBoolean = true
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.id"      
+* item.item[=].item[=].item[=].linkId = "medicationStatementId"
+* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 /*
 * item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
@@ -175,6 +182,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].readOnly = true
 * item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
 /*
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
@@ -212,6 +220,19 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.status"
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-status"
+* item.item[=].item[=].item[=].text = "Status"
+* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerOption[0].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#active "Active"
+* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#completed "Completed"
+* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#stopped "Stopped"
+* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#on-hold "On Hold"
+
+* item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"
@@ -227,6 +248,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].text = "Clinical indication"
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].readOnly = true
 * item.item[=].item[=].item[=].answerValueSet = "#medication-reason-taken-1"
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"

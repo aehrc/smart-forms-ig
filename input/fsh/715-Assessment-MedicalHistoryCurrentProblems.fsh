@@ -11,6 +11,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * contained[+] = condition-clinical
 * contained[+] = clinical-condition-1
 * contained[+] = ConditionTemplate
+* contained[+] = ConditionPatchTemplate
 
 //assemble expectation
 * extension[+]
@@ -143,7 +144,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 // table of medical history
 
   * item[+]
-    * linkId = "medicalhistoryinstruction"
+    * linkId = "medicalhistorysummary"
     * text = "Medical history summary"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <p>Medical history summary</p>
@@ -151,15 +152,25 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     </div>"    
     * type = #group 
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
-      * extension[sdc-questionnaire-itemPopulationContext].valueExpression
+      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext][+].valueExpression
         * name = "ConditionRepeat"
         * language = #text/fhirpath
         * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
+      * extension[TemplateExtractExtensionExtended][+]
+        * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
+        * extension[resourceId][+].valueString = "item.where(linkId='conditionId').answer.value"
+        * extension[type][+].valueCode = #Condition
       * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
       * type = #group
       * repeats = true
-      * readOnly = true
+      * item[+]
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ConditionRepeat.id"      
+        * linkId = "conditionId"
+        * type = #string
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
         * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -169,6 +180,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * text = "Condition"
         * type = #open-choice
         * answerValueSet = "#clinical-condition-1"
+        * readOnly = true
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -181,14 +193,15 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.onset.ofType(dateTime)"
+          * expression = "%ConditionRepeat.onset.ofType(dateTime).toDate()"
         * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
         * text = "Onset date"
         * type = #date
+        * readOnly = true
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.abatement.ofType(dateTime)"
+          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
         * linkId = "e4524654-f6de-4717-b288-34919394d46b"
         * text = "Abatement date"
         * type = #date

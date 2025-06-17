@@ -559,6 +559,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/TemplateExtractExtensionExtended"
+        },
+        "name": "Template Extract Extension Extended",
+        "description": "This extension is used to extend the Template Extract Extension to include additional information.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/TobaccoUseStatus-1"
         },
         "name": "Tobacco Use Status",

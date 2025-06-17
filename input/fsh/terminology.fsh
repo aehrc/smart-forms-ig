@@ -772,6 +772,55 @@ Description: "Preferred value set for Condition Clinical Status."
 * ^expansion.contains[=].display = "Resolved"
 */
 * include codes from system ConditionClinicalStatusCodes
+/*
+ValueSet: AllergyIntoleranceClinicalStatusCodes
+Id: allergyintolerance-clinical
+Title: "AllergyIntolerance Clinical Status Codes"
+Description: "Preferred value set for AllergyIntolerance Clinical Status."
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension[=].valueCode = #pc
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #trial-use
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* ^extension[=].valueInteger = 3
+* ^url = "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.3.1372"
+* ^version = "4.0.1"
+* ^status = #draft
+* ^experimental = false
+* ^date = "2019-11-01T09:29:23+11:00"
+* ^publisher = "FHIR Project team"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "http://hl7.org/fhir"
+* ^immutable = true
+* ^expansion.identifier = "urn:uuid:3bf59cb7-91f1-4509-93a6-e4914cc537ff"
+* ^expansion.timestamp = "2025-06-17T14:23:17+10:00"
+* ^expansion.total = 3
+* ^expansion.parameter[0].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|4.0.1"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-trial-use"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-trial-use"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|4.0.1"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|4.0.1"
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+* ^expansion.contains[=].code = #active
+* ^expansion.contains[=].display = "Active"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+* ^expansion.contains[=].code = #inactive
+* ^expansion.contains[=].display = "Inactive"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+* ^expansion.contains[=].code = #resolved
+* ^expansion.contains[=].display = "Resolved"
+* include codes from system AllergyIntoleranceClinicalStatusCodes
+*/
 
 Alias: $australian-states-territories-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1
 

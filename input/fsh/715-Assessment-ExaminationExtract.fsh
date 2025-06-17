@@ -288,7 +288,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * language = #text/fhirpath
         * expression = "%age > 12"*/
       * linkId = "bc209c5e-ed28-48e3-b1a1-55cb7e435d8b"
-      * text = "BMI"
+      * text = "BMI (calculated)"
       * type = #group
       * repeats = false
       * item[+]
