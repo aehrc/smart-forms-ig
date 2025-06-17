@@ -152,7 +152,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
+                "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toDate()"
               }
             }
           ],

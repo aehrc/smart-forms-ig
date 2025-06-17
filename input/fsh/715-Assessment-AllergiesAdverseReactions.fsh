@@ -152,7 +152,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].item[=].repeats = false
 * item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active "Active"
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#inactive "inactive"
+* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#inactive "Inactive"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.reaction.manifestation.coding"

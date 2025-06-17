@@ -234,13 +234,13 @@
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "%ImmunizationRepeat.occurrence.ofType(dateTime)"
+                    "expression": "%ImmunizationRepeat.occurrence.ofType(dateTime).toDate()"
                   }
                 }
               ],
               "linkId": "vaccinesprevious-date",
               "text": "Administration date",
-              "type": "dateTime"
+              "type": "date"
             },
             {
               "extension": [
@@ -360,7 +360,7 @@
             {
               "linkId": "vaccinestoday-date",
               "text": "Administration date",
-              "type": "dateTime"
+              "type": "date"
             },
             {
               "linkId": "vaccinestoday-comment",

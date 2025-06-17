@@ -177,10 +177,10 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%ImmunizationRepeat.occurrence.ofType(dateTime)"
+        * expression = "%ImmunizationRepeat.occurrence.ofType(dateTime).toDate()"
       * linkId = "vaccinesprevious-date"
       * text = "Administration date"
-      * type = #dateTime
+      * type = #date
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -226,7 +226,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * item[+]
       * linkId = "vaccinestoday-date"
       * text = "Administration date"
-      * type = #dateTime
+      * type = #date
     * item[+]
       * linkId = "vaccinestoday-comment"
       * text = "Comment"
