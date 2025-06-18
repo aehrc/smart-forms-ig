@@ -170,18 +170,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * text = "Growth measures recorded on Centers for Disease Control and Prevention (CDC) and World Health Organization (WHO) growth charts for centile and tracking overtime"
     * type = #display
 
-// Examination instruction
-  * item[+]
-    * linkId = "examinationinstruction"
-    * text = "The tabled observations will display the most recent results available from the patient record. If required, new observations can be recorded and added to the tables."
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><em>The tabled observations will display the most recent results available from the patient record. If required, new observations can be recorded and added to the tables.</em></p>
-    </div>"    
-    * type = #display 
-
 // Observations table with dates
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
-    * linkId = "53d5d5a6-3198-4bec-92ac-03fe7d77fb68"
+    * linkId = "53d5d5a6-3198-4bec-92ac-03fe7d77fb68"    
+    * text = "The tabled observations will display the most recent results available from the patient record. New observations may be added."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:0.9em; font-weight:normal\"><em>The tabled observations will display the most recent results available from the patient record. New observations may be added.</em></p></div>"    
     * type = #group 
     * repeats = false
     * item[+]

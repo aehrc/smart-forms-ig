@@ -113,7 +113,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * linkId = "54de7714-b917-4426-acb4-29d48648a2d8"
     * text = "Check Child Health Record/Book and Australian Immunisation Register"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p style=\"font-size:1.2em; font-weight:normal\"><em>Check Child Health Record/Book and Australian Immunisation Register</em></p>
+    <p><em>Check Child Health Record/Book and Australian Immunisation Register</em></p>
     </div>"
     * type = #display
   * item[+]
@@ -123,7 +123,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * linkId = "d77c527d-6fde-4ed7-97b9-c71acf817f39"
     * text = "Eligibility for funded vaccines may vary across jurisdictions"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p style=\"font-size:1.2em; font-weight:normal\"><em>Eligibility for funded vaccines may vary across jurisdictions</em></p>
+    <p><em>Eligibility for funded vaccines may vary across jurisdictions</em></p>
     </div>"
     * type = #display
   * item[+]
@@ -133,7 +133,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * linkId = "77d87581-d4d7-4267-9f3c-ad6541ad0f46"
     * text = "Check Australian Immunisation Register"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p style=\"font-size:1.2em; font-weight:normal\"><em>Check Australian Immunisation Register</em></p>
+    <p><em>Check Australian Immunisation Register</em></p>
     </div>"
     * type = #display
   * item[+]
@@ -143,7 +143,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * linkId = "a2631d2c-2b5c-4147-9aca-05ae655a56a5"
     * text = "Check recommended primary vaccinations completed and provide catch-up if required"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <p style=\"font-size:1.2em; font-weight:normal\"><em>Check recommended primary vaccinations completed and provide catch-up if required</em></p>
+    <p><em>Check recommended primary vaccinations completed and provide catch-up if required</em></p>
     </div>"
     * type = #display
 

@@ -113,7 +113,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
     * text = "Adverse reaction risk summary"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <p>Adverse reaction risk summary</p>
-    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. To update existing items, update the patient record and repopulate this form. To enter new items, add them at the bottom.</em></p>
+    <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. <br />Update these items here or update the patient record and repopulate the form. <br />Add new items at the bottom.</em></p>
     </div>"    
     * type = #group 
 //existing adverse reactions
