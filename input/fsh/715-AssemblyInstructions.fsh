@@ -5,7 +5,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 Instance: AssemblyInstructions
 InstanceOf: Questionnaire
 Usage: #example
-Title: "Aboriginal and Torres Strait Islander Health Check (Extract)"
+Title: "Aboriginal and Torres Strait Islander Health Check"
 Description: "Aboriginal and Torres Strait Islander Health Check assessment form."
 
 * contained[+] = YesNo
@@ -129,9 +129,9 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* url = "http://www.health.gov.au/assessments/mbs/715-extract"
-* name = "AboriginalTorresStraitIslanderHealthCheck(Extract)"
-* title = "Aboriginal and Torres Strait Islander Health Check (Extract)"
+* url = "http://www.health.gov.au/assessments/mbs/715"
+* name = "AboriginalTorresStraitIslanderHealthCheck"
+* title = "Aboriginal and Torres Strait Islander Health Check"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
@@ -550,16 +550,10 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Immunisation|0.3.0] not available. Unable to display all questions."
     * type = #display
   // Examination
-  /** item[+] 
+  * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0"
     * linkId = "3263611d-5813-4393-a660-d10166acd728"
     * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0] not available. Unable to display all questions."
-    * type = #display*/
-  // Examination extract
-  * item[+] 
-    * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/ExaminationExtract|0.3.0"
-    * linkId = "5d89b095-fa2d-401c-954f-a2e102b77d50"
-    * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/ExaminationExtract|0.3.0] not available. Unable to display all questions."
     * type = #display
   // Absolute CVD Risk Calculation
   * item[+] 
