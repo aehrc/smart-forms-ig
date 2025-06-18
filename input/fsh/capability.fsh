@@ -511,6 +511,11 @@ The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
 
+* rest.interaction[+].code = #transaction
+* rest.interaction[=].code.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.interaction[=].code.extension[0].valueCode = #SHALL
+* rest.interaction[=].documentation = "The server **SHALL** support the transaction interaction for all resources."
+
 
 
 Instance: SmartFormsServer

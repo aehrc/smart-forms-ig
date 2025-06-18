@@ -985,6 +985,20 @@
             }
           ]
         }
+      ],
+      "interaction": [
+        {
+          "code": "transaction",
+          "_code": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                "valueCode": "SHALL"
+              }
+            ]
+          },
+          "documentation": "The server **SHALL** support the transaction interaction for all resources."
+        }
       ]
     }
   ]
