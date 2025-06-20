@@ -56,7 +56,7 @@ Description: "Date shall be at least to day or, if not available, the Data Absen
 
 Profile: SmartHealthCheckHeartRhythm
 Parent: Observation
-Id: SmartHealthCheckHeartRhythm
+Id: SHCHeartRhythm
 Title: "Smart Health Check Heart Rhythm"
 Description: "This profile sets the minimum expectations for an Observation resource to record heart rhythm observations. It is used to represent heart rhythm data captured during a First Nations Health Check that can be used to record the observation in a clinical record."
 

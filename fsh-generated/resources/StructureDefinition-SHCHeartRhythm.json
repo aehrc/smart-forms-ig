@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "SmartHealthCheckHeartRhythm",
-  "url": "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm",
+  "id": "SHCHeartRhythm",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm",
   "name": "SmartHealthCheckHeartRhythm",
   "title": "Smart Health Check Heart Rhythm",
   "status": "draft",
@@ -24,7 +24,7 @@
           {
             "key": "shc-heartrhythm-01",
             "human": "At least value or data absent reason shall be present",
-            "source": "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm",
+            "source": "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm",
             "severity": "error",
             "expression": "dataAbsentReason.exists() or value.exists()",
             "xpath": "exists(f:*[starts-with(local-name(.), 'value')]) or exists(f:dataAbsentReason)"
@@ -387,7 +387,7 @@
           {
             "key": "shc-heartrhythm-02",
             "human": "Date shall be at least to day or, if not available, the Data Absent Reason extension shall be present",
-            "source": "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm",
+            "source": "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm",
             "severity": "error",
             "expression": "(($this is dateTime implies $this.toString().length() >= 10) and extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason').value.exists().not()) xor ($this is dateTime implies ($this.hasValue().not() and extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason').value.exists()))",
             "xpath": "((self::dateTime and string-length(.) >= 10 and not(extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason'])) xor (self::dateTime and not(.) and extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason']))"

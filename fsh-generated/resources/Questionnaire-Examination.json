@@ -1033,7 +1033,7 @@
       "id": "BodyHeightTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
         ]
       },
       "category": [
@@ -1097,7 +1097,7 @@
       "id": "BodyHeightLengthTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
         ]
       },
       "category": [
@@ -1161,7 +1161,7 @@
       "id": "BodyWeightTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
         ]
       },
       "category": [
@@ -1225,7 +1225,7 @@
       "id": "WaistCircumferenceTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
         ]
       },
       "category": [
@@ -1289,7 +1289,7 @@
       "id": "HeadCircumferenceTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
         ]
       },
       "status": "final",
@@ -1353,7 +1353,7 @@
       "id": "HeartRateTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
         ]
       },
       "category": [
@@ -1417,7 +1417,7 @@
       "id": "HeartRhythmTemplate",
       "meta": {
         "profile": [
-          "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
         ]
       },
       "category": [
@@ -1480,7 +1480,7 @@
       "id": "BloodPressureTemplate",
       "meta": {
         "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
+          "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
         ]
       },
       "category": [

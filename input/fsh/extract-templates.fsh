@@ -24,7 +24,7 @@ Alias: $au-core-medicationstatement = http://hl7.org.au/fhir/core/StructureDefin
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 
 Instance:   SmokingStatusTemplate
-InstanceOf: $au-core-smokingstatus
+InstanceOf: SHCSmokingStatus
 Usage:  #inline  
 * status = #final
 * category[socialHistory] = $observation-category#social-history
@@ -39,7 +39,7 @@ Usage:  #inline
 * valueCodeableConcept.coding.extension[=].valueString = "$this.answer.value"
 
 Instance:   BodyHeightLengthTemplate
-InstanceOf: $au-core-bodyheight
+InstanceOf: SHCBodyHeight
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -57,7 +57,7 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   BodyHeightTemplate
-InstanceOf: $au-core-bodyheight
+InstanceOf: SHCBodyHeight
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -76,7 +76,7 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   BodyWeightTemplate
-InstanceOf: $au-core-bodyweight
+InstanceOf: SHCBodyWeight
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -94,7 +94,7 @@ Usage:  #inline
 * valueQuantity.code = #kg
 
 Instance:   HeadCircumferenceTemplate
-InstanceOf: $au-core-au-core-headcircum
+InstanceOf: SHCHeadCircumference
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -112,7 +112,7 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   WaistCircumferenceTemplate
-InstanceOf: $au-core-waistcircum
+InstanceOf: SHCWaistCircumference
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -130,7 +130,7 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   HeartRateTemplate
-InstanceOf: $au-core-heartrate
+InstanceOf: SHCHeartRate
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -148,7 +148,7 @@ Usage:  #inline
 * valueQuantity.code = #/min
 
 Instance:   HeartRhythmTemplate
-InstanceOf: SmartHealthCheckHeartRhythm
+InstanceOf: SHCHeartRhythm
 Usage:  #inline  
 * status = #final
 * category[vitalSignsCategory] = $observation-category#vital-signs
@@ -163,7 +163,7 @@ Usage:  #inline
 * valueCodeableConcept.coding.extension[=].valueString = "$this.answer.value"
 
 Instance:   BloodPressureTemplate
-InstanceOf: $au-core-bloodpressure
+InstanceOf: SHCBloodPressure
 Usage:  #inline  
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
@@ -194,7 +194,7 @@ Usage:  #inline
 
 
 Instance:   AllergyIntoleranceTemplate
-InstanceOf: $au-core-allergyintolerance
+InstanceOf: SHCAllergyIntolerance
 Usage:  #inline
 * clinicalStatus.coding = $allergyintolerance-clinical#active
 * code.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
@@ -233,7 +233,7 @@ Usage: #inline
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
 
 Instance:   ImmunizationTemplate
-InstanceOf: $au-core-immunization
+InstanceOf: SHCImmunization
 Usage:  #inline
 * status = #completed
 * vaccineCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
@@ -252,7 +252,7 @@ Usage:  #inline
 * note.text.extension[=].valueString = "item.where(linkId='vaccinestoday-comment').answer.value"
 
 Instance:   ConditionTemplate
-InstanceOf: $au-core-condition
+InstanceOf: SHCCondition
 Usage:  #inline
 * clinicalStatus.coding = $condition-clinical#active
 * category.coding = $condition-category#problem-list-item
@@ -296,7 +296,7 @@ Usage: #inline
 
 
 Instance:   MedicationStatementTemplate
-InstanceOf: $au-core-medicationstatement
+InstanceOf: SHCMedicationStatement
 Usage:  #inline
 * status = #active
 * medicationCodeableConcept.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
