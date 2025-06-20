@@ -136,7 +136,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -223,7 +223,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -301,7 +301,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyWeight.entry.resource.value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyWeight.entry.resource.where(status='final').value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -388,7 +388,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true or %ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', (%ObsBodyWeight.entry.resource.value.value/((%ObsBodyHeight.entry.resource.value.value/100).power(2))).round(1).toString() + ' kg/m2')"
+                          "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty() or %ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', (%ObsBodyWeight.entry.resource.where(status='final').value.value/((%ObsBodyHeight.entry.resource.where(status='final').value.value/100).power(2))).round(1).toString() + ' kg/m2')"
                         }
                       }
                     ]
@@ -467,7 +467,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsHeadCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsHeadCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsHeadCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeadCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -554,7 +554,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsWaistCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsWaistCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsWaistCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsWaistCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -625,7 +625,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsHeartRate.entry.resource.value.value.empty() = true, 'Not available', %ObsHeartRate.entry.resource.value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsHeartRate.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeartRate.entry.resource.where(status='final').value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -703,7 +703,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().empty() = true, 'Not available', %ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().empty(), 'Not available', %ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -818,7 +818,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.empty() = true or %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.empty() = true, 'Not available', %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.empty() or %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.empty(), 'Not available', %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]

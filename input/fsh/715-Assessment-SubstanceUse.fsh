@@ -126,7 +126,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * text = "Last status"
             * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
               * language = #text/fhirpath
-              * expression = "iif(%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').empty() = true, 'Not available', %ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.effective.toDate().toString() + ')')"
+              * expression = "iif(%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').empty(), 'Not available', %ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString() + ')')"
           * type = #display
           * repeats = false
         * item[+]
