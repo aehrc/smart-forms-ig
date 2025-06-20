@@ -517,7 +517,7 @@ The server **SHALL** support both."
 * rest.interaction[=].documentation = "The server **SHALL** support the transaction interaction for all resources."
 
 
-
+/*
 Instance: SmartFormsServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -581,7 +581,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].documentation = "The server supports search result sorting by date and **MAY** support other values."
 * rest.resource[=].operation[0].name = "assemble"
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
-
+*/
 
 Instance: SmartFormsApplication
 InstanceOf: CapabilityStatement
