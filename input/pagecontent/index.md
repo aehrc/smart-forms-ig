@@ -1,9 +1,54 @@
 ### Introduction
-This implementation guide is provided to support the use of Smart Forms.
+This implementation guide is provided to support thye integration of the Smart Health Checks App within a practice management system enabling users to complete health chck assessments such the Aboriginal and Torres Strait Islander Health Check.
 
-Smart Forms is a FHIR-based solution aimed to demonstrate effective undertaking of health care assessments. It leverages [SMART App Launch](https://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html) and the [Structured Data Capture specification](http://build.fhir.org/ig/HL7/sdc/index.html) to support better clinical outcomes, improved clinical workflow, enhance the usefulness of information in the practice record and improve interoperability of health information. 
+The Smart Health Checks App is a FHIR-based client application aimed at demonstrating effective undertaking of healthcare assessments. It leverages [SMART App Launch](https://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html), [Structured Data Capture specification](http://build.fhir.org/ig/HL7/sdc/index.html) and [AU Core](https://hl7.org.au/fhir/core/) to improved clinical workflow, enhance the usefulness of information in the practice record and improve interoperability of health information to support better clinical outcomes. 
 
-See [Reference Implementation](reference-implementation.html).
+The Smart Health Checks App is based on the CSIRO Smart Forms App which was provided as a [Reference Implementation](reference-implementation.html) of using FHIR standards and implemenation guides to provide reusable software components that can be applied within Australian healthcare software systems to support uses cases such as national health check assessment forms.
+
+### Smart Health Checks Actors
+The following figure provides an overview of the actors involved in the Smart Health Checks (SHC) solution.
+
+![Actors Overview](overviewactors.png)
+
+#### SHC App
+
+The SHC App allows a user of the SHC Host to launch the SHC App for filling out a health check form prepopulated with a authorized patient health information retrieved from the SHC Host FHIR Server and writeback the collected form data. 
+
+The SHC App actor is implemented by the CSIRO Smart Forms App.
+
+#### SHC Host
+
+The SHC Host allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form. 
+
+The SHC Host actor is implemented by the practice management system.
+
+#### SHC Host FHIR Server
+
+The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.
+
+The SHC Host actor is implemented by the practice management system.
+
+#### SHC Host Authorization Server
+
+The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.
+
+### Smart Health Checks Interactions
+
+The Smart Health Check App follows a standard set of interactions which are summarised as:
+1. App Launch: The SHC User initiates the SHC Host to launch SHC App with a context of the current user, patient and health check form.
+2. SMART Authorization Configuration: The SHC App uses SHC Host FHIR Server to locate the SHC Host Authorization Server endpoints and capability
+3. Authorization Request: SHC App redirects to the SHC Authorization Server to authorise access to patient health information using SHC Host FHR Server, the SHC User may be prompted to permit or deny access to the requested data
+4. Authorization Callback: The SHC App redirects back to the SHC App to proceed with the authorised launch of the health check form
+5. Token Request: SHC App requests an access token and associated launch context, including user, patient and health check form, from the SHC Host Authorization Server
+6. Prepopulate Health Check: SHC App uses the launch context to use the SHC Host FHIR Server to read practitioner (6a), read patient (6b) and various search requests (6x) to prepopulate the health check form 
+
+![Launch Interactions](launchinteractions.png)
+
+7. Fill and Save Health Check: The user fills out the health check form and saves the form data
+8. Writeback Questionnaire Response: The health check form data is written back to the SHC Host FHIR Server as a questionnaire response
+9. Writeback Extract Transaction: The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as transaction Bundle
+
+![Launch Interactions](writebackqrextract.png)
 
 ### Dependencies
 
