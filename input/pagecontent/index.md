@@ -8,7 +8,8 @@ The Smart Health Checks App is based on the CSIRO Smart Forms App which was prov
 ### Smart Health Checks Actors
 The following figure provides an overview of the actors involved in the Smart Health Checks (SHC) solution.
 
-![Actors Overview](overviewactors.png)
+<img alt="Actors Overview" src="overviewactors.png" style="width:750px; float:none"/>
+
 
 #### SHC App
 
@@ -42,13 +43,13 @@ The Smart Health Check App follows a standard set of interactions which are summ
 5. Token Request: SHC App requests an access token and associated launch context, including user, patient and health check form, from the SHC Host Authorization Server
 6. Prepopulate Health Check: SHC App uses the launch context to use the SHC Host FHIR Server to read practitioner (6a), read patient (6b) and various search requests (6x) to prepopulate the health check form 
 
-![Launch Interactions](launchinteractions.png)
+<img alt="Launch Interactions" src="launchinteractions.png" style="width:750px; float:none"/>
 
 7. Fill and Save Health Check: The user fills out the health check form and saves the form data
 8. Writeback Questionnaire Response: The health check form data is written back to the SHC Host FHIR Server as a questionnaire response
 9. Writeback Extract Transaction: The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as transaction Bundle
 
-![Launch Interactions](writebackqrextract.png)
+<img alt="Writeback extract" src="writebackqrextract.png" style="width:750px; float:none"/>
 
 ### Dependencies
 
