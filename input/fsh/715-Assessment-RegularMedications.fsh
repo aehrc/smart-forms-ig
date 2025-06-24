@@ -44,61 +44,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[=].valueExpression.expression = "MedicationStatement?patient={{%patient.id}}"
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
 * extension[=].valueString = "age"
-/*
-//assemble expectation
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
-  * valueCode = #assemble-child
 
-//launch context
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-  * extension[+]
-    * url = "name"
-    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
-  * extension[+]
-    * url = "type"
-    * valueCode = #Patient
-  * extension[+]
-    * url = "description"
-    * valueString = "The patient that is to be used to pre-populate the form"
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-  * extension[+]
-    * url = "name"
-    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#user
-  * extension[+]
-    * url = "type"
-    * valueCode = #Practitioner
-  * extension[+]
-    * url = "description"
-    * valueString = "The practitioner user that is to be used to pre-populate the form"
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
-  * extension[+]
-    * url = "name"
-    * valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#encounter
-  * extension[+]
-    * url = "type"
-    * valueCode = #Encounter
-  * extension[+]
-    * url = "description"
-    * valueString = "The encounter that is to be used to pre-populate the form"
-
-
-//fhir query variables
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "MedicationStatement"
-    * language = #application/x-fhir-query
-    * expression = "MedicationStatement?patient={{%patient.id}}"
-
-//assemble context
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
-  * valueString = "age"
-*/
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"

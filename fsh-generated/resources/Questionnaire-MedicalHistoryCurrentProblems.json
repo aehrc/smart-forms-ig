@@ -814,14 +814,6 @@
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
       "valueString": "Condition"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "Condition",
-        "language": "application/x-fhir-query",
-        "expression": "Condition?patient={{%patient.id}}"
-      }
     }
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems",
