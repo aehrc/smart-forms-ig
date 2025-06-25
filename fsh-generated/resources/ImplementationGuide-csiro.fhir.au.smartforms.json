@@ -495,6 +495,38 @@
       },
       {
         "reference": {
+          "reference": "ActorDefinition/SHCApp"
+        },
+        "name": "SHC App",
+        "description": "The SHC App allows a user of the SHC Host to launch the SHC App for filling out a health check form prepopulated with a authorized patient health information retrieved from the SHC Host FHIR Server and writeback the collected form data.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHost"
+        },
+        "name": "SHC Host",
+        "description": "The SHC Host allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHostAuthorizationServer"
+        },
+        "name": "SHC Host Authorization Server",
+        "description": "The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHostFHIRServer"
+        },
+        "name": "SHC Host FHIR Server",
+        "description": "The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/SmartFormsApplication"
         },
         "name": "Smart Forms Application",
@@ -598,6 +630,11 @@
         {
           "nameUrl": "index.html",
           "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "actor-definitions.html",
+          "title": "Actor Definitions",
           "generation": "markdown"
         },
         {

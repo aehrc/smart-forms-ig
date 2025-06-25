@@ -1,0 +1,13 @@
+{
+  "resourceType": "ActorDefinition",
+  "id": "SHCApp",
+  "url": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp",
+  "description": "The SHC App allows a user of the SHC Host to launch the SHC App for filling out a health check form prepopulated with a authorized patient health information retrieved from the SHC Host FHIR Server and writeback the collected form data.",
+  "name": "SHCApp",
+  "title": "SHC App",
+  "status": "draft",
+  "experimental": false,
+  "type": "system",
+  "documentation": "SHC App",
+  "capabilities": "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsApplication"
+}

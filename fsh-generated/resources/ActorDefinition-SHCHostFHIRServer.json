@@ -1,0 +1,13 @@
+{
+  "resourceType": "ActorDefinition",
+  "id": "SHCHostFHIRServer",
+  "url": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer",
+  "description": "The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.",
+  "name": "SHCHostFHIRServer",
+  "title": "SHC Host FHIR Server",
+  "status": "draft",
+  "experimental": false,
+  "type": "system",
+  "documentation": "SHC Host FHIR Server",
+  "capabilities": "https://smartforms.csiro.au/ig/CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+}
