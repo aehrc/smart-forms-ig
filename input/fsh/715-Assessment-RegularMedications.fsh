@@ -45,6 +45,11 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
 * extension[=].valueString = "age"
 
+//R5 preadoption extensions
+* extension[+].url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+* extension[=].valueCoding.system = "http://hl7.org/fhir/version-algorithm"
+* extension[=].valueCoding.code = #semver
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"

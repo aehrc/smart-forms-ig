@@ -2346,6 +2346,13 @@
         "language": "text/fhirpath",
         "expression": "%patient.address.where(type='postal')"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
+      }
     }
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/PatientDetails",

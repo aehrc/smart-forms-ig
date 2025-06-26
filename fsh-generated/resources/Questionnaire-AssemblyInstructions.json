@@ -2258,6 +2258,13 @@
       }
     },
     {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
+      }
+    },
+    {
       "url": "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference",
       "valueReference": {
         "reference": "#YesNoNA"

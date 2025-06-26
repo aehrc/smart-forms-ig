@@ -48,6 +48,13 @@ Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres
   * extension[+]
     * url = "description"
     * valueString = "The encounter that is to be used to pre-populate the form"
+
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
     
 //assemble context
 * extension[+]

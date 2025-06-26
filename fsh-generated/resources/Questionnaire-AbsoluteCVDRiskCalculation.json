@@ -821,6 +821,13 @@
         "language": "application/x-fhir-query",
         "expression": "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
       }
+    },
+    {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
+      }
     }
   ],
   "url": "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation",

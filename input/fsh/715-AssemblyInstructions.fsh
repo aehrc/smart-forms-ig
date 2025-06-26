@@ -78,6 +78,12 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * language = #application/x-fhir-query
     * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
 
 //workaround to stop server stripping of value sets referenced as canonical
 * extension[+]
