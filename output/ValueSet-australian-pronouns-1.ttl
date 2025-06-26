@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,7 +11,7 @@
   fhir:id [ fhir:v "australian-pronouns-1"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet australian-pronouns-1</b></p><a name=\"australian-pronouns-1\"> </a><a name=\"hcaustralian-pronouns-1\"> </a><a name=\"australian-pronouns-1-en-US\"> </a><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on:</p><ul><li>Loinc v2.77</li><li>system DataAbsentReason version5.0.0-ballot</li></ul></div><p>This value set contains 7 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://loinc.org-LA29518-0\"> </a>  <a href=\"https://loinc.org/LA29518-0/\">LA29518-0</a></td><td>http://loinc.org</td><td>he/him/his/his/himself</td><td><div/></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://loinc.org-LA29519-8\"> </a>  <a href=\"https://loinc.org/LA29519-8/\">LA29519-8</a></td><td>http://loinc.org</td><td>she/her/her/hers/herself</td><td><div/></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://loinc.org-LA29520-6\"> </a>  <a href=\"https://loinc.org/LA29520-6/\">LA29520-6</a></td><td>http://loinc.org</td><td>they/them/their/theirs/themselves</td><td><div/></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined\">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td><div><p>The source was asked but declined to answer.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-unknown\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-unknown\">asked-unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Unknown</td><td><div><p>The source was asked but does not know the value.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-not-asked\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-not-asked\">not-asked</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Not Asked</td><td><div><p>The workflow didn't lead to this value being known.</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-unknown\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-unknown\">unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Unknown</td><td><div><p>The value is expected to exist but is not known.</p>\n</div></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet australian-pronouns-1</b></p><a name=\"australian-pronouns-1\"> </a><a name=\"hcaustralian-pronouns-1\"> </a><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on:</p><ul><li>Loinc v2.77</li><li>system DataAbsentReason version5.0.0-ballot</li></ul></div><p>This value set contains 7 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://loinc.org-LA29518-0\"> </a>  <a href=\"https://loinc.org/LA29518-0/\">LA29518-0</a></td><td>http://loinc.org</td><td>he/him/his/his/himself</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://loinc.org-LA29519-8\"> </a>  <a href=\"https://loinc.org/LA29519-8/\">LA29519-8</a></td><td>http://loinc.org</td><td>she/her/her/hers/herself</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://loinc.org-LA29520-6\"> </a>  <a href=\"https://loinc.org/LA29520-6/\">LA29520-6</a></td><td>http://loinc.org</td><td>they/them/their/theirs/themselves</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined\"> </a>  <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined\">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td>The source was asked but declined to answer.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-unknown\"> </a>  <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-data-absent-reason.html#data-absent-reason-asked-unknown\">asked-unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Unknown</td><td>The source was asked but does not know the value.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-not-asked\"> </a>  <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-asked\">not-asked</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Not Asked</td><td>The workflow didn't lead to this value being known.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"australian-pronouns-1-http://terminology.hl7.org/CodeSystem/data-absent-reason-unknown\"> </a>  <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-data-absent-reason.html#data-absent-reason-unknown\">unknown</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Unknown</td><td>The value is expected to exist but is not known.</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"^^xsd:anyURI] ; # 
   fhir:identifier ( [
@@ -21,7 +22,7 @@
   fhir:name [ fhir:v "AustralianPronouns"] ; # 
   fhir:title [ fhir:v "Australian Pronouns"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:experimental [ fhir:v false] ; # 
   fhir:date [ fhir:v "2024-02-29"^^xsd:date] ; # 
   fhir:publisher [ fhir:v "Australian Digital Health Agency"] ; # 
   fhir:contact ( [
@@ -61,19 +62,31 @@
   fhir:expansion [
      fhir:identifier [ fhir:v "urn:uuid:ca145c1c-4915-4957-888a-39e69de8b1ad"^^xsd:anyURI ] ;
      fhir:timestamp [ fhir:v "2024-04-02T14:25:01+10:00"^^xsd:dateTime ] ;
-     fhir:total [ fhir:v "7"^^xsd:integer ] ;
+     fhir:total [ fhir:v 7 ] ;
      fhir:parameter ( [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "http://loinc.org|2.77"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://loinc.org|2.77"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "used-codesystem" ] ;
-       fhir:value [ fhir:v "http://loinc.org|2.77"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://loinc.org|2.77"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "used-codesystem" ] ;
-       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI
+       ]
      ] ) ;
      fhir:contains ( [
        fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;

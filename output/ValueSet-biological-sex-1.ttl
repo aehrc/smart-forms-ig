@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -19,7 +20,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet biological-sex-1</b></p><a name=\"biological-sex-1\"> </a><a name=\"hcbiological-sex-1\"> </a><a name=\"biological-sex-1-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 31-Aug 2023</p><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-248152002\"> </a>  <a href=\"http://snomed.info/id/248152002\">248152002</a></td><td>http://snomed.info/sct</td><td>Female</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-32570681000036106\"> </a>  <a href=\"http://snomed.info/id/32570681000036106\">32570681000036106</a></td><td>http://snomed.info/sct</td><td>Indeterminate sex</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-32570691000036108\"> </a>  <a href=\"http://snomed.info/id/32570691000036108\">32570691000036108</a></td><td>http://snomed.info/sct</td><td>Intersex</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-248153007\"> </a>  <a href=\"http://snomed.info/id/248153007\">248153007</a></td><td>http://snomed.info/sct</td><td>Male</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet biological-sex-1</b></p><a name=\"biological-sex-1\"> </a><a name=\"hcbiological-sex-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a>, <code>https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4</code></p></div><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian Edition edition 31-Aug 2023</p><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-248152002\"> </a>  <a href=\"http://snomed.info/id/248152002\">248152002</a></td><td>http://snomed.info/sct</td><td>Female</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-32570681000036106\"> </a>  <a href=\"http://snomed.info/id/32570681000036106\">32570681000036106</a></td><td>http://snomed.info/sct</td><td>Indeterminate sex</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-32570691000036108\"> </a>  <a href=\"http://snomed.info/id/32570691000036108\">32570691000036108</a></td><td>http://snomed.info/sct</td><td>Intersex</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"biological-sex-1-http://snomed.info/sct-248153007\"> </a>  <a href=\"http://snomed.info/id/248153007\">248153007</a></td><td>http://snomed.info/sct</td><td>Male</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"^^xsd:anyURI] ; # 
   fhir:identifier ( [
@@ -30,7 +31,7 @@
   fhir:name [ fhir:v "BiologicalSex"] ; # 
   fhir:title [ fhir:v "Biological Sex"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:experimental [ fhir:v false] ; # 
   fhir:date [ fhir:v "2020-12-31"^^xsd:date] ; # 
   fhir:publisher [ fhir:v "Australian Digital Health Agency"] ; # 
   fhir:contact ( [
@@ -54,13 +55,19 @@
   fhir:expansion [
      fhir:identifier [ fhir:v "urn:uuid:e9cff1c2-8743-48cb-9bde-8f4af914544b"^^xsd:anyURI ] ;
      fhir:timestamp [ fhir:v "2023-08-30T10:41:59+10:00"^^xsd:dateTime ] ;
-     fhir:total [ fhir:v "4"^^xsd:integer ] ;
+     fhir:total [ fhir:v 4 ] ;
      fhir:parameter ( [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "used-codesystem" ] ;
-       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20230831"^^xsd:anyURI
+       ]
      ] ) ;
      fhir:contains ( [
        fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;

@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,17 +11,26 @@
   fhir:id [ fhir:v "questionnaire-item-control"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-questionnaire-item-control.html\"><code>http://hl7.org/fhir/questionnaire-item-control</code></a></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-questionnaire-item-control.html\"><code>http://hl7.org/fhir/questionnaire-item-control</code></a></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "fhir" ]
+     fhir:value [
+       a fhir:code ;
+       fhir:v "fhir"
+     ]
   ] [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "trial-use" ]
+     fhir:value [
+       a fhir:code ;
+       fhir:v "trial-use"
+     ]
   ] [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "3"^^xsd:integer ]
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 3
+     ]
   ] ) ; # 
   fhir:url [ fhir:v "http://hl7.org/fhir/ValueSet/questionnaire-item-control"^^xsd:anyURI] ; # 
   fhir:identifier ( [
@@ -35,7 +45,7 @@
   fhir:name [ fhir:v "QuestionnaireItemUIControlCodes"] ; # 
   fhir:title [ fhir:v "Questionnaire Item UI Control Codes"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:experimental [ fhir:v false] ; # 
   fhir:date [ fhir:v "2023-03-26T09:00:24+11:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7 International / FHIR Infrastructure"] ; # 
   fhir:contact ( [

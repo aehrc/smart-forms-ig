@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,11 +11,12 @@
   fhir:id [ fhir:v "SmokingQuitStatus-1"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet SmokingQuitStatus-1</b></p><a name=\"SmokingQuitStatus-1\"> </a><a name=\"hcSmokingQuitStatus-1\"> </a><a name=\"SmokingQuitStatus-1-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-48031000119106\"> </a>  <a href=\"http://snomed.info/id/48031000119106\">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-735128000\"> </a>  <a href=\"http://snomed.info/id/735128000\">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet SmokingQuitStatus-1</b></p><a name=\"SmokingQuitStatus-1\"> </a><a name=\"hcSmokingQuitStatus-1\"> </a><p>This ValueSet requires the Code system Supplement <a href=\"CodeSystem-HealthChecksSCTSupplement.html\">SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check</a>.</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian Edition edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-48031000119106\"> </a>  <a href=\"http://snomed.info/id/48031000119106\">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-735128000\"> </a>  <a href=\"http://snomed.info/id/735128000\">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/valueset-supplement"^^xsd:anyURI ] ;
      fhir:value [
+       a fhir:canonical ;
        fhir:v "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"^^xsd:anyURI ;
        fhir:link <https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement>
      ]
@@ -24,8 +26,8 @@
   fhir:name [ fhir:v "SmokingQuitStatus"] ; # 
   fhir:title [ fhir:v "Smoking Quit Status"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-26T16:23:30+10:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AEHRC CSIRO" ] ;
@@ -51,13 +53,19 @@
   fhir:expansion [
      fhir:identifier [ fhir:v "urn:uuid:86b4329d-aca5-4e54-9b5e-67296c7ce9db"^^xsd:anyURI ] ;
      fhir:timestamp [ fhir:v "2024-04-08T12:56:59+10:00"^^xsd:dateTime ] ;
-     fhir:total [ fhir:v "2"^^xsd:integer ] ;
+     fhir:total [ fhir:v 2 ] ;
      fhir:parameter ( [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "used-codesystem" ] ;
-       fhir:value [ fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20240331"^^xsd:anyURI
+       ]
      ] ) ;
      fhir:contains ( [
        fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;

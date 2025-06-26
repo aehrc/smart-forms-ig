@@ -3,7 +3,7 @@
   "id" : "SmokingQuitStatus-1",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet SmokingQuitStatus-1</b></p><a name=\"SmokingQuitStatus-1\"> </a><a name=\"hcSmokingQuitStatus-1\"> </a><a name=\"SmokingQuitStatus-1-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-48031000119106\"> </a>\u00a0\u00a0<a href=\"http://snomed.info/id/48031000119106\">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-735128000\"> </a>\u00a0\u00a0<a href=\"http://snomed.info/id/735128000\">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet SmokingQuitStatus-1</b></p><a name=\"SmokingQuitStatus-1\"> </a><a name=\"hcSmokingQuitStatus-1\"> </a><p>This ValueSet requires the Code system Supplement <a href=\"CodeSystem-HealthChecksSCTSupplement.html\">SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check</a>.</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian Edition edition 31-Mar 2024</p><p>This value set contains 2 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-48031000119106\"> </a>\u00a0\u00a0<a href=\"http://snomed.info/id/48031000119106\">48031000119106</a></td><td>http://snomed.info/sct</td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"SmokingQuitStatus-1-http://snomed.info/sct-735128000\"> </a>\u00a0\u00a0<a href=\"http://snomed.info/id/735128000\">735128000</a></td><td>http://snomed.info/sct</td><td>Quit &lt;12 months</td></tr></table></div>"
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
@@ -15,7 +15,7 @@
   "title" : "Smoking Quit Status",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2024-10-25T12:49:36+10:00",
+  "date" : "2025-06-26T16:23:30+10:00",
   "publisher" : "AEHRC CSIRO",
   "contact" : [{
     "name" : "AEHRC CSIRO",

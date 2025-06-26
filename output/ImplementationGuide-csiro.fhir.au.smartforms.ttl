@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,15 +11,15 @@
   fhir:id [ fhir:v "csiro.fhir.au.smartforms"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide csiro.fhir.au.smartforms</b></p><a name=\"csiro.fhir.au.smartforms\"> </a><a name=\"hccsiro.fhir.au.smartforms\"> </a><a name=\"csiro.fhir.au.smartforms-en-US\"> </a><h2>SmartForms</h2><p>The official URL for this implementation guide is: </p><pre>https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms</pre><div><p>Smart Forms FHIR Implementation Guide.</p>\n</div></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide csiro.fhir.au.smartforms</b></p><a name=\"csiro.fhir.au.smartforms\"> </a><a name=\"hccsiro.fhir.au.smartforms\"> </a><h2>SmartForms</h2><p>The official URL for this implementation guide is: </p><pre>https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms</pre><div><p>Smart Forms FHIR Implementation Guide.</p>\n</div></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "SmartForms"] ; # 
   fhir:title [ fhir:v "Smart Forms"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-26T16:23:30+10:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AEHRC CSIRO" ] ;
@@ -36,26 +37,32 @@
      fhir:id [ fhir:v "hl7tx" ] ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+       ]
      ] ) ;
      fhir:uri [
        fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "6.0.2" ]
+     fhir:version [ fhir:v "6.4.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+       ]
      ] ) ;
      fhir:uri [
        fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
        fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
-     fhir:version [ fhir:v "5.1.0" ]
+     fhir:version [ fhir:v "5.2.0" ]
   ] [
      fhir:id [ fhir:v "hl7_fhir_au_core" ] ;
      fhir:uri [
@@ -85,1343 +92,2237 @@
      fhir:extension ( [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "copyrightyear" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "copyrightyear"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "2022+" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "2022+"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "releaselabel" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "releaselabel"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ci-build" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ci-build"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-expansion-params" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-expansion-params"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "../../input/_resources/exp-params.json" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "../../input/_resources/exp-params.json"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url-base" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url-base"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Examination" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Examination"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/EyeHealth" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/EyeHealth"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/FamilyHistory" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/FamilyHistory"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Gambling" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Gambling"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthyEating" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthyEating"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Immunisation" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Immunisation"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Investigations" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Investigations"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndWork" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndWork"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Mood" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Mood"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/RegularMedications" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/RegularMedications"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SexualHealth" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SexualHealth"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Skin" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Skin"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SubstanceUse" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SubstanceUse"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Consent" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Consent"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/PatientDetails" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/PatientDetails"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/questionnaire-item-control" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/questionnaire-item-control"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/questionnaire-item-control" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/ValueSet/questionnaire-item-control"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/administrative-gender" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/ValueSet/administrative-gender"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-publisher" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-publisher"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-publisher" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "default-publisher"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-version" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-version"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-version" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "default-version"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-contact" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-contact"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-contact" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "default-contact"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-copyright" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-copyright"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-copyright" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "default-copyright"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "autoload-resources" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "autoload-resources"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-liquid" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-liquid"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template/liquid" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template/liquid"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-liquid" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-liquid"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "input/liquid" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "input/liquid"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-qa" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-qa"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "temp/qa" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "temp/qa"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-temp" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-temp"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "temp/pages" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "temp/pages"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-output" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-output"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "output" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "output"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-suppressed-warnings" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-suppressed-warnings"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "input/ignoreWarnings.txt"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-history" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "path-history"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://smartforms.csiro.au/ig/history.html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://smartforms.csiro.au/ig/history.html"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template-html"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-page.html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template-page.html"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-md" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template-md"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-page-md.html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template-page-md.html"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-context" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-context"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-jurisdiction" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-jurisdiction"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-license" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-license"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-wg" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "apply-wg"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "active-tables" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "active-tables"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "fmm-definition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "fmm-definition"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/versions.html#maturity"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "propagate-status" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "propagate-status"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "excludelogbinaryformat" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "excludelogbinaryformat"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "tabbed-snapshots" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "tabbed-snapshots"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.2.0" ]
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hl7.fhir.uv.tools.r4#0.5.0"
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "copyrightyear" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "copyrightyear"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "2022+" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "2022+"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "releaselabel" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "releaselabel"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ci-build" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ci-build"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-expansion-params" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-expansion-params"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "../../input/_resources/exp-params.json" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "../../input/_resources/exp-params.json"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url-base" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url-base"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Examination" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Examination"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/EyeHealth" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/EyeHealth"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/FamilyHistory" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/FamilyHistory"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Gambling" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Gambling"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthyEating" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthyEating"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Immunisation" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Immunisation"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Investigations" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Investigations"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndWork" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/LearningAndWork"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Mood" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Mood"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/RegularMedications" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/RegularMedications"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SexualHealth" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SexualHealth"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Skin" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Skin"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/SubstanceUse" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/SubstanceUse"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/Consent" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/Consent"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://www.health.gov.au/assessments/mbs/715/PatientDetails" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://www.health.gov.au/assessments/mbs/715/PatientDetails"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/questionnaire-item-control" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/questionnaire-item-control"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/questionnaire-item-control" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/ValueSet/questionnaire-item-control"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/administrative-gender" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/ValueSet/administrative-gender"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/ValueSet/condition-clinical"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/gender-identity-response-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-pronouns-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/australian-states-territories-2"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "special-url" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "special-url"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-publisher" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-publisher"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-publisher" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "default-publisher"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-version" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-version"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-version" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "default-version"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-contact" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-contact"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-contact" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "default-contact"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-copyright" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-copyright"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "false" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "false"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "default-copyright" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "default-copyright"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "autoload-resources" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "autoload-resources"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-liquid" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-liquid"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template/liquid" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template/liquid"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-liquid" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-liquid"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "input/liquid" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "input/liquid"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-qa" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-qa"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "temp/qa" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "temp/qa"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-temp" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-temp"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "temp/pages" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "temp/pages"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-output" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-output"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "output" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "output"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-suppressed-warnings" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-suppressed-warnings"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "input/ignoreWarnings.txt"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "path-history" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "path-history"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://smartforms.csiro.au/ig/history.html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "https://smartforms.csiro.au/ig/history.html"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-html" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "template-html"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-page.html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template-page.html"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-md" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "template-md"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "template-page-md.html" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "template-page-md.html"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-context" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-context"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-jurisdiction" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-jurisdiction"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-license" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-license"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "apply-wg" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "apply-wg"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "active-tables" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "active-tables"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "fmm-definition" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "fmm-definition"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "http://hl7.org/fhir/versions.html#maturity"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "propagate-status" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "propagate-status"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "excludelogbinaryformat" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "excludelogbinaryformat"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "tabbed-snapshots" ]
+         fhir:value [
+           a fhir:code ;
+           fhir:v "tabbed-snapshots"
+         ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "true"
+         ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/AssemblyInstructions> ;
@@ -1429,11 +2330,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check" ] ;
        fhir:description [ fhir:v "Aboriginal and Torres Strait Islander Health Check assessment form." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/AboriginalTorresStraitIslanderHealthCheck> ;
@@ -1441,11 +2348,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check" ] ;
        fhir:description [ fhir:v "Aboriginal and Torres Strait Islander Health Check assessment form." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/AboutTheHealthCheck> ;
@@ -1453,11 +2366,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - About The Health Check" ] ;
        fhir:description [ fhir:v "About The Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/AbsoluteCVDRiskCalculation> ;
@@ -1465,11 +2384,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Absolute Cardiovascular Disease Risk Calculation" ] ;
        fhir:description [ fhir:v "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/AllergiesAdverseReactions> ;
@@ -1477,11 +2402,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions" ] ;
        fhir:description [ fhir:v "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/ChronicDiseaseAgeing> ;
@@ -1489,11 +2420,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Chronic Disease Ageing" ] ;
        fhir:description [ fhir:v "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Consent> ;
@@ -1501,11 +2438,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Consent" ] ;
        fhir:description [ fhir:v "Consent sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/CurrentPriorities> ;
@@ -1513,11 +2456,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Current Priorities" ] ;
        fhir:description [ fhir:v "Current Priorities sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/EarHealthAndHearing> ;
@@ -1525,11 +2474,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Ear Health And Hearing" ] ;
        fhir:description [ fhir:v "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Examination> ;
@@ -1537,11 +2492,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Examination" ] ;
        fhir:description [ fhir:v "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/EyeHealth> ;
@@ -1549,11 +2510,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Eye Health" ] ;
        fhir:description [ fhir:v "Eye Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/FamilyHistory> ;
@@ -1561,11 +2528,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Family History" ] ;
        fhir:description [ fhir:v "Family History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/FinalisingHealthCheck> ;
@@ -1573,11 +2546,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Finalising the Health Check" ] ;
        fhir:description [ fhir:v "Finalising the Health Check sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Gambling> ;
@@ -1585,11 +2564,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Gambling" ] ;
        fhir:description [ fhir:v "Gambling sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/HealthPrioritiesSummary> ;
@@ -1597,11 +2582,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Health Priorities, Actions And Follow-Up Summary" ] ;
        fhir:description [ fhir:v "Health Priorities, Actions And Follow-Up Summary sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/HealthyEating> ;
@@ -1609,11 +2600,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Healthy Eating" ] ;
        fhir:description [ fhir:v "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/HomeAndFamily> ;
@@ -1621,11 +2618,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Home And Family" ] ;
        fhir:description [ fhir:v "Home And Family sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Immunisation> ;
@@ -1633,11 +2636,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Immunisation" ] ;
        fhir:description [ fhir:v "Immunisation sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Investigations> ;
@@ -1645,11 +2654,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Investigations" ] ;
        fhir:description [ fhir:v "Investigations sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/LearningAndDevelopment> ;
@@ -1657,11 +2672,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Learning And Development" ] ;
        fhir:description [ fhir:v "Learning And Development sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/LearningAndWork> ;
@@ -1669,11 +2690,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Learning And Work" ] ;
        fhir:description [ fhir:v "Learning And Work sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/MedicalHistoryCurrentProblems> ;
@@ -1681,11 +2708,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Medical History" ] ;
        fhir:description [ fhir:v "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/MemoryAndThinking> ;
@@ -1693,11 +2726,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Memory And Thinking" ] ;
        fhir:description [ fhir:v "Memory And Thinking sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Mood> ;
@@ -1705,11 +2744,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Mood" ] ;
        fhir:description [ fhir:v "Mood sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/OralAndDentalHealth> ;
@@ -1717,11 +2762,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Oral And Dental Health" ] ;
        fhir:description [ fhir:v "Oral And Dental Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/PatientDetails> ;
@@ -1729,11 +2780,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Patient Details" ] ;
        fhir:description [ fhir:v "Patient Details sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/RedFlagsEarlyIdentificationGuide> ;
@@ -1741,11 +2798,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Red Flags Early Identification Guide For Children" ] ;
        fhir:description [ fhir:v "Red Flags Early Identification Guide For Children sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/RegularMedications> ;
@@ -1753,11 +2816,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Regular Medications" ] ;
        fhir:description [ fhir:v "Regular Medications sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/ScreeningPrograms> ;
@@ -1765,11 +2834,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Screening Programs" ] ;
        fhir:description [ fhir:v "Screening Programs sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/SexualHealth> ;
@@ -1777,11 +2852,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Sexual Health" ] ;
        fhir:description [ fhir:v "Sexual Health sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/Skin> ;
@@ -1789,11 +2870,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Skin" ] ;
        fhir:description [ fhir:v "Skin sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/SocialAndEmotionalWellbeing> ;
@@ -1801,11 +2888,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Social And Emotional Wellbeing" ] ;
        fhir:description [ fhir:v "Social And Emotional Wellbeing sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/SocialHistoryChild> ;
@@ -1813,11 +2906,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Social History Child" ] ;
        fhir:description [ fhir:v "Social History Child sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/SubstanceUse> ;
@@ -1825,11 +2924,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and Torres Strait Islander Health Check - Substance Use" ] ;
        fhir:description [ fhir:v "Substance Use sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander> ;
@@ -1837,11 +2942,17 @@
        ] ;
        fhir:name [ fhir:v "Aboriginal and/or Torres Strait Islander" ] ;
        fhir:description [ fhir:v "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/administrative-gender> ;
@@ -1849,11 +2960,17 @@
        ] ;
        fhir:name [ fhir:v "AdministrativeGender" ] ;
        fhir:description [ fhir:v "The gender of a person used for administrative purposes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/AgedCareCMSFacade> ;
@@ -1861,11 +2978,17 @@
        ] ;
        fhir:name [ fhir:v "Aged Care QI Prototype" ] ;
        fhir:description [ fhir:v "Aged Care CMS Facade." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/australian-pronouns-1> ;
@@ -1873,11 +2996,17 @@
        ] ;
        fhir:name [ fhir:v "Australian Pronouns" ] ;
        fhir:description [ fhir:v "The Australian Pronouns value set includes values that indicate the pronouns to be used when communicating with or about an individual." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/australian-states-territories-2> ;
@@ -1885,11 +3014,17 @@
        ] ;
        fhir:name [ fhir:v "Australian States and Territories" ] ;
        fhir:description [ fhir:v "The Australian States and Territories value set includes values that represent the Australian states and territories." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/biological-sex-1> ;
@@ -1897,11 +3032,17 @@
        ] ;
        fhir:name [ fhir:v "Biological Sex" ] ;
        fhir:description [ fhir:v "The Biological Sex value set includes values that represent the biological sex of an individual." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1> ;
@@ -1909,11 +3050,17 @@
        ] ;
        fhir:name [ fhir:v "Cervical Screening Status" ] ;
        fhir:description [ fhir:v "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/clinical-condition-1> ;
@@ -1921,11 +3068,17 @@
        ] ;
        fhir:name [ fhir:v "Clinical Condition" ] ;
        fhir:description [ fhir:v "The Clinical Condition value set includes values that cover a broad range of clinical concepts to support the representation of conditions, including problems, diagnoses and disorders." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/condition-clinical> ;
@@ -1933,11 +3086,17 @@
        ] ;
        fhir:name [ fhir:v "Condition Clinical Status Codes" ] ;
        fhir:description [ fhir:v "Preferred value set for Condition Clinical Status." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/StructureDefinition/ConditionEnvironmentAcquired> ;
@@ -1945,11 +3104,17 @@
        ] ;
        fhir:name [ fhir:v "Condition Environment Acquired" ] ;
        fhir:description [ fhir:v "The location where the condition was acquired. The location may be a specific place or a conceptual type of environment." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference> ;
@@ -1957,11 +3122,17 @@
        ] ;
        fhir:name [ fhir:v "Contained Resource Reference" ] ;
        fhir:description [ fhir:v "This extension is intended to be used as a work around to a known bug whereby contained resources that are not referenced with the type, 'Reference' are removed before a resource is created in a HAPI FHIR server. This is problematic when referencing with the type, 'canonical'. The extension can be used to reference contained resources so they are retained when added to a HAPI FHIR server." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/gender-identity-response-1> ;
@@ -1969,11 +3140,17 @@
        ] ;
        fhir:name [ fhir:v "Gender Identity Response" ] ;
        fhir:description [ fhir:v "The Gender Identity Response value set includes values that may be used to represent a response for an individual's gender. A person's gender is a social and cultural identity, expression and experience." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Questionnaire" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/Questionnaire/PhysicalActivityAndScreenTime> ;
@@ -1981,11 +3158,17 @@
        ] ;
        fhir:name [ fhir:v "Physical Activity And Screen Time" ] ;
        fhir:description [ fhir:v "Physical Activity And Screen Time sub-questionnaire for Aboriginal and Torres Strait Islander Health Check." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/PrimaryCarerParentGrandparent> ;
@@ -1993,11 +3176,17 @@
        ] ;
        fhir:name [ fhir:v "Primary Carer Of Parent Or Grandparent" ] ;
        fhir:description [ fhir:v "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended> ;
@@ -2005,11 +3194,17 @@
        ] ;
        fhir:name [ fhir:v "Questionnaire Item Control Extension" ] ;
        fhir:description [ fhir:v "The Questionnaire Item Control Extension code system defines concepts that extend the HL7 questionnaire item control concepts in http://hl7.org/fhir/questionnaire-item-control. They represent interface control/display mechanisms interface control/display mechanisms that might be used when rendering an item in a questionnaire." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/CodeSystem/questionnaire-item-control> ;
@@ -2017,11 +3212,17 @@
        ] ;
        fhir:name [ fhir:v "Questionnaire Item UI Control Codes" ] ;
        fhir:description [ fhir:v "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/questionnaire-item-control> ;
@@ -2029,11 +3230,17 @@
        ] ;
        fhir:name [ fhir:v "Questionnaire Item UI Control Codes" ] ;
        fhir:description [ fhir:v "Starter set of user interface control/display mechanisms that might be used when rendering an item in a questionnaire." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CapabilityStatement"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsApplication> ;
@@ -2041,11 +3248,17 @@
        ] ;
        fhir:name [ fhir:v "Smart Forms Application" ] ;
        fhir:description [ fhir:v "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation and completion of forms." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CapabilityStatement"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck> ;
@@ -2053,11 +3266,17 @@
        ] ;
        fhir:name [ fhir:v "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check" ] ;
        fhir:description [ fhir:v "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CapabilityStatement" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CapabilityStatement"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer> ;
@@ -2065,11 +3284,17 @@
        ] ;
        fhir:name [ fhir:v "Smart Forms Server" ] ;
        fhir:description [ fhir:v "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1> ;
@@ -2077,11 +3302,17 @@
        ] ;
        fhir:name [ fhir:v "Smoking Quit Status" ] ;
        fhir:description [ fhir:v "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement> ;
@@ -2089,11 +3320,17 @@
        ] ;
        fhir:name [ fhir:v "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check" ] ;
        fhir:description [ fhir:v "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:complex-type"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/StructureDefinition/slk581> ;
@@ -2101,11 +3338,17 @@
        ] ;
        fhir:name [ fhir:v "Statistical Linkage Key 581" ] ;
        fhir:description [ fhir:v "Statistical linkage key 581 represented as an identifier datatype. Specification for generating the SLK581 is definied by the Australian Institute of Health and Welfare, https://meteor.aihw.gov.au/content/750410" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/YesNo> ;
@@ -2113,11 +3356,17 @@
        ] ;
        fhir:name [ fhir:v "Yes/No" ] ;
        fhir:description [ fhir:v "Concepts for Yes and No" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/YesNoNA> ;
@@ -2125,11 +3374,17 @@
        ] ;
        fhir:name [ fhir:v "Yes/No/NA" ] ;
        fhir:description [ fhir:v "Concepts for Yes, No and Not applicable" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined> ;
@@ -2137,78 +3392,135 @@
        ] ;
        fhir:name [ fhir:v "Yes/No/Not Asked/Asked But Declined" ] ;
        fhir:description [ fhir:v "Concepts for Yes, No, Not Asked and Asked But Declined" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "toc.html"^^xsd:anyURI ]
+         fhir:value [
+           a fhir:url ;
+           fhir:v "toc.html"^^xsd:anyURI
+         ]
        ] ) ;
-       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:name [
+         a fhir:url ;
+         fhir:v "toc.html"^^xsd:anyURI
+       ] ;
        fhir:title [ fhir:v "Table of Contents" ] ;
        fhir:generation [ fhir:v "html" ] ;
        fhir:page ( [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "index.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "index.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "index.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Home" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "capability-statements.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "capability-statements.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "capability-statements.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "capability-statements.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Capability Statements" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "downloads.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "downloads.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "downloads.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Downloads" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "profiles-and-extensions.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "profiles-and-extensions.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "profiles-and-extensions.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "profiles-and-extensions.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Profiles and Extensions" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "questionnaires.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "questionnaires.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "questionnaires.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "questionnaires.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Questionnaires" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "reference-implementation.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "reference-implementation.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "reference-implementation.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "reference-implementation.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Reference Implementation" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "smart-health-check-application-integration.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "smart-health-check-application-integration.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "smart-health-check-application-integration.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "smart-health-check-application-integration.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Smart Health Check Application Integration" ] ;
          fhir:generation [ fhir:v "html" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "terminology.html"^^xsd:anyURI ]
+           fhir:value [
+             a fhir:url ;
+             fhir:v "terminology.html"^^xsd:anyURI
+           ]
          ] ) ;
-         fhir:name [ fhir:v "terminology.html"^^xsd:anyURI ] ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "terminology.html"^^xsd:anyURI
+         ] ;
          fhir:title [ fhir:v "Terminology" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )

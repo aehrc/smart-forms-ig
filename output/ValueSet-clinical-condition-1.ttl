@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -19,7 +20,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet clinical-condition-1</b></p><a name=\"clinical-condition-1\"> </a><a name=\"hcclinical-condition-1\"> </a><a name=\"clinical-condition-1-en-US\"> </a><ul><li>Include codes from<a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a> where concept  in 32570581000036105 (Problem/Diagnosis reference set)</li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet clinical-condition-1</b></p><a name=\"clinical-condition-1\"> </a><a name=\"hcclinical-condition-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a>, <code>https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4</code></p></div><ul><li>Include codes from<a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a> where concept  in 32570581000036105 (Problem/Diagnosis reference set)</li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"^^xsd:anyURI] ; # 
   fhir:identifier ( [
@@ -30,7 +31,7 @@
   fhir:name [ fhir:v "ClinicalCondition"] ; # 
   fhir:title [ fhir:v "Clinical Condition"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:experimental [ fhir:v false] ; # 
   fhir:date [ fhir:v "2020-05-31"^^xsd:date] ; # 
   fhir:publisher [ fhir:v "Australian Digital Health Agency"] ; # 
   fhir:contact ( [

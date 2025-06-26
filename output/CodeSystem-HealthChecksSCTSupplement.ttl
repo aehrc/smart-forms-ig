@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,15 +11,15 @@
   fhir:id [ fhir:v "HealthChecksSCTSupplement"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem HealthChecksSCTSupplement</b></p><a name=\"HealthChecksSCTSupplement\"> </a><a name=\"hcHealthChecksSCTSupplement\"> </a><a name=\"HealthChecksSCTSupplement-en-US\"> </a><p>This code system <code>https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement</code> defines features on the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">736595007<a name=\"HealthChecksSCTSupplement-736595007\"> </a></td><td>Declined</td></tr><tr><td style=\"white-space:nowrap\">171154002<a name=\"HealthChecksSCTSupplement-171154002\"> </a></td><td>Not required</td></tr><tr><td style=\"white-space:nowrap\">171155001<a name=\"HealthChecksSCTSupplement-171155001\"> </a></td><td>Up to date</td></tr><tr><td style=\"white-space:nowrap\">48031000119106<a name=\"HealthChecksSCTSupplement-48031000119106\"> </a></td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\">735128000<a name=\"HealthChecksSCTSupplement-735128000\"> </a></td><td>Quit &lt;12 months</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem HealthChecksSCTSupplement</b></p><a name=\"HealthChecksSCTSupplement\"> </a><a name=\"hcHealthChecksSCTSupplement\"> </a><p>This code system supplement <code>https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement</code> defines features on the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">736595007<a name=\"HealthChecksSCTSupplement-736595007\"> </a></td><td>Declined</td></tr><tr><td style=\"white-space:nowrap\">171154002<a name=\"HealthChecksSCTSupplement-171154002\"> </a></td><td>Not required</td></tr><tr><td style=\"white-space:nowrap\">171155001<a name=\"HealthChecksSCTSupplement-171155001\"> </a></td><td>Up to date</td></tr><tr><td style=\"white-space:nowrap\">48031000119106<a name=\"HealthChecksSCTSupplement-48031000119106\"> </a></td><td>Quit &gt;12 months</td></tr><tr><td style=\"white-space:nowrap\">735128000<a name=\"HealthChecksSCTSupplement-735128000\"> </a></td><td>Quit &lt;12 months</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "HealthChecksSCTSupplement"] ; # 
   fhir:title [ fhir:v "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-26T16:23:30+10:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AEHRC CSIRO" ] ;

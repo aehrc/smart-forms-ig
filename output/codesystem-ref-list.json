@@ -10,14 +10,14 @@
       "oids" : ["2.16.840.1.113883.4.642.4.2"],
       "uses" : {
       },
+      "ValueSet-administrative-gender.html" : "AdministrativeGender",
       "ValueSet-AboriginalTorresStraitIslanderHealthCheck_administrative-gender.html" : "AdministrativeGender",
       "ValueSet-AssemblyInstructions_administrative-gender.html" : "AdministrativeGender",
-      "ValueSet-administrative-gender.html" : "AdministrativeGender",
       "ValueSet-PatientDetails_administrative-gender.html" : "AdministrativeGender"
     },
     {
       "url" : "http://hl7.org/fhir/questionnaire-item-control",
-      "version" : "5.1.0",
+      "version" : "5.2.0",
       "status" : "active",
       "name" : "QuestionnaireItemUIControlCodes",
       "title" : "Questionnaire Item UI Control Codes System",
@@ -40,10 +40,10 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
-      "ValueSet-PatientDetails_australian-pronouns-1.html" : "Australian Pronouns",
       "ValueSet-AssemblyInstructions_australian-pronouns-1.html" : "Australian Pronouns",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_australian-pronouns-1.html" : "Australian Pronouns",
       "ValueSet-australian-pronouns-1.html" : "Australian Pronouns",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_australian-pronouns-1.html" : "Australian Pronouns"
+      "ValueSet-PatientDetails_australian-pronouns-1.html" : "Australian Pronouns"
     },
     {
       "url" : "http://snomed.info/sct",
@@ -55,27 +55,27 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_biological-sex-1.html" : "Biological Sex",
-      "ValueSet-SmokingQuitStatus-1.html" : "Smoking Quit Status",
-      "ValueSet-gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_gender-identity-response-1.html" : "Gender Identity Response",
       "ValueSet-AboriginalTorresStraitIslanderHealthCheck_SmokingQuitStatus-1.html" : "Smoking Quit Status",
-      "ValueSet-CervicalScreeningStatus-1.html" : "Cervical Screening Status",
-      "ValueSet-biological-sex-1.html" : "Biological Sex",
-      "ValueSet-AssemblyInstructions_CervicalScreeningStatus-1.html" : "Cervical Screening Status",
-      "ValueSet-SubstanceUse_SmokingQuitStatus-1.html" : "Smoking Quit Status",
       "ValueSet-AboriginalTorresStraitIslanderHealthCheck_clinical-condition-1.html" : "Clinical Condition",
+      "ValueSet-AssemblyInstructions_clinical-condition-1.html" : "Clinical Condition",
       "ValueSet-PatientDetails_biological-sex-1.html" : "Biological Sex",
-      "ValueSet-AssemblyInstructions_SmokingQuitStatus-1.html" : "Smoking Quit Status",
-      "ValueSet-SexualHealth_CervicalScreeningStatus-1.html" : "Cervical Screening Status",
       "ValueSet-AboriginalTorresStraitIslanderHealthCheck_CervicalScreeningStatus-1.html" : "Cervical Screening Status",
+      "ValueSet-SubstanceUse_SmokingQuitStatus-1.html" : "Smoking Quit Status",
+      "ValueSet-AssemblyInstructions_gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-CervicalScreeningStatus-1.html" : "Cervical Screening Status",
+      "ValueSet-AssemblyInstructions_SmokingQuitStatus-1.html" : "Smoking Quit Status",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_biological-sex-1.html" : "Biological Sex",
+      "ValueSet-MedicalHistoryCurrentProblems_clinical-condition-1.html" : "Clinical Condition",
+      "ValueSet-SexualHealth_CervicalScreeningStatus-1.html" : "Cervical Screening Status",
+      "ValueSet-AbsoluteCVDRiskCalculation_biological-sex-1.html" : "Biological Sex",
+      "ValueSet-PatientDetails_gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-SmokingQuitStatus-1.html" : "Smoking Quit Status",
       "ValueSet-AssemblyInstructions_biological-sex-1.html" : "Biological Sex",
       "ValueSet-clinical-condition-1.html" : "Clinical Condition",
-      "ValueSet-MedicalHistoryCurrentProblems_clinical-condition-1.html" : "Clinical Condition",
-      "ValueSet-PatientDetails_gender-identity-response-1.html" : "Gender Identity Response",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_gender-identity-response-1.html" : "Gender Identity Response",
-      "ValueSet-AssemblyInstructions_clinical-condition-1.html" : "Clinical Condition",
-      "ValueSet-AssemblyInstructions_gender-identity-response-1.html" : "Gender Identity Response",
-      "ValueSet-AbsoluteCVDRiskCalculation_biological-sex-1.html" : "Biological Sex"
+      "ValueSet-biological-sex-1.html" : "Biological Sex",
+      "ValueSet-AssemblyInstructions_CervicalScreeningStatus-1.html" : "Cervical Screening Status"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
@@ -88,9 +88,9 @@
       "uses" : {
       },
       "ValueSet-AssemblyInstructions_condition-clinical.html" : "Condition Clinical Status Codes",
-      "ValueSet-condition-clinical.html" : "Condition Clinical Status Codes",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_condition-clinical.html" : "Condition Clinical Status Codes",
       "ValueSet-MedicalHistoryCurrentProblems_condition-clinical.html" : "Condition Clinical Status Codes",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_condition-clinical.html" : "Condition Clinical Status Codes"
+      "ValueSet-condition-clinical.html" : "Condition Clinical Status Codes"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
@@ -102,18 +102,18 @@
       "oids" : ["2.16.840.1.113883.4.642.4.1048"],
       "uses" : {
       },
-      "ValueSet-PatientDetails_australian-pronouns-1.html" : "Australian Pronouns",
-      "ValueSet-AssemblyInstructions_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_gender-identity-response-1.html" : "Gender Identity Response",
       "ValueSet-AssemblyInstructions_australian-pronouns-1.html" : "Australian Pronouns",
-      "ValueSet-gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_australian-pronouns-1.html" : "Australian Pronouns",
+      "ValueSet-SexualHealth_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
       "ValueSet-australian-pronouns-1.html" : "Australian Pronouns",
       "ValueSet-PatientDetails_gender-identity-response-1.html" : "Gender Identity Response",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-gender-identity-response-1.html" : "Gender Identity Response",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
       "ValueSet-YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
-      "ValueSet-SexualHealth_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
       "ValueSet-AssemblyInstructions_gender-identity-response-1.html" : "Gender Identity Response",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_australian-pronouns-1.html" : "Australian Pronouns",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined"
+      "ValueSet-PatientDetails_australian-pronouns-1.html" : "Australian Pronouns",
+      "ValueSet-AssemblyInstructions_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v2-0532",
@@ -125,36 +125,36 @@
       "oids" : ["2.16.840.1.113883.18.347"],
       "uses" : {
       },
-      "ValueSet-AssemblyInstructions_YesNo.html" : "Yes/No",
-      "ValueSet-Gambling_YesNo.html" : "Yes/No",
-      "ValueSet-PhysicalActivityAndScreenTime_YesNo.html" : "Yes/No",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-EyeHealth_YesNo.html" : "Yes/No",
-      "ValueSet-YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
-      "ValueSet-SexualHealth_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
-      "ValueSet-MemoryAndThinking_YesNo.html" : "Yes/No",
-      "ValueSet-LearningAndWork_YesNo.html" : "Yes/No",
-      "ValueSet-AssemblyInstructions_YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-RegularMedications_YesNo.html" : "Yes/No",
-      "ValueSet-AssemblyInstructions_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
-      "ValueSet-PatientDetails_YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-Consent_YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-AboutTheHealthCheck_YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-LearningAndWork_YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-Immunisation_YesNo.html" : "Yes/No",
-      "ValueSet-SocialAndEmotionalWellbeing_YesNo.html" : "Yes/No",
-      "ValueSet-HealthyEating_YesNo.html" : "Yes/No",
-      "ValueSet-CurrentPriorities_YesNo.html" : "Yes/No",
-      "ValueSet-SexualHealth_YesNo.html" : "Yes/No",
       "ValueSet-OralAndDentalHealth_YesNo.html" : "Yes/No",
-      "ValueSet-HomeAndFamily_YesNo.html" : "Yes/No",
-      "ValueSet-YesNo.html" : "Yes/No",
+      "ValueSet-LearningAndWork_YesNo.html" : "Yes/No",
+      "ValueSet-RegularMedications_YesNo.html" : "Yes/No",
+      "ValueSet-EarHealthAndHearing_YesNo.html" : "Yes/No",
+      "ValueSet-Gambling_YesNo.html" : "Yes/No",
+      "ValueSet-LearningAndWork_YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-AboutTheHealthCheck_YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-PhysicalActivityAndScreenTime_YesNo.html" : "Yes/No",
+      "ValueSet-EyeHealth_YesNo.html" : "Yes/No",
+      "ValueSet-SexualHealth_YesNo.html" : "Yes/No",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
       "ValueSet-Skin_YesNo.html" : "Yes/No",
+      "ValueSet-PatientDetails_YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-AssemblyInstructions_YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-CurrentPriorities_YesNo.html" : "Yes/No",
+      "ValueSet-HealthyEating_YesNo.html" : "Yes/No",
+      "ValueSet-SocialAndEmotionalWellbeing_YesNo.html" : "Yes/No",
+      "ValueSet-MemoryAndThinking_YesNo.html" : "Yes/No",
+      "ValueSet-YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-Consent_YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-AssemblyInstructions_YesNo.html" : "Yes/No",
+      "ValueSet-HomeAndFamily_YesNo.html" : "Yes/No",
+      "ValueSet-Immunisation_YesNo.html" : "Yes/No",
       "ValueSet-SocialHistoryChild_YesNo.html" : "Yes/No",
       "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNo.html" : "Yes/No",
-      "ValueSet-YesNoNA.html" : "Yes/No/NA",
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
-      "ValueSet-EarHealthAndHearing_YesNo.html" : "Yes/No"
+      "ValueSet-SexualHealth_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
+      "ValueSet-YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined",
+      "ValueSet-YesNo.html" : "Yes/No",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_YesNoNA.html" : "Yes/No/NA",
+      "ValueSet-AssemblyInstructions_YesNoNotAskedDeclined.html" : "Yes/No/Not Asked/Asked But Declined"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
@@ -166,10 +166,10 @@
       "oids" : ["2.16.840.1.113883.5.1008"],
       "uses" : {
       },
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
       "ValueSet-AssemblyInstructions_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
       "ValueSet-PatientDetails_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
-      "ValueSet-PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent"
+      "ValueSet-PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
@@ -181,10 +181,40 @@
       "oids" : ["2.16.840.1.113883.5.111"],
       "uses" : {
       },
-      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
       "ValueSet-AssemblyInstructions_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
       "ValueSet-PatientDetails_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
-      "ValueSet-PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent"
+      "ValueSet-PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_PrimaryCarerParentGrandparent.html" : "Primary Carer Of Parent Or Grandparent"
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+      "version" : "1.0.3",
+      "status" : "active",
+      "name" : "AustralianIndigenousStatus",
+      "title" : "Australian Indigenous Status",
+      "description" : "The Australian Indigenous Status code system defines concepts to support the representation of a person's Indigenous status. That is, whether a person identifies as being of Aboriginal or Torres Strait Islander origin, as represented by a code. The concepts defined in this code system are equivalent to those defined in the METeOR value domains for Person Indigenous status code N for http://meteor.aihw.gov.au/content/index.phtml/itemId/602545, http://meteor.aihw.gov.au/content/index.phtml/itemId/270885, and http://meteor.aihw.gov.au/content/index.phtml/itemId/291036.",
+      "oids" : ["1.2.36.1.2001.1004.200.10012"],
+      "uses" : {
+      },
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_AboriginalTorresStraitIslander.html" : "Aboriginal and/or Torres Strait Islander",
+      "ValueSet-AssemblyInstructions_AboriginalTorresStraitIslander.html" : "Aboriginal and/or Torres Strait Islander",
+      "ValueSet-AboriginalTorresStraitIslander.html" : "Aboriginal and/or Torres Strait Islander",
+      "ValueSet-PatientDetails_AboriginalTorresStraitIslander.html" : "Aboriginal and/or Torres Strait Islander"
+    },
+    {
+      "url" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1",
+      "version" : "1.1.3",
+      "status" : "active",
+      "name" : "AustralianStatesAndTerritories",
+      "title" : "Australian States and Territories",
+      "description" : "The Australian States and Territories code system defines concepts that represent the Australian states and territories.",
+      "oids" : ["1.2.36.1.2001.1004.200.10013"],
+      "uses" : {
+      },
+      "ValueSet-AssemblyInstructions_australian-states-territories-2.html" : "Australian States and Territories",
+      "ValueSet-australian-states-territories-2.html" : "Australian States and Territories",
+      "ValueSet-AboriginalTorresStraitIslanderHealthCheck_australian-states-territories-2.html" : "Australian States and Territories",
+      "ValueSet-PatientDetails_australian-states-territories-2.html" : "Australian States and Territories"
     }
   ]
 }

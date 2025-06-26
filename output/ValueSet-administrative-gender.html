@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
 <link href="assets/css/715.css" rel="stylesheet"/>
 
@@ -45,6 +46,7 @@
     h3,h4,h5,h6{--heading-prefix:"9.44"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 
 
@@ -144,7 +146,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Smart Forms - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://smartforms.csiro.au/ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Smart Forms - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://smartforms.csiro.au/ig/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -190,7 +192,7 @@
   <h2 id="root">ValueSet: AdministrativeGender
 
   </h2>
-  <table class="colstu">
+  <table class="colsn">
 
     <tr>
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/ValueSet/administrative-gender<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender"/></span>
@@ -264,10 +266,13 @@
 <ul>
  <li>Included into <a href="http://hl7.org/fhir/R4/valueset-use-context.html">Context of Use ValueSet</a></li>
  <li><a href="http://hl7.org/fhir/R4/familymemberhistory.html">FamilyMemberHistory</a></li>
- <li><a href="http://hl7.org/fhir/extensions/5.1.0/StructureDefinition-individual-recordedSexOrGender.html">Person Recorded Sex Or Gender</a></li>
+ <li><a href="http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-individual-recordedSexOrGender.html">Person Recorded Sex Or Gender</a></li>
+ <li><a href="http://hl7.org/fhir/extensions/1.0.0/StructureDefinition-individual-recordedSexOrGender.html">Person Recorded Sex Or Gender</a></li>
+ <li><a href="http://hl7.org.au/fhir/4.2.0-preview/StructureDefinition-individual-recordedSexOrGender.html">Person Recorded Sex Or Gender</a></li>
  <li><a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-question-library.html">SDC Question Library</a></li>
  <li><a href="http://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-structuredefinition-sdc-profile-example.html">Patient Gender</a></li>
  <li><a href="http://hl7.org/fhir/uv/sdc/STU3/Questionnaire-questionnaire-sdc-profile-example-form-behavior.html">SDCAdvancedRenderingExample</a></li>
+ <li><a href="Questionnaire-AgedCareCMSFacade.html">Aged Care CMS Facade</a></li>
 </ul>
 
 
@@ -280,18 +285,15 @@
 
 <!-- Content Logical Definition heading in the fragment -->
   <h3>Logical Definition (CLD)</h3>
-<div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet administrative-gender</b></p>
+<div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"></p>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p></div>
 <ul><li>Include all codes defined in <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html"><code>http://hl7.org/fhir/administrative-gender</code></a></li></ul></div>
 
   <p>&#160;</p>
   <a name="expansion"> </a>
   <h3 id="expansion">Expansion</h3>
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet administrative-gender</b></p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html">system AdministrativeGender v4.0.1 (CodeSystem)</a></p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href="http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html">v2 map for AdministrativeGender</a></b></td><td><b><a href="http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html">v3 map for AdministrativeGender</a></b></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-female"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-female">female</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Female</td><td><div><p>Female.</p>
-</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-male"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-male">male</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Male</td><td><div><p>Male.</p>
-</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-other"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-other">other</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Other</td><td><div><p>Other.</p>
-</div></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a><br/><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-unknown"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-unknown">unknown</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Unknown</td><td><div><p>Unknown.</p>
-</div></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.460.462.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.0.2/ValueSet-v3-AdministrativeGender.html</a></td></tr></table></div>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html">system AdministrativeGender v4.0.1 (CodeSystem)</a></p><p>This value set contains 4 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href="http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html">v2 map for AdministrativeGender</a></b></td><td><b><a href="http://terminology.hl7.org/6.4.0/ValueSet-v3-AdministrativeGender.html">v3 map for AdministrativeGender</a></b></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-female"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-female">female</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Female</td><td>Female.</td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.4.0/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.464.460.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.4.0/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-male"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-male">male</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Male</td><td>Male.</td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.4.0/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.464.460.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.4.0/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-other"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-other">other</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Other</td><td>Other.</td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a><br/><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="http://terminology.hl7.org/6.4.0/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.464.460.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.4.0/ValueSet-v3-AdministrativeGender.html</a></td></tr><tr><td style="white-space:nowrap"><a name="x-administrative-gender-http://hl7.org/fhir/administrative-gender-unknown"> </a>  <a href="http://hl7.org/fhir/R4/codesystem-administrative-gender.html#administrative-gender-unknown">unknown</a></td><td>http://hl7.org/fhir/administrative-gender</td><td>Unknown</td><td>Unknown.</td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0001.html#v2-0001-http.58.47.47terminology.46hl7.46org.475.460.460.47ValueSet-v2-0001.46html">http://terminology.hl7.org/5.0.0/ValueSet-v2-0001.html</a></td><td><span title="EQUIVALENT">~</span><a href="http://terminology.hl7.org/6.4.0/CodeSystem-v3-AdministrativeGender.html#v3-AdministrativeGender-http.58.47.47terminology.46hl7.46org.476.464.460.47ValueSet-v3-AdministrativeGender.46html">http://terminology.hl7.org/6.4.0/ValueSet-v3-AdministrativeGender.html</a></td></tr></table></div>
 
   <hr/>
   <p>
@@ -350,7 +352,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2">AEHRC CSIRO</a>.  Package csiro.fhir.au.smartforms#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 25, 2024 12:49+1000">2024-10-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2">AEHRC CSIRO</a>.  Package csiro.fhir.au.smartforms#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 26, 2025 16:26+1000">2025-06-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

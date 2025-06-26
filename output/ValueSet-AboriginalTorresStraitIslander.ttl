@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,15 +11,15 @@
   fhir:id [ fhir:v "AboriginalTorresStraitIslander"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet AboriginalTorresStraitIslander</b></p><a name=\"AboriginalTorresStraitIslander\"> </a><a name=\"hcAboriginalTorresStraitIslander\"> </a><a name=\"AboriginalTorresStraitIslander-en-US\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on system australian-indigenous-status-1 version1.0.3</p><p>This value set contains 3 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-1\"> </a>  1</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Aboriginal but not Torres Strait Islander origin</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-2\"> </a>  2</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Torres Strait Islander but not Aboriginal origin</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-3\"> </a>  3</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Both Aboriginal and Torres Strait Islander origin</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet AboriginalTorresStraitIslander</b></p><a name=\"AboriginalTorresStraitIslander\"> </a><a name=\"hcAboriginalTorresStraitIslander\"> </a><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on system australian-indigenous-status-1 version1.0.3</p><p>This value set contains 3 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-1\"> </a>  1</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Aboriginal but not Torres Strait Islander origin</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-2\"> </a>  2</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Torres Strait Islander but not Aboriginal origin</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"AboriginalTorresStraitIslander-https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1-3\"> </a>  3</td><td>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</td><td>Both Aboriginal and Torres Strait Islander origin</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "AboriginalTorresStraitIslander"] ; # 
   fhir:title [ fhir:v "Aboriginal and/or Torres Strait Islander"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-26T16:23:30+10:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AEHRC CSIRO" ] ;
@@ -47,17 +48,26 @@
   fhir:expansion [
      fhir:identifier [ fhir:v "e2b013bd-1725-4299-a7a5-53635d42f1be"^^xsd:anyURI ] ;
      fhir:timestamp [ fhir:v "2022-10-20T11:38:45+10:00"^^xsd:dateTime ] ;
-     fhir:total [ fhir:v "3"^^xsd:integer ] ;
-     fhir:offset [ fhir:v "0"^^xsd:integer ] ;
+     fhir:total [ fhir:v 3 ] ;
+     fhir:offset [ fhir:v 0 ] ;
      fhir:parameter ( [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "count" ] ;
-       fhir:value [ fhir:v "2147483647"^^xsd:integer ]
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 2147483647
+       ]
      ] [
        fhir:name [ fhir:v "offset" ] ;
-       fhir:value [ fhir:v "0"^^xsd:integer ]
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
      ] ) ;
      fhir:contains ( [
        fhir:system [ fhir:v "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"^^xsd:anyURI ] ;

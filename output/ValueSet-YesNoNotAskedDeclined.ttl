@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,15 +11,15 @@
   fhir:id [ fhir:v "YesNoNotAskedDeclined"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet YesNoNotAskedDeclined</b></p><a name=\"YesNoNotAskedDeclined\"> </a><a name=\"hcYesNoNotAskedDeclined\"> </a><a name=\"YesNoNotAskedDeclined-en-US\"> </a><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on:</p><ul><li>system DataAbsentReason version5.0.0-ballot</li><li><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html\">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></li></ul></div><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-Y\"> </a>  <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y\">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td><div><p>Yes</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-N\"> </a>  <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N\">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td><div><p>No</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-NASK\"> </a>  <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-NASK\">NASK</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Not Asked</td><td><div><p>not asked</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined\"> </a>  <a href=\"http://terminology.hl7.org/6.0.2/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined\">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td><div><p>The source was asked but declined to answer.</p>\n</div></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet YesNoNotAskedDeclined</b></p><a name=\"YesNoNotAskedDeclined\"> </a><a name=\"hcYesNoNotAskedDeclined\"> </a><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on:</p><ul><li>system DataAbsentReason version5.0.0-ballot</li><li><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html\">system expandedYes-NoIndicator v2.1.0 (CodeSystem)</a></li></ul></div><p>This value set contains 4 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-Y\"> </a>  <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-Y\">Y</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Yes</td><td>Yes</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-N\"> </a>  <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-N\">N</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>No</td><td>No</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/v2-0532-NASK\"> </a>  <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0532.html#v2-0532-NASK\">NASK</a></td><td>http://terminology.hl7.org/CodeSystem/v2-0532</td><td>Not Asked</td><td>not asked</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"YesNoNotAskedDeclined-http://terminology.hl7.org/CodeSystem/data-absent-reason-asked-declined\"> </a>  <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined\">asked-declined</a></td><td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td><td>Asked But Declined</td><td>The source was asked but declined to answer.</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "YesNoNotAskedDeclined"] ; # 
   fhir:title [ fhir:v "Yes/No/Not Asked/Asked But Declined"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2024-10-25T12:49:36+10:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-26T16:23:30+10:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AEHRC CSIRO"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AEHRC CSIRO" ] ;
@@ -53,19 +54,31 @@
   fhir:expansion [
      fhir:identifier [ fhir:v "urn:uuid:8eda7c3c-cc35-49fa-ac6c-c0e4f0a4e203"^^xsd:anyURI ] ;
      fhir:timestamp [ fhir:v "2023-09-01T11:17:57+10:00"^^xsd:dateTime ] ;
-     fhir:total [ fhir:v "4"^^xsd:integer ] ;
+     fhir:total [ fhir:v 4 ] ;
      fhir:parameter ( [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "used-codesystem" ] ;
-       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason|5.0.0-ballot"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "version" ] ;
-       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"^^xsd:anyURI
+       ]
      ] [
        fhir:name [ fhir:v "used-codesystem" ] ;
-       fhir:value [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"^^xsd:anyURI ]
+       fhir:value [
+         a fhir:uri ;
+         fhir:v "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"^^xsd:anyURI
+       ]
      ] ) ;
      fhir:contains ( [
        fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0532"^^xsd:anyURI ] ;

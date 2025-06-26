@@ -1,56 +1,836 @@
-<html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2><pre>
-
-</pre><hr/>
-<a name="l1"> </a><h3>1</h3>
+<hr/><a name="l1"> </a>
+<p>#1</p>
 <pre>
-Request: 
-
-GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+GET https://tx.fhir.org/r4/metadata HTTP/1.0
 Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
-
-
-Response (00:00:00.0): 
-
+</pre>
+<pre>
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
 access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1521
+content-length:4010
 content-type:application/fhir+json
-date:Fri, 25 Oct 2024 02:49:22 GMT
+date:Thu, 26 Jun 2025 06:26:15 GMT
 pragma:no-cache
 server:nginx
-x-request-id:168-1376186
+x-request-id:228-6985113
 
-{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/metadata","version" : "4.0.1-3.4.25","name" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2024-10-25T02:49:22.238Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.25","releaseDate" : "2024-10-18T22:49:02.896Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
-
---- 1 -----------------
-Request: 
-
-GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+{&quot;resourceType&quot; : &quot;CapabilityStatement&quot;,&quot;id&quot; : &quot;FhirServer&quot;,&quot;text&quot; : {&quot;status&quot; : &quot;generated&quot;,&quot;div&quot; : &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;Local User Conformance Statement&lt;/h2&gt;&lt;p&gt;FHIR v4.0.1 released 20250530211510.681Z. Server version 3.7.19 built 20250530211510.681Z&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;th&gt;Resource Type&lt;/th&gt;&lt;th&gt;Profile&lt;/th&gt;&lt;th&gt;Read&lt;/th&gt;&lt;th&gt;V-Read&lt;/th&gt;&lt;th&gt;Search&lt;/th&gt;&lt;th&gt;Update&lt;/th&gt;&lt;th&gt;Updates&lt;/th&gt;&lt;th&gt;Create&lt;/th&gt;&lt;th&gt;Delete&lt;/th&gt;&lt;th&gt;History&lt;/th&gt;&lt;/tr&gt;\n&lt;/table&gt;\n&lt;p&gt;Operations&lt;/p&gt;\n&lt;ul&gt;\n &lt;li&gt;expand: see OperationDefinition/fso-expand&lt;/li&gt;\n &lt;li&gt;lookup: see OperationDefinition/fso-lookup&lt;/li&gt;\n &lt;li&gt;validate-code: see OperationDefinition/fso-validate-code&lt;/li&gt;\n &lt;li&gt;translate: see OperationDefinition/fso-translate&lt;/li&gt;\n &lt;li&gt;closure: see OperationDefinition/fso-closure&lt;/li&gt;\n &lt;li&gt;versions: see OperationDefinition/fso-versions&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;&quot;},&quot;extension&quot; : [{&quot;extension&quot; : [{&quot;url&quot; : &quot;definition&quot;,&quot;valueCanonical&quot; : &quot;http://hl7.org/fhir/uv/tx-tests/FeatureDefinition/test-version&quot;},{&quot;url&quot; : &quot;value&quot;,&quot;valueCode&quot; : &quot;1.7.7&quot;},{&quot;extension&quot; : [{&quot;url&quot; : &quot;name&quot;,&quot;valueCode&quot; : &quot;mode&quot;},{&quot;url&quot; : &quot;value&quot;,&quot;valueCode&quot; : &quot;tx.fhir.org&quot;}],&quot;url&quot; : &quot;qualifier&quot;}],&quot;url&quot; : &quot;http://hl7.org/fhir/uv/application-feature/StructureDefinition/feature&quot;},{&quot;extension&quot; : [{&quot;url&quot; : &quot;definition&quot;,&quot;valueCanonical&quot; : &quot;http://hl7.org/fhir/uv/tx-ecosystem/FeatureDefinition/CodeSystemAsParameter&quot;},{&quot;url&quot; : &quot;value&quot;,&quot;valueBoolean&quot; : true}],&quot;url&quot; : &quot;http://hl7.org/fhir/uv/application-feature/StructureDefinition/feature&quot;}],&quot;url&quot; : &quot;http://tx.fhir.org/r4/CapabilityStatement/tx&quot;,&quot;version&quot; : &quot;4.0.1-3.7.19&quot;,&quot;name&quot; : &quot;FHIRReferenceServer&quot;,&quot;title&quot; : &quot;FHIR Reference Server Conformance Statement&quot;,&quot;status&quot; : &quot;active&quot;,&quot;date&quot; : &quot;2025-06-26T06:26:15.623Z&quot;,&quot;contact&quot; : [{&quot;telecom&quot; : [{&quot;system&quot; : &quot;other&quot;,&quot;value&quot; : &quot;http://healthintersections.com.au/&quot;}]}],&quot;description&quot; : &quot;Standard Conformance Statement for the open source Reference FHIR Server provided by Health Intersections&quot;,&quot;kind&quot; : &quot;instance&quot;,&quot;instantiates&quot; : [&quot;http://hl7.org/fhir/CapabilityStatement/terminology-server&quot;,&quot;http://hl7.org/fhir/CapabilityStatement/terminology-server&quot;],&quot;software&quot; : {&quot;name&quot; : &quot;Reference Server&quot;,&quot;version&quot; : &quot;3.7.19&quot;,&quot;releaseDate&quot; : &quot;2025-05-30T21:15:10.681Z&quot;},&quot;implementation&quot; : {&quot;description&quot; : &quot;FHIR Server running at http://tx.fhir.org/r4&quot;,&quot;url&quot; : &quot;http://tx.fhir.org/r4&quot;},&quot;fhirVersion&quot; : &quot;4.0.1&quot;,&quot;format&quot; : [&quot;application/fhir+xml&quot;,&quot;application/fhir+json&quot;],&quot;rest&quot; : [{&quot;mode&quot; : &quot;server&quot;,&quot;security&quot; : {&quot;cors&quot; : true},&quot;resource&quot; : [{&quot;type&quot; : &quot;CodeSystem&quot;,&quot;interaction&quot; : [{&quot;code&quot; : &quot;read&quot;,&quot;documentation&quot; : &quot;Read a code system&quot;},{&quot;code&quot; : &quot;search-type&quot;,&quot;documentation&quot; : &quot;Search the code systems. Not that there a few major code systems that are not available through this API (SCT, LOINC etc)&quot;}],&quot;operation&quot; : [{&quot;name&quot; : &quot;validate-code&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code&quot;},{&quot;name&quot; : &quot;lookup&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup&quot;}]},{&quot;type&quot; : &quot;ValueSet&quot;,&quot;interaction&quot; : [{&quot;code&quot; : &quot;read&quot;,&quot;documentation&quot; : &quot;Read a ValueSet&quot;},{&quot;code&quot; : &quot;search-type&quot;,&quot;documentation&quot; : &quot;Search the value sets&quot;}],&quot;operation&quot; : [{&quot;name&quot; : &quot;validate-code&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code&quot;},{&quot;name&quot; : &quot;expand&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/ValueSet-expand&quot;}]}],&quot;interaction&quot; : [{&quot;code&quot; : &quot;transaction&quot;}],&quot;operation&quot; : [{&quot;name&quot; : &quot;expand&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/ValueSet-expand&quot;},{&quot;name&quot; : &quot;lookup&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/ValueSet-lookup&quot;},{&quot;name&quot; : &quot;validate-code&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/Resource-validate&quot;},{&quot;name&quot; : &quot;translate&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/ConceptMap-translate&quot;},{&quot;name&quot; : &quot;closure&quot;,&quot;definition&quot; : &quot;http://hl7.org/fhir/OperationDefinition/ConceptMap-closure&quot;},{&quot;name&quot; : &quot;versions&quot;,&quot;definition&quot; : &quot;http://tx.fhir.org/r4/OperationDefinition/fso-versions&quot;}]}]}
+</pre>
+<hr/><a name="l2"> </a>
+<p>#2</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
 Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"410201001","display":"Weight maintenance regimen management"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:27:57 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:3uAIYmOwzbj5nLof
+x-xss-protection:0
 
-Response (00:00:00.0): 
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;410201001&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Weight maintenance regimen management&quot;}]}
+</pre>
+<hr/><a name="l3"> </a>
+<p>#3</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
 
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"103735009","display":"Palliative care"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:27:58 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:Uy1c07MsZcyNpMVp
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;103735009&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Palliative care&quot;}]}
+</pre>
+<hr/><a name="l4"> </a>
+<p>#4</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"423216003","display":"End-of-life surveillance"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:27:59 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:nvwH497qWWInQtFe
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;423216003&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;End-of-life surveillance&quot;}]}
+</pre>
+<hr/><a name="l5"> </a>
+<p>#5</p>
+<pre>
+POST https://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://unitsofmeasure.org","code":"d"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
 access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1521
+content-length:931
 content-type:application/fhir+json
-date:Fri, 25 Oct 2024 02:49:22 GMT
+date:Thu, 26 Jun 2025 06:28:01 GMT
+last-modified:Thu, 26 Jun 2025 06:28:01 GMT
 pragma:no-cache
 server:nginx
-x-request-id:168-1376186
+x-request-id:228-6985669
 
-{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/metadata","version" : "4.0.1-3.4.25","name" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2024-10-25T02:49:22.238Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.25","releaseDate" : "2024-10-18T22:49:02.896Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
-</pre></head></html>
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true},{&quot;name&quot; : &quot;system&quot;,&quot;valueUri&quot; : &quot;http://unitsofmeasure.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueCode&quot; : &quot;d&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.2&quot;},{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;d&quot;},{&quot;name&quot; : &quot;diagnostics&quot;,&quot;valueString&quot; : &quot;0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Version Rules: http://snomed.info/sct#http://snomed.info/sct/32506021000036107/0\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \&quot;[http://unitsofmeasure.org#d (\&quot;\&quot;)]\&quot;\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \&quot;http://unitsofmeasure.org#d\&quot;\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \&quot;http://unitsofmeasure.org|2.2\&quot; (content = complete)\r\n&quot;}]}
+</pre>
+<hr/><a name="l6"> </a>
+<p>#6</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"1163217004","display":"Pressure injury stage I"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:01 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:j3XONdWc7lABXoOw
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;1163217004&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Pressure injury stage I&quot;}]}
+</pre>
+<hr/><a name="l7"> </a>
+<p>#7</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"1163220007","display":"Pressure injury stage II"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:02 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:f0HE2qIAJKAp5JNQ
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;1163220007&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Pressure injury stage II&quot;}]}
+</pre>
+<hr/><a name="l8"> </a>
+<p>#8</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"1163222004","display":"Pressure injury stage III"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:03 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:Las08783csYeDHwH
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;1163222004&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Pressure injury stage III&quot;}]}
+</pre>
+<hr/><a name="l9"> </a>
+<p>#9</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"1163224003","display":"Pressure injury stage IV"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:05 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:YFZNSspsk71PsDAK
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;1163224003&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Pressure injury stage IV&quot;}]}
+</pre>
+<hr/><a name="l10"> </a>
+<p>#10</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"723071003","display":"Deep tissue pressure injury"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:06 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:PRTz9HtWQxGsZL2s
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;723071003&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Deep tissue pressure injury&quot;}]}
+</pre>
+<hr/><a name="l11"> </a>
+<p>#11</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"723073000","display":"Suspected deep tissue pressure injury"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:07 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:Ia2O2t6VRodhoMhE
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;723073000&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Suspected deep tissue pressure injury&quot;}]}
+</pre>
+<hr/><a name="l12"> </a>
+<p>#12</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"1163226001","display":"Unstageable pressure injury"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:08 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:SoCnOYAx6MR4P7sr
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;1163226001&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Unstageable pressure injury&quot;}]}
+</pre>
+<hr/><a name="l13"> </a>
+<p>#13</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"22232009","display":"Hospital"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:09 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:4ZaH2WyieneBMm1T
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;22232009&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Hospital&quot;}]}
+</pre>
+<hr/><a name="l14"> </a>
+<p>#14</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"285202004","display":"Community environment"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:10 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:UtEPKCZFlwXeVuVk
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;285202004&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Community environment&quot;}]}
+</pre>
+<hr/><a name="l15"> </a>
+<p>#15</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"257652008","display":"Aged care facility"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:11 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:Q0GfkmkoXVxbls86
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;257652008&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Aged care facility&quot;}]}
+</pre>
+<hr/><a name="l16"> </a>
+<p>#16</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"386423001","display":"Physical restraint"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:12 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:OOJozKnInraBMLiz
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;386423001&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Physical restraint&quot;}]}
+</pre>
+<hr/><a name="l17"> </a>
+<p>#17</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"90278001","display":"Secluding patient"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:13 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:AK3JYlB0Xn8LuBN9
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;90278001&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Secluding patient&quot;}]}
+</pre>
+<hr/><a name="l18"> </a>
+<p>#18</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"386517008","display":"Area restriction (Environmental)"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:14 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:4633mx2IaYp7niJK
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:false},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;386517008&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Area restriction&quot;},{&quot;name&quot;:&quot;issues&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;OperationOutcome&quot;,&quot;issue&quot;:[{&quot;severity&quot;:&quot;error&quot;,&quot;code&quot;:&quot;invalid&quot;,&quot;details&quot;:{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/tools/CodeSystem/tx-issue-type&quot;,&quot;code&quot;:&quot;invalid-display&quot;}],&quot;text&quot;:&quot;Wrong Display Name 'Area restriction (Environmental)' for http://snomed.info/sct#386517008. Valid display is 'Area restriction' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;},&quot;location&quot;:[&quot;Coding.display&quot;],&quot;expression&quot;:[&quot;Coding.display&quot;]}]}},{&quot;name&quot;:&quot;message&quot;,&quot;valueString&quot;:&quot;Wrong Display Name 'Area restriction (Environmental)' for http://snomed.info/sct#386517008. Valid display is 'Area restriction' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;}]}
+</pre>
+<hr/><a name="l19"> </a>
+<p>#19</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"68894007","display":"Placing restraint (Mechanical)"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:16 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:N6bTKtCj4l9YUkYa
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:false},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;68894007&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;Placing restraint&quot;},{&quot;name&quot;:&quot;issues&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;OperationOutcome&quot;,&quot;issue&quot;:[{&quot;severity&quot;:&quot;error&quot;,&quot;code&quot;:&quot;invalid&quot;,&quot;details&quot;:{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/tools/CodeSystem/tx-issue-type&quot;,&quot;code&quot;:&quot;invalid-display&quot;}],&quot;text&quot;:&quot;Wrong Display Name 'Placing restraint (Mechanical)' for http://snomed.info/sct#68894007. Valid display is 'Placing restraint' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;},&quot;location&quot;:[&quot;Coding.display&quot;],&quot;expression&quot;:[&quot;Coding.display&quot;]}]}},{&quot;name&quot;:&quot;message&quot;,&quot;valueString&quot;:&quot;Wrong Display Name 'Placing restraint (Mechanical)' for http://snomed.info/sct#68894007. Valid display is 'Placing restraint' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;}]}
+</pre>
+<hr/><a name="l20"> </a>
+<p>#20</p>
+<pre>
+POST https://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"LA126-5","display":"CONTINENT-Complete control [includes use of indwelling urinary catheter or ostomy device that does not leak urine or stool]"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1160
+content-type:application/fhir+json
+date:Thu, 26 Jun 2025 06:28:18 GMT
+last-modified:Thu, 26 Jun 2025 06:28:18 GMT
+pragma:no-cache
+server:nginx
+x-request-id:228-6985778
+
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true},{&quot;name&quot; : &quot;system&quot;,&quot;valueUri&quot; : &quot;http://loinc.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueCode&quot; : &quot;LA126-5&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.80&quot;},{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;CONTINENT-Complete control [includes use of indwelling urinary catheter or ostomy device that does not leak urine or stool]&quot;},{&quot;name&quot; : &quot;diagnostics&quot;,&quot;valueString&quot; : &quot;0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en-US, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Version Rules: http://snomed.info/sct#http://snomed.info/sct/32506021000036107/0\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \&quot;[http://loinc.org#LA126-5 (\&quot;CONTINENT-Complete control [includes use of indwelling urinary catheter or ostomy device that does not leak urine or stool]\&quot;)]\&quot;\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \&quot;http://loinc.org#LA126-5\&quot;\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \&quot;http://loinc.org|2.80\&quot; (content = complete)\r\n&quot;}]}
+</pre>
+<hr/><a name="l21"> </a>
+<p>#21</p>
+<pre>
+POST https://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"LA127-3","display":"USUALLY CONTINENT-BLADDER, incontinent episodes once a week or less; BOWEL, less than weekly"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1098
+content-type:application/fhir+json
+date:Thu, 26 Jun 2025 06:28:19 GMT
+last-modified:Thu, 26 Jun 2025 06:28:19 GMT
+pragma:no-cache
+server:nginx
+x-request-id:228-6985784
+
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true},{&quot;name&quot; : &quot;system&quot;,&quot;valueUri&quot; : &quot;http://loinc.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueCode&quot; : &quot;LA127-3&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.80&quot;},{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;USUALLY CONTINENT-BLADDER, incontinent episodes once a week or less; BOWEL, less than weekly&quot;},{&quot;name&quot; : &quot;diagnostics&quot;,&quot;valueString&quot; : &quot;0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Version Rules: http://snomed.info/sct#http://snomed.info/sct/32506021000036107/0\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \&quot;[http://loinc.org#LA127-3 (\&quot;USUALLY CONTINENT-BLADDER, incontinent episodes once a week or less; BOWEL, less than weekly\&quot;)]\&quot;\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \&quot;http://loinc.org#LA127-3\&quot;\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \&quot;http://loinc.org|2.80\&quot; (content = complete)\r\n&quot;}]}
+</pre>
+<hr/><a name="l22"> </a>
+<p>#22</p>
+<pre>
+POST https://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"LA128-1","display":"OCCASIONALLY INCONTINENT-BLADDER, 2 or more times a week but not daily; BOWEL, once a week"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1094
+content-type:application/fhir+json
+date:Thu, 26 Jun 2025 06:28:20 GMT
+last-modified:Thu, 26 Jun 2025 06:28:20 GMT
+pragma:no-cache
+server:nginx
+x-request-id:228-6985792
+
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true},{&quot;name&quot; : &quot;system&quot;,&quot;valueUri&quot; : &quot;http://loinc.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueCode&quot; : &quot;LA128-1&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.80&quot;},{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;OCCASIONALLY INCONTINENT-BLADDER, 2 or more times a week but not daily; BOWEL, once a week&quot;},{&quot;name&quot; : &quot;diagnostics&quot;,&quot;valueString&quot; : &quot;0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Version Rules: http://snomed.info/sct#http://snomed.info/sct/32506021000036107/0\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \&quot;[http://loinc.org#LA128-1 (\&quot;OCCASIONALLY INCONTINENT-BLADDER, 2 or more times a week but not daily; BOWEL, once a week\&quot;)]\&quot;\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \&quot;http://loinc.org#LA128-1\&quot;\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \&quot;http://loinc.org|2.80\&quot; (content = complete)\r\n&quot;}]}
+</pre>
+<hr/><a name="l23"> </a>
+<p>#23</p>
+<pre>
+POST https://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"LA129-9","display":"FREQUENTLY INCONTINENT-BLADDER, tended to be incontinent daily, but some control present (e.g., on day shift); BOWEL, 2-3 times a week"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1174
+content-type:application/fhir+json
+date:Thu, 26 Jun 2025 06:28:21 GMT
+last-modified:Thu, 26 Jun 2025 06:28:21 GMT
+pragma:no-cache
+server:nginx
+x-request-id:228-6985799
+
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true},{&quot;name&quot; : &quot;system&quot;,&quot;valueUri&quot; : &quot;http://loinc.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueCode&quot; : &quot;LA129-9&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.80&quot;},{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;FREQUENTLY INCONTINENT-BLADDER, tended to be incontinent daily, but some control present (e.g., on day shift); BOWEL, 2-3 times a week&quot;},{&quot;name&quot; : &quot;diagnostics&quot;,&quot;valueString&quot; : &quot;0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Version Rules: http://snomed.info/sct#http://snomed.info/sct/32506021000036107/0\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \&quot;[http://loinc.org#LA129-9 (\&quot;FREQUENTLY INCONTINENT-BLADDER, tended to be incontinent daily, but some control present (e.g., on day shift); BOWEL, 2-3 times a week\&quot;)]\&quot;\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \&quot;http://loinc.org#LA129-9\&quot;\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \&quot;http://loinc.org|2.80\&quot; (content = complete)\r\n&quot;}]}
+</pre>
+<hr/><a name="l24"> </a>
+<p>#24</p>
+<pre>
+POST https://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"LA130-7","display":"INCONTINENT-Had inadequate control BLADDER, multiple daily episodes; BOWEL, all (or almost all) of the time"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1120
+content-type:application/fhir+json
+date:Thu, 26 Jun 2025 06:28:23 GMT
+last-modified:Thu, 26 Jun 2025 06:28:23 GMT
+pragma:no-cache
+server:nginx
+x-request-id:228-6985810
+
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true},{&quot;name&quot; : &quot;system&quot;,&quot;valueUri&quot; : &quot;http://loinc.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueCode&quot; : &quot;LA130-7&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.80&quot;},{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;INCONTINENT-Had inadequate control BLADDER, multiple daily episodes; BOWEL, all (or almost all) of the time&quot;},{&quot;name&quot; : &quot;diagnostics&quot;,&quot;valueString&quot; : &quot;0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Version Rules: http://snomed.info/sct#http://snomed.info/sct/32506021000036107/0\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \&quot;[http://loinc.org#LA130-7 (\&quot;INCONTINENT-Had inadequate control BLADDER, multiple daily episodes; BOWEL, all (or almost all) of the time\&quot;)]\&quot;\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \&quot;http://loinc.org#LA130-7\&quot;\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \&quot;http://loinc.org|2.80\&quot; (content = complete)\r\n&quot;}]}
+</pre>
+<hr/><a name="l25"> </a>
+<p>#25</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"264653008","display":"1A"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:23 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:sXU5tLU31qabDIEC
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;264653008&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;1A&quot;}]}
+</pre>
+<hr/><a name="l26"> </a>
+<p>#26</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"264654002","display":"1B"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:24 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:sZoPXTfyS5M9Rvvx
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;264654002&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;1B&quot;}]}
+</pre>
+<hr/><a name="l27"> </a>
+<p>#27</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"264662005","display":"2A"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:25 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:Gfo6MIRrwcJvmZt3
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:false},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;264662005&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;2a&quot;},{&quot;name&quot;:&quot;issues&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;OperationOutcome&quot;,&quot;issue&quot;:[{&quot;severity&quot;:&quot;error&quot;,&quot;code&quot;:&quot;invalid&quot;,&quot;details&quot;:{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/tools/CodeSystem/tx-issue-type&quot;,&quot;code&quot;:&quot;invalid-display&quot;}],&quot;text&quot;:&quot;Wrong Display Name '2A' for http://snomed.info/sct#264662005. Valid display is '2a' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;},&quot;location&quot;:[&quot;Coding.display&quot;],&quot;expression&quot;:[&quot;Coding.display&quot;]}]}},{&quot;name&quot;:&quot;message&quot;,&quot;valueString&quot;:&quot;Wrong Display Name '2A' for http://snomed.info/sct#264662005. Valid display is '2a' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;}]}
+</pre>
+<hr/><a name="l28"> </a>
+<p>#28</p>
+<pre>
+POST https://tx.ontoserver.csiro.au/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://snomed.info/sct","code":"264663000","display":"2B"}},{"name":"displayLanguage","valueCode":"en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"cc4b881b-4227-4100-81c2-e749d418bad7"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/32506021000036107"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+200
+cache-control:no-cache
+connection:keep-alive
+content-type:application/fhir+json;charset=UTF-8
+date:Thu, 26 Jun 2025 06:28:26 GMT
+server:nginx/1.23.3
+strict-transport-security:max-age=31536000 ; includeSubDomains
+transfer-encoding:chunked
+vary:Origin
+vary:Access-Control-Request-Method
+vary:Access-Control-Request-Headers
+vary:Accept,Origin,Accept-Encoding,Accept-Language,Authorization
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-powered-by:HAPI FHIR 8.2.0 REST Server (FHIR Server; FHIR 4.0.1/R4)
+x-request-id:uDWZXTO9fxmtQGGv
+x-xss-protection:0
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;result&quot;,&quot;valueBoolean&quot;:false},{&quot;name&quot;:&quot;code&quot;,&quot;valueCode&quot;:&quot;264663000&quot;},{&quot;name&quot;:&quot;system&quot;,&quot;valueUri&quot;:&quot;http://snomed.info/sct&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;valueString&quot;:&quot;http://snomed.info/sct/32506021000036107/version/20250630&quot;},{&quot;name&quot;:&quot;display&quot;,&quot;valueString&quot;:&quot;2b&quot;},{&quot;name&quot;:&quot;issues&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;OperationOutcome&quot;,&quot;issue&quot;:[{&quot;severity&quot;:&quot;error&quot;,&quot;code&quot;:&quot;invalid&quot;,&quot;details&quot;:{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/tools/CodeSystem/tx-issue-type&quot;,&quot;code&quot;:&quot;invalid-display&quot;}],&quot;text&quot;:&quot;Wrong Display Name '2B' for http://snomed.info/sct#264663000. Valid display is '2b' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;},&quot;location&quot;:[&quot;Coding.display&quot;],&quot;expression&quot;:[&quot;Coding.display&quot;]}]}},{&quot;name&quot;:&quot;message&quot;,&quot;valueString&quot;:&quot;Wrong Display Name '2B' for http://snomed.info/sct#264663000. Valid display is '2b' (en-x-sctlang-90000000-00005090-07) (for the language(s) 'en-US')&quot;}]}
+</pre>

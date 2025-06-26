@@ -3,7 +3,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="csiro.fhir.au.smartforms"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide csiro.fhir.au.smartforms</b></p><a name="csiro.fhir.au.smartforms"> </a><a name="hccsiro.fhir.au.smartforms"> </a><a name="csiro.fhir.au.smartforms-en-US"> </a><h2>SmartForms</h2><p>The official URL for this implementation guide is: </p><pre>https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms</pre><div><p>Smart Forms FHIR Implementation Guide.</p>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide csiro.fhir.au.smartforms</b></p><a name="csiro.fhir.au.smartforms"> </a><a name="hccsiro.fhir.au.smartforms"> </a><h2>SmartForms</h2><p>The official URL for this implementation guide is: </p><pre>https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms</pre><div><p>Smart Forms FHIR Implementation Guide.</p>
 </div></div>
   </text>
   <url value="https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms"/>
@@ -12,7 +12,7 @@
   <title value="Smart Forms"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2024-10-25T12:49:36+10:00"/>
+  <date value="2025-06-26T16:23:30+10:00"/>
   <publisher value="AEHRC CSIRO"/>
   <contact>
     <name value="AEHRC CSIRO"/>
@@ -32,7 +32,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="6.0.2"/>
+    <version value="6.4.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -40,7 +40,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.1.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_au_core">
     <uri value="http://hl7.org.au/fhir/core/ImplementationGuide/hl7.fhir.au.core"/>
@@ -651,7 +651,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.2.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.5.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
