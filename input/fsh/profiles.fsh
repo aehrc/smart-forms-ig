@@ -22,21 +22,21 @@ Alias: $au-core-patient = http://hl7.org.au/fhir/core/StructureDefinition/au-cor
 Alias: $au-core-practitioner = http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
 Alias: $sdc-questionnaireresponse = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
 
-RuleSet: obligationApp(appCode)
-* ^extension[$obligation][+].extension[code].valueCode = #"{appCode}"
+RuleSet: obligationApp(index, appCode)
+* ^extension[$obligation][{index}].extension[code].valueCode = #"{appCode}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
 
-RuleSet: obligation2App(appCode1, appCode2)
-* ^extension[$obligation][+].extension[code][+].valueCode = #"{appCode1}"
+RuleSet: obligation2App(index, appCode1, appCode2)
+* ^extension[$obligation][{index}].extension[code][+].valueCode = #"{appCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{appCode2}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
 
-RuleSet: obligationServer(serverCode)
-* ^extension[$obligation][+].extension[code].valueCode = #"{serverCode}"
+RuleSet: obligationServer(index, serverCode)
+* ^extension[$obligation][{index}].extension[code].valueCode = #"{serverCode}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 
-RuleSet: obligation2Server(serverCode1, serverCode2)
-* ^extension[$obligation][+].extension[code][+].valueCode = #"{serverCode1}"
+RuleSet: obligation2Server(index, serverCode1, serverCode2)
+* ^extension[$obligation][{index}].extension[code][+].valueCode = #"{serverCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{serverCode2}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 
@@ -65,8 +65,8 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * . ^comment = "Heart rhythm observation using a LOINC code, a SNOMED CT code and a metric UCUM unit of measure."
 * obeys shc-heartrhythm-01
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (0, SHALL:populate, SHALL:process)
+* status insert obligation2App (1, SHALL:populate, SHALL:process)
 * category MS
 * category ^slicing.discriminator[0].type = #value
 * category ^slicing.discriminator[=].path = "coding.code"
@@ -76,8 +76,8 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * category ^slicing.rules = #open
 * category contains vitalSignsCategory 1..1 MS
 * category[vitalSignsCategory] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs (exactly) 
-* category[vitalSignsCategory] insert obligationServer (SHALL:process)
-* category[vitalSignsCategory] insert obligationApp (SHALL:populate)
+* category[vitalSignsCategory] insert obligationServer (0, SHALL:process)
+* category[vitalSignsCategory] insert obligationApp (1, SHALL:populate)
 * code MS
 * code ^short = "Heart Rhythm"
 * code ^definition = "Heart Rhythm."
@@ -89,24 +89,24 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * code.coding ^slicing.ordered = false
 * code.coding ^slicing.rules = #open
 * code.coding contains loincHeartRhythmCode 1..1 MS and snomedHeartRhythmCode 1..1 MS
-* code.coding[loincHeartRhythmCode] insert obligationServer (SHALL:process)
-* code.coding[loincHeartRhythmCode] insert obligationApp (SHALL:populate)
+* code.coding[loincHeartRhythmCode] insert obligationServer (0, SHALL:process)
+* code.coding[loincHeartRhythmCode] insert obligationApp (1, SHALL:populate)
 * code.coding[loincHeartRhythmCode].system 1..1
 * code.coding[loincHeartRhythmCode].system = "http://loinc.org" (exactly)
 * code.coding[loincHeartRhythmCode].code 1..1
 * code.coding[loincHeartRhythmCode].code = #8884-9 (exactly)
-* code.coding[snomedHeartRhythmCode] insert obligationServer (SHALL:process)
-* code.coding[snomedHeartRhythmCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedHeartRhythmCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedHeartRhythmCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedHeartRhythmCode].system 1..1
 * code.coding[snomedHeartRhythmCode].system = "http://snomed.info/sct" (exactly)
 * code.coding[snomedHeartRhythmCode].code 1..1
 * code.coding[snomedHeartRhythmCode].code = #364074009 (exactly)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject 1.. MS
 * subject only Reference($au-core-patient)
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (1, SHALL:populate)
 * effective[x] 1.. MS
 * effective[x] only dateTime
 * effective[x] obeys shc-heartrhythm-02
@@ -114,15 +114,15 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * effective[x] ^definition = "Date, and optionally time, the observation was performed."
 * effective[x] ^condition = "shc-heartrhythm-02"
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * value[x] only CodeableConcept
 * value[x] MS
 * value[x] from HeartRythym (extensible)
 * value[x] ^condition = "shc-heartrhythm-01"
 * valueCodeableConcept.coding MS
-* valueCodeableConcept.coding insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueCodeableConcept.coding insert obligation2App (SHALL:populate, SHALL:process)
+* valueCodeableConcept.coding insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueCodeableConcept.coding insert obligation2App (1, SHALL:populate, SHALL:process)
 * dataAbsentReason MS
 * dataAbsentReason ^condition = "shc-heartrhythm-01"
 
@@ -147,26 +147,26 @@ Title: "Smart Health Check Allergy Intolerance"
 Description: "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks."
 
 * id MS
-* id insert obligation2Server (SHALL:populate, SHALL:process)
-* id insert obligationApp (SHALL:process)
+* id insert obligation2Server (0, SHALL:populate, SHALL:process)
+* id insert obligationApp (1, SHALL:process)
 * patient MS
-* patient insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* patient insert obligationApp (SHALL:populate)
+* patient insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* patient insert obligationApp (3, SHALL:populate)
 * clinicalStatus MS 
-* clinicalStatus insert obligation2Server (SHALL:populate, SHALL:process)
-* clinicalStatus insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:process)
+* clinicalStatus insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * verificationStatus MS
-* verificationStatus insert obligationServer (SHALL:populate-if-known)
-* verificationStatus insert obligationApp (SHALL:process)
+* verificationStatus insert obligationServer (2, SHALL:populate-if-known)
+* verificationStatus insert obligationApp (3, SHALL:process)
 * code MS
-* code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* code insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * note.text MS
-* note.text insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* note.text insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * reaction.manifestation MS
-* reaction.manifestation insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* reaction.manifestation insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* reaction.manifestation insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* reaction.manifestation insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthCheckCondition
 Parent: $au-core-condition
@@ -175,32 +175,32 @@ Title: "Smart Health Check Condition"
 Description: "This profile sets the minimum expectations for a Condition resource to record, search and save condition information when used within Smart Health Checks."
 
 * id MS
-* id insert obligation2Server (SHALL:populate, SHALL:process)
-* id insert obligationApp (SHALL:process)
+* id insert obligation2Server (0, SHALL:populate, SHALL:process)
+* id insert obligationApp (1, SHALL:process)
 * clinicalStatus MS
-* clinicalStatus insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* clinicalStatus insert obligation2App (SHALL:populate, SHALL:process)
+* clinicalStatus insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* clinicalStatus insert obligation2App (3, SHALL:populate, SHALL:process)
 * verificationStatus MS
-* verificationStatus insert obligationServer (SHALL:populate-if-known)
-* verificationStatus insert obligationApp (SHALL:process)
+* verificationStatus insert obligationServer (2, SHALL:populate-if-known)
+* verificationStatus insert obligationApp (3, SHALL:process)
 * category MS
-* category insert obligation2Server (SHALL:populate, SHALL:process)
-* category insert obligation2App (SHALL:populate, SHALL:process)
+* category insert obligation2Server (2, SHALL:populate, SHALL:process)
+* category insert obligation2App (3, SHALL:populate, SHALL:process)
 * code MS
-* code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* code insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * onsetDateTime MS
-* onsetDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* onsetDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* onsetDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* onsetDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * abatementDateTime MS
-* abatementDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* abatementDateTime insert obligationApp (SHALL:process)
+* abatementDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* abatementDateTime insert obligationApp (1, SHALL:process)
 * note.text MS
-* note.text insert obligationServer (SHALL:process)
-* note.text insert obligationApp (SHALL:populate-if-known)
+* note.text insert obligationServer (0, SHALL:process)
+* note.text insert obligationApp (1, SHALL:populate-if-known)
 
 Profile: SmartHealthCheckMedicationStatement
 Parent: $au-core-medicationstatement
