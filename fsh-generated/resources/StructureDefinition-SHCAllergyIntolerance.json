@@ -65,16 +65,7 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:populate"
-              },
-              {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
-                "url": "actor",
-                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -90,6 +81,32 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
               },
               {
+                "url": "code"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
@@ -101,8 +118,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "AllergyIntolerance.clinicalStatus"
@@ -121,12 +137,7 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
-              },
-              {
-                "url": "actor",
-                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -141,6 +152,27 @@
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
               },
+              {
+                "url": "code"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
               {
                 "url": "code",
                 "valueCode": "SHALL:process"
@@ -169,16 +201,7 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
-              },
-              {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
-                "url": "actor",
-                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -194,6 +217,32 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
               },
               {
+                "url": "code"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
@@ -205,8 +254,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "AllergyIntolerance.code"
@@ -225,16 +273,7 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
-              },
-              {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
-                "url": "actor",
-                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -249,6 +288,31 @@
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
               },
+              {
+                "url": "code"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "extension": [
               {
                 "url": "code",
                 "valueCode": "SHALL:populate"
@@ -318,16 +382,7 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
-              },
-              {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
-                "url": "actor",
-                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -343,6 +398,32 @@
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
               },
               {
+                "url": "code"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
@@ -354,8 +435,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "AllergyIntolerance.reaction.manifestation"

@@ -193,11 +193,11 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * onsetDateTime MS
-* onsetDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
-* onsetDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* onsetDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* onsetDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * abatementDateTime MS
-* abatementDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
-* abatementDateTime insert obligationApp (1, SHALL:process)
+* abatementDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* abatementDateTime insert obligationApp (3, SHALL:process)
 * note.text MS
 * note.text insert obligationServer (0, SHALL:process)
 * note.text insert obligationApp (1, SHALL:populate-if-known)
@@ -209,29 +209,29 @@ Title: "Smart Health Check Medication Statement"
 Description: "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks."
 
 * id MS
-* id insert obligation2Server (SHALL:populate, SHALL:process)
-* id insert obligationApp (SHALL:process)
+* id insert obligation2Server (0, SHALL:populate, SHALL:process)
+* id insert obligationApp (1, SHALL:process)
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * medication[x][medicationCodeableConcept] MS
-* medication[x][medicationCodeableConcept] insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* medication[x][medicationCodeableConcept] insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* medication[x][medicationCodeableConcept] insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* medication[x][medicationCodeableConcept] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * dateAsserted MS
-* dateAsserted insert obligationServer (SHALL:process)
-* dateAsserted insert obligationApp (SHALL:populate-if-known)
+* dateAsserted insert obligationServer (2, SHALL:process)
+* dateAsserted insert obligationApp (3, SHALL:populate-if-known)
 * reasonCode MS
-* reasonCode insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* reasonCode insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* reasonCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* reasonCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * note.text MS
-* note.text insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* note.text insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * dosage.text MS
-* dosage.text insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* dosage.text insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* dosage.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* dosage.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthCheckImmunization
 Parent: $au-core-immunization
@@ -240,26 +240,26 @@ Title: "Smart Health Check Immunization"
 Description: "This profile sets the minimum expectations for an Immunization resource to record, search and save immunization information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * vaccineCode MS
-* vaccineCode insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* vaccineCode insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* vaccineCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* vaccineCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * vaccineCode.coding[amtVaccineCode] MS
-* vaccineCode.coding[amtVaccineCode] insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* vaccineCode.coding[amtVaccineCode] insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* vaccineCode.coding[amtVaccineCode] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* vaccineCode.coding[amtVaccineCode] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * patient MS
-* patient insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* patient insert obligationApp (SHALL:populate)
+* patient insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* patient insert obligationApp (3, SHALL:populate)
 * occurrenceDateTime MS
-* occurrenceDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* occurrenceDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* occurrenceDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* occurrenceDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * lotNumber MS
-* lotNumber insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* lotNumber insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* lotNumber insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* lotNumber insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * note.text MS
-* note.text insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* note.text insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthCheckBloodPressure
 Parent: $au-core-bloodpressure
@@ -268,31 +268,31 @@ Title: "Smart Health Check Blood Pressure"
 Description: "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (SHALL:process)
-* category[VSCat] insert obligationApp (SHALL:populate)
+* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BPCode] MS
-* code.coding[BPCode] insert obligationServer (SHALL:process)
-* code.coding[BPCode] insert obligationApp (SHALL:populate)
+* code.coding[BPCode] insert obligationServer (0, SHALL:process)
+* code.coding[BPCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedBPCode] MS
-* code.coding[snomedBPCode] insert obligationServer (SHALL:process)
-* code.coding[snomedBPCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedBPCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedBPCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * component[SystolicBP] MS
-* component[SystolicBP] insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* component[SystolicBP] insert obligation2App (SHALL:populate, SHALL:process)
+* component[SystolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* component[SystolicBP] insert obligation2App (3, SHALL:populate, SHALL:process)
 * component[DiastolicBP] MS
-* component[DiastolicBP] insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* component[DiastolicBP] insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* component[DiastolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* component[DiastolicBP] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthCheckSmokingStatus
 Parent: $au-core-smokingstatus
@@ -301,28 +301,28 @@ Title: "Smart Health Check Smoking Status"
 Description: "This profile sets the minimum expectations for a Smoking Status resource to record, search and save smoking status information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * category[socialHistory] MS
-* category[socialHistory] insert obligationServer (SHALL:process)
-* category[socialHistory] insert obligationApp (SHALL:populate)
+* category[socialHistory] insert obligationServer (0, SHALL:process)
+* category[socialHistory] insert obligationApp (1, SHALL:populate)
 * code.coding MS
-* code.coding insert obligationServer (SHALL:process)
-* code.coding insert obligationApp (SHALL:populate)
+* code.coding insert obligationServer (0, SHALL:process)
+* code.coding insert obligationApp (1, SHALL:populate)
 * code.coding[loincSmokingStatus] MS
-* code.coding[loincSmokingStatus] insert obligationServer (SHALL:process)
-* code.coding[loincSmokingStatus] insert obligationApp (SHALL:populate)
+* code.coding[loincSmokingStatus] insert obligationServer (0, SHALL:process)
+* code.coding[loincSmokingStatus] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueCodeableConcept.coding MS
-* valueCodeableConcept.coding insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueCodeableConcept.coding insert obligation2App (SHALL:populate, SHALL:process)
+* valueCodeableConcept.coding insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueCodeableConcept.coding insert obligation2App (1, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthCheckBodyHeight
 Parent: $au-core-bodyheight
@@ -331,37 +331,37 @@ Title: "Smart Health Check Body Height"
 Description: "This profile sets the minimum expectations for a Body Height resource to record, search and save body height information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (SHALL:process)
-* category[VSCat] insert obligationApp (SHALL:populate)
+* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BodyHeightCode] MS
-* code.coding[BodyHeightCode] insert obligationServer (SHALL:process)
-* code.coding[BodyHeightCode] insert obligationApp (SHALL:populate)
+* code.coding[BodyHeightCode] insert obligationServer (0, SHALL:process)
+* code.coding[BodyHeightCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedBodyHeightCode] MS
-* code.coding[snomedBodyHeightCode] insert obligationServer (SHALL:process)
-* code.coding[snomedBodyHeightCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedBodyHeightCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedBodyHeightCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.value insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.system insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.code insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthCheckBodyWeight
 Parent: $au-core-bodyweight 
@@ -370,76 +370,76 @@ Title: "Smart Health Check Body Weight"
 Description: "This profile sets the minimum expectations for a Body Weight resource to record, search and save body weight information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (SHALL:process)
-* category[VSCat] insert obligationApp (SHALL:populate)
+* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BodyWeightCode] MS
-* code.coding[BodyWeightCode] insert obligationServer (SHALL:process)
-* code.coding[BodyWeightCode] insert obligationApp (SHALL:populate)
+* code.coding[BodyWeightCode] insert obligationServer (0, SHALL:process)
+* code.coding[BodyWeightCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedBodyWeightCode] MS
-* code.coding[snomedBodyWeightCode] insert obligationServer (SHALL:process)
-* code.coding[snomedBodyWeightCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedBodyWeightCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedBodyWeightCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.value insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.system insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.code insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
 
-Profile: SmartHealthCheckHeadCircumference
+Profile: SmartHealthCheckHeadCircumference 
 Parent: $au-core-headcircum
 Id: SHCHeadCircumference
 Title: "Smart Health Check Head Circumference"
 Description: "This profile sets the minimum expectations for a Head Circumference resource to record, search and save head circumference information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (0, SHALL:populate, SHALL:process)
+* status insert obligation2App (1, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (SHALL:process)
-* category[VSCat] insert obligationApp (SHALL:populate)
+* category[VSCat] insert obligationServer (0, SHALL:process)
+* category[VSCat] insert obligationApp (1, SHALL:populate)
 * code.coding[HeadCircumCode] MS
-* code.coding[HeadCircumCode] insert obligationServer (SHALL:process)
-* code.coding[HeadCircumCode] insert obligationApp (SHALL:populate)
+* code.coding[HeadCircumCode] insert obligationServer (0, SHALL:process)
+* code.coding[HeadCircumCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedHeadCircumCode] MS
-* code.coding[snomedHeadCircumCode] insert obligationServer (SHALL:process)
-* code.coding[snomedHeadCircumCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedHeadCircumCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedHeadCircumCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (1, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.value insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.system insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.code insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.code insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2App (1, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthCheckWaistCircumference
 Parent: $au-core-waistcircum
@@ -448,37 +448,37 @@ Title: "Smart Health Check Waist Circumference"
 Description: "This profile sets the minimum expectations for a Waist Circumference resource to record, search and save waist circumference information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (SHALL:process)
-* category[VSCat] insert obligationApp (SHALL:populate)
+* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[loincWaistCircumCode] MS
-* code.coding[loincWaistCircumCode] insert obligationServer (SHALL:process)
-* code.coding[loincWaistCircumCode] insert obligationApp (SHALL:populate)
+* code.coding[loincWaistCircumCode] insert obligationServer (0, SHALL:process)
+* code.coding[loincWaistCircumCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedWaistCircumCode] MS
-* code.coding[snomedWaistCircumCode] insert obligationServer (SHALL:process)
-* code.coding[snomedWaistCircumCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedWaistCircumCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedWaistCircumCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.value insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.system insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.code insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.code insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2App (1, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthCheckHeartRate
 Parent: $au-core-heartrate
@@ -487,35 +487,35 @@ Title: "Smart Health Check Heart Rate"
 Description: "This profile sets the minimum expectations for a Heart Rate resource to record, search and save heart rate information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (SHALL:populate, SHALL:process)
-* status insert obligation2App (SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2App (3, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (SHALL:process)
-* category[VSCat] insert obligationApp (SHALL:populate)
+* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[HeartRateCode] MS
-* code.coding[HeartRateCode] insert obligationServer (SHALL:process)
-* code.coding[HeartRateCode] insert obligationApp (SHALL:populate)
+* code.coding[HeartRateCode] insert obligationServer (0, SHALL:process)
+* code.coding[HeartRateCode] insert obligationApp (1, SHALL:populate)
 * code.coding[snomedHeartRateCode] MS
-* code.coding[snomedHeartRateCode] insert obligationServer (SHALL:process)
-* code.coding[snomedHeartRateCode] insert obligationApp (SHALL:populate)
+* code.coding[snomedHeartRateCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedHeartRateCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (SHALL:populate)
+* code.text insert obligationApp (0, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* subject insert obligationApp (SHALL:populate)
+* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* effectiveDateTime insert obligation2App (SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.value insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.system insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (SHALL:populate-if-known, SHALL:process)
-* valueQuantity.code insert obligation2App (SHALL:populate, SHALL:process)
+* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
 
