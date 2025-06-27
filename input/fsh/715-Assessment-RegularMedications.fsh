@@ -41,7 +41,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression.name = "MedicationStatement"
 * extension[=].valueExpression.language = #application/x-fhir-query
-* extension[=].valueExpression.expression = "MedicationStatement?patient={{%patient.id}}"
+* extension[=].valueExpression.expression = "MedicationStatement?patient={{%patient.id}}&status=active"
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
 * extension[=].valueString = "age"
 
@@ -108,7 +108,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 // Current medications
 * item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "MedicationStatementRepeat"
 * item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource.where(status='active')"
+* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource"
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(MedicationStatementPatchTemplate)
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='medicationStatementId').answer.value"
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #MedicationStatement

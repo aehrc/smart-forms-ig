@@ -8,6 +8,7 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Examination"
 Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = heart-rhythm-1
 * contained[+] = BodyHeightTemplate
 * contained[+] = BodyHeightLengthTemplate
 * contained[+] = BodyWeightTemplate
@@ -436,9 +437,8 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-heartrhythm-newresult"
         * text = "New result"
         * type = #choice
-        * repeats = false
-        * answerOption[+].valueCoding = $SCT#271636001 "Pulse regular"
-        * answerOption[+].valueCoding = $SCT#61086009 "Pulse irregular"
+        * repeats = false        
+        * answerValueSet = "#heart-rhythm-1"
       * item[+]
         * linkId = "obs-heartrhythm-newdate"
         * text = "New result date"

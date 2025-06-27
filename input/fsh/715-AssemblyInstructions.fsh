@@ -70,7 +70,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueExpression
     * name = "Condition"
     * language = #application/x-fhir-query
-    * expression = "Condition?patient={{%patient.id}}"
+    * expression = "Condition?patient={{%patient.id}}&category=http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression

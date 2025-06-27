@@ -63,7 +63,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
   * valueExpression
     * name = "Immunization"
     * language = #application/x-fhir-query
-    * expression = "Immunization?patient={{%patient.id}}"
+    * expression = "Immunization?patient={{%patient.id}}&status=completed"
 
 //R5 preadoption extensions
 * extension[+]
@@ -159,7 +159,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ImmunizationRepeat"
       * language = #text/fhirpath
-      * expression = "%Immunization.entry.resource.where(status='completed')"
+      * expression = "%Immunization.entry.resource"
     * linkId = "vaccinesprevious"
     * text = "Vaccines previously given"
     * type = #group

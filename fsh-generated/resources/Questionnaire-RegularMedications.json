@@ -100,7 +100,7 @@
                   "valueExpression": {
                     "name": "MedicationStatementRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%MedicationStatement.entry.resource.where(status='active')"
+                    "expression": "%MedicationStatement.entry.resource"
                   }
                 },
                 {
@@ -887,7 +887,7 @@
       "valueExpression": {
         "name": "MedicationStatement",
         "language": "application/x-fhir-query",
-        "expression": "MedicationStatement?patient={{%patient.id}}"
+        "expression": "MedicationStatement?patient={{%patient.id}}&status=active"
       }
     },
     {

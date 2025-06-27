@@ -1470,7 +1470,29 @@ Description: "The Heart Rhythm value set includes values that may be used to rep
 * ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
 * ^experimental = false  
-// change values to 361137007 |Irregular heart beat| + new NCTS concept request |Regular heart beat| once released and update form as well)
-* $SCT#271636001 "Pulse regular"
-* $SCT#61086009 "Pulse irregular"
+* ^expansion.identifier = "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7"
+* ^expansion.timestamp = "2025-06-27T12:16:28+10:00"
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "displayLanguage"
+* ^expansion.parameter[=].valueCode = #en-US
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "used-valueset"
+* ^expansion.parameter[=].valueUri = "null"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #933506231000036108
+* ^expansion.contains[=].display = "Regular heart rhythm"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #361137007
+* ^expansion.contains[=].display = "Irregular heart rhythm"
+* $SCT#933506231000036108 "Regular heart rhythm"
+* $SCT#361137007 "Irregular heart rhythm"
 

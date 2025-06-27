@@ -219,7 +219,7 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * repeats = false
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
-    * answerOption[+].valueCoding = $SCT#413817003 "Child day care centre" //may require more specific "Early learning centre" concept created
+    * answerOption[+].valueCoding = $SCT#224848004 "Early learning centre"
 
   * item[+]
     * linkId = "MarkComplete-30"

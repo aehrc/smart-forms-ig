@@ -742,22 +742,7 @@
                   "text": "New result",
                   "type": "choice",
                   "repeats": false,
-                  "answerOption": [
-                    {
-                      "valueCoding": {
-                        "code": "271636001",
-                        "system": "http://snomed.info/sct",
-                        "display": "Pulse regular"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "code": "61086009",
-                        "system": "http://snomed.info/sct",
-                        "display": "Pulse irregular"
-                      }
-                    }
-                  ]
+                  "answerValueSet": "#heart-rhythm-1"
                 },
                 {
                   "linkId": "obs-heartrhythm-newdate",
@@ -1029,6 +1014,86 @@
     }
   ],
   "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "heart-rhythm-1",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+          "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+        ]
+      },
+      "status": "draft",
+      "name": "HeartRythym",
+      "title": "Heart Rhythm",
+      "description": "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1",
+      "experimental": false,
+      "expansion": {
+        "identifier": "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7",
+        "timestamp": "2025-06-27T12:16:28+10:00",
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
+          },
+          {
+            "name": "used-valueset",
+            "valueUri": "null"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+          },
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "933506231000036108",
+            "display": "Regular heart rhythm"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "361137007",
+            "display": "Irregular heart rhythm"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "933506231000036108",
+                "display": "Regular heart rhythm"
+              },
+              {
+                "code": "361137007",
+                "display": "Irregular heart rhythm"
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "resourceType": "Observation",
       "id": "BodyHeightTemplate",

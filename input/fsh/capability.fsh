@@ -238,7 +238,7 @@ The server **SHALL** support both."
 * rest.resource[=].type = #MedicationStatement
 * rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].profile.extension[0].valueCode = #SHOULD
+* rest.resource[=].profile.extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "The server **SHALL** support the MedicationStatement resource, the AU Core profile and the conformance expectations for the MedicationStatement resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

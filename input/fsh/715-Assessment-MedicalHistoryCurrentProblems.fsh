@@ -156,7 +156,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext][+].valueExpression
         * name = "ConditionRepeat"
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
+        * expression = "%Condition.entry.resource.where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
       * extension[TemplateExtractExtensionExtended][+]
         * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
         * extension[resourceId][+].valueString = "item.where(linkId='conditionId').answer.value"
