@@ -71,6 +71,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
 * url = "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems"
 * name = "MedicalHistoryCurrentProblems"
 * title = "Aboriginal and Torres Strait Islander Health Check - Medical History"

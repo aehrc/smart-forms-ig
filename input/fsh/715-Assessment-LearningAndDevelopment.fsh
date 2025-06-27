@@ -62,7 +62,6 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment"
 * name = "LearningAndDevelopment"
 * title = "Aboriginal and Torres Strait Islander Health Check - Learning And Development"

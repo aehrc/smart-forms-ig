@@ -817,31 +817,6 @@
                   "valueString": "questionnaire"
                 }
               ]
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                },
-                {
-                  "url": "required",
-                  "valueString": "patient"
-                },
-                {
-                  "url": "required",
-                  "valueString": "_count"
-                },
-                {
-                  "url": "required",
-                  "valueString": "_sort"
-                },
-                {
-                  "url": "required",
-                  "valueString": "status"
-                }
-              ]
             }
           ],
           "type": "QuestionnaireResponse",
@@ -920,18 +895,6 @@
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire",
               "type": "reference",
               "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both.\r\n\r\nThe client and server **SHALL** support chained search questionnaire.title using the :contains modifier.",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "name": "status",
-              "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status",
-              "type": "token",
-              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both.",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",

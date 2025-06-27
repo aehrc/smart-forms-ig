@@ -64,7 +64,6 @@ Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres St
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking"
 * name = "MemoryAndThinking"
 * title = "Aboriginal and Torres Strait Islander Health Check - Memory And Thinking"
