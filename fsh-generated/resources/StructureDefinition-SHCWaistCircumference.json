@@ -30,9 +30,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -46,9 +43,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -102,9 +96,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -118,14 +109,12 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -135,10 +124,10 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -148,8 +137,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.category",
@@ -172,6 +160,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -181,8 +170,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.code.coding",
@@ -206,6 +194,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -215,8 +204,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.code.coding",
@@ -227,11 +215,8 @@
         "id": "Observation.code.text",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean": true
-          },
-          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "valueBoolean": true,
             "extension": [
               {
                 "url": "code",
@@ -259,9 +244,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -275,9 +257,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -300,6 +279,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -309,8 +289,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.subject"
@@ -327,9 +306,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -343,9 +319,6 @@
               {
                 "url": "actor",
                 "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
-              },
-              {
-                "url": "code"
               }
             ],
             "url": "http://hl7.org/fhir/StructureDefinition/obligation"
@@ -442,11 +415,8 @@
         "id": "Observation.value[x]:valueQuantity.unit",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean": true
-          },
-          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "valueBoolean": true,
             "extension": [
               {
                 "url": "code",

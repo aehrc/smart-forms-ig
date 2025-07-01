@@ -35,11 +35,8 @@
         "id": "Observation.status",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint",
-            "valueString": "default: final"
-          },
-          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "valueString": "default: final",
             "extension": [
               {
                 "url": "code",
@@ -113,6 +110,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -122,8 +120,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.category",
@@ -184,6 +181,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -193,8 +191,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.code.coding",
@@ -232,6 +229,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -241,8 +239,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.code.coding",
@@ -267,11 +264,8 @@
         "id": "Observation.code.text",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean": true
-          },
-          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "valueBoolean": true,
             "extension": [
               {
                 "url": "code",
@@ -308,6 +302,7 @@
             ]
           },
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
                 "url": "code",
@@ -317,8 +312,7 @@
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
-            ],
-            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+            ]
           }
         ],
         "path": "Observation.subject",
