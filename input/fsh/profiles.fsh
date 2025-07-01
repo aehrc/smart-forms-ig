@@ -22,6 +22,7 @@ Alias: $au-core-patient = http://hl7.org.au/fhir/core/StructureDefinition/au-cor
 Alias: $au-core-practitioner = http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
 Alias: $sdc-questionnaireresponse = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
 
+/* Old RuleSets to be reinstated following SUSHI bug fix
 RuleSet: obligationApp(index, appCode)
 * ^extension[$obligation][{index}].extension[code].valueCode = #"{appCode}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
@@ -39,6 +40,39 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[$obligation][{index}].extension[code][+].valueCode = #"{serverCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{serverCode2}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+*/
+
+RuleSet: obligationApp(index, appCode)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{appCode}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+
+RuleSet: obligation2App(index, appCode1, appCode2)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{appCode1}"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{appCode2}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+
+RuleSet: obligationServer(index, serverCode)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+
+RuleSet: obligation2Server(index, serverCode1, serverCode2)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode1}"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode2}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 
 
 Invariant: shc-heartrhythm-01
@@ -268,8 +302,8 @@ Title: "Smart Health Check Blood Pressure"
 Description: "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
@@ -301,8 +335,8 @@ Title: "Smart Health Check Smoking Status"
 Description: "This profile sets the minimum expectations for a Smoking Status resource to record, search and save smoking status information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[socialHistory] MS
 * category[socialHistory] insert obligationServer (0, SHALL:process)
 * category[socialHistory] insert obligationApp (1, SHALL:populate)
@@ -331,8 +365,8 @@ Title: "Smart Health Check Body Height"
 Description: "This profile sets the minimum expectations for a Body Height resource to record, search and save body height information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
@@ -370,8 +404,8 @@ Title: "Smart Health Check Body Weight"
 Description: "This profile sets the minimum expectations for a Body Weight resource to record, search and save body weight information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
@@ -448,8 +482,8 @@ Title: "Smart Health Check Waist Circumference"
 Description: "This profile sets the minimum expectations for a Waist Circumference resource to record, search and save waist circumference information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
@@ -487,8 +521,8 @@ Title: "Smart Health Check Heart Rate"
 Description: "This profile sets the minimum expectations for a Heart Rate resource to record, search and save heart rate information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
