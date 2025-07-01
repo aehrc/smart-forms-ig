@@ -11,6 +11,15 @@
   },
   "item": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%age.exists()"
+          }
+        }
+      ],
       "item": [
         {
           "extension": [
@@ -227,8 +236,8 @@
                   ],
                   "linkId": "regularmedications-summary-current-dosage",
                   "text": "Dosage",
-                  "type": "string",
-                  "repeats": true
+                  "type": "text",
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -270,8 +279,8 @@
                   ],
                   "linkId": "regularmedications-summary-current-comment",
                   "text": "Comment",
-                  "type": "string",
-                  "repeats": true
+                  "type": "text",
+                  "repeats": false
                 }
               ],
               "linkId": "regularmedications-summary-current",
@@ -319,8 +328,8 @@
                 {
                   "linkId": "regularmedications-summary-new-dosage",
                   "text": "Dosage",
-                  "type": "string",
-                  "repeats": true
+                  "type": "text",
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -345,7 +354,7 @@
                 {
                   "linkId": "regularmedications-summary-new-comment",
                   "text": "Comment",
-                  "type": "string",
+                  "type": "text",
                   "repeats": false
                 }
               ]
@@ -493,17 +502,6 @@
         }
       ],
       "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
-      "_linkId": {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-            "valueExpression": {
-              "language": "text/fhirpath",
-              "expression": "%age.exists()"
-            }
-          }
-        ]
-      },
       "text": "Regular medications",
       "type": "group",
       "repeats": false
@@ -811,6 +809,70 @@
             {
               "name": "pathLabel",
               "valueString": "Status"
+            }
+          ]
+        },
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "MedicationStatement.note[0].text"
+            },
+            {
+              "name": "name",
+              "valueString": "text"
+            },
+            {
+              "name": "value",
+              "_valueMarkdown": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "item.where(linkId='regularmedications-summary-current-comment').answer.value.first()"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Comment"
+            }
+          ]
+        },
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "MedicationStatement.dosage[0].text"
+            },
+            {
+              "name": "name",
+              "valueString": "text"
+            },
+            {
+              "name": "value",
+              "_valueString": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Dosage"
             }
           ]
         }

@@ -174,10 +174,10 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 // manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.note.text"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.note[0].text"
 * item[=].item[=].item[=].item[=].linkId = "allergysummary-comment"
 * item[=].item[=].item[=].item[=].text = "Comment"
-* item[=].item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].item[=].type = #text
 * item[=].item[=].item[=].item[=].repeats = false
 
 //new adverse reactions
@@ -205,7 +205,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 // manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
 * item[=].item[=].item[=].item[+].linkId = "allergynew-comment"
 * item[=].item[=].item[=].item[=].text = "Comment"
-* item[=].item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].item[=].type = #text
 * item[=].item[=].item[=].item[=].repeats = false
 
 * item[=].item[+].linkId = "3e689aeb-69a1-4a9b-93bd-50377511dd9b"

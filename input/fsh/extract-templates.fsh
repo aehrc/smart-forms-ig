@@ -233,6 +233,18 @@ Usage: #inline
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Clinical status"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "AllergyIntolerance.note[0].text"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "text"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='allergysummary-comment').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Comment"
 
 Instance:   ImmunizationTemplate
 InstanceOf: $au-core-immunization
@@ -346,3 +358,29 @@ Usage: #inline
 * parameter[=].part[=].valueCode.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-status').answer.value.code"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Status"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "MedicationStatement.note[0].text"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "text"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-comment').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Comment"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "MedicationStatement.dosage[0].text"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "text"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Dosage"
+
+

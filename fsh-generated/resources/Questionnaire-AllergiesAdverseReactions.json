@@ -241,13 +241,13 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%AllergyIntoleranceRepeat.note.text"
+                        "expression": "%AllergyIntoleranceRepeat.note[0].text"
                       }
                     }
                   ],
                   "linkId": "allergysummary-comment",
                   "text": "Comment",
-                  "type": "string",
+                  "type": "text",
                   "repeats": false
                 }
               ],
@@ -317,7 +317,7 @@
                 {
                   "linkId": "allergynew-comment",
                   "text": "Comment",
-                  "type": "string",
+                  "type": "text",
                   "repeats": false
                 }
               ]
@@ -505,6 +505,38 @@
             {
               "name": "pathLabel",
               "valueString": "Clinical status"
+            }
+          ]
+        },
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "AllergyIntolerance.note[0].text"
+            },
+            {
+              "name": "name",
+              "valueString": "text"
+            },
+            {
+              "name": "value",
+              "_valueMarkdown": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "item.where(linkId='allergysummary-comment').answer.value.first()"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Comment"
             }
           ]
         }

@@ -1501,6 +1501,70 @@
                             "valueString": "Status"
                         }
                     ]
+                },
+                {
+                    "name": "operation",
+                    "part": [
+                        {
+                            "name": "type",
+                            "valueCode": "replace"
+                        },
+                        {
+                            "name": "path",
+                            "valueString": "MedicationStatement.note[0].text"
+                        },
+                        {
+                            "name": "name",
+                            "valueString": "text"
+                        },
+                        {
+                            "name": "value",
+                            "_valueMarkdown": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                                        "valueString": "item.where(linkId='regularmedications-summary-current-comment').answer.value.first()"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Comment"
+                        }
+                    ]
+                },
+                {
+                    "name": "operation",
+                    "part": [
+                        {
+                            "name": "type",
+                            "valueCode": "replace"
+                        },
+                        {
+                            "name": "path",
+                            "valueString": "MedicationStatement.dosage[0].text"
+                        },
+                        {
+                            "name": "name",
+                            "valueString": "text"
+                        },
+                        {
+                            "name": "value",
+                            "_valueString": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                                        "valueString": "item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Dosage"
+                        }
+                    ]
                 }
             ]
         },
@@ -1636,6 +1700,38 @@
                         {
                             "name": "pathLabel",
                             "valueString": "Clinical status"
+                        }
+                    ]
+                },
+                {
+                    "name": "operation",
+                    "part": [
+                        {
+                            "name": "type",
+                            "valueCode": "replace"
+                        },
+                        {
+                            "name": "path",
+                            "valueString": "AllergyIntolerance.note[0].text"
+                        },
+                        {
+                            "name": "name",
+                            "valueString": "text"
+                        },
+                        {
+                            "name": "value",
+                            "_valueMarkdown": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                                        "valueString": "item.where(linkId='allergysummary-comment').answer.value.first()"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Comment"
                         }
                     ]
                 }
@@ -3653,13 +3749,13 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toDate()"
+                                        "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
                                     }
                                 }
                             ],
                             "linkId": "01418489-1ec4-4c3b-b96a-7c14c3e21cfe",
                             "text": "Date of last completed health check",
-                            "type": "date",
+                            "type": "dateTime",
                             "repeats": false
                         },
                         {
@@ -6190,18 +6286,16 @@
                     ]
                 },
                 {
-                    "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
-                    "_linkId": {
-                        "extension": [
-                            {
-                                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                                "valueExpression": {
-                                    "language": "text/fhirpath",
-                                    "expression": "%age.exists()"
-                                }
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%age.exists()"
                             }
-                        ]
-                    },
+                        }
+                    ],
+                    "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
                     "text": "Regular medications",
                     "type": "group",
                     "repeats": false,
@@ -6436,8 +6530,8 @@
                                             ],
                                             "linkId": "regularmedications-summary-current-dosage",
                                             "text": "Dosage",
-                                            "type": "string",
-                                            "repeats": true
+                                            "type": "text",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -6479,8 +6573,8 @@
                                             ],
                                             "linkId": "regularmedications-summary-current-comment",
                                             "text": "Comment",
-                                            "type": "string",
-                                            "repeats": true
+                                            "type": "text",
+                                            "repeats": false
                                         }
                                     ]
                                 },
@@ -6525,8 +6619,8 @@
                                         {
                                             "linkId": "regularmedications-summary-new-dosage",
                                             "text": "Dosage",
-                                            "type": "string",
-                                            "repeats": true
+                                            "type": "text",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -6551,7 +6645,7 @@
                                         {
                                             "linkId": "regularmedications-summary-new-comment",
                                             "text": "Comment",
-                                            "type": "string",
+                                            "type": "text",
                                             "repeats": false
                                         }
                                     ]
@@ -6936,13 +7030,13 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%AllergyIntoleranceRepeat.note.text"
+                                                        "expression": "%AllergyIntoleranceRepeat.note[0].text"
                                                     }
                                                 }
                                             ],
                                             "linkId": "allergysummary-comment",
                                             "text": "Comment",
-                                            "type": "string",
+                                            "type": "text",
                                             "repeats": false
                                         }
                                     ]
@@ -7009,7 +7103,7 @@
                                         {
                                             "linkId": "allergynew-comment",
                                             "text": "Comment",
-                                            "type": "string",
+                                            "type": "text",
                                             "repeats": false
                                         }
                                     ]

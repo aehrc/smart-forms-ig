@@ -64,9 +64,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item.linkId = "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a"
-  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
-    * language = #text/fhirpath
-    * expression = "%age.exists()"
+* item.extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+* item.extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age.exists()"
 * item.text = "Regular medications"
 * item.type = #group
 * item.repeats = false
@@ -188,8 +187,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
@@ -208,8 +207,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment"
 * item.item[=].item[=].item[=].text = "Comment"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
 
 // New medications
 * item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
@@ -228,8 +227,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 
 * item.item[=].item[=].item[+].linkId = "regularmedications-summary-new-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"
-* item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[=].repeats = true
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
 
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension.valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
@@ -241,7 +240,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 
 * item.item[=].item[=].item[+].linkId = "regularmedications-summary-new-comment"
 * item.item[=].item[=].item[=].text = "Comment"
-* item.item[=].item[=].item[=].type = #string
+* item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
 * item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
