@@ -8,7 +8,7 @@ The Smart Health Checks App is based on the CSIRO Smart Forms App which was prov
 ### Smart Health Checks Actors
 The following figure provides an overview of the actors involved in the Smart Health Checks (SHC) solution.
 
-<img alt="Actors Overview" src="overviewactors.png" style="width:750px; float:none"/>
+<img alt="Actors Overview" src="overviewactors.png" style="width:100%; max-width:750px; float:none"/>
 
 
 #### SHC App
@@ -47,15 +47,15 @@ The Smart Health Check App follows a standard set of interactions which are summ
     3. read or search QuestionnaireResponse; and 
     4. various search requests to prepopulate the health check form 
 
-    <img alt="Launch Interactions" src="launchinteractions.png" style="width:750px; float:none"/>
+    <img alt="Launch Interactions" src="launchinteractions.png" style="width:100%; max-width:750px; float:none"/>
 
 7. Fill and Save Health Check: The user fills out the health check form and saves the form data
 8. Writeback Questionnaire Response: The health check form data is written back to the SHC Host FHIR Server as a questionnaire response
 9. Writeback Extract Transaction: The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as transaction Bundle
 
-    <img alt="Writeback extract" src="writebackdraftqr.png" style="width:750px; float:none"/>
+    <img alt="Writeback extract" src="writebackdraftqr.png" style="width:100%; max-width:750px; float:none"/>
 
-    <img alt="Writeback extract" src="writebackqrextract.png" style="width:750px; float:none"/>
+    <img alt="Writeback extract" src="writebackqrextract.png" style="width:100%; max-width:750px; float:none"/>
 
 #### SHC App Interactions
 
