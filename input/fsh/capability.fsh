@@ -1,9 +1,9 @@
-Instance: SHCHostFHIRServerCapabilityStatement
+Instance: SFLauncherServerAboriginalTorresStraitIslanderHealthCheck
 InstanceOf: CapabilityStatement
 Usage: #definition
-* name = "SHCHostFHIRServer"
-* title = "SHC Host FHIR Server"
-* description = "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [SHC App](CapabilityStatement-SHCAppCapabilityStatement.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters."
+* name = "SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+* title = "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check"
+* description = "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters."
 * status = #draft
 * experimental = false
 * date = "2025-04-16"
@@ -517,7 +517,7 @@ The server **SHALL** support both."
 * rest.interaction[=].documentation = "The server **SHALL** support the transaction interaction for all resources."
 
 
-/*Remove this role
+
 Instance: SmartFormsServer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -581,14 +581,14 @@ Usage: #definition
 * rest.resource[=].searchParam[=].documentation = "The server supports search result sorting by date and **MAY** support other values."
 * rest.resource[=].operation[0].name = "assemble"
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
-*/
 
-Instance: SHCAppCapabilityStatement
+
+Instance: SmartFormsApplication
 InstanceOf: CapabilityStatement
 Usage: #definition
-* name = "SHCApp"
-* title = "SHC App"
-* description = "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms."
+* name = "SmartFormsApplication"
+* title = "Smart Forms Application"
+* description = "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms."
 * status = #draft
 * experimental = false
 * date = "2025-04-16"

@@ -503,14 +503,6 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/SHCAppCapabilityStatement"
-        },
-        "name": "SHC App",
-        "description": "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ActorDefinition/SHCHost"
         },
         "name": "SHC Host",
@@ -535,10 +527,26 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/SHCHostFHIRServerCapabilityStatement"
+          "reference": "CapabilityStatement/SmartFormsApplication"
         },
-        "name": "SHC Host FHIR Server",
-        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [SHC App](CapabilityStatement-SHCAppCapabilityStatement.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+        "name": "Smart Forms Application",
+        "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+        },
+        "name": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check",
+        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/SmartFormsServer"
+        },
+        "name": "Smart Forms Server",
+        "description": "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters.",
         "exampleBoolean": false
       },
       {

@@ -1,0 +1,123 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "SmartFormsServer",
+  "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsServer",
+  "name": "SmartFormsServer",
+  "title": "Smart Forms Server",
+  "description": "This CapabilityStatement describes the capabilities of the Smart Forms Server. The Smart Forms Server provides a definitional repository of resources that a client application can retrieve for use in a Smart Forms context. The capabilities listed include supported FHIR profiles, RESTful operations, and search parameters.",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-04-16",
+  "publisher": "AEHRC CSIRO",
+  "kind": "capability",
+  "instantiates": [
+    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-manager"
+  ],
+  "software": {
+    "name": "Smart Forms Server"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json",
+    "xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "documentation": "The Smart Forms Server provides interactions for hosting Questionnaire resources and the assembly of modular Questionnaires.",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
+                },
+                {
+                  "url": "required",
+                  "valueString": "version"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "title"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                }
+              ]
+            }
+          ],
+          "type": "Questionnaire",
+          "profile": "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+          "supportedProfile": [
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
+          ],
+          "interaction": [
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "url",
+              "definition": "http://hl7.org/fhir/SearchParameter/Questionnaire-url",
+              "type": "uri"
+            },
+            {
+              "name": "version",
+              "definition": "http://hl7.org/fhir/SearchParameter/Questionnaire-version",
+              "type": "token"
+            },
+            {
+              "name": "title",
+              "definition": "http://hl7.org/fhir/SearchParameter/Questionnaire-title",
+              "type": "string",
+              "documentation": "The client supports search using the :contains modifier."
+            },
+            {
+              "name": "_count",
+              "type": "number",
+              "documentation": "The server supports search result limiting."
+            },
+            {
+              "name": "_sort",
+              "type": "string",
+              "documentation": "The server supports search result sorting by date and **MAY** support other values."
+            }
+          ],
+          "operation": [
+            {
+              "name": "assemble",
+              "definition": "http://hl7.org/fhir/uv/sdc/OperationDefinition/Questionnaire-assemble"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
