@@ -29,7 +29,7 @@ Profile support refers to the support of the SHC profiles, such that the system 
 
 #### Interaction Support
 Interaction support refers to a system that supports the SHC REST API interactions. Specifically, a server with SHC Interaction support:
-* SHALL implement the REST API behavior according to the FHIR specification, including *read*, *search*, *create* and *patch* interactions as required, and the required search parameters as defined in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html#resourcesSummary1).
+* SHALL implement the REST API behavior according to the FHIR specification, including *read*, *search*, *create* and *patch* interactions as required, and the required search parameters as defined in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html#resourcesSummary1).
 * SHALL specify the full capability details from the SHC Host FHIR Server CapabilityStatement it claims to implement, including mandatory support for _FHIR transactions_.
 
 ### Must Support and Obligations

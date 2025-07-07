@@ -23,7 +23,7 @@ Description: "The SHC App is a system that a SHC Host can launch allowing a user
 - **SHALL** invoke search and read requests for resources required by this IG to pre-populate questionnaire response
 - **SHALL** invoke create and patch requests in a transaction Bundle for resources required by this IG
 """
-* capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SmartFormsApplication"
+* capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SHCAppCapabilityStatement"
 
 Instance: SHCHost
 InstanceOf: ActorDefinition
@@ -89,4 +89,4 @@ Description: "The SHC Host FHIR Server allows the SHC App to retrieve patient he
 - **SHALL** respond to search and read requests for resources required by this IG
 - **SHALL** respond to create and patch requests in a transaction Bundle for resources required by this IG
 """
-* capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+* capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement"
