@@ -5,9 +5,9 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: csiro.fhir.au.smartforms
 canonical: https://smartforms.csiro.au/ig
-name: SmartForms
-title: Smart Forms
-description: Smart Forms FHIR Implementation Guide. 
+name: SmartHealthChecks
+title: Smart Health Checks
+description: Smart Health Checks FHIR Implementation Guide. 
 status: draft # draft | active | retired | unknown
 version: 0.3.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
@@ -145,16 +145,17 @@ menu:
 #      General Requirements: general-requirements.html
 #      Must Support: must-support.html
   Guidance: #guidance.html
-      Reference Implementation: reference-implementation.html
+      General Requirements: general-requirements.html
       Smart Health Check Integration: smart-health-check-integration.html
+      Reference Implementation: reference-implementation.html
       Informative Guidance: informative-guidance.html
 #      General Guidance: general-guidance.html
   FHIR Artefacts: #artifact.html
       Artefact Summary: artifacts.html
       Questionnaires: questionnaires.html
-      Capability Statements: capability-statements.html
       Profiles and Extensions: profiles-and-extensions.html
-#      Search Parameters and Operations: search-parameters-and-operations.html
+      Capability Statements: capability-statements.html
+      Actor Definitions: actor-definitions.html
       Terminology: terminology.html
 #  Examples: examples.html
   Downloads: downloads.html

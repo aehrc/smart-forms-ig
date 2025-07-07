@@ -3,8 +3,8 @@
   "id": "csiro.fhir.au.smartforms",
   "url": "https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms",
   "version": "0.3.0",
-  "name": "SmartForms",
-  "title": "Smart Forms",
+  "name": "SmartHealthChecks",
+  "title": "Smart Health Checks",
   "status": "draft",
   "experimental": false,
   "publisher": "AEHRC CSIRO",
@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "description": "Smart Forms FHIR Implementation Guide.",
+  "description": "Smart Health Checks FHIR Implementation Guide.",
   "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
   "packageId": "csiro.fhir.au.smartforms",
   "license": "CC-BY-SA-4.0",
@@ -479,6 +479,38 @@
       },
       {
         "reference": {
+          "reference": "ActorDefinition/SHCApp"
+        },
+        "name": "SHC App",
+        "description": "The SHC App is a system that a SHC Host can launch allowing a user to fill out a health check form, prepopulated with patient health information retrieved from the SHC Host FHIR Server, and writeback data collected in the form.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHost"
+        },
+        "name": "SHC Host",
+        "description": "The SHC Host is a system that allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHostAuthorizationServer"
+        },
+        "name": "SHC Host Authorization Server",
+        "description": "The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHostFHIRServer"
+        },
+        "name": "SHC Host FHIR Server",
+        "description": "The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/SmartFormsApplication"
         },
         "name": "Smart Forms Application",
@@ -585,6 +617,11 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "actor-definitions.html",
+          "title": "Actor Definitions",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "capability-statements.html",
           "title": "Capability Statements",
           "generation": "markdown"
@@ -592,6 +629,11 @@
         {
           "nameUrl": "downloads.html",
           "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "general-requirements.html",
+          "title": "General Requirements",
           "generation": "markdown"
         },
         {
