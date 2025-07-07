@@ -8,5 +8,5 @@
   "status": "draft",
   "experimental": false,
   "type": "system",
-  "documentation": "SHC Host Authorization Server"
+  "documentation": "The SHC Host Authorization Server: \n- **SHALL** respond to [Authorization Request](https://hl7.org/fhir/smart-app-launch/app-launch.html#obtain-authorization-code)\n- **SHALL** respond to [Token Request](https://hl7.org/fhir/smart-app-launch/app-launch.html#obtain-access-token)\n- **SHALL** support SMART App Launch scopes: \n  - openid fhirUser\n  - launch\n  - user/Practitioner.r\n  - patient/Patient.r\n  - patient/*.rs\n  - user/QuestionnaireResponse.crus\n  - ..."
 }

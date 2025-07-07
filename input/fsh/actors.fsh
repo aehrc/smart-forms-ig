@@ -41,7 +41,7 @@ Description: "The SHC Host is a system that allows a user to launch the SHC App 
   - patient
   - fhirUser
   - fhirContext with following items:
-    - canonical: https://hl7.org/fhir/Questionnaire/example123, role: https://hl7.org/fhir/Questionnaire
+    - role: http://ns.electronichealth.net.au/smart/role/new, type: Questionnaire, canonical: https://example.org/Questionnaire/123/|v2023-05-03
     - ... 
 """
 

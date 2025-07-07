@@ -1,9 +1,9 @@
 ### Introduction
-This implementation guide is provided to support thye integration of the Smart Health Checks App within a practice management system enabling users to complete health chck assessments such the Aboriginal and Torres Strait Islander Health Check.
+This implementation guide is provided to support the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.
 
-The Smart Health Checks App is a FHIR-based client application aimed at demonstrating effective undertaking of healthcare assessments. It leverages [SMART App Launch](https://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html), [Structured Data Capture specification](http://build.fhir.org/ig/HL7/sdc/index.html) and [AU Core](https://hl7.org.au/fhir/core/) to improved clinical workflow, enhance the usefulness of information in the practice record and improve interoperability of health information to support better clinical outcomes. 
+The Smart Health Checks App is a FHIR-based client application aimed at demonstrating effective undertaking of healthcare assessments. It leverages [SMART App Launch](https://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html), [Structured Data Capture specification](http://build.fhir.org/ig/HL7/sdc/index.html) and [AU Core](https://hl7.org.au/fhir/core/) to improve clinical workflow, enhance the usefulness of information in the practice record and improve interoperability of health information to support better clinical outcomes. 
 
-The Smart Health Checks App is based on the CSIRO Smart Forms App which was provided as a [Reference Implementation](reference-implementation.html) of using FHIR standards and implemenation guides to provide reusable software components that can be applied within Australian healthcare software systems to support uses cases such as national health check assessment forms.
+The Smart Health Checks App is based on the CSIRO Smart Forms App which was provided as a [Reference Implementation](reference-implementation.html) of using FHIR standards and implementation guides to provide reusable software components that can be applied within Australian healthcare software systems to support uses cases such as national health check assessment forms.
 
 ### Smart Health Checks Actors
 The following figure provides an overview of the actors involved in the Smart Health Checks (SHC) solution.
@@ -13,7 +13,7 @@ The following figure provides an overview of the actors involved in the Smart He
 
 #### SHC App
 
-The SHC App allows a user of the SHC Host to launch the SHC App for filling out a health check form prepopulated with a authorized patient health information retrieved from the SHC Host FHIR Server and writeback the collected form data. 
+The SHC App allows a user of the SHC Host to launch the SHC App for filling out a health check form prepopulated with authorized patient health information retrieved from the SHC Host FHIR Server and writeback the collected form data. 
 
 The SHC App actor is implemented by the CSIRO Smart Forms App.
 
@@ -21,26 +21,26 @@ The SHC App actor is implemented by the CSIRO Smart Forms App.
 
 The SHC Host allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form. 
 
-The SHC Host actor is implemented by the practice management system.
+The SHC Host actor is implemented by the patient management system.
 
 #### SHC Host FHIR Server
 
 The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.
 
-The SHC Host actor is implemented by the practice management system.
+The SHC Host actor is implemented by the patient management system.
 
 #### SHC Host Authorization Server
 
-The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.
+The SHC Host Authorization Server allows the SHC App to request authorisation from the user to access patient health information to prepopulate and write back health checks data using the SHC Host FHIR Server.
 
 ### Smart Health Checks Interactions
 
 The Smart Health Check App follows a standard set of interactions which are summarised as:
 1. App Launch: The SHC User initiates the SHC Host to launch SHC App with a context of the current user, patient and health check form.
-2. SMART Authorization Configuration: The SHC App uses SHC Host FHIR Server to locate the SHC Host Authorization Server endpoints and capability
-3. Authorization Request: SHC App redirects to the SHC Authorization Server to authorise access to patient health information using SHC Host FHR Server, the SHC User may be prompted to permit or deny access to the requested data
-4. Authorization Callback: The SHC App redirects back to the SHC App to proceed with the authorised launch of the health check form
-5. Token Request: SHC App requests an access token and associated launch context, including user, patient and health check form, from the SHC Host Authorization Server
+2. SMART Authorization Configuration: The SHC App uses SHC Host FHIR Server to locate the SHC Host Authorization Server endpoints and capability.
+3. Authorization Request: SHC App redirects to the SHC Host Authorization Server to authorise access to patient health information using the SHC Host FHR Server. The SHC User may be prompted to permit or deny access to the requested data.
+4. Authorization Callback: The SHC Host redirects back to the SHC App to proceed with the authorised launch of the health check form.
+5. Token Request: SHC App requests an access token and associated launch context, including user, patient and health check form, from the SHC Host Authorization Server.
 6. Prepopulate Health Check: SHC App uses the launch context to use the SHC Host FHIR Server to:
     1. read Practitioner;
     2. read Patient; 
@@ -49,50 +49,13 @@ The Smart Health Check App follows a standard set of interactions which are summ
 
     <img alt="Launch Interactions" src="launchinteractions.png" style="width:100%; max-width:750px; float:none"/>
 
-7. Fill and Save Health Check: The user fills out the health check form and saves the form data
-8. Writeback Questionnaire Response: The health check form data is written back to the SHC Host FHIR Server as a questionnaire response
-9. Writeback Extract Transaction: The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as transaction Bundle
+7. Fill and Save Health Check: The user fills out the health check form and saves the form data.
+8. Writeback Questionnaire Response: The health check form data is written back to the SHC Host FHIR Server as a QuestionnaireResponse.
+9. Writeback Extract Transaction: The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as transaction Bundle.
 
     <img alt="Writeback extract" src="writebackdraftqr.png" style="width:100%; max-width:750px; float:none"/>
 
     <img alt="Writeback extract" src="writebackqrextract.png" style="width:100%; max-width:750px; float:none"/>
-
-#### SHC App Interactions
-
-##### App Launch
-The PMS user initiates the Health Check App within the PMS. The PMS generates a launch context related to the current user, patient and health check questionnaire, which the PMS Authorization Server can access from the parameter provided in the App launch request.
-
-##### SMART Authorization Configuration 
-The Health Check App uses the iss parameter provided in the launch request as the base URL of the PMS FHIR API to retrieve the PMS Authorization Server configuration from the .well-known/smart-configuration endpoint. The response provides, amongst other configuration elements, the authorization_endpoint and token_endpoint URLs required in the subsequent steps. 
-
-##### Authorization Request
-The Health Check App responds to the PMS browser to redirect to the authorization URL with the required authorization request parameters including the response_type, client_id, redirect_uri, scope, aud, state, code_challenge, code_challenge_method and launch. 
-The Authorization Server, if required by PMS organization policies, may respond with a data access consent form where the PMS User grants the App access to the requested data. 
-
-##### Authorization Callback
-When granted, the Authorization Server response redirects the PMS browser back to the Health Check App authorization callback (redirect_uri) endpoint with a code parameter.
-
-##### Token Request
-The Health Check App authorization callback extracts the code parameter and uses the token_endpoint URL to exchange it for an access token. The HTTP POST request body includes the required parameters including the code, grant_type, client_id, redirect_uri and code_verifier. 
-The Authorization Server response contains the token_type, access_token, id_token, scope and the relevant launch context data stashed by the PMS such as patient, encounter and health check questionnaire, which can be used to retrieve by Id the respective FHIR resources from the PMS FHIR API.
-The id_token is a signed JWT that contains an encoding of user details, including a fhirUser reference that can be used to retrieve from the FHIR API a FHIR resource representing the user.
-
-##### Prepopulate Health Check
-The Health Check APP uses the access_token as the Authorization for any request to the PMS FHIR API including the retrieval of the fhirUser and patient resources. The Health Check App will also query any FHIR resource required in the health check’s Questionnaire pre-population expressions, using the patient context as search parameter values.
-
-##### Fill and Submit Health Check
-The PMS User fills out the health check form and when finished, submits the form.
-
-##### Writeback Questionnaire Response
-The Health Check App writes back the health check QuestionnaireResponse to the PMS FHIR Server using a FHIR Create request when the health check is new or a FHIR Update when a health check was previously saved as a draft and retrieved for further contribution.
-
-##### Writeback Extract Transaction
-The Health Check App will generate an extract transaction when a health check Questionnaire contains items with specified extract expressions. The extract transaction is a FHIR Bundle that the health check App will write back to the PMS FHIR API transaction endpoint. 
-The resource types included in the extract transaction will be specified in the health check Questionnaire, hence the PMS is required to ensure it has writeback capability for any health check Questionnaire it launches. 
-The extract transaction can include writeback requests using the following FHIR interactions:
-1. Create; or 
-2. Patch
-
 
 ### Dependencies
 

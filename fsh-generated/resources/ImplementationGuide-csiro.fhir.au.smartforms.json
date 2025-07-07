@@ -498,7 +498,7 @@
           "reference": "ActorDefinition/SHCApp"
         },
         "name": "SHC App",
-        "description": "The SHC App allows a user of the SHC Host to launch the SHC App for filling out a health check form prepopulated with a authorized patient health information retrieved from the SHC Host FHIR Server and writeback the collected form data.",
+        "description": "The SHC App is a system that a SHC Host can launch allowing a user to fill out a health check form, prepopulated with patient health information retrieved from the SHC Host FHIR Server, and writeback data collected in the form.",
         "exampleBoolean": false
       },
       {
@@ -506,7 +506,7 @@
           "reference": "ActorDefinition/SHCHost"
         },
         "name": "SHC Host",
-        "description": "The SHC Host allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form.",
+        "description": "The SHC Host is a system that allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form.",
         "exampleBoolean": false
       },
       {
@@ -645,6 +645,11 @@
         {
           "nameUrl": "downloads.html",
           "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "general-requirements.html",
+          "title": "General Requirements",
           "generation": "markdown"
         },
         {
