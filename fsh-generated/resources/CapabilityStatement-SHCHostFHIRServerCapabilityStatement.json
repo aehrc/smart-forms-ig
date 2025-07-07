@@ -1,10 +1,10 @@
 {
   "resourceType": "CapabilityStatement",
-  "id": "SFLauncherServerAboriginalTorresStraitIslanderHealthCheck",
-  "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck",
-  "name": "SmartFormsLauncherServerAboriginalTorresStraitIslanderHealthCheck",
-  "title": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check",
-  "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+  "id": "SHCHostFHIRServerCapabilityStatement",
+  "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
+  "name": "SHCHostFHIRServer",
+  "title": "SHC Host FHIR Server",
+  "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [SHC App](CapabilityStatement-SHCAppCapabilityStatement.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
   "status": "draft",
   "experimental": false,
   "date": "2025-04-16",
@@ -138,6 +138,19 @@
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
               "valueCode": "SHALL"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                },
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                }
+              ]
             }
           ],
           "type": "AllergyIntolerance",
@@ -369,6 +382,15 @@
                   "valueCode": "SHALL"
                 }
               ]
+            },
+            {
+              "code": "patch",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
             }
           ],
           "searchParam": [
@@ -458,7 +480,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
+                "valueCode": "SHOULD"
               }
             ]
           },
@@ -553,10 +575,6 @@
                 {
                   "url": "required",
                   "valueString": "code"
-                },
-                {
-                  "url": "required",
-                  "valueString": "_count"
                 },
                 {
                   "url": "required",
@@ -681,17 +699,6 @@
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
               "type": "token",
               "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both.",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
-                }
-              ]
-            },
-            {
-              "name": "_count",
-              "type": "number",
-              "documentation": "The client and server **SHALL** support search result limiting.",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -832,6 +839,31 @@
                   "valueString": "questionnaire"
                 }
               ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                },
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_sort"
+                },
+                {
+                  "url": "required",
+                  "valueString": "status"
+                }
+              ]
             }
           ],
           "type": "QuestionnaireResponse",
@@ -910,6 +942,18 @@
               "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire",
               "type": "reference",
               "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both.\r\n\r\nThe client and server **SHALL** support chained search questionnaire.title using the :contains modifier.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "status",
+              "definition": "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status",
+              "type": "token",
+              "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both.",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
