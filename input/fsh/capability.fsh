@@ -39,13 +39,13 @@ Usage: #definition
 
 * rest.mode = #server
 * rest.documentation = "Smart Forms Launcher Server **SHALL**:
-1. Support the [AU Core AllergyIntolerance resource profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-allergyintolerance.html)
-1. Support the [AU Core Condition resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-condition.html)
-1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-encounter.html)
-1. Support the [AU Core Immunization resource profile](https://build.fhir.org/ig/hl7au/au-fhir-core/StructureDefinition-au-core-immunization.html)
+1. Support the [Smart Health Check AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)
+1. Support the [Smart Health Check Condition resource profile](StructureDefinition-SHCCondition.html)
+1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.1.0-preview/StructureDefinition-au-core-encounter.html)
+1. Support the [Smart Health Check Immunization resource profile](StructureDefinition-SHCImmunization.html)
 1. Support the [AU Core Medication profile](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medication.html)
-1. Support the [AU Core MedicationStatement profile](https://hl7.org.au/fhir/core/1.1.0-preview/StructureDefinition-au-core-medicationstatement.html)
-1. Support the [AU Core Observation resource profiles](http://hl7.org.au/fhir/core/1.1.0-previewprofiles-and-extensions.html#observation)
+1. Support the [Smart Health Check MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)
+1. Support the [Smart Health Check Observation resource profiles](profiles-and-extensions.html#observation)
 1. Support the [AU Core Patient resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-patient.html)
 1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-practitioner.html)
 1. Support the [SDC Questionnaire Response profile](https://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaireresponse.html)
@@ -73,10 +73,10 @@ Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/1.0.0/s
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].type = #AllergyIntolerance
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+* rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the AllergyIntolerance resource, the AU Core profile and the conformance expectations for the AllergyIntolerance resource."
+* rest.resource[=].documentation = "The server **SHALL** support the AllergyIntolerance resource, the Smart Health Checks profile and the conformance expectations for the AllergyIntolerance resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -119,10 +119,10 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "category"
 * rest.resource[=].type = #Condition
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+* rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the Condition resource, the AU Core profile and the conformance expectations for the Condition resource."
+* rest.resource[=].documentation = "The server **SHALL** support the Condition resource, the Smart Health Checks profile and the conformance expectations for the Condition resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -185,10 +185,10 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #Immunization
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
+* rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the Immunization resource, the AU Core profile and the conformance expectations for the Immunization resource."
+* rest.resource[=].documentation = "The server **SHALL** support the Immunization resource, the Smart Health Checks profile and the conformance expectations for the Immunization resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -244,10 +244,10 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #MedicationStatement
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+* rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHOULD
-* rest.resource[=].documentation = "The server **SHALL** support the MedicationStatement resource, the AU Core profile and the conformance expectations for the MedicationStatement resource."
+* rest.resource[=].documentation = "The server **SHALL** support the MedicationStatement resource, the Smart Health Checks profile and the conformance expectations for the MedicationStatement resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -317,31 +317,34 @@ The client **SHALL** support this method."
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 
 * rest.resource[=].type = #Observation
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the Observation resource, the AU Core profiles listed and the conformance expectations for the Observation resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
+* rest.resource[=].documentation = "The server **SHALL** support the Observation resource, the Smart Health Checks profiles listed and the conformance expectations for the Observation resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -614,8 +617,8 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].type = #AllergyIntolerance
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
-* rest.resource[=].documentation = "The client supports the AllergyIntolerance resource, the AU Core profile and the conformance expectations for the AllergyIntolerance resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+* rest.resource[=].documentation = "The client supports the AllergyIntolerance resource, the Smart Health Checks profile and the conformance expectations for the AllergyIntolerance resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
@@ -638,8 +641,8 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "category"
 * rest.resource[=].type = #Condition
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
-* rest.resource[=].documentation = "The client supports the Condition resource, the AU Core profile and the conformance expectations for the Condition resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+* rest.resource[=].documentation = "The client supports the Condition resource, the Smart Health Checks and the conformance expectations for the Condition resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
@@ -675,8 +678,8 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #Immunization
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-* rest.resource[=].documentation = "The client supports the Immunization resource, the AU Core profile and the conformance expectations for the Immunization resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+* rest.resource[=].documentation = "The client supports the Immunization resource, the Smart Health Checks profile and the conformance expectations for the Immunization resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
@@ -707,8 +710,8 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #MedicationStatement
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
-* rest.resource[=].documentation = "The client supports the MedicationStatement resource, the AU Core profile and the conformance expectations for the MedicationStatement resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+* rest.resource[=].documentation = "The client supports the MedicationStatement resource, the Smart Health Checks profile and the conformance expectations for the MedicationStatement resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
@@ -755,15 +758,16 @@ The client **SHALL** support this method."
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 
 * rest.resource[=].type = #Observation
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
-* rest.resource[=].documentation = "The client supports the Observation resource, the AU Core profiles listed and the conformance expectations for the Observation resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+* rest.resource[=].documentation = "The client supports the Observation resource, the Smart Health Checks profiles listed and the conformance expectations for the Observation resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 //* rest.resource[=].conditionalCreate = true
