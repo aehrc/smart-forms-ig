@@ -91,7 +91,7 @@ Description: "Date shall be at least to day or, if not available, the Data Absen
 Profile: SmartHealthCheckHeartRhythm
 Parent: Observation
 Id: SHCHeartRhythm
-Title: "Smart Health Check Heart Rhythm"
+Title: "Smart Health Checks Heart Rhythm"
 Description: "This profile sets the minimum expectations for an Observation resource to record heart rhythm observations. It is used to represent heart rhythm data captured during a First Nations Health Check that can be used to record the observation in a clinical record."
 
 * . ^short = "Heart Rhythm"
@@ -177,7 +177,7 @@ Description: "This extension is used to extend the Template Extract Extension to
 Profile: SmartHealthCheckAllergyIntolerance
 Parent: $au-core-allergyintolerance
 Id: SHCAllergyIntolerance
-Title: "Smart Health Check Allergy Intolerance"
+Title: "Smart Health Checks AllergyIntolerance"
 Description: "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks."
 
 * id MS
@@ -206,7 +206,7 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 Profile: SmartHealthCheckCondition
 Parent: $au-core-condition
 Id: SHCCondition
-Title: "Smart Health Check Condition"
+Title: "Smart Health Checks Condition"
 Description: "This profile sets the minimum expectations for a Condition resource to record, search and save condition information when used within Smart Health Checks."
 
 * id MS
@@ -240,7 +240,7 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 Profile: SmartHealthCheckMedicationStatement
 Parent: $au-core-medicationstatement
 Id: SHCMedicationStatement
-Title: "Smart Health Check Medication Statement"
+Title: "Smart Health Checks MedicationStatement"
 Description: "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks."
 
 * id MS
@@ -273,7 +273,7 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 Profile: SmartHealthCheckImmunization
 Parent: $au-core-immunization
 Id: SHCImmunization
-Title: "Smart Health Check Immunization"
+Title: "Smart Health Checks Immunization"
 Description: "This profile sets the minimum expectations for an Immunization resource to record, search and save immunization information when used within Smart Health Checks."
 
 * status MS
@@ -301,7 +301,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 Profile: SmartHealthCheckBloodPressure
 Parent: $au-core-bloodpressure
 Id: SHCBloodPressure
-Title: "Smart Health Check Blood Pressure"
+Title: "Smart Health Checks Blood Pressure"
 Description: "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks."
 
 * status MS
@@ -334,7 +334,7 @@ Description: "This profile sets the minimum expectations for a Blood Pressure re
 Profile: SmartHealthCheckSmokingStatus
 Parent: $au-core-smokingstatus
 Id: SHCSmokingStatus
-Title: "Smart Health Check Smoking Status"
+Title: "Smart Health Checks Smoking Status"
 Description: "This profile sets the minimum expectations for a Smoking Status resource to record, search and save smoking status information when used within Smart Health Checks."
 
 * status MS
@@ -364,7 +364,7 @@ Description: "This profile sets the minimum expectations for a Smoking Status re
 Profile: SmartHealthCheckBodyHeight
 Parent: $au-core-bodyheight
 Id: SHCBodyHeight
-Title: "Smart Health Check Body Height"
+Title: "Smart Health Checks Body Height"
 Description: "This profile sets the minimum expectations for a Body Height resource to record, search and save body height information when used within Smart Health Checks."
 
 * status MS
@@ -403,7 +403,7 @@ Description: "This profile sets the minimum expectations for a Body Height resou
 Profile: SmartHealthCheckBodyWeight
 Parent: $au-core-bodyweight 
 Id: SHCBodyWeight
-Title: "Smart Health Check Body Weight"
+Title: "Smart Health Checks Body Weight"
 Description: "This profile sets the minimum expectations for a Body Weight resource to record, search and save body weight information when used within Smart Health Checks."
 
 * status MS
@@ -442,7 +442,7 @@ Description: "This profile sets the minimum expectations for a Body Weight resou
 Profile: SmartHealthCheckHeadCircumference 
 Parent: $au-core-headcircum
 Id: SHCHeadCircumference
-Title: "Smart Health Check Head Circumference"
+Title: "Smart Health Checks Head Circumference"
 Description: "This profile sets the minimum expectations for a Head Circumference resource to record, search and save head circumference information when used within Smart Health Checks."
 
 * status MS
@@ -481,7 +481,7 @@ Description: "This profile sets the minimum expectations for a Head Circumferenc
 Profile: SmartHealthCheckWaistCircumference
 Parent: $au-core-waistcircum
 Id: SHCWaistCircumference
-Title: "Smart Health Check Waist Circumference"
+Title: "Smart Health Checks Waist Circumference"
 Description: "This profile sets the minimum expectations for a Waist Circumference resource to record, search and save waist circumference information when used within Smart Health Checks."
 
 * status MS
@@ -520,7 +520,7 @@ Description: "This profile sets the minimum expectations for a Waist Circumferen
 Profile: SmartHealthCheckHeartRate
 Parent: $au-core-heartrate
 Id: SHCHeartRate
-Title: "Smart Health Check Heart Rate"
+Title: "Smart Health Checks Heart Rate"
 Description: "This profile sets the minimum expectations for a Heart Rate resource to record, search and save heart rate information when used within Smart Health Checks."
 
 * status MS

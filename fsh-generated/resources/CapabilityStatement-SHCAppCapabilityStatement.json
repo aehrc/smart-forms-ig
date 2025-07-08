@@ -59,9 +59,9 @@
           ],
           "type": "AllergyIntolerance",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
           ],
-          "documentation": "The client supports the AllergyIntolerance resource, the AU Core profile and the conformance expectations for the AllergyIntolerance resource.",
+          "documentation": "The client supports the AllergyIntolerance resource, the Smart Health Checks profile and the conformance expectations for the AllergyIntolerance resource.",
           "interaction": [
             {
               "code": "search-type"
@@ -100,9 +100,9 @@
           ],
           "type": "Condition",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
           ],
-          "documentation": "The client supports the Condition resource, the AU Core profile and the conformance expectations for the Condition resource.",
+          "documentation": "The client supports the Condition resource, the Smart Health Checks and the conformance expectations for the Condition resource.",
           "interaction": [
             {
               "code": "search-type"
@@ -159,9 +159,9 @@
           ],
           "type": "Immunization",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
           ],
-          "documentation": "The client supports the Immunization resource, the AU Core profile and the conformance expectations for the Immunization resource.",
+          "documentation": "The client supports the Immunization resource, the Smart Health Checks profile and the conformance expectations for the Immunization resource.",
           "interaction": [
             {
               "code": "search-type"
@@ -218,9 +218,9 @@
           ],
           "type": "MedicationStatement",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
           ],
-          "documentation": "The client supports the MedicationStatement resource, the AU Core profile and the conformance expectations for the MedicationStatement resource.",
+          "documentation": "The client supports the MedicationStatement resource, the Smart Health Checks profile and the conformance expectations for the MedicationStatement resource.",
           "interaction": [
             {
               "code": "search-type"
@@ -277,16 +277,17 @@
           ],
           "type": "Observation",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight",
             "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum|0.2.2-preview",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
           ],
-          "documentation": "The client supports the Observation resource, the AU Core profiles listed and the conformance expectations for the Observation resource.",
+          "documentation": "The client supports the Observation resource, the Smart Health Checks profiles listed and the conformance expectations for the Observation resource.",
           "interaction": [
             {
               "code": "search-type"
