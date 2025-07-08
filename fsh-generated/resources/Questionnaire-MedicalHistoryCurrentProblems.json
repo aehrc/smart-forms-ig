@@ -5,7 +5,8 @@
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
     ]
   },
   "item": [
@@ -193,7 +194,7 @@
                   "valueExpression": {
                     "name": "ConditionRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
+                    "expression": "%Condition.entry.resource.where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
                   }
                 },
                 {
@@ -703,6 +704,10 @@
                   }
                 ]
               }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Clinical status"
             }
           ]
         },
@@ -731,6 +736,10 @@
                   }
                 ]
               }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Abatement date"
             }
           ]
         }
@@ -811,11 +820,10 @@
       "valueString": "Condition"
     },
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "Condition",
-        "language": "application/x-fhir-query",
-        "expression": "Condition?patient={{%patient.id}}"
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
       }
     }
   ],

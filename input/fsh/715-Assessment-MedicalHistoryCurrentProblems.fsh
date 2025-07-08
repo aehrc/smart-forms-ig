@@ -61,17 +61,17 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "Condition"
 
-// fhirpath variables
+//R5 preadoption extensions
 * extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "Condition"
-    * language = #application/x-fhir-query
-    * expression = "Condition?patient={{%patient.id}}"
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
 * url = "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems"
 * name = "MedicalHistoryCurrentProblems"
 * title = "Aboriginal and Torres Strait Islander Health Check - Medical History"
@@ -156,7 +156,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext][+].valueExpression
         * name = "ConditionRepeat"
         * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
+        * expression = "%Condition.entry.resource.where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
       * extension[TemplateExtractExtensionExtended][+]
         * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
         * extension[resourceId][+].valueString = "item.where(linkId='conditionId').answer.value"

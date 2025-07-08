@@ -3,8 +3,7 @@
   "id": "AssemblyInstructions",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
     ]
   },
   "item": [
@@ -2246,7 +2245,7 @@
       "valueExpression": {
         "name": "Condition",
         "language": "application/x-fhir-query",
-        "expression": "Condition?patient={{%patient.id}}"
+        "expression": "Condition?patient={{%patient.id}}&category=http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item"
       }
     },
     {
@@ -2255,6 +2254,13 @@
         "name": "ObsBloodPressure",
         "language": "application/x-fhir-query",
         "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
       }
     },
     {

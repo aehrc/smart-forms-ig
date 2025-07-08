@@ -5,7 +5,8 @@
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
     ]
   },
   "item": [
@@ -192,7 +193,7 @@
               "valueExpression": {
                 "name": "ImmunizationRepeat",
                 "language": "text/fhirpath",
-                "expression": "%Immunization.entry.resource.where(status='completed')"
+                "expression": "%Immunization.entry.resource"
               }
             }
           ],
@@ -695,7 +696,14 @@
       "valueExpression": {
         "name": "Immunization",
         "language": "application/x-fhir-query",
-        "expression": "Immunization?patient={{%patient.id}}"
+        "expression": "Immunization?patient={{%patient.id}}&status=completed"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
       }
     }
   ],

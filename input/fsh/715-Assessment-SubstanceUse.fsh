@@ -65,9 +65,17 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * language = #application/x-fhir-query
     * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
 * url = "http://www.health.gov.au/assessments/mbs/715/SubstanceUse"
 * name = "SubstanceUse"
 * title = "Aboriginal and Torres Strait Islander Health Check - Substance Use"
@@ -126,7 +134,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * text = "Last status"
             * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
               * language = #text/fhirpath
-              * expression = "iif(%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').empty() = true, 'Not available', %ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.effective.toDate().toString() + ')')"
+              * expression = "iif(%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').empty(), 'Not available', %ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString() + ')')"
           * type = #display
           * repeats = false
         * item[+]

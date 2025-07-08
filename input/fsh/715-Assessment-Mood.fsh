@@ -54,9 +54,15 @@ Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander H
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715/Mood"
 * name = "Mood"
 * title = "Aboriginal and Torres Strait Islander Health Check - Mood"

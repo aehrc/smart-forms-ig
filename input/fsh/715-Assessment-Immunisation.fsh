@@ -63,12 +63,19 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
   * valueExpression
     * name = "Immunization"
     * language = #application/x-fhir-query
-    * expression = "Immunization?patient={{%patient.id}}"
+    * expression = "Immunization?patient={{%patient.id}}&status=completed"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
 * url = "http://www.health.gov.au/assessments/mbs/715/Immunisation"
 * name = "Immunisation"
 * title = "Aboriginal and Torres Strait Islander Health Check - Immunisation"
@@ -152,7 +159,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "ImmunizationRepeat"
       * language = #text/fhirpath
-      * expression = "%Immunization.entry.resource.where(status='completed')"
+      * expression = "%Immunization.entry.resource"
     * linkId = "vaccinesprevious"
     * text = "Vaccines previously given"
     * type = #group

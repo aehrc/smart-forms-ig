@@ -6,12 +6,6 @@
   "title": "Smart Health Checks Medication",
   "description": "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
   "url": "https://smartforms.csiro.au/ig/ValueSet/smarthealthchecks-medication",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
-      "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
-    ]
-  },
   "experimental": false,
   "compose": {
     "include": [

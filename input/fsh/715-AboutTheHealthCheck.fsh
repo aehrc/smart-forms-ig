@@ -69,6 +69,13 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
     * language = #application/x-fhir-query
     * expression = "QuestionnaireResponse?_count=1&_sort=-authored&patient={{%patient.id}}"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
@@ -145,10 +152,10 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toDate()"
+      * expression = "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
     * linkId = "01418489-1ec4-4c3b-b96a-7c14c3e21cfe"
     * text = "Date of last completed health check"
-    * type = #date
+    * type = #dateTime
     * repeats = false
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression

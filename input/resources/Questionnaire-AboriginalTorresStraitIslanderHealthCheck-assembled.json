@@ -1,11 +1,6 @@
 {
     "resourceType": "Questionnaire",
     "id": "AboriginalTorresStraitIslanderHealthCheck",
-    "meta": {
-        "profile": [
-            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-        ]
-    },
     "contained": [
         {
             "resourceType": "ValueSet",
@@ -1239,6 +1234,10 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Clinical status"
                         }
                     ]
                 },
@@ -1267,6 +1266,10 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Abatement date"
                         }
                     ]
                 }
@@ -1492,6 +1495,74 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Status"
+                        }
+                    ]
+                },
+                {
+                    "name": "operation",
+                    "part": [
+                        {
+                            "name": "type",
+                            "valueCode": "replace"
+                        },
+                        {
+                            "name": "path",
+                            "valueString": "MedicationStatement.note[0].text"
+                        },
+                        {
+                            "name": "name",
+                            "valueString": "text"
+                        },
+                        {
+                            "name": "value",
+                            "_valueMarkdown": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                                        "valueString": "item.where(linkId='regularmedications-summary-current-comment').answer.value.first()"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Comment"
+                        }
+                    ]
+                },
+                {
+                    "name": "operation",
+                    "part": [
+                        {
+                            "name": "type",
+                            "valueCode": "replace"
+                        },
+                        {
+                            "name": "path",
+                            "valueString": "MedicationStatement.dosage[0].text"
+                        },
+                        {
+                            "name": "name",
+                            "valueString": "text"
+                        },
+                        {
+                            "name": "value",
+                            "_valueString": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                                        "valueString": "item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Dosage"
                         }
                     ]
                 }
@@ -1625,6 +1696,42 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Clinical status"
+                        }
+                    ]
+                },
+                {
+                    "name": "operation",
+                    "part": [
+                        {
+                            "name": "type",
+                            "valueCode": "replace"
+                        },
+                        {
+                            "name": "path",
+                            "valueString": "AllergyIntolerance.note[0].text"
+                        },
+                        {
+                            "name": "name",
+                            "valueString": "text"
+                        },
+                        {
+                            "name": "value",
+                            "_valueMarkdown": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                                        "valueString": "item.where(linkId='allergysummary-comment').answer.value.first()"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "pathLabel",
+                            "valueString": "Comment"
                         }
                     ]
                 }
@@ -2174,6 +2281,86 @@
             ]
         },
         {
+            "resourceType": "ValueSet",
+            "id": "heart-rhythm-1",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+                ]
+            },
+            "url": "https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1",
+            "name": "HeartRythym",
+            "title": "Heart Rhythm",
+            "status": "draft",
+            "experimental": false,
+            "description": "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual.",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "concept": [
+                            {
+                                "code": "933506231000036108",
+                                "display": "Regular heart rhythm"
+                            },
+                            {
+                                "code": "361137007",
+                                "display": "Irregular heart rhythm"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7",
+                "timestamp": "2025-06-27T12:16:28+10:00",
+                "offset": 0,
+                "parameter": [
+                    {
+                        "name": "displayLanguage",
+                        "valueCode": "en-US"
+                    },
+                    {
+                        "name": "count",
+                        "valueInteger": 1000
+                    },
+                    {
+                        "name": "offset",
+                        "valueInteger": 0
+                    },
+                    {
+                        "name": "excludeNested",
+                        "valueBoolean": false
+                    },
+                    {
+                        "name": "used-valueset",
+                        "valueUri": "null"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "933506231000036108",
+                        "display": "Regular heart rhythm"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "361137007",
+                        "display": "Irregular heart rhythm"
+                    }
+                ]
+            }
+        },
+        {
             "resourceType": "Observation",
             "id": "BodyHeightTemplate",
             "meta": {
@@ -2656,7 +2843,7 @@
             "valueExpression": {
                 "name": "Condition",
                 "language": "application/x-fhir-query",
-                "expression": "Condition?patient={{%patient.id}}"
+                "expression": "Condition?patient={{%patient.id}}&category=http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item"
             }
         },
         {
@@ -2665,6 +2852,13 @@
                 "name": "ObsBloodPressure",
                 "language": "application/x-fhir-query",
                 "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+            "valueCoding": {
+                "system": "http://hl7.org/fhir/version-algorithm",
+                "code": "semver"
             }
         },
         {
@@ -3295,17 +3489,9 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
                     "valueExpression": {
-                        "name": "Condition",
-                        "language": "application/x-fhir-query",
-                        "expression": "Condition?patient={{%patient.id}}"
-                    }
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
-                    "valueExpression": {
                         "name": "MedicationStatement",
                         "language": "application/x-fhir-query",
-                        "expression": "MedicationStatement?patient={{%patient.id}}"
+                        "expression": "MedicationStatement?patient={{%patient.id}}&status=active"
                     }
                 },
                 {
@@ -3329,7 +3515,7 @@
                     "valueExpression": {
                         "name": "Immunization",
                         "language": "application/x-fhir-query",
-                        "expression": "Immunization?patient={{%patient.id}}"
+                        "expression": "Immunization?patient={{%patient.id}}&status=completed"
                     }
                 },
                 {
@@ -3563,13 +3749,13 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toDate()"
+                                        "expression": "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
                                     }
                                 }
                             ],
                             "linkId": "01418489-1ec4-4c3b-b96a-7c14c3e21cfe",
                             "text": "Date of last completed health check",
-                            "type": "date",
+                            "type": "dateTime",
                             "repeats": false
                         },
                         {
@@ -3984,8 +4170,8 @@
                                 {
                                     "valueCoding": {
                                         "system": "http://snomed.info/sct",
-                                        "code": "413817003",
-                                        "display": "Child day care centre"
+                                        "code": "224848004",
+                                        "display": "Early learning centre"
                                     }
                                 }
                             ]
@@ -5887,7 +6073,7 @@
                                             "valueExpression": {
                                                 "name": "ConditionRepeat",
                                                 "language": "text/fhirpath",
-                                                "expression": "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
+                                                "expression": "%Condition.entry.resource.where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
                                             }
                                         },
                                         {
@@ -6100,18 +6286,16 @@
                     ]
                 },
                 {
-                    "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
-                    "_linkId": {
-                        "extension": [
-                            {
-                                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
-                                "valueExpression": {
-                                    "language": "text/fhirpath",
-                                    "expression": "%age.exists()"
-                                }
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                            "valueExpression": {
+                                "language": "text/fhirpath",
+                                "expression": "%age.exists()"
                             }
-                        ]
-                    },
+                        }
+                    ],
+                    "linkId": "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a",
                     "text": "Regular medications",
                     "type": "group",
                     "repeats": false,
@@ -6216,7 +6400,7 @@
                                             "valueExpression": {
                                                 "name": "MedicationStatementRepeat",
                                                 "language": "text/fhirpath",
-                                                "expression": "%MedicationStatement.entry.resource.where(status='active')"
+                                                "expression": "%MedicationStatement.entry.resource"
                                             }
                                         },
                                         {
@@ -6346,8 +6530,8 @@
                                             ],
                                             "linkId": "regularmedications-summary-current-dosage",
                                             "text": "Dosage",
-                                            "type": "string",
-                                            "repeats": true
+                                            "type": "text",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -6389,8 +6573,8 @@
                                             ],
                                             "linkId": "regularmedications-summary-current-comment",
                                             "text": "Comment",
-                                            "type": "string",
-                                            "repeats": true
+                                            "type": "text",
+                                            "repeats": false
                                         }
                                     ]
                                 },
@@ -6435,8 +6619,8 @@
                                         {
                                             "linkId": "regularmedications-summary-new-dosage",
                                             "text": "Dosage",
-                                            "type": "string",
-                                            "repeats": true
+                                            "type": "text",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -6461,7 +6645,7 @@
                                         {
                                             "linkId": "regularmedications-summary-new-comment",
                                             "text": "Comment",
-                                            "type": "string",
+                                            "type": "text",
                                             "repeats": false
                                         }
                                     ]
@@ -6846,13 +7030,13 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%AllergyIntoleranceRepeat.note.text"
+                                                        "expression": "%AllergyIntoleranceRepeat.note[0].text"
                                                     }
                                                 }
                                             ],
                                             "linkId": "allergysummary-comment",
                                             "text": "Comment",
-                                            "type": "string",
+                                            "type": "text",
                                             "repeats": false
                                         }
                                     ]
@@ -6919,7 +7103,7 @@
                                         {
                                             "linkId": "allergynew-comment",
                                             "text": "Comment",
-                                            "type": "string",
+                                            "type": "text",
                                             "repeats": false
                                         }
                                     ]
@@ -11852,7 +12036,7 @@
                                                                 "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                                 "valueExpression": {
                                                                     "language": "text/fhirpath",
-                                                                    "expression": "iif(%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').empty() = true, 'Not available', %ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.effective.toDate().toString() + ')')"
+                                                                    "expression": "iif(%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').empty(), 'Not available', %ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                                 }
                                                             }
                                                         ]
@@ -14578,7 +14762,7 @@
                                     "valueExpression": {
                                         "name": "ImmunizationRepeat",
                                         "language": "text/fhirpath",
-                                        "expression": "%Immunization.entry.resource.where(status='completed')"
+                                        "expression": "%Immunization.entry.resource"
                                     }
                                 }
                             ],
@@ -14961,7 +15145,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15048,7 +15232,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15126,7 +15310,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyWeight.entry.resource.value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyWeight.entry.resource.where(status='final').value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15213,7 +15397,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true or %ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', (%ObsBodyWeight.entry.resource.value.value/((%ObsBodyHeight.entry.resource.value.value/100).power(2))).round(1).toString() + ' kg/m2')"
+                                                            "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty() or %ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', (%ObsBodyWeight.entry.resource.where(status='final').value.value/((%ObsBodyHeight.entry.resource.where(status='final').value.value/100).power(2))).round(1).toString() + ' kg/m2')"
                                                         }
                                                     }
                                                 ]
@@ -15292,7 +15476,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsHeadCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsHeadCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsHeadCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeadCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15379,7 +15563,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsWaistCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsWaistCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsWaistCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsWaistCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15450,7 +15634,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsHeartRate.entry.resource.value.value.empty() = true, 'Not available', %ObsHeartRate.entry.resource.value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsHeartRate.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeartRate.entry.resource.where(status='final').value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15528,7 +15712,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().empty() = true, 'Not available', %ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().empty(), 'Not available', %ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]
@@ -15566,22 +15750,7 @@
                                             "text": "New result",
                                             "type": "choice",
                                             "repeats": false,
-                                            "answerOption": [
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://snomed.info/sct",
-                                                        "code": "271636001",
-                                                        "display": "Pulse regular"
-                                                    }
-                                                },
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://snomed.info/sct",
-                                                        "code": "61086009",
-                                                        "display": "Pulse irregular"
-                                                    }
-                                                }
-                                            ]
+                                            "answerValueSet": "#heart-rhythm-1"
                                         },
                                         {
                                             "linkId": "obs-heartrhythm-newdate",
@@ -15634,7 +15803,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.empty() = true or %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.empty() = true, 'Not available', %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.empty() or %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.empty(), 'Not available', %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                                                         }
                                                     }
                                                 ]

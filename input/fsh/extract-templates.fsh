@@ -231,6 +231,20 @@ Usage: #inline
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Clinical status"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "AllergyIntolerance.note[0].text"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "text"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='allergysummary-comment').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Comment"
 
 Instance:   ImmunizationTemplate
 InstanceOf: Immunization
@@ -283,6 +297,8 @@ Usage: #inline
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Clinical status"
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #replace
@@ -293,6 +309,8 @@ Usage: #inline
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueDateTime.extension[=].valueString = "item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.toDateTime()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Abatement date"
 
 
 Instance:   MedicationStatementTemplate
@@ -338,3 +356,31 @@ Usage: #inline
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueCode.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-status').answer.value.code"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Status"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "MedicationStatement.note[0].text"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "text"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-comment').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Comment"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "MedicationStatement.dosage[0].text"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "text"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Dosage"
+
+

@@ -5,7 +5,8 @@
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
     ]
   },
   "item": [
@@ -2345,6 +2346,13 @@
         "name": "PostalAddress",
         "language": "text/fhirpath",
         "expression": "%patient.address.where(type='postal')"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
       }
     }
   ],

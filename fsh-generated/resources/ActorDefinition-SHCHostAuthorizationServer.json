@@ -1,0 +1,12 @@
+{
+  "resourceType": "ActorDefinition",
+  "id": "SHCHostAuthorizationServer",
+  "url": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostAuthorizationServer",
+  "description": "The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.",
+  "name": "SHCHostAuthorizationServer",
+  "title": "SHC Host Authorization Server",
+  "status": "draft",
+  "experimental": false,
+  "type": "system",
+  "documentation": "The SHC Host Authorization Server: \n- **SHALL** respond to [Authorization Request](https://hl7.org/fhir/smart-app-launch/app-launch.html#obtain-authorization-code)\n- **SHALL** respond to [Token Request](https://hl7.org/fhir/smart-app-launch/app-launch.html#obtain-access-token)\n- **SHALL** support SMART App Launch scopes: \n  - openid fhirUser\n  - launch\n  - user/Practitioner.r\n  - patient/Patient.r\n  - patient/*.rs\n  - user/QuestionnaireResponse.crus\n  - ..."
+}

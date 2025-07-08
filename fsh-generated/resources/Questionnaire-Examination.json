@@ -5,7 +5,8 @@
     "profile": [
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render",
       "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular",
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
     ]
   },
   "item": [
@@ -136,7 +137,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -223,7 +224,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -301,7 +302,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyWeight.entry.resource.value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyWeight.entry.resource.where(status='final').value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -388,7 +389,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true or %ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', (%ObsBodyWeight.entry.resource.value.value/((%ObsBodyHeight.entry.resource.value.value/100).power(2))).round(1).toString() + ' kg/m2')"
+                          "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty() or %ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', (%ObsBodyWeight.entry.resource.where(status='final').value.value/((%ObsBodyHeight.entry.resource.where(status='final').value.value/100).power(2))).round(1).toString() + ' kg/m2')"
                         }
                       }
                     ]
@@ -467,7 +468,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsHeadCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsHeadCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsHeadCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeadCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -554,7 +555,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsWaistCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsWaistCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsWaistCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsWaistCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -625,7 +626,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsHeartRate.entry.resource.value.value.empty() = true, 'Not available', %ObsHeartRate.entry.resource.value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsHeartRate.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeartRate.entry.resource.where(status='final').value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -703,7 +704,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().empty() = true, 'Not available', %ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().empty(), 'Not available', %ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -741,22 +742,7 @@
                   "text": "New result",
                   "type": "choice",
                   "repeats": false,
-                  "answerOption": [
-                    {
-                      "valueCoding": {
-                        "code": "271636001",
-                        "system": "http://snomed.info/sct",
-                        "display": "Pulse regular"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "code": "61086009",
-                        "system": "http://snomed.info/sct",
-                        "display": "Pulse irregular"
-                      }
-                    }
-                  ]
+                  "answerValueSet": "#heart-rhythm-1"
                 },
                 {
                   "linkId": "obs-heartrhythm-newdate",
@@ -818,7 +804,7 @@
                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                         "valueExpression": {
                           "language": "text/fhirpath",
-                          "expression": "iif(%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.empty() = true or %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.empty() = true, 'Not available', %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.effective.toDate().toString() + ')')"
+                          "expression": "iif(%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.empty() or %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.empty(), 'Not available', %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString() + ')')"
                         }
                       }
                     ]
@@ -1028,6 +1014,80 @@
     }
   ],
   "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "heart-rhythm-1",
+      "status": "draft",
+      "name": "HeartRythym",
+      "title": "Heart Rhythm",
+      "description": "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual.",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1",
+      "experimental": false,
+      "expansion": {
+        "identifier": "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7",
+        "timestamp": "2025-06-27T12:16:28+10:00",
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "displayLanguage",
+            "valueCode": "en-US"
+          },
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
+          },
+          {
+            "name": "used-valueset",
+            "valueUri": "null"
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+          },
+          {
+            "name": "version",
+            "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "933506231000036108",
+            "display": "Regular heart rhythm"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "361137007",
+            "display": "Irregular heart rhythm"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "933506231000036108",
+                "display": "Regular heart rhythm"
+              },
+              {
+                "code": "361137007",
+                "display": "Irregular heart rhythm"
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "resourceType": "Observation",
       "id": "BodyHeightTemplate",
@@ -1680,6 +1740,13 @@
         "name": "height",
         "language": "text/fhirpath",
         "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='obs-height-newresult').answer.value"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/version-algorithm",
+        "code": "semver"
       }
     }
   ],

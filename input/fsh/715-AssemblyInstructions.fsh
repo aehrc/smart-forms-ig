@@ -70,7 +70,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueExpression
     * name = "Condition"
     * language = #application/x-fhir-query
-    * expression = "Condition?patient={{%patient.id}}"
+    * expression = "Condition?patient={{%patient.id}}&category=http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -78,6 +78,12 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * language = #application/x-fhir-query
     * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
 
 //workaround to stop server stripping of value sets referenced as canonical
 * extension[+]
@@ -128,7 +134,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
 * url = "http://www.health.gov.au/assessments/mbs/715"
 * name = "AboriginalTorresStraitIslanderHealthCheck"
 * title = "Aboriginal and Torres Strait Islander Health Check"

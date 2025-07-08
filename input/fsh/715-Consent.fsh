@@ -55,6 +55,13 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
+
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
@@ -212,7 +219,7 @@ Description: "Consent sub-questionnaire for Aboriginal and Torres Strait Islande
     * repeats = false
     * answerOption[+].valueCoding = $SCT#257585005 "Clinic"
     * answerOption[+].valueCoding = $SCT#264362003 "Home"
-    * answerOption[+].valueCoding = $SCT#413817003 "Child day care centre" //may require more specific "Early learning centre" concept created
+    * answerOption[+].valueCoding = $SCT#224848004 "Early learning centre"
 
   * item[+]
     * linkId = "MarkComplete-30"

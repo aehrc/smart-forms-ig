@@ -3,8 +3,8 @@
   "id": "csiro.fhir.au.smartforms",
   "url": "https://smartforms.csiro.au/ig/ImplementationGuide/csiro.fhir.au.smartforms",
   "version": "0.3.0",
-  "name": "SmartForms",
-  "title": "Smart Forms",
+  "name": "SmartHealthChecks",
+  "title": "Smart Health Checks",
   "status": "draft",
   "experimental": false,
   "publisher": "AEHRC CSIRO",
@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "description": "Smart Forms FHIR Implementation Guide.",
+  "description": "The Smart Health Checks FHIR Implementation Guide supports the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.",
   "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
   "packageId": "csiro.fhir.au.smartforms",
   "license": "CC-BY-SA-4.0",
@@ -50,6 +50,12 @@
       "version": "2.2.0",
       "uri": "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch",
       "id": "hl7_fhir_uv_smart_app_launch"
+    },
+    {
+      "packageId": "hl7.fhir.uv.extensions.r4",
+      "version": "5.2.0",
+      "uri": "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+      "id": "hl7_fhir_uv_extensions_r4"
     }
   ],
   "definition": {
@@ -359,22 +365,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/au-core-medicationstatement"
-        },
-        "description": "This profile sets minimum expectations for a MedicationStatement resource to record, search, and fetch summary statements of medication use associated with a patient. It is based on the [AU Base Medication Statement](http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-medicationstatement.html) profile and identifies the *additional* mandatory core elements, extensions, vocabularies and value sets that **SHALL** be present in the MedicationStatement when conforming to this profile. It provides the floor for standards development for specific uses cases in an Australian context.",
-        "exampleBoolean": false,
-        "name": "AU Core MedicationStatement"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/au-core-relatedperson"
-        },
-        "description": "This profile sets minimum expectations for a RelatedPerson resource to record, search, and fetch basic demographics and other administrative information about individual related persons associated with a patient. It is based on the [AU Base Related Person](http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-relatedperson.html) profile and identifies the *additional* mandatory core elements, extensions, vocabularies and value sets that **SHALL** be present in the RelatedPerson resource when conforming to this profile. It provides the floor for standards development for specific uses cases in an Australian context.",
-        "exampleBoolean": false,
-        "name": "AU Core RelatedPerson"
-      },
-      {
-        "reference": {
           "reference": "ValueSet/amt-vaccine-1"
         },
         "name": "Australian Medicines Terminology Vaccine",
@@ -495,18 +485,26 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/SmartFormsApplication"
+          "reference": "ActorDefinition/SHCApp"
         },
-        "name": "Smart Forms Application",
-        "description": "This CapabilityStatement describes the capabilities of the Smart Forms Application. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
+        "name": "SHC App",
+        "description": "The SHC App is a system that a SHC Host can launch allowing a user to fill out a health check form, prepopulated with patient health information retrieved from the SHC Host FHIR Server, and writeback data collected in the form.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/SFLauncherServerAboriginalTorresStraitIslanderHealthCheck"
+          "reference": "CapabilityStatement/SHCAppCapabilityStatement"
         },
-        "name": "Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check",
-        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [Smart Forms client application](CapabilityStatement-SmartFormsApplication.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+        "name": "SHC App",
+        "description": "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHost"
+        },
+        "name": "SHC Host",
+        "description": "The SHC Host is a system that allows a user to launch the SHC App within an embedded or externally launched web browser to fill out a health check form.",
         "exampleBoolean": false
       },
       {
@@ -515,6 +513,28 @@
         },
         "name": "Smart Health Check Allergy Intolerance",
         "description": "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks.",
+
+          "reference": "ActorDefinition/SHCHostAuthorizationServer"
+        },
+        "name": "SHC Host Authorization Server",
+        "description": "The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/SHCHostFHIRServer"
+        },
+        "name": "SHC Host FHIR Server",
+        "description": "The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/SHCHostFHIRServerCapabilityStatement"
+        },
+        "name": "SHC Host FHIR Server",
+        "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [SHC App](CapabilityStatement-SHCAppCapabilityStatement.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+
         "exampleBoolean": false
       },
       {
@@ -681,6 +701,11 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "actor-definitions.html",
+          "title": "Actor Definitions",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "capability-statements.html",
           "title": "Capability Statements",
           "generation": "markdown"
@@ -688,6 +713,11 @@
         {
           "nameUrl": "downloads.html",
           "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "general-requirements.html",
+          "title": "General Requirements",
           "generation": "markdown"
         },
         {
@@ -913,11 +943,11 @@
       },
       {
         "code": "special-url",
-        "value": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+        "value": "https://healthterminologies.gov.au/fhir/ValueSet/amt-vaccine-1"
       },
       {
         "code": "special-url",
-        "value": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson"
+        "value": "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1"
       },
       {
         "code": "special-url",

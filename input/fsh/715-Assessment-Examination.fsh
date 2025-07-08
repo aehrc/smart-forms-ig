@@ -8,6 +8,7 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Examination"
 Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
+* contained[+] = heart-rhythm-1
 * contained[+] = BodyHeightTemplate
 * contained[+] = BodyHeightLengthTemplate
 * contained[+] = BodyWeightTemplate
@@ -119,10 +120,18 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * language = #text/fhirpath
     * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='obs-height-newresult').answer.value"
 
+//R5 preadoption extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * valueCoding
+    * system = "http://hl7.org/fhir/version-algorithm"
+    * code = #semver
+
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-behave"
+* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
 * url = "http://www.health.gov.au/assessments/mbs/715/Examination"
 * name = "Examination"
 * title = "Aboriginal and Torres Strait Islander Health Check - Examination"
@@ -191,7 +200,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -225,7 +234,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyHeight.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -256,7 +265,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true, 'Not available', %ObsBodyWeight.entry.resource.value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyWeight.entry.resource.where(status='final').value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -290,7 +299,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsBodyWeight.entry.resource.value.value.empty() = true or %ObsBodyHeight.entry.resource.value.value.empty() = true, 'Not available', (%ObsBodyWeight.entry.resource.value.value/((%ObsBodyHeight.entry.resource.value.value/100).power(2))).round(1).toString() + ' kg/m2')"
+            * expression = "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty() or %ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', (%ObsBodyWeight.entry.resource.where(status='final').value.value/((%ObsBodyHeight.entry.resource.where(status='final').value.value/100).power(2))).round(1).toString() + ' kg/m2')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -323,7 +332,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsHeadCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsHeadCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsHeadCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeadCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -357,7 +366,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsWaistCircumference.entry.resource.value.value.empty() = true, 'Not available', %ObsWaistCircumference.entry.resource.value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsWaistCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsWaistCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -387,7 +396,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsHeartRate.entry.resource.value.value.empty() = true, 'Not available', %ObsHeartRate.entry.resource.value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsHeartRate.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeartRate.entry.resource.where(status='final').value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -418,7 +427,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().empty() = true, 'Not available', %ObsHeartRhythm.entry.resource.value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().empty(), 'Not available', %ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
@@ -428,9 +437,8 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-heartrhythm-newresult"
         * text = "New result"
         * type = #choice
-        * repeats = false
-        * answerOption[+].valueCoding = $SCT#271636001 "Pulse regular"
-        * answerOption[+].valueCoding = $SCT#61086009 "Pulse irregular"
+        * repeats = false        
+        * answerValueSet = "#heart-rhythm-1"
       * item[+]
         * linkId = "obs-heartrhythm-newdate"
         * text = "New result date"
@@ -457,7 +465,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.empty() = true or %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.empty() = true, 'Not available', %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.effective.toDate().toString() + ')')"
+            * expression = "iif(%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.empty() or %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.empty(), 'Not available', %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString() + ')')"
         * type = #display
         * repeats = false
         * readOnly = true
