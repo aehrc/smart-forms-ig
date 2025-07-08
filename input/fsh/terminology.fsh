@@ -1436,8 +1436,7 @@ ValueSet: SmartHealthChecksMedication
 Id: smarthealthchecks-medication
 Title: "Smart Health Checks Medication"
 Description: "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details."
-* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+
 * ^experimental = false
 * include codes from system http://snomed.info/sct|http://snomed.info/sct/32506021000036107 where constraint = "^ 929360081000036101|Medicinal product pack reference set| OR ^ 929360071000036103|Medicinal product unit of use reference set| OR ^ 929360041000036105|Trade product pack reference set| OR ^ 929360031000036100|Trade product unit of use reference set| OR ^ 929360051000036108|Containered trade product pack reference set|"
 
@@ -1467,8 +1466,6 @@ ValueSet: HeartRythym
 Id: heart-rhythm-1
 Title: "Heart Rhythm"
 Description: "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual."
-* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
 * ^experimental = false  
 * ^expansion.identifier = "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7"
 * ^expansion.timestamp = "2025-06-27T12:16:28+10:00"

@@ -578,12 +578,6 @@
     {
       "resourceType": "ValueSet",
       "id": "smarthealthchecks-medication",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
-          "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
-        ]
-      },
       "status": "draft",
       "name": "SmartHealthChecksMedication",
       "title": "Smart Health Checks Medication",

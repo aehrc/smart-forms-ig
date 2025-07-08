@@ -78,7 +78,7 @@ Ontoserver is a terminology server with a FHIR API that allows the SHCA to acces
 
 ### Practice Mangement System Requirements
 
-The conformance requirements for a system launching the SHCA and exchanging patient data are described by the [Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check CapabilityStatement](CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html). This resource forms the normative requirements for integrating the Smart Health Check solution.
+The conformance requirements for a system launching the SHCA and exchanging patient data are described by the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). This resource forms the normative requirements for integrating the Smart Health Check solution.
 
 The two main capabilties required for integration are:
 1. SMART App Launch Services; and
@@ -135,7 +135,7 @@ A PMS will need to provide a FHIR compatible service that supports the requireme
 
 Fundamental requirements are defined in the [core FHIR<sup>&reg;&copy;</sup> specification]({{site.data.fhir.path}}) and Australian localisation requirements of the core FHIR<sup>&reg;&copy;</sup> specification are defined in [AU&nbsp;Core](https://hl7.org.au/fhir/core/1.0.0) and [AU&nbsp;Base](https://hl7.org.au/fhir/5.0.0). Additional detail is provided below.
 
-The PMS FHIR Server requirements are described by the [Smart Forms Launcher Server for the Aboriginal and Torres Strait Islander Health Check CapabilityStatement](CapabilityStatement-SFLauncherServerAboriginalTorresStraitIslanderHealthCheck.html). 
+The PMS FHIR Server requirements are described by the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). 
 
 A summary of the required FHIR endpoints, resources and RESTful interactions are shown below. If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precendence.
 
