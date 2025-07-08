@@ -25,10 +25,6 @@
                 "valueCode": "SHALL:populate"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
               }
@@ -302,6 +298,12 @@
           }
         ],
         "path": "AllergyIntolerance.patient"
+      },
+      {
+        "id": "AllergyIntolerance.note",
+        "path": "AllergyIntolerance.note",
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "AllergyIntolerance.note.text",

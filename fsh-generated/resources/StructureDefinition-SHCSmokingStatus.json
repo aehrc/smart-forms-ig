@@ -159,6 +159,10 @@
             "extension": [
               {
                 "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
                 "valueCode": "SHALL:process"
               },
               {
@@ -175,6 +179,10 @@
                 "valueCode": "SHALL:populate"
               },
               {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
@@ -189,8 +197,11 @@
         "id": "Observation.code.text",
         "extension": [
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          },
+          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
-            "valueBoolean": true,
             "extension": [
               {
                 "url": "code",

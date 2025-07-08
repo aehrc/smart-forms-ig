@@ -151,6 +151,10 @@
             "extension": [
               {
                 "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
                 "valueCode": "SHALL:process"
               },
               {
@@ -165,6 +169,10 @@
               {
                 "url": "code",
                 "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
               },
               {
                 "url": "actor",
@@ -215,8 +223,11 @@
         "id": "Observation.code.text",
         "extension": [
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          },
+          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
-            "valueBoolean": true,
             "extension": [
               {
                 "url": "code",
@@ -415,8 +426,11 @@
         "id": "Observation.value[x]:valueQuantity.unit",
         "extension": [
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          },
+          {
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
-            "valueBoolean": true,
             "extension": [
               {
                 "url": "code",

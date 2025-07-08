@@ -99,8 +99,8 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * . ^comment = "Heart rhythm observation using a LOINC code, a SNOMED CT code and a metric UCUM unit of measure."
 * obeys shc-heartrhythm-01
 * status MS
-* status insert obligation2Server (0, SHALL:populate, SHALL:process)
-* status insert obligation2App (1, SHALL:populate, SHALL:process)
+* status insert obligation2Server (1, SHALL:populate, SHALL:process)
+* status insert obligation2App (2, SHALL:populate, SHALL:process)
 * category MS
 * category ^slicing.discriminator[0].type = #value
 * category ^slicing.discriminator[=].path = "coding.code"
@@ -129,14 +129,14 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * code.coding[loincHeartRhythmCode].system = "http://loinc.org" (exactly)
 * code.coding[loincHeartRhythmCode].code 1..1
 * code.coding[loincHeartRhythmCode].code = #8884-9 (exactly)
-* code.coding[snomedHeartRhythmCode] insert obligationServer (0, SHALL:process)
-* code.coding[snomedHeartRhythmCode] insert obligationApp (1, SHALL:populate)
+* code.coding[snomedHeartRhythmCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[snomedHeartRhythmCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedHeartRhythmCode].system 1..1
 * code.coding[snomedHeartRhythmCode].system = "http://snomed.info/sct" (exactly)
 * code.coding[snomedHeartRhythmCode].code 1..1
 * code.coding[snomedHeartRhythmCode].code = #364074009 (exactly)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject 1.. MS
 * subject only Reference($au-core-patient)
 * subject insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
@@ -181,7 +181,7 @@ Title: "Smart Health Check Allergy Intolerance"
 Description: "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks."
 
 * id MS
-* id insert obligation2Server (0, SHALL:populate, SHALL:process)
+* id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * patient MS
 * patient insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -195,6 +195,7 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * code MS
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* note ..1 MS
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -209,7 +210,7 @@ Title: "Smart Health Check Condition"
 Description: "This profile sets the minimum expectations for a Condition resource to record, search and save condition information when used within Smart Health Checks."
 
 * id MS
-* id insert obligation2Server (0, SHALL:populate, SHALL:process)
+* id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * clinicalStatus MS
 * clinicalStatus insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -243,11 +244,11 @@ Title: "Smart Health Check Medication Statement"
 Description: "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks."
 
 * id MS
-* id insert obligation2Server (0, SHALL:populate, SHALL:process)
+* id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* status insert obligationApp (3, SHALL:populate)
 * medication[x][medicationCodeableConcept] MS
 * medication[x][medicationCodeableConcept] insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * medication[x][medicationCodeableConcept] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -256,13 +257,15 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * subject insert obligationApp (3, SHALL:populate)
 * dateAsserted MS
 * dateAsserted insert obligationServer (2, SHALL:process)
-* dateAsserted insert obligationApp (3, SHALL:populate-if-known)
+* dateAsserted insert obligationApp (3, SHALL:populate)
 * reasonCode MS
 * reasonCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * reasonCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* note ..1 MS
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* dosage ..1 MS
 * dosage.text MS
 * dosage.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * dosage.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -308,13 +311,13 @@ Description: "This profile sets the minimum expectations for a Blood Pressure re
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BPCode] MS
-* code.coding[BPCode] insert obligationServer (0, SHALL:process)
-* code.coding[BPCode] insert obligationApp (1, SHALL:populate)
+* code.coding[BPCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[BPCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedBPCode] MS
 * code.coding[snomedBPCode] insert obligationServer (0, SHALL:process)
 * code.coding[snomedBPCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
@@ -344,10 +347,10 @@ Description: "This profile sets the minimum expectations for a Smoking Status re
 * code.coding insert obligationServer (0, SHALL:process)
 * code.coding insert obligationApp (1, SHALL:populate)
 * code.coding[loincSmokingStatus] MS
-* code.coding[loincSmokingStatus] insert obligationServer (0, SHALL:process)
-* code.coding[loincSmokingStatus] insert obligationApp (1, SHALL:populate)
+* code.coding[loincSmokingStatus] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[loincSmokingStatus] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
@@ -371,13 +374,13 @@ Description: "This profile sets the minimum expectations for a Body Height resou
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BodyHeightCode] MS
-* code.coding[BodyHeightCode] insert obligationServer (0, SHALL:process)
-* code.coding[BodyHeightCode] insert obligationApp (1, SHALL:populate)
+* code.coding[BodyHeightCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[BodyHeightCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedBodyHeightCode] MS
 * code.coding[snomedBodyHeightCode] insert obligationServer (0, SHALL:process)
 * code.coding[snomedBodyHeightCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
@@ -410,13 +413,13 @@ Description: "This profile sets the minimum expectations for a Body Weight resou
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BodyWeightCode] MS
-* code.coding[BodyWeightCode] insert obligationServer (0, SHALL:process)
-* code.coding[BodyWeightCode] insert obligationApp (1, SHALL:populate)
+* code.coding[BodyWeightCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[BodyWeightCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedBodyWeightCode] MS
 * code.coding[snomedBodyWeightCode] insert obligationServer (0, SHALL:process)
 * code.coding[snomedBodyWeightCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
@@ -443,19 +446,19 @@ Title: "Smart Health Check Head Circumference"
 Description: "This profile sets the minimum expectations for a Head Circumference resource to record, search and save head circumference information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (0, SHALL:populate, SHALL:process)
-* status insert obligation2App (1, SHALL:populate, SHALL:process)
+* status insert obligation2Server (1, SHALL:populate, SHALL:process)
+* status insert obligation2App (2, SHALL:populate, SHALL:process)
 * category[VSCat] MS
 * category[VSCat] insert obligationServer (0, SHALL:process)
 * category[VSCat] insert obligationApp (1, SHALL:populate)
 * code.coding[HeadCircumCode] MS
-* code.coding[HeadCircumCode] insert obligationServer (0, SHALL:process)
-* code.coding[HeadCircumCode] insert obligationApp (1, SHALL:populate)
+* code.coding[HeadCircumCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[HeadCircumCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedHeadCircumCode] MS
 * code.coding[snomedHeadCircumCode] insert obligationServer (0, SHALL:process)
 * code.coding[snomedHeadCircumCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (1, SHALL:populate)
@@ -466,8 +469,8 @@ Description: "This profile sets the minimum expectations for a Head Circumferenc
 * valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (1, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (2, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
@@ -488,13 +491,13 @@ Description: "This profile sets the minimum expectations for a Waist Circumferen
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[loincWaistCircumCode] MS
-* code.coding[loincWaistCircumCode] insert obligationServer (0, SHALL:process)
-* code.coding[loincWaistCircumCode] insert obligationApp (1, SHALL:populate)
+* code.coding[loincWaistCircumCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[loincWaistCircumCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedWaistCircumCode] MS
 * code.coding[snomedWaistCircumCode] insert obligationServer (0, SHALL:process)
 * code.coding[snomedWaistCircumCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
@@ -505,8 +508,8 @@ Description: "This profile sets the minimum expectations for a Waist Circumferen
 * valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (1, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2App (2, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
@@ -527,13 +530,13 @@ Description: "This profile sets the minimum expectations for a Heart Rate resour
 * category[VSCat] insert obligationServer (2, SHALL:process)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[HeartRateCode] MS
-* code.coding[HeartRateCode] insert obligationServer (0, SHALL:process)
-* code.coding[HeartRateCode] insert obligationApp (1, SHALL:populate)
+* code.coding[HeartRateCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[HeartRateCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedHeartRateCode] MS
 * code.coding[snomedHeartRateCode] insert obligationServer (0, SHALL:process)
 * code.coding[snomedHeartRateCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
-* code.text insert obligationApp (0, SHALL:populate)
+* code.text insert obligationApp (1, SHALL:populate)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)

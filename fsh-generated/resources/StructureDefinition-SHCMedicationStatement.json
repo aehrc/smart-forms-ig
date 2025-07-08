@@ -25,10 +25,6 @@
                 "valueCode": "SHALL:populate"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
               }
@@ -85,7 +81,7 @@
             "extension": [
               {
                 "url": "code",
-                "valueCode": "SHALL:populate"
+                "valueCode": "SHALL:populate-if-known"
               },
               {
                 "url": "code",
@@ -103,10 +99,6 @@
               {
                 "url": "code",
                 "valueCode": "SHALL:populate"
-              },
-              {
-                "url": "code",
-                "valueCode": "SHALL:process"
               },
               {
                 "url": "actor",
@@ -273,7 +265,7 @@
             "extension": [
               {
                 "url": "code",
-                "valueCode": "SHALL:populate-if-known"
+                "valueCode": "SHALL:populate"
               },
               {
                 "url": "actor",
@@ -351,6 +343,12 @@
         "path": "MedicationStatement.reasonCode"
       },
       {
+        "id": "MedicationStatement.note",
+        "path": "MedicationStatement.note",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "MedicationStatement.note.text",
         "extension": [
           {
@@ -390,6 +388,11 @@
         ],
         "path": "MedicationStatement.note.text",
         "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage",
+        "path": "MedicationStatement.dosage",
+        "max": "1"
       },
       {
         "id": "MedicationStatement.dosage.text",
