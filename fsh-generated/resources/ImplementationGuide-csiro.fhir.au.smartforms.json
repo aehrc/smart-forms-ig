@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "description": "Smart Health Checks FHIR Implementation Guide.",
+  "description": "The Smart Health Checks FHIR Implementation Guide supports the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.",
   "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
   "packageId": "csiro.fhir.au.smartforms",
   "license": "CC-BY-SA-4.0",
@@ -50,6 +50,12 @@
       "version": "2.2.0",
       "uri": "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch",
       "id": "hl7_fhir_uv_smart_app_launch"
+    },
+    {
+      "packageId": "hl7.fhir.uv.extensions.r4",
+      "version": "5.2.0",
+      "uri": "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+      "id": "hl7_fhir_uv_extensions_r4"
     }
   ],
   "definition": {

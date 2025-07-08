@@ -6,8 +6,8 @@
 id: csiro.fhir.au.smartforms
 canonical: https://smartforms.csiro.au/ig
 name: SmartHealthChecks
-title: Smart Health Checks
-description: Smart Health Checks FHIR Implementation Guide. 
+title: Smart Health Checks 
+description: The Smart Health Checks FHIR Implementation Guide supports the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.
 status: draft # draft | active | retired | unknown
 version: 0.3.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
@@ -30,7 +30,9 @@ dependencies:
   hl7.fhir.au.base: 5.1.0-preview
   hl7.fhir.uv.sdc: current
   hl7.fhir.uv.smart-app-launch: 2.2.0
-#  hl7.fhir.uv.extensions.r5: 5.2.0
+  hl7.fhir.uv.extensions.r4: 5.2.0
+  hl7.fhir.extensions.r5: 4.0.1
+  
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
