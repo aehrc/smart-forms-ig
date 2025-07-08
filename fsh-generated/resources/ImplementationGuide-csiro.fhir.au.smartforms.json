@@ -509,6 +509,11 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/SHCAllergyIntolerance"
+        },
+        "name": "Smart Health Check Allergy Intolerance",
+        "description": "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks.",
+
           "reference": "ActorDefinition/SHCHostAuthorizationServer"
         },
         "name": "SHC Host Authorization Server",
@@ -529,14 +534,95 @@
         },
         "name": "SHC Host FHIR Server",
         "description": "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [SHC App](CapabilityStatement-SHCAppCapabilityStatement.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters.",
+
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/SmartHealthCheckHeartRhythm"
+          "reference": "StructureDefinition/SHCBloodPressure"
+        },
+        "name": "Smart Health Check Blood Pressure",
+        "description": "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCBodyHeight"
+        },
+        "name": "Smart Health Check Body Height",
+        "description": "This profile sets the minimum expectations for a Body Height resource to record, search and save body height information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCBodyWeight"
+        },
+        "name": "Smart Health Check Body Weight",
+        "description": "This profile sets the minimum expectations for a Body Weight resource to record, search and save body weight information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCCondition"
+        },
+        "name": "Smart Health Check Condition",
+        "description": "This profile sets the minimum expectations for a Condition resource to record, search and save condition information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCHeadCircumference"
+        },
+        "name": "Smart Health Check Head Circumference",
+        "description": "This profile sets the minimum expectations for a Head Circumference resource to record, search and save head circumference information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCHeartRate"
+        },
+        "name": "Smart Health Check Heart Rate",
+        "description": "This profile sets the minimum expectations for a Heart Rate resource to record, search and save heart rate information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCHeartRhythm"
         },
         "name": "Smart Health Check Heart Rhythm",
         "description": "This profile sets the minimum expectations for an Observation resource to record heart rhythm observations. It is used to represent heart rhythm data captured during a First Nations Health Check that can be used to record the observation in a clinical record.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCImmunization"
+        },
+        "name": "Smart Health Check Immunization",
+        "description": "This profile sets the minimum expectations for an Immunization resource to record, search and save immunization information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCMedicationStatement"
+        },
+        "name": "Smart Health Check Medication Statement",
+        "description": "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCSmokingStatus"
+        },
+        "name": "Smart Health Check Smoking Status",
+        "description": "This profile sets the minimum expectations for a Smoking Status resource to record, search and save smoking status information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCWaistCircumference"
+        },
+        "name": "Smart Health Check Waist Circumference",
+        "description": "This profile sets the minimum expectations for a Waist Circumference resource to record, search and save waist circumference information when used within Smart Health Checks.",
         "exampleBoolean": false
       },
       {

@@ -1,0 +1,510 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "SHCBloodPressure",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure",
+  "name": "SmartHealthCheckBloodPressure",
+  "title": "Smart Health Check Blood Pressure",
+  "status": "draft",
+  "description": "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint",
+            "valueString": "default: final"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.status"
+      },
+      {
+        "id": "Observation.category:VSCat",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.category",
+        "sliceName": "VSCat"
+      },
+      {
+        "id": "Observation.code.coding:BPCode",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.code.coding",
+        "sliceName": "BPCode",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.coding:snomedBPCode",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.code.coding",
+        "sliceName": "snomedBPCode",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code.text",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.code.text",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.subject"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.effective[x]"
+      },
+      {
+        "id": "Observation.component:SystolicBP",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.component",
+        "sliceName": "SystolicBP"
+      },
+      {
+        "id": "Observation.component:DiastolicBP",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Observation.component",
+        "sliceName": "DiastolicBP"
+      }
+    ]
+  }
+}

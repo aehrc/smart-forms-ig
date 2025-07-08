@@ -175,7 +175,7 @@ Usage:  #inline
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * effectiveDateTime.extension[=].valueString = "item.where(linkId='bp-newbp-date').answer.value.toDateTime()"
 * component[+].code.coding[+] = $LNC#8480-6
-* component[=].code.coding[=] = $SCT#271649006
+* component[=].code.coding[+] = $SCT#271649006
 * component[=].code.text = "Systolic"
 * component[=].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * component[=].valueQuantity.value.extension[=].valueString = "$this.answer.value.toDecimal()"
@@ -183,7 +183,7 @@ Usage:  #inline
 * component[=].valueQuantity.system = $UCUM
 * component[=].valueQuantity.code = #mm[Hg]
 * component[+].code.coding[+] = $LNC#8462-4
-* component[=].code.coding[=] = $SCT#271650006
+* component[=].code.coding[+] = $SCT#271650006
 * component[=].code.text = "Diastolic"
 * component[=].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * component[=].valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
