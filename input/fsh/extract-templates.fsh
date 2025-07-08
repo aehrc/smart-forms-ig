@@ -24,12 +24,12 @@ Alias: $au-core-medicationstatement = http://hl7.org.au/fhir/core/StructureDefin
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 
 Instance:   SmokingStatusTemplate
-InstanceOf: SHCSmokingStatus
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[socialHistory] = $observation-category#social-history
+* category[+] = $observation-category#social-history
 * code.coding[+] = $SCT#1747861000168109
-* code.coding[loincSmokingStatus][+] = $LNC#72166-2
+* code.coding[+] = $LNC#72166-2
 * code.text = "Smoking status"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -39,12 +39,12 @@ Usage:  #inline
 * valueCodeableConcept.coding.extension[=].valueString = "$this.answer.value"
 
 Instance:   BodyHeightLengthTemplate
-InstanceOf: SHCBodyHeight
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[BodyHeightCode] = $LNC#8302-2
-* code.coding[snomedBodyHeightCode] = $SCT#50373000
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#8302-2
+* code.coding[+] = $SCT#50373000
 * code.text = "Height"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -57,12 +57,12 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   BodyHeightTemplate
-InstanceOf: SHCBodyHeight
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[BodyHeightCode] = $LNC#8302-2
-* code.coding[snomedBodyHeightCode] = $SCT#50373000
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#8302-2
+* code.coding[+] = $SCT#50373000
 * code.text = "Height"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -76,12 +76,12 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   BodyWeightTemplate
-InstanceOf: SHCBodyWeight
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[BodyWeightCode] = $LNC#29463-7
-* code.coding[snomedBodyWeightCode] = $SCT#27113001
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#29463-7
+* code.coding[+] = $SCT#27113001
 * code.text = "Weight"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -94,12 +94,12 @@ Usage:  #inline
 * valueQuantity.code = #kg
 
 Instance:   HeadCircumferenceTemplate
-InstanceOf: SHCHeadCircumference
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[HeadCircumCode] = $LNC#9843-4
-* code.coding[snomedHeadCircumCode] = $SCT#363812007
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#9843-4
+* code.coding[+] = $SCT#363812007
 * code.text = "Head circumference"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -112,12 +112,12 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   WaistCircumferenceTemplate
-InstanceOf: SHCWaistCircumference
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[loincWaistCircumCode] = $LNC#8280-0
-* code.coding[snomedWaistCircumCode] = $SCT#276361009
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#8280-0
+* code.coding[+] = $SCT#276361009
 * code.text = "Waist circumference"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -130,12 +130,12 @@ Usage:  #inline
 * valueQuantity.code = #cm
 
 Instance:   HeartRateTemplate
-InstanceOf: SHCHeartRate
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[HeartRateCode] = $LNC#8867-4
-* code.coding[snomedHeartRateCode] = $SCT#364075005
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#8867-4
+* code.coding[+] = $SCT#364075005
 * code.text = "Heart rate"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -148,12 +148,12 @@ Usage:  #inline
 * valueQuantity.code = #/min
 
 Instance:   HeartRhythmTemplate
-InstanceOf: SHCHeartRhythm
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[vitalSignsCategory] = $observation-category#vital-signs
-* code.coding[loincHeartRhythmCode] = $LNC#8884-9
-* code.coding[snomedHeartRhythmCode] = $SCT#364074009
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#8884-9
+* code.coding[+] = $SCT#364074009
 * code.text = "Heart rhythm"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
@@ -163,38 +163,38 @@ Usage:  #inline
 * valueCodeableConcept.coding.extension[=].valueString = "$this.answer.value"
 
 Instance:   BloodPressureTemplate
-InstanceOf: SHCBloodPressure
+InstanceOf: Observation
 Usage:  #inline  
 * status = #final
-* category[VSCat] = $observation-category#vital-signs
-* code.coding[BPCode] = $LNC#85354-9
-* code.coding[snomedBPCode] = $SCT#75367002
+* category[+] = $observation-category#vital-signs
+* code.coding[+] = $LNC#85354-9
+* code.coding[+] = $SCT#75367002
 * code.text = "Blood pressure"
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * effectiveDateTime.extension[=].valueString = "item.where(linkId='bp-newbp-date').answer.value.toDateTime()"
-* component[SystolicBP].code.coding[SBPCode] = $LNC#8480-6
-* component[SystolicBP].code.coding[snomedSBP] = $SCT#271649006
-* component[SystolicBP].code.text = "Systolic"
-* component[SystolicBP].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* component[SystolicBP].valueQuantity.value.extension[=].valueString = "$this.answer.value.toDecimal()"
-* component[SystolicBP].valueQuantity.unit = "mm[Hg]"
-* component[SystolicBP].valueQuantity.system = $UCUM
-* component[SystolicBP].valueQuantity.code = #mm[Hg]
-* component[DiastolicBP].code.coding[DBPCode] = $LNC#8462-4
-* component[DiastolicBP].code.coding[snomedDBP] = $SCT#271650006
-* component[DiastolicBP].code.text = "Diastolic"
-* component[DiastolicBP].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* component[DiastolicBP].valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
-* component[DiastolicBP].valueQuantity.unit = "mm[Hg]"
-* component[DiastolicBP].valueQuantity.system = $UCUM
-* component[DiastolicBP].valueQuantity.code = #mm[Hg]
+* component[+].code.coding[+] = $LNC#8480-6
+* component[=].code.coding[+] = $SCT#271649006
+* component[=].code.text = "Systolic"
+* component[=].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* component[=].valueQuantity.value.extension[=].valueString = "$this.answer.value.toDecimal()"
+* component[=].valueQuantity.unit = "mm[Hg]"
+* component[=].valueQuantity.system = $UCUM
+* component[=].valueQuantity.code = #mm[Hg]
+* component[+].code.coding[+] = $LNC#8462-4
+* component[=].code.coding[+] = $SCT#271650006
+* component[=].code.text = "Diastolic"
+* component[=].valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* component[=].valueQuantity.value.extension[=].valueString = "%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
+* component[=].valueQuantity.unit = "mm[Hg]"
+* component[=].valueQuantity.system = $UCUM
+* component[=].valueQuantity.code = #mm[Hg]
 
 
 
 Instance:   AllergyIntoleranceTemplate
-InstanceOf: SHCAllergyIntolerance
+InstanceOf: AllergyIntolerance
 Usage:  #inline
 * clinicalStatus.coding = $allergyintolerance-clinical#active
 * code.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
@@ -233,7 +233,7 @@ Usage: #inline
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
 
 Instance:   ImmunizationTemplate
-InstanceOf: SHCImmunization
+InstanceOf: Immunization
 Usage:  #inline
 * status = #completed
 * vaccineCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
@@ -252,7 +252,7 @@ Usage:  #inline
 * note.text.extension[=].valueString = "item.where(linkId='vaccinestoday-comment').answer.value"
 
 Instance:   ConditionTemplate
-InstanceOf: SHCCondition
+InstanceOf: Condition
 Usage:  #inline
 * clinicalStatus.coding = $condition-clinical#active
 * category.coding = $condition-category#problem-list-item
@@ -296,7 +296,7 @@ Usage: #inline
 
 
 Instance:   MedicationStatementTemplate
-InstanceOf: SHCMedicationStatement
+InstanceOf: MedicationStatement
 Usage:  #inline
 * status = #active
 * medicationCodeableConcept.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"

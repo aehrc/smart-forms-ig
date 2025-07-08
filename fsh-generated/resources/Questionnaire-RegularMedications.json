@@ -660,11 +660,6 @@
     {
       "resourceType": "MedicationStatement",
       "id": "MedicationStatementTemplate",
-      "meta": {
-        "profile": [
-          "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
-        ]
-      },
       "status": "active",
       "medicationCodeableConcept": {
         "extension": [
