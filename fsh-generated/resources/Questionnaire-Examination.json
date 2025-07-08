@@ -1091,17 +1091,13 @@
     {
       "resourceType": "Observation",
       "id": "BodyHeightTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1109,36 +1105,35 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "8302-2"
+            "code": "8302-2",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "50373000"
+            "code": "50373000",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Height"
       },
-      "valueQuantity": {
-        "system": "http://unitsofmeasure.org",
-        "unit": "cm",
-        "code": "cm",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value"
-            }
-          ]
-        }
-      },
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
               "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
             }
           ]
         }
@@ -1155,17 +1150,13 @@
     {
       "resourceType": "Observation",
       "id": "BodyHeightLengthTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1173,36 +1164,35 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "8302-2"
+            "code": "8302-2",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "50373000"
+            "code": "50373000",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Height"
       },
-      "valueQuantity": {
-        "system": "http://unitsofmeasure.org",
-        "unit": "cm",
-        "code": "cm",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value"
-            }
-          ]
-        }
-      },
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
               "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
             }
           ]
         }
@@ -1219,17 +1209,13 @@
     {
       "resourceType": "Observation",
       "id": "BodyWeightTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1237,36 +1223,35 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "29463-7"
+            "code": "29463-7",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "27113001"
+            "code": "27113001",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Weight"
       },
-      "valueQuantity": {
-        "system": "http://unitsofmeasure.org",
-        "unit": "kg",
-        "code": "kg",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value"
-            }
-          ]
-        }
-      },
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
               "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
             }
           ]
         }
@@ -1283,17 +1268,13 @@
     {
       "resourceType": "Observation",
       "id": "WaistCircumferenceTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1301,36 +1282,35 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "8280-0"
+            "code": "8280-0",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "276361009"
+            "code": "276361009",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Waist circumference"
       },
-      "valueQuantity": {
-        "system": "http://unitsofmeasure.org",
-        "unit": "cm",
-        "code": "cm",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value"
-            }
-          ]
-        }
-      },
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
               "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
             }
           ]
         }
@@ -1347,18 +1327,13 @@
     {
       "resourceType": "Observation",
       "id": "HeadCircumferenceTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
-        ]
-      },
       "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1366,28 +1341,15 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "9843-4"
+            "code": "9843-4",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "363812007"
+            "code": "363812007",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Head circumference"
-      },
-      "valueQuantity": {
-        "system": "http://unitsofmeasure.org",
-        "unit": "cm",
-        "code": "cm",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value"
-            }
-          ]
-        }
       },
       "subject": {
         "_reference": {
@@ -1395,6 +1357,19 @@
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
               "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value"
             }
           ]
         }
@@ -1411,17 +1386,13 @@
     {
       "resourceType": "Observation",
       "id": "HeartRateTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1429,36 +1400,35 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "8867-4"
+            "code": "8867-4",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "364075005"
+            "code": "364075005",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Heart rate"
       },
-      "valueQuantity": {
-        "system": "http://unitsofmeasure.org",
-        "code": "/min",
-        "unit": "/min",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "$this.answer.value.toDecimal()"
-            }
-          ]
-        }
-      },
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
               "valueString": "%resource.subject.reference"
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "$this.answer.value.toDecimal()"
             }
           ]
         }
@@ -1475,11 +1445,7 @@
     {
       "resourceType": "Observation",
       "id": "HeartRhythmTemplate",
-      "meta": {
-        "profile": [
-          "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
@@ -1493,17 +1459,16 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "8884-9"
+            "code": "8884-9",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "364074009"
+            "code": "364074009",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Heart rhythm"
       },
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
@@ -1538,17 +1503,13 @@
     {
       "resourceType": "Observation",
       "id": "BloodPressureTemplate",
-      "meta": {
-        "profile": [
-          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
-        ]
-      },
+      "status": "final",
       "category": [
         {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-              "code": "vital-signs"
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
             }
           ]
         }
@@ -1556,75 +1517,16 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "85354-9"
+            "code": "85354-9",
+            "system": "http://loinc.org"
           },
           {
-            "system": "http://snomed.info/sct",
-            "code": "75367002"
+            "code": "75367002",
+            "system": "http://snomed.info/sct"
           }
         ],
         "text": "Blood pressure"
       },
-      "component": [
-        {
-          "valueQuantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]",
-            "unit": "mm[Hg]",
-            "_value": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                  "valueString": "$this.answer.value.toDecimal()"
-                }
-              ]
-            }
-          },
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "8480-6"
-              },
-              {
-                "system": "http://snomed.info/sct",
-                "code": "271649006"
-              }
-            ],
-            "text": "Systolic"
-          }
-        },
-        {
-          "valueQuantity": {
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]",
-            "unit": "mm[Hg]",
-            "_value": {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                  "valueString": "%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
-                }
-              ]
-            }
-          },
-          "code": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "8462-4"
-              },
-              {
-                "system": "http://snomed.info/sct",
-                "code": "271650006"
-              }
-            ],
-            "text": "Diastolic"
-          }
-        }
-      ],
-      "status": "final",
       "subject": {
         "_reference": {
           "extension": [
@@ -1635,6 +1537,56 @@
           ]
         }
       },
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "271649006",
+                "system": "http://snomed.info/sct"
+              }
+            ],
+            "text": "Systolic"
+          },
+          "valueQuantity": {
+            "unit": "mm[Hg]",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]",
+            "_value": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                  "valueString": "$this.answer.value.toDecimal()"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "271650006",
+                "system": "http://snomed.info/sct"
+              }
+            ],
+            "text": "Diastolic"
+          },
+          "valueQuantity": {
+            "unit": "mm[Hg]",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]",
+            "_value": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                  "valueString": "%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.toDecimal()"
+                }
+              ]
+            }
+          }
+        }
+      ],
       "_effectiveDateTime": {
         "extension": [
           {
