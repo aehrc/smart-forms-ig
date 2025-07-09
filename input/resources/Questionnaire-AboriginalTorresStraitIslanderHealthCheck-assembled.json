@@ -1131,11 +1131,6 @@
         {
             "resourceType": "Condition",
             "id": "ConditionTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
-                ]
-            },
             "clinicalStatus": {
                 "coding": [
                     {
@@ -1278,12 +1273,6 @@
         {
             "resourceType": "ValueSet",
             "id": "smarthealthchecks-medication",
-            "meta": {
-                "profile": [
-                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
-                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
-                ]
-            },
             "url": "https://smartforms.csiro.au/ig/ValueSet/smarthealthchecks-medication",
             "name": "SmartHealthChecksMedication",
             "title": "Smart Health Checks Medication",
@@ -1359,11 +1348,6 @@
         {
             "resourceType": "MedicationStatement",
             "id": "MedicationStatementTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
-                ]
-            },
             "status": "completed",
             "medicationCodeableConcept": {
                 "extension": [
@@ -1571,11 +1555,6 @@
         {
             "resourceType": "AllergyIntolerance",
             "id": "AllergyIntoleranceTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
-                ]
-            },
             "clinicalStatus": {
                 "coding": [
                     {
@@ -1740,11 +1719,6 @@
         {
             "resourceType": "Observation",
             "id": "SmokingStatusTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2219,11 +2193,6 @@
         {
             "resourceType": "Immunization",
             "id": "ImmunizationTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-                ]
-            },
             "status": "completed",
             "vaccineCode": {
                 "extension": [
@@ -2283,12 +2252,6 @@
         {
             "resourceType": "ValueSet",
             "id": "heart-rhythm-1",
-            "meta": {
-                "profile": [
-                    "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
-                    "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
-                ]
-            },
             "url": "https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1",
             "name": "HeartRythym",
             "title": "Heart Rhythm",
@@ -2363,11 +2326,6 @@
         {
             "resourceType": "Observation",
             "id": "BodyHeightTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2417,11 +2375,6 @@
         {
             "resourceType": "Observation",
             "id": "BodyHeightLengthTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2471,11 +2424,6 @@
         {
             "resourceType": "Observation",
             "id": "BodyWeightTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2525,11 +2473,6 @@
         {
             "resourceType": "Observation",
             "id": "WaistCircumferenceTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2579,11 +2522,6 @@
         {
             "resourceType": "Observation",
             "id": "HeadCircumferenceTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2633,11 +2571,6 @@
         {
             "resourceType": "Observation",
             "id": "HeartRateTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2687,11 +2620,6 @@
         {
             "resourceType": "Observation",
             "id": "HeartRhythmTemplate",
-            "meta": {
-                "profile": [
-                    "https://smartforms.csiro.au/ig/StructureDefinition/SmartHealthCheckHeartRhythm"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -2740,11 +2668,6 @@
         {
             "resourceType": "Observation",
             "id": "BloodPressureTemplate",
-            "meta": {
-                "profile": [
-                    "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
-                ]
-            },
             "status": "final",
             "category": [
                 {
@@ -6490,28 +6413,28 @@
                                             "answerOption": [
                                                 {
                                                     "valueCoding": {
-                                                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                                                         "code": "active",
                                                         "display": "Active"
                                                     }
                                                 },
                                                 {
                                                     "valueCoding": {
-                                                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                                                         "code": "completed",
                                                         "display": "Completed"
                                                     }
                                                 },
                                                 {
                                                     "valueCoding": {
-                                                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                                                         "code": "stopped",
                                                         "display": "Stopped"
                                                     }
                                                 },
                                                 {
                                                     "valueCoding": {
-                                                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                                                         "code": "on-hold",
                                                         "display": "On Hold"
                                                     }
@@ -12041,8 +11964,7 @@
                                                             }
                                                         ]
                                                     },
-                                                    "type": "display",
-                                                    "repeats": false
+                                                    "type": "display"
                                                 },
                                                 {
                                                     "extension": [

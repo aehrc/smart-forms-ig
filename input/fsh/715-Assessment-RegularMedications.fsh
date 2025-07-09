@@ -176,10 +176,10 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].text = "Status"
 * item.item[=].item[=].item[=].type = #choice
 * item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerOption[0].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#active "Active"
-* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#completed "Completed"
-* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#stopped "Stopped"
-* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://terminology.hl7.org/CodeSystem/medication-statement-status#on-hold "On Hold"
+* item.item[=].item[=].item[=].answerOption[0].valueCoding = http://hl7.org/fhir/CodeSystem/medication-statement-status#active "Active"
+* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/CodeSystem/medication-statement-status#completed "Completed"
+* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/CodeSystem/medication-statement-status#stopped "Stopped"
+* item.item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/CodeSystem/medication-statement-status#on-hold "On Hold"
 
 * item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"

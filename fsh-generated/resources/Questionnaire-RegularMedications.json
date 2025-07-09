@@ -196,28 +196,28 @@
                     {
                       "valueCoding": {
                         "code": "active",
-                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                         "display": "Active"
                       }
                     },
                     {
                       "valueCoding": {
                         "code": "completed",
-                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                         "display": "Completed"
                       }
                     },
                     {
                       "valueCoding": {
                         "code": "stopped",
-                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                         "display": "Stopped"
                       }
                     },
                     {
                       "valueCoding": {
                         "code": "on-hold",
-                        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status",
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
                         "display": "On Hold"
                       }
                     }
