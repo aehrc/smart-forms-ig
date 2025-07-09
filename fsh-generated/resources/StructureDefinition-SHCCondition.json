@@ -225,10 +225,6 @@
                 "valueCode": "SHALL:populate"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
               }
@@ -337,7 +333,7 @@
             "extension": [
               {
                 "url": "code",
-                "valueCode": "SHALL:populate-if-known"
+                "valueCode": "SHALL:populate"
               },
               {
                 "url": "code",

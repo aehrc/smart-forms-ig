@@ -139,7 +139,7 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * code.text insert obligationApp (1, SHALL:populate)
 * subject 1.. MS
 * subject only Reference($au-core-patient)
-* subject insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (0, SHALL:populate, SHALL:process)
 * subject insert obligationApp (1, SHALL:populate)
 * effective[x] 1.. MS
 * effective[x] only dateTime
@@ -172,7 +172,7 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * patient MS
-* patient insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* patient insert obligation2Server (2, SHALL:populate, SHALL:process)
 * patient insert obligationApp (3, SHALL:populate)
 * clinicalStatus MS 
 * clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:process)
@@ -208,12 +208,12 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * verificationStatus insert obligationApp (3, SHALL:process)
 * category MS
 * category insert obligation2Server (2, SHALL:populate, SHALL:process)
-* category insert obligation2App (3, SHALL:populate, SHALL:process)
+* category insert obligationApp (3, SHALL:populate)
 * code MS
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * onsetDateTime MS
 * onsetDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -235,13 +235,13 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * status MS
-* status insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:process)
 * status insert obligationApp (3, SHALL:populate)
 * medication[x][medicationCodeableConcept] MS
 * medication[x][medicationCodeableConcept] insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
 * medication[x][medicationCodeableConcept] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * dateAsserted MS
 * dateAsserted insert obligationServer (2, SHALL:process)
@@ -266,7 +266,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:process)
-* status insert obligation2App (3, SHALL:populate, SHALL:process)
+* status insert obligationApp (3, SHALL:populate)
 * vaccineCode MS
 * vaccineCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * vaccineCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
@@ -274,7 +274,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * vaccineCode.coding[amtVaccineCode] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
 * vaccineCode.coding[amtVaccineCode] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * patient MS
-* patient insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* patient insert obligation2Server (2, SHALL:populate, SHALL:process)
 * patient insert obligationApp (3, SHALL:populate)
 * occurrenceDateTime MS
 * occurrenceDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -307,7 +307,7 @@ Description: "This profile sets the minimum expectations for a Blood Pressure re
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -340,7 +340,7 @@ Description: "This profile sets the minimum expectations for a Smoking Status re
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -370,7 +370,7 @@ Description: "This profile sets the minimum expectations for a Body Height resou
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -409,7 +409,7 @@ Description: "This profile sets the minimum expectations for a Body Weight resou
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -448,7 +448,7 @@ Description: "This profile sets the minimum expectations for a Head Circumferenc
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (0, SHALL:populate, SHALL:process)
 * subject insert obligationApp (1, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
@@ -487,7 +487,7 @@ Description: "This profile sets the minimum expectations for a Waist Circumferen
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
@@ -526,7 +526,7 @@ Description: "This profile sets the minimum expectations for a Heart Rate resour
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
