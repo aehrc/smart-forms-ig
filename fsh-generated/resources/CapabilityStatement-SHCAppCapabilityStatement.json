@@ -270,6 +270,10 @@
                 },
                 {
                   "url": "required",
+                  "valueString": "_count"
+                },
+                {
+                  "url": "required",
                   "valueString": "_sort"
                 }
               ]
@@ -308,6 +312,17 @@
               "definition": "http://hl7.org/fhir/SearchParameter/clinical-code",
               "type": "token",
               "documentation": "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. \r\n\r\nThe server **SHALL** support both."
+            },
+            {
+              "name": "_count",
+              "type": "number",
+              "documentation": "The client and server **SHALL** support search result limiting.",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
             },
             {
               "name": "_sort",

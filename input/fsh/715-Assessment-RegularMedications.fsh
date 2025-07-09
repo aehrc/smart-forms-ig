@@ -17,6 +17,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 
 * extension[0].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation"
 * extension[=].valueCode = #assemble-child
+
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
 * extension[=].extension[0].url = "name"
 * extension[=].extension[=].valueCoding = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext#patient
@@ -38,10 +39,12 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[=].extension[=].valueCode = #Encounter
 * extension[=].extension[+].url = "description"
 * extension[=].extension[=].valueString = "The encounter that is to be used to pre-populate the form"
+
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression.name = "MedicationStatement"
 * extension[=].valueExpression.language = #application/x-fhir-query
 * extension[=].valueExpression.expression = "MedicationStatement?patient={{%patient.id}}&status=active"
+
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
 * extension[=].valueString = "age"
 
@@ -181,7 +184,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/CodeSystem/medication-statement-status#stopped "Stopped"
 * item.item[=].item[=].item[=].answerOption[+].valueCoding = http://hl7.org/fhir/CodeSystem/medication-statement-status#on-hold "On Hold"
 
-* item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage.text"
