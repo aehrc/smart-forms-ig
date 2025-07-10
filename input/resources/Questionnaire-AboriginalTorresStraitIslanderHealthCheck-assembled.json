@@ -3492,6 +3492,174 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
                     "valueExpression": {
+                        "name": "ObsBodyHeightValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeight.entry.resource.where(status='final').value.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyHeightDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyHeightDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeightDateString.substring(8,2).toInteger().toString() + ' ' + %ObsBodyHeightDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsBodyHeightDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyWeightValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyWeight.entry.resource.where(status='final').value.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyWeightDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyWeightDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyWeightDateString.substring(8,2).toInteger().toString() + ' ' + %ObsBodyWeightDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsBodyWeightDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeadCircumferenceValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeadCircumference.entry.resource.where(status='final').value.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeadCircumferenceDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeadCircumferenceDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeadCircumferenceDateString.substring(8,2).toInteger().toString() + ' ' + %ObsHeadCircumferenceDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsHeadCircumferenceDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsWaistCircumferenceValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsWaistCircumference.entry.resource.where(status='final').value.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsWaistCircumferenceDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsWaistCircumferenceDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsWaistCircumferenceDateString.substring(8,2).toInteger().toString() + ' ' + %ObsWaistCircumferenceDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsWaistCircumferenceDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRateValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRate.entry.resource.where(status='final').value.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRateDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRateDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRateDateString.substring(8,2).toInteger().toString() + ' ' + %ObsHeartRateDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsHeartRateDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRhythmValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRhythmDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRhythmDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRhythmDateString.substring(8,2).toInteger().toString() + ' ' + %ObsHeartRhythmDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsHeartRhythmDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBloodPressureValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round(0).toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round(0).toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBloodPressureDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBloodPressureDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBloodPressureDateString.substring(8,2).toInteger().toString() + ' ' + %ObsBloodPressureDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsBloodPressureDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
                         "name": "weight",
                         "language": "text/fhirpath",
                         "expression": "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='obs-weight-newresult').answer.value"
@@ -6409,7 +6577,6 @@
                                             "text": "Status",
                                             "type": "choice",
                                             "repeats": false,
-                                            "answerValueSet": "#smarthealthchecks-medication",
                                             "answerOption": [
                                                 {
                                                     "valueCoding": {
@@ -15067,14 +15234,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBodyHeightValue.exists() and %ObsBodyHeightDateFormatted.exists(), %ObsBodyHeightValue.round(0).toString() + ' cm ( ' + %ObsBodyHeightDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15154,14 +15323,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyHeight.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBodyHeightValue.exists() and %ObsBodyHeightDateFormatted.exists(), %ObsBodyHeightValue.round(0).toString() + ' cm ( ' + %ObsBodyHeightDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15232,14 +15403,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsBodyWeight.entry.resource.where(status='final').value.value.toString() + ' kg' + ' (' + %ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBodyWeightValue.exists() and %ObsBodyWeightDateFormatted.exists(), %ObsBodyWeightValue.round(1).toString() + ' kg ( ' + %ObsBodyWeightDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15319,14 +15492,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBodyWeight.entry.resource.where(status='final').value.value.empty() or %ObsBodyHeight.entry.resource.where(status='final').value.value.empty(), 'Not available', (%ObsBodyWeight.entry.resource.where(status='final').value.value/((%ObsBodyHeight.entry.resource.where(status='final').value.value/100).power(2))).round(1).toString() + ' kg/m2')"
+                                                            "expression": "iif(%ObsBodyWeightValue.exists() and %ObsBodyHeightValue.exists(), (%ObsBodyWeightValue/((%ObsBodyHeightValue/100).power(2))).round(1).toString() + ' kg/m2', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15398,14 +15573,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsHeadCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeadCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsHeadCircumferenceValue.exists() and %ObsHeadCircumferenceDateFormatted.exists(), %ObsHeadCircumferenceValue.round(0).toString() + ' cm ( ' + %ObsHeadCircumferenceDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15485,14 +15662,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsWaistCircumference.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsWaistCircumference.entry.resource.where(status='final').value.value.toString() + ' cm' + ' (' + %ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsWaistCircumferenceValue.exists() and %ObsWaistCircumferenceDateFormatted.exists(), %ObsWaistCircumferenceValue.round(0).toString() + ' cm ( ' + %ObsWaistCircumferenceDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15556,14 +15735,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsHeartRate.entry.resource.where(status='final').value.value.empty(), 'Not available', %ObsHeartRate.entry.resource.where(status='final').value.value.round().toString() + ' /min' + ' (' + %ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsHeartRateValue.exists() and %ObsHeartRateDateFormatted.exists(), %ObsHeartRateValue.round(0).toString() + ' /min ( ' + %ObsHeartRateDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15634,14 +15815,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().empty(), 'Not available', %ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsHeartRhythmValue.exists() and %ObsHeartRhythmDateFormatted.exists(), %ObsHeartRhythmValue.display + ' ( ' + %ObsHeartRhythmDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
@@ -15725,14 +15908,16 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.empty() or %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.empty(), 'Not available', %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round().toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round().toString() + ' mm Hg (' + %ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                            "expression": "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %bsBloodPressureDateFormatted + ' )', 'Not available')"
                                                         }
+                                                    },
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                                                        "valueString": "text-align: left;"
                                                     }
                                                 ]
                                             },
-                                            "type": "display",
-                                            "repeats": false,
-                                            "readOnly": true
+                                            "type": "display"
                                         },
                                         {
                                             "extension": [
