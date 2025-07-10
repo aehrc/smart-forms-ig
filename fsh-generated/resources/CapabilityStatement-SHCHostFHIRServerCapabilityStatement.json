@@ -472,6 +472,27 @@
                   "valueString": "status"
                 }
               ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                },
+                {
+                  "url": "required",
+                  "valueString": "patient"
+                },
+                {
+                  "url": "required",
+                  "valueString": "status"
+                },
+                {
+                  "url": "required",
+                  "valueString": "_include"
+                }
+              ]
             }
           ],
           "type": "MedicationStatement",

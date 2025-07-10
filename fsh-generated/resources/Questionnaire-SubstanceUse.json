@@ -116,7 +116,7 @@
                             "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                             "valueExpression": {
                               "language": "text/fhirpath",
-                              "expression": "iif(%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').empty(), 'Not available', %ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                              "expression": "iif(%ObsTobaccoSmokingStatusValue.exists() and %ObsTobaccoSmokingStatusDateFormatted.exists(), %ObsTobaccoSmokingStatusValue.display + ' ( ' + %ObsTobaccoSmokingStatusDateFormatted + ' )', 'Not available')"
                             }
                           }
                         ]
@@ -670,6 +670,30 @@
         "name": "ObsTobaccoSmokingStatus",
         "language": "application/x-fhir-query",
         "expression": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsTobaccoSmokingStatusValue",
+        "language": "text/fhirpath",
+        "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsTobaccoSmokingStatusDateString",
+        "language": "text/fhirpath",
+        "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString()"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsTobaccoSmokingStatusDateFormatted",
+        "language": "text/fhirpath",
+        "expression": "%ObsTobaccoSmokingStatusDateString.substring(8,2).toInteger().toString() + ' ' + %ObsTobaccoSmokingStatusDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsTobaccoSmokingStatusDateString.substring(0,4)"
       }
     },
     {
