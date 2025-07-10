@@ -111,7 +111,7 @@ The SHCA has the following launch context requirements:
 | sub	             | required	 | Unique identifier of the user as known by the PMS authorization service.                                                                                                                                                                       |
 | preferred_username | optional  | Username used to login to PMS.                                                                                                                                                                                                                 |
 | fhirUser	         | required	 | Current user identifier used to retrieve the user’s Practitioner resource via the FHIR API.                                                                                                                                                    |
-| fhirContext        | required  | The Health Check Questionnare context to be launched <br/> `[{ "canonical": " http://www.health.gov.au/assessments/mbs/715", "role": "https://smartforms.csiro.au/smart/role/questionnaire-to-display", "type": "Questionnaire" }] ` |
+| fhirContext        | required  | The Health Check Questionnaire context to be launched <br/> `[{ "role": "http://ns.electronichealth.net.au/smart/role/new", "type": "Questionnaire", "canonical": " http://www.health.gov.au/assessments/mbs/715" }]` |
 
 ##### Authorization Request
 SHCA will request the following access scopes in the authorization request `scope` parameter:
