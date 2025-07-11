@@ -109,7 +109,7 @@
                   "valueExpression": {
                     "name": "MedicationStatementRepeat",
                     "language": "text/fhirpath",
-                    "expression": "%MedicationStatement.entry.resource"
+                    "expression": "%MedicationStatement.entry.resource.where(resourceType = 'MedicationStatement')"
                   }
                 },
                 {
@@ -167,7 +167,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+                        "expression": "iif(%MedicationStatementRepeat.medicationReference.reference.replace('#', '') in %medicationsFromContained.id, %medicationsFromContained.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('#', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()), iif(%MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '') in %medicationsFromRef.id , %medicationsFromRef.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()) ,%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())))"
                       }
                     }
                   ],
@@ -937,7 +937,23 @@
       "valueExpression": {
         "name": "MedicationStatement",
         "language": "application/x-fhir-query",
-        "expression": "MedicationStatement?patient={{%patient.id}}&status=active"
+        "expression": "MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "medicationsFromContained",
+        "language": "text/fhirpath",
+        "expression": "%MedicationStatement.entry.resource.contained.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('#', '')))"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "medicationsFromRef",
+        "language": "text/fhirpath",
+        "expression": "%MedicationStatement.entry.resource.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('Medication/', '')))"
       }
     },
     {

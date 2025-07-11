@@ -43,7 +43,17 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression.name = "MedicationStatement"
 * extension[=].valueExpression.language = #application/x-fhir-query
-* extension[=].valueExpression.expression = "MedicationStatement?patient={{%patient.id}}&status=active"
+* extension[=].valueExpression.expression = "MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication"
+
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "medicationsFromContained"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "%MedicationStatement.entry.resource.contained.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('#', '')))"
+
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "medicationsFromRef"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "%MedicationStatement.entry.resource.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('Medication/', '')))"
 
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
 * extension[=].valueString = "age"
@@ -110,7 +120,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 // Current medications
 * item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "MedicationStatementRepeat"
 * item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
-* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource"
+* item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource.where(resourceType = 'MedicationStatement')"
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(MedicationStatementPatchTemplate)
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='medicationStatementId').answer.value"
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #MedicationStatement
@@ -131,7 +141,18 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 */
 * item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+/*
+  This expression selects the SNOMED coding from MedicationStatements.
+  In some cases, medicationReference may be a reference to a contained Medication resource or an external Medication resource.
+  %medicationsFromContained and %medicationsFromRef contains a list of contained Medication resources and externally referenced Medication resources respectively.
+
+  Step 1: Check if the medicationReference is a contained resource (starts with '#') and if its ID is in %medicationsFromContained.
+  Step 2: If it is, use the ID to find the corresponding Medication resource in %medicationsFromContained and select its SNOMED coding.
+  Step 3: Otherwise, check if the medicationReference is an external resource (starts with 'Medication/') and if its ID is in %medicationsFromRef.
+  Step 4: If it is, use the ID to find the corresponding Medication resource in %medicationsFromRef and select its SNOMED coding.
+  Step 5: Otherwise, use the SNOMED coding from MedicationStatement.medication (medicationCodeableConcept to be specific).
+*/
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "iif(%MedicationStatementRepeat.medicationReference.reference.replace('#', '') in %medicationsFromContained.id, %medicationsFromContained.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('#', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()), iif(%MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '') in %medicationsFromRef.id , %medicationsFromRef.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()) ,%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())))"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-medication"
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
