@@ -1175,6 +1175,16 @@
                     ]
                 }
             },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "_onsetDateTime": {
                 "extension": [
                     {
@@ -1272,13 +1282,13 @@
         },
         {
             "resourceType": "ValueSet",
-            "id": "smarthealthchecks-medication",
-            "url": "https://smartforms.csiro.au/ig/ValueSet/smarthealthchecks-medication",
-            "name": "SmartHealthChecksMedication",
-            "title": "Smart Health Checks Medication",
+            "id": "smart-health-checks-medicine-products",
+            "url": "https://smartforms.csiro.au/ig/ValueSet/smart-health-checks-medicine-products",
+            "name": "SmartHealthChecksMedicineProducts",
+            "title": "Smart Health Checks Medicine Products",
             "status": "draft",
             "experimental": false,
-            "description": "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
+            "description": "The Smart Health Checks Medicine Products value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
             "compose": {
                 "include": [
                     {
@@ -1371,6 +1381,16 @@
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
                             "valueString": "ofType(string)"
+                        }
+                    ]
+                }
+            },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
                         }
                     ]
                 }
@@ -1589,6 +1609,16 @@
                     ]
                 }
             },
+            "patient": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "note": [
                 {
                     "_text": {
@@ -1742,6 +1772,16 @@
                     }
                 ],
                 "text": "Smoking status"
+            },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
             },
             "_effectiveDateTime": {
                 "extension": [
@@ -2220,6 +2260,16 @@
                     ]
                 }
             },
+            "patient": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "_occurrenceDateTime": {
                 "extension": [
                     {
@@ -2253,7 +2303,7 @@
             "resourceType": "ValueSet",
             "id": "heart-rhythm-1",
             "url": "https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1",
-            "name": "HeartRythym",
+            "name": "HeartRhythm",
             "title": "Heart Rhythm",
             "status": "draft",
             "experimental": false,
@@ -2350,6 +2400,16 @@
                 ],
                 "text": "Height"
             },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "_effectiveDateTime": {
                 "extension": [
                     {
@@ -2398,6 +2458,16 @@
                     }
                 ],
                 "text": "Height"
+            },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
             },
             "_effectiveDateTime": {
                 "extension": [
@@ -2448,6 +2518,16 @@
                 ],
                 "text": "Weight"
             },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "_effectiveDateTime": {
                 "extension": [
                     {
@@ -2496,6 +2576,16 @@
                     }
                 ],
                 "text": "Waist circumference"
+            },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
             },
             "_effectiveDateTime": {
                 "extension": [
@@ -2546,6 +2636,16 @@
                 ],
                 "text": "Head circumference"
             },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "_effectiveDateTime": {
                 "extension": [
                     {
@@ -2594,6 +2694,16 @@
                     }
                 ],
                 "text": "Heart rate"
+            },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
             },
             "_effectiveDateTime": {
                 "extension": [
@@ -2644,6 +2754,16 @@
                 ],
                 "text": "Heart rhythm"
             },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
+            },
             "_effectiveDateTime": {
                 "extension": [
                     {
@@ -2691,6 +2811,16 @@
                     }
                 ],
                 "text": "Blood pressure"
+            },
+            "subject": {
+                "_reference": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                            "valueString": "%resource.subject.reference"
+                        }
+                    ]
+                }
             },
             "_effectiveDateTime": {
                 "extension": [
@@ -3089,7 +3219,18 @@
             ]
         }
     ],
-    "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.",
+    "jurisdiction": [
+        {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:3166",
+                    "code": "AU",
+                    "display": "Australia"
+                }
+            ]
+        }
+    ],
+    "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.\nThis content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\nSee https://creativecommons.org/licenses/by-sa/4.0/.\n",
     "item": [
         {
             "extension": [
@@ -3420,6 +3561,22 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
                     "valueExpression": {
+                        "name": "medicationsFromContained",
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatement.entry.resource.contained.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('#', '')))"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "medicationsFromRef",
+                        "language": "text/fhirpath",
+                        "expression": "%MedicationStatement.entry.resource.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('Medication/', '')))"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
                         "name": "AllergyIntolerance",
                         "language": "application/x-fhir-query",
                         "expression": "AllergyIntolerance?patient={{%patient.id}}"
@@ -3431,6 +3588,30 @@
                         "name": "ObsTobaccoSmokingStatus",
                         "language": "application/x-fhir-query",
                         "expression": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsTobaccoSmokingStatusValue",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsTobaccoSmokingStatusDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsTobaccoSmokingStatusDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsTobaccoSmokingStatusDateString.substring(8,2).toInteger().toString() + ' ' + %ObsTobaccoSmokingStatusDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsTobaccoSmokingStatusDateString.substring(0,4)"
                     }
                 },
                 {
@@ -3488,22 +3669,6 @@
                         "language": "application/x-fhir-query",
                         "expression": "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"
                     }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/variable",
-                  "valueExpression": {
-                    "name": "medicationsFromContained",
-                    "language": "text/fhirpath",
-                    "expression": "%MedicationStatement.entry.resource.contained.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('#', '')))"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/variable",
-                  "valueExpression": {
-                    "name": "medicationsFromRef",
-                    "language": "text/fhirpath",
-                    "expression": "%MedicationStatement.entry.resource.where(resourceType = 'Medication' and id in %MedicationStatement.entry.resource.medicationReference.select(reference.replace('Medication/', '')))"
-                  }
                 },
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
@@ -4372,6 +4537,19 @@
                             ]
                         },
                         {
+                            "linkId": "patientdetails-writebackinstruction",
+                            "text": "This section contains several read only, non-editable items. Updates to these items will need to be done in the patient record. The form can be repopulated to include any updates.",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><em>This section contains several read only, non-editable items. Updates to these items will need to be done in the patient record. The form can be repopulated to include any updates.</em></div>"
+                                    }
+                                ]
+                            },
+                            "type": "display"
+                        },
+                        {
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -4719,6 +4897,7 @@
                             "text": "Home address",
                             "type": "group",
                             "repeats": false,
+                            "readOnly": true,
                             "item": [
                                 {
                                     "extension": [
@@ -4986,7 +5165,8 @@
                             "linkId": "9541f0b0-f5ba-4fe7-a8e9-ad003cef897b",
                             "text": "Home phone",
                             "type": "string",
-                            "repeats": true
+                            "repeats": true,
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -5001,7 +5181,8 @@
                             "linkId": "4037a02b-4a85-40e0-9be6-5b17df1aac56",
                             "text": "Mobile phone",
                             "type": "string",
-                            "repeats": true
+                            "repeats": true,
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -5018,6 +5199,7 @@
                             "text": "Emergency contact",
                             "type": "group",
                             "repeats": true,
+                            "readOnly": true,
                             "item": [
                                 {
                                     "extension": [
@@ -5086,6 +5268,7 @@
                             "text": "Medicare number",
                             "type": "group",
                             "repeats": false,
+                            "readOnly": true,
                             "item": [
                                 {
                                     "extension": [
@@ -5156,6 +5339,7 @@
                             "text": "Pensioner Card Number",
                             "type": "string",
                             "repeats": false,
+                            "readOnly": true,
                             "maxLength": 10
                         },
                         {
@@ -5172,10 +5356,18 @@
                             "text": "Health Care Card Number",
                             "type": "string",
                             "repeats": false,
+                            "readOnly": true,
                             "maxLength": 10
                         },
                         {
                             "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%patient.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/closing-the-gap-registration').value"
+                                    }
+                                },
                                 {
                                     "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                                     "valueCodeableConcept": {
@@ -5194,9 +5386,9 @@
                             ],
                             "linkId": "83814495-3a81-43f4-88df-42186cce516a",
                             "text": "Registered for Closing the Gap PBS Co-payment Measure (CTG)",
-                            "type": "choice",
+                            "type": "boolean",
                             "repeats": false,
-                            "answerValueSet": "#YesNoNA"
+                            "readOnly": true
                         },
                         {
                             "extension": [
@@ -6565,11 +6757,11 @@
                                                     }
                                                 },
                                                 {
-                                                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                                                  "valueExpression": {
-                                                    "language": "text/fhirpath",
-                                                    "expression": "iif(%MedicationStatementRepeat.medicationReference.reference.replace('#', '') in %medicationsFromContained.id, %medicationsFromContained.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('#', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()), iif(%MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '') in %medicationsFromRef.id , %medicationsFromRef.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()) ,%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())))"
-                                                  }
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%MedicationStatementRepeat.medicationReference.reference.replace('#', '') in %medicationsFromContained.id, %medicationsFromContained.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('#', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()), iif(%MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '') in %medicationsFromRef.id , %medicationsFromRef.where(id = %MedicationStatementRepeat.medicationReference.reference.replace('Medication/', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()) ,%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())))"
+                                                    }
                                                 }
                                             ],
                                             "linkId": "regularmedications-summary-current-medication",
@@ -6577,7 +6769,7 @@
                                             "type": "open-choice",
                                             "repeats": false,
                                             "readOnly": true,
-                                            "answerValueSet": "#smarthealthchecks-medication"
+                                            "answerValueSet": "#smart-health-checks-medicine-products"
                                         },
                                         {
                                             "extension": [
@@ -12142,7 +12334,7 @@
                                                                 "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                                 "valueExpression": {
                                                                     "language": "text/fhirpath",
-                                                                    "expression": "iif(%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').empty(), 'Not available', %ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first().display + ' (' + %ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString() + ')')"
+                                                                    "expression": "iif(%ObsTobaccoSmokingStatusValue.exists() and %ObsTobaccoSmokingStatusDateFormatted.exists(), %ObsTobaccoSmokingStatusValue.display + ' ( ' + %ObsTobaccoSmokingStatusDateFormatted + ' )', 'Not available')"
                                                                 }
                                                             }
                                                         ]
