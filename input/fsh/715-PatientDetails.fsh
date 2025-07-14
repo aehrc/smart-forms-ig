@@ -16,6 +16,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * contained[+] = gender-identity-response-1
 * contained[+] = biological-sex-1
 * contained[+] = australian-states-territories-2
+* contained[+] = PatientPatchTemplate
 
 //assemble expectation
 * extension[+]
@@ -91,6 +92,9 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
+  * extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(PatientPatchTemplate)
+  * extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='patientId').answer.value"
+  * extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #Patient
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
   * text = "Patient Details"
   * type = #group
@@ -115,6 +119,14 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * question = "MarkComplete-32" // Section complete item
       * operator = #=
       * answerBoolean = true
+  * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%patient.id"
+    * extension[questionnaire-hidden].valueBoolean = true
+    * linkId = "patientId"
+    * type = #string
+    * repeats = false
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -501,13 +513,15 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
     * maxLength = 10
   * item[+]
+    * extension[sdc-questionnaire-initialExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%patient.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/closing-the-gap-registration').value"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "83814495-3a81-43f4-88df-42186cce516a"
     * text = "Registered for Closing the Gap PBS Co-payment Measure (CTG)"
-    * type = #choice
+    * type = #boolean
     * repeats = false
-    * answerValueSet = "#YesNoNA"
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath

@@ -383,4 +383,46 @@ Usage: #inline
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Dosage"
 
+Instance: PatientPatchTemplate
+// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
+InstanceOf: Parameters
+Usage: #inline
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "Patient.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/closing-the-gap-registration').value"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "valueBoolean"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueBoolean.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueBoolean.extension[=].valueString = "item.where(linkId='83814495-3a81-43f4-88df-42186cce516a').answer.value"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Closing the Gap registration"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "Patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='HC')).value"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "value"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "item.where(linkId='a7e97574-3cea-4dfa-bef2-2665e7748364').answer.value"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Health Care Card Number"
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "Patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='PEN')).value"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "value"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "item.where(linkId='c1e4e967-c0aa-4280-b5d4-ab1f375ed9ac').answer.value"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Pensioner Card Number"
+
+
 
