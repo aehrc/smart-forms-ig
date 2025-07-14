@@ -191,9 +191,9 @@
         {
           "type": "Medication",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication"
           ],
-          "documentation": "The client supports the Medication resource, the AU Core profile and the conformance expectations for the Medication resource.",
+          "documentation": "The client supports the Medication resource, the Smart Health Checks profile and the conformance expectations for the Medication resource.",
           "interaction": [
             {
               "code": "read"
@@ -268,7 +268,7 @@
             {
               "name": "_include",
               "type": "reference",
-              "documentation": "If a medication in a MedicationStatement resource is represented as an external Medication resource reference, the server **SHOULD** support the `_include` parameter for searching this element (`MedicationRequest:medication`).\r\n\r\nThe client **SHALL** support this method."
+              "documentation": "If a medication in a MedicationStatement resource is represented as an external Medication resource reference, the server **SHALL** support the `_include` parameter for searching this element (`MedicationStatement:medication`).\r\n\r\nThe client **SHALL** support this method."
             }
           ]
         },
@@ -301,7 +301,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure",
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight",
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight",
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult",
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference",
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate",
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm",
@@ -357,9 +357,9 @@
         {
           "type": "Patient",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient"
           ],
-          "documentation": "The client supports the Patient resource, AU Core profile and the conformance expectations for the Patient resource.",
+          "documentation": "The client supports the Patient resource, Smart Health Checks profile and the conformance expectations for the Patient resource.",
           "interaction": [
             {
               "code": "read"
@@ -540,8 +540,8 @@
             }
           ],
           "type": "QuestionnaireResponse",
-          "profile": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse",
-          "documentation": "The client supports the QuestionnaireResponse resource, Structured Data Capture profile and the conformance expectations for the QuestionnaireResponse resource.",
+          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse",
+          "documentation": "The client supports the QuestionnaireResponse resource, Smart Health Checks profile and the conformance expectations for the QuestionnaireResponse resource.",
           "interaction": [
             {
               "code": "read"

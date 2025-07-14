@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "SHCMedicationStatement",
   "url": "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement",
-  "name": "SmartHealthCheckMedicationStatement",
+  "name": "SmartHealthChecksMedicationStatement",
   "title": "Smart Health Checks MedicationStatement",
   "status": "draft",
   "description": "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks.",
@@ -152,6 +152,74 @@
         "type": [
           {
             "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:no-error"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "MedicationStatement.medication[x]",
+        "sliceName": "medicationReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication"
+            ]
           }
         ],
         "mustSupport": true

@@ -1462,7 +1462,7 @@ Description: "The Medication Reason Taken value set includes values that identif
 * include codes from system SNOMED_CT
     where constraint = "^ 32570581000036105|Problem/Diagnosis reference set| OR ^ 1184831000168105|Drug prophylaxis reference set| OR << 399097000|Administration of anaesthesia| OR 169443000|Preventive procedure|"
 
-ValueSet: HeartRythym
+ValueSet: HeartRhythm
 Id: heart-rhythm-1
 Title: "Heart Rhythm"
 Description: "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual."

@@ -552,7 +552,8 @@
           "linkId": "f1262ade-843c-4eba-a86d-51a9c97d134b",
           "text": "Home address",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "readOnly": true
         },
         {
           "extension": [
@@ -693,7 +694,8 @@
           "linkId": "9541f0b0-f5ba-4fe7-a8e9-ad003cef897b",
           "text": "Home phone",
           "type": "string",
-          "repeats": true
+          "repeats": true,
+          "readOnly": true
         },
         {
           "extension": [
@@ -708,7 +710,8 @@
           "linkId": "4037a02b-4a85-40e0-9be6-5b17df1aac56",
           "text": "Mobile phone",
           "type": "string",
-          "repeats": true
+          "repeats": true,
+          "readOnly": true
         },
         {
           "extension": [
@@ -786,7 +789,8 @@
           "linkId": "c22390d3-1be6-4fd1-b775-6443b7239a6b",
           "text": "Emergency contact",
           "type": "group",
-          "repeats": true
+          "repeats": true,
+          "readOnly": true
         },
         {
           "item": [
@@ -847,7 +851,8 @@
           "linkId": "df1475ea-bf7e-4bf0-a69f-7f9608c3ed3c",
           "text": "Medicare number",
           "type": "group",
-          "repeats": false
+          "repeats": false,
+          "readOnly": true
         },
         {
           "extension": [

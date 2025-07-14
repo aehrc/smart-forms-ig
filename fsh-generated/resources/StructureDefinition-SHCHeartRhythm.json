@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "SHCHeartRhythm",
   "url": "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm",
-  "name": "SmartHealthCheckHeartRhythm",
+  "name": "SmartHealthChecksHeartRhythm",
   "title": "Smart Health Checks Heart Rhythm",
   "status": "draft",
   "description": "This profile sets the minimum expectations for an Observation resource to record heart rhythm observations. It is used to represent heart rhythm data captured during a First Nations Health Check that can be used to record the observation in a clinical record.",
@@ -18,7 +18,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Heart Rhythm",
-        "definition": "Measurement of a patient's heart rhytym at a point in time.",
+        "definition": "Measurement of a patient's heart rhythm at a point in time.",
         "comment": "Heart rhythm observation using a LOINC code, a SNOMED CT code and a metric UCUM unit of measure.",
         "constraint": [
           {

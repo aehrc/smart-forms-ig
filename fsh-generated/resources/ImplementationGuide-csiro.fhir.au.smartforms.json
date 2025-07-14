@@ -605,6 +605,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/SHCMedication"
+        },
+        "name": "Smart Health Checks Medication",
+        "description": "This profile sets the minimum expectations for a Medication resource to search and retrieve medication information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/smarthealthchecks-medication"
         },
         "name": "Smart Health Checks Medication",
@@ -617,6 +625,30 @@
         },
         "name": "Smart Health Checks MedicationStatement",
         "description": "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCPathologyResult"
+        },
+        "name": "Smart Health Checks Pathology Result",
+        "description": "This profile sets the minimum expectations for an Observation resource to search and retrieve pathology result information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCPatient"
+        },
+        "name": "Smart Health Checks Patient",
+        "description": "This profile sets the minimum expectations for a Patient resource to record, search and save patient information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCQuestionnaireResponse"
+        },
+        "name": "Smart Health Checks Questionnaire Response",
+        "description": "This profile sets the minimum expectations for a QuestionnaireResponse resource to record, search and save form information when used within Smart Health Checks.",
         "exampleBoolean": false
       },
       {

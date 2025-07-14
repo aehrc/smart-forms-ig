@@ -269,6 +269,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Home address"
     * type = #group
     * repeats = false
+    * readOnly = true
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -397,6 +398,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Home phone"
     * type = #string
     * repeats = true
+    * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
@@ -405,6 +407,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Mobile phone"
     * type = #string
     * repeats = true
+    * readOnly = true
   * item[+]
     * extension[sdc-questionnaire-itemPopulationContext].valueExpression
       * name = "EmergencyContactRepeat"
@@ -414,6 +417,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Emergency contact"
     * type = #group
     * repeats = true
+    * readOnly = true
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
@@ -451,6 +455,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * text = "Medicare number"
     * type = #group
     * repeats = false
+    * readOnly = true
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
