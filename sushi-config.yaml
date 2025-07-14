@@ -6,7 +6,7 @@
 id: csiro.fhir.au.smartforms
 canonical: https://smartforms.csiro.au/ig
 name: SmartHealthChecks
-title: Smart Health Checks 
+title: Smart Health Checks
 description: The Smart Health Checks FHIR Implementation Guide supports the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.
 status: draft # draft | active | retired | unknown
 version: 0.3.0
@@ -14,7 +14,7 @@ fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2022+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 license: CC-BY-SA-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-# jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+jurisdiction: urn:iso:std:iso:3166#AU "Australia" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: AEHRC CSIRO
   url: https://confluence.csiro.au/display/PCDQFPhase2/Primary+Care+Data+Quality+Foundations+-+Phase+2
@@ -25,14 +25,12 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-
   hl7.fhir.au.core: 1.1.0-preview
   hl7.fhir.au.base: 5.1.0-preview
   hl7.fhir.uv.sdc: current
   hl7.fhir.uv.smart-app-launch: 2.2.0
   hl7.fhir.uv.extensions.r4: 5.2.0
   hl7.fhir.extensions.r5: 4.0.1
-  
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -121,11 +119,7 @@ parameters:
   apply-contact: false
   default-contact: true
   apply-copyright: false
-  default-copyright: true
-  
-  
-    
-
+  default-copyright: true 
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
@@ -252,7 +246,10 @@ menu:
 # * modifierExtension
 experimental: false
 # * useContext
-copyright: Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved. This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. See https://creativecommons.org/licenses/by-sa/4.0/.
+copyright: |
+  Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+  This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+  See https://creativecommons.org/licenses/by-sa/4.0/.
 packageId: csiro.fhir.au.smartforms
 #
 #
