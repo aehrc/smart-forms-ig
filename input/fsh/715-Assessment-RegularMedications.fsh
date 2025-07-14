@@ -9,7 +9,7 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Regular Medications
 Description: "Regular Medications sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = YesNo
-* contained[+] = smarthealthchecks-medication
+* contained[+] = smart-health-checks-medicine-products
 * contained[+] = medication-reason-taken-1
 * contained[+] = MedicationStatementTemplate
 * contained[+] = MedicationStatementPatchTemplate
@@ -137,7 +137,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].readOnly = true
-* item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
+* item.item[=].item[=].item[=].answerValueSet = "#smart-health-checks-medicine-products"
 /*
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension.valueCodeableConcept = $questionnaire-item-control#autocomplete

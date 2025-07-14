@@ -1432,10 +1432,10 @@ Description: "The Australian Medicines Terminology (AMT) Vaccine value set inclu
 * ^copyright = "Copyright © 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\n This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
 * include codes from system SNOMED_CT where concept in "1156291000168106"
 
-ValueSet: SmartHealthChecksMedication
-Id: smarthealthchecks-medication
-Title: "Smart Health Checks Medication"
-Description: "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details."
+ValueSet: SmartHealthChecksMedicineProducts
+Id: smart-health-checks-medicine-products
+Title: "Smart Health Checks Medicine Products"
+Description: "The Smart Health Checks Medicine Products value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details."
 
 * ^experimental = false
 * include codes from system http://snomed.info/sct|http://snomed.info/sct/32506021000036107 where constraint = "^ 929360081000036101|Medicinal product pack reference set| OR ^ 929360071000036103|Medicinal product unit of use reference set| OR ^ 929360041000036105|Trade product pack reference set| OR ^ 929360031000036100|Trade product unit of use reference set| OR ^ 929360051000036108|Containered trade product pack reference set|"

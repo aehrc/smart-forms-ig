@@ -613,18 +613,18 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/smarthealthchecks-medication"
-        },
-        "name": "Smart Health Checks Medication",
-        "description": "The Smart Health Checks Medication value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/SHCMedicationStatement"
         },
         "name": "Smart Health Checks MedicationStatement",
         "description": "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/smart-health-checks-medicine-products"
+        },
+        "name": "Smart Health Checks Medicine Products",
+        "description": "The Smart Health Checks Medicine Products value set includes Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine with form, ingredient and unit of measure details.",
         "exampleBoolean": false
       },
       {
