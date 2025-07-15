@@ -260,7 +260,7 @@ Profile: SmartHealthChecksPatient
 Parent: $au-core-patient
 Id: SHCPatient
 Title: "Smart Health Checks Patient"
-Description: "This profile sets the minimum expectations for a Patient resource to record, search and save patient information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Patient resource to search and retrieve patient information when used within Smart Health Checks."
 
 * extension[indigenousStatus] MS
 * extension[indigenousStatus] insert obligationServer (2, SHALL:populate-if-known)
@@ -366,6 +366,29 @@ Description: "This profile sets the minimum expectations for a Patient resource 
 * contact.telecom MS
 * contact.telecom insert obligationServer (0, SHALL:populate-if-known)
 * contact.telecom insert obligationApp (1, SHALL:process)
+
+Profile: SmartHealthChecksPractitioner
+Parent: $au-core-practitioner
+Id: SHCPractitioner
+Title: "Smart Health Checks Practitioner"
+Description: "This profile sets the minimum expectations for a Practitioner resource to search and retrieve practitioner information when used within Smart Health Checks."
+
+* id MS
+* id insert obligationServer (0, SHALL:populate)
+* id insert obligationApp (1, SHALL:process)
+* name MS
+* name insert obligationServer (2, SHALL:populate-if-known)
+* name insert obligationApp (3, SHALL:process)
+
+Profile: SmartHealthChecksEncounter
+Parent: $au-core-encounter
+Id: SHCEncounter
+Title: "Smart Health Checks Encounter"
+Description: "This profile sets the minimum expectations for a Encounter resource to search and retrieve encounter information when used within Smart Health Checks."
+
+* id MS
+* id insert obligationServer (0, SHALL:populate)
+* id insert obligationApp (1, SHALL:process)
 
 
 Profile: SmartHealthChecksQuestionnaireResponse

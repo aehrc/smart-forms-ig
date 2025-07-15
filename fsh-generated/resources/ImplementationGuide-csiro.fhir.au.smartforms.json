@@ -584,6 +584,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/SHCEncounter"
+        },
+        "name": "Smart Health Checks Encounter",
+        "description": "This profile sets the minimum expectations for a Encounter resource to search and retrieve encounter information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/SHCHeadCircumference"
         },
         "name": "Smart Health Checks Head Circumference",
@@ -651,7 +659,15 @@
           "reference": "StructureDefinition/SHCPatient"
         },
         "name": "Smart Health Checks Patient",
-        "description": "This profile sets the minimum expectations for a Patient resource to record, search and save patient information when used within Smart Health Checks.",
+        "description": "This profile sets the minimum expectations for a Patient resource to search and retrieve patient information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCPractitioner"
+        },
+        "name": "Smart Health Checks Practitioner",
+        "description": "This profile sets the minimum expectations for a Practitioner resource to search and retrieve practitioner information when used within Smart Health Checks.",
         "exampleBoolean": false
       },
       {

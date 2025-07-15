@@ -132,9 +132,9 @@
         {
           "type": "Encounter",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter"
           ],
-          "documentation": "The client supports the Encounter resource, the AU Core profile and the conformance expectations for the Encounter resource.",
+          "documentation": "The client supports the Encounter resource, the Smart Health Checks profile and the conformance expectations for the Encounter resource.",
           "interaction": [
             {
               "code": "read"
@@ -372,9 +372,9 @@
         {
           "type": "Practitioner",
           "supportedProfile": [
-            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner"
           ],
-          "documentation": "The client supports the Practitioner resource, AU Core profile and the conformance expectations for the Practitioner resource.",
+          "documentation": "The client supports the Practitioner resource, Smart Health Checks profile and the conformance expectations for the Practitioner resource.",
           "interaction": [
             {
               "code": "read"

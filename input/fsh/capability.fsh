@@ -41,13 +41,13 @@ Usage: #definition
 * rest.documentation = "Smart Forms Launcher Server **SHALL**:
 1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)
 1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)
-1. Support the [AU Core Encounter resource profile](http://hl7.org.au/fhir/core/1.1.0-preview/StructureDefinition-au-core-encounter.html)
+1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)
 1. Support the [Smart Health Checks Immunization resource profile](StructureDefinition-SHCImmunization.html)
 1. Support the [Smart Health Checks Medication profile](StructureDefinition-SHCMedication.html)
 1. Support the [Smart Health Checks MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)
 1. Support the [Smart Health Checks Observation resource profiles](profiles-and-extensions.html#observation)
 1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)
-1. Support the [AU Core Practitioner resource profile](http://hl7.org.au/fhir/core/1.1.0-previewStructureDefinition-au-core-practitioner.html)
+1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)
 1. Support the [Smart Health Checks Questionnaire Response profile](StructureDefinition-SHCQuestionnaireResponse.html)
 1. Implement the RESTful behavior according to the FHIR specification
 1. Support JSON source formats for all interactions"
@@ -166,10 +166,10 @@ The server **SHALL** support both."
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[0].valueCode = #SHALL
 * rest.resource[=].type = #Encounter
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+* rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the Encounter resource, AU Core profile and the conformance expectations for the Encounter resource."
+* rest.resource[=].documentation = "The server **SHALL** support the Encounter resource, Smart Health Checks profile and the conformance expectations for the Encounter resource."
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -423,10 +423,10 @@ The server **SHALL** support both."
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[0].valueCode = #SHALL
 * rest.resource[=].type = #Practitioner
-* rest.resource[=].profile = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+* rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].profile.extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the Practitioner resource, AU Core profile and the conformance expectations for the Practitioner resource."
+* rest.resource[=].documentation = "The server **SHALL** support the Practitioner resource, Smart Health Checks profile and the conformance expectations for the Practitioner resource."
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
@@ -674,8 +674,8 @@ The server **SHALL** support both."
 
 //Encounter
 * rest.resource[+].type = #Encounter
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
-* rest.resource[=].documentation = "The client supports the Encounter resource, the AU Core profile and the conformance expectations for the Encounter resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter"
+* rest.resource[=].documentation = "The client supports the Encounter resource, the Smart Health Checks profile and the conformance expectations for the Encounter resource."
 * rest.resource[=].interaction[0].code = #read
 
 
@@ -818,8 +818,8 @@ The server **SHALL** support both."
 
 //Practitioner
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].supportedProfile[+] = "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
-* rest.resource[=].documentation = "The client supports the Practitioner resource, AU Core profile and the conformance expectations for the Practitioner resource."
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner"
+* rest.resource[=].documentation = "The client supports the Practitioner resource, Smart Health Checks profile and the conformance expectations for the Practitioner resource."
 * rest.resource[=].interaction[0].code = #read
 
 //Questionnaire
