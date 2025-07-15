@@ -5,8 +5,8 @@ Alias: $UCUM = http://unitsofmeasure.org
 Instance: AssemblyInstructions
 InstanceOf: Questionnaire
 Usage: #example
-Title: "Aboriginal and Torres Strait Islander Health Check"
-Description: "Aboriginal and Torres Strait Islander Health Check assessment form."
+Title: "Aboriginal and Torres Strait Islander Health Check (CVD)"
+Description: "Aboriginal and Torres Strait Islander Health Check assessment form (CVD)."
 
 * contained[+] = YesNo
 * contained[+] = YesNoNA
@@ -76,7 +76,19 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueExpression
     * name = "ObsBloodPressure"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}" 
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTobaccoSmokingStatus"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"  
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "SexAtBirthCoding"
+    * language = #text/fhirpath
+    * expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
 
 //R5 preadoption extensions
 * extension[+]
@@ -134,9 +146,9 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* url = "http://www.health.gov.au/assessments/mbs/715"
-* name = "AboriginalTorresStraitIslanderHealthCheck"
-* title = "Aboriginal and Torres Strait Islander Health Check"
+* url = "http://www.health.gov.au/assessments/mbs/715/cvd"
+* name = "AboriginalTorresStraitIslanderHealthCheckCVD"
+* title = "Aboriginal and Torres Strait Islander Health Check (CVD)"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
@@ -153,6 +165,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "age"
     * language = #text/fhirpath
     * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"
+    /*
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "sex"
     * language = #text/fhirpath
@@ -161,6 +174,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "smoker"
     * language = #text/fhirpath
     * expression = "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
+    */
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "postcode"
     * language = #text/fhirpath
