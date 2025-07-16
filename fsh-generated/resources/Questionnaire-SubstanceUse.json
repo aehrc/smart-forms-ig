@@ -665,12 +665,8 @@
       "valueString": "age"
     },
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/variable",
-      "valueExpression": {
-        "name": "ObsTobaccoSmokingStatus",
-        "language": "application/x-fhir-query",
-        "expression": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
-      }
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "ObsTobaccoSmokingStatus"
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/variable",
