@@ -111,6 +111,26 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
     * language = #text/fhirpath
     * expression = "%CVDRiskResultDateString.substring(8,2).toInteger().toString() + ' ' + %CVDRiskResultDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %CVDRiskResultDateString.substring(0,4)"
 
+
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "NewAssessmentQuestionAnswer"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='cvdrisk-newassessmentquestion').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "AusCVDRiskiAccessAnswer"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='cvdrisk-auscvdriskiaccess').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "RepopulateOverrideAnswer"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='cvdrisk-repopulateoverride').answer.value"
+
 //R5 preadoption extensions
 * extension[+]
   * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
@@ -162,15 +182,8 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * answerBoolean = true
   * item[+]
     * linkId = "Guidance-CVDRisk"
-    * text = "Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-        <h1 style=\"font-size:150%;\">AusCVDRisk</h1>
-        <p>The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the AusCVDRisk calculator.</p>
-        <h2 style=\"font-size:100%;\">AusCVDRisk-i application</h2>
-        <p>Clinical systems that utlise the AusCVDRisk-i calculator should assess CVD risk with this application. As this application integrates direcly with the patient record, once the CVD risk result has been saved using AusCVDRisk-i, this form can be repopulated to retrieve and include the result.</p>
-        <h2 style=\"font-size:100%;\">AusCVDRisk online calculator</h2>
-        <p>Clinical systems that do not utlise AusCVDRisk-i, the <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the AusCVDRisk website should be used. This section includes a read only view of a subset of variables that can be used as inputs for the online calculator. The CVD risk result can be entered below.</p>
-        </div>"
+    * text = "The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the Aus CVD Risk calculator."
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:1.1em;\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the Aus&nbsp;CVD&nbsp;Risk calculator.</p></div>"
     * type = #display
   * item[+]
     * linkId = "dabdc7b4-51db-44a0-9d59-77a88587cbe9"
@@ -187,31 +200,86 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * repeats = false
       * readOnly = true
     * item[+]
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#%
-      * linkId = "4c52fcec-0695-4916-b185-24a5c2711631"
-      * text = "Risk result"
-      * type = #integer   
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%CVDRiskResultValue.exists() and %CVDRiskResultDateFormatted.exists()"
+      * linkId = "cvdrisk-newassessmentquestion"
+      * text = "A previous CVD risk result has been found. Do you want to perform a new assessment?"
+      * type = #boolean
+      * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%NewAssessmentQuestionAnswer = true or %CVDRiskResultValue.empty() or %CVDRiskResultDateFormatted.empty()"
+      * linkId = "cvdrisk-auscvdriskiaccess"
+      * text = "Do you have access to the Aus CVD Risk-i application from your clinical system?"
+        * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Do you have access to the <em>Aus&nbsp;CVD&nbsp;Risk&#8209;i</em> application from your clinical system?</p></div>"
+      * type = #boolean
+      * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%AusCVDRiskiAccessAnswer = true"
+      * linkId = "cvdrisk-auscvdriskiguidance"
+      * text = "Using the Aus CVD Risk-i application, calculate the CVD risk result and save it to the patient record. This form can then be repopulated to retrieve and include the result above."
+        * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:1.1em;\">Using the <em>Aus&nbsp;CVD&nbsp;Risk&#8209;i</em> application, calculate the CVD risk result and save it to the patient record. This form can then be repopulated to retrieve and include the result above.</p></div>"
+      * type = #display
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%AusCVDRiskiAccessAnswer = true"
+      * linkId = "cvdrisk-repopulateoverride"
+      * text = "Do you need to manually enter a new CVD risk result instead of repopulating?"
+      * type = #boolean
+      * repeats = false
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%AusCVDRiskiAccessAnswer != true or %RepopulateOverrideAnswer = true"
+      * linkId = "cvdrisk-cvdriskresultgroup"
+      * text = "New CVD risk result"
+      * type = #group
       * repeats = false
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "0162854e-c124-4b58-acd9-93c17562d407"
-        * text = "%"
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%AusCVDRiskiAccessAnswer != true"
+        * linkId = "cvdrisk-onlincecalculatorguidance"
+        * text = "Use the online Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator"
+          * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+            <p>The <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the Aus&nbsp;CVD&nbsp;Risk website should be used. Below is a read only view of a subset of variables that can be used as inputs for the online calculator. The calculated CVD risk result can be entered here.</p></div>"
         * type = #display
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-      * linkId = "28ff9463-b77f-435d-9ba7-427682a61f96"
-      * text = "Assessed risk category"
-      * type = #choice   
-      * repeats = false
-      * answerOption[+].valueString = "High Risk"
-      * answerOption[+].valueString = "Intermediate Risk"
-      * answerOption[+].valueString = "Low Risk"
+      * item[+]
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#%
+        * linkId = "4c52fcec-0695-4916-b185-24a5c2711631"
+        * text = "Risk result score"
+        * type = #integer   
+        * repeats = false
+        * item[+]
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+          * linkId = "0162854e-c124-4b58-acd9-93c17562d407"
+          * text = "%"
+          * type = #display
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * linkId = "28ff9463-b77f-435d-9ba7-427682a61f96"
+        * text = "Assessed risk category"
+        * type = #choice   
+        * repeats = false
+        * answerOption[+].valueString = "High Risk"
+        * answerOption[+].valueString = "Intermediate Risk"
+        * answerOption[+].valueString = "Low Risk"
+//Online calculator variables view
   * item[+]
     * linkId = "8d02ef36-3f48-4912-b001-e9fec6aa7101"
     * text = "CVD risk calculator variables"
     * type = #group
     * repeats = false
     * readOnly = true
+    * enableWhen[+]
+      * question = "cvdrisk-auscvdriskiaccess"
+      * operator = #=
+      * answerBoolean = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Age"
