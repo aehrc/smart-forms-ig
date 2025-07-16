@@ -64,10 +64,16 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
   * valueString = "ObsBloodPressure"
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsBloodPressureLatest"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "SexAtBirthCoding"
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "ObsTobaccoSmokingStatus"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsTobaccoSmokingStatusLatest"
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "postcode"
@@ -78,32 +84,51 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
   * valueExpression
     * name = "ObsTotalCholesterol"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=14647-2&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=14647-2&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHDLCholesterol"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=14646-4&_sort=-date&patient={{%patient.id}}"
+//client side filtering on Observations
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTotalCholesterolLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsTotalCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHDLCholesterolLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsHDLCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
 //Previous CVD risk result variables
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "CVDRiskResult"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=441829007&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=441829007&_sort=-date&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "CVDRiskResultLatest"
+    * language = #text/fhirpath
+    * expression = "%CVDRiskResult.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "CVDRiskResultValue"
     * language = #text/fhirpath
-    * expression = "%CVDRiskResult.entry.resource.select((((value.ofType(Quantity).comparator + value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit | value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit).first() | (value.ofType(Range).low.value.toString() + ' - ' + value.ofType(Range).high.value.toString() + value.ofType(Range).high.unit)).first()) + ' ' + interpretation.coding.display)"
+    * expression = "%CVDRiskResultLatest.select((((value.ofType(Quantity).comparator + value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit | value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit).first() | (value.ofType(Range).low.value.toString() + ' - ' + value.ofType(Range).high.value.toString() + value.ofType(Range).high.unit)).first()) + ' ' + interpretation.coding.display)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "CVDRiskResultDateString"
     * language = #text/fhirpath
-    * expression = "%CVDRiskResult.entry.resource.effective.toString()"
+    * expression = "%CVDRiskResultLatest.effective.toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -317,7 +342,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first()"
+            * expression = "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
           * linkId = "333007c7-47a9-482b-af11-e55484abf2ae"
           * text = "Value"
           * type = #choice
@@ -331,7 +356,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsTobaccoSmokingStatus.entry.resource.effective"
+            * expression = "%ObsTobaccoSmokingStatusLatest.effective"
           * linkId = "cvdrisk-smokingstatus-date"
           * text = "Date performed"
           * type = #date
@@ -344,7 +369,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+            * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
           * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
           * text = "Value"
@@ -358,7 +383,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsBloodPressure.entry.resource.effective"
+            * expression = "%ObsBloodPressureLatest.effective"
           * linkId = "85d8faf7-ddb0-446c-b489-28d786d6de50"
           * text = "Date performed"
           * type = #date
@@ -371,7 +396,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsTotalCholesterol.entry.resource.value.value"
+            * expression = "%ObsTotalCholesterolLatest.value.value"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
           * linkId = "99932a93-8135-47b2-933b-fd751b34b7af"
           * text = "Value"
@@ -385,7 +410,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsTotalCholesterol.entry.resource.effective"
+            * expression = "%ObsTotalCholesterolLatest.effective"
           * linkId = "16cbe87b-5c8d-4385-b7d9-da3f07f63f8a"
           * text = "Date performed"
           * type = #date
@@ -398,7 +423,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsHDLCholesterol.entry.resource.value.value"
+            * expression = "%ObsHDLCholesterolLatest.value.value"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
           * linkId = "c14b4513-1e20-461d-97f4-4631711adc65"
           * text = "Value"
@@ -412,7 +437,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsHDLCholesterol.entry.resource.effective"
+            * expression = "%ObsHDLCholesterolLatest.effective"
           * linkId = "6407e0a7-c416-4a75-933b-904c0dcf88ca"
           * text = "Date performed"
           * type = #date

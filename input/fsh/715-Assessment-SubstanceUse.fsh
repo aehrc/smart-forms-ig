@@ -59,6 +59,9 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "ObsTobaccoSmokingStatus"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsTobaccoSmokingStatusLatest"
 
 //fhirpath variables
 //Previous examination results variables
@@ -67,13 +70,13 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * valueExpression
     * name = "ObsTobaccoSmokingStatusValue"
     * language = #text/fhirpath
-    * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+    * expression = "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsTobaccoSmokingStatusDateString"
     * language = #text/fhirpath
-    * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsTobaccoSmokingStatusLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression

@@ -388,7 +388,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first()"
+                            "expression": "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
                           }
                         }
                       ],
@@ -439,7 +439,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsTobaccoSmokingStatus.entry.resource.effective"
+                            "expression": "%ObsTobaccoSmokingStatusLatest.effective"
                           }
                         }
                       ],
@@ -462,7 +462,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+                            "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value"
                           }
                         },
                         {
@@ -504,7 +504,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsBloodPressure.entry.resource.effective"
+                            "expression": "%ObsBloodPressureLatest.effective"
                           }
                         }
                       ],
@@ -527,7 +527,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsTotalCholesterol.entry.resource.value.value"
+                            "expression": "%ObsTotalCholesterolLatest.value.value"
                           }
                         },
                         {
@@ -569,7 +569,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsTotalCholesterol.entry.resource.effective"
+                            "expression": "%ObsTotalCholesterolLatest.effective"
                           }
                         }
                       ],
@@ -592,7 +592,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsHDLCholesterol.entry.resource.value.value"
+                            "expression": "%ObsHDLCholesterolLatest.value.value"
                           }
                         },
                         {
@@ -634,7 +634,7 @@
                           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                           "valueExpression": {
                             "language": "text/fhirpath",
-                            "expression": "%ObsHDLCholesterol.entry.resource.effective"
+                            "expression": "%ObsHDLCholesterolLatest.effective"
                           }
                         }
                       ],
@@ -913,11 +913,19 @@
     },
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "ObsBloodPressureLatest"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
       "valueString": "SexAtBirthCoding"
     },
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
       "valueString": "ObsTobaccoSmokingStatus"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
+      "valueString": "ObsTobaccoSmokingStatusLatest"
     },
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext",
@@ -928,7 +936,7 @@
       "valueExpression": {
         "name": "ObsTotalCholesterol",
         "language": "application/x-fhir-query",
-        "expression": "Observation?code=14647-2&_count=1&_sort=-date&patient={{%patient.id}}"
+        "expression": "Observation?code=14647-2&_sort=-date&patient={{%patient.id}}"
       }
     },
     {
@@ -936,7 +944,23 @@
       "valueExpression": {
         "name": "ObsHDLCholesterol",
         "language": "application/x-fhir-query",
-        "expression": "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
+        "expression": "Observation?code=14646-4&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsTotalCholesterolLatest",
+        "language": "text/fhirpath",
+        "expression": "%ObsTotalCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "ObsHDLCholesterolLatest",
+        "language": "text/fhirpath",
+        "expression": "%ObsHDLCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
       }
     },
     {
@@ -944,7 +968,15 @@
       "valueExpression": {
         "name": "CVDRiskResult",
         "language": "application/x-fhir-query",
-        "expression": "Observation?code=441829007&status=final&_count=1&_sort=-date&patient={{%patient.id}}"
+        "expression": "Observation?code=441829007&_sort=-date&patient={{%patient.id}}"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "CVDRiskResultLatest",
+        "language": "text/fhirpath",
+        "expression": "%CVDRiskResult.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
       }
     },
     {
@@ -952,7 +984,7 @@
       "valueExpression": {
         "name": "CVDRiskResultValue",
         "language": "text/fhirpath",
-        "expression": "%CVDRiskResult.entry.resource.select((((value.ofType(Quantity).comparator + value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit | value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit).first() | (value.ofType(Range).low.value.toString() + ' - ' + value.ofType(Range).high.value.toString() + value.ofType(Range).high.unit)).first()) + ' ' + interpretation.coding.display)"
+        "expression": "%CVDRiskResultLatest.select((((value.ofType(Quantity).comparator + value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit | value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit).first() | (value.ofType(Range).low.value.toString() + ' - ' + value.ofType(Range).high.value.toString() + value.ofType(Range).high.unit)).first()) + ' ' + interpretation.coding.display)"
       }
     },
     {
@@ -960,7 +992,7 @@
       "valueExpression": {
         "name": "CVDRiskResultDateString",
         "language": "text/fhirpath",
-        "expression": "%CVDRiskResult.entry.resource.effective.toString()"
+        "expression": "%CVDRiskResultLatest.effective.toString()"
       }
     },
     {

@@ -76,19 +76,34 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueExpression
     * name = "ObsBloodPressure"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}" 
+    * expression = "Observation?code=85354-9&_sort=-date&patient={{%patient.id}}" 
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsTobaccoSmokingStatus"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"  
+    * expression = "Observation?code=72166-2&_sort=-date&patient={{%patient.id}}"  
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "SexAtBirthCoding"
     * language = #text/fhirpath
     * expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
+
+//client side filtering on Observations
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBloodPressureLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsBloodPressure.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTobaccoSmokingStatusLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+
 
 //R5 preadoption extensions
 * extension[+]

@@ -321,8 +321,8 @@ The client **SHALL** support this method."
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "code"
-* rest.resource[=].extension[=].extension[+].url = "required"
-* rest.resource[=].extension[=].extension[=].valueString = "_count"
+/** rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"*/
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 
@@ -383,11 +383,11 @@ The server **SHALL** support both. "
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
-* rest.resource[=].searchParam[+].name = "_count"
+/** rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL*/
 * rest.resource[=].searchParam[+].name = "_sort"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by date and **MAY** support other values."
@@ -765,8 +765,8 @@ The client **SHALL** support this method."
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "code"
-* rest.resource[=].extension[=].extension[+].url = "required"
-* rest.resource[=].extension[=].extension[=].valueString = "_count"
+/** rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "_count"*/
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "_sort"
 
@@ -796,11 +796,11 @@ The server **SHALL** support both. "
 * rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a code value and **MAY** provide both the code and system values. 
 
 The server **SHALL** support both."
-* rest.resource[=].searchParam[+].name = "_count"
+/** rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL*/
 * rest.resource[=].searchParam[+].name = "_sort"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by date and **MAY** support other values."

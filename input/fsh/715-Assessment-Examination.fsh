@@ -64,46 +64,86 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueString = "ObsBloodPressure"
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsBloodPressureLatest"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
 
 //fhir query variables
-
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsWaistCircumference"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=8280-0&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=8280-0&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHeartRate"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=8867-4&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=8867-4&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHeartRhythm"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=364074009&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=364074009&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsBodyHeight"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=8302-2&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=8302-2&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsBodyWeight"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=29463-7&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=29463-7&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHeadCircumference"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=9843-4&_sort=-date&patient={{%patient.id}}"
+
+//client side filtering on Observations
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsWaistCircumferenceLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsWaistCircumference.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHeartRateLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsHeartRate.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHeartRhythmLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsHeartRhythm.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyHeightLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsBodyHeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyWeightLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsBodyWeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHeadCircumferenceLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsHeadCircumference.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
 
 //fhirpath variables
 //Previous examination results variables
@@ -112,13 +152,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyHeightValue"
     * language = #text/fhirpath
-    * expression = "%ObsBodyHeight.entry.resource.where(status='final').value.value"
+    * expression = "%ObsBodyHeightLatest.value.value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsBodyHeightDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsBodyHeightLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -130,13 +170,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyWeightValue"
     * language = #text/fhirpath
-    * expression = "%ObsBodyWeight.entry.resource.where(status='final').value.value"
+    * expression = "%ObsBodyWeightLatest.value.value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsBodyWeightDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsBodyWeightLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -148,13 +188,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeadCircumferenceValue"
     * language = #text/fhirpath
-    * expression = "%ObsHeadCircumference.entry.resource.where(status='final').value.value"
+    * expression = "%ObsHeadCircumferenceLatest.value.value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHeadCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString"
+    * expression = "%ObsHeadCircumferenceLatest.effective.toDate().toString"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -166,13 +206,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsWaistCircumferenceValue"
     * language = #text/fhirpath
-    * expression = "%ObsWaistCircumference.entry.resource.where(status='final').value.value"
+    * expression = "%ObsWaistCircumferenceLatest.value.value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsWaistCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsWaistCircumferenceLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -184,13 +224,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRateValue"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRate.entry.resource.where(status='final').value.value"
+    * expression = "%ObsHeartRateLatest.value.value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHeartRateDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsHeartRateLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -202,13 +242,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRhythmValue"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+    * expression = "%ObsHeartRhythmLatest.value.coding.where(system='http://snomed.info/sct').first()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsHeartRhythmDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsHeartRhythmLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -220,13 +260,13 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBloodPressureValue"
     * language = #text/fhirpath
-    * expression = "%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round(0).toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round(0).toString()"
+    * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value.round(0).toString() + ' / ' + %ObsBloodPressureLatest.component.where(code.coding.exists(code='8462-4')).value.value.round(0).toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsBloodPressureDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString()"
+    * expression = "%ObsBloodPressureLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -585,7 +625,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "Last result"
           * extension[http://hl7.org/fhir/StructureDefinition/cqf-expression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %bsBloodPressureDateFormatted + ' )', 'Not available')"
+            * expression = "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %ObsBloodPressureDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
       * item[+]
