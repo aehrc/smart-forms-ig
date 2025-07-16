@@ -318,7 +318,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
             * expression = "%ObsTobaccoSmokingStatus.entry.resource.value.coding.where(system='http://snomed.info/sct').first()"
-          * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
+          * linkId = "333007c7-47a9-482b-af11-e55484abf2ae"
           * text = "Value"
           * type = #choice
           * repeats = false

@@ -5,8 +5,8 @@ Alias: $UCUM = http://unitsofmeasure.org
 Instance: AssemblyInstructions
 InstanceOf: Questionnaire
 Usage: #example
-Title: "Aboriginal and Torres Strait Islander Health Check (CVD)"
-Description: "Aboriginal and Torres Strait Islander Health Check assessment form (CVD)."
+Title: "Aboriginal and Torres Strait Islander Health Check"
+Description: "Aboriginal and Torres Strait Islander Health Check assessment form."
 
 * contained[+] = YesNo
 * contained[+] = YesNoNA
@@ -146,9 +146,9 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 
 
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
-* url = "http://www.health.gov.au/assessments/mbs/715/cvd"
-* name = "AboriginalTorresStraitIslanderHealthCheckCVD"
-* title = "Aboriginal and Torres Strait Islander Health Check (CVD)"
+* url = "http://www.health.gov.au/assessments/mbs/715"
+* name = "AboriginalTorresStraitIslanderHealthCheck"
+* title = "Aboriginal and Torres Strait Islander Health Check"
 * status = #draft
 * experimental = false
 * subjectType[+] = #Patient
