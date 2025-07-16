@@ -246,7 +246,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = false
-* item.item[=].item[=].item[=].answerValueSet = "#smarthealthchecks-medication"
+* item.item[=].item[=].item[=].answerValueSet = "#smart-health-checks-medicine-products"
 
 * item.item[=].item[=].item[+].linkId = "regularmedications-summary-new-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"

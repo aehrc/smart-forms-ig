@@ -80,7 +80,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp"
-* meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extr-template"
 * url = "http://www.health.gov.au/assessments/mbs/715/PatientDetails"
 * name = "PatientDetails"
 * title = "Aboriginal and Torres Strait Islander Health Check - Patient Details"
@@ -511,8 +510,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%patient.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/closing-the-gap-registration').value"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
-    * extension[questionnaire-choiceOrientation].valueCode = #horizontal
     * linkId = "83814495-3a81-43f4-88df-42186cce516a"
     * text = "Registered for Closing the Gap PBS Co-payment Measure (CTG)"
     * type = #boolean
