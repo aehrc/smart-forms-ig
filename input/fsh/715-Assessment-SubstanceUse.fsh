@@ -56,14 +56,9 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
-    
-//fhir query variables
 * extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsTobaccoSmokingStatus"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsTobaccoSmokingStatus"
 
 //fhirpath variables
 //Previous examination results variables
