@@ -230,7 +230,7 @@ Usage: #inline
 * parameter[=].part[=].valueString = "clinicalStatus"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "repeat(item).where(linkId='allergysummary-status').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Clinical status"
 * parameter[+].name = "operation"
@@ -242,7 +242,7 @@ Usage: #inline
 * parameter[=].part[=].valueString = "text"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='allergysummary-comment').answer.value.first()"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "repeat(item).where(linkId='allergysummary-comment').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Comment"
 
