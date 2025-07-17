@@ -417,6 +417,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
         * linkId = "obs-height-newdate"
         * text = "New result date"
         * type = #date
