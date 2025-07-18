@@ -195,6 +195,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-lengthheight-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -284,6 +293,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-height-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -364,6 +382,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-weight-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -534,6 +561,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-headcircumference-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -616,6 +652,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-waistcircumference-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -696,6 +741,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-heartrate-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -761,6 +815,15 @@
                   "answerValueSet": "#heart-rhythm-1"
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "obs-heartrhythm-newdate",
                   "text": "New result date",
                   "type": "date",
@@ -913,6 +976,15 @@
                   "repeats": false
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(), today())"
+                      }
+                    }
+                  ],
                   "linkId": "bp-newbp-date",
                   "text": "Date performed",
                   "type": "date",

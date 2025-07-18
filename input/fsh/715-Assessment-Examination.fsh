@@ -384,6 +384,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(), today())"
         * linkId = "obs-lengthheight-newdate"
         * text = "New result date"
         * type = #date
@@ -417,6 +420,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
         * linkId = "obs-height-newdate"
         * text = "New result date"
         * type = #date
@@ -447,6 +453,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "kg"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(), today())"
         * linkId = "obs-weight-newdate"
         * text = "New result date"
         * type = #date
@@ -512,6 +521,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(), today())"
         * linkId = "obs-headcircumference-newdate"
         * text = "New result date"
         * type = #date
@@ -544,6 +556,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(), today())"
         * linkId = "obs-waistcircumference-newdate"
         * text = "New result date"
         * type = #date
@@ -574,6 +589,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "/min"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(), today())"
         * linkId = "obs-heartrate-newdate"
         * text = "New result date"
         * type = #date
@@ -600,6 +618,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false        
         * answerValueSet = "#heart-rhythm-1"
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(), today())"
         * linkId = "obs-heartrhythm-newdate"
         * text = "New result date"
         * type = #date
@@ -652,6 +673,9 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "mm Hg"
           * type = #display
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(), today())"
         * linkId = "bp-newbp-date"
         * text = "Date performed"
         * type = #date
