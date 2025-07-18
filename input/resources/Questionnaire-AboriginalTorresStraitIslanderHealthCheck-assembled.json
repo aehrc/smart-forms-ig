@@ -2904,7 +2904,39 @@
             "valueExpression": {
                 "name": "ObsBloodPressure",
                 "language": "application/x-fhir-query",
-                "expression": "Observation?code=85354-9&_count=1&_sort=-date&patient={{%patient.id}}"
+                "expression": "Observation?code=85354-9&_sort=-date&patient={{%patient.id}}"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/variable",
+            "valueExpression": {
+                "name": "ObsTobaccoSmokingStatus",
+                "language": "application/x-fhir-query",
+                "expression": "Observation?code=72166-2&_sort=-date&patient={{%patient.id}}"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/variable",
+            "valueExpression": {
+                "name": "SexAtBirthCoding",
+                "language": "text/fhirpath",
+                "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/variable",
+            "valueExpression": {
+                "name": "ObsBloodPressureLatest",
+                "language": "text/fhirpath",
+                "expression": "%ObsBloodPressure.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/variable",
+            "valueExpression": {
+                "name": "ObsTobaccoSmokingStatusLatest",
+                "language": "text/fhirpath",
+                "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
             }
         },
         {
@@ -3257,22 +3289,6 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
                     "valueExpression": {
-                        "name": "sex",
-                        "language": "text/fhirpath",
-                        "expression": "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value"
-                    }
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
-                    "valueExpression": {
-                        "name": "smoker",
-                        "language": "text/fhirpath",
-                        "expression": "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
-                    }
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
-                    "valueExpression": {
                         "name": "postcode",
                         "language": "text/fhirpath",
                         "expression": "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='f1262ade-843c-4eba-a86d-51a9c97d134b').item.where(linkId='4e0dc185-f83e-4027-b7a8-ecb543d42c6d').item.where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.value"
@@ -3585,17 +3601,9 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
                     "valueExpression": {
-                        "name": "ObsTobaccoSmokingStatus",
-                        "language": "application/x-fhir-query",
-                        "expression": "Observation?code=72166-2&_count=1&_sort=-date&patient={{%patient.id}}"
-                    }
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
-                    "valueExpression": {
                         "name": "ObsTobaccoSmokingStatusValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+                        "expression": "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
                     }
                 },
                 {
@@ -3603,7 +3611,7 @@
                     "valueExpression": {
                         "name": "ObsTobaccoSmokingStatusDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsTobaccoSmokingStatus.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsTobaccoSmokingStatusLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3627,7 +3635,7 @@
                     "valueExpression": {
                         "name": "ObsWaistCircumference",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=8280-0&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=8280-0&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
@@ -3635,7 +3643,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRate",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=8867-4&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=8867-4&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
@@ -3643,7 +3651,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRhythm",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=364074009&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=364074009&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
@@ -3651,7 +3659,7 @@
                     "valueExpression": {
                         "name": "ObsBodyHeight",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=8302-2&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=8302-2&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
@@ -3659,7 +3667,7 @@
                     "valueExpression": {
                         "name": "ObsBodyWeight",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=29463-7&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=29463-7&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
@@ -3667,7 +3675,55 @@
                     "valueExpression": {
                         "name": "ObsHeadCircumference",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=9843-4&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=9843-4&_sort=-date&patient={{%patient.id}}"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsWaistCircumferenceLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsWaistCircumference.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRateLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRate.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeartRhythmLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRhythm.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyHeightLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsBodyWeightLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyWeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHeadCircumferenceLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeadCircumference.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
                     }
                 },
                 {
@@ -3675,7 +3731,7 @@
                     "valueExpression": {
                         "name": "ObsBodyHeightValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeight.entry.resource.where(status='final').value.value"
+                        "expression": "%ObsBodyHeightLatest.value.value"
                     }
                 },
                 {
@@ -3683,7 +3739,7 @@
                     "valueExpression": {
                         "name": "ObsBodyHeightDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeight.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsBodyHeightLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3699,7 +3755,7 @@
                     "valueExpression": {
                         "name": "ObsBodyWeightValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyWeight.entry.resource.where(status='final').value.value"
+                        "expression": "%ObsBodyWeightLatest.value.value"
                     }
                 },
                 {
@@ -3707,7 +3763,7 @@
                     "valueExpression": {
                         "name": "ObsBodyWeightDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyWeight.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsBodyWeightLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3723,7 +3779,7 @@
                     "valueExpression": {
                         "name": "ObsHeadCircumferenceValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeadCircumference.entry.resource.where(status='final').value.value"
+                        "expression": "%ObsHeadCircumferenceLatest.value.value"
                     }
                 },
                 {
@@ -3731,7 +3787,7 @@
                     "valueExpression": {
                         "name": "ObsHeadCircumferenceDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeadCircumference.entry.resource.where(status='final').effective.toDate().toString"
+                        "expression": "%ObsHeadCircumferenceLatest.effective.toDate().toString"
                     }
                 },
                 {
@@ -3747,7 +3803,7 @@
                     "valueExpression": {
                         "name": "ObsWaistCircumferenceValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsWaistCircumference.entry.resource.where(status='final').value.value"
+                        "expression": "%ObsWaistCircumferenceLatest.value.value"
                     }
                 },
                 {
@@ -3755,7 +3811,7 @@
                     "valueExpression": {
                         "name": "ObsWaistCircumferenceDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsWaistCircumference.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsWaistCircumferenceLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3771,7 +3827,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRateValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRate.entry.resource.where(status='final').value.value"
+                        "expression": "%ObsHeartRateLatest.value.value"
                     }
                 },
                 {
@@ -3779,7 +3835,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRateDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRate.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsHeartRateLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3795,7 +3851,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRhythmValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRhythm.entry.resource.where(status='final').value.coding.where(system='http://snomed.info/sct').first()"
+                        "expression": "%ObsHeartRhythmLatest.value.coding.where(system='http://snomed.info/sct').first()"
                     }
                 },
                 {
@@ -3803,7 +3859,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRhythmDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRhythm.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsHeartRhythmLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3819,7 +3875,7 @@
                     "valueExpression": {
                         "name": "ObsBloodPressureValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8480-6')).value.value.round(0).toString() + ' / ' + %ObsBloodPressure.entry.resource.where(status='final').component.where(code.coding.exists(code='8462-4')).value.value.round(0).toString()"
+                        "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value.round(0).toString() + ' / ' + %ObsBloodPressureLatest.component.where(code.coding.exists(code='8462-4')).value.value.round(0).toString()"
                     }
                 },
                 {
@@ -3827,7 +3883,7 @@
                     "valueExpression": {
                         "name": "ObsBloodPressureDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressure.entry.resource.where(status='final').effective.toDate().toString()"
+                        "expression": "%ObsBloodPressureLatest.effective.toDate().toString()"
                     }
                 },
                 {
@@ -3859,7 +3915,7 @@
                     "valueExpression": {
                         "name": "ObsTotalCholesterol",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=14647-2&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=14647-2&_sort=-date&patient={{%patient.id}}"
                     }
                 },
                 {
@@ -3867,7 +3923,87 @@
                     "valueExpression": {
                         "name": "ObsHDLCholesterol",
                         "language": "application/x-fhir-query",
-                        "expression": "Observation?code=14646-4&_count=1&_sort=-date&patient={{%patient.id}}"
+                        "expression": "Observation?code=14646-4&_sort=-date&patient={{%patient.id}}"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsTotalCholesterolLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsTotalCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "ObsHDLCholesterolLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHDLCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "CVDRiskResult",
+                        "language": "application/x-fhir-query",
+                        "expression": "Observation?code=441829007&_sort=-date&patient={{%patient.id}}"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "CVDRiskResultLatest",
+                        "language": "text/fhirpath",
+                        "expression": "%CVDRiskResult.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "CVDRiskResultValue",
+                        "language": "text/fhirpath",
+                        "expression": "%CVDRiskResultLatest.select((((value.ofType(Quantity).comparator + value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit | value.ofType(Quantity).value.toString() + value.ofType(Quantity).unit).first() | (value.ofType(Range).low.value.toString() + ' - ' + value.ofType(Range).high.value.toString() + value.ofType(Range).high.unit)).first()) + ' ' + interpretation.coding.display)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "CVDRiskResultDateString",
+                        "language": "text/fhirpath",
+                        "expression": "%CVDRiskResultLatest.effective.toString()"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "CVDRiskResultDateFormatted",
+                        "language": "text/fhirpath",
+                        "expression": "%CVDRiskResultDateString.substring(8,2).toInteger().toString() + ' ' + %CVDRiskResultDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %CVDRiskResultDateString.substring(0,4)"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "NewAssessmentQuestionAnswer",
+                        "language": "text/fhirpath",
+                        "expression": "repeat(item).where(linkId='cvdrisk-newassessmentquestion').answer.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "AusCVDRiskiAccessAnswer",
+                        "language": "text/fhirpath",
+                        "expression": "repeat(item).where(linkId='cvdrisk-auscvdriskiaccess').answer.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
+                        "name": "RepopulateOverrideAnswer",
+                        "language": "text/fhirpath",
+                        "expression": "repeat(item).where(linkId='cvdrisk-repopulateoverride').answer.value"
                     }
                 }
             ],
@@ -4674,7 +4810,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
+                                        "expression": "%SexAtBirthCoding"
                                     }
                                 },
                                 {
@@ -5367,21 +5503,6 @@
                                         "language": "text/fhirpath",
                                         "expression": "%patient.extension.where(url='http://hl7.org.au/fhir/StructureDefinition/closing-the-gap-registration').value"
                                     }
-                                },
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                    "valueCodeableConcept": {
-                                        "coding": [
-                                            {
-                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                "code": "radio-button"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                                    "valueCode": "horizontal"
                                 }
                             ],
                             "linkId": "83814495-3a81-43f4-88df-42186cce516a",
@@ -6912,7 +7033,7 @@
                                             "text": "Medication",
                                             "type": "open-choice",
                                             "repeats": false,
-                                            "answerValueSet": "#smarthealthchecks-medication"
+                                            "answerValueSet": "#smart-health-checks-medicine-products"
                                         },
                                         {
                                             "linkId": "regularmedications-summary-new-dosage",
@@ -15500,6 +15621,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-lengthheight-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -15589,6 +15719,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-height-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -15669,6 +15808,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-weight-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -15839,6 +15987,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-headcircumference-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -15921,6 +16078,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-waistcircumference-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -16001,6 +16167,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-heartrate-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -16066,6 +16241,15 @@
                                             "answerValueSet": "#heart-rhythm-1"
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "obs-heartrhythm-newdate",
                                             "text": "New result date",
                                             "type": "date",
@@ -16116,7 +16300,7 @@
                                                         "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
                                                         "valueExpression": {
                                                             "language": "text/fhirpath",
-                                                            "expression": "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %bsBloodPressureDateFormatted + ' )', 'Not available')"
+                                                            "expression": "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %ObsBloodPressureDateFormatted + ' )', 'Not available')"
                                                         }
                                                     },
                                                     {
@@ -16209,6 +16393,15 @@
                                             ]
                                         },
                                         {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(), today())"
+                                                    }
+                                                }
+                                            ],
                                             "linkId": "bp-newbp-date",
                                             "text": "Date performed",
                                             "type": "date",
@@ -16397,35 +16590,232 @@
                             ]
                         },
                         {
-                            "linkId": "RecordUpdate-CVDRisk",
-                            "text": "Important: The patient record may not be updated with information entered here. Information intended for the patient record should be entered there.",
+                            "linkId": "Guidance-CVDRisk",
+                            "text": "The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the Aus CVD Risk calculator.",
                             "_text": {
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <strong>Important:</strong> <em>The patient record may not be updated with information entered here. Information intended for the patient record should be entered there first.</em>\r\n    </div>"
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:1.1em;\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the Aus&nbsp;CVD&nbsp;Risk calculator.</p></div>"
                                     }
                                 ]
                             },
                             "type": "display"
                         },
                         {
-                            "linkId": "Guidance-CVDRisk",
-                            "text": "Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator",
-                            "_text": {
-                                "extension": [
-                                    {
-                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n        <p style=\"font-size:1.2em\">The Australian guideline for assessing and managing cardiovascular disease risk recommends the use of the online <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a>.</p>\r\n        <p>The items included in this section are a subset of variables that can be used as inputs for the online calculator.</p>\r\n        <p>The final CVD risk result can be entered in the item at the bottom of this section.</p>\r\n        </div>"
-                                    }
-                                ]
-                            },
-                            "type": "display"
+                            "linkId": "dabdc7b4-51db-44a0-9d59-77a88587cbe9",
+                            "text": "CVD risk result",
+                            "type": "group",
+                            "repeats": false,
+                            "item": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "iif(%CVDRiskResultValue.exists() and %CVDRiskResultDateFormatted.exists(), %CVDRiskResultValue + ' ( ' + %CVDRiskResultDateFormatted + ' )', 'Not available')"
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "cvdrisk-latestresult",
+                                    "text": "Latest available result",
+                                    "type": "string",
+                                    "repeats": false,
+                                    "readOnly": true
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%CVDRiskResultValue.exists() and %CVDRiskResultDateFormatted.exists()"
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "cvdrisk-newassessmentquestion",
+                                    "text": "A previous CVD risk result has been found. Do you want to perform a new assessment?",
+                                    "type": "boolean",
+                                    "repeats": false
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%NewAssessmentQuestionAnswer = true or %CVDRiskResultValue.empty() or %CVDRiskResultDateFormatted.empty()"
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "cvdrisk-auscvdriskiaccess",
+                                    "text": "Do you have access to the Aus CVD Risk-i application from your clinical system?",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Do you have access to the <em>Aus&nbsp;CVD&nbsp;Risk&#8209;i</em> application from your clinical system?</p></div>"
+                                            }
+                                        ]
+                                    },
+                                    "type": "boolean",
+                                    "repeats": false
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%AusCVDRiskiAccessAnswer = true"
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "cvdrisk-auscvdriskiguidance",
+                                    "text": "Using the Aus CVD Risk-i application, calculate the CVD risk result and save it to the patient record. This form can then be repopulated to retrieve and include the result above.",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:1.1em;\">Using the <em>Aus&nbsp;CVD&nbsp;Risk&#8209;i</em> application, calculate the CVD risk result and save it to the patient record. This form can then be repopulated to retrieve and include the result above.</p></div>"
+                                            }
+                                        ]
+                                    },
+                                    "type": "display"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%AusCVDRiskiAccessAnswer = true"
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "cvdrisk-repopulateoverride",
+                                    "text": "Do you need to manually enter a new CVD risk result instead of repopulating?",
+                                    "type": "boolean",
+                                    "repeats": false
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%AusCVDRiskiAccessAnswer != true or %RepopulateOverrideAnswer = true"
+                                            }
+                                        }
+                                    ],
+                                    "linkId": "cvdrisk-cvdriskresultgroup",
+                                    "text": "New CVD risk result",
+                                    "type": "group",
+                                    "repeats": false,
+                                    "item": [
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%AusCVDRiskiAccessAnswer != true"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "cvdrisk-onlincecalculatorguidance",
+                                            "text": "Use the online Australian CVD risk calculator - https://www.cvdcheck.org.au/calculator",
+                                            "_text": {
+                                                "extension": [
+                                                    {
+                                                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n            <p>The <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the Aus&nbsp;CVD&nbsp;Risk website should be used. Below is a read only view of a subset of variables that can be used as inputs for the online calculator. The calculated CVD risk result can be entered here.</p></div>"
+                                                    }
+                                                ]
+                                            },
+                                            "type": "display"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "%"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "4c52fcec-0695-4916-b185-24a5c2711631",
+                                            "text": "Risk result score",
+                                            "type": "integer",
+                                            "repeats": false,
+                                            "item": [
+                                                {
+                                                    "extension": [
+                                                        {
+                                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                                            "valueCodeableConcept": {
+                                                                "coding": [
+                                                                    {
+                                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                                        "code": "unit"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "linkId": "0162854e-c124-4b58-acd9-93c17562d407",
+                                                    "text": "%",
+                                                    "type": "display"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                                    "valueCodeableConcept": {
+                                                        "coding": [
+                                                            {
+                                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                                "code": "radio-button"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "28ff9463-b77f-435d-9ba7-427682a61f96",
+                                            "text": "Assessed risk category",
+                                            "type": "choice",
+                                            "repeats": false,
+                                            "answerOption": [
+                                                {
+                                                    "valueString": "High Risk"
+                                                },
+                                                {
+                                                    "valueString": "Intermediate Risk"
+                                                },
+                                                {
+                                                    "valueString": "Low Risk"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "linkId": "8d02ef36-3f48-4912-b001-e9fec6aa7101",
                             "text": "CVD risk calculator variables",
                             "type": "group",
+                            "enableWhen": [
+                                {
+                                    "question": "cvdrisk-auscvdriskiaccess",
+                                    "operator": "=",
+                                    "answerBoolean": false
+                                }
+                            ],
                             "repeats": false,
                             "readOnly": true,
                             "item": [
@@ -16478,7 +16868,7 @@
                                             "valueExpression": {
                                                 "description": "CVD Risk Sex At Birth",
                                                 "language": "text/fhirpath",
-                                                "expression": "%sex"
+                                                "expression": "%SexAtBirthCoding"
                                             }
                                         }
                                     ],
@@ -16487,58 +16877,6 @@
                                     "type": "choice",
                                     "repeats": false,
                                     "answerValueSet": "#biological-sex-1"
-                                },
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
-                                            "valueExpression": {
-                                                "description": "CVD Risk Smoking Status",
-                                                "language": "text/fhirpath",
-                                                "expression": "%smoker"
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "bac0f824-3784-400e-80f9-ad18d46bd8cb",
-                                    "text": "Smoking status",
-                                    "type": "choice",
-                                    "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "266919005",
-                                                "display": "Lifetime non-smoker"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "77176002",
-                                                "display": "Current smoker"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "8517006",
-                                                "display": "Ex-smoker"
-                                            }
-                                        },
-                                        {
-                                            "valueCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "16090371000119103",
-                                                "display": "Exposure to second hand tobacco smoke"
-                                            }
-                                        },
-                                        {
-                                            "valueString": "Wants to quit"
-                                        },
-                                        {
-                                            "valueString": "Other tobacco use"
-                                        }
-                                    ]
                                 },
                                 {
                                     "extension": [
@@ -16560,6 +16898,80 @@
                                     "repeats": false,
                                     "item": [
                                         {
+                                            "linkId": "bac0f824-3784-400e-80f9-ad18d46bd8cb",
+                                            "text": "Smoking status",
+                                            "type": "group",
+                                            "repeats": false,
+                                            "item": [
+                                                {
+                                                    "extension": [
+                                                        {
+                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "linkId": "333007c7-47a9-482b-af11-e55484abf2ae",
+                                                    "text": "Value",
+                                                    "type": "choice",
+                                                    "repeats": false,
+                                                    "answerOption": [
+                                                        {
+                                                            "valueCoding": {
+                                                                "system": "http://snomed.info/sct",
+                                                                "code": "266919005",
+                                                                "display": "Lifetime non-smoker"
+                                                            }
+                                                        },
+                                                        {
+                                                            "valueCoding": {
+                                                                "system": "http://snomed.info/sct",
+                                                                "code": "77176002",
+                                                                "display": "Current smoker"
+                                                            }
+                                                        },
+                                                        {
+                                                            "valueCoding": {
+                                                                "system": "http://snomed.info/sct",
+                                                                "code": "8517006",
+                                                                "display": "Ex-smoker"
+                                                            }
+                                                        },
+                                                        {
+                                                            "valueCoding": {
+                                                                "system": "http://snomed.info/sct",
+                                                                "code": "16090371000119103",
+                                                                "display": "Exposure to second hand tobacco smoke"
+                                                            }
+                                                        },
+                                                        {
+                                                            "valueString": "Wants to quit"
+                                                        },
+                                                        {
+                                                            "valueString": "Other tobacco use"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "extension": [
+                                                        {
+                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%ObsTobaccoSmokingStatusLatest.effective"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "linkId": "cvdrisk-smokingstatus-date",
+                                                    "text": "Date performed",
+                                                    "type": "date",
+                                                    "repeats": false
+                                                }
+                                            ]
+                                        },
+                                        {
                                             "linkId": "fa4f73a3-7633-410c-9177-8aa43b117122",
                                             "text": "Systolic Blood Pressure",
                                             "type": "group",
@@ -16571,7 +16983,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+                                                                "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value"
                                                             }
                                                         },
                                                         {
@@ -16613,7 +17025,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsBloodPressure.entry.resource.effective"
+                                                                "expression": "%ObsBloodPressureLatest.effective"
                                                             }
                                                         }
                                                     ],
@@ -16636,7 +17048,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsTotalCholesterol.entry.resource.value.value"
+                                                                "expression": "%ObsTotalCholesterolLatest.value.value"
                                                             }
                                                         },
                                                         {
@@ -16678,7 +17090,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsTotalCholesterol.entry.resource.effective"
+                                                                "expression": "%ObsTotalCholesterolLatest.effective"
                                                             }
                                                         }
                                                     ],
@@ -16701,7 +17113,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsHDLCholesterol.entry.resource.value.value"
+                                                                "expression": "%ObsHDLCholesterolLatest.value.value"
                                                             }
                                                         },
                                                         {
@@ -16743,7 +17155,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsHDLCholesterol.entry.resource.effective"
+                                                                "expression": "%ObsHDLCholesterolLatest.effective"
                                                             }
                                                         }
                                                     ],
@@ -16785,109 +17197,6 @@
                                     "text": "Type 2 diabetes mellitus",
                                     "type": "boolean",
                                     "repeats": false
-                                }
-                            ]
-                        },
-                        {
-                            "linkId": "dabdc7b4-51db-44a0-9d59-77a88587cbe9",
-                            "text": "CVD risk result",
-                            "type": "group",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-                                            "valueCoding": {
-                                                "system": "http://unitsofmeasure.org",
-                                                "code": "%"
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "4c52fcec-0695-4916-b185-24a5c2711631",
-                                    "text": "Calculated risk",
-                                    "type": "integer",
-                                    "repeats": false,
-                                    "item": [
-                                        {
-                                            "extension": [
-                                                {
-                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                                    "valueCodeableConcept": {
-                                                        "coding": [
-                                                            {
-                                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                                "code": "unit"
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "linkId": "0162854e-c124-4b58-acd9-93c17562d407",
-                                            "text": "%",
-                                            "type": "display"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "radio-button"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "28ff9463-b77f-435d-9ba7-427682a61f96",
-                                    "text": "Assessed risk category",
-                                    "type": "choice",
-                                    "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueString": "High Risk"
-                                        },
-                                        {
-                                            "valueString": "Intermediate Risk"
-                                        },
-                                        {
-                                            "valueString": "Low Risk"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "radio-button"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "041a589e-7bb5-441d-a4ba-a22db8040b3f",
-                                    "text": "Reclassification decision",
-                                    "type": "choice",
-                                    "repeats": false,
-                                    "answerOption": [
-                                        {
-                                            "valueString": "Reclassified up"
-                                        },
-                                        {
-                                            "valueString": "Reclassified down"
-                                        },
-                                        {
-                                            "valueString": "Did not reclassify"
-                                        }
-                                    ]
                                 }
                             ]
                         },
