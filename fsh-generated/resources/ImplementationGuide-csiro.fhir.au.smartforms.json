@@ -715,7 +715,7 @@
           "reference": "StructureDefinition/TemplateExtractExtensionExtended"
         },
         "name": "Template Extract Extension Extended",
-        "description": "This extension is used to extend the Template Extract Extension to include additional information.",
+        "description": "This extension is used to extend the [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html) extension to include additional information that supports the extraction of a [Parameters](https://hl7.org/fhir/R4/parameters.html) resource to be used with the [FHIRPath patch](https://hl7.org/fhir/R4/fhirpatch.html) mechanism of updating resources. An additional subextension is included to specify the type of resource that is being patched, which is necessary for constructing the request URL of an entry in a transaction bundle.",
         "exampleBoolean": false
       },
       {

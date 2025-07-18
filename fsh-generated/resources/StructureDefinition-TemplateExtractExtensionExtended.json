@@ -5,7 +5,7 @@
   "name": "TemplateExtractExtensionExtended",
   "title": "Template Extract Extension Extended",
   "status": "draft",
-  "description": "This extension is used to extend the Template Extract Extension to include additional information.",
+  "description": "This extension is used to extend the [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html) extension to include additional information that supports the extraction of a [Parameters](https://hl7.org/fhir/R4/parameters.html) resource to be used with the [FHIRPath patch](https://hl7.org/fhir/R4/fhirpatch.html) mechanism of updating resources. An additional subextension is included to specify the type of resource that is being patched, which is necessary for constructing the request URL of an entry in a transaction bundle.",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
@@ -28,14 +28,14 @@
         "id": "Extension",
         "path": "Extension",
         "short": "Template Extract Extension Extended",
-        "definition": "This extension is used to extend the Template Extract Extension to include additional information."
+        "definition": "This extension is used to extend the [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html) extension to include additional information that supports the extraction of a [Parameters](https://hl7.org/fhir/R4/parameters.html) resource to be used with the [FHIRPath patch](https://hl7.org/fhir/R4/fhirpatch.html) mechanism of updating resources. An additional subextension is included to specify the type of resource that is being patched, which is necessary for constructing the request URL of an entry in a transaction bundle."
       },
       {
         "id": "Extension.extension:type",
         "path": "Extension.extension",
         "sliceName": "type",
         "short": "Patch resource type",
-        "definition": "When templating a Parameters resource, this is the kind of resource to be patched. It is used to help populate the request url.",
+        "definition": "When templating a Parameters resource, this is the kind of resource to be patched. It is used to construct the request URL for the entry in a transaction bundle.",
         "min": 0,
         "max": "1"
       },
