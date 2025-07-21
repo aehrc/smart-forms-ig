@@ -283,6 +283,15 @@
                 }
               ],
               "linkId": "regularmedications-summary-current",
+              "text": "Current medications",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                    "valueBoolean": true
+                  }
+                ]
+              },
               "type": "group",
               "repeats": true
             },
@@ -301,6 +310,15 @@
                 }
               ],
               "linkId": "regularmedications-summary-new",
+              "text": "New medications",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                    "valueBoolean": true
+                  }
+                ]
+              },
               "type": "group",
               "repeats": true,
               "item": [

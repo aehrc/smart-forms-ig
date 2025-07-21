@@ -142,6 +142,10 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
       * linkId = "substanceuse-smoking-smokingstatus"
+      * text = "Smoking status"
+        * extension[+]
+          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * valueBoolean = true
       * type = #group
       * repeats = false
       * item[+]

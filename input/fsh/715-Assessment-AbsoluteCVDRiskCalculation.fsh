@@ -332,6 +332,10 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
       * linkId = "fe9feec6-593a-4106-8a7d-f9965a632ea2"
+      * text = "Observation values"
+        * extension[+]
+          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * valueBoolean = true
       * type = #group 
       * repeats = false
       * item[+]

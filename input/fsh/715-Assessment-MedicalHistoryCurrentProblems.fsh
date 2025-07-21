@@ -162,6 +162,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * extension[resourceId][+].valueString = "item.where(linkId='conditionId').answer.value"
         * extension[type][+].valueCode = #Condition
       * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
+      * text = "Medical history summary"
+        * extension[+]
+          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * valueBoolean = true
       * type = #group
       * repeats = true
       * item[+]
@@ -212,6 +216,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * extension[sdc-questionnaire-templateExtract]
         * extension[template].valueReference = Reference(ConditionTemplate)
       * linkId = "newdiagnosis"
+      * text = "New diagnosis"
+        * extension[+]
+          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * valueBoolean = true
       * type = #group
       * repeats = true
       * item[+]

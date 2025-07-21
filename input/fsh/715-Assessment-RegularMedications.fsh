@@ -125,6 +125,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='medicationStatementId').answer.value"
 * item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #MedicationStatement
 * item.item[=].item[=].linkId = "regularmedications-summary-current"
+* item.item[=].item[=].text = "Current medications"
+* item.item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+* item.item[=].item[=].text.extension[=].valueBoolean = true
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
 * item.item[=].item[=].item[0].extension[questionnaire-hidden].valueBoolean = true
@@ -238,6 +241,9 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].extension[=].extension.url = "template"
 * item.item[=].item[=].extension[=].extension.valueReference = Reference(MedicationStatementTemplate)
 * item.item[=].item[=].linkId = "regularmedications-summary-new"
+* item.item[=].item[=].text = "New medications"
+* item.item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+* item.item[=].item[=].text.extension[=].valueBoolean = true
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
