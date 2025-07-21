@@ -252,6 +252,15 @@
                 }
               ],
               "linkId": "allergysummary",
+              "text": "Adverse reaction risk summary",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                    "valueBoolean": true
+                  }
+                ]
+              },
               "type": "group",
               "repeats": true
             },
@@ -270,6 +279,15 @@
                 }
               ],
               "linkId": "allergynew",
+              "text": "New adverse reaction risks",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                    "valueBoolean": true
+                  }
+                ]
+              },
               "type": "group",
               "repeats": true,
               "item": [
