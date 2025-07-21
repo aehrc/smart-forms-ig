@@ -319,6 +319,15 @@
                 }
               ],
               "linkId": "92bd7d05-9b5e-4cf9-900b-703f361dad9d",
+              "text": "Medical history summary",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                    "valueBoolean": true
+                  }
+                ]
+              },
               "type": "group",
               "repeats": true
             },
@@ -379,6 +388,15 @@
                 }
               ],
               "linkId": "newdiagnosis",
+              "text": "New diagnosis",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                    "valueBoolean": true
+                  }
+                ]
+              },
               "type": "group",
               "repeats": true
             }

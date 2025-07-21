@@ -634,6 +634,10 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * expression = "%age > 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
     * linkId = "3639c586-9576-48d3-a52b-e91fd2138581"
+    * text = "Blood pressure"
+      * extension[+]
+        * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+        * valueBoolean = true
     * type = #group
     * repeats = false
     * item[+]

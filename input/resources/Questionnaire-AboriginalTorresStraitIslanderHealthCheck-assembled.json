@@ -5064,6 +5064,15 @@
                                 },
                                 {
                                     "linkId": "4e0dc185-f83e-4027-b7a8-ecb543d42c6d",
+                                    "text": "Home address",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "enableWhen": [
                                         {
@@ -6517,6 +6526,15 @@
                                         }
                                     ],
                                     "linkId": "92bd7d05-9b5e-4cf9-900b-703f361dad9d",
+                                    "text": "Medical history summary",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -6647,6 +6665,15 @@
                                         }
                                     ],
                                     "linkId": "newdiagnosis",
+                                    "text": "New diagnosis",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -6844,6 +6871,15 @@
                                         }
                                     ],
                                     "linkId": "regularmedications-summary-current",
+                                    "text": "Current medications",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -7012,6 +7048,15 @@
                                         }
                                     ],
                                     "linkId": "regularmedications-summary-new",
+                                    "text": "New medications",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -7325,6 +7370,15 @@
                                         }
                                     ],
                                     "linkId": "allergysummary",
+                                    "text": "Adverse reaction risk summary",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -7475,6 +7529,15 @@
                                         }
                                     ],
                                     "linkId": "allergynew",
+                                    "text": "New adverse reaction risks",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -12437,6 +12500,15 @@
                                         }
                                     ],
                                     "linkId": "substanceuse-smoking-smokingstatus",
+                                    "text": "Smoking status",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": false,
                                     "item": [
@@ -16282,6 +16354,15 @@
                                 }
                             ],
                             "linkId": "3639c586-9576-48d3-a52b-e91fd2138581",
+                            "text": "Blood pressure",
+                            "_text": {
+                                "extension": [
+                                    {
+                                        "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                        "valueBoolean": true
+                                    }
+                                ]
+                            },
                             "type": "group",
                             "repeats": false,
                             "item": [
@@ -16894,6 +16975,15 @@
                                         }
                                     ],
                                     "linkId": "fe9feec6-593a-4106-8a7d-f9965a632ea2",
+                                    "text": "Observation values",
+                                    "_text": {
+                                        "extension": [
+                                            {
+                                                "url": "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden",
+                                                "valueBoolean": true
+                                            }
+                                        ]
+                                    },
                                     "type": "group",
                                     "repeats": false,
                                     "item": [

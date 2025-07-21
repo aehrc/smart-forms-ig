@@ -131,6 +131,9 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='allergyIntoleranceId').answer.value"
 * item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
 * item[=].item[=].item[=].linkId = "allergysummary"
+* item[=].item[=].item[=].text = "Adverse reaction risk summary"
+* item[=].item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+* item[=].item[=].item[=].text.extension[=].valueBoolean = true
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[0].extension[questionnaire-hidden].valueBoolean = true
@@ -185,6 +188,9 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].extension[=].extension.url = "template"
 * item[=].item[=].item[=].extension[=].extension.valueReference = Reference(AllergyIntoleranceTemplate)
 * item[=].item[=].item[=].linkId = "allergynew"
+* item[=].item[=].item[=].text = "New adverse reaction risks"
+* item[=].item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+* item[=].item[=].item[=].text.extension[=].valueBoolean = true
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
