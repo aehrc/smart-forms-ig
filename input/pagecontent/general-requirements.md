@@ -34,13 +34,7 @@ Interaction support refers to a system that supports the SHC REST API interactio
 
 ### Must Support and Obligations
 
-In the context of SHC, [Obligations](https://hl7.org/fhir/extensions/CodeSystem-obligation.html) defines how an actor ([SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) or [SHC App](ActorDefinition-SHCApp.html)) must “support” a given element. All [*Must Support*]({{site.data.fhir.path}}conformance-rules.html#mustSupport) elements in this IG are accompanied by an explicit obligation, which identifies structured expectations for a given actor. If an *Must Support* element has no obligation for a given actor, that element need not be supported by that actor. Obligations can be found in the formal view section of a resource.
-
-Obligations for each actor are defined with two categories of interactions in mind. The set of interactions, as described in the [Smart Health Checks Interactions](index.html#smart-health-checks-interactions) section, for:
-1. prepopulating the Health Check; and
-2. writing data back to the SHC Host FHIR Server.
-
-<div><img alt="Obligations overview.png" src="ObligationsOverview.png" style="max-width:60%; height:auto; padding:30px;"/></div>
+In the context of SHC, [Obligations](https://hl7.org/fhir/extensions/CodeSystem-obligation.html) defines how an actor ([SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) or [SHC App](ActorDefinition-SHCApp.html)) must “support” a given element. All [*Must Support*]({{site.data.fhir.path}}conformance-rules.html#mustSupport) elements in this IG are accompanied by an explicit obligation, which identifies structured expectations for a given actor. If a *Must Support* element has no obligation for a given actor, that element need not be supported by that actor. Obligations can be found in the formal view section of a resource.
 
 When information on a particular data element is not present, and the reason for absence is unknown, [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) SHALL NOT include the data elements in the resource instance returned as part of the query results. Conversely, the [SHC App](ActorDefinition-SHCApp.html) SHALL be able to accept without error resource instances containing data elements asserting missing information.
 
@@ -82,6 +76,22 @@ Code | Definition | Notes
 
 #### Obligation Code Definitions
 Further clarification on the obligation code defined for an actor can be found by clicking the hyperlink on the obligation or by navigating to [obligation code value set](https://hl7.org/fhir/extensions/CodeSystem-obligation.html). 
+
+In the context of this implementation guide, additional details for the obligations specified on data elements throughout are provided here. 
+
+Obligations for each actor are defined with two categories of interactions in mind. Each category is the set of interactions, as described in the [Smart Health Checks Interactions](index.html#smart-health-checks-interactions) section, for:
+1. prepopulating the Health Check; and
+2. writing data back to the SHC Host FHIR Server.
+
+<div><img alt="Obligations overview.png" src="ObligationsOverview.png" style="max-width:60%; height:auto; padding:30px;"/></div>
+
+The obligation codes have been specified according to the following rationale:
+
+Code | SHC Host FHIR Server | SHC App
+--- | --- | ---
+[SHALL:populate](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-SHALL.58populate) | Indicates the element is required for accurate prepopulation or writeback. Additionally, if there is a prepopulation search query with a parameter that relies on an element, it SHALL be included. | Indicates the element will be included in a resource for writeback. There is no reason the SHC App won't know this information.
+[SHALL:populate-if-known](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-SHALL.58populate-if-known) | Indicates thes element is important for prepopulating a field in the form, however if it is missing, population will not be inaccurate, it will just not occur. | Indicates that if it is known, the element will be included in a resource for writeback. A reason it may not be known, is if a user has not recorded it and is therefore not included in the QuestionnaireResponse.
+[SHALL:process](https://hl7.org/fhir/extensions/CodeSystem-obligation.html#obligation-SHALL.58process) | Indicates that when the element is included in a resource by the SHC App, it should be processed and considered for accurate writeback. | Indicates the SHC App will process the element and use it for prepopulating a QuestionnaireResponse or for generating a transaction bundle for writeback.
 
 #### Must Support - Resource References
 
