@@ -176,6 +176,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * linkId = "conditionId"
         * type = #string
       * item[+]
+        * extension[sdc-questionnaire-width].valueQuantity[+]
+          * value = 40
+          * system = $UCUM
+          * code = #%
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -186,6 +190,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * answerValueSet = "#clinical-condition-1"
         * readOnly = true
       * item[+]
+        * extension[sdc-questionnaire-width].valueQuantity[+]
+          * value = 20
+          * system = $UCUM
+          * code = #%
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -195,6 +203,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * type = #choice
         * answerValueSet = "#condition-clinical"
       * item[+]
+        * extension[sdc-questionnaire-width].valueQuantity[+]
+          * value = 20
+          * system = $UCUM
+          * code = #%
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.onset.ofType(dateTime).toDate()"
@@ -203,6 +215,10 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * type = #date
         * readOnly = true
       * item[+]
+        * extension[sdc-questionnaire-width].valueQuantity[+]
+          * value = 20
+          * system = $UCUM
+          * code = #%
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"

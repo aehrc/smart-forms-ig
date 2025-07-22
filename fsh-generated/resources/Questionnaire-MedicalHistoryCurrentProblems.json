@@ -238,6 +238,14 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width",
+                      "valueQuantity": {
+                        "value": 40,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "%"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -265,6 +273,14 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width",
+                      "valueQuantity": {
+                        "value": 20,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "%"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
@@ -291,6 +307,14 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width",
+                      "valueQuantity": {
+                        "value": 20,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "%"
+                      }
+                    },
+                    {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
@@ -305,6 +329,14 @@
                 },
                 {
                   "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width",
+                      "valueQuantity": {
+                        "value": 20,
+                        "system": "http://unitsofmeasure.org",
+                        "code": "%"
+                      }
+                    },
                     {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                       "valueExpression": {
