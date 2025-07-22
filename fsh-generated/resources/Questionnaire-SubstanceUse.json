@@ -126,6 +126,54 @@
                     {
                       "extension": [
                         {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%ObsTobaccoSmokingStatusValue"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "drop-down",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "substanceuse-smoking-smokingstatus-group-laststatusvalue",
+                      "type": "choice",
+                      "repeats": false,
+                      "answerValueSet": "#TobaccoUseStatus-1"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/fhirpath",
+                            "expression": "%ObsTobaccoSmokingStatusLatest.effective.toDate()"
+                          }
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": true
+                        }
+                      ],
+                      "linkId": "substanceuse-smoking-smokingstatus-group-laststatusdate",
+                      "type": "date",
+                      "repeats": false
+                    },
+                    {
+                      "extension": [
+                        {
                           "extension": [
                             {
                               "url": "template",

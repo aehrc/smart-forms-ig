@@ -151,6 +151,49 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeightValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-lengthheight-lastresult",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeightLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-lengthheight-lastdate",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
                       "extension": [
                         {
                           "url": "template",
@@ -249,6 +292,49 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeightValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-height-lastresult",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyHeightLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-height-lastdate",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
                       "extension": [
                         {
                           "url": "template",
@@ -334,6 +420,49 @@
                     ]
                   },
                   "type": "display"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyWeightValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "kg",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-weight-lastresult",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBodyWeightLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-weight-lastdate",
+                  "type": "date",
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -436,6 +565,31 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "(%ObsBodyWeightValue/((%ObsBodyHeightValue/100).power(2))).round(1)"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "kg/m2",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-bmi-lastresult",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                       "valueExpression": {
                         "description": "BMI calculation",
@@ -513,6 +667,49 @@
                     ]
                   },
                   "type": "display"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeadCircumferenceValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-headcircumference-lastresult",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeadCircumferenceLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-headcircumference-lastdate",
+                  "type": "date",
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -615,6 +812,49 @@
                 {
                   "extension": [
                     {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsWaistCircumferenceValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-waistcircumference-lastresult",
+                  "type": "decimal",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsWaistCircumferenceLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-waistcircumference-lastdate",
+                  "type": "date",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
                       "extension": [
                         {
                           "url": "template",
@@ -693,6 +933,49 @@
                     ]
                   },
                   "type": "display"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRateValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "/min",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "obs-heartrate-lastresult",
+                  "type": "integer",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRateLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-heartrate-lastdate",
+                  "type": "date",
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -782,6 +1065,43 @@
                     ]
                   },
                   "type": "display"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRhythmValue"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-heartrhythm-lastresult",
+                  "type": "choice",
+                  "repeats": false,
+                  "answerValueSet": "#heart-rhythm-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsHeartRhythmLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "obs-heartrhythm-lastdate",
+                  "type": "date",
+                  "repeats": false
                 },
                 {
                   "extension": [
@@ -893,6 +1213,74 @@
                     ]
                   },
                   "type": "display"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value.round(0)"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "mm[Hg]",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "bp-lastbp-systolic",
+                  "type": "integer",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8462-4')).value.value.round(0)"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "mm[Hg]",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    }
+                  ],
+                  "linkId": "bp-lastbp-diastolic",
+                  "type": "integer",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%ObsBloodPressureLatest.effective.toDate()"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "bp-lastbp-date",
+                  "type": "date",
+                  "repeats": false
                 },
                 {
                   "extension": [
