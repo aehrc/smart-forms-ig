@@ -129,6 +129,7 @@ SHCA will request the following access scopes in the authorization request `scop
 * `patient/Patient.r`
 * `patient/Practitioner.r`
 * `patient/QuestionnaireResponse.crus`
+* `launch/questionnaire?role=http://ns.electronichealth.net.au/smart/role/new`
 
 #### FHIR Server
 A PMS will need to provide a FHIR compatible service that supports the requirements of the SHCA. 
