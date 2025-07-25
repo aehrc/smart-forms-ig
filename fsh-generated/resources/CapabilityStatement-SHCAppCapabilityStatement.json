@@ -250,7 +250,7 @@
             }
           ],
           "searchInclude": [
-            "MedicationRequest:medication"
+            "MedicationStatement:medication"
           ],
           "searchParam": [
             {
@@ -414,7 +414,7 @@
           ],
           "type": "Questionnaire",
           "profile": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
-          "documentation": "The client supports the Questionnaire resource, Structured Data Capture profile and the conformance expectations for the QuestionnaireResponse resource.",
+          "documentation": "The client supports the Questionnaire resource, Structured Data Capture profile and the conformance expectations for the Questionnaire resource.",
           "interaction": [
             {
               "code": "search-type"

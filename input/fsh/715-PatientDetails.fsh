@@ -583,7 +583,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age <= 49).intersect(%age > 12)"
+      * expression = "(%age <= 49) and (%age > 12)"
     * linkId = "9bc882bc-e989-4600-9587-8089fb757641"
     * text = "Children"
     * type = #group

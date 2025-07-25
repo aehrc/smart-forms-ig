@@ -75,7 +75,7 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
 * item[+]
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "(%age >= 50).intersect(%age <= 74)"
+    * expression = "(%age >= 50) and (%age <= 74)"
   * linkId = "9674ffa0-2ad9-4ca3-80e6-e8bb0670a802"
   * text = "Participation in screening programs"
   * type = #group
@@ -180,13 +180,11 @@ Description: "Screening Programs sub-questionnaire for Aboriginal and Torres Str
       * type = #text
       * repeats = false
 
-
   * item[+]
     * linkId = "70f82c4b-d1f9-44d5-9903-bd7097799c05"
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false
-
   
   * item[+]
     * linkId = "MarkComplete-24"

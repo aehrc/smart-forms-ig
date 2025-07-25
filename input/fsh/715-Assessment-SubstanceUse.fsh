@@ -140,7 +140,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * type = #group
     * repeats = false  
     * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
       * linkId = "substanceuse-smoking-smokingstatus"
       * text = "Smoking status"
         * extension[+]

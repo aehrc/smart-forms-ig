@@ -1,5 +1,3 @@
-
-
 ### Questionnaires
 
 The following questionnaires have been defined for this implementation guide.
@@ -11,11 +9,3 @@ The following questionnaires have been defined for this implementation guide.
 <!-- ================================================ -->
 
 <br />
-
-
-
-
-
-
-
-

@@ -167,8 +167,6 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
         * question = "2655e0e1-fe4b-431e-87af-30d4ff1aca76"
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-    
-
 
   * item[+]    
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -188,8 +186,7 @@ Description: "Current Priorities sub-questionnaire for Aboriginal and Torres Str
     * linkId = "7cd424e5-7672-4e99-8a99-30b1fb3043fd"
     * text = "Health priorities, actions and follow-up"
     * type = #text
-    * repeats = false
-  
+    * repeats = false  
   
   * item[+]
     * linkId = "MarkComplete-5"

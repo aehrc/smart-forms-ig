@@ -14,7 +14,7 @@
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
           "valueExpression": {
             "language": "text/fhirpath",
-            "expression": "(%age >= 50).intersect(%age <= 74)"
+            "expression": "(%age >= 50) and (%age <= 74)"
           }
         }
       ],

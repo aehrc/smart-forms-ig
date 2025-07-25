@@ -154,7 +154,6 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
     * type = #text
     * repeats = false
 
-    
   * item[+]
     * linkId = "MarkComplete-28"
     * text = "Mark section as complete"

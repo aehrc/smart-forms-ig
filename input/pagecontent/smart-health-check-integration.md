@@ -76,7 +76,7 @@ The Smart Forms Server will also be used during the Health Check form developmen
 ###### Ontoserver
 Ontoserver is a terminology server with a FHIR API that allows the SHCA to access FHIR ValueSet resources used in Health Checks and evaluate filtered expansions at runtime based on user entered lookahead requests for concepts such as diagnoses, medications and body sites.
 
-### Practice Mangement System Requirements
+### Practice Management System Requirements
 
 The conformance requirements for a system launching the SHCA and exchanging patient data are described by the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). This resource forms the normative requirements for integrating the Smart Health Check solution.
 
@@ -137,7 +137,7 @@ Fundamental requirements are defined in the [core FHIR<sup>&reg;&copy;</sup> spe
 
 The PMS FHIR Server requirements are described by the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). 
 
-A summary of the required FHIR endpoints, resources and RESTful interactions are shown below. If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precendence.
+A summary of the required FHIR endpoints, resources and RESTful interactions are shown below. If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precedence.
 
 * .well-known/smart-configuration (in accordance with the [SMART App Launch implementation guide](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#retrieve-well-knownsmart-configuration))
 * [AU Core AllergyIntolerance](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-allergyintolerance.html) - `create`, `search`

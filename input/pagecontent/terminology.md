@@ -1,4 +1,3 @@
-
 This page lists all ValueSets and CodeSystems defined as part of this specification. 
 
 ### Value Sets
@@ -18,11 +17,6 @@ See the [FHIR terminology section]({{site.data.fhir.path}}terminologies-systems.
 - [Aboriginal and/or Torres Strait Islander](ValueSet-AboriginalTorresStraitIslander.html)
 - [Condition Clinical Status Codes](ValueSet-condition-clinical.html)
 - [Clinical condition](ValueSet-clinical-condition-1.html)
-<!-- - [Medical History](ValueSet-MedicalHistory.html)-->
-<!-- - [Medical History Short List for Infants](ValueSet-MedicalHistoryShortListInfants.html)-->
-<!-- - [Medical History Short List for Primary School Children](ValueSet-MedicalHistoryShortListPrimarySchool.html)-->
-<!-- - [Medical History Short List for Adolescents](ValueSet-MedicalHistoryShortListAdolescents.html)-->
-<!-- - [Medical History Short List for Adults and Older People](ValueSet-MedicalHistoryShortListAdultsAndOlderPeople.html)-->
 - [Primary Carer Of Parent Or Grandparent](ValueSet-PrimaryCarerParentGrandparent.html)
 - [Yes/No](ValueSet-YesNo.html)
 - [Yes/No/NA](ValueSet-YesNoNA.html)

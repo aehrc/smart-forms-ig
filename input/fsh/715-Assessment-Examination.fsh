@@ -349,7 +349,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 // Observations table with dates
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
     * linkId = "53d5d5a6-3198-4bec-92ac-03fe7d77fb68"    
     * text = "The tabled observations will display the most recent results available from the patient record. New observations may be added."
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:0.9em; font-weight:normal\"><em>The tabled observations will display the most recent results available from the patient record. New observations may be added.</em></p></div>"    
@@ -486,6 +486,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * text = "New result"
         * type = #decimal
         * repeats = false
+        // BMI is calculated from height and weight, so this field is read-only and cannot be edited directly.
         * readOnly = true
         * item[+]
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
@@ -632,7 +633,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 12"
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
     * linkId = "3639c586-9576-48d3-a52b-e91fd2138581"
     * text = "Blood pressure"
       * extension[+]

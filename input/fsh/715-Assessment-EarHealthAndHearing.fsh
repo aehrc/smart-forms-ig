@@ -223,13 +223,14 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
           * expression = "%age <= 12"
         * linkId = "fe96046a-a202-4c22-ad3e-00419e717185"
         * text = "Video otoscopy procedure recommended where possible as it allows for parental education and for images to be saved for tracking over time."
-        * type = #display 
+        * type = #display
+      //Children group
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%age <= 12"
         * linkId = "2841915f-c8d2-4edb-8bc7-39b63385a2fb"
-        * text = "Otoscopy findings" //children
+        * text = "Otoscopy findings"
         * type = #group
         * repeats = false
         * item[+]
@@ -268,12 +269,13 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
           * answerOption[+].valueString = "Grommet in eardrum"
           * answerOption[+].valueString = "Perforation"
           * answerOption[+].valueString = "Red/bulging"
+      //Adolescents group
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%age > 12"
         * linkId = "361b3c80-375b-423e-bb61-5732826bc2f0"
-        * text = "Otoscopy findings" //adolescents +
+        * text = "Otoscopy findings"
         * type = #group
         * repeats = false
         * item[+]
@@ -304,10 +306,11 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
           * answerOption[+].valueString = "Retracted"
           * answerOption[+].valueString = "Unable to view eardrum"
           * answerOption[+].valueString = "Wax"  
-    * item[+] // this group needs better modelling. The template is ambiguous so not properly represented. 
+    // this group needs better modelling. The template is ambiguous so not properly represented.
+    * item[+]  
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "(%age > 5).intersect(%age <= 12)"
+        * expression = "(%age > 5) and (%age <= 12)"
       * linkId = "972afa06-9649-43d9-b8ce-c802f7f27e39"
       * text = "Tympanometry"
       * type = #group
@@ -328,7 +331,6 @@ Description: "Ear Health And Hearing sub-questionnaire for Aboriginal and Torres
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false
-
   
   * item[+]
     * linkId = "MarkComplete-6"

@@ -11,7 +11,7 @@ Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/alle
 Alias: $au-core-smokingstatus = http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus
 Alias: $au-core-bodyheight = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight
 Alias: $au-core-bodyweight = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight
-Alias: $au-core-au-core-headcircum = http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum
+Alias: $au-core-headcircum = http://hl7.org.au/fhir/core/StructureDefinition/au-core-headcircum
 Alias: $au-core-waistcircum = http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum
 Alias: $au-core-heartrate = http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate
 Alias: $au-core-bloodpressure = http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure
@@ -218,7 +218,6 @@ Usage:  #inline
 
 
 Instance: AllergyIntolerancePatchTemplate
-// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
 InstanceOf: Parameters
 Usage: #inline
 * parameter[+].name = "operation"
@@ -284,7 +283,6 @@ Usage:  #inline
 * note.text.extension[=].valueString = "item.where(linkId='newdiagnosis-comment').answer.value"
 
 Instance: ConditionPatchTemplate
-// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
 InstanceOf: Parameters
 Usage: #inline
 * parameter[+].name = "operation"
@@ -343,7 +341,6 @@ Usage:  #inline
 * dosage[=].text.extension[=].valueString = "$this"
 
 Instance: MedicationStatementPatchTemplate
-// InstanceOf: http://hl7.org/fhir/StructureDefinition/fhirpath-patch
 InstanceOf: Parameters
 Usage: #inline
 * parameter[+].name = "operation"

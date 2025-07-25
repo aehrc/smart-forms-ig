@@ -137,11 +137,6 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-/*
-* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatement.entry.resource.medication.ofType(CodeableConcept).exists()"
-*/
 * item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 /*
@@ -164,7 +159,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].answerValueSet = "#smart-health-checks-medicine-products"
 /*
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension.valueCodeableConcept = $questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].extension.valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-form"
 * item.item[=].item[=].item[=].text = "Form"
 * item.item[=].item[=].item[=].type = #open-choice
@@ -173,7 +168,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension.valueCodeableConcept = $questionnaire-item-control#autocomplete
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-route"
-* item.item[=].item[=].item[=].text = "Route of adminsitration"
+* item.item[=].item[=].item[=].text = "Route of administration"
 * item.item[=].item[=].item[=].type = #open-choice
 * item.item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/route-of-administration-1"
@@ -185,7 +180,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].item.extension.valueCodeableConcept = $questionnaire-item-control#unit
 * item.item[=].item[=].item[=].item.linkId = "regularmedications-summary-current-doseamount-unit"
 * item.item[=].item[=].item[=].item.type = #choice
-* item.item[=].item[=].item[=].item.answerOption[0].valueCoding = $unitsofmeasure#mg "mg"
+* item.item[=].item[=].item[=].item.answerOption[0].valueCoding = $UCUM#mg "mg"
 * item.item[=].item[=].item[=].item.answerOption[+].valueCoding = $unitsofmeasure#ml "ml"
 * item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension.valueCodeableConcept = $questionnaire-item-control#drop-down
@@ -293,19 +288,10 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].repeats = false  
 * item.item[=].answerValueSet = "#YesNo"
 
-//* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
 * item.item[+].linkId = "874ec8db-95c9-4cc0-95db-e45edaa3cd12"
 * item.item[=].text = "Check the health record is up to date"
 * item.item[=].type = #boolean
 * item.item[=].repeats = false
-/** item.item[=].enableWhen[+].question = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
-* item.item[=].enableWhen[=].operator = #=
-* item.item[=].enableWhen[=].answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-* item.item[=].enableWhen[+].question = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
-* item.item[=].enableWhen[=].operator = #=
-* item.item[=].enableWhen[=].answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
-* item.item[=].enableBehavior = #any*/
-//* item.item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
 * item.item[+].linkId = "36290837-ad70-48b2-9c66-31533fec918b"
 * item.item[=].text = "Check medication understanding and adherence with patient"
 * item.item[=].extension[sdc-questionnaire-shortText].valueString = "Understanding and adherence checked"

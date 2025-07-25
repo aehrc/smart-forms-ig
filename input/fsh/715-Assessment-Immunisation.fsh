@@ -136,7 +136,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age > 12).intersect(%age <= 24)"
+      * expression = "(%age > 12) and (%age <= 24)"
     * linkId = "77d87581-d4d7-4267-9f3c-ad6541ad0f46"
     * text = "Check Australian Immunisation Register"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
@@ -146,7 +146,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age > 24).intersect(%age <= 49)"
+      * expression = "(%age > 24) and (%age <= 49)"
     * linkId = "a2631d2c-2b5c-4147-9aca-05ae655a56a5"
     * text = "Check recommended primary vaccinations completed and provide catch-up if required"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
@@ -253,7 +253,6 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false
-
   
   * item[+]
     * linkId = "MarkComplete-13"

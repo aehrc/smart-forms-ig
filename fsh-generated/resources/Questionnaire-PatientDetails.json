@@ -1067,7 +1067,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age <= 49).intersect(%age > 12)"
+                "expression": "(%age <= 49) and (%age > 12)"
               }
             }
           ],
@@ -2136,7 +2136,7 @@
               {
                 "property": "constraint",
                 "op": "=",
-                "value": "^ 32570631000036107|Sex reference set|"
+                "value": "^32570631000036107|Sex reference set|"
               }
             ]
           }

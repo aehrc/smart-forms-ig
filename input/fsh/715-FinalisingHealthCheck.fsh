@@ -112,7 +112,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age <= 12).intersect(%age > 5)"
+      * expression = "(%age <= 12) and (%age > 5)"
     * linkId = "6aa0a113-4d33-4f6b-9899-fa249674075a"
     * text = "Patient priorities and goals: What does the parent/carer and child say are the important things that have come out of this health check?"
     * type = #text
@@ -150,7 +150,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
   * item[+] //Primary school
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age <= 12).intersect(%age > 5)"
+      * expression = "(%age <= 12) and (%age > 5)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "0f70dec3-c1f2-4b36-b1f6-bd7f5743d5f8"
@@ -169,7 +169,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
   * item[+] //Adolescent 
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age <= 24).intersect(%age > 12)"
+      * expression = "(%age <= 24) and (%age > 12)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "eaed9770-95f4-4c6a-b06c-d573427a2616"
@@ -190,7 +190,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
   * item[+] //Adult 
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age <= 49).intersect(%age > 24)"
+      * expression = "(%age <= 49) and (%age > 24)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * extension[sdc-questionnaire-openLabel].valueString = "Other"
     * linkId = "25f27e83-fcf0-49c8-86c1-e285e201a043"
@@ -282,7 +282,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * item[+] //Primary School
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "(%age <= 12).intersect(%age > 5)"
+          * expression = "(%age <= 12) and (%age > 5)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * linkId = "f97f211a-ef2a-49a3-aef7-c4e9cd08aa2a"
         * text = "Who"
@@ -302,7 +302,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * item[+] //Adolescent
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "(%age <= 24).intersect(%age > 12)"
+          * expression = "(%age <= 24) and (%age > 12)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * linkId = "07cfe077-ba93-4f93-b2a5-027023faa33b"
         * text = "Who"
@@ -323,7 +323,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * item[+] //Adult
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "(%age <= 49).intersect(%age > 24)"
+          * expression = "(%age <= 49) and (%age > 24)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * linkId = "a525c370-d8c3-4764-ab3a-bf62081725e0"
         * text = "Who"
@@ -421,7 +421,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age <= 12).intersect(%age > 5)"
+      * expression = "(%age <= 12) and (%age > 5)"
     * linkId = "cde03bf0-182a-4998-a37e-7b3f22786617"
     * text = "Parent/patient actions"
     * type = #text
@@ -429,7 +429,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age >12"
+      * expression = "%age > 12"
     * linkId = "51ff0c15-312a-45ce-a25a-6c6a4bf0e17e"
     * text = "Patient actions"
     * type = #text
@@ -438,13 +438,12 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * extension[sdc-questionnaire-shortText].valueString = "Copy of health check"
     * linkId = "8176151f-6d86-45eb-91b1-12458d75a181"
-    * text = "A copy of this health check has been offerered - including details of follow-up and future appointments"
+    * text = "A copy of this health check has been offered - including details of follow-up and future appointments"
     * type = #choice
     * repeats = false
     * answerOption[+].valueString = "Yes, copy taken"
     * answerOption[+].valueString = "Yes, but declined"
     * answerOption[+].valueString = "Not offered. Plan to follow up and offer at a later date"
-
 
   * item[+]
     * linkId = "MarkComplete-31"

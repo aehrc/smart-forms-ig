@@ -14,7 +14,7 @@
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
           "valueExpression": {
             "language": "text/fhirpath",
-            "expression": "(%age > 12).intersect(%age < 50)"
+            "expression": "(%age > 12) and (%age < 50)"
           }
         }
       ],
@@ -368,12 +368,6 @@
           "linkId": "2bfc99a5-677c-4aea-a1ad-c37a181a3733",
           "text": "Work",
           "type": "group",
-          "repeats": false
-        },
-        {
-          "linkId": "ed6f7800-e22a-4639-9d11-faf845513500",
-          "text": "Health priorities, actions and follow-up",
-          "type": "text",
           "repeats": false
         },
         {

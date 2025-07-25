@@ -150,7 +150,6 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
     * type = #text
     * repeats = false
 
-    
   * item[+]
     * linkId = "MarkComplete-27"
     * text = "Mark section as complete"

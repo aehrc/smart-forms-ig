@@ -5,15 +5,5 @@ The following capability statements have been defined for this implementation gu
 
 <div markdown="1">
 {% include list-capabilitystatements.xhtml %}
-<div>
-<br />
-
-
-
-
-
-
-
-
-
+</div>
 

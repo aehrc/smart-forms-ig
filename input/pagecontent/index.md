@@ -38,7 +38,7 @@ The SHC Host Authorization Server allows the SHC App to request authorisation fr
 The Smart Health Check App follows a standard set of interactions which are summarised as:
 1. App Launch: The SHC User initiates the SHC Host to launch SHC App with a context of the current user, patient and health check form.
 2. SMART Authorization Configuration: The SHC App uses SHC Host FHIR Server to locate the SHC Host Authorization Server endpoints and capability.
-3. Authorization Request: SHC App redirects to the SHC Host Authorization Server to authorise access to patient health information using the SHC Host FHR Server. The SHC User may be prompted to permit or deny access to the requested data.
+3. Authorization Request: SHC App redirects to the SHC Host Authorization Server to authorise access to patient health information using the SHC Host FHIR Server. The SHC User may be prompted to permit or deny access to the requested data.
 4. Authorization Callback: The SHC Host redirects back to the SHC App to proceed with the authorised launch of the health check form.
 5. Token Request: SHC App requests an access token and associated launch context, including user, patient and health check form, from the SHC Host Authorization Server.
 6. Prepopulate Health Check: SHC App uses the launch context to use the SHC Host FHIR Server to:

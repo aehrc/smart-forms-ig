@@ -79,7 +79,7 @@ Description: "The SHC Host FHIR Server allows the SHC App to retrieve patient he
 * experimental = false
 * type = #system
 * documentation = """The SHC Host FHIR Server: 
-- **SHALL** respond to [SMART Authorization Configuration`](https://hl7.org/fhir/smart-app-launch/app-launch.html#retrieve-well-knownsmart-configuration) request
+- **SHALL** respond to [SMART Authorization Configuration](https://hl7.org/fhir/smart-app-launch/app-launch.html#retrieve-well-knownsmart-configuration) request
 - **SHALL** authorise FHIR API requests using Bearer access token per [SMART APP Launch Access FHIR API](https://hl7.org/fhir/smart-app-launch/app-launch.html#access-fhir-api)
 - **SHALL** respond to read Practitioner request
 - **SHALL** respond to read Patient request

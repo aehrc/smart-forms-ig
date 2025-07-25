@@ -79,7 +79,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 * item[+]
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "(%age > 12).intersect(%age <= 24)"
+    * expression = "(%age > 12) and (%age <= 24)"
   * extension[sdc-questionnaire-shortText].valueString = "Sexual health"
   * linkId = "4b49c291-6e93-4b7e-be3b-15ef8bc207ad"
   * text = "Sexual health (sexual activity, contraception, safe sex/protection, sexual orientation, gender identity, pressure to have sex, STIs)"
@@ -179,7 +179,7 @@ Description: "Sexual Health sub-questionnaire for Aboriginal and Torres Strait I
 * item[+]
   * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
-    * expression = "(%age > 24).intersect(%age <= 49)"
+    * expression = "(%age > 24) and (%age <= 49)"
   * linkId = "589b53a4-ceb2-41c0-850a-69438f9fd1cc"
   * text = "Genitourinary and sexual health"
   * type = #group

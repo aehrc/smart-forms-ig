@@ -106,7 +106,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
     * linkId = "0b520b20-98df-4024-b25d-2986f6b96e77"
-    * text = "What age group is the child closet to?"
+    * text = "What age group is the child closest to?"
     * type = #choice
     * repeats = false
     * answerOption[+].valueString = "6 months"
@@ -152,7 +152,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "Does not notice someone new"
-      * answerOption[+].valueString = "Does not pay early turn taking games (eg peekaboo, rolling a ball)"
+      * answerOption[+].valueString = "Does not play early turn taking games (e.g. peekaboo, rolling a ball)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -174,7 +174,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * text = "Social Emotional"
       * type = #choice
       * repeats = true
-      * answerOption[+].valueString = "When playing with toys tends to bang, drop, or throw them rather than use them for their purpose (eg Cuddle doll, build blocks)"
+      * answerOption[+].valueString = "When playing with toys tends to bang, drop, or throw them rather than use them for their purpose (e.g. cuddle doll, build blocks)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -221,7 +221,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * text = "Communication"
       * type = #choice
       * repeats = true
-      * answerOption[+].valueString = "Not starting to babble (eg aahh, oohh)"
+      * answerOption[+].valueString = "Not starting to babble (e.g. aahh, oohh)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -232,8 +232,8 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * text = "Communication"
       * type = #choice
       * repeats = true
-      * answerOption[+].valueString = "Not using gestures (eg pointing, showing, waving)"
-      * answerOption[+].valueString = "Not using two part babble (eg bubu, dada)"
+      * answerOption[+].valueString = "Not using gestures (e.g. pointing, showing, waving)"
+      * answerOption[+].valueString = "Not using two part babble (e.g. bubu, dada)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -245,7 +245,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "No babbled phrases that sound like talking"
-      * answerOption[+].valueString = "No response to familiar words (eg bottle, daddy)"
+      * answerOption[+].valueString = "No response to familiar words (e.g. bottle, daddy)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -257,7 +257,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "No clear words"
-      * answerOption[+].valueString = "Cannot understand short requests (eg 'Where is the ball?')"
+      * answerOption[+].valueString = "Cannot understand short requests (e.g. 'Where is the ball?')"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -269,7 +269,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "Not learning new words"
-      * answerOption[+].valueString = "Not putting words together (eg 'push car')"
+      * answerOption[+].valueString = "Not putting words together (e.g. 'push car')"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -281,7 +281,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "Speech is difficult for familiar people to understand"
-      * answerOption[+].valueString = "Not using simple sentences (eg big car go)"
+      * answerOption[+].valueString = "Not using simple sentences (e.g. big car go)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -293,7 +293,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "Speech difficult to understand"
-      * answerOption[+].valueString = "Not able to follow directions with two steps (eg 'Put your bag away and then go play')"
+      * answerOption[+].valueString = "Not able to follow directions with two steps (e.g. 'Put your bag away and then go play')"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -305,7 +305,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "Difficulty telling a parent what is wrong"
-      * answerOption[+].valueString = "Not able to answer questions in a simple conversation (eg What's your name? Who is your family?)"
+      * answerOption[+].valueString = "Not able to answer questions in a simple conversation (e.g. What's your name? Who is your family?)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -381,7 +381,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * type = #choice
       * repeats = true
       * answerOption[+].valueString = "Does not attempt everyday care skills (such as feeding or dressing)"
-      * answerOption[+].valueString = "Difficulty in manipulating small objects (eg threading beads)"
+      * answerOption[+].valueString = "Difficulty in manipulating small objects (e.g. threading beads)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -406,7 +406,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * repeats = true
       * answerOption[+].valueString = "Concerns from teacher about school readiness"
       * answerOption[+].valueString = "Not independently able to complete everyday routines such as feeding and dressing"
-      * answerOption[+].valueString = "Cannot draw simple pictures (eg stick person)"
+      * answerOption[+].valueString = "Cannot draw simple pictures (e.g. stick person)"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"
         * operator = #=
@@ -445,7 +445,7 @@ Description: "Red Flags Early Identification Guide For Children sub-questionnair
       * text = "Gross motor"
       * type = #choice
       * repeats = true
-      * answerOption[+].valueString = "No form of independent mobility (eg crawling, commando crawling, bottom shuffle)"
+      * answerOption[+].valueString = "No form of independent mobility (e.g. crawling, commando crawling, bottom shuffle)"
       * answerOption[+].valueString = "Not pulling to stand independently and holding on for support"
       * enableWhen[+]
         * question = "0b520b20-98df-4024-b25d-2986f6b96e77"

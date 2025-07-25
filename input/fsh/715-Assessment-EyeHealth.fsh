@@ -145,7 +145,7 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
       
 // table
   * item[+]
-    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#grid
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
     * linkId = "25d3e4b6-8c71-4c17-8f5a-aca90e232ed2"
     * text = "Eye examination"
     * type = #group 
@@ -229,13 +229,11 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
         * answerOption[+].valueCoding = $SCT#60332004 "Trichiasis"
         * answerOption[+].valueCoding = $SCT#95726001 "Corneal scar"
 
-
   * item[+]
     * linkId = "8dcdc04c-7655-4b47-88eb-8425f0cdc0d0"
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false  
-
 
   * item[+]
     * linkId = "MarkComplete-8"

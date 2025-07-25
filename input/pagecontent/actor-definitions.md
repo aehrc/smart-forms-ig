@@ -10,5 +10,5 @@ The following actor definitions have been defined for this implementation guide.
     - The SHC Host Authorization Server allows the SHC App to request authorisation from the PMS user to access patient health information to prepopulate and write back health checks data using the PMS FHIR Server.
 
 - [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html)
-    - The SHC Host FHIR Server allows the SHC App to retrieve patient health information and writeback collected health check data.
+    - The SHC Host FHIR Server allows the SHC App to retrieve patient health information and write back collected health check data.
 

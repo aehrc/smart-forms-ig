@@ -157,7 +157,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "20ae39db-7bb5-4af4-ac59-3298d20719d8"
-      * text = "details"
+      * text = "Details"
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -170,7 +170,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "61ff302c-9ef0-414c-a9f8-e2b8d119373c"
-      * text = "details"
+      * text = "Details"
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -183,7 +183,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "520a4544-a48b-4864-8cfd-6af263756f1b"
-      * text = "details"
+      * text = "Details"
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -196,7 +196,7 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "2e24a8de-c23d-409a-a5d6-96345177e105"
-      * text = "details"
+      * text = "Details"
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -209,29 +209,27 @@ Description: "Learning And Development sub-questionnaire for Aboriginal and Torr
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "f95dd477-98a2-4534-b8ab-5a74d1b46502"
-      * text = "details"
+      * text = "Details"
       * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 5"
     * linkId = "9371dddc-49f4-4a8f-a9dc-a0e128f99636"
-    * text = "Are there any other concerns about your child's learning and development"
+    * text = "Are there any other concerns about your child's learning and development?"
     * type = #text
     * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
       * linkId = "f513b077-5714-4b14-b44f-30a979509651"
-      * text = "details"
+      * text = "Details"
       * type = #display
-
 
   * item[+]
     * linkId = "5ab80929-5901-431d-bf68-67d532f5fa58"
     * text = "Health priorities, actions and follow-up"
     * type = #text
     * repeats = false
-
   
   * item[+]
     * linkId = "MarkComplete-15"

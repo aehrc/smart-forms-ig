@@ -127,8 +127,7 @@ Description: "Chronic Disease Ageing sub-questionnaire for Aboriginal and Torres
     * linkId = "7292070b-8944-4a40-bcf6-9aaf1721e986"
     * text = "Health priorities, actions and follow-up"
     * type = #text
-    * repeats = false
-  
+    * repeats = false  
   * item[+]
     * linkId = "MarkComplete-4"
     * text = "Mark section as complete"

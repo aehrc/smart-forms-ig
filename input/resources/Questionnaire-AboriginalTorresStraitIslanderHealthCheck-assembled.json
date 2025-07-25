@@ -680,7 +680,7 @@
                             {
                                 "property": "constraint",
                                 "op": "=",
-                                "value": "^ 32570631000036107|Sex reference set|"
+                                "value": "^32570631000036107|Sex reference set|"
                             }
                         ]
                     }
@@ -1348,7 +1348,7 @@
                             {
                                 "property": "constraint",
                                 "op": "=",
-                                "value": "^ 32570581000036105|Problem/Diagnosis reference set| OR ^ 1184831000168105|Drug prophylaxis reference set| OR << 399097000|Administration of anaesthesia| OR 169443000|Preventive procedure|"
+                                "value": "^32570581000036105|Problem/Diagnosis reference set| OR ^1184831000168105|Drug prophylaxis reference set| OR <<399097000|Administration of anaesthesia| OR 169443000|Preventive procedure|"
                             }
                         ]
                     }
@@ -3272,7 +3272,6 @@
                         "coding": [
                             {
                                 "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "version": "1.0.0",
                                 "code": "tab-container"
                             }
                         ]
@@ -5662,7 +5661,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age <= 49).intersect(%age > 12)"
+                                        "expression": "(%age <= 49) and (%age > 12)"
                                     }
                                 }
                             ],
@@ -8665,7 +8664,7 @@
                                         }
                                     ],
                                     "linkId": "20ae39db-7bb5-4af4-ac59-3298d20719d8",
-                                    "text": "details",
+                                    "text": "Details",
                                     "type": "display"
                                 }
                             ]
@@ -8700,7 +8699,7 @@
                                         }
                                     ],
                                     "linkId": "61ff302c-9ef0-414c-a9f8-e2b8d119373c",
-                                    "text": "details",
+                                    "text": "Details",
                                     "type": "display"
                                 }
                             ]
@@ -8735,7 +8734,7 @@
                                         }
                                     ],
                                     "linkId": "520a4544-a48b-4864-8cfd-6af263756f1b",
-                                    "text": "details",
+                                    "text": "Details",
                                     "type": "display"
                                 }
                             ]
@@ -8770,7 +8769,7 @@
                                         }
                                     ],
                                     "linkId": "2e24a8de-c23d-409a-a5d6-96345177e105",
-                                    "text": "details",
+                                    "text": "Details",
                                     "type": "display"
                                 }
                             ]
@@ -8805,7 +8804,7 @@
                                         }
                                     ],
                                     "linkId": "f95dd477-98a2-4534-b8ab-5a74d1b46502",
-                                    "text": "details",
+                                    "text": "Details",
                                     "type": "display"
                                 }
                             ]
@@ -8821,7 +8820,7 @@
                                 }
                             ],
                             "linkId": "9371dddc-49f4-4a8f-a9dc-a0e128f99636",
-                            "text": "Are there any other concerns about your child's learning and development",
+                            "text": "Are there any other concerns about your child's learning and development?",
                             "type": "text",
                             "repeats": false,
                             "item": [
@@ -8840,7 +8839,7 @@
                                         }
                                     ],
                                     "linkId": "f513b077-5714-4b14-b44f-30a979509651",
-                                    "text": "details",
+                                    "text": "Details",
                                     "type": "display"
                                 }
                             ]
@@ -8873,7 +8872,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "(%age > 12).intersect(%age < 50)"
+                                "expression": "(%age > 12) and (%age < 50)"
                             }
                         }
                     ],
@@ -9232,12 +9231,6 @@
                                     "repeats": false
                                 }
                             ]
-                        },
-                        {
-                            "linkId": "ed6f7800-e22a-4639-9d11-faf845513500",
-                            "text": "Health priorities, actions and follow-up",
-                            "type": "text",
-                            "repeats": false
                         },
                         {
                             "linkId": "MarkComplete-16",
@@ -9816,7 +9809,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "(%age >= 50).intersect(%age <= 74)"
+                                "expression": "(%age >= 50) and (%age <= 74)"
                             }
                         }
                     ],
@@ -10504,12 +10497,12 @@
                                 }
                             ],
                             "linkId": "7a22a4c4-6611-4687-af00-37c80c3f8fc0",
-                            "text": "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)",
+                            "text": "Document conversation about healthy eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)",
                             "_text": {
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about health eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
+                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <div>Document conversation about healthy eating which could include:</div>\r\n    <ul>\r\n      <li>current diet including food and drinks</li>\r\n      <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>\r\n    </ul>\r\n    </div>"
                                     }
                                 ]
                             },
@@ -10890,7 +10883,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age > 12).intersect(%age <= 24)"
+                                        "expression": "(%age > 12) and (%age <= 24)"
                                     }
                                 }
                             ],
@@ -11219,7 +11212,7 @@
                                 }
                             ],
                             "linkId": "0b520b20-98df-4024-b25d-2986f6b96e77",
-                            "text": "What age group is the child closet to?",
+                            "text": "What age group is the child closest to?",
                             "type": "choice",
                             "repeats": false,
                             "answerOption": [
@@ -11347,7 +11340,7 @@
                                             "valueString": "Does not notice someone new"
                                         },
                                         {
-                                            "valueString": "Does not pay early turn taking games (eg peekaboo, rolling a ball)"
+                                            "valueString": "Does not play early turn taking games (e.g. peekaboo, rolling a ball)"
                                         }
                                     ]
                                 },
@@ -11409,7 +11402,7 @@
                                     "repeats": true,
                                     "answerOption": [
                                         {
-                                            "valueString": "When playing with toys tends to bang, drop, or throw them rather than use them for their purpose (eg Cuddle doll, build blocks)"
+                                            "valueString": "When playing with toys tends to bang, drop, or throw them rather than use them for their purpose (e.g. cuddle doll, build blocks)"
                                         }
                                     ]
                                 },
@@ -11536,7 +11529,7 @@
                                     "repeats": true,
                                     "answerOption": [
                                         {
-                                            "valueString": "Not starting to babble (eg aahh, oohh)"
+                                            "valueString": "Not starting to babble (e.g. aahh, oohh)"
                                         }
                                     ]
                                 },
@@ -11567,10 +11560,10 @@
                                     "repeats": true,
                                     "answerOption": [
                                         {
-                                            "valueString": "Not using gestures (eg pointing, showing, waving)"
+                                            "valueString": "Not using gestures (e.g. pointing, showing, waving)"
                                         },
                                         {
-                                            "valueString": "Not using two part babble (eg bubu, dada)"
+                                            "valueString": "Not using two part babble (e.g. bubu, dada)"
                                         }
                                     ]
                                 },
@@ -11604,7 +11597,7 @@
                                             "valueString": "No babbled phrases that sound like talking"
                                         },
                                         {
-                                            "valueString": "No response to familiar words (eg bottle, daddy)"
+                                            "valueString": "No response to familiar words (e.g. bottle, daddy)"
                                         }
                                     ]
                                 },
@@ -11638,7 +11631,7 @@
                                             "valueString": "No clear words"
                                         },
                                         {
-                                            "valueString": "Cannot understand short requests (eg 'Where is the ball?')"
+                                            "valueString": "Cannot understand short requests (e.g. 'Where is the ball?')"
                                         }
                                     ]
                                 },
@@ -11672,7 +11665,7 @@
                                             "valueString": "Not learning new words"
                                         },
                                         {
-                                            "valueString": "Not putting words together (eg 'push car')"
+                                            "valueString": "Not putting words together (e.g. 'push car')"
                                         }
                                     ]
                                 },
@@ -11706,7 +11699,7 @@
                                             "valueString": "Speech is difficult for familiar people to understand"
                                         },
                                         {
-                                            "valueString": "Not using simple sentences (eg big car go)"
+                                            "valueString": "Not using simple sentences (e.g. big car go)"
                                         }
                                     ]
                                 },
@@ -11740,7 +11733,7 @@
                                             "valueString": "Speech difficult to understand"
                                         },
                                         {
-                                            "valueString": "Not able to follow directions with two steps (eg 'Put your bag away and then go play')"
+                                            "valueString": "Not able to follow directions with two steps (e.g. 'Put your bag away and then go play')"
                                         }
                                     ]
                                 },
@@ -11774,7 +11767,7 @@
                                             "valueString": "Difficulty telling a parent what is wrong"
                                         },
                                         {
-                                            "valueString": "Not able to answer questions in a simple conversation (eg What's your name? Who is your family?)"
+                                            "valueString": "Not able to answer questions in a simple conversation (e.g. What's your name? Who is your family?)"
                                         }
                                     ]
                                 },
@@ -11984,7 +11977,7 @@
                                             "valueString": "Does not attempt everyday care skills (such as feeding or dressing)"
                                         },
                                         {
-                                            "valueString": "Difficulty in manipulating small objects (eg threading beads)"
+                                            "valueString": "Difficulty in manipulating small objects (e.g. threading beads)"
                                         }
                                     ]
                                 },
@@ -12055,7 +12048,7 @@
                                             "valueString": "Not independently able to complete everyday routines such as feeding and dressing"
                                         },
                                         {
-                                            "valueString": "Cannot draw simple pictures (eg stick person)"
+                                            "valueString": "Cannot draw simple pictures (e.g. stick person)"
                                         }
                                     ]
                                 },
@@ -12160,7 +12153,7 @@
                                     "repeats": true,
                                     "answerOption": [
                                         {
-                                            "valueString": "No form of independent mobility (eg crawling, commando crawling, bottom shuffle)"
+                                            "valueString": "No form of independent mobility (e.g. crawling, commando crawling, bottom shuffle)"
                                         },
                                         {
                                             "valueString": "Not pulling to stand independently and holding on for support"
@@ -12492,7 +12485,6 @@
                                                 "coding": [
                                                     {
                                                         "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "version": "1.0.0",
                                                         "code": "grid"
                                                     }
                                                 ]
@@ -12899,7 +12891,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "(%age > 12).intersect(%age <= 24)"
+                                "expression": "(%age > 12) and (%age <= 24)"
                             }
                         },
                         {
@@ -13074,7 +13066,7 @@
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                             "valueExpression": {
                                 "language": "text/fhirpath",
-                                "expression": "(%age > 24).intersect(%age <= 49)"
+                                "expression": "(%age > 24) and (%age <= 49)"
                             }
                         }
                     ],
@@ -13682,7 +13674,6 @@
                                         "coding": [
                                             {
                                                 "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                "version": "1.0.0",
                                                 "code": "grid"
                                             }
                                         ]
@@ -14482,7 +14473,7 @@
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                             "valueExpression": {
                                                 "language": "text/fhirpath",
-                                                "expression": "(%age > 5).intersect(%age <= 12)"
+                                                "expression": "(%age > 5) and (%age <= 12)"
                                             }
                                         }
                                     ],
@@ -15196,7 +15187,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age > 12).intersect(%age <= 24)"
+                                        "expression": "(%age > 12) and (%age <= 24)"
                                     }
                                 }
                             ],
@@ -15218,7 +15209,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age > 24).intersect(%age <= 49)"
+                                        "expression": "(%age > 24) and (%age <= 49)"
                                     }
                                 }
                             ],
@@ -15591,7 +15582,6 @@
                                         "coding": [
                                             {
                                                 "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                "version": "1.0.0",
                                                 "code": "grid"
                                             }
                                         ]
@@ -16346,7 +16336,6 @@
                                         "coding": [
                                             {
                                                 "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                "version": "1.0.0",
                                                 "code": "grid"
                                             }
                                         ]
@@ -16811,7 +16800,7 @@
                                                 "extension": [
                                                     {
                                                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n            <p>The <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the Aus&nbsp;CVD&nbsp;Risk website should be used. Below is a read only view of a subset of variables that can be used as inputs for the online calculator. The calculated CVD risk result can be entered here.</p></div>"
+                                                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>The <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the Aus&nbsp;CVD&nbsp;Risk website should be used. Below is a read only view of a subset of variables that can be used as inputs for the online calculator. The calculated CVD risk result can be entered here.</p></div>"
                                                     }
                                                 ]
                                             },
@@ -16887,9 +16876,9 @@
                             ]
                         },
                         {
-                            "linkId": "8d02ef36-3f48-4912-b001-e9fec6aa7101",
-                            "text": "CVD risk calculator variables",
-                            "type": "group",
+                            "linkId": "f8022f3f-21fe-42c0-8abd-95f24e2e37e5",
+                            "text": "Health priorities, actions and follow-up",
+                            "type": "text",
                             "enableWhen": [
                                 {
                                     "question": "cvdrisk-auscvdriskiaccess",
@@ -16967,7 +16956,6 @@
                                                 "coding": [
                                                     {
                                                         "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "version": "1.0.0",
                                                         "code": "grid"
                                                     }
                                                 ]
@@ -17289,12 +17277,6 @@
                                     "repeats": false
                                 }
                             ]
-                        },
-                        {
-                            "linkId": "f8022f3f-21fe-42c0-8abd-95f24e2e37e5",
-                            "text": "Health priorities, actions and follow-up",
-                            "type": "text",
-                            "repeats": false
                         },
                         {
                             "linkId": "MarkComplete-2",
@@ -17722,7 +17704,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age > 12).intersect(%age < 50) and %HealthPrioritiesSummaryLearningWorkAdults.exists()"
+                                        "expression": "(%age > 12) and (%age < 50) and %HealthPrioritiesSummaryLearningWorkAdults.exists()"
                                     }
                                 },
                                 {
@@ -17842,7 +17824,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age >= 50).intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
+                                        "expression": "(%age >= 50) and (%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
                                     }
                                 },
                                 {
@@ -17986,7 +17968,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age > 12).intersect(%age <= 24) and %HealthPrioritiesSummarySexualHealthAdolescents.exists()"
+                                        "expression": "(%age > 12) and (%age <= 24) and %HealthPrioritiesSummarySexualHealthAdolescents.exists()"
                                     }
                                 },
                                 {
@@ -18010,7 +17992,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age > 24).intersect(%age <= 49) and %HealthPrioritiesSummarySexualHealthAdults.exists()"
+                                        "expression": "(%age > 24) and (%age <= 49) and %HealthPrioritiesSummarySexualHealthAdults.exists()"
                                     }
                                 },
                                 {
@@ -18348,7 +18330,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age <= 12).intersect(%age > 5)"
+                                        "expression": "(%age <= 12) and (%age > 5)"
                                     }
                                 }
                             ],
@@ -18437,7 +18419,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age <= 12).intersect(%age > 5)"
+                                        "expression": "(%age <= 12) and (%age > 5)"
                                     }
                                 },
                                 {
@@ -18490,7 +18472,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age <= 24).intersect(%age > 12)"
+                                        "expression": "(%age <= 24) and (%age > 12)"
                                     }
                                 },
                                 {
@@ -18549,7 +18531,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age <= 49).intersect(%age > 24)"
+                                        "expression": "(%age <= 49) and (%age > 24)"
                                     }
                                 },
                                 {
@@ -18789,7 +18771,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "(%age <= 12).intersect(%age > 5)"
+                                                        "expression": "(%age <= 12) and (%age > 5)"
                                                     }
                                                 },
                                                 {
@@ -18847,7 +18829,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "(%age <= 24).intersect(%age > 12)"
+                                                        "expression": "(%age <= 24) and (%age > 12)"
                                                     }
                                                 },
                                                 {
@@ -18908,7 +18890,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "(%age <= 49).intersect(%age > 24)"
+                                                        "expression": "(%age <= 49) and (%age > 24)"
                                                     }
                                                 },
                                                 {
@@ -19136,7 +19118,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "(%age <= 12).intersect(%age > 5)"
+                                        "expression": "(%age <= 12) and (%age > 5)"
                                     }
                                 }
                             ],
@@ -19151,7 +19133,7 @@
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                                     "valueExpression": {
                                         "language": "text/fhirpath",
-                                        "expression": "%age >12"
+                                        "expression": "%age > 12"
                                     }
                                 }
                             ],
@@ -19179,7 +19161,7 @@
                                 }
                             ],
                             "linkId": "8176151f-6d86-45eb-91b1-12458d75a181",
-                            "text": "A copy of this health check has been offerered - including details of follow-up and future appointments",
+                            "text": "A copy of this health check has been offered - including details of follow-up and future appointments",
                             "type": "choice",
                             "repeats": false,
                             "answerOption": [

@@ -176,7 +176,6 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
     * type = #text
     * repeats = false
 
-    
   * item[+]
     * linkId = "MarkComplete-26"
     * text = "Mark section as complete"

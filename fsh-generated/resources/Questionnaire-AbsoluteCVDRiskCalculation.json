@@ -220,7 +220,7 @@
                     "extension": [
                       {
                         "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
-                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n            <p>The <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the Aus&nbsp;CVD&nbsp;Risk website should be used. Below is a read only view of a subset of variables that can be used as inputs for the online calculator. The calculated CVD risk result can be entered here.</p></div>"
+                        "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>The <a href=\"https://www.cvdcheck.org.au/calculator\" target=\"_blank\">Australian CVD risk calculator</a> on the Aus&nbsp;CVD&nbsp;Risk website should be used. Below is a read only view of a subset of variables that can be used as inputs for the online calculator. The calculated CVD risk result can be entered here.</p></div>"
                       }
                     ]
                   },
@@ -372,8 +372,7 @@
                     "coding": [
                       {
                         "code": "grid",
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "version": "1.0.0"
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]
                   }
@@ -694,9 +693,9 @@
               "repeats": false
             }
           ],
-          "linkId": "8d02ef36-3f48-4912-b001-e9fec6aa7101",
-          "text": "CVD risk calculator variables",
-          "type": "group",
+          "linkId": "f8022f3f-21fe-42c0-8abd-95f24e2e37e5",
+          "text": "Health priorities, actions and follow-up",
+          "type": "text",
           "repeats": false,
           "readOnly": true,
           "enableWhen": [
@@ -706,12 +705,6 @@
               "answerBoolean": false
             }
           ]
-        },
-        {
-          "linkId": "f8022f3f-21fe-42c0-8abd-95f24e2e37e5",
-          "text": "Health priorities, actions and follow-up",
-          "type": "text",
-          "repeats": false
         },
         {
           "linkId": "MarkComplete-2",
@@ -835,7 +828,7 @@
               {
                 "property": "constraint",
                 "op": "=",
-                "value": "^ 32570631000036107|Sex reference set|"
+                "value": "^32570631000036107|Sex reference set|"
               }
             ]
           }

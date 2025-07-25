@@ -106,7 +106,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age <= 12).intersect(%age > 5)"
+                "expression": "(%age <= 12) and (%age > 5)"
               }
             }
           ],
@@ -195,7 +195,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age <= 12).intersect(%age > 5)"
+                "expression": "(%age <= 12) and (%age > 5)"
               }
             },
             {
@@ -248,7 +248,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age <= 24).intersect(%age > 12)"
+                "expression": "(%age <= 24) and (%age > 12)"
               }
             },
             {
@@ -307,7 +307,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age <= 49).intersect(%age > 24)"
+                "expression": "(%age <= 49) and (%age > 24)"
               }
             },
             {
@@ -539,7 +539,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "(%age <= 12).intersect(%age > 5)"
+                        "expression": "(%age <= 12) and (%age > 5)"
                       }
                     },
                     {
@@ -597,7 +597,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "(%age <= 24).intersect(%age > 12)"
+                        "expression": "(%age <= 24) and (%age > 12)"
                       }
                     },
                     {
@@ -658,7 +658,7 @@
                       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
                       "valueExpression": {
                         "language": "text/fhirpath",
-                        "expression": "(%age <= 49).intersect(%age > 24)"
+                        "expression": "(%age <= 49) and (%age > 24)"
                       }
                     },
                     {
@@ -894,7 +894,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age <= 12).intersect(%age > 5)"
+                "expression": "(%age <= 12) and (%age > 5)"
               }
             }
           ],
@@ -909,7 +909,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "%age >12"
+                "expression": "%age > 12"
               }
             }
           ],
@@ -937,7 +937,7 @@
             }
           ],
           "linkId": "8176151f-6d86-45eb-91b1-12458d75a181",
-          "text": "A copy of this health check has been offerered - including details of follow-up and future appointments",
+          "text": "A copy of this health check has been offered - including details of follow-up and future appointments",
           "type": "choice",
           "repeats": false,
           "answerOption": [

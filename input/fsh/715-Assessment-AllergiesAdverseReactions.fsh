@@ -114,7 +114,6 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
       * answerBoolean = true
 
   // Adverse reaction risk summary
-
   * item[+]
     * linkId = "allergyinstruction"
     * text = "Adverse reaction risk summary"
@@ -174,7 +173,8 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[=].readOnly = true
 * item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
-// manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+// manifestation value set
+// * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.note[0].text"
@@ -208,7 +208,8 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].type = #open-choice
 * item[=].item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/clinical-finding-1"
-// manifestation vs * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+// manifestation value set
+// * item[=].item[=].item[=].item[=].answerValueSet = "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
 * item[=].item[=].item[=].item[+].linkId = "allergynew-comment"
 * item[=].item[=].item[=].item[=].text = "Comment"
 * item[=].item[=].item[=].item[=].type = #text
@@ -218,7 +219,6 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].text = "Health priorities, actions and follow-up"
 * item[=].item[=].type = #text
 * item[=].item[=].repeats = false
-
 * item[=].item[+].linkId = "MarkComplete-3"
 * item[=].item[=].text = "Mark section as complete"
 * item[=].item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"

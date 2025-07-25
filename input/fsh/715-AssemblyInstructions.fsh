@@ -174,117 +174,16 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * item[+] 
   * linkId = "fd5af92e-c248-497a-8007-ee0952ccd4d9"  
   * type = #group
-  * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control|1.0.0#tab-container
+  * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#tab-container
  //fhirpath variables
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "age"
     * language = #text/fhirpath
     * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"
-    /*
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "sex"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "smoker"
-    * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
-    */
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "postcode"
     * language = #text/fhirpath
     * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='f1262ade-843c-4eba-a86d-51a9c97d134b').item.where(linkId='4e0dc185-f83e-4027-b7a8-ecb543d42c6d').item.where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.value"
-
- /* Deprecated CVD risk algorithm
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "systolicBP"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='4b98f514-2f6a-41f3-ad9d-185abc68ae34').answer.value"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "smoker"
-    * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='14a9fb5f-5b0e-4862-b143-08a11cd3ebf0').item.where(linkId='515eda6e-973a-4b10-910a-0d4bf4f2efff').item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.code='77176002', 1, 0)"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "totalCh"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='f11feebc-fc4a-40d5-8481-b87d9f5a89aa').answer.value"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "hdl"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='c47a7fae-0c60-40f8-8426-1019b1f0dd8f').answer.value"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "diabetes"
-    * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='e8fed84e-6c15-4f62-bc95-cd08033af3f7').answer.value = true,1,0)"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "female"
-    * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value.code='248152002', 1, 0)"  
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cvdAge"
-    * language = #text/fhirpath
-    * expression = "iif(%age > 74, 74, iif(%age < 35, 35, %age))"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "ecgLvh"
-    * language = #text/fhirpath
-    * expression = "iif(item.where(linkId='d95abe99-8ef2-4b97-bc88-a2901e2ebc9c').item.where(linkId='b980624c-e91a-44d4-80ba-a9f34c0e1188').answer.value = true,1,0)"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cBase"
-    * language = #text/fhirpath
-    * expression = "18.8144"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cFemale"
-    * language = #text/fhirpath
-    * expression = "%female * -1.2146"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cAge"
-    * language = #text/fhirpath
-    * expression = "%cvdAge.ln() * -1.8443"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cAgeFemale"
-    * language = #text/fhirpath
-    * expression = "%female * %cvdAge.ln() * 0.3668"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cSBP"
-    * language = #text/fhirpath
-    * expression = "%systolicBP.ln() * -1.4032"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cSmoker"
-    * language = #text/fhirpath
-    * expression = "%smoker * -0.3899"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cTcHdl"
-    * language = #text/fhirpath
-    * expression = "(%totalCh / %hdl).ln() * -0.539"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cDiabetes"
-    * language = #text/fhirpath
-    * expression = "%diabetes * -0.3036"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cDiabetesFemale"
-    * language = #text/fhirpath
-    * expression = "%female * %diabetes * -0.1697"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cEcgLvh"
-    * language = #text/fhirpath
-    * expression = "%ecgLvh * -0.3362"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "sumOfCoeffs"
-    * language = #text/fhirpath
-    * expression = "%cBase + %cFemale + %cAge + %cAgeFemale + %cSBP + %cSmoker + %cTcHdl + %cDiabetes + %cDiabetesFemale + %cEcgLvh"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cvdScale"
-    * language = #text/fhirpath
-    * expression = "(0.6536 + (%sumOfCoeffs * -0.2402)).exp()"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cvdU"
-    * language = #text/fhirpath
-    * expression = "(5.ln()-%sumOfCoeffs)/%cvdScale"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "cvdScore"
-    * language = #text/fhirpath
-    * expression = "(1 - (%cvdU.exp()*-1).exp()) * 100"
-  */
   // Health priorities summary variables
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "HealthPrioritiesSummaryCurrentPriorities"
@@ -410,10 +309,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "HealthPrioritiesSummaryInvestigations"
     * language = #text/fhirpath
     * expression = "item.where(linkId='918f7f32-cdaf-4742-b33a-8254eda2d8bd').item.where(linkId='96a8d946-6078-4c85-9de8-3bf18d2c8150').answer.value"
-
-
-  // end variables
-
+  // Subquestionnnaire inputs  
   // About The Health Check
   * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.3.0"
@@ -533,8 +429,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.3.0"
     * linkId = "db70690e-2199-495a-9919-53697efaf913"
     * text = "Sub-questionnaire [http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.3.0] not available. Unable to display all questions."
-    * type = #display
-    
+    * type = #display    
   // Substance Use
   * item[+] 
     * extension[sdc-questionnaire-subQuestionnaire].valueCanonical = "http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.3.0"

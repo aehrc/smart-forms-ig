@@ -251,7 +251,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age > 12).intersect(%age < 50) and %HealthPrioritiesSummaryLearningWorkAdults.exists()"
+                "expression": "(%age > 12) and (%age < 50) and %HealthPrioritiesSummaryLearningWorkAdults.exists()"
               }
             },
             {
@@ -371,7 +371,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age >= 50).intersect(%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
+                "expression": "(%age >= 50) and (%age <= 74) and %HealthPrioritiesSummaryScreeningPrograms.exists()"
               }
             },
             {
@@ -515,7 +515,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age > 12).intersect(%age <= 24) and %HealthPrioritiesSummarySexualHealthAdolescents.exists()"
+                "expression": "(%age > 12) and (%age <= 24) and %HealthPrioritiesSummarySexualHealthAdolescents.exists()"
               }
             },
             {
@@ -539,7 +539,7 @@
               "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
               "valueExpression": {
                 "language": "text/fhirpath",
-                "expression": "(%age > 24).intersect(%age <= 49) and %HealthPrioritiesSummarySexualHealthAdults.exists()"
+                "expression": "(%age > 24) and (%age <= 49) and %HealthPrioritiesSummarySexualHealthAdults.exists()"
               }
             },
             {

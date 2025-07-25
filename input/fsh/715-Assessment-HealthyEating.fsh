@@ -249,9 +249,9 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
       * language = #text/fhirpath
       * expression = "%age > 5"
     * linkId = "7a22a4c4-6611-4687-af00-37c80c3f8fc0"
-    * text = "Document conversation about health eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
+    * text = "Document conversation about healthy eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-    <div>Document conversation about health eating which could include:</div>
+    <div>Document conversation about healthy eating which could include:</div>
     <ul>
       <li>current diet including food and drinks</li>
       <li>recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)</li>

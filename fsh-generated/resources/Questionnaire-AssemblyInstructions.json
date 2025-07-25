@@ -15,8 +15,7 @@
             "coding": [
               {
                 "code": "tab-container",
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "version": "1.0.0"
+                "system": "http://hl7.org/fhir/questionnaire-item-control"
               }
             ]
           }
@@ -1869,7 +1868,7 @@
               {
                 "property": "constraint",
                 "op": "=",
-                "value": "^ 32570631000036107|Sex reference set|"
+                "value": "^32570631000036107|Sex reference set|"
               }
             ]
           }

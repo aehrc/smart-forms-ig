@@ -131,7 +131,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%age <= 12"  
+      * expression = "%age <= 12"
     * linkId = "e24d487b-3dd4-4a6d-a58e-85dfa8ce3f36"
     * text = "Screen time concerns"
     * type = #group
@@ -191,7 +191,7 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "(%age > 12).intersect(%age <= 24)"
+      * expression = "(%age > 12) and (%age <= 24)"
     * linkId = "b2269be8-3ea5-494c-9368-06912b629789"
     * text = "Document conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text

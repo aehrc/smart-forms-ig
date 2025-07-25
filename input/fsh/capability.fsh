@@ -86,19 +86,6 @@ Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/1.0.0/s
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-/*
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `update`, `conditional update`."
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalCreate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalCreate.extension[0].valueCode = #SHALL
-* rest.resource[=].conditionalUpdate = true
-* rest.resource[=].conditionalUpdate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalUpdate.extension[0].valueCode = #SHALL
-*/
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -132,19 +119,6 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-/*
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `update`, `conditional update`."
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalCreate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalCreate.extension[0].valueCode = #SHALL
-* rest.resource[=].conditionalUpdate = true
-* rest.resource[=].conditionalUpdate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalUpdate.extension[0].valueCode = #SHALL
-*/
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -198,12 +172,6 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-/*
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalCreate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalCreate.extension[0].valueCode = #SHALL
-*/
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -269,19 +237,6 @@ If a medication in a MedicationStatement resource is represented as an external 
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-/*
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `update`, `conditional update`."
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalCreate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalCreate.extension[0].valueCode = #SHALL
-* rest.resource[=].conditionalUpdate = true
-* rest.resource[=].conditionalUpdate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalUpdate.extension[0].valueCode = #SHALL
-*/
 * rest.resource[=].searchInclude[+] = "MedicationStatement:medication"
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
@@ -361,12 +316,6 @@ The client **SHALL** support this method."
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-/*
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `create`, `conditional create`."
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalCreate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalCreate.extension[0].valueCode = #SHALL
-*/
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -409,15 +358,6 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[+].code = #patch
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-/*
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-* rest.resource[=].interaction[=].documentation = "**SHALL** support `update`, `conditional update`."
-* rest.resource[=].conditionalUpdate = true
-* rest.resource[=].conditionalUpdate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].conditionalUpdate.extension[0].valueCode = #SHALL
-*/
 
 //Practitioner
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -630,11 +570,6 @@ Usage: #definition
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
-/*
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalUpdate = true
-*/
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -654,11 +589,6 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
-/*
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalUpdate = true
-*/
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -691,7 +621,6 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
-//* rest.resource[=].conditionalCreate = true
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -730,13 +659,7 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #patch
-/*
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].conditionalCreate = true
-* rest.resource[=].conditionalUpdate = true
-*/
-* rest.resource[=].searchInclude[+] = "MedicationRequest:medication"
+* rest.resource[=].searchInclude[+] = "MedicationStatement:medication"
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -783,7 +706,6 @@ The client **SHALL** support this method."
 * rest.resource[=].documentation = "The client supports the Observation resource, the Smart Health Checks profiles listed and the conformance expectations for the Observation resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
-//* rest.resource[=].conditionalCreate = true
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
@@ -813,8 +735,6 @@ The server **SHALL** support both."
 * rest.resource[=].documentation = "The client supports the Patient resource, Smart Health Checks profile and the conformance expectations for the Patient resource."
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #patch
-//* rest.resource[=].interaction[+].code = #update
-//* rest.resource[=].conditionalUpdate = true
 
 //Practitioner
 * rest.resource[+].type = #Practitioner
@@ -843,7 +763,7 @@ The server **SHALL** support both."
 * rest.resource[=].type = #Questionnaire
 * rest.resource[=].profile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
 //Add more SDC profiles?
-* rest.resource[=].documentation = "The client supports the Questionnaire resource, Structured Data Capture profile and the conformance expectations for the QuestionnaireResponse resource."
+* rest.resource[=].documentation = "The client supports the Questionnaire resource, Structured Data Capture profile and the conformance expectations for the Questionnaire resource."
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].searchParam[+].name = "url"
