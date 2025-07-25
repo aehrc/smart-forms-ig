@@ -144,7 +144,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
       * linkId = "substanceuse-smoking-smokingstatus"
       * text = "Smoking status"
         * extension[+]
-          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
           * valueBoolean = true
       * type = #group
       * repeats = false

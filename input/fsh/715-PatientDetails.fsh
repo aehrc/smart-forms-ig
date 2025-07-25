@@ -291,7 +291,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "4e0dc185-f83e-4027-b7a8-ecb543d42c6d"
       * text = "Home address"
         * extension[+]
-          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
           * valueBoolean = true
       * type = #group
       * repeats = true      

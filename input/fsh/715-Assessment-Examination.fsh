@@ -637,7 +637,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * linkId = "3639c586-9576-48d3-a52b-e91fd2138581"
     * text = "Blood pressure"
       * extension[+]
-        * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+        * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
         * valueBoolean = true
     * type = #group
     * repeats = false

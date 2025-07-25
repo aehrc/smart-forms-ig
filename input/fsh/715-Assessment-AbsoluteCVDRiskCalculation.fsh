@@ -333,7 +333,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * linkId = "fe9feec6-593a-4106-8a7d-f9965a632ea2"
       * text = "Observation values"
         * extension[+]
-          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
           * valueBoolean = true
       * type = #group 
       * repeats = false

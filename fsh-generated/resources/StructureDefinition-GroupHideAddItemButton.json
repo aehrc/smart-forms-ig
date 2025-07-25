@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GroupHideAddItemButton",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton",
+  "name": "GroupHideAddItemButton",
+  "title": "Group Hide Add Item Button",
+  "status": "draft",
+  "description": "This custom extension is used to hide the UI component that allows a user to add new items for repeating groups in a Questionnaire. This is useful for preventing users from adding additional items to a group when it is not appropriate to do so, such as when a group is intended to be prepopulated with existing data but no new ones added by the user.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Questionnaire.item",
+      "type": "element"
+    }
+  ],
+  "contextInvariant": [
+    "type='group' and repeats=true"
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Group hide add item button",
+        "definition": "If true, the UI component that allows a user to add new items will be hidden.",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

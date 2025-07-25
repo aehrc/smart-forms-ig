@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "QuestionnaireItemTextHidden",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
+  "name": "QuestionnaireItemTextHidden",
+  "title": "Questionnaire Item Text Hidden",
+  "status": "draft",
+  "description": "This custom extension is used to indicate that the text of a Questionnaire item should be hidden in the user interface. This is useful for items where the text is not intended to be displayed to the user but is still needed for other processes.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Questionnaire.item.text",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Don't display text to user",
+        "definition": "If true, indicates that the text of an item should not be displayed to the user.",
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

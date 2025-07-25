@@ -164,7 +164,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
       * text = "Medical history summary"
         * extension[+]
-          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
           * valueBoolean = true
       * type = #group
       * repeats = true
@@ -218,7 +218,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "newdiagnosis"
       * text = "New diagnosis"
         * extension[+]
-          * url = "https://smartforms.csiro.au/docs/custom-extension/questionnaire-item-text-hidden"
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
           * valueBoolean = true
       * type = #group
       * repeats = true
