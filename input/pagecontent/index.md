@@ -92,7 +92,6 @@ This guide is divided into several pages which are listed at the top of each pag
   - [Profiles and Extensions](profiles-and-extensions.html): This page lists all of the StructureDefinition resources defined in this guide.
   - [Capability Statements](capability-statements.html): This page lists all of the CapabilityStatement resources defined in this guide.
   - [Actor Definitions](actor-definitions.html): This page lists all of the ActorDefinition resources defined in this guide.
-  - [Terminology](terminology.html): This page lists all of the ValueSet, CodeSystem and ConceptMap resources defined in this guide.
 - [Downloads](downloads.html): This page provides links to downloadable artefacts including the Smart Forms FHIR NPM package.
 
 

@@ -119,16 +119,17 @@ SHCA will request the following access scopes in the authorization request `scop
 * `openid`
 * `fhirUser`
 * `online_access`
-* `patient/AllergyIntolerance.cs`
-* `patient/Condition.cs`
+* `patient/AllergyIntolerance.cus`
+* `patient/Condition.cus`
 * `patient/Encounter.r`
 * `patient/Immunization.cs`
 * `patient/Medication.r`
-* `patient/MedicationStatement.cs`
+* `patient/MedicationStatement.cus`
 * `patient/Observation.cs`
 * `patient/Patient.r`
 * `patient/Practitioner.r`
 * `patient/QuestionnaireResponse.crus`
+* `launch/questionnaire?role=http://ns.electronichealth.net.au/smart/role/new`
 
 #### FHIR Server
 A PMS will need to provide a FHIR compatible service that supports the requirements of the SHCA. 
@@ -140,22 +141,23 @@ The PMS FHIR Server requirements are described by the [SHC Host FHIR Server Capa
 A summary of the required FHIR endpoints, resources and RESTful interactions are shown below. If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precedence.
 
 * .well-known/smart-configuration (in accordance with the [SMART App Launch implementation guide](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#retrieve-well-knownsmart-configuration))
-* [AU Core AllergyIntolerance](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-allergyintolerance.html) - `create`, `search`
-* [AU Core Condition](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-condition.html) - `create`, `search`
-* [AU Core Encounter](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-encounter.html) - `read`
-* [AU Core Immunization](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-immunization.html) - `create`, `search`
-* [AU Core Medication](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medication.html) - `read`
-* [AU Core MedicationStatement](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-medicationstatement.html) - `create`, `search`
+* [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html) - `create`, `patch`, `search`
+* [Smart Health Checks Condition](StructureDefinition-SHCCondition.html) - `create`, `patch`, `search`
+* [Smart Health Checks Encounter](StructureDefinition-SHCEncounter.html) - `read`
+* [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) - `create`, `search`
+* [Smart Health Checks Medication](StructureDefinition/SHCMedication) - `read`
+* [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) - `create`, `patch`, `search`
 * Observations
-    * [AU Core Blood Pressure](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-bloodpressure.html) - `create`, `search`
-    * [AU Core Body Height](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-bodyheight.html) - `create`, `search`
-    * [AU Core Body Weight](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-bodyweight.html) - `create`, `search`
-    * [AU Core Head Circumference](StructureDefinition-au-core-headcircum.html) - `create`, `search`
-    * [AU Core Heart Rate](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-heartrate.html) - `create`, `search`
-    * [AU Core Pathology Result Observation](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-diagnosticresult-path.html) - `search`    
-    * [AU Core Smoking Status](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-smokingstatus.html) - `create`, `search`
-    * [AU Core Waist Circumference](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-waistcircum.html) - `create`, `search`
-* [AU Core Patient](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-patient.html) - `read`
-* [AU Core Practitioner](https://hl7.org.au/fhir/core/1.0.0/StructureDefinition-au-core-practitioner.html) - `read`
-* [SDC Questionnaire Response](https://hl7.org/fhir/uv/sdc/STU3/StructureDefinition-sdc-questionnaireresponse.html) - `create`, `read`, `update`, `search`
+    * [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) - `create`, `search`
+    * [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) - `create`, `search`
+    * [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) - `create`, `search`
+    * [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) - `create`, `search`
+    * [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) - `create`, `search`
+    * [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) - `create`, `search`
+    * [Smart Health Checks Pathology Result](StructureDefinition-SHCPathologyResult.html) - `search`    
+    * [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) - `create`, `search`
+    * [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) - `create`, `search`
+* [Smart Health Checks Patient](StructureDefinition-SHCPatient.html) - `read`
+* [Smart Health Checks Practitioner](StructureDefinition-SHCPractitioner.html) - `read`
+* [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) - `create`, `read`, `update`, `search`
 
