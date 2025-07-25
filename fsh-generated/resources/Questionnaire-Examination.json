@@ -1938,7 +1938,7 @@
       "valueExpression": {
         "name": "ObsHeadCircumferenceDateString",
         "language": "text/fhirpath",
-        "expression": "%ObsHeadCircumferenceLatest.effective.toDate().toString"
+        "expression": "%ObsHeadCircumferenceLatest.effective.toDate().toString()"
       }
     },
     {

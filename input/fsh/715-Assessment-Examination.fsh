@@ -194,7 +194,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeadCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeadCircumferenceLatest.effective.toDate().toString"
+    * expression = "%ObsHeadCircumferenceLatest.effective.toDate().toString()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
