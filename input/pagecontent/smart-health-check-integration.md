@@ -145,7 +145,7 @@ A summary of the required FHIR endpoints, resources and RESTful interactions are
 * [Smart Health Checks Condition](StructureDefinition-SHCCondition.html) - `create`, `patch`, `search`
 * [Smart Health Checks Encounter](StructureDefinition-SHCEncounter.html) - `read`
 * [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) - `create`, `search`
-* [Smart Health Checks Medication](StructureDefinition/SHCMedication) - `read`
+* [Smart Health Checks Medication](StructureDefinition-SHCMedication.html) - `read`
 * [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) - `create`, `patch`, `search`
 * Observations
     * [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) - `create`, `search`
