@@ -46,7 +46,7 @@ Context: Questionnaire.item
 Extension: GroupHideAddItemButton
 Id: GroupHideAddItemButton
 Title: "Group Hide Add Item Button"
-Description: "This custom extension is used to hide the UI component that allows a user to add new items for repeating groups in a Questionnaire. This is useful for preventing users from adding additional items to a group when it is not appropriate to do so, such as when a group is intended to be prepopulated with existing data but no new ones added by the user."
+Description: "This custom extension is used to hide the UI component that allows a user to add new items for repeating groups in a Questionnaire. This is useful for preventing users from adding additional groups when it is not appropriate to do so, such as when a group is intended to be prepopulated with existing data but no new ones added by the user."
 Context: Questionnaire.item
 
 * ^contextInvariant = "type='group' and repeats=true"
