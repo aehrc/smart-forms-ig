@@ -10,6 +10,7 @@ Usage: #definition
 Title: "Chronic Condition Management Plan 1"
 Description: "Chronic Condition Management Plan."
 
+* contained[+] = condition-clinical
 
 //launch context
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
@@ -109,8 +110,6 @@ Description: "Chronic Condition Management Plan."
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].name = "ConditionRepeat"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%Condition.entry.resource.where(category.coding.exists(code='problem-list-item'))"
-* item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible"
-* item[=].item[=].item[=].item[=].extension[=].valueCode = #default-closed
 * item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#gtable
 * item[=].item[=].item[=].item[=].linkId = "problemdiagnosis-table"
@@ -148,7 +147,7 @@ Description: "Chronic Condition Management Plan."
 * item[=].item[=].item[=].item[=].item[=].text = "Clinical status"
 * item[=].item[=].item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"
+* item[=].item[=].item[=].item[=].item[=].answerValueSet = "#condition-clinical"
 
 * item[=].item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
@@ -171,8 +170,6 @@ Description: "Chronic Condition Management Plan."
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].name = "MedicationRequestRepeat"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationRequest.entry.resource.where(medication.ofType(CodeableConcept).exists())"
-* item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible"
-* item[=].item[=].item[=].item[=].extension[=].valueCode = #default-closed
 * item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item[=].item[=].item[=].item[=].extension[=].valueCodeableConcept = $questionnaire-item-control#gtable
 * item[=].item[=].item[=].item[=].linkId = "medicationsummary-table"
@@ -407,7 +404,7 @@ Description: "Chronic Condition Management Plan."
 * item[=].item[=].extension[=].valueExpression.expression = "item.where(linkId='plantextreview-table1').item.where(linkId='plantextreview-table-problem').answer.value"
 // variables stop
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-collapsible"
-* item[=].item[=].extension[=].valueCode = #default-closed
+* item[=].item[=].extension[=].valueCode = #default-open
 * item[=].item[=].linkId = "plantextreview"
 * item[=].item[=].text = "Management plan (text table)"
 * item[=].item[=].type = #group
