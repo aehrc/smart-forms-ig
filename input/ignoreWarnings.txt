@@ -5,9 +5,6 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Slice matching - There are several extensions used that either match slices in other profiles stated in meta or are permitted for use by the extension itself.
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render|3.0.0
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular|3.0.0
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp|3.0.0
 
 # Slice matching - CapabilityStatement
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination%
@@ -23,17 +20,13 @@ The URL 'http://www.health.gov.au/assessments/mbs/715' has already been used by 
 The URL 'http://www.health.gov.au/assessments/mbs/715' is also used by AboriginalTorresStraitIslanderHealthCheck%
 
 # Draft code systems referenced as intended
-Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext|3.0.0
 Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended%
-Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-item-control|4.0.1
-Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-display-category|4.0.1
-Reference to draft CodeSystem http://hl7.org/fhir/choice-list-orientation|5.1.0
 
 # Embedded HTML warnings checked
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
 # Invalid errors - invariant bug
-The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'')
+Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean'
 
 # HL7 core warnings
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
@@ -42,6 +35,5 @@ WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in 
 The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
 The nominated WG 'pc' means that the publisher should be 'HL7 International / Patient Care' but 'FHIR Project team' was found
 The nominated WG 'pc' means that the contact url should be 'http://www.hl7.org/Special/committees/patientcare' but it was not found
-The nominated WG 'fhir' means that the contact url should be 'http://www.hl7.org/Special/committees/fiwg' but it was not found
 The nominated WG 'pa' means that the publisher should be 'HL7 International / Patient Administration' but 'HL7 (FHIR Project)' was found
 The nominated WG 'pa' means that the contact url should be 'http://www.hl7.org/Special/committees/pafm' but it was not found
