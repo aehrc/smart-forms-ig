@@ -127,8 +127,8 @@ SHCA will request the following access scopes in the authorization request `scop
 * `patient/MedicationStatement.cus`
 * `patient/Observation.cs`
 * `patient/Patient.r`
-* `patient/Practitioner.r`
 * `patient/QuestionnaireResponse.crus`
+* `user/Practitioner.r`
 * `launch/questionnaire?role=http://ns.electronichealth.net.au/smart/role/new`
 
 #### FHIR Server
