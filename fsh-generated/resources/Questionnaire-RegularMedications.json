@@ -963,7 +963,7 @@
       "valueExpression": {
         "name": "medicationsFromContained",
         "language": "text/fhirpath",
-        "expression": "%MedicationStatement.entry.resource.contained.ofType(MedicationStatement).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('#', '')))"
+        "expression": "%MedicationStatement.entry.resource.contained.ofType(Medication).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('#', '')))"
       }
     },
     {
@@ -971,7 +971,7 @@
       "valueExpression": {
         "name": "medicationsFromRef",
         "language": "text/fhirpath",
-        "expression": "%MedicationStatement.entry.resource.ofType(MedicationStatement).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('Medication/', '')))"
+        "expression": "%MedicationStatement.entry.resource.ofType(Medication).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('Medication/', '')))"
       }
     },
     {
