@@ -48,12 +48,12 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression.name = "medicationsFromContained"
 * extension[=].valueExpression.language = #text/fhirpath
-* extension[=].valueExpression.expression = "%MedicationStatement.entry.resource.contained.ofType(MedicationStatement).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('#', '')))"
+* extension[=].valueExpression.expression = "%MedicationStatement.entry.resource.contained.ofType(Medication).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('#', '')))"
 
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
 * extension[=].valueExpression.name = "medicationsFromRef"
 * extension[=].valueExpression.language = #text/fhirpath
-* extension[=].valueExpression.expression = "%MedicationStatement.entry.resource.ofType(MedicationStatement).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('Medication/', '')))"
+* extension[=].valueExpression.expression = "%MedicationStatement.entry.resource.ofType(Medication).where(id in %MedicationStatement.entry.resource.medication.select(reference.replace('Medication/', '')))"
 
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
 * extension[=].valueString = "age"
