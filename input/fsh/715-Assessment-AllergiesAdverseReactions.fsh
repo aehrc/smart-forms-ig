@@ -129,6 +129,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(AllergyIntolerancePatchTemplate)
 * item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='allergyIntoleranceId').answer.value"
 * item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
+* item[=].item[=].item[=].extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
 * item[=].item[=].item[=].linkId = "allergysummary"
 * item[=].item[=].item[=].text = "Adverse reaction risk summary"
 * item[=].item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"

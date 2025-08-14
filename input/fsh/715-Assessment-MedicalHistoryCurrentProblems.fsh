@@ -152,6 +152,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     </div>"
     * type = #group 
     * item[+]
+      * extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext][+].valueExpression
         * name = "ConditionRepeat"
