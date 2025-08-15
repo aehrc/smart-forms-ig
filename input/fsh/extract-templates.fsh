@@ -173,7 +173,7 @@ Usage:  #inline
 * subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * subject.reference.extension[=].valueString = "%resource.subject.reference"
 * effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* effectiveDateTime.extension[=].valueString = "item.where(linkId='bp-newbp-date').answer.value.toDateTime()"
+* effectiveDateTime.extension[=].valueString = "%resource.repeat(item).where(linkId='bp-newbp-date').answer.value.toDateTime()"
 * component[+].code.coding[+] = $LNC#8480-6
 * component[=].code.coding[+] = $SCT#271649006
 * component[=].code.text = "Systolic"
