@@ -1,5 +1,4 @@
-This page extends the [Smart Health Check Integration](smart-health-check-integration.html) guide, which describes the requirements for a Practice Management System (PMS) to launch the Smart Health Checks Application (SHCA).  
-It focuses on integrating the AusCVDRisk-i calculator to support a streamlined CVD risk workflow within the Health Check.
+This page extends the [Smart Health Check Integration](smart-health-check-integration.html) guide, which describes the requirements for a Practice Management System (PMS) to launch the Smart Health Checks Application (SHCA). It focuses on integrating the AusCVDRisk-i calculator to support a streamlined CVD risk workflow within the Health Check.
 
 ### Background
 
@@ -106,18 +105,18 @@ Below is a draft example of the Endpoint launch context role to be defined in th
 
 This section outlines how the Health Check form accommodates different levels of PMS support for SMART App Launch and Aus CVD Risk-i integration.
 
-**Scenario 1: PMS supports both Health Check and Aus CVD Risk-i integration, with launch link enhancement**  
+#### Scenario 1: PMS supports both Health Check and Aus CVD Risk-i integration, with launch link enhancement**  
 An Aus CVD Risk-i launch link is embedded within the Health Check Questionnaire definition.
 This enables the most seamless user experience where a direct link to launch Aus CVD Risk-i can be displayed in the Health Check form.
 Clinicians can use this link to open Aus CVD Risk-i in a new “tab” or “frame” within the PMS.  
 The risk result is written back via Aus CVD Risk-i and can be brought back into the Health Check form via a sync button.
 
-**Scenario 2: PMS supports both Health Check and Aus CVD Risk-i integration, without launch link enhancement**  
+#### Scenario 2: PMS supports both Health Check and Aus CVD Risk-i integration, without launch link enhancement**  
 Instructional text is included within the Health Check Questionnaire definition to prompt clinicians to manually launch Aus CVD Risk-i from the PMS interface.
 This provides clear guidance, even if direct linking (from scenario 1) is not supported by the PMS.  
 The risk result is written back via Aus CVD Risk-i and can be brought back into the Health Check form via a sync button.
 
-**Scenario 3: PMS supports Health Check only**  
+#### Scenario 3: PMS supports Health Check only**  
 A link to the [online Aus CVD Risk Calculator](https://www.cvdcheck.org.au/) is included in the Health Check Questionnaire definition.
 This ensures clinicians still have access to the CVD risk assessment tool, even if PMS integration with Aus CVD Risk-i is unavailable.  
 Manual transcription of the risk result is required from the online calculator back into the Health Check form, with the risk result written back via the SHCA.

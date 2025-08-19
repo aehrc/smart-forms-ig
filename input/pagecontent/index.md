@@ -84,6 +84,7 @@ This guide is divided into several pages which are listed at the top of each pag
 - Guidance
   - [General Requirements](general-requirements.html): This page documents how CapabilityStatements declare conformance to the SHC profiles and their FHIR interactions. It also defines the expectations for mandatory and *Must Support* elements.
   - [Smart Health Check Integration](smart-health-check-integration.html): This page provides an overview of the integration requirements to launch the Smart Health Check Application.
+  - [Smart Health Check Integration - Aus CVD Risk-i Enhancements](smart-health-check-integration-CVD-risk-enhancements.html): This page describes integrating the AusCVDRisk-i calculator to enable a streamlined CVD risk workflow within the Health Check.
   - [Reference Implementation](reference-implementation.html): This page describes software components that have been developed to demonstrate the Smart Health Checks solution.
   - [Informative Guidance](informative-guidance.html): This page provides some informative material that implementers may find useful but does not represent normative requirements.
 - FHIR Artefacts: These pages provide detailed descriptions and formal definitions for all the FHIR artefacts defined in this guide.
