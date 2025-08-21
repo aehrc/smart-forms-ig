@@ -67,11 +67,6 @@ Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/1.0.0/s
 //AllergyIntolerance
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[0].valueCode = #SHALL
-* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
-* rest.resource[=].extension[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].extension[=].valueCode = #SHALL
-* rest.resource[=].extension[=].extension[+].url = "required"
-* rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].type = #AllergyIntolerance
 * rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
