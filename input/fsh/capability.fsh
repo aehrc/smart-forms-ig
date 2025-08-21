@@ -526,7 +526,7 @@ Usage: #definition
 * publisher = "AEHRC CSIRO"
 * kind = #capability
 * instantiates[+] = "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-filler"
-* instantiates[+] = "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
+* instantiates[+] = "http://hl7.org.au/fhir/core/CapabilityStatement/au-core-requester"
 * software.name = "Smart Health Checks Application"
 * fhirVersion = #4.0.1
 * format[0] = #json
