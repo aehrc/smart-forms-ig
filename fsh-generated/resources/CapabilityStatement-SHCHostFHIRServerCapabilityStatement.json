@@ -20,37 +20,6 @@
     }
   ],
   "kind": "requirements",
-  "instantiates": [
-    "http://hl7.org.au/fhir/core/CapabilityStatement/au-core-responder",
-    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-response-manager",
-    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-archiver"
-  ],
-  "_instantiates": [
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHALL"
-        }
-      ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHOULD"
-        }
-      ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHOULD"
-        }
-      ]
-    }
-  ],
   "fhirVersion": "4.0.1",
   "format": [
     "json"

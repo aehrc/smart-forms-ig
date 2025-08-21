@@ -11,10 +11,11 @@
   "publisher": "AEHRC CSIRO",
   "kind": "capability",
   "instantiates": [
-    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-filler"
+    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-filler",
+    "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
   ],
   "software": {
-    "name": "Smart Forms Application"
+    "name": "Smart Health Checks Application"
   },
   "fhirVersion": "4.0.1",
   "format": [
@@ -572,7 +573,6 @@
         },
         {
           "type": "ValueSet",
-          "profile": "http://hl7.org/fhir/StructureDefinition/ValueSet",
           "documentation": "The client supports the ValueSet resource and the conformance expectations for the ValueSet resource.",
           "operation": [
             {
