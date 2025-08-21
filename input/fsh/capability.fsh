@@ -10,19 +10,7 @@ Usage: #definition
 * publisher = "AEHRC CSIRO"
 * jurisdiction = urn:iso:std:iso:3166#AU
 * kind = #requirements
-
-* instantiates[+] = "http://hl7.org.au/fhir/core/CapabilityStatement/au-core-responder"
-* instantiates[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* instantiates[=].extension[0].valueCode = #SHALL
-* instantiates[+] = "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-response-manager"
-* instantiates[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* instantiates[=].extension[0].valueCode = #SHOULD
-* instantiates[+] = "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-archiver"
-* instantiates[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* instantiates[=].extension[0].valueCode = #SHOULD
-
 * fhirVersion = #4.0.1
-
 * format[+] = #json
 * format[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * format[=].extension[0].valueCode = #SHALL
@@ -67,11 +55,6 @@ Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/1.0.0/s
 //AllergyIntolerance
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[0].valueCode = #SHALL
-* rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
-* rest.resource[=].extension[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].extension[=].valueCode = #SHALL
-* rest.resource[=].extension[=].extension[+].url = "required"
-* rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].type = #AllergyIntolerance
 * rest.resource[=].profile = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
 * rest.resource[=].profile.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -543,7 +526,8 @@ Usage: #definition
 * publisher = "AEHRC CSIRO"
 * kind = #capability
 * instantiates[+] = "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-filler"
-* software.name = "Smart Forms Application"
+* instantiates[+] = "http://hl7.org.au/fhir/core/CapabilityStatement/au-core-requester"
+* software.name = "Smart Health Checks Application"
 * fhirVersion = #4.0.1
 * format[0] = #json
 * patchFormat[0] = #application/fhir+json
@@ -554,8 +538,6 @@ Usage: #definition
 * rest.security.cors = true
 * rest.security.service = http://terminology.hl7.org/CodeSystem/restful-security-service#SMART-on-FHIR
 * rest.security.description = "SMART App Launch supported to allow secure data exchange."
-
-
 
 //AllergyIntolerance
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
@@ -846,7 +828,6 @@ The server **SHALL** support both."
 
 //ValueSet
 * rest.resource[+].type = #ValueSet
-* rest.resource[=].profile = "http://hl7.org/fhir/StructureDefinition/ValueSet"
 * rest.resource[=].documentation = "The client supports the ValueSet resource and the conformance expectations for the ValueSet resource."
 * rest.resource[=].operation[0].name = "expand"
 * rest.resource[=].operation[0].definition = "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"
