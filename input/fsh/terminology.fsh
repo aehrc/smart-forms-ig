@@ -799,3 +799,62 @@ Description: "The Heart Rhythm value set includes values that may be used to rep
 * $SCT#933506231000036108 "Regular heart rhythm"
 * $SCT#361137007 "Irregular heart rhythm"
 
+ValueSet: AllergyIntoleranceClinicalStatusMinimal
+Id: AllergyIntoleranceClinicalStatusMinimal
+Title: "Allergy Intolerance Clinical Status Minimal"
+Description: "This value set includes the minimal set of codes to represent the clinical status of an allergy intolerance (i.e., active and inactive)."
+* ^experimental = false
+* ^expansion.identifier = "urn:uuid:40f0c59e-9fa5-4322-bc1d-5fde644a076c"
+* ^expansion.timestamp = "2025-08-25T15:52:50+10:00"
+* ^expansion.total = 2
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.0"
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+* ^expansion.contains[=].code = #active
+* ^expansion.contains[=].display = "Active"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+* ^expansion.contains[=].code = #inactive
+* ^expansion.contains[=].display = "Inactive"
+* http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
+* http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#inactive
+
+ValueSet: MedicationStatementStatusLimited
+Id: MedicationStatementStatusLimited
+Title: "Medication Statement Status Limited"
+Description: "This value set includes the minimal set of codes to represent the status of a medication statement (i.e., active, completed, stopped and on-hold)."
+* ^experimental = false
+* ^expansion.identifier = "urn:uuid:59fe5ac1-65bf-4606-8c2a-0a55fba1d064"
+* ^expansion.timestamp = "2025-08-25T15:53:32+10:00"
+* ^expansion.total = 4
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://hl7.org/fhir/CodeSystem/medication-statement-status|4.0.1"
+* ^expansion.contains[0].system = "http://hl7.org/fhir/CodeSystem/medication-statement-status"
+* ^expansion.contains[=].code = #active
+* ^expansion.contains[=].display = "Active"
+* ^expansion.contains[+].system = "http://hl7.org/fhir/CodeSystem/medication-statement-status"
+* ^expansion.contains[=].code = #completed
+* ^expansion.contains[=].display = "Completed"
+* ^expansion.contains[+].system = "http://hl7.org/fhir/CodeSystem/medication-statement-status"
+* ^expansion.contains[=].code = #stopped
+* ^expansion.contains[=].display = "Stopped"
+* ^expansion.contains[+].system = "http://hl7.org/fhir/CodeSystem/medication-statement-status"
+* ^expansion.contains[=].code = #on-hold
+* ^expansion.contains[=].display = "On Hold"
+* http://hl7.org/fhir/CodeSystem/medication-statement-status#active
+* http://hl7.org/fhir/CodeSystem/medication-statement-status#completed
+* http://hl7.org/fhir/CodeSystem/medication-statement-status#stopped
+* http://hl7.org/fhir/CodeSystem/medication-statement-status#on-hold
