@@ -72,7 +72,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "Smart Forms Launcher Server **SHALL**:\r\n1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)\r\n1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)\r\n1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)\r\n1. Support the [Smart Health Checks Immunization resource profile](StructureDefinition-SHCImmunization.html)\r\n1. Support the [Smart Health Checks Medication profile](StructureDefinition-SHCMedication.html)\r\n1. Support the [Smart Health Checks MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)\r\n1. Support the [Smart Health Checks Observation resource profiles](profiles-and-extensions.html#observation)\r\n1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)\r\n1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)\r\n1. Support the [Smart Health Checks Questionnaire Response profile](StructureDefinition-SHCQuestionnaireResponse.html)\r\n1. Implement the RESTful behavior according to the FHIR specification\r\n1. Support JSON source formats for all interactions",
+      "documentation": "Smart Forms Launcher Server **SHALL**:\r\n1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)\r\n1. Support the [Smart Health Checks AllergyIntolerance Patch resource profile](StructureDefinition-SHCAllergyIntolerancePatch.html)\r\n1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)\r\n1. Support the [Smart Health Checks Condition Patch resource profile](StructureDefinition-SHCConditionPatch.html)\r\n1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)\r\n1. Support the [Smart Health Checks Immunization resource profile](StructureDefinition-SHCImmunization.html)\r\n1. Support the [Smart Health Checks Medication profile](StructureDefinition-SHCMedication.html)\r\n1. Support the [Smart Health Checks MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)\r\n1. Support the [Smart Health Checks MedicationStatement Patch profile](StructureDefinition-SHCMedicationStatementPatch.html)\r\n1. Support the [Smart Health Checks Observation resource profiles](profiles-and-extensions.html#observation)\r\n1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)\r\n1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)\r\n1. Support the [Smart Health Checks QuestionnaireResponse resource profile](StructureDefinition-SHCQuestionnaireResponse.html)\r\n1. Support the [Smart Health Checks Extract Bundle resource profile](StructureDefinition-SHCExtractBundle.html)\r\n1. Implement the RESTful behavior according to the FHIR specification\r\n1. Support JSON source formats for all interactions",
       "security": {
         "cors": true,
         "_cors": {
@@ -163,6 +163,29 @@
               ]
             }
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "type": "Bundle",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCExtractBundle"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "documentation": "The server **SHALL** support the Bundle resource, the Smart Health Checks profile listed and the conformance expectations for the Bundle resource."
         },
         {
           "extension": [
@@ -695,6 +718,47 @@
               ]
             }
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "type": "Parameters",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "documentation": "The server **SHALL** support the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."
         },
         {
           "extension": [

@@ -196,36 +196,7 @@
                   "text": "Status",
                   "type": "choice",
                   "repeats": false,
-                  "answerOption": [
-                    {
-                      "valueCoding": {
-                        "code": "active",
-                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                        "display": "Active"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "code": "completed",
-                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                        "display": "Completed"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "code": "stopped",
-                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                        "display": "Stopped"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "code": "on-hold",
-                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                        "display": "On Hold"
-                      }
-                    }
-                  ]
+                  "answerValueSet": "#MedicationStatementStatusLimited"
                 },
                 {
                   "extension": [
@@ -887,6 +858,83 @@
           ]
         }
       ]
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "MedicationStatementStatusLimited",
+      "status": "draft",
+      "name": "MedicationStatementStatusLimited",
+      "title": "Medication Statement Status Limited",
+      "description": "This value set includes the minimal set of codes to represent the status of a medication statement (i.e., active, completed, stopped and on-hold).",
+      "url": "https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited",
+      "experimental": false,
+      "expansion": {
+        "identifier": "urn:uuid:59fe5ac1-65bf-4606-8c2a-0a55fba1d064",
+        "timestamp": "2025-08-25T15:53:32+10:00",
+        "total": 4,
+        "offset": 0,
+        "parameter": [
+          {
+            "name": "count",
+            "valueInteger": 1000
+          },
+          {
+            "name": "offset",
+            "valueInteger": 0
+          },
+          {
+            "name": "excludeNested",
+            "valueBoolean": false
+          },
+          {
+            "name": "used-codesystem",
+            "valueUri": "http://hl7.org/fhir/CodeSystem/medication-statement-status|4.0.1"
+          }
+        ],
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+            "code": "active",
+            "display": "Active"
+          },
+          {
+            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+            "code": "completed",
+            "display": "Completed"
+          },
+          {
+            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+            "code": "stopped",
+            "display": "Stopped"
+          },
+          {
+            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+            "code": "on-hold",
+            "display": "On Hold"
+          }
+        ]
+      },
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+            "concept": [
+              {
+                "code": "active"
+              },
+              {
+                "code": "completed"
+              },
+              {
+                "code": "stopped"
+              },
+              {
+                "code": "on-hold"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "extension": [
