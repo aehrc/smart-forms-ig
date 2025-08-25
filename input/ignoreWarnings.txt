@@ -26,7 +26,8 @@ Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/Question
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
 # Invalid errors - invariant bug
-Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean'
+# Boolean should be lower case
+Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean (operator = 'exists' implies (answer is Boolean))'
 
 # HL7 core warnings
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
