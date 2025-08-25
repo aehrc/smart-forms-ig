@@ -379,7 +379,15 @@
           }
         ],
         "path": "QuestionnaireResponse.author",
-        "min": 1
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+            ]
+          }
+        ]
       },
       {
         "id": "QuestionnaireResponse.item",
