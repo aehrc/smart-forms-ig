@@ -546,7 +546,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * name = "SHCApp"
 * title = "SHC App"
-* description = "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms."
+* description = "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back of extracted resources and completion of forms."
 * status = #draft
 * experimental = false
 * date = "2025-04-16"
@@ -561,7 +561,7 @@ Usage: #definition
 * implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 
 * rest.mode = #client
-* rest.documentation = "The Smart Forms Application performs interactions to support SMART App Launch, form prepopulation and form filling. The interactions performed for prepopulation are not listed here as they can vary greatly and are defined in the Questionnaire instance."
+* rest.documentation = "The SHC App performs interactions to support SMART App Launch, form prepopulation, write-back of extracted resources and form filling."
 * rest.security.cors = true
 * rest.security.service = http://terminology.hl7.org/CodeSystem/restful-security-service#SMART-on-FHIR
 * rest.security.description = "SMART App Launch supported to allow secure data exchange."
@@ -582,6 +582,11 @@ Usage: #definition
 * rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. 
 
 The server **SHALL** support both."
+
+//Bundle
+* rest.resource[+].type = #Bundle
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCExtractBundle"
+* rest.resource[=].documentation = "The client supports the Bundle resource, the Smart Health Checks profile listed and the conformance expectations for the Bundle resource."
 
 //Condition
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
@@ -733,6 +738,19 @@ The server **SHALL** support both."
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by date and **MAY** support other values."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+
+//Parameters
+* rest.resource[+].type = #Parameters
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch"
+* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch"
+* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
+* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
+* rest.resource[=].documentation = "The client supports the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."
 
 //Patient
 * rest.resource[+].type = #Patient

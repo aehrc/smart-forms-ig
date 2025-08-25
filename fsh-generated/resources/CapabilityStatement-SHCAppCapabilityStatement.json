@@ -4,7 +4,7 @@
   "url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCAppCapabilityStatement",
   "name": "SHCApp",
   "title": "SHC App",
-  "description": "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
+  "description": "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back of extracted resources and completion of forms.",
   "status": "draft",
   "experimental": false,
   "date": "2025-04-16",
@@ -30,7 +30,7 @@
   "rest": [
     {
       "mode": "client",
-      "documentation": "The Smart Forms Application performs interactions to support SMART App Launch, form prepopulation and form filling. The interactions performed for prepopulation are not listed here as they can vary greatly and are defined in the Questionnaire instance.",
+      "documentation": "The SHC App performs interactions to support SMART App Launch, form prepopulation, write-back of extracted resources and form filling.",
       "security": {
         "cors": true,
         "service": [
@@ -82,6 +82,13 @@
               "documentation": "The client **SHALL** provide at least a id value and **MAY** provide both the Type and id values. \r\n\r\nThe server **SHALL** support both."
             }
           ]
+        },
+        {
+          "type": "Bundle",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCExtractBundle"
+          ],
+          "documentation": "The client supports the Bundle resource, the Smart Health Checks profile listed and the conformance expectations for the Bundle resource."
         },
         {
           "extension": [
@@ -336,6 +343,41 @@
               ]
             }
           ]
+        },
+        {
+          "type": "Parameters",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "documentation": "The client supports the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."
         },
         {
           "type": "Patient",
