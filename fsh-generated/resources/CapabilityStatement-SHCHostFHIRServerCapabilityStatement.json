@@ -20,37 +20,6 @@
     }
   ],
   "kind": "requirements",
-  "instantiates": [
-    "http://hl7.org.au/fhir/core/CapabilityStatement/au-core-responder",
-    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-response-manager",
-    "http://hl7.org/fhir/uv/sdc/CapabilityStatement/sdc-form-archiver"
-  ],
-  "_instantiates": [
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHALL"
-        }
-      ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHOULD"
-        }
-      ]
-    },
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHOULD"
-        }
-      ]
-    }
-  ],
   "fhirVersion": "4.0.1",
   "format": [
     "json"
@@ -103,7 +72,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "Smart Forms Launcher Server **SHALL**:\r\n1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)\r\n1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)\r\n1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)\r\n1. Support the [Smart Health Checks Immunization resource profile](StructureDefinition-SHCImmunization.html)\r\n1. Support the [Smart Health Checks Medication profile](StructureDefinition-SHCMedication.html)\r\n1. Support the [Smart Health Checks MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)\r\n1. Support the [Smart Health Checks Observation resource profiles](profiles-and-extensions.html#observation)\r\n1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)\r\n1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)\r\n1. Support the [Smart Health Checks Questionnaire Response profile](StructureDefinition-SHCQuestionnaireResponse.html)\r\n1. Implement the RESTful behavior according to the FHIR specification\r\n1. Support JSON source formats for all interactions",
+      "documentation": "Smart Forms Launcher Server **SHALL**:\r\n1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)\r\n1. Support the [Smart Health Checks AllergyIntolerance Patch resource profile](StructureDefinition-SHCAllergyIntolerancePatch.html)\r\n1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)\r\n1. Support the [Smart Health Checks Condition Patch resource profile](StructureDefinition-SHCConditionPatch.html)\r\n1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)\r\n1. Support the [Smart Health Checks Immunization resource profile](StructureDefinition-SHCImmunization.html)\r\n1. Support the [Smart Health Checks Medication profile](StructureDefinition-SHCMedication.html)\r\n1. Support the [Smart Health Checks MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)\r\n1. Support the [Smart Health Checks MedicationStatement Patch profile](StructureDefinition-SHCMedicationStatementPatch.html)\r\n1. Support the [Smart Health Checks Observation resource profiles](profiles-and-extensions.html#observation)\r\n1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)\r\n1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)\r\n1. Support the [Smart Health Checks QuestionnaireResponse resource profile](StructureDefinition-SHCQuestionnaireResponse.html)\r\n1. Support the [Smart Health Checks Extract Bundle resource profile](StructureDefinition-SHCExtractBundle.html)\r\n1. Implement the RESTful behavior according to the FHIR specification\r\n1. Support JSON source formats for all interactions",
       "security": {
         "cors": true,
         "_cors": {
@@ -138,31 +107,22 @@
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
               "valueCode": "SHALL"
-            },
+            }
+          ],
+          "type": "AllergyIntolerance",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "_supportedProfile": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "SHALL"
-                },
-                {
-                  "url": "required",
-                  "valueString": "patient"
                 }
               ]
             }
           ],
-          "type": "AllergyIntolerance",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
           "documentation": "The server **SHALL** support the AllergyIntolerance resource, the Smart Health Checks profile and the conformance expectations for the AllergyIntolerance resource.",
           "interaction": [
             {
@@ -213,6 +173,29 @@
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
               "valueCode": "SHALL"
+            }
+          ],
+          "type": "Bundle",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCExtractBundle"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "documentation": "The server **SHALL** support the Bundle resource, the Smart Health Checks profile listed and the conformance expectations for the Bundle resource."
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
@@ -233,15 +216,19 @@
             }
           ],
           "type": "Condition",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the Condition resource, the Smart Health Checks profile and the conformance expectations for the Condition resource.",
           "interaction": [
             {
@@ -307,15 +294,19 @@
             }
           ],
           "type": "Encounter",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the Encounter resource, Smart Health Checks profile and the conformance expectations for the Encounter resource.",
           "interaction": [
             {
@@ -354,15 +345,19 @@
             }
           ],
           "type": "Immunization",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the Immunization resource, the Smart Health Checks profile and the conformance expectations for the Immunization resource.",
           "interaction": [
             {
@@ -419,15 +414,19 @@
             }
           ],
           "type": "Medication",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "If an external reference to a Medication resource is used in MedicationStatement, then the server **SHALL** support the Medication resource, the Smart Health Checks profile and the conformance expectations for the Medication resource.",
           "interaction": [
             {
@@ -487,15 +486,19 @@
             }
           ],
           "type": "MedicationStatement",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the MedicationStatement resource, the Smart Health Checks profile and the conformance expectations for the MedicationStatement resource.\r\n\r\nIf a medication in a MedicationStatement resource is represented as an external Medication resource reference, the server **SHALL** support the `_include` parameter for searching this element (`MedicationStatement:medication`)\r\n",
           "interaction": [
             {
@@ -747,16 +750,61 @@
               "valueCode": "SHALL"
             }
           ],
+          "type": "Parameters",
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "documentation": "The server **SHALL** support the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
           "type": "Patient",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the Patient resource, Smart Health Checks profile and the conformance expectations for the Patient resource.",
           "interaction": [
             {
@@ -787,15 +835,19 @@
             }
           ],
           "type": "Practitioner",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the Practitioner resource, Smart Health Checks profile and the conformance expectations for the Practitioner resource.",
           "interaction": [
             {
@@ -888,15 +940,19 @@
             }
           ],
           "type": "QuestionnaireResponse",
-          "profile": "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse",
-          "_profile": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "supportedProfile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
           "documentation": "The server **SHALL** support the QuestionnaireResponse resource, Smart Health Checks profile and the conformance expectations for the QuestionnaireResponse resource.",
           "interaction": [
             {
@@ -1010,14 +1066,12 @@
       "interaction": [
         {
           "code": "transaction",
-          "_code": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                "valueCode": "SHALL"
-              }
-            ]
-          },
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
           "documentation": "The server **SHALL** support the transaction interaction for all resources."
         }
       ]

@@ -24,6 +24,7 @@ Description: "The SHC App is a system that a SHC Host can launch allowing a user
 - **SHALL** invoke create and patch requests in a transaction Bundle for resources required by this IG
 """
 * capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SHCAppCapabilityStatement"
+* derivedFrom = "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
 
 Instance: SHCHost
 InstanceOf: ActorDefinition
@@ -90,3 +91,4 @@ Description: "The SHC Host FHIR Server allows the SHC App to retrieve patient he
 - **SHALL** respond to create and patch requests in a transaction Bundle for resources required by this IG
 """
 * capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement"
+* derivedFrom = "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"

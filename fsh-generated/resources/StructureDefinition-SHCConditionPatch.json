@@ -1,0 +1,1119 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "SHCConditionPatch",
+  "url": "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch",
+  "name": "SmartHealthChecksConditionPatch",
+  "title": "Smart Health Checks Condition Patch",
+  "status": "draft",
+  "description": "This profile sets the expectations for a Parameters resource when used to patch Condition resources within Smart Health Checks.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Parameters",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Parameters.parameter",
+        "path": "Parameters.parameter",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "part"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter",
+        "sliceName": "clinicalStatus",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.name",
+        "short": "Parameters for clinicalStatus patching",
+        "fixedString": "operation",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part",
+        "path": "Parameters.parameter.part",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:type",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "type",
+        "short": "Patch operation to perform",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:type.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "type",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:type.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "replace",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:path",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "path",
+        "short": "Where to perform the operation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:path.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "path",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:path.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "fixedString": "Condition.clinicalStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:value",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "value",
+        "short": "Replacement value",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:value.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "value",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:value.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+        }
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:value.value[x].coding",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x].coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:pathLabel",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "pathLabel",
+        "short": "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:pathLabel.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "pathLabel",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:clinicalStatus.part:pathLabel.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "fixedString": "Clinical status",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter",
+        "sliceName": "abatementDate",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.name",
+        "short": "Parameters for abatement patching",
+        "fixedString": "operation",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part",
+        "path": "Parameters.parameter.part",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:type",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "type",
+        "short": "Patch operation to perform",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:type.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "type",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:type.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "replace",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:path",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "path",
+        "short": "Where to perform the operation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:path.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "path",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:path.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "fixedString": "Condition.abatement",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:value",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "value",
+        "short": "Replacement value",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:value.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "value",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:value.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:pathLabel",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:process"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part",
+        "sliceName": "pathLabel",
+        "short": "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:pathLabel.name",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.name",
+        "fixedString": "pathLabel",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:abatementDate.part:pathLabel.value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              }
+            ]
+          }
+        ],
+        "path": "Parameters.parameter.part.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "fixedString": "Abatement date",
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -375,6 +375,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/AllergyIntoleranceClinicalStatusMinimal"
+        },
+        "name": "Allergy Intolerance Clinical Status Minimal",
+        "description": "This value set includes the minimal set of codes to represent the clinical status of an allergy intolerance (i.e., active and inactive).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/au-core-headcircum"
         },
         "description": "This profile sets minimum expectations for an Observation resource to record, search, and fetch head circumference observations with standard coding and units of measure. It is based on the [FHIR Head Circumference Profile](http://hl7.org/fhir/R4/headcircum.html) and identifies the *additional* mandatory core elements, extensions, vocabularies and value sets that **SHALL** be present in the Observation resource when conforming to this profile. It provides the floor for standards development for specific uses cases in an Australian context.",
@@ -501,6 +509,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/MedicationStatementStatusLimited"
+        },
+        "name": "Medication Statement Status Limited",
+        "description": "This value set includes the minimal set of codes to represent the status of a medication statement (i.e., active, completed, stopped and on-hold).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Patient/pat-sf"
         },
         "name": "pat-sf",
@@ -557,7 +573,7 @@
           "reference": "CapabilityStatement/SHCAppCapabilityStatement"
         },
         "name": "SHC App",
-        "description": "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back and completion of forms.",
+        "description": "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back of extracted resources and completion of forms.",
         "exampleBoolean": false
       },
       {
@@ -602,6 +618,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/SHCAllergyIntolerancePatch"
+        },
+        "name": "Smart Health Checks AllergyIntolerance Patch",
+        "description": "This profile sets the expectations for a Parameters resource when used to patch AllergyIntolerance resources within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/SHCBloodPressure"
         },
         "name": "Smart Health Checks Blood Pressure",
@@ -634,10 +658,26 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/SHCConditionPatch"
+        },
+        "name": "Smart Health Checks Condition Patch",
+        "description": "This profile sets the expectations for a Parameters resource when used to patch Condition resources within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/SHCEncounter"
         },
         "name": "Smart Health Checks Encounter",
         "description": "This profile sets the minimum expectations for a Encounter resource to search and retrieve encounter information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCExtractBundle"
+        },
+        "name": "Smart Health Checks Extract Bundle",
+        "description": "This profile sets the expectations for a Bundle resource when used to represent a transaction bundle of resources extracted by the SHC App following the completion of a Smart Health Checks Questionnaire. This bundle is used to write patient information to the SHC Host FHIR server.",
         "exampleBoolean": false
       },
       {
@@ -686,6 +726,14 @@
         },
         "name": "Smart Health Checks MedicationStatement",
         "description": "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SHCMedicationStatementPatch"
+        },
+        "name": "Smart Health Checks MedicationStatement Patch",
+        "description": "This profile sets the expectations for a Parameters resource when used to patch MedicationStatement resources within Smart Health Checks.",
         "exampleBoolean": false
       },
       {
