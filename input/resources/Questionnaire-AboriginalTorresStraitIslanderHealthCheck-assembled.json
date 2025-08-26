@@ -1222,10 +1222,6 @@
                             "valueString": "Condition.clinicalStatus"
                         },
                         {
-                            "name": "name",
-                            "valueString": "clinicalStatus"
-                        },
-                        {
                             "name": "value",
                             "valueCodeableConcept": {
                                 "coding": [
@@ -1256,10 +1252,6 @@
                         {
                             "name": "path",
                             "valueString": "Condition.abatement"
-                        },
-                        {
-                            "name": "name",
-                            "valueString": "abatement"
                         },
                         {
                             "name": "value",
@@ -1358,7 +1350,7 @@
         {
             "resourceType": "MedicationStatement",
             "id": "MedicationStatementTemplate",
-            "status": "completed",
+            "status": "active",
             "medicationCodeableConcept": {
                 "extension": [
                     {
@@ -1486,10 +1478,6 @@
                             "valueString": "MedicationStatement.status"
                         },
                         {
-                            "name": "name",
-                            "valueString": "status"
-                        },
-                        {
                             "name": "value",
                             "_valueCode": {
                                 "extension": [
@@ -1516,10 +1504,6 @@
                         {
                             "name": "path",
                             "valueString": "MedicationStatement.note[0].text"
-                        },
-                        {
-                            "name": "name",
-                            "valueString": "text"
                         },
                         {
                             "name": "value",
@@ -1550,10 +1534,6 @@
                             "valueString": "MedicationStatement.dosage[0].text"
                         },
                         {
-                            "name": "name",
-                            "valueString": "text"
-                        },
-                        {
                             "name": "value",
                             "_valueString": {
                                 "extension": [
@@ -1571,6 +1551,83 @@
                     ]
                 }
             ]
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "MedicationStatementStatusLimited",
+            "url": "https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited",
+            "name": "MedicationStatementStatusLimited",
+            "title": "Medication Statement Status Limited",
+            "status": "draft",
+            "experimental": false,
+            "description": "This value set includes the minimal set of codes to represent the status of a medication statement (i.e., active, completed, stopped and on-hold).",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                        "concept": [
+                            {
+                                "code": "active"
+                            },
+                            {
+                                "code": "completed"
+                            },
+                            {
+                                "code": "stopped"
+                            },
+                            {
+                                "code": "on-hold"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:59fe5ac1-65bf-4606-8c2a-0a55fba1d064",
+                "timestamp": "2025-08-25T15:53:32+10:00",
+                "total": 4,
+                "offset": 0,
+                "parameter": [
+                    {
+                        "name": "count",
+                        "valueInteger": 1000
+                    },
+                    {
+                        "name": "offset",
+                        "valueInteger": 0
+                    },
+                    {
+                        "name": "excludeNested",
+                        "valueBoolean": false
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://hl7.org/fhir/CodeSystem/medication-statement-status|4.0.1"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                        "code": "active",
+                        "display": "Active"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                        "code": "completed",
+                        "display": "Completed"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                        "code": "stopped",
+                        "display": "Stopped"
+                    },
+                    {
+                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                        "code": "on-hold",
+                        "display": "On Hold"
+                    }
+                ]
+            }
         },
         {
             "resourceType": "AllergyIntolerance",
@@ -1688,10 +1745,6 @@
                             "valueString": "AllergyIntolerance.clinicalStatus"
                         },
                         {
-                            "name": "name",
-                            "valueString": "clinicalStatus"
-                        },
-                        {
                             "name": "value",
                             "valueCodeableConcept": {
                                 "coding": [
@@ -1724,10 +1777,6 @@
                             "valueString": "AllergyIntolerance.note[0].text"
                         },
                         {
-                            "name": "name",
-                            "valueString": "text"
-                        },
-                        {
                             "name": "value",
                             "_valueMarkdown": {
                                 "extension": [
@@ -1745,6 +1794,67 @@
                     ]
                 }
             ]
+        },
+        {
+            "resourceType": "ValueSet",
+            "id": "AllergyIntoleranceClinicalStatusMinimal",
+            "url": "https://smartforms.csiro.au/ig/ValueSet/AllergyIntoleranceClinicalStatusMinimal",
+            "name": "AllergyIntoleranceClinicalStatusMinimal",
+            "title": "Allergy Intolerance Clinical Status Minimal",
+            "status": "draft",
+            "experimental": false,
+            "description": "This value set includes the minimal set of codes to represent the clinical status of an allergy intolerance (i.e., active and inactive).",
+            "compose": {
+                "include": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                        "concept": [
+                            {
+                                "code": "active"
+                            },
+                            {
+                                "code": "inactive"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "expansion": {
+                "identifier": "urn:uuid:40f0c59e-9fa5-4322-bc1d-5fde644a076c",
+                "timestamp": "2025-08-25T15:52:50+10:00",
+                "total": 2,
+                "offset": 0,
+                "parameter": [
+                    {
+                        "name": "count",
+                        "valueInteger": 1000
+                    },
+                    {
+                        "name": "offset",
+                        "valueInteger": 0
+                    },
+                    {
+                        "name": "excludeNested",
+                        "valueBoolean": false
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.0"
+                    }
+                ],
+                "contains": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                        "code": "active",
+                        "display": "Active"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                        "code": "inactive",
+                        "display": "Inactive"
+                    }
+                ]
+            }
         },
         {
             "resourceType": "Observation",
@@ -6949,36 +7059,7 @@
                                             "text": "Status",
                                             "type": "choice",
                                             "repeats": false,
-                                            "answerOption": [
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                                                        "code": "active",
-                                                        "display": "Active"
-                                                    }
-                                                },
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                                                        "code": "completed",
-                                                        "display": "Completed"
-                                                    }
-                                                },
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                                                        "code": "stopped",
-                                                        "display": "Stopped"
-                                                    }
-                                                },
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-                                                        "code": "on-hold",
-                                                        "display": "On Hold"
-                                                    }
-                                                }
-                                            ]
+                                            "answerValueSet": "#MedicationStatementStatusLimited"
                                         },
                                         {
                                             "extension": [
@@ -7463,22 +7544,7 @@
                                             "text": "Status",
                                             "type": "choice",
                                             "repeats": false,
-                                            "answerOption": [
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                                                        "code": "active",
-                                                        "display": "Active"
-                                                    }
-                                                },
-                                                {
-                                                    "valueCoding": {
-                                                        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                                                        "code": "inactive",
-                                                        "display": "Inactive"
-                                                    }
-                                                }
-                                            ]
+                                            "answerValueSet": "#AllergyIntoleranceClinicalStatusMinimal"
                                         },
                                         {
                                             "extension": [
