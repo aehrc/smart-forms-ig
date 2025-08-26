@@ -1,0 +1,40 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "chloramphenicol-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+        ]
+    },
+    "status": "active",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "22717011000036101",
+                "display": "Chloramphenicol 1% eye ointment"
+            }
+        ],
+        "text": "Chloramphenicol 1% eye ointment"
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "dateAsserted": "2024-02-05",
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "128350005"
+                }
+            ],
+            "text": "Bacterial conjunctivitis"
+        }
+    ],
+    "dosage": [
+        {
+            "text": "Apply 1 drop to each eye every 2 hours for 7 days"
+        }
+    ]
+}
