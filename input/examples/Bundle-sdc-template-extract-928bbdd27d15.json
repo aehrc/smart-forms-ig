@@ -1,0 +1,805 @@
+{
+    "resourceType": "Bundle",
+    "id": "sdc-template-extract-928bbdd27d15",
+    "meta": {
+        "tag": [
+            {
+                "code": "@aehrc/sdc-template-extract-v0.1.0:generated"
+            }
+        ]
+    },
+    "type": "transaction",
+    "timestamp": "2025-08-15T00:08:34.723Z",
+    "entry": [
+        {
+            "fullUrl": "urn:uuid:c618ee3d-b07b-4711-90f5-56d934b906de",
+            "resource": {
+                "resourceType": "Condition",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "195967001",
+                            "display": "Asthma"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "onsetDateTime": "2025-07-01",
+                "note": [
+                    {
+                        "text": "Difficulty breathing"
+                    }
+                ]
+            },
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:81c413e3-46e4-4f9f-96f5-c71983f6ffcd",
+            "resource": {
+                "resourceType": "Condition",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "text": "Really bad pain"
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "onsetDateTime": "2025-08-13"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Condition"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:ffb87c39-5fa8-4ea7-92c1-83911ecf33a7",
+            "resource": {
+                "resourceType": "Parameters",
+                "parameter": [
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "replace"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "Condition.clinicalStatus"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "clinicalStatus"
+                            },
+                            {
+                                "name": "value",
+                                "valueCodeableConcept": {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                                            "code": "inactive",
+                                            "display": "Inactive"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "pathLabel",
+                                "valueString": "Clinical status"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "replace"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "Condition.abatement"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "abatement"
+                            },
+                            {
+                                "name": "value",
+                                "valueDateTime": "2025-08-15"
+                            },
+                            {
+                                "name": "pathLabel",
+                                "valueString": "Abatement date"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "request": {
+                "method": "PATCH",
+                "url": "Condition/fever-pat-sf"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:f23b4046-2326-4c86-b4f6-1e8b6f6f7321",
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+                    ]
+                },
+                "status": "active",
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "85332011000036101",
+                            "display": "Coveram 10 mg/10 mg (perindopril arginine/amlodipine) tablet"
+                        }
+                    ]
+                },
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "38341003",
+                                "display": "Hypertension"
+                            }
+                        ]
+                    }
+                ],
+                "dosage": [
+                    {
+                        "text": "One tablet daily"
+                    }
+                ],
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "dateAsserted": "2025-08-15T10:08:34.551+10:00",
+                "note": [
+                    {
+                        "text": "Review regularly"
+                    }
+                ]
+            },
+            "request": {
+                "method": "POST",
+                "url": "MedicationStatement"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:c8a97d6f-d0d5-4561-ab83-2607b3bb072f",
+            "resource": {
+                "resourceType": "Parameters",
+                "parameter": [
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "replace"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "MedicationStatement.status"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "status"
+                            },
+                            {
+                                "name": "value",
+                                "valueCode": "completed"
+                            },
+                            {
+                                "name": "pathLabel",
+                                "valueString": "Status"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "request": {
+                "method": "PATCH",
+                "url": "MedicationStatement/chloramphenicol-pat-sf"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:e1f31c73-cb18-4ddd-aacb-26d59de074ba",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "387458008",
+                            "display": "Aspirin"
+                        }
+                    ]
+                },
+                "reaction": [
+                    {
+                        "manifestation": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "126485001",
+                                        "display": "Urticaria"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "patient": {
+                    "reference": "Patient/pat-sf"
+                },
+                "note": [
+                    {
+                        "text": "Moderate reaction"
+                    }
+                ]
+            },
+            "request": {
+                "method": "POST",
+                "url": "AllergyIntolerance"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:346d80b8-9aef-42eb-a794-bbb74774ff7f",
+            "resource": {
+                "resourceType": "Parameters",
+                "parameter": [
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "replace"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "AllergyIntolerance.clinicalStatus"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "clinicalStatus"
+                            },
+                            {
+                                "name": "value",
+                                "valueCodeableConcept": {
+                                    "coding": [
+                                        {
+                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                                            "code": "inactive",
+                                            "display": "Inactive"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "pathLabel",
+                                "valueString": "Clinical status"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "replace"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "AllergyIntolerance.note[0].text"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "text"
+                            },
+                            {
+                                "name": "value",
+                                "valueMarkdown": "Duplicated allergy in record. Removed."
+                            },
+                            {
+                                "name": "pathLabel",
+                                "valueString": "Comment"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "request": {
+                "method": "PATCH",
+                "url": "AllergyIntolerance/604a-pat-sf"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:29c3f6e2-4789-4114-8faf-95d250fc1986",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "social-history"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "1747861000168109"
+                        },
+                        {
+                            "system": "http://loinc.org",
+                            "code": "72166-2"
+                        }
+                    ],
+                    "text": "Smoking status"
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "8517006",
+                            "display": "Ex-smoker"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:9c321cfb-0218-455e-a44b-4c6c65afc40e",
+            "resource": {
+                "resourceType": "Immunization",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+                    ]
+                },
+                "status": "completed",
+                "vaccineCode": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "884862121000036103",
+                            "display": "Fluquadri 2025"
+                        }
+                    ]
+                },
+                "patient": {
+                    "reference": "Patient/pat-sf"
+                },
+                "occurrenceDateTime": "2025-08-15",
+                "lotNumber": "123"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Immunization"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:559e4dda-ee0d-46c2-9f32-0bb66d9ae5e2",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8302-2"
+                        },
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "50373000"
+                        }
+                    ],
+                    "text": "Height"
+                },
+                "valueQuantity": {
+                    "unit": "cm",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "cm",
+                    "value": 164
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:20e79d0a-17cc-4e0a-9507-b441815ec266",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "29463-7"
+                        },
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "27113001"
+                        }
+                    ],
+                    "text": "Weight"
+                },
+                "valueQuantity": {
+                    "unit": "kg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "kg",
+                    "value": 80
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:553b15aa-fa22-4290-bcfb-f683ad6d6674",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8280-0"
+                        },
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "276361009"
+                        }
+                    ],
+                    "text": "Waist circumference"
+                },
+                "valueQuantity": {
+                    "unit": "cm",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "cm",
+                    "value": 90
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:1d0cce77-432d-42d7-a9be-5711972e7953",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8867-4"
+                        },
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "364075005"
+                        }
+                    ],
+                    "text": "Heart rate"
+                },
+                "valueQuantity": {
+                    "unit": "/min",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "/min",
+                    "value": 75
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:3583d16f-a22f-4f03-8251-1d5d04ea87de",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8884-9"
+                        },
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "364074009"
+                        }
+                    ],
+                    "text": "Heart rhythm"
+                },
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "933506231000036108",
+                            "display": "Regular heart rhythm"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:37e726d5-6ccd-4c81-ad8f-abc3460a645f",
+            "resource": {
+                "resourceType": "Observation",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "vital-signs"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "85354-9"
+                        },
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "75367002"
+                        }
+                    ],
+                    "text": "Blood pressure"
+                },
+                "component": [
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "8480-6"
+                                },
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "271649006"
+                                }
+                            ],
+                            "text": "Systolic"
+                        },
+                        "valueQuantity": {
+                            "unit": "mm[Hg]",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mm[Hg]",
+                            "value": 170
+                        }
+                    },
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "8462-4"
+                                },
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "271650006"
+                                }
+                            ],
+                            "text": "Diastolic"
+                        },
+                        "valueQuantity": {
+                            "unit": "mm[Hg]",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "mm[Hg]",
+                            "value": 90
+                        }
+                    }
+                ],
+                "subject": {
+                    "reference": "Patient/pat-sf"
+                },
+                "effectiveDateTime": "2025-08-15"
+            },
+            "request": {
+                "method": "POST",
+                "url": "Observation"
+            }
+        }
+    ]
+}

@@ -467,9 +467,19 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * category ^slicing.ordered = false
 * category ^slicing.rules = #open
 * category contains vitalSignsCategory 1..1 MS
+* category[vitalSignsCategory].coding 1..* MS
+* category[vitalSignsCategory].coding only Coding
+* category[vitalSignsCategory].coding.system 1..1 MS
+* category[vitalSignsCategory].coding.system only uri
+* category[vitalSignsCategory].coding.system = "http://terminology.hl7.org/CodeSystem/observation-category" (exactly)
+* category[vitalSignsCategory].coding.code 1..1 MS
+* category[vitalSignsCategory].coding.code only code
+* category[vitalSignsCategory].coding.code = #vital-signs (exactly)
+/*
 * category[vitalSignsCategory] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs (exactly) 
 * category[vitalSignsCategory] insert obligationServer (0, SHALL:process)
 * category[vitalSignsCategory] insert obligationApp (1, SHALL:populate)
+*/
 * code MS
 * code ^short = "Heart Rhythm"
 * code ^definition = "Heart Rhythm."

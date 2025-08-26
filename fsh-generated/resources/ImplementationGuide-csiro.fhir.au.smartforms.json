@@ -73,6 +73,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "AllergyIntolerance/604a-pat-sf"
+        },
+        "name": "604a-pat-sf",
+        "exampleCanonical": "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+      },
+      {
+        "reference": {
           "reference": "Questionnaire/AssemblyInstructions"
         },
         "name": "Aboriginal and Torres Strait Islander Health Check",
@@ -424,6 +431,13 @@
       },
       {
         "reference": {
+          "reference": "MedicationStatement/chloramphenicol-pat-sf"
+        },
+        "name": "chloramphenicol-pat-sf",
+        "exampleCanonical": "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+      },
+      {
+        "reference": {
           "reference": "ValueSet/clinical-condition-1"
         },
         "name": "Clinical Condition",
@@ -445,6 +459,13 @@
         "name": "Contained Resource Reference",
         "description": "This extension is intended to be used as a work around to a known bug whereby contained resources that are not referenced with the type, 'Reference' are removed before a resource is created in a HAPI FHIR server. This is problematic when referencing with the type, 'canonical'. The extension can be used to reference contained resources so they are retained when added to a HAPI FHIR server.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Condition/fever-pat-sf"
+        },
+        "name": "fever-pat-sf",
+        "exampleCanonical": "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
       },
       {
         "reference": {
@@ -496,11 +517,25 @@
       },
       {
         "reference": {
+          "reference": "Patient/pat-sf"
+        },
+        "name": "pat-sf",
+        "exampleCanonical": "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient"
+      },
+      {
+        "reference": {
           "reference": "ValueSet/PrimaryCarerParentGrandparent"
         },
         "name": "Primary Carer Of Parent Or Grandparent",
         "description": "The Primary Carer Of Parent Or Grandparent value set includes values that can indicate whether a primary carer is one of the parents or a grandparent.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/primary-peter"
+        },
+        "name": "primary-peter",
+        "exampleCanonical": "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner"
       },
       {
         "reference": {
@@ -517,6 +552,13 @@
         "name": "Questionnaire Item Text Hidden",
         "description": "This custom extension is used to indicate that the text of a Questionnaire item should be hidden in the user interface. This is useful for items where the text is not intended to be displayed to the user but is still needed for other processes.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/sdc-template-extract-928bbdd27d15"
+        },
+        "name": "sdc-template-extract-928bbdd27d15",
+        "exampleBoolean": true
       },
       {
         "reference": {
