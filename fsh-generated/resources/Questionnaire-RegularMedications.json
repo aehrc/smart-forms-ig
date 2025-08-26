@@ -773,10 +773,6 @@
               "valueString": "MedicationStatement.status"
             },
             {
-              "name": "name",
-              "valueString": "status"
-            },
-            {
               "name": "value",
               "_valueCode": {
                 "extension": [
@@ -805,10 +801,6 @@
               "valueString": "MedicationStatement.note[0].text"
             },
             {
-              "name": "name",
-              "valueString": "text"
-            },
-            {
               "name": "value",
               "_valueMarkdown": {
                 "extension": [
@@ -835,10 +827,6 @@
             {
               "name": "path",
               "valueString": "MedicationStatement.dosage[0].text"
-            },
-            {
-              "name": "name",
-              "valueString": "text"
             },
             {
               "name": "value",

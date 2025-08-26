@@ -486,10 +486,6 @@
               "valueString": "AllergyIntolerance.clinicalStatus"
             },
             {
-              "name": "name",
-              "valueString": "clinicalStatus"
-            },
-            {
               "name": "value",
               "valueCodeableConcept": {
                 "coding": [
@@ -520,10 +516,6 @@
             {
               "name": "path",
               "valueString": "AllergyIntolerance.note[0].text"
-            },
-            {
-              "name": "name",
-              "valueString": "text"
             },
             {
               "name": "value",
