@@ -2,6 +2,9 @@
     "resourceType": "Bundle",
     "id": "sdc-template-extract-928bbdd27d15",
     "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCExtractBundle"
+        ],
         "tag": [
             {
                 "code": "@aehrc/sdc-template-extract-v0.1.0:generated"
@@ -106,6 +109,11 @@
             "fullUrl": "urn:uuid:ffb87c39-5fa8-4ea7-92c1-83911ecf33a7",
             "resource": {
                 "resourceType": "Parameters",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch"
+                    ]
+                },
                 "parameter": [
                     {
                         "name": "operation",
@@ -117,10 +125,6 @@
                             {
                                 "name": "path",
                                 "valueString": "Condition.clinicalStatus"
-                            },
-                            {
-                                "name": "name",
-                                "valueString": "clinicalStatus"
                             },
                             {
                                 "name": "value",
@@ -150,10 +154,6 @@
                             {
                                 "name": "path",
                                 "valueString": "Condition.abatement"
-                            },
-                            {
-                                "name": "name",
-                                "valueString": "abatement"
                             },
                             {
                                 "name": "value",
@@ -226,6 +226,11 @@
             "fullUrl": "urn:uuid:c8a97d6f-d0d5-4561-ab83-2607b3bb072f",
             "resource": {
                 "resourceType": "Parameters",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
+                    ]
+                },
                 "parameter": [
                     {
                         "name": "operation",
@@ -239,16 +244,33 @@
                                 "valueString": "MedicationStatement.status"
                             },
                             {
-                                "name": "name",
-                                "valueString": "status"
-                            },
-                            {
                                 "name": "value",
                                 "valueCode": "completed"
                             },
                             {
                                 "name": "pathLabel",
                                 "valueString": "Status"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "replace"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "MedicationStatement.note[0].text"
+                            },
+                            {
+                                "name": "value",
+                                "valueMarkdown": "Worked effectively."
+                            },
+                            {
+                                "name": "pathLabel",
+                                "valueString": "Comment"
                             }
                         ]
                     }
@@ -318,6 +340,11 @@
             "fullUrl": "urn:uuid:346d80b8-9aef-42eb-a794-bbb74774ff7f",
             "resource": {
                 "resourceType": "Parameters",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch"
+                    ]
+                },
                 "parameter": [
                     {
                         "name": "operation",
@@ -329,10 +356,6 @@
                             {
                                 "name": "path",
                                 "valueString": "AllergyIntolerance.clinicalStatus"
-                            },
-                            {
-                                "name": "name",
-                                "valueString": "clinicalStatus"
                             },
                             {
                                 "name": "value",
@@ -362,10 +385,6 @@
                             {
                                 "name": "path",
                                 "valueString": "AllergyIntolerance.note[0].text"
-                            },
-                            {
-                                "name": "name",
-                                "valueString": "text"
                             },
                             {
                                 "name": "value",

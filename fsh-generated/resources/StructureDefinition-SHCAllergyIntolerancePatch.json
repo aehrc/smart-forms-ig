@@ -20,8 +20,8 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "value",
-              "path": "part"
+              "type": "pattern",
+              "path": "$this"
             }
           ],
           "ordered": false,
@@ -97,7 +97,7 @@
         ],
         "path": "Parameters.parameter.name",
         "short": "Parameters for clinicalStatus patching",
-        "fixedString": "operation",
+        "patternString": "operation",
         "mustSupport": true
       },
       {
@@ -188,7 +188,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "type",
+        "patternString": "type",
         "mustSupport": true
       },
       {
@@ -228,7 +228,7 @@
             "code": "code"
           }
         ],
-        "fixedCode": "replace",
+        "patternCode": "replace",
         "mustSupport": true
       },
       {
@@ -304,7 +304,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "path",
+        "patternString": "path",
         "mustSupport": true
       },
       {
@@ -344,7 +344,7 @@
             "code": "string"
           }
         ],
-        "fixedString": "AllergyIntolerance.clinicalStatus",
+        "patternString": "AllergyIntolerance.clinicalStatus",
         "mustSupport": true
       },
       {
@@ -420,7 +420,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "value",
+        "patternString": "value",
         "mustSupport": true
       },
       {
@@ -561,7 +561,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "pathLabel",
+        "patternString": "pathLabel",
         "mustSupport": true
       },
       {
@@ -588,7 +588,7 @@
             "code": "string"
           }
         ],
-        "fixedString": "Clinical status",
+        "patternString": "Clinical status",
         "mustSupport": true
       },
       {
@@ -659,7 +659,7 @@
         ],
         "path": "Parameters.parameter.name",
         "short": "Parameters for note.text patching",
-        "fixedString": "operation",
+        "patternString": "operation",
         "mustSupport": true
       },
       {
@@ -750,7 +750,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "type",
+        "patternString": "type",
         "mustSupport": true
       },
       {
@@ -790,7 +790,7 @@
             "code": "code"
           }
         ],
-        "fixedCode": "replace",
+        "patternCode": "replace",
         "mustSupport": true
       },
       {
@@ -866,7 +866,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "path",
+        "patternString": "path",
         "mustSupport": true
       },
       {
@@ -906,7 +906,7 @@
             "code": "string"
           }
         ],
-        "fixedString": "AllergyIntolerance.note[0].text",
+        "patternString": "AllergyIntolerance.note[0].text",
         "mustSupport": true
       },
       {
@@ -982,7 +982,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "value",
+        "patternString": "value",
         "mustSupport": true
       },
       {
@@ -1084,7 +1084,7 @@
           }
         ],
         "path": "Parameters.parameter.part.name",
-        "fixedString": "pathLabel",
+        "patternString": "pathLabel",
         "mustSupport": true
       },
       {
@@ -1111,7 +1111,7 @@
             "code": "string"
           }
         ],
-        "fixedString": "Comment",
+        "patternString": "Comment",
         "mustSupport": true
       }
     ]

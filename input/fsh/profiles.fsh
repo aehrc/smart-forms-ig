@@ -945,8 +945,8 @@ Title: "Smart Health Checks AllergyIntolerance Patch"
 Description: "This profile sets the expectations for a Parameters resource when used to patch AllergyIntolerance resources within Smart Health Checks."
 
 * parameter 1..
-* parameter ^slicing.discriminator.type = #value
-* parameter ^slicing.discriminator.path = "part"
+* parameter ^slicing.discriminator.type = #pattern
+* parameter ^slicing.discriminator.path = "$this"
 * parameter ^slicing.ordered = false
 * parameter ^slicing.rules = #open
 * parameter contains
@@ -955,11 +955,24 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus] MS
 * parameter[clinicalStatus] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus] insert obligationApp (1, SHALL:populate)
+/*
+* parameter[clinicalStatus].pattern[x].name = "operation"    
+* parameter[clinicalStatus].pattern[x].part[+].name = "type"
+* parameter[clinicalStatus].pattern[x].part[=].valueCode = #replace
+
+* parameter[clinicalStatus].pattern[x].part[+].name = "path"
+* parameter[clinicalStatus].pattern[x].part[=].valueString = "AllergyIntolerance.clinicalStatus"
+*
+
+* parameter[clinicalStatus].pattern[x].part[path].name = "path"
+* parameter[clinicalStatus].pattern[x].part[path].valueString = "AllergyIntolerance.clinicalStatus"
+*/
+
 * parameter[clinicalStatus].name ^short = "Parameters for clinicalStatus patching"
 * parameter[clinicalStatus].name 1.. MS
 * parameter[clinicalStatus].name insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].name = "operation" (exactly)
+* parameter[clinicalStatus].name = "operation" //(exactly)
 * parameter[clinicalStatus].part ^slicing.discriminator.type = #value
 * parameter[clinicalStatus].part ^slicing.discriminator.path = "name"
 * parameter[clinicalStatus].part ^slicing.ordered = false
@@ -976,12 +989,12 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus].part[type].name 1..1 MS
 * parameter[clinicalStatus].part[type].name insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type].name = "type" (exactly)
+* parameter[clinicalStatus].part[type].name = "type" //(exactly)
 * parameter[clinicalStatus].part[type].value[x] 1..1 MS
 * parameter[clinicalStatus].part[type].value[x] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[type].value[x] insert obligationApp (1, SHALL:populate)
 * parameter[clinicalStatus].part[type].value[x] only code
-* parameter[clinicalStatus].part[type].value[x] = #replace (exactly)
+* parameter[clinicalStatus].part[type].valueCode = #replace //(exactly)
 * parameter[clinicalStatus].part[path] MS
 * parameter[clinicalStatus].part[path] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[path] insert obligationApp (1, SHALL:populate)
@@ -989,12 +1002,12 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus].part[path].name 1..1 MS
 * parameter[clinicalStatus].part[path].name insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path].name = "path" (exactly)
+* parameter[clinicalStatus].part[path].name = "path" //(exactly)
 * parameter[clinicalStatus].part[path].value[x] 1..1 MS
 * parameter[clinicalStatus].part[path].value[x] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[path].value[x] insert obligationApp (1, SHALL:populate)
 * parameter[clinicalStatus].part[path].value[x] only string
-* parameter[clinicalStatus].part[path].value[x] = "AllergyIntolerance.clinicalStatus" (exactly)
+* parameter[clinicalStatus].part[path].valueString = "AllergyIntolerance.clinicalStatus" //(exactly)
 * parameter[clinicalStatus].part[value] MS
 * parameter[clinicalStatus].part[value] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[value] insert obligationApp (1, SHALL:populate)
@@ -1002,34 +1015,36 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus].part[value].name 1..1 MS
 * parameter[clinicalStatus].part[value].name insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[value].name = "value" (exactly)
+* parameter[clinicalStatus].part[value].name = "value" //(exactly)
 * parameter[clinicalStatus].part[value].value[x] 1..1 MS
 * parameter[clinicalStatus].part[value].value[x] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
 * parameter[clinicalStatus].part[value].value[x] only CodeableConcept
-* parameter[clinicalStatus].part[value].value[x] from AllergyIntoleranceClinicalStatusMinimal (required)
-* parameter[clinicalStatus].part[value].value[x].coding 1..1 MS
-* parameter[clinicalStatus].part[value].value[x].coding insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].value[x].coding insert obligationApp (1, SHALL:populate-if-known)
+* parameter[clinicalStatus].part[value].valueCodeableConcept from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter[clinicalStatus].part[value].valueCodeableConcept.coding 1..1 MS
+* parameter[clinicalStatus].part[value].valueCodeableConcept.coding insert obligationServer (0, SHALL:process)
+* parameter[clinicalStatus].part[value].valueCodeableConcept.coding insert obligationApp (1, SHALL:populate-if-known)
 * parameter[clinicalStatus].part[pathLabel] MS
 * parameter[clinicalStatus].part[pathLabel] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[pathLabel] insert obligationApp (1, SHALL:populate)
 * parameter[clinicalStatus].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[clinicalStatus].part[pathLabel].name 1..1 MS
 * parameter[clinicalStatus].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel].name = "pathLabel" (exactly)
+* parameter[clinicalStatus].part[pathLabel].name = "pathLabel" //(exactly)
 * parameter[clinicalStatus].part[pathLabel].value[x] 1..1 MS
 * parameter[clinicalStatus].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
 * parameter[clinicalStatus].part[pathLabel].value[x] only string
-* parameter[clinicalStatus].part[pathLabel].value[x] = "Clinical status" (exactly)
+* parameter[clinicalStatus].part[pathLabel].valueString = "Clinical status" //(exactly)
 * parameter[comment] MS
 * parameter[comment] insert obligationServer (0, SHALL:process)
 * parameter[comment] insert obligationApp (1, SHALL:populate)
+
+
 * parameter[comment].name ^short = "Parameters for note.text patching"
 * parameter[comment].name 1.. MS
 * parameter[comment].name insert obligationServer (0, SHALL:process)
 * parameter[comment].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].name = "operation" (exactly)
+* parameter[comment].name = "operation" //(exactly)
 * parameter[comment].part ^slicing.discriminator.type = #value
 * parameter[comment].part ^slicing.discriminator.path = "name"
 * parameter[comment].part ^slicing.ordered = false
@@ -1046,12 +1061,12 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[comment].part[type].name 1..1 MS
 * parameter[comment].part[type].name insert obligationServer (0, SHALL:process)
 * parameter[comment].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type].name = "type" (exactly)
+* parameter[comment].part[type].name = "type" //(exactly)
 * parameter[comment].part[type].value[x] 1..1 MS
 * parameter[comment].part[type].value[x] insert obligationServer (0, SHALL:process)
 * parameter[comment].part[type].value[x] insert obligationApp (1, SHALL:populate)
 * parameter[comment].part[type].value[x] only code
-* parameter[comment].part[type].value[x] = #replace (exactly)
+* parameter[comment].part[type].value[x] = #replace //(exactly)
 * parameter[comment].part[path] MS
 * parameter[comment].part[path] insert obligationServer (0, SHALL:process)
 * parameter[comment].part[path] insert obligationApp (1, SHALL:populate)
@@ -1059,12 +1074,12 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[comment].part[path].name 1..1 MS
 * parameter[comment].part[path].name insert obligationServer (0, SHALL:process)
 * parameter[comment].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path].name = "path" (exactly)
+* parameter[comment].part[path].name = "path" //(exactly)
 * parameter[comment].part[path].value[x] 1..1 MS
 * parameter[comment].part[path].value[x] insert obligationServer (0, SHALL:process)
 * parameter[comment].part[path].value[x] insert obligationApp (1, SHALL:populate)
 * parameter[comment].part[path].value[x] only string
-* parameter[comment].part[path].value[x] = "AllergyIntolerance.note[0].text" (exactly)
+* parameter[comment].part[path].value[x] = "AllergyIntolerance.note[0].text" //(exactly)
 * parameter[comment].part[value] MS
 * parameter[comment].part[value] insert obligationServer (0, SHALL:process)
 * parameter[comment].part[value] insert obligationApp (1, SHALL:populate)
@@ -1072,7 +1087,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[comment].part[value].name 1..1 MS
 * parameter[comment].part[value].name insert obligationServer (0, SHALL:process)
 * parameter[comment].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[value].name = "value" (exactly)
+* parameter[comment].part[value].name = "value" //(exactly)
 * parameter[comment].part[value].value[x] 1..1 MS
 * parameter[comment].part[value].value[x] insert obligationServer (0, SHALL:process)
 * parameter[comment].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
@@ -1083,11 +1098,11 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[comment].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[comment].part[pathLabel].name 1..1 MS
 * parameter[comment].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel].name = "pathLabel" (exactly)
+* parameter[comment].part[pathLabel].name = "pathLabel" //(exactly)
 * parameter[comment].part[pathLabel].value[x] 1..1 MS
 * parameter[comment].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
 * parameter[comment].part[pathLabel].value[x] only string
-* parameter[comment].part[pathLabel].value[x] = "Comment" (exactly)
+* parameter[comment].part[pathLabel].value[x] = "Comment" //(exactly)
 
 
 Profile: SmartHealthChecksMedicationStatementPatch
