@@ -47,7 +47,7 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{serverCode2}"
 * ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 */
-
+//These rule sets have been replaced below to include documentation 
 RuleSet: obligationApp(index, appCode)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
@@ -81,6 +81,53 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 
 
+RuleSet: obligationAppPrepop(index, appCode)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "name"
+* ^extension[=].extension[=].valueString = "SHC App Prepopulation"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{appCode}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[=].extension[+].url = "documentation"
+* ^extension[=].extension[=].valueMarkdown = "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
+
+RuleSet: obligationServerPrepop(index, serverCode)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "name"
+* ^extension[=].extension[=].valueString = "SHC Host FHIR Server Prepopulation"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[+].url = "documentation"
+* ^extension[=].extension[=].valueMarkdown = "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
+
+RuleSet: obligationAppWriteback(index, appCode)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "name"
+* ^extension[=].extension[=].valueString = "SHC App Writeback"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{appCode}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[=].extension[+].url = "documentation"
+* ^extension[=].extension[=].valueMarkdown = "This obligation states the expectation of the SHC App to supply this element for write back to the patient record."
+
+RuleSet: obligationServerWriteback(index, serverCode)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "name"
+* ^extension[=].extension[=].valueString = "SHC Host FHIR Server Writeback"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[+].url = "documentation"
+* ^extension[=].extension[=].valueMarkdown = "This obligation states the expectation of the SHC Host FHIR Server to use this element to write back to the patient record."
+
+
+
+
 Invariant: shc-heartrhythm-01
 Description: "At least value or data absent reason shall be present"
 * severity = #error
@@ -102,27 +149,36 @@ Title: "Smart Health Checks AllergyIntolerance"
 Description: "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks."
 
 * id MS
-* id insert obligationServer (0, SHALL:populate)
-* id insert obligationApp (1, SHALL:process)
+* id insert obligationServerPrepop (0, SHALL:populate)
+* id insert obligationAppPrepop (1, SHALL:process)
 * patient MS
-* patient insert obligation2Server (2, SHALL:populate, SHALL:process)
-* patient insert obligationApp (3, SHALL:populate)
-* clinicalStatus MS 
-* clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:process)
-* clinicalStatus insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* patient insert obligationServerPrepop (2, SHALL:populate)
+* patient insert obligationAppWriteback (3, SHALL:populate)
+* patient insert obligationServerWriteback (4, SHALL:persist)
+* clinicalStatus MS
+* clinicalStatus insert obligationServerPrepop (2, SHALL:populate)
+* clinicalStatus insert obligationAppPrepop (3, SHALL:process)
+* clinicalStatus insert obligationAppWriteback (4, SHALL:populate-if-known)
+* clinicalStatus insert obligationServerWriteback (5, SHALL:persist)
 * verificationStatus MS
-* verificationStatus insert obligationServer (2, SHALL:populate-if-known)
-* verificationStatus insert obligationApp (3, SHALL:process)
+* verificationStatus insert obligationServerPrepop (2, SHALL:populate-if-known)
+* verificationStatus insert obligationAppPrepop (3, SHALL:process)
 * code MS
-* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
-* code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* code insert obligationServerPrepop (2, SHALL:populate-if-known)
+* code insert obligationAppPrepop (3, SHALL:process)
+* code insert obligationAppWriteback (4, SHALL:populate-if-known)
+* code insert obligationServerWriteback (5, SHALL:persist)
 * note ..1 MS
 * note.text MS
-* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
-* note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligationServerPrepop (0, SHALL:populate-if-known)
+* note.text insert obligationAppPrepop (1, SHALL:process)
+* note.text insert obligationAppWriteback (2, SHALL:populate-if-known)
+* note.text insert obligationServerWriteback (3, SHALL:persist)
 * reaction.manifestation MS
-* reaction.manifestation insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
-* reaction.manifestation insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* reaction.manifestation insert obligationServerPrepop (2, SHALL:populate-if-known)
+* reaction.manifestation insert obligationAppPrepop (3, SHALL:process)
+* reaction.manifestation insert obligationAppWriteback (4, SHALL:populate-if-known)
+* reaction.manifestation insert obligationServerWriteback (5, SHALL:persist)
 
 Profile: SmartHealthChecksCondition
 Parent: $au-core-condition

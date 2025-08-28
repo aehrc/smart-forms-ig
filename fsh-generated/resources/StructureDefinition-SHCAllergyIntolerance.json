@@ -21,12 +21,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate"
               },
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -34,12 +42,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC App Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:process"
               },
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
               }
             ]
           }
@@ -80,16 +96,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -97,8 +117,8 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
+                "url": "name",
+                "valueString": "SHC App Prepopulation"
               },
               {
                 "url": "code",
@@ -107,6 +127,52 @@
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC App Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to supply this element for write back to the patient record."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:persist"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to use this element to write back to the patient record."
               }
             ]
           }
@@ -146,12 +212,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -159,12 +233,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC App Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:process"
               },
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
               }
             ]
           }
@@ -204,16 +286,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -221,8 +307,8 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
+                "url": "name",
+                "valueString": "SHC App Prepopulation"
               },
               {
                 "url": "code",
@@ -231,6 +317,52 @@
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC App Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to supply this element for write back to the patient record."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:persist"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to use this element to write back to the patient record."
               }
             ]
           }
@@ -270,16 +402,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -287,12 +423,41 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC App Writeback"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate"
               },
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to supply this element for write back to the patient record."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:persist"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to use this element to write back to the patient record."
               }
             ]
           }
@@ -312,16 +477,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -329,8 +498,8 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
+                "url": "name",
+                "valueString": "SHC App Prepopulation"
               },
               {
                 "url": "code",
@@ -339,6 +508,52 @@
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC App Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to supply this element for write back to the patient record."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:persist"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to use this element to write back to the patient record."
               }
             ]
           }
@@ -379,16 +594,20 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Prepopulation"
+              },
+              {
                 "url": "code",
                 "valueCode": "SHALL:populate-if-known"
               },
               {
-                "url": "code",
-                "valueCode": "SHALL:process"
-              },
-              {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to supply this element for prepopulating a health check."
               }
             ]
           },
@@ -396,8 +615,8 @@
             "url": "http://hl7.org/fhir/StructureDefinition/obligation",
             "extension": [
               {
-                "url": "code",
-                "valueCode": "SHALL:populate-if-known"
+                "url": "name",
+                "valueString": "SHC App Prepopulation"
               },
               {
                 "url": "code",
@@ -406,6 +625,52 @@
               {
                 "url": "actor",
                 "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to use this element for prepopulating a health check."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC App Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:populate-if-known"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC App to supply this element for write back to the patient record."
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/obligation",
+            "extension": [
+              {
+                "url": "name",
+                "valueString": "SHC Host FHIR Server Writeback"
+              },
+              {
+                "url": "code",
+                "valueCode": "SHALL:persist"
+              },
+              {
+                "url": "actor",
+                "valueCanonical": "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+              },
+              {
+                "url": "documentation",
+                "valueMarkdown": "This obligation states the expectation of the SHC Host FHIR Server to use this element to write back to the patient record."
               }
             ]
           }
