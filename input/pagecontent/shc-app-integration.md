@@ -1,11 +1,11 @@
 This page provides implementation guidance on integrating a Practice Management System (PMS) with the Smart Health Checks Application (SHC App) based on the FHIR [SMART App Launch Implementation Guide](https://hl7.org/fhir/smart-app-launch/STU2.2/). 
 
-The PMS **SHALL** implement components that conply with the [SHC Host](ActorDefinition-SHCHost.html), [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC Host Authorization Server](ActorDefinition-SHCHostAuthorizationServer.html) actors specified in this Implementation Guide to integrate with the SHC App by supporting the required [Smart Health Checks Interations](index.html#smart-health-checks-interactions) summarised on the [Home](index.html#smart-health-checks-interactions) page. 
+The PMS **SHALL** implement components that conply with the [SHC Host](ActorDefinition-SHCHost.html), [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC Host Authorization Server](ActorDefinition-SHCHostAuthorizationServer.html) actors specified in this Implementation Guide, to integrate with the SHC App by supporting the required [Smart Health Checks Interations](index.html#smart-health-checks-interactions) summarised on the [Home](index.html#smart-health-checks-interactions) page. 
 
 This SHC App Integration page will provide additional guidance on implementing these Smart Health Checks Interations.
 
 ### SHC App Registration 
-To establish a trust relationship between the PMS and the SHC App that enables the SHC APP to be launched and exchange patient data with the PMS, the SHC Host Authorization Server is required to have a once-off client registration configured with the following settings. How this client registration is performed is not specified in this Implementation Guide and is the responsibility of the PMS admininstrator to ensure the client details is configured as specified below.
+To establish a trust relationship between the PMS and the SHC App that enables the SHC APP to be launched and exchange patient data with the PMS, the SHC Host Authorization Server is required to have a once-off client registration configured with the following settings. 
 
 | Attribute    | Value                                          |
 |--------------|--------------------------------------------------|
@@ -13,6 +13,7 @@ To establish a trust relationship between the PMS and the SHC App that enables t
 | Client ID    | smart-health-checks-application                  |
 | Redirect URIs | https://healthchecks.smartforms.io/             |
 
+How this client registration is performed is not specified in this Implementation Guide and it is the responsibility of the PMS admininstrator to ensure the client details is configured as specified above.
 
 Note that the Client ID is assigned by the SHC App to allow multiple PMS to launch the App without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server, please contact AEHRC to arrange a workaround.
 
@@ -353,15 +354,15 @@ A summary of the required SHC profiles and interactions are shown below.
 | [Smart Health Checks Practitioner](StructureDefinition-SHCPractitioner.html) | **Y** |
 | [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) | **Y** | **Y**
 | **Observations** | |
-| [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | | **Y**
-| [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | | **Y**
-| [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | | **Y**
-| [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | | **Y**
-| [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | | **Y**
-| [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | | **Y**
-| [Smart Health Checks Pathology Result](StructureDefinition-SHCPathologyResult.html) | | **Y**
-| [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | | **Y**
-| [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | | **Y**
+| • [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | | **Y**
+| • [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | | **Y**
+| • [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | | **Y**
+| • [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | | **Y**
+| • [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | | **Y**
+| • [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | | **Y**
+| • [Smart Health Checks Pathology Result](StructureDefinition-SHCPathologyResult.html) | | **Y**
+| • [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | | **Y**
+| • [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | | **Y**
 
 If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precedence.
 
@@ -396,14 +397,14 @@ A summary of the SHC profiles that could be included as a FHIR `create` interact
 | [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) | **Y** 
 | [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) | **Y** 
 | **Observations** |  | 
-| [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | **Y**
-| [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | **Y**
-| [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | **Y**
-| [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | **Y**
-| [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | **Y**
-| [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | **Y**
-| [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | **Y**
-| [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | **Y**
+| • [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | **Y**
+| • [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | **Y**
+| • [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | **Y**
+| • [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | **Y**
+| • [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | **Y**
+| • [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | **Y**
+| • [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | **Y**
+| • [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | **Y**
 
 ##### Patch Writeback Interactions
 The FHIR `patch` interaction uses the FHIR `Parameters` resource type as the body of the interaction request. Parameter profile for the `patch` interactions are specified in the this Implemention Guide. A summary of the SHC Profiles and the resource element path that could be updated using the Writeback Extract Transaction as a FHIR `patch` interaction are shown below. 
