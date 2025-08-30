@@ -16,9 +16,9 @@ If you are interested in using the rendering engine in your projects, a standalo
 
 Try it out here: <https://healthchecks.smartforms.io/>
 
-An instance of the Smart Forms Application is hosted to act in the role of the Smart Health Checks Application. It serves as a Smart Health Checks Commons Services component.
+An instance of the Smart Forms Application is hosted to act in the role of the SHC App. It serves as a Smart Health Checks Commons Services component.
 
-For more information on this specific instance see the [Smart Health Check Integration](smart-health-check-integration.html) page.
+For more information on this specific instance see the [SHC App Integration](shc-app-integration.html) page.
 
 
 #### Smart Forms Server
