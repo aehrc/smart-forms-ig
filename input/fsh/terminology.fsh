@@ -858,3 +858,24 @@ Description: "This value set includes the minimal set of codes to represent the 
 * http://hl7.org/fhir/CodeSystem/medication-statement-status#completed
 * http://hl7.org/fhir/CodeSystem/medication-statement-status#stopped
 * http://hl7.org/fhir/CodeSystem/medication-statement-status#on-hold
+
+CodeSystem: SHCPatchPathCodes
+Id: SHCPatchPathCodes
+Title: "Smart Health Checks Patch Path Codes"
+Description: "This code system includes the codes used in the Smart Health Checks Patch Path."
+
+* #AllergyIntolerance.clinicalStatus "AllergyIntolerance.clinicalStatus"
+* #AllergyIntolerance.note[0].text "AllergyIntolerance.note[0].text"
+* #Condition.clinicalStatus "Condition.clinicalStatus"
+* #Condition.abatement "Condition.abatement"
+* #MedicationStatement.status "MedicationStatement.status"
+* #MedicationStatement.note[0].text "MedicationStatement.note[0].text"
+* #MedicationStatement.dosage[0].text "MedicationStatement.dosage[0].text"
+
+
+ValueSet: SHCPatchPath
+Id: SHCPatchPath
+Title: "Smart Health Checks Patch Path"
+Description: "SHCPatchPath"
+* ^experimental = false
+* include codes from system SHCPatchPathCodes

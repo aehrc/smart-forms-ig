@@ -80,21 +80,6 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 
-
-Invariant: shc-heartrhythm-01
-Description: "At least value or data absent reason shall be present"
-* severity = #error
-* expression = "dataAbsentReason.exists() or value.exists()"
-* xpath = "exists(f:*[starts-with(local-name(.), 'value')]) or exists(f:dataAbsentReason)"
-
-Invariant: shc-heartrhythm-02
-Description: "Date shall be at least to day or, if not available, the Data Absent Reason extension shall be present"
-* severity = #error
-* expression = "(($this is dateTime implies $this.toString().length() >= 10) and extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason').value.exists().not()) xor ($this is dateTime implies ($this.hasValue().not() and extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason').value.exists()))"
-* xpath = "((self::dateTime and string-length(.) >= 10 and not(extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason'])) xor (self::dateTime and not(.) and extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason']))"
-
-
-
 Profile: SmartHealthChecksAllergyIntolerance
 Parent: $au-core-allergyintolerance
 Id: SHCAllergyIntolerance
@@ -105,23 +90,23 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * patient MS
-* patient insert obligation2Server (2, SHALL:populate, SHALL:process)
+* patient insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * patient insert obligationApp (3, SHALL:populate)
 * clinicalStatus MS 
-* clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:process)
+* clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * clinicalStatus insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
 * code MS
-* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * note ..1 MS
 * note.text MS
-* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * reaction.manifestation MS
-* reaction.manifestation insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* reaction.manifestation insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * reaction.manifestation insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthChecksCondition
@@ -134,28 +119,28 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * clinicalStatus MS
-* clinicalStatus insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* clinicalStatus insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * clinicalStatus insert obligation2App (3, SHALL:populate, SHALL:process)
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
 * category MS
-* category insert obligation2Server (2, SHALL:populate, SHALL:process)
+* category insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * category insert obligationApp (3, SHALL:populate)
 * code MS
-* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * onsetDateTime MS
-* onsetDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* onsetDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * onsetDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * abatementDateTime MS
-* abatementDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* abatementDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * abatementDateTime insert obligationApp (3, SHALL:process)
 * note.text MS
-* note.text insert obligationServer (0, SHALL:process)
+* note.text insert obligationServer (0, SHALL:persist)
 * note.text insert obligationApp (1, SHALL:populate-if-known)
 
 Profile: SmartHealthChecksImmunization
@@ -165,25 +150,25 @@ Title: "Smart Health Checks Immunization"
 Description: "This profile sets the minimum expectations for an Immunization resource to record, search and save immunization information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
 * vaccineCode MS
-* vaccineCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* vaccineCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * vaccineCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * vaccineCode.coding[amtVaccineCode] MS
-* vaccineCode.coding[amtVaccineCode] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* vaccineCode.coding[amtVaccineCode] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * vaccineCode.coding[amtVaccineCode] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * patient MS
-* patient insert obligation2Server (2, SHALL:populate, SHALL:process)
+* patient insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * patient insert obligationApp (3, SHALL:populate)
 * occurrenceDateTime MS
-* occurrenceDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* occurrenceDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * occurrenceDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * lotNumber MS
-* lotNumber insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* lotNumber insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * lotNumber insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * note.text MS
-* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthChecksMedicationStatement
@@ -196,31 +181,31 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * id insert obligationServer (0, SHALL:populate)
 * id insert obligationApp (1, SHALL:process)
 * status MS
-* status insert obligation2Server (2, SHALL:populate, SHALL:process)
+* status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
 * medication[x][medicationCodeableConcept] MS
-* medication[x][medicationCodeableConcept] insert obligation2Server (0, SHALL:populate-if-known, SHALL:process) // NOTE: When migrating to AU Core v2.0.0, update the extension array index from (0) to (2) for medication[x][medicationCodeableConcept]
+* medication[x][medicationCodeableConcept] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist) // NOTE: When migrating to AU Core v2.0.0, update the extension array index from (0) to (2) for medication[x][medicationCodeableConcept]
 * medication[x][medicationCodeableConcept] insert obligation2App (1, SHALL:populate-if-known, SHALL:process) // When upgrading to AU Core v2.0.0, update the extension array index from (1) to (3) for medication[x][medicationCodeableConcept] to match the new element order.
 * medication[x][medicationReference] MS
 * medication[x][medicationReference] only Reference(SHCMedication)
 * medication[x][medicationReference] insert obligationServer (2, SHALL:populate-if-known)
 * medication[x][medicationReference] insert obligationApp (3, SHALL:process)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * dateAsserted MS
-* dateAsserted insert obligationServer (2, SHALL:process)
+* dateAsserted insert obligationServer (2, SHALL:persist)
 * dateAsserted insert obligationApp (3, SHALL:populate)
 * reasonCode MS
-* reasonCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* reasonCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * reasonCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * note ..1 MS
 * note.text MS
-* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * dosage ..1 MS
 * dosage.text MS
-* dosage.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* dosage.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * dosage.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthChecksMedication
@@ -247,7 +232,6 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * status insert obligationApp (4, SHALL:process)
 * code.coding MS
 * code.coding insert obligationServer (0, SHALL:populate)
-* code.coding insert obligationApp (1, SHALL:process)
 * subject MS
 * subject insert obligationServer (2, SHALL:populate)
 * effectiveDateTime MS
@@ -328,7 +312,7 @@ Description: "This profile sets the minimum expectations for a Patient resource 
 * birthDate insert obligationApp (3, SHALL:process)
 * address MS
 * address only $au-address
-* address insert obligationServer (2, SHALL:populate)
+* address insert obligationServer (2, SHALL:populate-if-known)
 * address insert obligationApp (3, SHALL:process)
 * address.use MS
 * address.use insert obligationServer (0, SHALL:populate-if-known)
@@ -401,7 +385,7 @@ Description: "This profile sets the minimum expectations for a QuestionnaireResp
 
 * id 1.. MS
 * id insert obligation2Server (0, SHALL:populate, SHALL:persist)
-* id insert obligation2App (1, SHALL:populate, SHALL:process)
+* id insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * text MS
 * text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * text insert obligation2App (1, SHALL:populate, SHALL:process)
@@ -424,7 +408,7 @@ Description: "This profile sets the minimum expectations for a QuestionnaireResp
 * authored insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * authored insert obligation2App (1, SHALL:populate, SHALL:process)
 * author 1.. MS
-* author insert obligation2Server (0, SHALL:populate, SHALL:persist)
+* author insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * author insert obligation2App (1, SHALL:populate, SHALL:process)
 * author only Reference(Practitioner)
 * item MS
@@ -447,6 +431,19 @@ Description: "This profile sets the minimum expectations for a QuestionnaireResp
 * item.item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
 
+Invariant: shc-heartrhythm-01
+Description: "At least value or data absent reason shall be present"
+* severity = #error
+* expression = "dataAbsentReason.exists() or value.exists()"
+* xpath = "exists(f:*[starts-with(local-name(.), 'value')]) or exists(f:dataAbsentReason)"
+
+Invariant: shc-heartrhythm-02
+Description: "Date shall be at least to day or, if not available, the Data Absent Reason extension shall be present"
+* severity = #error
+* expression = "(($this is dateTime implies $this.toString().length() >= 10) and extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason').value.exists().not()) xor ($this is dateTime implies ($this.hasValue().not() and extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason').value.exists()))"
+* xpath = "((self::dateTime and string-length(.) >= 10 and not(extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason'])) xor (self::dateTime and not(.) and extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason']))"
+
+
 Profile: SmartHealthChecksHeartRhythm
 Parent: Observation
 Id: SHCHeartRhythm
@@ -458,33 +455,32 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * . ^comment = "Heart rhythm observation using a LOINC code, a SNOMED CT code and a metric UCUM unit of measure."
 * obeys shc-heartrhythm-01
 * status MS
-* status insert obligation2Server (1, SHALL:populate, SHALL:process)
+* status insert obligation2Server (1, SHALL:populate, SHALL:persist)
 * status insert obligation2App (2, SHALL:populate, SHALL:process)
-* category MS
 * category ^slicing.discriminator[0].type = #value
 * category ^slicing.discriminator[=].path = "coding.code"
 * category ^slicing.discriminator[+].type = #value
 * category ^slicing.discriminator[=].path = "coding.system"
 * category ^slicing.ordered = false
 * category ^slicing.rules = #open
-* category contains vitalSignsCategory 1..1 MS
-* category[vitalSignsCategory].coding 1..* MS
+* category contains vitalSignsCategory 1..1 
+* category[vitalSignsCategory].coding 1..*
 * category[vitalSignsCategory].coding only Coding
-* category[vitalSignsCategory].coding.system 1..1 MS
+* category[vitalSignsCategory].coding.system 1..1
 * category[vitalSignsCategory].coding.system only uri
 * category[vitalSignsCategory].coding.system = "http://terminology.hl7.org/CodeSystem/observation-category" (exactly)
-* category[vitalSignsCategory].coding.code 1..1 MS
+* category[vitalSignsCategory].coding.code 1..1
 * category[vitalSignsCategory].coding.code only code
 * category[vitalSignsCategory].coding.code = #vital-signs (exactly)
 /*
 * category[vitalSignsCategory] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs (exactly) 
-* category[vitalSignsCategory] insert obligationServer (0, SHALL:process)
+* category[vitalSignsCategory] insert obligationServer (0, SHALL:persist)
 * category[vitalSignsCategory] insert obligationApp (1, SHALL:populate)
 */
-* code MS
+* code
 * code ^short = "Heart Rhythm"
 * code ^definition = "Heart Rhythm."
-* code.coding MS
+* code.coding
 * code.coding ^slicing.discriminator[0].type = #value
 * code.coding ^slicing.discriminator[=].path = "code"
 * code.coding ^slicing.discriminator[+].type = #value
@@ -492,13 +488,13 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * code.coding ^slicing.ordered = false
 * code.coding ^slicing.rules = #open
 * code.coding contains loincHeartRhythmCode 1..1 MS and snomedHeartRhythmCode 1..1 MS
-* code.coding[loincHeartRhythmCode] insert obligationServer (0, SHALL:process)
+* code.coding[loincHeartRhythmCode] insert obligationServer (0, SHALL:persist)
 * code.coding[loincHeartRhythmCode] insert obligationApp (1, SHALL:populate)
 * code.coding[loincHeartRhythmCode].system 1..1
 * code.coding[loincHeartRhythmCode].system = "http://loinc.org" (exactly)
 * code.coding[loincHeartRhythmCode].code 1..1
 * code.coding[loincHeartRhythmCode].code = #8884-9 (exactly)
-* code.coding[snomedHeartRhythmCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[snomedHeartRhythmCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[snomedHeartRhythmCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedHeartRhythmCode].system 1..1
 * code.coding[snomedHeartRhythmCode].system = "http://snomed.info/sct" (exactly)
@@ -508,25 +504,23 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * code.text insert obligationApp (1, SHALL:populate)
 * subject 1.. MS
 * subject only Reference($au-core-patient)
-* subject insert obligation2Server (0, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (1, SHALL:populate)
-* effective[x] 1.. MS
+* effective[x] 1..
 * effective[x] only dateTime
 * effective[x] obeys shc-heartrhythm-02
 * effective[x] ^short = "Date, and optionally time, the observation was performed"
 * effective[x] ^definition = "Date, and optionally time, the observation was performed."
 * effective[x] ^condition = "shc-heartrhythm-02"
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * value[x] only CodeableConcept
-* value[x] MS
 * value[x] from HeartRhythm (extensible)
 * value[x] ^condition = "shc-heartrhythm-01"
 * valueCodeableConcept.coding MS
-* valueCodeableConcept.coding insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueCodeableConcept.coding insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueCodeableConcept.coding insert obligation2App (1, SHALL:populate, SHALL:process)
-* dataAbsentReason MS
 * dataAbsentReason ^condition = "shc-heartrhythm-01"
 
 Profile: SmartHealthChecksBloodPressure
@@ -536,30 +530,30 @@ Title: "Smart Health Checks Blood Pressure"
 Description: "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationServer (2, SHALL:persist)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BPCode] MS
-* code.coding[BPCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[BPCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[BPCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedBPCode] MS
-* code.coding[snomedBPCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedBPCode] insert obligationServer (0, SHALL:persist)
 * code.coding[snomedBPCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * component[SystolicBP] MS
-* component[SystolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* component[SystolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * component[SystolicBP] insert obligation2App (3, SHALL:populate, SHALL:process)
 * component[DiastolicBP] MS
-* component[DiastolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* component[DiastolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * component[DiastolicBP] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthChecksSmokingStatus
@@ -569,27 +563,27 @@ Title: "Smart Health Checks Smoking Status"
 Description: "This profile sets the minimum expectations for a Smoking Status resource to record, search and save smoking status information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[socialHistory] MS
-* category[socialHistory] insert obligationServer (0, SHALL:process)
+* category[socialHistory] insert obligationServer (0, SHALL:persist)
 * category[socialHistory] insert obligationApp (1, SHALL:populate)
 * code.coding MS
-* code.coding insert obligationServer (0, SHALL:process)
+* code.coding insert obligationServer (0, SHALL:persist)
 * code.coding insert obligationApp (1, SHALL:populate)
 * code.coding[loincSmokingStatus] MS
-* code.coding[loincSmokingStatus] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[loincSmokingStatus] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[loincSmokingStatus] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueCodeableConcept.coding MS
-* valueCodeableConcept.coding insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueCodeableConcept.coding insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueCodeableConcept.coding insert obligation2App (1, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthChecksBodyHeight
@@ -599,36 +593,36 @@ Title: "Smart Health Checks Body Height"
 Description: "This profile sets the minimum expectations for a Body Height resource to record, search and save body height information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationServer (2, SHALL:persist)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BodyHeightCode] MS
-* code.coding[BodyHeightCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[BodyHeightCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[BodyHeightCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedBodyHeightCode] MS
-* code.coding[snomedBodyHeightCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedBodyHeightCode] insert obligationServer (0, SHALL:persist)
 * code.coding[snomedBodyHeightCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthChecksBodyWeight
@@ -638,36 +632,36 @@ Title: "Smart Health Checks Body Weight"
 Description: "This profile sets the minimum expectations for a Body Weight resource to record, search and save body weight information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationServer (2, SHALL:persist)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[BodyWeightCode] MS
-* code.coding[BodyWeightCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[BodyWeightCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[BodyWeightCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedBodyWeightCode] MS
-* code.coding[snomedBodyWeightCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedBodyWeightCode] insert obligationServer (0, SHALL:persist)
 * code.coding[snomedBodyWeightCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthChecksHeadCircumference 
@@ -677,36 +671,36 @@ Title: "Smart Health Checks Head Circumference"
 Description: "This profile sets the minimum expectations for a Head Circumference resource to record, search and save head circumference information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (1, SHALL:populate, SHALL:process)
+* status insert obligation2Server (1, SHALL:populate, SHALL:persist)
 * status insert obligation2App (2, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (0, SHALL:process)
+* category[VSCat] insert obligationServer (0, SHALL:persist)
 * category[VSCat] insert obligationApp (1, SHALL:populate)
 * code.coding[HeadCircumCode] MS
-* code.coding[HeadCircumCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[HeadCircumCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[HeadCircumCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedHeadCircumCode] MS
-* code.coding[snomedHeadCircumCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedHeadCircumCode] insert obligationServer (0, SHALL:persist)
 * code.coding[snomedHeadCircumCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (0, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (1, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
 * valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.unit insert obligation2App (2, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.code insert obligation2App (1, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthChecksWaistCircumference
@@ -716,36 +710,36 @@ Title: "Smart Health Checks Waist Circumference"
 Description: "This profile sets the minimum expectations for a Waist Circumference resource to record, search and save waist circumference information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationServer (2, SHALL:persist)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[loincWaistCircumCode] MS
-* code.coding[loincWaistCircumCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[loincWaistCircumCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[loincWaistCircumCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedWaistCircumCode] MS
-* code.coding[snomedWaistCircumCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedWaistCircumCode] insert obligationServer (0, SHALL:persist)
 * code.coding[snomedWaistCircumCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
 * valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.unit insert obligation2App (2, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (0, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.code insert obligation2App (1, SHALL:populate, SHALL:process)
 
 Profile: SmartHealthChecksHeartRate
@@ -755,38 +749,38 @@ Title: "Smart Health Checks Heart Rate"
 Description: "This profile sets the minimum expectations for a Heart Rate resource to record, search and save heart rate information when used within Smart Health Checks."
 
 * status MS
-* status insert obligation2Server (3, SHALL:populate, SHALL:process)
+* status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[VSCat] MS
-* category[VSCat] insert obligationServer (2, SHALL:process)
+* category[VSCat] insert obligationServer (2, SHALL:persist)
 * category[VSCat] insert obligationApp (3, SHALL:populate)
 * code.coding[HeartRateCode] MS
-* code.coding[HeartRateCode] insert obligation2Server (0, SHALL:populate, SHALL:process)
+* code.coding[HeartRateCode] insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * code.coding[HeartRateCode] insert obligation2App (1, SHALL:populate, SHALL:process)
 * code.coding[snomedHeartRateCode] MS
-* code.coding[snomedHeartRateCode] insert obligationServer (0, SHALL:process)
+* code.coding[snomedHeartRateCode] insert obligationServer (0, SHALL:persist)
 * code.coding[snomedHeartRateCode] insert obligationApp (1, SHALL:populate)
 * code.text MS
 * code.text insert obligationApp (1, SHALL:populate)
 * subject MS
-* subject insert obligation2Server (2, SHALL:populate, SHALL:process)
+* subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * valueQuantity.value MS
-* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.system MS
-* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.code MS
-* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:process)
+* valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
-
+/*
 Profile: SmartHealthChecksConditionPatch
 Parent: Parameters
 Id: SHCConditionPatch
@@ -861,8 +855,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus].part[value].value[x].coding insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[value].value[x].coding insert obligationApp (1, SHALL:populate-if-known)
 * parameter[clinicalStatus].part[pathLabel] MS
-* parameter[clinicalStatus].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[clinicalStatus].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[clinicalStatus].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[clinicalStatus].part[pathLabel].name 1..1 MS
 * parameter[clinicalStatus].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -927,8 +920,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[abatementDate].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
 * parameter[abatementDate].part[value].value[x] only dateTime
 * parameter[abatementDate].part[pathLabel] MS
-* parameter[abatementDate].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[abatementDate].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[abatementDate].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[abatementDate].part[pathLabel].name 1..1 MS
 * parameter[abatementDate].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -955,19 +947,6 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus] MS
 * parameter[clinicalStatus] insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus] insert obligationApp (1, SHALL:populate)
-/*
-* parameter[clinicalStatus].pattern[x].name = "operation"    
-* parameter[clinicalStatus].pattern[x].part[+].name = "type"
-* parameter[clinicalStatus].pattern[x].part[=].valueCode = #replace
-
-* parameter[clinicalStatus].pattern[x].part[+].name = "path"
-* parameter[clinicalStatus].pattern[x].part[=].valueString = "AllergyIntolerance.clinicalStatus"
-*
-
-* parameter[clinicalStatus].pattern[x].part[path].name = "path"
-* parameter[clinicalStatus].pattern[x].part[path].valueString = "AllergyIntolerance.clinicalStatus"
-*/
-
 * parameter[clinicalStatus].name ^short = "Parameters for clinicalStatus patching"
 * parameter[clinicalStatus].name 1.. MS
 * parameter[clinicalStatus].name insert obligationServer (0, SHALL:process)
@@ -1025,8 +1004,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[clinicalStatus].part[value].valueCodeableConcept.coding insert obligationServer (0, SHALL:process)
 * parameter[clinicalStatus].part[value].valueCodeableConcept.coding insert obligationApp (1, SHALL:populate-if-known)
 * parameter[clinicalStatus].part[pathLabel] MS
-* parameter[clinicalStatus].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[clinicalStatus].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[clinicalStatus].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[clinicalStatus].part[pathLabel].name 1..1 MS
 * parameter[clinicalStatus].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -1093,8 +1071,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[comment].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
 * parameter[comment].part[value].value[x] only markdown
 * parameter[comment].part[pathLabel] MS
-* parameter[comment].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[comment].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[comment].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[comment].part[pathLabel].name 1..1 MS
 * parameter[comment].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -1180,8 +1157,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[status].part[value].value[x].coding insert obligationServer (0, SHALL:process)
 * parameter[status].part[value].value[x].coding insert obligationApp (1, SHALL:populate-if-known)
 * parameter[status].part[pathLabel] MS
-* parameter[status].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[status].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[status].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[status].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[status].part[pathLabel].name 1..1 MS
 * parameter[status].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -1246,8 +1222,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[comment].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
 * parameter[comment].part[value].value[x] only markdown
 * parameter[comment].part[pathLabel] MS
-* parameter[comment].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[comment].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[comment].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[comment].part[pathLabel].name 1..1 MS
 * parameter[comment].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -1312,8 +1287,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[dosage].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
 * parameter[dosage].part[value].value[x] only string
 * parameter[dosage].part[pathLabel] MS
-* parameter[dosage].part[pathLabel] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[pathLabel] insert obligationApp (1, SHALL:populate)
+* parameter[dosage].part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter[dosage].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
 * parameter[dosage].part[pathLabel].name 1..1 MS
 * parameter[dosage].part[pathLabel].name insert obligationApp (0, SHALL:populate)
@@ -1322,6 +1296,149 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter[dosage].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
 * parameter[dosage].part[pathLabel].value[x] only string
 * parameter[dosage].part[pathLabel].value[x] = "Dosage" (exactly)
+*/
+
+
+Invariant: shc-patch-01
+Description: "When the part parameter named 'path' has a value of 'AllergyIntolerance.clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Allergy Intolerance Clinical Status Minimal' value set."
+* severity = #error
+* expression = "parameter.part.where(name='path').value = 'AllergyIntolerance.clinicalStatus' implies parameter.part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/AllergyIntoleranceClinicalStatusMinimal')"
+
+Invariant: shc-patch-02
+Description: "When the part parameter named 'path' has a value of 'Condition.clinicalStatus', the part parameter named 'value' SHALL have a value from the Condition Clinical Status Codes' value set."
+* severity = #error
+* expression = "parameter.part.where(name='path').value = 'Condition.clinicalStatus' implies parameter.part.where(name='value').value.memberOf('http://hl7.org/fhir/ValueSet/condition-clinical')"
+
+Invariant: shc-patch-03
+Description: "When the part parameter named 'path' has a value of 'AllergyIntolerance.clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Allergy Intolerance Clinical Status Minimal' value set."
+* severity = #error
+* expression = "parameter.part.where(name='path').value = 'MedicationStatement.status' implies parameter.part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited')"
+
+
+
+Profile: SmartHealthChecksPatch
+Parent: Parameters
+Id: SHCPatch
+Title: "Smart Health Checks Patch"
+Description: "This profile sets the expectations for a Parameters resource when used to patch resources within Smart Health Checks."
+
+* . ^short = "Parameters for patching elements supported in Smart Health Checks"
+* obeys shc-patch-01
+* obeys shc-patch-02
+* obeys shc-patch-03
+* parameter 1..
+* parameter MS
+* parameter insert obligationServer (0, SHALL:process)
+* parameter insert obligationApp (1, SHALL:populate)
+* parameter.name ^short = "Parameters for element patching"
+* parameter.name 1.. MS
+* parameter.name insert obligationServer (0, SHALL:process)
+* parameter.name insert obligationApp (1, SHALL:populate)
+* parameter.name = "operation" (exactly)
+* parameter.part ^slicing.discriminator.type = #value
+* parameter.part ^slicing.discriminator.path = "name"
+* parameter.part ^slicing.ordered = false
+* parameter.part ^slicing.rules = #open
+* parameter.part contains
+    type 1..1 and
+    path 1..1 and
+    value 1..1 and
+    pathLabel 0..1
+* parameter.part[type] MS
+* parameter.part[type] insert obligationServer (0, SHALL:process)
+* parameter.part[type] insert obligationApp (1, SHALL:populate)
+* parameter.part[type] ^short = "Patch operation to perform"
+* parameter.part[type].name MS
+* parameter.part[type].name insert obligationServer (0, SHALL:process)
+* parameter.part[type].name insert obligationApp (1, SHALL:populate)
+* parameter.part[type].name = "type" (exactly)
+* parameter.part[type].value[x] 1.. MS
+* parameter.part[type].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[type].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[type].value[x] only code
+* parameter.part[type].value[x] = #replace (exactly)
+* parameter.part[path] MS
+* parameter.part[path] insert obligationServer (0, SHALL:process)
+* parameter.part[path] insert obligationApp (1, SHALL:populate)
+* parameter.part[path] ^short = "Where to perform the operation"
+* parameter.part[path].name MS
+* parameter.part[path].name insert obligationServer (0, SHALL:process)
+* parameter.part[path].name insert obligationApp (1, SHALL:populate)
+* parameter.part[path].name = "path" (exactly)
+* parameter.part[path].value[x] 1.. MS
+* parameter.part[path].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[path].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[path].value[x] only string
+* parameter.part[path].valueString from SHCPatchPath (required)
+* parameter.part[value] MS
+* parameter.part[value] insert obligationServer (0, SHALL:process)
+* parameter.part[value] insert obligationApp (1, SHALL:populate)
+* parameter.part[value] ^short = "Replacement value"
+* parameter.part[value].name MS
+* parameter.part[value].name insert obligationServer (0, SHALL:process)
+* parameter.part[value].name insert obligationApp (1, SHALL:populate)
+* parameter.part[value].name = "value" (exactly)
+* parameter.part[value].value[x] 1..
+* parameter.part[value].value[x] only code or CodeableConcept or dateTime or string or markdown
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-01"
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-02"
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-03"
+* parameter.part[value].value[x] ^slicing.discriminator.type = #type
+* parameter.part[value].value[x] ^slicing.discriminator.path = "$this"
+* parameter.part[value].value[x] ^slicing.ordered = false
+* parameter.part[value].value[x] ^slicing.rules = #open
+* parameter.part[value].value[x] contains
+    code 0..1 and
+    CodeableConcept 0..1 and
+    dateTime 0..1 and
+    string 0..1 and
+    markdown 0..1
+* parameter.part[value].value[x][code] MS
+* parameter.part[value].value[x][code] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][code] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][code] only code
+* parameter.part[value].value[x][code] from MedicationStatementStatusLimited (required)
+* parameter.part[value].value[x][CodeableConcept] MS
+* parameter.part[value].value[x][CodeableConcept] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][CodeableConcept] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][CodeableConcept] only CodeableConcept
+* parameter.part[value].value[x][CodeableConcept].coding 1..1
+* parameter.part[value].value[x][CodeableConcept].coding ^slicing.discriminator.type = #value
+* parameter.part[value].value[x][CodeableConcept].coding ^slicing.discriminator.path = "$this"
+* parameter.part[value].value[x][CodeableConcept].coding ^slicing.ordered = false
+* parameter.part[value].value[x][CodeableConcept].coding ^slicing.rules = #open
+* parameter.part[value].value[x][CodeableConcept].coding contains
+    AllergyIntoleranceClinicalStatusCodes 0..1 and
+    ConditionClinicalStatusCodes 0..1
+* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] MS
+* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] MS
+* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].value[x][dateTime] MS
+* parameter.part[value].value[x][dateTime] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][dateTime] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][dateTime] only dateTime
+* parameter.part[value].value[x][string] MS
+* parameter.part[value].value[x][string] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][string] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][string] only string
+* parameter.part[value].value[x][markdown] MS
+* parameter.part[value].value[x][markdown] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x][markdown] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].value[x][markdown] only markdown
+* parameter.part[pathLabel] MS
+* parameter.part[pathLabel] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
+* parameter.part[pathLabel].name MS
+* parameter.part[pathLabel].name insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].name = "pathLabel" (exactly)
+* parameter.part[pathLabel].value[x] 1.. MS
+* parameter.part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].value[x] only string
 
 Profile: SmartHealthChecksExtractBundle
 Parent: Bundle
@@ -1352,7 +1469,7 @@ Description: "This profile sets the expectations for a Bundle resource when used
 * entry[post].fullUrl insert obligationServer (0, SHALL:process)
 * entry[post].fullUrl insert obligationApp (1, SHALL:populate)
 * entry[post].resource 1.. MS
-* entry[post].resource insert obligationServer (0, SHALL:persist)
+* entry[post].resource insert obligationServer (0, SHALL:process)
 * entry[post].resource insert obligationApp (1, SHALL:populate)
 * entry[post].resource only 
     SHCAllergyIntolerance or
@@ -1387,10 +1504,7 @@ Description: "This profile sets the expectations for a Bundle resource when used
 * entry[patch].resource 1.. MS
 * entry[patch].resource insert obligationServer (0, SHALL:process)
 * entry[patch].resource insert obligationApp (1, SHALL:populate)
-* entry[patch].resource only 
-    SHCAllergyIntolerancePatch or
-    SHCConditionPatch or
-    SHCMedicationStatementPatch
+* entry[patch].resource only SHCPatch
 * entry[patch].request 1.. MS
 * entry[patch].request insert obligationServer (0, SHALL:process)
 * entry[patch].request insert obligationApp (1, SHALL:populate)
@@ -1401,7 +1515,3 @@ Description: "This profile sets the expectations for a Bundle resource when used
 * entry[patch].request.url MS
 * entry[patch].request.url insert obligationServer (0, SHALL:process)
 * entry[patch].request.url insert obligationApp (1, SHALL:populate)
-
-
-
-
