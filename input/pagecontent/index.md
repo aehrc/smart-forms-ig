@@ -1,7 +1,7 @@
 ### Introduction
 This implementation guide is provided to support the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.
 
-The Smart Health Checks App is a FHIR-based client application aimed at demonstrating effective undertaking of healthcare assessments. It leverages [SMART App Launch](https://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html), [Structured Data Capture specification](http://build.fhir.org/ig/HL7/sdc/index.html) and [AU Core](https://hl7.org.au/fhir/core/) to improve clinical workflow, enhance the usefulness of information in the practice record and improve interoperability of health information to support better clinical outcomes. 
+The Smart Health Checks App is a FHIR-based client application aimed at demonstrating effective undertaking of healthcare assessments. It leverages [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch), [Structured Data Capture specification](http://build.fhir.org/ig/HL7/sdc/index.html) and [AU Core](https://hl7.org.au/fhir/core/) to improve clinical workflow, enhance the usefulness of information in the practice record and improve interoperability of health information to support better clinical outcomes. 
 
 The Smart Health Checks App is based on the CSIRO Smart Forms App which was provided as a [Reference Implementation](reference-implementation.html) of using FHIR standards and implementation guides to provide reusable software components that can be applied within Australian healthcare software systems to support uses cases such as national health check assessment forms.
 

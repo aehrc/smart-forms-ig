@@ -1,11 +1,11 @@
 This page provides implementation guidance on integrating a Practice Management System (PMS) with the Smart Health Checks Application (SHC App) based on the FHIR [SMART App Launch Implementation Guide](https://hl7.org/fhir/smart-app-launch/STU2.2/). 
 
-The PMS **SHALL** implement components that conply with the [SHC Host](ActorDefinition-SHCHost.html), [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC Host Authorization Server](ActorDefinition-SHCHostAuthorizationServer.html) actors specified in this Implementation Guide, to integrate with the SHC App by supporting the required [Smart Health Checks Interations](index.html#smart-health-checks-interactions) summarised on the [Home](index.html#smart-health-checks-interactions) page. 
+The PMS **SHALL** implement components that comply with the [SHC Host](ActorDefinition-SHCHost.html), [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC Host Authorization Server](ActorDefinition-SHCHostAuthorizationServer.html) actors specified in this implementation guide, to integrate with the SHC App by supporting the required [Smart Health Checks Interactions](index.html#smart-health-checks-interactions) summarised on the [Home](index.html#smart-health-checks-interactions) page. 
 
-This SHC App Integration page will provide additional guidance on implementing these Smart Health Checks Interations.
+This SHC App Integration page will provide additional guidance on implementing these Smart Health Checks Interactions.
 
 ### SHC App Registration 
-To establish a trust relationship between the PMS and the SHC App that enables the SHC APP to be launched and exchange patient data with the PMS, the SHC Host Authorization Server is required to have a once-off client registration configured with the following settings. 
+To establish a trust relationship between the PMS and the SHC App that enables the SHC App to be launched and exchange patient data with the PMS, the SHC Host Authorization Server is required to have a once-off client registration configured with the following settings. 
 
 | Attribute    | Value                                          |
 |--------------|--------------------------------------------------|
@@ -13,11 +13,11 @@ To establish a trust relationship between the PMS and the SHC App that enables t
 | Client ID    | smart-health-checks-application                  |
 | Redirect URIs | https://healthchecks.smartforms.io/             |
 
-How this client registration is performed is not specified in this Implementation Guide and it is the responsibility of the PMS admininstrator to ensure the client details is configured as specified above.
+How this client registration is performed is not specified in this implementation guide and it is the responsibility of the PMS admininstrator to ensure the client details are configured as specified above.
 
-Note that the Client ID is assigned by the SHC App to allow multiple PMS to launch the App without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server, please contact AEHRC to arrange a workaround.
+Note that the Client ID is assigned by the SHC App to allow multiple PMSs to launch the app without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server, please contact AEHRC to arrange a workaround.
 
-The SHC App requests the following scopes, these can be configured in the SHC Host Authorization Server client registraion details as required.
+The SHC App requests the following scopes, these can be configured in the SHC Host Authorization Server client registration details as required.
 - launch
 - openid
 - fhirUser
@@ -42,49 +42,51 @@ Other client registration details that may need to be configured in the SHC Host
 | Response Type | code              |
 | Token Endpoint Auth Method | none |
 
-Note that there is no requirement by this Implementation Guide to implement the OAuth 2.0 Dynamic Client Registration Protocol, it is referenced here only as a guide of the meta data that may need to be configured in some authorization server implementions.
+Note that there is no requirement by this implementation guide to implement the OAuth 2.0 Dynamic Client Registration Protocol, it is referenced here only as a guide of the metadata that may need to be configured in some authorization server implementations.
 
 ### SHC App Launch
-The SHC User initiates the SHC Host to launch SHC App with a context of the current user, patient and health check questionniare. 
+The SHC User initiates the SHC Host to launch SHC App with a context of the current user, patient and health check questionnaire. 
 
 The SHC App Launch request has the following parameters as specified for [App Launch: EHR Launch in the SMART App Launch Implementation Guide](https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch).
 
 | Parameter | Condition | Description |
 |-----------|-----------|-------------|
-| iss | required | Base URL of the PMS FHIR Server. |
-| launch | required | The launch identifier used to retrieve the launch context as part of the authorization process. |
+| iss | required | Base URL of the PMS FHIR Server |
+| launch | required | Launch identifier used to retrieve the launch context as part of the authorization process |
 
-The SHC App Launch URL SHOULD be configured in the SHC Host and amended with the launch and iss parameters and their values as shown above. The base SHC App Launch URL is provided in the table below. 
+The SHC App Launch URL **SHOULD** be configured in the SHC Host and amended with the launch and iss parameters and their values as shown above. The base SHC App Launch URL is provided in the table below. 
 
-| SHC App Launch URL   | https://healthchecks.smartforms.io/launch        |
+| Attribute            | Value          |
+|----------------------|----------------|
+| SHC App Launch URL   | https://healthchecks.smartforms.io/launch |
 
-The SHC Host initiates the launch sequence by invoking a HTTP GET request in a Web browser agent (as a new browser tab or iframe) with the launch your described above including the launch and iss parameters as shown in the example below.
+The SHC Host initiates the launch sequence by invoking a HTTP GET request in a Web browser agent (as a new browser tab or iframe) with the launch described above including the launch and iss parameters as shown in the example below.
 
 ```
 https://healthchecks.smartforms.io/launch?iss=https%3A%2F%2Fserver.com.au/fhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5
 ```
 
-The response to the SHC App Launch request will be a HTTP response that will be processed as usual by the Web browser agent that initiated the request. Under normal conditions the response will contain a HTML page or a HTTP Redirect response.
+The response to the SHC App Launch request will be a HTTP response that will be processed as usual by the Web browser agent that initiated the request. Under normal conditions the response will contain a HTML page or a HTTP redirect response.
 
 #### Launch Context
 
-The launch context will need to be made available to the SHC Host Authorization Server in order for it to pass this launch context to the SHC App in the response to the token request. The means in which the launch context is shared with the SHC Host Authorization Server is not specified by this Implementation Guide and is the responsibility of the SHC Host and SHC Host Authorization Server implementation to ensure the context is shared reliably and populated as required in the token request response.
+The launch context will need to be made available to the SHC Host Authorization Server in order for it to pass this launch context to the SHC App in the response to the token request. The means by which the launch context is shared with the SHC Host Authorization Server is not specified by this implementation guide. It is the responsibility of the SHC Host and SHC Host Authorization Server implementation to ensure the context is shared reliably and populated as required in the token request response.
 
-The full set of launch context that SHOULD be supported by the SHC Host and provided to the SHC App are shown in the table below.
+The full set of launch contexts that **SHOULD** be supported by the SHC Host and provided to the SHC App are shown in the table below.
 
 | Parameter | Condition | Description |
 |-----------|-----------|-------------|
-| patient	  | required  | Current patient identifier used to retrieve the Patient via FHIR Server.|
-| encounter	| optional  | Current patient visit identifier used to retrieve the Encounter via FHIR Server.|
-| sub	      | required  | Unique identifier of the user as known by the PMS authorization service. |
-| preferred_username | optional  | Username used to login to PMS.|
-| fhirUser	         | required	 | Current user identifier used to retrieve the user’s Practitioner resource via the FHIR API.|
-| fhirContext        | required  | The Health Check Questionnaire context to be launched <br/> `[{ "role": "http://ns.electronichealth.net.au/smart/role/new", "type": "Questionnaire", "canonical": " http://www.health.gov.au/assessments/mbs/715" }]` |
+| patient	  | required  | Current patient identifier used to retrieve the Patient via FHIR Server |
+| encounter	| optional  | Current patient visit identifier used to retrieve the Encounter via FHIR Server |
+| sub	      | required  | Unique identifier of the user as known by the PMS authorization service |
+| preferred_username | optional  | Username used to login to PMS |
+| fhirUser	         | required	 | Current user identifier used to retrieve the user’s Practitioner resource via the FHIR API |
+| fhirContext        | required  | Health Check Questionnaire context to be launched <br/> `[{ "role": "http://ns.electronichealth.net.au/smart/role/new", "type": "Questionnaire", "canonical": " http://www.health.gov.au/assessments/mbs/715" }]` |
 
-An opache launch identifier that references the launch context is provided in the `launch` parameter of the SHC App Launch URL as decribed above.
+An opache launch identifier that references the launch context is provided in the `launch` parameter of the SHC App Launch URL as described above.
 
 ### SMART Authorization Configuration
-The SHC App uses SHC Host FHIR Server to locate the SHC Host Authorization Server endpoints and capability.
+The SHC App uses the SHC Host FHIR Server to locate the SHC Host Authorization Server endpoints and capability.
 
 The SHC Host FHIR Server **SHALL** provide a `.well-known/smart-configuration` endpoint as described in the [SMART App Launch Implementation Guide](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#retrieve-well-knownsmart-configuration).
 
@@ -94,38 +96,38 @@ The expected `.well-known/smart-configuration` response elements are shown in th
 
 | Attribute    | Condition | Details |
 |--------------|---------- | --------|
-| issuer | required | Authorization server’s Issuer URI (Authorization server base URL).
-| jwks_uri | optional | Authorization server’s JSON Web Key Set URL. |
+| issuer | required | Authorization server’s Issuer URI (authorization server base URL) |
+| jwks_uri | optional | Authorization server’s JSON Web Key Set URL |
 | authorization_endpoint | required | Authorization server’s authorization URL |
-| grant_types_supported | required | Authorization endpoint grant types supported. Expected value: `authorization_code`
-| token_endpoint | required | Authorization server’s token URL
-| token_endpoint_auth_method | optional | The App is a public client, and hence does not have a client secret. Expected value: `none`
-| registration_endpoint | optional | Authorization server registration endpoint.
-| scopes_supported | optional | List of authorization and launch context scopes supported by the authorization server 
-| response_types_supported | required | Authorization response types supported. Expected value: `code`
-| code_challenge_methods_supported | optional | Code challenge method supported. Expected value: `S256`
-| capabilities | optional | SMART capabilities supported by the server. Expected capabilities include:<br/>• `launch-ehr`<br/>• `authorize-post`<br/>• `client-public`<br/>• `context-ehr-patient`<br/>• `context-ehr-encounter`<br/>• `permission-v2`<br/>• `permission-patient`<br/>• `permission-user` |
+| grant_types_supported | required | Authorization endpoint grant types supported. Expected value: `authorization_code`. |
+| token_endpoint | required | Authorization server’s token URL |
+| token_endpoint_auth_method | optional | The App is a public client, and hence does not have a client secret. Expected value: `none`. |
+| registration_endpoint | optional | Authorization server registration endpoint |
+| scopes_supported | optional | List of authorization and launch context scopes supported by the authorization server |
+| response_types_supported | required | Authorization response types supported. Expected value: `code`. |
+| code_challenge_methods_supported | optional | Code challenge method supported. Expected value: `S256`. |
+| capabilities | optional | SMART capabilities supported by the server. Expected capabilities include:<br/>• `launch-ehr`<br/>• `authorize-post`<br/>• `client-public`<br/>• `context-ehr-patient`<br/>• `context-ehr-encounter`<br/>• `permission-v2`<br/>• `permission-patient`<br/>• `permission-user`. |
 
 ### Authorization Request
 The SHC Host Authorization Server **SHALL** implement the OAuth 2.0 Authorization Code flow as required by the FHIR SMART App Launch Implementation Guide. 
 
-As part of the SHC App launch sequence, the SHC App redirects the browser agent to the SHC Host Authorization Server to request authorisation to access patient health information from the SHC Host FHIR Server. The SHC user may be prompted to permit or deny access to the requested data.
+As part of the SHC App launch sequence, the SHC App redirects the browser agent to the SHC Host Authorization Server to request authorisation to access patient health information from the SHC Host FHIR Server. The SHC User may be prompted to permit or deny access to the requested data.
 
 The SHC Host Authorization Server **SHALL** provide an Authorization Request endpoint for both HTTP GET and HTTP POST methods with the following parameters as specified  in the [SMART App Launch implementation guide](https://hl7.org/fhir/smart-app-launch/STU2.2/app-launch.html#step-4-authorization-code). 
 
 | Parameter | Condition | Description | 
 | --------- | ----------- | --- |
 | response_type | required | Fixed value: code |
-| client_id | required | The client identifier for the registered SHC App. |
-| redirect_uri | required | The redirect URI for the registered SHC App. |
-| launch | required | The launch identifier provided in the launch request correlates to the stashed launch context. |
-| scope | required | Space delimited list of authorization scopes requested by the App |
-| state | required | An unpredictable unique identifier used to correlate the authorization request with the subsequent redirect response. |
-| aud | required | Base URL of the FHIR server the App is requesting access. |
-| code_challenge | optional | PKCE code challenge generated by the App. | 
-| code_challenge_method | Required when code_challenge exists | PKCE code challenge method. |
+| client_id | required | Client identifier for the registered SHC App |
+| redirect_uri | required | Redirect URI for the registered SHC App |
+| launch | required | Launch identifier provided in the launch request correlates to the stashed launch context |
+| scope | required | Space delimited list of authorization scopes requested by the SHC App |
+| state | required | An unpredictable unique identifier used to correlate the authorization request with the subsequent redirect response |
+| aud | required | Base URL of the FHIR server the SHC App is requesting access to |
+| code_challenge | optional | PKCE code challenge generated by the SHC App | 
+| code_challenge_method | Required when code_challenge exists | PKCE code challenge method |
 
-The SHS App will use the HTTP GET method only, but the HTTP POST method is supported to comply with the FHIR SMART App Launch Implementation Guide conformance requirements.
+The SHC App will use the HTTP GET method only, but the HTTP POST method is supported to comply with the FHIR SMART App Launch Implementation Guide conformance requirements.
 
 #### Authorization GET Request
 In the case of a HTTP GET request, the query parameters **SHALL** be URL encoded as shown in request example below.
@@ -146,7 +148,7 @@ response_type=code&client_id=c6807eb65497423e8ef56f05956afb0f&scope=launch%20ope
 ```
 
 ### Authorization Callback
-The SHC Host Authoziation Server responds back to the SHC App with a HTTP redirect response with a HTTP status code of `302 Found` to proceed with the authorised launch of the SHC App. 
+The SHC Host Authorization Server responds back to the SHC App with a HTTP redirect response with a HTTP status code of `302 Found` to proceed with the authorised launch of the SHC App. 
 
 #### Authorization Granted Response
 When the authorization request is granted, the authorization callback response contains a `Location` header URL matching the `redirect_uri` parameter provided in the request with the parameters shown in the table below.
@@ -162,7 +164,7 @@ code of `302 Found`. The `Location` header URL matches the `redirect_uri` parame
 
 | Parameter | Description | 
 | --------- | --- |
-| error | The error code from the following set:<br/>• `invalid_request`<br/>• `unauthorized_client`<br/>• `access_denied`<br/>• `unsupported_response_type`<br/>• `invalid_scope`<br/>• `server_error` – unexpected server error, equivalent to HTTP 500 Internal Server Error status code<br/>• `temporarily_unavailable` – server temporarily unavailable, equivalent to HTTP 503 Server Unavailable status code</li></ul> |
+| error | The error code from the following set:<br/>• `invalid_request`<br/>• `unauthorized_client`<br/>• `access_denied`<br/>• `unsupported_response_type`<br/>• `invalid_scope`<br/>• `server_error` – unexpected server error, equivalent to HTTP 500 Internal Server Error status code<br/>• `temporarily_unavailable` – server temporarily unavailable, equivalent to HTTP 503 Server Unavailable status code |
 | error_description | Optional human readable description of the error |
 
 An example of the response is shown below.
@@ -172,10 +174,10 @@ HTTP 302 Found
 Location: https://smartforms.csiro.au?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration
 ```
 
-When the Web browser client receives the authorize request response, the application **SHALL** display the error details and not attempt to access the SHC HOST FHIR Server.
+When the Web browser client receives the authorize request response, the application **SHALL** display the error details and not attempt to access the SHC Host FHIR Server.
 
 #### Code Challenge
-The `code_challenge` parameter provides mitigation against authorization code interception attacks based on the Proof key for Code Exchange (PKCE) internet standard RFC 7636. The following is provided for information only.
+The `code_challenge` parameter provides mitigation against authorization code interception attacks based on the Proof Key for Code Exchange (PKCE) internet standard RFC 7636. The following is provided for information only.
 
 A `code_challenge` is generated by the client for each authorize request and provided in the request by following the steps below:
 
@@ -192,10 +194,10 @@ The token request is a HTTP POST with the following parameters as specified in t
 | Parameter | Condition | Description |
 | --------- | --------- | ----------- |
 | grant_type | required | Fixed value: `authorization_code` |
-| code | required | code parameter value returned in authorize response 
-| client_id | required | The client identifier for the registered SHC App. | 
-| redirect_uri | required | The redirect URI for the registered SHC App. | 
-| code_verifier | optional | PKCE code used to verify this request against the `code_challenge` provided in the preceding authorize request. |
+| code | required | code parameter value returned in authorize response |
+| client_id | required | Client identifier for the registered SHC App | 
+| redirect_uri | required | Redirect URI for the registered SHC App | 
+| code_verifier | optional | PKCE code used to verify this request against the `code_challenge` provided in the preceding authorize request |
 
 An example of the token request is shown below.
 
@@ -213,20 +215,20 @@ The token response contains a JSON payload in the body with the following elemen
 
 | Element | Condition | Description |
 | ------- | --------- | ----------- |
-| access_token | required | The access token. |
+| access_token | required | Access token |
 | token_type | required | Fixed value: `Bearer` |
-| expires_in | required | Number of seconds the access token is valid. Nominally tokens are short lived, for example one hour (3600 seconds) |
-| scope | required | Space delimited list of scopes granted to the App as part of the authorize process. The list of scopes may not be the same as what was requested. |
-| id_token | required | Encoded identity using JSON Web Token (JWT) the OpenID Connect Core 1.0 specifications. When decoded and verified, the token contains identity details of the user that launched the app and a FHIR Practitioner resource reference representing the user. The `id_token` is provided when the `openid fhirUser` scopes are requested and granted. |
+| expires_in | required | Number of seconds the access token is valid. Nominally tokens are short lived, for example one hour (3600 seconds). |
+| scope | required | Space delimited list of scopes granted to the SHC App as part of the authorize process. The list of scopes may not be the same as what was requested. |
+| id_token | required | Encoded identity using a JSON Web Token (JWT) per the OpenID Connect Core 1.0 specifications. When decoded and verified, the token contains identity details of the user that launched the app and a FHIR Practitioner resource reference representing the user. The `id_token` is provided when the `openid fhirUser` scopes are requested and granted. |
 | ~~refresh_token~~ | ~~optional~~ | ~~An token that can be used to request a new access token to continue a session beyond the current access token expiry time. A refresh token is only provided when requested using the `online_access` scope.~~ |
-| patient | required | FHIR Patient id provided in the launch context. |
-| encounter | optional | FHIR Encounter id provided in the launch context. |
-| fhirContext | required | A list of other FHIR resource references that have been requested as launch context. Each `fhirContext` item has a relative or canonical reference to a FHIR resource and a role represented as the canonical URL of the FHIR resource type. When a specified heath check form is requested, the Questionnaire canonical URL **SHALL** be provided in the `fhirContext`. |
+| patient | required | FHIR Patient id provided in the launch context |
+| encounter | optional | FHIR Encounter id provided in the launch context |
+| fhirContext | required | A list of other FHIR resource references that have been requested as launch context. Each `fhirContext` item has a relative or canonical reference to a FHIR resource and a role represented as the canonical URL of the FHIR resource type. When a specified health check form is requested, the Questionnaire canonical URL **SHALL** be provided in the `fhirContext`. |
 
 #### Access Token
-The access token is opaque to the client and its representation should only be known by the SHC FHIR Authorization Server and SHC Host FHIR Server.
+The access token is opaque to the client and its representation **SHOULD** only be known by the SHC FHIR Authorization Server and SHC Host FHIR Server.
 
-This Implementation Guide does not specify the representation of the access token, but OAuth 2.0 implementations commonly use either an opache key used to retrieve the token context from the authorization service using an introspection request, or an encoded [JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.html) signed using [JSON Web Signature (JWS)](https://datatracker.ietf.org/doc/html/rfc7515).
+This implementation guide does not specify the representation of the access token, but OAuth 2.0 implementations commonly use either an opaque key used to retrieve the token context from the authorization service using an introspection request, or an encoded [JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.html) signed using [JSON Web Signature (JWS)](https://datatracker.ietf.org/doc/html/rfc7515).
 
 #### ID Token 
 The SHC Host Authorization Server **SHALL** provide a correctly encoded `id_token` element in the token response when the SHC App specifies the `openid` scope in the Authorization Request. 
@@ -252,8 +254,8 @@ The JWS Protected Header has two elements as described below.
 
 | Element | Description |
 | ------- | ----------- |
-| typ | Fixed value: `JWT`
-| alg | Signature algorithm (RSA SHA-256). Fixed value: `RS256`
+| typ | Fixed value: `JWT` |
+| alg | Signature algorithm (RSA SHA-256). Fixed value: `RS256`. |
 
 An example is shown below.
 
@@ -331,12 +333,13 @@ The ID token example above can be decoded and verified using the JWT debugger at
 ```
 
 ### Prepopulate Health Check
-SHC App uses the launch context to access patient data using the SHC Host FHIR Server including:
+The SHC App uses the launch context to access patient data using the SHC Host FHIR Server. This includes:
 
-1. read Practitioner;
-2. read Patient;
-3. read or search QuestionnaireResponse; and
-4. various search requests to prepopulate the health check form
+1. read Practitioner
+2. read Patient
+3. read Encounter
+4. read or search QuestionnaireResponse
+5. various search requests to prepopulate the health check form.
 
 The SHC Host FHIR Server **SHALL** support the SHC profiles and interactions as specified in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). 
 
@@ -344,25 +347,15 @@ A summary of the required SHC profiles and interactions are shown below.
 
 | Profile | Read | Search | 
 | ------- | ---- | ------ | 
-| [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html) | | **Y**
-| [Smart Health Checks Condition](StructureDefinition-SHCCondition.html) | | **Y**
-| [Smart Health Checks Encounter](StructureDefinition-SHCEncounter.html) | **Y** |
-| [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) | | **Y**
-| [Smart Health Checks Medication](StructureDefinition-SHCMedication.html) | **Y** |
-| [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) | | **Y**
-| [Smart Health Checks Patient](StructureDefinition-SHCPatient.html) | **Y** |
-| [Smart Health Checks Practitioner](StructureDefinition-SHCPractitioner.html) | **Y** |
-| [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) | **Y** | **Y**
-| **Observations** | |
-| • [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | | **Y**
-| • [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | | **Y**
-| • [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | | **Y**
-| • [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | | **Y**
-| • [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | | **Y**
-| • [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | | **Y**
-| • [Smart Health Checks Pathology Result](StructureDefinition-SHCPathologyResult.html) | | **Y**
-| • [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | | **Y**
-| • [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | | **Y**
+| [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html) | | **Y** |
+| [Smart Health Checks Condition](StructureDefinition-SHCCondition.html) | | **Y** |
+| [Smart Health Checks Encounter](StructureDefinition-SHCEncounter.html) | **Y** | |
+| [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) | | **Y** |
+| [Smart Health Checks Medication](StructureDefinition-SHCMedication.html) | **Y** | |
+| [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) | | **Y** |
+| [Smart Health Checks Patient](StructureDefinition-SHCPatient.html) | **Y** | |
+| [Smart Health Checks Practitioner](StructureDefinition-SHCPractitioner.html) | **Y** | |
+| [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) | **Y** | **Y** |
 
 If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precedence.
 
@@ -373,17 +366,17 @@ The user fills out the health check form and saves the form data using the follo
 
 The health check form data is written back to the SHC Host FHIR Server as a QuestionnaireResponse.
 
-The SHC Host FHIR Server **SHALL** support the SHC QuestionnaireResponse profile and writeback interactions as specified in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html) and summarised below:
+The SHC Host FHIR Server **SHALL** support the SHC QuestionnaireResponse profile and writeback interactions as specified in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). A summary is shown below.
 
 | Profile | Create | Update | 
 | ------- | ---- | ------ | 
-| [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) | **Y** | **Y**
+| [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) | **Y** | **Y** |
 
 #### Writeback Extract Transaction
 
-The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as a transaction Bundle that complies with the the [Smart Health Checks Extract Bundle](StructureDefinition-SHCExtractBundle.html) profile.
+The health check form data extracted from a completed form as FHIR Resources are written back to the SHC Host FHIR Server as a transaction Bundle that complies with the [Smart Health Checks Extract Bundle](StructureDefinition-SHCExtractBundle.html) profile.
 
-The SHC Host FHIR Server **SHALL** support the SHC Writeback interactions, including the system wide transaction interaction, and the associated SHC profiles as specified in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). 
+The SHC Host FHIR Server **SHALL** support the SHC writeback interactions, including the system wide transaction interaction, and the associated SHC profiles as specified in the [SHC Host FHIR Server CapabilityStatement](CapabilityStatement-SHCHostFHIRServerCapabilityStatement.html). 
 
 The Writeback Extract Transaction could include a combination of FHIR 'create' and 'patch' interactions for the various FHIR Resource types. These are summarised in the sections below. If there are any variations between this page and the CapabilityStatement above, the CapabilityStatement takes precedence.
 
@@ -392,22 +385,22 @@ A summary of the SHC profiles that could be included as a FHIR `create` interact
 
 | Profile | Create |
 | --- | --- |
-| [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html) | **Y** 
-| [Smart Health Checks Condition](StructureDefinition-SHCCondition.html) | **Y** 
-| [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) | **Y** 
-| [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) | **Y** 
+| [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html) | **Y** |
+| [Smart Health Checks Condition](StructureDefinition-SHCCondition.html) | **Y** |
+| [Smart Health Checks Immunization](StructureDefinition-SHCImmunization.html) | **Y** |
+| [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html) | **Y** |
 | **Observations** |  | 
-| • [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | **Y**
-| • [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | **Y**
-| • [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | **Y**
-| • [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | **Y**
-| • [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | **Y**
-| • [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | **Y**
-| • [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | **Y**
-| • [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | **Y**
+| • [Smart Health Checks Blood Pressure](StructureDefinition-SHCBloodPressure.html) | **Y** |
+| • [Smart Health Checks Body Height](StructureDefinition-SHCBodyHeight.html) | **Y** |
+| • [Smart Health Checks Body Weight](StructureDefinition-SHCBodyWeight.html) | **Y** |
+| • [Smart Health Checks Head Circumference](StructureDefinition-SHCHeadCircumference.html) | **Y** |
+| • [Smart Health Checks Heart Rate](StructureDefinition-SHCHeartRate.html) | **Y** |
+| • [Smart Health Checks Heart Rhythm](StructureDefinition-SHCHeartRhythm.html) | **Y** |
+| • [Smart Health Checks Smoking Status](StructureDefinition-SHCSmokingStatus.html) | **Y** |
+| • [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | **Y** |
 
 ##### Patch Writeback Interactions
-The FHIR `patch` interaction uses the FHIR `Parameters` resource type as the body of the interaction request. Parameter profile for the `patch` interactions are specified in the this Implemention Guide. A summary of the SHC Profiles and the resource element path that could be updated using the Writeback Extract Transaction as a FHIR `patch` interaction are shown below. 
+The FHIR `patch` interaction uses the FHIR `Parameters` resource type as the body of the interaction request. These `Parameters` resources will comply with the [Smart Health Checks Patch](StructureDefinition-SHCPatch.html) Parameters profile. A summary of the SHC profiles and the resource element path that could be updated using the Writeback Extract Transaction as a FHIR `patch` interaction are shown below. 
 
 | Profile | Patch | Patch element path  |
 | --- | --- | --- |
