@@ -28,18 +28,16 @@ Usage: #definition
 * rest.mode = #server
 * rest.documentation = "Smart Forms Launcher Server **SHALL**:
 1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)
-1. Support the [Smart Health Checks AllergyIntolerance Patch resource profile](StructureDefinition-SHCAllergyIntolerancePatch.html)
 1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)
-1. Support the [Smart Health Checks Condition Patch resource profile](StructureDefinition-SHCConditionPatch.html)
 1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)
 1. Support the [Smart Health Checks Immunization resource profile](StructureDefinition-SHCImmunization.html)
 1. Support the [Smart Health Checks Medication profile](StructureDefinition-SHCMedication.html)
 1. Support the [Smart Health Checks MedicationStatement profile](StructureDefinition-SHCMedicationStatement.html)
-1. Support the [Smart Health Checks MedicationStatement Patch profile](StructureDefinition-SHCMedicationStatementPatch.html)
 1. Support the [Smart Health Checks Observation resource profiles](profiles-and-extensions.html#observation)
 1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)
 1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)
 1. Support the [Smart Health Checks QuestionnaireResponse resource profile](StructureDefinition-SHCQuestionnaireResponse.html)
+1. Support the [Smart Health Checks Patch profile](StructureDefinition-SHCPatch.html)
 1. Support the [Smart Health Checks Extract Bundle resource profile](StructureDefinition-SHCExtractBundle.html)
 1. Implement the RESTful behavior according to the FHIR specification
 1. Support JSON source formats for all interactions"
@@ -284,9 +282,6 @@ The client **SHALL** support this method."
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult"
-* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
@@ -296,10 +291,13 @@ The client **SHALL** support this method."
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "The server **SHALL** support the Observation resource, the Smart Health Checks profiles listed and the conformance expectations for the Observation resource."
@@ -340,16 +338,10 @@ The server **SHALL** support both."
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
 * rest.resource[=].type = #Parameters
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch"
-* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
-* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."
+* rest.resource[=].documentation = "The server **SHALL** support the Parameters resource, the Smart Health Checks profile and the conformance expectations for the Parameters resource."
 
 //Patient
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -362,9 +354,6 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[0].extension[0].valueCode = #SHALL
-* rest.resource[=].interaction[+].code = #patch
-* rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
 
 //Practitioner
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -707,12 +696,12 @@ The client **SHALL** support this method."
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult"
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult"
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
 * rest.resource[=].documentation = "The client supports the Observation resource, the Smart Health Checks profiles listed and the conformance expectations for the Observation resource."
 * rest.resource[=].interaction[0].code = #search-type
 * rest.resource[=].interaction[+].code = #create
@@ -741,13 +730,7 @@ The server **SHALL** support both."
 
 //Parameters
 * rest.resource[+].type = #Parameters
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch"
-* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch"
-* rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "The client supports the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."
@@ -757,7 +740,6 @@ The server **SHALL** support both."
 * rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient"
 * rest.resource[=].documentation = "The client supports the Patient resource, Smart Health Checks profile and the conformance expectations for the Patient resource."
 * rest.resource[=].interaction[0].code = #read
-* rest.resource[=].interaction[+].code = #patch
 
 //Practitioner
 * rest.resource[+].type = #Practitioner
