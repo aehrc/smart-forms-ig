@@ -15,7 +15,7 @@ To establish a trust relationship between the PMS and the SHC App that enables t
 
 How this client registration is performed is not specified in this implementation guide and it is the responsibility of the PMS admininstrator to ensure the client details are configured as specified above.
 
-Note that the Client ID is assigned by the SHC App to allow multiple PMSs to launch the app without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server, please contact AEHRC to arrange a workaround.
+Note that the Client ID is assigned by the SHC App to allow multiple PMSs to launch the app without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server (such as if the Auth Server requires Client IDs to be UUIDs, or if the server assigns an auto-generated Client ID), please contact AEHRC to arrange a workaround.
 
 The SHC App requests the following scopes, these can be configured in the SHC Host Authorization Server client registration details as required.
 - launch
@@ -63,7 +63,7 @@ The SHC App Launch URL **SHOULD** be configured in the SHC Host and amended with
 The SHC Host initiates the launch sequence by invoking a HTTP GET request in a Web browser agent (as a new browser tab or iframe) with the launch described above including the launch and iss parameters as shown in the example below.
 
 ```
-https://healthchecks.smartforms.io/launch?iss=https%3A%2F%2Fserver.com.au/fhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5
+https://healthchecks.smartforms.io/launch?iss=https%3A%2F%2Fpmsserver.com.au/fhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5
 ```
 
 The response to the SHC App Launch request will be a HTTP response that will be processed as usual by the Web browser agent that initiated the request. Under normal conditions the response will contain a HTML page or a HTTP redirect response.
@@ -133,7 +133,7 @@ The SHC App will use the HTTP GET method only, but the HTTP POST method is suppo
 In the case of a HTTP GET request, the query parameters **SHALL** be URL encoded as shown in request example below.
 
 ```
-GET https://https://auth.pmsserver.com.au/oauth/authorize?response_type=code&client_id=c6807eb65497423e8ef56f05956afb0f&scope=launch%20openid%20fhirUser%20online_access%20patient%2FPatient.rs%20patient%2FCondition.rs%20patient%2FObservation.rs%20patient%2FEncounter.rs%20patient%2FQuestionnaireResponse.crus&redirect_uri=https%3A%2F%2Fsmartforms.csiro.au&state=NhlJ741C31hRDf8v&aud=https%3A%2F%2Fpmsserver.com.au/fhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5&code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstwcM&code_challenge_method=S256
+GET https://auth.pmsserver.com.au/oauth/authorize?response_type=code&client_id=smart-health-checks-application&scope=launch%20openid%20fhirUser%20online_access%20patient%2FAllergyIntolerance.cus%20patient%2FCondition.cus%20patient%2FEncounter.r%20patient%2FImmunization.cs%20patient%2FMedication.r%20patient%2FMedicationStatement.cus%20patient%2FObservation.cs%20patient%2FPatient.r%20patient%2FQuestionnaireResponse.crus%20user%2FPractitioner.r%20launch%2Fquestionnaire%3Frole%3Dhttp%3A%2F%2Fns.electronichealth.net.au%2Fsmart%2Frole%2Fnew&redirect_uri=https%3A%2F%2Fhealthchecks.smartforms.io&state=NhlJ741C31hRDf8v&aud=https%3A%2F%2Fpmsserver.com.au%2Ffhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5&code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstwcM&code_challenge_method=S256
 ```
 
 #### Authorization POST Request
@@ -144,7 +144,7 @@ POST /oauth/authorize
 Content-Type: application/x-www-form-urlencoded
 Host: https://auth.pmsserver.com.au
 
-response_type=code&client_id=c6807eb65497423e8ef56f05956afb0f&scope=launch%20openid%20fhirUser%20online_access%20patient%2FPatient.rs%20patient%2FCondition.rs%20patient%2FObservation.rs%20patient%2FEncounter.rs%20patient%2FQuestionnaireResponse.crus&redirect_uri=https%3A%2F%2Fsmartforms.csiro.au&state=NhlJ741C31hRDf8v&aud=https%3A%2F%2Fpmsserver.com.au%2Ffhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5&code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM&code_challenge_method=S256
+response_type=code&client_id=smart-health-checks-application&scope=launch%20openid%20fhirUser%20online_access%20patient%2FAllergyIntolerance.cus%20patient%2FCondition.cus%20patient%2FEncounter.r%20patient%2FImmunization.cs%20patient%2FMedication.r%20patient%2FMedicationStatement.cus%20patient%2FObservation.cs%20patient%2FPatient.r%20patient%2FQuestionnaireResponse.crus%20user%2FPractitioner.r%20launch%2Fquestionnaire%3Frole%3Dhttp%3A%2F%2Fns.electronichealth.net.au%2Fsmart%2Frole%2Fnew&redirect_uri=https%3A%2F%2Fhealthchecks.smartforms.io&state=NhlJ741C31hRDf8v&aud=https%3A%2F%2Fpmsserver.com.au%2Ffhir&launch=15fd8cc0b5ce4e4b9ab1cb83495412f5&code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstwcM&code_challenge_method=S256
 ```
 
 ### Authorization Callback
@@ -171,7 +171,7 @@ An example of the response is shown below.
 
 ```
 HTTP 302 Found
-Location: https://smartforms.csiro.au?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration
+Location: https://healthchecks.smartforms.io?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration
 ```
 
 When the Web browser client receives the authorize request response, the application **SHALL** display the error details and not attempt to access the SHC Host FHIR Server.
@@ -206,7 +206,7 @@ POST /oauth/token
 Content-Type: application/x-www-form-urlencoded
 Host: https://auth.pmsserver.com.au
 
-grant_type=authorization_code&code=c1c3b2fe54334efb901e34b095f837dd&client_id=c6807eb65497423e8ef56f05956afb0f&redirect_uri=https%3A%2F%2Fsmartforms.csiro.au&code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+grant_type=authorization_code&code=c1c3b2fe54334efb901e34b095f837dd&client_id=smart-health-checks-application&redirect_uri=https%3A%2F%2Fhealthchecks.smartforms.io&code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
 ```
 
 #### Token Response
@@ -288,7 +288,7 @@ An example of the JWS Payload is shown below.
 {
   "sub":"f256d3ba-bb70-4613-a631-825d500c57fa",
   "iss":"https://auth.pmsserver.com.au",
-  "aud":"https://smartforms.csiro.au",
+  "aud":"https://healthchecks.smartforms.io",
   "fhirUser":"Practitioner/f256d3ba-bb70-4613-a631-825d500c57fa",
   "preferred_username":"janedoe",
   "iat":1690903483,
