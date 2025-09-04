@@ -1451,13 +1451,12 @@ Description: "This profile sets the expectations for a Bundle resource when used
 * type insert obligationApp (1, SHALL:populate)
 * type = #transaction (exactly)
 * timestamp 1.. MS
-* timestamp insert obligationServer (0, SHALL:process)
-* timestamp insert obligationApp (1, SHALL:populate)
+* timestamp insert obligationApp (0, SHALL:populate)
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "request.method"
 * entry ^slicing.ordered = false
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
 * entry contains
     post 0..* and
     patch 0..*
