@@ -20,3 +20,10 @@ All examples included in this implementation guide are available for download:
 - [XML](examples.xml.zip)
 - [JSON](examples.json.zip)
 - [TTL](examples.ttl.zip)
+
+### Archived Guidance
+
+The document provided here was produced as part of a previous phase of the Smart Health Checks project. It is provided here for reference only. It <strong>does not</strong> contain any formative requirements or recommendations. It is <strong>informative only</strong>.
+
+- [Practice Management System Integration](CSIRO-SmartHealthCheck-PMSIntegration_20240409.pdf)
+
