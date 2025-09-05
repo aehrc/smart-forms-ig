@@ -60,14 +60,13 @@ pages:
   shc-app-integration.md:
     title: SHC App Integration
   reference-implementation.md:
-  informative-guidance.xml:
   downloads.md:
-  artifacts.html: 
-    title: Artefacts Summary
-    questionnaires.md:
-    profiles-and-extensions.md:
-    capability-statements.md:
-    actor-definitions.md:
+   artifacts.html: 
+     title: Artefacts Summary
+     questionnaires.md:
+     profiles-and-extensions.md:
+     capability-statements.md:
+     actor-definitions.md:
 
 #
 #
@@ -154,16 +153,11 @@ parameters:
 
 menu:
   Home: index.html
-#  Conformance: #conformance.html
-#      General Requirements: general-requirements.html
-#      Must Support: must-support.html
-  Guidance: #guidance.html
+  Guidance:
       General Requirements: general-requirements.html
       SHC App Integration: shc-app-integration.html
       Reference Implementation: reference-implementation.html
-      Informative Guidance: informative-guidance.html
-#      General Guidance: general-guidance.html
-  FHIR Artefacts: #artifact.html
+  FHIR Artefacts:
       Artefact Summary: artifacts.html
       Questionnaires: questionnaires.html
       Profiles and Extensions: profiles-and-extensions.html
