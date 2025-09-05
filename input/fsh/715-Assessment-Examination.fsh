@@ -152,7 +152,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyHeightValue"
     * language = #text/fhirpath
-    * expression = "%ObsBodyHeightLatest.value.value"
+    * expression = "%ObsBodyHeightLatest.value.where(exists(system='http://unitsofmeasure.org' and code='cm')).value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -170,7 +170,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyWeightValue"
     * language = #text/fhirpath
-    * expression = "%ObsBodyWeightLatest.value.value"
+    * expression = "%ObsBodyWeightLatest.value.where(exists(system='http://unitsofmeasure.org' and code='kg')).value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -188,7 +188,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeadCircumferenceValue"
     * language = #text/fhirpath
-    * expression = "%ObsHeadCircumferenceLatest.value.value"
+    * expression = "%ObsHeadCircumferenceLatest.value.where(exists(system='http://unitsofmeasure.org' and code='cm')).value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -206,7 +206,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsWaistCircumferenceValue"
     * language = #text/fhirpath
-    * expression = "%ObsWaistCircumferenceLatest.value.value"
+    * expression = "%ObsWaistCircumferenceLatest.value.where(exists(system='http://unitsofmeasure.org' and code='cm')).value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -224,7 +224,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRateValue"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRateLatest.value.value"
+    * expression = "%ObsHeartRateLatest.value.where(exists(system='http://unitsofmeasure.org' and code='/min')).value"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
