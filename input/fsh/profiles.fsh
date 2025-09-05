@@ -780,523 +780,7 @@ Description: "This profile sets the minimum expectations for a Heart Rate resour
 * valueQuantity.code MS
 * valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
-/*
-Profile: SmartHealthChecksConditionPatch
-Parent: Parameters
-Id: SHCConditionPatch
-Title: "Smart Health Checks Condition Patch"
-Description: "This profile sets the expectations for a Parameters resource when used to patch Condition resources within Smart Health Checks."
 
-* parameter 1..
-* parameter ^slicing.discriminator.type = #value
-* parameter ^slicing.discriminator.path = "part"
-* parameter ^slicing.ordered = false
-* parameter ^slicing.rules = #open
-* parameter contains
-    clinicalStatus 0..1 and
-    abatementDate 0..1
-* parameter[clinicalStatus] MS
-* parameter[clinicalStatus] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].name ^short = "Parameters for clinicalStatus patching"
-* parameter[clinicalStatus].name 1.. MS
-* parameter[clinicalStatus].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].name = "operation" (exactly)
-* parameter[clinicalStatus].part ^slicing.discriminator.type = #value
-* parameter[clinicalStatus].part ^slicing.discriminator.path = "name"
-* parameter[clinicalStatus].part ^slicing.ordered = false
-* parameter[clinicalStatus].part ^slicing.rules = #open
-* parameter[clinicalStatus].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[clinicalStatus].part[type] MS
-* parameter[clinicalStatus].part[type] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type] ^short = "Patch operation to perform"
-* parameter[clinicalStatus].part[type].name 1..1 MS
-* parameter[clinicalStatus].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type].name = "type" (exactly)
-* parameter[clinicalStatus].part[type].value[x] 1..1 MS
-* parameter[clinicalStatus].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type].value[x] only code
-* parameter[clinicalStatus].part[type].value[x] = #replace (exactly)
-* parameter[clinicalStatus].part[path] MS
-* parameter[clinicalStatus].part[path] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path] ^short = "Where to perform the operation"
-* parameter[clinicalStatus].part[path].name 1..1 MS
-* parameter[clinicalStatus].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path].name = "path" (exactly)
-* parameter[clinicalStatus].part[path].value[x] 1..1 MS
-* parameter[clinicalStatus].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path].value[x] only string
-* parameter[clinicalStatus].part[path].value[x] = "Condition.clinicalStatus" (exactly)
-* parameter[clinicalStatus].part[value] MS
-* parameter[clinicalStatus].part[value] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[value] ^short = "Replacement value"
-* parameter[clinicalStatus].part[value].name 1..1 MS
-* parameter[clinicalStatus].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[value].name = "value" (exactly)
-* parameter[clinicalStatus].part[value].value[x] 1..1 MS
-* parameter[clinicalStatus].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[clinicalStatus].part[value].value[x] only CodeableConcept
-* parameter[clinicalStatus].part[value].value[x] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
-* parameter[clinicalStatus].part[value].value[x].coding 1..1 MS
-* parameter[clinicalStatus].part[value].value[x].coding insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].value[x].coding insert obligationApp (1, SHALL:populate-if-known)
-* parameter[clinicalStatus].part[pathLabel] MS
-* parameter[clinicalStatus].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[clinicalStatus].part[pathLabel].name 1..1 MS
-* parameter[clinicalStatus].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel].name = "pathLabel" (exactly)
-* parameter[clinicalStatus].part[pathLabel].value[x] 1..1 MS
-* parameter[clinicalStatus].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel].value[x] only string
-* parameter[clinicalStatus].part[pathLabel].value[x] = "Clinical status" (exactly)
-* parameter[abatementDate] MS
-* parameter[abatementDate] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate] insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].name ^short = "Parameters for abatement patching"
-* parameter[abatementDate].name 1.. MS
-* parameter[abatementDate].name insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].name insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].name = "operation" (exactly)
-* parameter[abatementDate].part ^slicing.discriminator.type = #value
-* parameter[abatementDate].part ^slicing.discriminator.path = "name"
-* parameter[abatementDate].part ^slicing.ordered = false
-* parameter[abatementDate].part ^slicing.rules = #open
-* parameter[abatementDate].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[abatementDate].part[type] MS
-* parameter[abatementDate].part[type] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[type] ^short = "Patch operation to perform"
-* parameter[abatementDate].part[type].name 1..1 MS
-* parameter[abatementDate].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[type].name = "type" (exactly)
-* parameter[abatementDate].part[type].value[x] 1..1 MS
-* parameter[abatementDate].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[type].value[x] only code
-* parameter[abatementDate].part[type].value[x] = #replace (exactly)
-* parameter[abatementDate].part[path] MS
-* parameter[abatementDate].part[path] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[path] ^short = "Where to perform the operation"
-* parameter[abatementDate].part[path].name 1..1 MS
-* parameter[abatementDate].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[path].name = "path" (exactly)
-* parameter[abatementDate].part[path].value[x] 1..1 MS
-* parameter[abatementDate].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[path].value[x] only string
-* parameter[abatementDate].part[path].value[x] = "Condition.abatement" (exactly)
-* parameter[abatementDate].part[value] MS
-* parameter[abatementDate].part[value] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[value] ^short = "Replacement value"
-* parameter[abatementDate].part[value].name 1..1 MS
-* parameter[abatementDate].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[abatementDate].part[value].name = "value" (exactly)
-* parameter[abatementDate].part[value].value[x] 1..1 MS
-* parameter[abatementDate].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[abatementDate].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[abatementDate].part[value].value[x] only dateTime
-* parameter[abatementDate].part[pathLabel] MS
-* parameter[abatementDate].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[abatementDate].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[abatementDate].part[pathLabel].name 1..1 MS
-* parameter[abatementDate].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[abatementDate].part[pathLabel].name = "pathLabel" (exactly)
-* parameter[abatementDate].part[pathLabel].value[x] 1..1 MS
-* parameter[abatementDate].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[abatementDate].part[pathLabel].value[x] only string
-* parameter[abatementDate].part[pathLabel].value[x] = "Abatement date" (exactly)
-
-Profile: SmartHealthChecksAllergyIntolerancePatch
-Parent: Parameters
-Id: SHCAllergyIntolerancePatch
-Title: "Smart Health Checks AllergyIntolerance Patch"
-Description: "This profile sets the expectations for a Parameters resource when used to patch AllergyIntolerance resources within Smart Health Checks."
-
-* parameter 1..
-* parameter ^slicing.discriminator.type = #pattern
-* parameter ^slicing.discriminator.path = "$this"
-* parameter ^slicing.ordered = false
-* parameter ^slicing.rules = #open
-* parameter contains
-    clinicalStatus 0..1 and
-    comment 0..1
-* parameter[clinicalStatus] MS
-* parameter[clinicalStatus] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].name ^short = "Parameters for clinicalStatus patching"
-* parameter[clinicalStatus].name 1.. MS
-* parameter[clinicalStatus].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].name = "operation" //(exactly)
-* parameter[clinicalStatus].part ^slicing.discriminator.type = #value
-* parameter[clinicalStatus].part ^slicing.discriminator.path = "name"
-* parameter[clinicalStatus].part ^slicing.ordered = false
-* parameter[clinicalStatus].part ^slicing.rules = #open
-* parameter[clinicalStatus].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[clinicalStatus].part[type] MS
-* parameter[clinicalStatus].part[type] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type] ^short = "Patch operation to perform"
-* parameter[clinicalStatus].part[type].name 1..1 MS
-* parameter[clinicalStatus].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type].name = "type" //(exactly)
-* parameter[clinicalStatus].part[type].value[x] 1..1 MS
-* parameter[clinicalStatus].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[type].value[x] only code
-* parameter[clinicalStatus].part[type].valueCode = #replace //(exactly)
-* parameter[clinicalStatus].part[path] MS
-* parameter[clinicalStatus].part[path] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path] ^short = "Where to perform the operation"
-* parameter[clinicalStatus].part[path].name 1..1 MS
-* parameter[clinicalStatus].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path].name = "path" //(exactly)
-* parameter[clinicalStatus].part[path].value[x] 1..1 MS
-* parameter[clinicalStatus].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[path].value[x] only string
-* parameter[clinicalStatus].part[path].valueString = "AllergyIntolerance.clinicalStatus" //(exactly)
-* parameter[clinicalStatus].part[value] MS
-* parameter[clinicalStatus].part[value] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[value] ^short = "Replacement value"
-* parameter[clinicalStatus].part[value].name 1..1 MS
-* parameter[clinicalStatus].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[clinicalStatus].part[value].name = "value" //(exactly)
-* parameter[clinicalStatus].part[value].value[x] 1..1 MS
-* parameter[clinicalStatus].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[clinicalStatus].part[value].value[x] only CodeableConcept
-* parameter[clinicalStatus].part[value].valueCodeableConcept from AllergyIntoleranceClinicalStatusMinimal (required)
-* parameter[clinicalStatus].part[value].valueCodeableConcept.coding 1..1 MS
-* parameter[clinicalStatus].part[value].valueCodeableConcept.coding insert obligationServer (0, SHALL:process)
-* parameter[clinicalStatus].part[value].valueCodeableConcept.coding insert obligationApp (1, SHALL:populate-if-known)
-* parameter[clinicalStatus].part[pathLabel] MS
-* parameter[clinicalStatus].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[clinicalStatus].part[pathLabel].name 1..1 MS
-* parameter[clinicalStatus].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel].name = "pathLabel" //(exactly)
-* parameter[clinicalStatus].part[pathLabel].value[x] 1..1 MS
-* parameter[clinicalStatus].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[clinicalStatus].part[pathLabel].value[x] only string
-* parameter[clinicalStatus].part[pathLabel].valueString = "Clinical status" //(exactly)
-* parameter[comment] MS
-* parameter[comment] insert obligationServer (0, SHALL:process)
-* parameter[comment] insert obligationApp (1, SHALL:populate)
-
-
-* parameter[comment].name ^short = "Parameters for note.text patching"
-* parameter[comment].name 1.. MS
-* parameter[comment].name insert obligationServer (0, SHALL:process)
-* parameter[comment].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].name = "operation" //(exactly)
-* parameter[comment].part ^slicing.discriminator.type = #value
-* parameter[comment].part ^slicing.discriminator.path = "name"
-* parameter[comment].part ^slicing.ordered = false
-* parameter[comment].part ^slicing.rules = #open
-* parameter[comment].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[comment].part[type] MS
-* parameter[comment].part[type] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type] ^short = "Patch operation to perform"
-* parameter[comment].part[type].name 1..1 MS
-* parameter[comment].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[comment].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type].name = "type" //(exactly)
-* parameter[comment].part[type].value[x] 1..1 MS
-* parameter[comment].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type].value[x] only code
-* parameter[comment].part[type].value[x] = #replace //(exactly)
-* parameter[comment].part[path] MS
-* parameter[comment].part[path] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path] ^short = "Where to perform the operation"
-* parameter[comment].part[path].name 1..1 MS
-* parameter[comment].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[comment].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path].name = "path" //(exactly)
-* parameter[comment].part[path].value[x] 1..1 MS
-* parameter[comment].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path].value[x] only string
-* parameter[comment].part[path].value[x] = "AllergyIntolerance.note[0].text" //(exactly)
-* parameter[comment].part[value] MS
-* parameter[comment].part[value] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[value] ^short = "Replacement value"
-* parameter[comment].part[value].name 1..1 MS
-* parameter[comment].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[comment].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[value].name = "value" //(exactly)
-* parameter[comment].part[value].value[x] 1..1 MS
-* parameter[comment].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[comment].part[value].value[x] only markdown
-* parameter[comment].part[pathLabel] MS
-* parameter[comment].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[comment].part[pathLabel].name 1..1 MS
-* parameter[comment].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel].name = "pathLabel" //(exactly)
-* parameter[comment].part[pathLabel].value[x] 1..1 MS
-* parameter[comment].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel].value[x] only string
-* parameter[comment].part[pathLabel].value[x] = "Comment" //(exactly)
-
-
-Profile: SmartHealthChecksMedicationStatementPatch
-Parent: Parameters
-Id: SHCMedicationStatementPatch
-Title: "Smart Health Checks MedicationStatement Patch"
-Description: "This profile sets the expectations for a Parameters resource when used to patch MedicationStatement resources within Smart Health Checks."
-
-* parameter 1..
-* parameter ^slicing.discriminator.type = #value
-* parameter ^slicing.discriminator.path = "part"
-* parameter ^slicing.ordered = false
-* parameter ^slicing.rules = #open
-* parameter contains
-    status 0..1 and
-    comment 0..1 and
-    dosage 0..1
-* parameter[status] MS
-* parameter[status] insert obligationServer (0, SHALL:process)
-* parameter[status] insert obligationApp (1, SHALL:populate)
-* parameter[status].name ^short = "Parameters for status patching"
-* parameter[status].name 1.. MS
-* parameter[status].name insert obligationServer (0, SHALL:process)
-* parameter[status].name insert obligationApp (1, SHALL:populate)
-* parameter[status].name = "operation" (exactly)
-* parameter[status].part ^slicing.discriminator.type = #value
-* parameter[status].part ^slicing.discriminator.path = "name"
-* parameter[status].part ^slicing.ordered = false
-* parameter[status].part ^slicing.rules = #open
-* parameter[status].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[status].part[type] MS
-* parameter[status].part[type] insert obligationServer (0, SHALL:process)
-* parameter[status].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[status].part[type] ^short = "Patch operation to perform"
-* parameter[status].part[type].name 1..1 MS
-* parameter[status].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[status].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[status].part[type].name = "type" (exactly)
-* parameter[status].part[type].value[x] 1..1 MS
-* parameter[status].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[status].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[status].part[type].value[x] only code
-* parameter[status].part[type].value[x] = #replace (exactly)
-* parameter[status].part[path] MS
-* parameter[status].part[path] insert obligationServer (0, SHALL:process)
-* parameter[status].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[status].part[path] ^short = "Where to perform the operation"
-* parameter[status].part[path].name 1..1 MS
-* parameter[status].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[status].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[status].part[path].name = "path" (exactly)
-* parameter[status].part[path].value[x] 1..1 MS
-* parameter[status].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[status].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[status].part[path].value[x] only string
-* parameter[status].part[path].value[x] = "MedicationStatement.status" (exactly)
-* parameter[status].part[value] MS
-* parameter[status].part[value] insert obligationServer (0, SHALL:process)
-* parameter[status].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[status].part[value] ^short = "Replacement value"
-* parameter[status].part[value].name 1..1 MS
-* parameter[status].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[status].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[status].part[value].name = "value" (exactly)
-* parameter[status].part[value].value[x] 1..1 MS
-* parameter[status].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[status].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[status].part[value].value[x] only CodeableConcept
-* parameter[status].part[value].value[x] from MedicationStatementStatusLimited (required)
-* parameter[status].part[value].value[x].coding 1..1 MS
-* parameter[status].part[value].value[x].coding insert obligationServer (0, SHALL:process)
-* parameter[status].part[value].value[x].coding insert obligationApp (1, SHALL:populate-if-known)
-* parameter[status].part[pathLabel] MS
-* parameter[status].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[status].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[status].part[pathLabel].name 1..1 MS
-* parameter[status].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[status].part[pathLabel].name = "pathLabel" (exactly)
-* parameter[status].part[pathLabel].value[x] 1..1 MS
-* parameter[status].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[status].part[pathLabel].value[x] only string
-* parameter[status].part[pathLabel].value[x] = "Status" (exactly)
-* parameter[comment] MS
-* parameter[comment] insert obligationServer (0, SHALL:process)
-* parameter[comment] insert obligationApp (1, SHALL:populate)
-* parameter[comment].name ^short = "Parameters for note.text patching"
-* parameter[comment].name 1.. MS
-* parameter[comment].name insert obligationServer (0, SHALL:process)
-* parameter[comment].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].name = "operation" (exactly)
-* parameter[comment].part ^slicing.discriminator.type = #value
-* parameter[comment].part ^slicing.discriminator.path = "name"
-* parameter[comment].part ^slicing.ordered = false
-* parameter[comment].part ^slicing.rules = #open
-* parameter[comment].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[comment].part[type] MS
-* parameter[comment].part[type] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type] ^short = "Patch operation to perform"
-* parameter[comment].part[type].name 1..1 MS
-* parameter[comment].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[comment].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type].name = "type" (exactly)
-* parameter[comment].part[type].value[x] 1..1 MS
-* parameter[comment].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[type].value[x] only code
-* parameter[comment].part[type].value[x] = #replace (exactly)
-* parameter[comment].part[path] MS
-* parameter[comment].part[path] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path] ^short = "Where to perform the operation"
-* parameter[comment].part[path].name 1..1 MS
-* parameter[comment].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[comment].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path].name = "path" (exactly)
-* parameter[comment].part[path].value[x] 1..1 MS
-* parameter[comment].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[path].value[x] only string
-* parameter[comment].part[path].value[x] = "MedicationStatement.note[0].text" (exactly)
-* parameter[comment].part[value] MS
-* parameter[comment].part[value] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[value] ^short = "Replacement value"
-* parameter[comment].part[value].name 1..1 MS
-* parameter[comment].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[comment].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[comment].part[value].name = "value" (exactly)
-* parameter[comment].part[value].value[x] 1..1 MS
-* parameter[comment].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[comment].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[comment].part[value].value[x] only markdown
-* parameter[comment].part[pathLabel] MS
-* parameter[comment].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[comment].part[pathLabel].name 1..1 MS
-* parameter[comment].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel].name = "pathLabel" (exactly)
-* parameter[comment].part[pathLabel].value[x] 1..1 MS
-* parameter[comment].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[comment].part[pathLabel].value[x] only string
-* parameter[comment].part[pathLabel].value[x] = "Comment" (exactly)
-* parameter[dosage] MS
-* parameter[dosage] insert obligationServer (0, SHALL:process)
-* parameter[dosage] insert obligationApp (1, SHALL:populate)
-* parameter[dosage].name ^short = "Parameters for dosage.text patching"
-* parameter[dosage].name 1.. MS
-* parameter[dosage].name insert obligationServer (0, SHALL:process)
-* parameter[dosage].name insert obligationApp (1, SHALL:populate)
-* parameter[dosage].name = "operation" (exactly)
-* parameter[dosage].part ^slicing.discriminator.type = #value
-* parameter[dosage].part ^slicing.discriminator.path = "name"
-* parameter[dosage].part ^slicing.ordered = false
-* parameter[dosage].part ^slicing.rules = #open
-* parameter[dosage].part contains
-    type 1..1 and
-    path 1..1 and
-    value 1..1 and
-    pathLabel 0..1
-* parameter[dosage].part[type] MS
-* parameter[dosage].part[type] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[type] insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[type] ^short = "Patch operation to perform"
-* parameter[dosage].part[type].name 1..1 MS
-* parameter[dosage].part[type].name insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[type].name insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[type].name = "type" (exactly)
-* parameter[dosage].part[type].value[x] 1..1 MS
-* parameter[dosage].part[type].value[x] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[type].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[type].value[x] only code
-* parameter[dosage].part[type].value[x] = #replace (exactly)
-* parameter[dosage].part[path] MS
-* parameter[dosage].part[path] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[path] insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[path] ^short = "Where to perform the operation"
-* parameter[dosage].part[path].name 1..1 MS
-* parameter[dosage].part[path].name insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[path].name insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[path].name = "path" (exactly)
-* parameter[dosage].part[path].value[x] 1..1 MS
-* parameter[dosage].part[path].value[x] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[path].value[x] insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[path].value[x] only string
-* parameter[dosage].part[path].value[x] = "MedicationStatement.dosage[0].text" (exactly)
-* parameter[dosage].part[value] MS
-* parameter[dosage].part[value] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[value] insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[value] ^short = "Replacement value"
-* parameter[dosage].part[value].name 1..1 MS
-* parameter[dosage].part[value].name insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[value].name insert obligationApp (1, SHALL:populate)
-* parameter[dosage].part[value].name = "value" (exactly)
-* parameter[dosage].part[value].value[x] 1..1 MS
-* parameter[dosage].part[value].value[x] insert obligationServer (0, SHALL:process)
-* parameter[dosage].part[value].value[x] insert obligationApp (1, SHALL:populate-if-known)
-* parameter[dosage].part[value].value[x] only string
-* parameter[dosage].part[pathLabel] MS
-* parameter[dosage].part[pathLabel] insert obligationApp (0, SHALL:populate)
-* parameter[dosage].part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
-* parameter[dosage].part[pathLabel].name 1..1 MS
-* parameter[dosage].part[pathLabel].name insert obligationApp (0, SHALL:populate)
-* parameter[dosage].part[pathLabel].name = "pathLabel" (exactly)
-* parameter[dosage].part[pathLabel].value[x] 1..1 MS
-* parameter[dosage].part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
-* parameter[dosage].part[pathLabel].value[x] only string
-* parameter[dosage].part[pathLabel].value[x] = "Dosage" (exactly)
-*/
 
 
 Invariant: shc-patch-01
@@ -1323,9 +807,9 @@ Title: "Smart Health Checks Patch"
 Description: "This profile sets the expectations for a Parameters resource when used to patch resources within Smart Health Checks."
 
 * . ^short = "Parameters for patching elements supported in Smart Health Checks"
-* obeys shc-patch-01
-* obeys shc-patch-02
-* obeys shc-patch-03
+//* obeys shc-patch-01
+//* obeys shc-patch-02
+//* obeys shc-patch-03
 * parameter 1..
 * parameter MS
 * parameter insert obligationServer (0, SHALL:process)
@@ -1379,7 +863,12 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[value].name insert obligationApp (1, SHALL:populate)
 * parameter.part[value].name = "value" (exactly)
 * parameter.part[value].value[x] 1..
-* parameter.part[value].value[x] only code or CodeableConcept or dateTime or string or markdown
+* parameter.part[value].value[x] only 
+    code or 
+    CodeableConcept or 
+    dateTime or 
+    string or 
+    markdown
 * parameter.part[value].value[x] ^condition[+] = "shc-patch-01"
 * parameter.part[value].value[x] ^condition[+] = "shc-patch-02"
 * parameter.part[value].value[x] ^condition[+] = "shc-patch-03"
@@ -1440,6 +929,491 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
 * parameter.part[pathLabel].value[x] only string
 
+
+Profile: SmartHealthChecksPatch2
+Parent: Parameters
+Id: SHCPatch2
+Title: "Smart Health Checks Patch 2"
+Description: "This profile sets the expectations for a Parameters resource when used to patch resources within Smart Health Checks."
+
+//* . ^short = "Parameters for patching elements supported in Smart Health Checks"
+//* obeys shc-patch-01
+//* obeys shc-patch-02
+//* obeys shc-patch-03
+* parameter 1..
+
+* parameter MS
+* parameter insert obligationServer (0, SHALL:process)
+* parameter insert obligationApp (1, SHALL:populate)
+* parameter.name ^short = "Parameters for element patching"
+* parameter.name insert obligationServer (0, SHALL:process)
+* parameter.name insert obligationApp (1, SHALL:populate)
+* parameter.name = "operation" (exactly)
+
+* parameter.part ^slicing.discriminator.type = #value
+* parameter.part ^slicing.discriminator.path = "name"
+* parameter.part ^slicing.ordered = false
+* parameter.part ^slicing.rules = #open
+* parameter.part contains
+    type 1..1 and
+    path 1..1 and
+    value 1..1 and 
+    pathLabel 0..1
+* parameter.part[type] MS
+* parameter.part[type] insert obligationServer (0, SHALL:process)
+* parameter.part[type] insert obligationApp (1, SHALL:populate)
+* parameter.part[type] ^short = "Patch operation to perform"
+* parameter.part[type].name MS
+* parameter.part[type].name insert obligationServer (0, SHALL:process)
+* parameter.part[type].name insert obligationApp (1, SHALL:populate)
+* parameter.part[type].name = "type" (exactly)
+* parameter.part[type].value[x] 1.. MS
+* parameter.part[type].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[type].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[type].value[x] only code
+* parameter.part[type].value[x] = #replace (exactly)
+* parameter.part[path] MS
+* parameter.part[path] insert obligationServer (0, SHALL:process)
+* parameter.part[path] insert obligationApp (1, SHALL:populate)
+* parameter.part[path] ^short = "Where to perform the operation"
+* parameter.part[path].name MS
+* parameter.part[path].name insert obligationServer (0, SHALL:process)
+* parameter.part[path].name insert obligationApp (1, SHALL:populate)
+* parameter.part[path].name = "path" (exactly)
+* parameter.part[path].value[x] 1.. MS
+* parameter.part[path].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[path].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[path].value[x] only string
+* parameter.part[path].valueString from SHCPatchPath (required)
+* parameter.part[value] MS
+* parameter.part[value] insert obligationServer (0, SHALL:process)
+* parameter.part[value] insert obligationApp (1, SHALL:populate)
+* parameter.part[value] ^short = "Replacement value"
+* parameter.part[value].name MS
+* parameter.part[value].name insert obligationServer (0, SHALL:process)
+* parameter.part[value].name insert obligationApp (1, SHALL:populate)
+* parameter.part[value].name = "value" (exactly)
+* parameter.part[value].value[x] 1..
+* parameter.part[value].value[x] only 
+  //  code or 
+    CodeableConcept or 
+    dateTime or 
+    string or 
+    markdown
+//* parameter.part[value].valueCode MS
+//* parameter.part[value].valueCode insert obligationServer (0, SHALL:process)
+//* parameter.part[value].valueCode insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueCode from MedicationStatementStatusLimited (required)
+* parameter.part[value].valueCodeableConcept MS
+* parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding 1..1
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.type = #value
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* parameter.part[value].valueCodeableConcept.coding ^slicing.ordered = false
+* parameter.part[value].valueCodeableConcept.coding ^slicing.rules = #open
+* parameter.part[value].valueCodeableConcept.coding contains
+    AllergyIntoleranceClinicalStatusCodes 0..1 and
+    ConditionClinicalStatusCodes 0..1
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueDateTime MS
+* parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueString MS
+* parameter.part[value].valueString insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueString insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueMarkdown MS
+* parameter.part[value].valueMarkdown insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueMarkdown insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[pathLabel] MS
+* parameter.part[pathLabel] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
+* parameter.part[pathLabel].name MS
+* parameter.part[pathLabel].name insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].name = "pathLabel" (exactly)
+* parameter.part[pathLabel].value[x] 1.. MS
+* parameter.part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].value[x] only string
+
+/*
+* parameter.part ^slicing.discriminator.type = #value
+* parameter.part ^slicing.discriminator.path = "name"
+* parameter.part ^slicing.ordered = false
+* parameter.part ^slicing.rules = #open
+* parameter.part contains
+    type 1..1 and
+    path 1..1 and
+    value 1..1 and
+    pathLabel 0..1
+* parameter.part[type] MS
+* parameter.part[type] insert obligationServer (0, SHALL:process)
+* parameter.part[type] insert obligationApp (1, SHALL:populate)
+* parameter.part[type] ^short = "Patch operation to perform"
+* parameter.part[type].name MS
+* parameter.part[type].name insert obligationServer (0, SHALL:process)
+* parameter.part[type].name insert obligationApp (1, SHALL:populate)
+* parameter.part[type].name = "type" (exactly)
+* parameter.part[type].value[x] 1.. MS
+* parameter.part[type].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[type].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[type].value[x] only code
+* parameter.part[type].value[x] = #replace (exactly)
+* parameter.part[path] MS
+* parameter.part[path] insert obligationServer (0, SHALL:process)
+* parameter.part[path] insert obligationApp (1, SHALL:populate)
+* parameter.part[path] ^short = "Where to perform the operation"
+* parameter.part[path].name MS
+* parameter.part[path].name insert obligationServer (0, SHALL:process)
+* parameter.part[path].name insert obligationApp (1, SHALL:populate)
+* parameter.part[path].name = "path" (exactly)
+* parameter.part[path].value[x] 1.. MS
+* parameter.part[path].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[path].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[path].value[x] only string
+* parameter.part[path].valueString from SHCPatchPath (required)
+* parameter.part[value] MS
+* parameter.part[value] insert obligationServer (0, SHALL:process)
+* parameter.part[value] insert obligationApp (1, SHALL:populate)
+* parameter.part[value] ^short = "Replacement value"
+* parameter.part[value].name MS
+* parameter.part[value].name insert obligationServer (0, SHALL:process)
+* parameter.part[value].name insert obligationApp (1, SHALL:populate)
+* parameter.part[value].name = "value" (exactly)
+* parameter.part[value].value[x] 1..
+* parameter.part[value].value[x] only 
+    code or 
+    CodeableConcept or 
+    dateTime or 
+    string or 
+    markdown
+    */
+/*
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-01"
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-02"
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-03"
+
+* parameter.part[value].value[x] ^slicing.discriminator.type = #type
+* parameter.part[value].value[x] ^slicing.discriminator.path = "$this"
+* parameter.part[value].value[x] ^slicing.ordered = false
+* parameter.part[value].value[x] ^slicing.rules = #open
+* parameter.part[value].value[x] contains
+    code 0..1 and
+    CodeableConcept 0..1 and
+    dateTime 0..1 and
+    string 0..1 and
+    markdown 0..1
+* parameter.part[value].valueCode MS
+* parameter.part[value].valueCode insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCode insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueCode only code
+* parameter.part[value].valueCode from MedicationStatementStatusLimited (required)
+* parameter.part[value].valueCodeableConcept MS
+* parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueCodeableConcept only CodeableConcept
+* parameter.part[value].valueCodeableConcept.coding 1..1
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.type = #value
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* parameter.part[value].valueCodeableConcept.coding ^slicing.ordered = false
+* parameter.part[value].valueCodeableConcept.coding ^slicing.rules = #open
+* parameter.part[value].valueCodeableConcept.coding contains
+    AllergyIntoleranceClinicalStatusCodes 0..1 and
+    ConditionClinicalStatusCodes 0..1
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueDateTime MS
+* parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueDateTime only dateTime
+* parameter.part[value].valueString MS
+* parameter.part[value].valueString insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueString insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueString only string
+* parameter.part[value].valueMarkdown MS
+* parameter.part[value].valueMarkdown insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueMarkdown insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueMarkdown only markdown
+* parameter.part[pathLabel] MS
+* parameter.part[pathLabel] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
+* parameter.part[pathLabel].name MS
+* parameter.part[pathLabel].name insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].name = "pathLabel" (exactly)
+* parameter.part[pathLabel].value[x] 1.. MS
+* parameter.part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].value[x] only string
+*/
+
+Profile: SmartHealthChecksPatch3
+Parent: Parameters
+Id: SHCPatch3
+Title: "Smart Health Checks Patch 3"
+Description: "This profile sets the expectations for a Parameters resource when used to patch resources within Smart Health Checks."
+
+//* . ^short = "Parameters for patching elements supported in Smart Health Checks"
+//* obeys shc-patch-01
+//* obeys shc-patch-02
+//* obeys shc-patch-03
+* parameter 1..
+
+* parameter MS
+// * parameter insert obligationServer (0, SHALL:process)
+// * parameter insert obligationApp (1, SHALL:populate)
+//* parameter.name ^short = "Parameters for element patching"
+// * parameter.name insert obligationServer (0, SHALL:process)
+// * parameter.name insert obligationApp (1, SHALL:populate)
+* parameter.name = "operation" (exactly)
+
+* parameter.part ^slicing.discriminator.type = #value
+* parameter.part ^slicing.discriminator.path = "name"
+* parameter.part ^slicing.ordered = false
+* parameter.part ^slicing.rules = #open
+* parameter.part contains
+    type 1..1 and
+    path 1..1 and
+    value 1..1
+* parameter.part[type] MS
+// * parameter.part[type] insert obligationServer (0, SHALL:process)
+// * parameter.part[type] insert obligationApp (1, SHALL:populate)
+//* parameter.part[type] ^short = "Patch operation to perform"
+* parameter.part[type].name MS
+// * parameter.part[type].name insert obligationServer (0, SHALL:process)
+// * parameter.part[type].name insert obligationApp (1, SHALL:populate)
+* parameter.part[type].name = "type" (exactly)
+* parameter.part[type].value[x] 1.. MS
+// * parameter.part[type].value[x] insert obligationServer (0, SHALL:process)
+// * parameter.part[type].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[type].value[x] only code
+* parameter.part[type].value[x] = #replace (exactly)
+* parameter.part[path] MS
+// * parameter.part[path] insert obligationServer (0, SHALL:process)
+// * parameter.part[path] insert obligationApp (1, SHALL:populate)
+//* parameter.part[path] ^short = "Where to perform the operation"
+* parameter.part[path].name MS
+// * parameter.part[path].name insert obligationServer (0, SHALL:process)
+// * parameter.part[path].name insert obligationApp (1, SHALL:populate)
+* parameter.part[path].name = "path" (exactly)
+* parameter.part[path].value[x] 1.. MS
+// * parameter.part[path].value[x] insert obligationServer (0, SHALL:process)
+// * parameter.part[path].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[path].value[x] only string
+//* parameter.part[path].valueString from SHCPatchPath (required)
+* parameter.part[value] MS
+// * parameter.part[value] insert obligationServer (0, SHALL:process)
+// * parameter.part[value] insert obligationApp (1, SHALL:populate)
+//* parameter.part[value] ^short = "Replacement value"
+* parameter.part[value].name MS
+// * parameter.part[value].name insert obligationServer (0, SHALL:process)
+// * parameter.part[value].name insert obligationApp (1, SHALL:populate)
+* parameter.part[value].name = "value" (exactly)
+* parameter.part[value].value[x] 1..
+* parameter.part[value].value[x] only 
+    code or 
+//    CodeableConcept or 
+//    dateTime or 
+    string 
+//    markdown
+* parameter.part[value].valueCode MS
+// * parameter.part[value].valueCode insert obligationServer (0, SHALL:process)
+// * parameter.part[value].valueCode insert obligationApp (1, SHALL:populate-if-known)
+/*
+* parameter.part[value].valueCode from MedicationStatementStatusLimited (required)
+* parameter.part[value].valueCodeableConcept MS
+* parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding 1..1
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.type = #value
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* parameter.part[value].valueCodeableConcept.coding ^slicing.ordered = false
+* parameter.part[value].valueCodeableConcept.coding ^slicing.rules = #open
+* parameter.part[value].valueCodeableConcept.coding contains
+    AllergyIntoleranceClinicalStatusCodes 0..1 and
+    ConditionClinicalStatusCodes 0..1
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueDateTime MS
+* parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)
+*/
+* parameter.part[value].valueString MS
+// * parameter.part[value].valueString insert obligationServer (0, SHALL:process)
+// * parameter.part[value].valueString insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueMarkdown MS
+//* parameter.part[value].valueMarkdown insert obligationServer (0, SHALL:process)
+//* parameter.part[value].valueMarkdown insert obligationApp (1, SHALL:populate-if-known)
+
+/*
+* parameter.part ^slicing.discriminator.type = #value
+* parameter.part ^slicing.discriminator.path = "name"
+* parameter.part ^slicing.ordered = false
+* parameter.part ^slicing.rules = #open
+* parameter.part contains
+    type 1..1 and
+    path 1..1 and
+    value 1..1 and
+    pathLabel 0..1
+* parameter.part[type] MS
+* parameter.part[type] insert obligationServer (0, SHALL:process)
+* parameter.part[type] insert obligationApp (1, SHALL:populate)
+* parameter.part[type] ^short = "Patch operation to perform"
+* parameter.part[type].name MS
+* parameter.part[type].name insert obligationServer (0, SHALL:process)
+* parameter.part[type].name insert obligationApp (1, SHALL:populate)
+* parameter.part[type].name = "type" (exactly)
+* parameter.part[type].value[x] 1.. MS
+* parameter.part[type].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[type].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[type].value[x] only code
+* parameter.part[type].value[x] = #replace (exactly)
+* parameter.part[path] MS
+* parameter.part[path] insert obligationServer (0, SHALL:process)
+* parameter.part[path] insert obligationApp (1, SHALL:populate)
+* parameter.part[path] ^short = "Where to perform the operation"
+* parameter.part[path].name MS
+* parameter.part[path].name insert obligationServer (0, SHALL:process)
+* parameter.part[path].name insert obligationApp (1, SHALL:populate)
+* parameter.part[path].name = "path" (exactly)
+* parameter.part[path].value[x] 1.. MS
+* parameter.part[path].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[path].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[path].value[x] only string
+* parameter.part[path].valueString from SHCPatchPath (required)
+* parameter.part[value] MS
+* parameter.part[value] insert obligationServer (0, SHALL:process)
+* parameter.part[value] insert obligationApp (1, SHALL:populate)
+* parameter.part[value] ^short = "Replacement value"
+* parameter.part[value].name MS
+* parameter.part[value].name insert obligationServer (0, SHALL:process)
+* parameter.part[value].name insert obligationApp (1, SHALL:populate)
+* parameter.part[value].name = "value" (exactly)
+* parameter.part[value].value[x] 1..
+* parameter.part[value].value[x] only 
+    code or 
+    CodeableConcept or 
+    dateTime or 
+    string or 
+    markdown
+    */
+/*
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-01"
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-02"
+* parameter.part[value].value[x] ^condition[+] = "shc-patch-03"
+
+* parameter.part[value].value[x] ^slicing.discriminator.type = #type
+* parameter.part[value].value[x] ^slicing.discriminator.path = "$this"
+* parameter.part[value].value[x] ^slicing.ordered = false
+* parameter.part[value].value[x] ^slicing.rules = #open
+* parameter.part[value].value[x] contains
+    code 0..1 and
+    CodeableConcept 0..1 and
+    dateTime 0..1 and
+    string 0..1 and
+    markdown 0..1
+* parameter.part[value].valueCode MS
+* parameter.part[value].valueCode insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCode insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueCode only code
+* parameter.part[value].valueCode from MedicationStatementStatusLimited (required)
+* parameter.part[value].valueCodeableConcept MS
+* parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueCodeableConcept only CodeableConcept
+* parameter.part[value].valueCodeableConcept.coding 1..1
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.type = #value
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* parameter.part[value].valueCodeableConcept.coding ^slicing.ordered = false
+* parameter.part[value].valueCodeableConcept.coding ^slicing.rules = #open
+* parameter.part[value].valueCodeableConcept.coding contains
+    AllergyIntoleranceClinicalStatusCodes 0..1 and
+    ConditionClinicalStatusCodes 0..1
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueDateTime MS
+* parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueDateTime only dateTime
+* parameter.part[value].valueString MS
+* parameter.part[value].valueString insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueString insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueString only string
+* parameter.part[value].valueMarkdown MS
+* parameter.part[value].valueMarkdown insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueMarkdown insert obligationApp (1, SHALL:populate-if-known)
+//* parameter.part[value].valueMarkdown only markdown
+* parameter.part[pathLabel] MS
+* parameter.part[pathLabel] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
+* parameter.part[pathLabel].name MS
+* parameter.part[pathLabel].name insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].name = "pathLabel" (exactly)
+* parameter.part[pathLabel].value[x] 1.. MS
+* parameter.part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
+* parameter.part[pathLabel].value[x] only string
+*/
+
+Profile: SmartHealthChecksPatch4
+Parent: Parameters
+Id: SHCPatch4
+Title: "Smart Health Checks Patch 4"
+Description: "This profile sets the expectations for a Parameters resource when used to patch resources within Smart Health Checks."
+
+* parameter 1..
+* parameter MS
+* parameter.name = "operation" (exactly)
+* parameter.part ^slicing.discriminator.type = #value
+* parameter.part ^slicing.discriminator.path = "name"
+* parameter.part ^slicing.ordered = false
+* parameter.part ^slicing.rules = #open
+* parameter.part contains
+    type 1..1 and
+    path 1..1 and
+    value 1..1
+* parameter.part[type] MS
+* parameter.part[type].name MS
+* parameter.part[type].name = "type" (exactly)
+* parameter.part[type].value[x] 1.. MS
+* parameter.part[type].value[x] only code
+* parameter.part[type].value[x] = #replace (exactly)
+* parameter.part[path] MS
+* parameter.part[path].name MS
+* parameter.part[path].name = "path" (exactly)
+* parameter.part[path].value[x] 1.. MS
+* parameter.part[path].value[x] only string
+* parameter.part[value] MS
+* parameter.part[value].name MS
+* parameter.part[value].name = "value" (exactly)
+* parameter.part[value].value[x] 1..
+* parameter.part[value].value[x] only 
+    code or 
+    string 
+//* parameter.part[value].valueCode MS
+//* parameter.part[value].valueString MS
+
 Profile: SmartHealthChecksExtractBundle
 Parent: Bundle
 Id: SHCExtractBundle
@@ -1451,12 +1425,13 @@ Description: "This profile sets the expectations for a Bundle resource when used
 * type insert obligationApp (1, SHALL:populate)
 * type = #transaction (exactly)
 * timestamp 1.. MS
-* timestamp insert obligationApp (0, SHALL:populate)
+* timestamp insert obligationServer (0, SHALL:process)
+* timestamp insert obligationApp (1, SHALL:populate)
 * entry 1..
 * entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "request.method"
 * entry ^slicing.ordered = false
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry contains
     post 0..* and
     patch 0..*

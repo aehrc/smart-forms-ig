@@ -1,0 +1,28 @@
+{
+    "resourceType": "Parameters",
+    "id": "SHCPatchMedicationStatement4",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch4"
+        ]
+    },
+    "parameter": [
+        {
+            "name": "operation",
+            "part": [
+                {
+                    "name": "type",
+                    "valueCode": "replace"
+                },
+                {
+                    "name": "path",
+                    "valueString": "MedicationStatement.status"
+                },
+                {
+                    "name": "value",
+                    "valueCode": "completed"
+                }
+            ]
+        }
+    ]
+}
