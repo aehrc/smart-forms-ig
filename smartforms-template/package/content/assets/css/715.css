@@ -46,5 +46,13 @@ var(--publish-box-border); */
   
 }
 
-
+  th, td {
+  	padding: 5px;
+  }
+  tr {
+    border-bottom: 0.5px solid #dddddd;
+  }
+  th {
+    background-color: #eeeeee;
+  }
   
