@@ -3840,7 +3840,7 @@
                     "valueExpression": {
                         "name": "ObsBodyHeightValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeightLatest.value.value"
+                        "expression": "%ObsBodyHeightLatest.value.where(exists(system='http://unitsofmeasure.org' and code='cm')).value"
                     }
                 },
                 {
@@ -3864,7 +3864,7 @@
                     "valueExpression": {
                         "name": "ObsBodyWeightValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyWeightLatest.value.value"
+                        "expression": "%ObsBodyWeightLatest.value.where(exists(system='http://unitsofmeasure.org' and code='kg')).value"
                     }
                 },
                 {
@@ -3888,7 +3888,7 @@
                     "valueExpression": {
                         "name": "ObsHeadCircumferenceValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeadCircumferenceLatest.value.value"
+                        "expression": "%ObsHeadCircumferenceLatest.value.where(exists(system='http://unitsofmeasure.org' and code='cm')).value"
                     }
                 },
                 {
@@ -3912,7 +3912,7 @@
                     "valueExpression": {
                         "name": "ObsWaistCircumferenceValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsWaistCircumferenceLatest.value.value"
+                        "expression": "%ObsWaistCircumferenceLatest.value.where(exists(system='http://unitsofmeasure.org' and code='cm')).value"
                     }
                 },
                 {
@@ -3936,7 +3936,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRateValue",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRateLatest.value.value"
+                        "expression": "%ObsHeartRateLatest.value.where(exists(system='http://unitsofmeasure.org' and code='/min')).value"
                     }
                 },
                 {
@@ -5332,7 +5332,7 @@
                                     ],
                                     "linkId": "2e8437cd-5ea0-4d44-8ab2-d2aa9ef18ba7",
                                     "definition": "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line",
-                                    "text": "Address",
+                                    "text": "Street address",
                                     "type": "string",
                                     "repeats": false
                                 },
@@ -12607,6 +12607,54 @@
                                                 {
                                                     "extension": [
                                                         {
+                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%ObsTobaccoSmokingStatusValue"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                            "valueBoolean": true
+                                                        },
+                                                        {
+                                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                                            "valueCodeableConcept": {
+                                                                "coding": [
+                                                                    {
+                                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                                                        "code": "drop-down"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "linkId": "substanceuse-smoking-smokingstatus-group-laststatusvalue",
+                                                    "type": "choice",
+                                                    "repeats": false,
+                                                    "answerValueSet": "#TobaccoUseStatus-1"
+                                                },
+                                                {
+                                                    "extension": [
+                                                        {
+                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%ObsTobaccoSmokingStatusLatest.effective.toDate()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                            "valueBoolean": true
+                                                        }
+                                                    ],
+                                                    "linkId": "substanceuse-smoking-smokingstatus-group-laststatusdate",
+                                                    "type": "date",
+                                                    "repeats": false
+                                                },
+                                                {
+                                                    "extension": [
+                                                        {
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                                                             "extension": [
                                                                 {
@@ -15717,6 +15765,49 @@
                                         {
                                             "extension": [
                                                 {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBodyHeightValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "cm"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-lengthheight-lastresult",
+                                            "type": "decimal",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBodyHeightLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-lengthheight-lastdate",
+                                            "type": "date",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                                                     "extension": [
                                                         {
@@ -15815,6 +15906,49 @@
                                         {
                                             "extension": [
                                                 {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBodyHeightValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "cm"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-height-lastresult",
+                                            "type": "decimal",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBodyHeightLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-height-lastdate",
+                                            "type": "date",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                                                     "extension": [
                                                         {
@@ -15900,6 +16034,49 @@
                                                 ]
                                             },
                                             "type": "display"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBodyWeightValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "kg"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-weight-lastresult",
+                                            "type": "decimal",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBodyWeightLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-weight-lastdate",
+                                            "type": "date",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -16002,6 +16179,31 @@
                                         {
                                             "extension": [
                                                 {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "(%ObsBodyWeightValue/((%ObsBodyHeightValue/100).power(2))).round(1)"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "kg/m2"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-bmi-lastresult",
+                                            "type": "decimal",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                                     "valueExpression": {
                                                         "description": "BMI calculation",
@@ -16079,6 +16281,49 @@
                                                 ]
                                             },
                                             "type": "display"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsHeadCircumferenceValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "cm"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-headcircumference-lastresult",
+                                            "type": "decimal",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsHeadCircumferenceLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-headcircumference-lastdate",
+                                            "type": "date",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -16181,6 +16426,49 @@
                                         {
                                             "extension": [
                                                 {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsWaistCircumferenceValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "cm"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-waistcircumference-lastresult",
+                                            "type": "decimal",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsWaistCircumferenceLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-waistcircumference-lastdate",
+                                            "type": "date",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
                                                     "extension": [
                                                         {
@@ -16259,6 +16547,49 @@
                                                 ]
                                             },
                                             "type": "display"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsHeartRateValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "/min"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "obs-heartrate-lastresult",
+                                            "type": "integer",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsHeartRateLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-heartrate-lastdate",
+                                            "type": "date",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -16348,6 +16679,43 @@
                                                 ]
                                             },
                                             "type": "display"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsHeartRhythmValue"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-heartrhythm-lastresult",
+                                            "type": "choice",
+                                            "repeats": false,
+                                            "answerValueSet": "#heart-rhythm-1"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsHeartRhythmLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "obs-heartrhythm-lastdate",
+                                            "type": "date",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -16458,6 +16826,74 @@
                                                 ]
                                             },
                                             "type": "display"
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value.round(0)"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "mm[Hg]"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "bp-lastbp-systolic",
+                                            "type": "integer",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8462-4')).value.value.round(0)"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                                                    "valueCoding": {
+                                                        "system": "http://unitsofmeasure.org",
+                                                        "code": "mm[Hg]"
+                                                    }
+                                                }
+                                            ],
+                                            "linkId": "bp-lastbp-diastolic",
+                                            "type": "integer",
+                                            "repeats": false
+                                        },
+                                        {
+                                            "extension": [
+                                                {
+                                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "%ObsBloodPressureLatest.effective.toDate()"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                                                    "valueBoolean": true
+                                                }
+                                            ],
+                                            "linkId": "bp-lastbp-date",
+                                            "type": "date",
+                                            "repeats": false
                                         },
                                         {
                                             "extension": [
@@ -16764,6 +17200,10 @@
                                                 "language": "text/fhirpath",
                                                 "expression": "iif(%CVDRiskResultValue.exists() and %CVDRiskResultDateFormatted.exists(), %CVDRiskResultValue + ' ( ' + %CVDRiskResultDateFormatted + ' )', 'Not available')"
                                             }
+                                        },
+                                        {
+                                            "url": "https://smartforms.csiro.au/ig/StructureDefinition/questionnaire-initialExpression-repopulatable",
+                                            "valueCode": "manual"
                                         }
                                     ],
                                     "linkId": "cvdrisk-latestresult",
