@@ -372,6 +372,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
       * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeightValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "obs-lengthheight-lastresult"
+        * type = #decimal
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeightLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-lengthheight-lastdate"
+        * type = #date
+        * repeats = false
+      * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightLengthTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-lengthheight-newresult"
@@ -408,6 +425,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
       * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeightValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "obs-height-lastresult"
+        * type = #decimal
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyHeightLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-height-lastdate"
+        * type = #date
+        * repeats = false
+      * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-height-newresult"
@@ -440,6 +474,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBodyWeightValue.exists() and %ObsBodyWeightDateFormatted.exists(), %ObsBodyWeightValue.round(1).toString() + ' kg ( ' + %ObsBodyWeightDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyWeightValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+        * linkId = "obs-weight-lastresult"
+        * type = #decimal
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBodyWeightLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-weight-lastdate"
+        * type = #date
+        * repeats = false
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyWeightTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
@@ -477,6 +528,15 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
       * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "(%ObsBodyWeightValue/((%ObsBodyHeightValue/100).power(2))).round(1)"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
+        * linkId = "obs-bmi-lastresult"
+        * type = #decimal
+        * repeats = false
+      * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
           * description = "BMI calculation"
           * language = #text/fhirpath
@@ -509,6 +569,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsHeadCircumferenceValue.exists() and %ObsHeadCircumferenceDateFormatted.exists(), %ObsHeadCircumferenceValue.round(0).toString() + ' cm ( ' + %ObsHeadCircumferenceDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeadCircumferenceValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "obs-headcircumference-lastresult"
+        * type = #decimal
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeadCircumferenceLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-headcircumference-lastdate"
+        * type = #date
+        * repeats = false
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeadCircumferenceTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
@@ -546,6 +623,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
       * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsWaistCircumferenceValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * linkId = "obs-waistcircumference-lastresult"
+        * type = #decimal
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsWaistCircumferenceLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-waistcircumference-lastdate"
+        * type = #date
+        * repeats = false
+      * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#WaistCircumferenceTemplate"
         * linkId = "obs-waistcircumference-newresult"
         * text = "New result"
@@ -577,6 +671,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsHeartRateValue.exists() and %ObsHeartRateDateFormatted.exists(), %ObsHeartRateValue.round(0).toString() + ' /min ( ' + %ObsHeartRateDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeartRateValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
+        * linkId = "obs-heartrate-lastresult"
+        * type = #integer
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeartRateLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-heartrate-lastdate"
+        * type = #date
+        * repeats = false
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRateTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
@@ -610,6 +721,23 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsHeartRhythmValue.exists() and %ObsHeartRhythmDateFormatted.exists(), %ObsHeartRhythmValue.display + ' ( ' + %ObsHeartRhythmDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeartRhythmValue"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-heartrhythm-lastresult"
+        * type = #choice
+        * repeats = false   
+        * answerValueSet = "#heart-rhythm-1"
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsHeartRhythmLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "obs-heartrhythm-lastdate"
+        * type = #date
+        * repeats = false
       * item[+]       
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRhythmTemplate"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
@@ -654,6 +782,32 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %ObsBloodPressureDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value.round(0)"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * linkId = "bp-lastbp-systolic"
+        * type = #integer
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8462-4')).value.value.round(0)"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * linkId = "bp-lastbp-diastolic"
+        * type = #integer
+        * repeats = false
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ObsBloodPressureLatest.effective.toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "bp-lastbp-date"
+        * type = #date
+        * repeats = false
       * item[+]
         * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BloodPressureTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
