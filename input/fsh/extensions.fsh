@@ -31,17 +31,19 @@ Context: Questionnaire.item.text
 * value[x] 1..
 * value[x] only boolean
 
-Extension: GranularRepopulateSync
-Id: GranularRepopulateSync
-Title: "Granular Repopulate Sync"
+Extension: QuestionnaireInitialExpressionRepopulatable 
+Id: questionnaire-initialExpression-repopulatable
+Title: "Questionnaire Initial Expression Repopulatable"
 Description: "This custom extension is used to add a UI component that allows a user to repopulate an individual Questionnaire item with the latest data from the FHIR server. This is useful for updating specific items without having to refresh the entire form."
 Context: Questionnaire.item
 
+* ^contextInvariant = "(type = 'string' or type = 'text' or type = 'integer' or type = 'decimal') and (repeats=false or repeats.empty()) and (extension.where(url = 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression').exists())"
 * . 0..1
-* . ^short = "Granular repopulate sync"
-* . ^definition = "If true, the item will be able to be individually repopulated with the latest data from the FHIR server."
+* . ^short = "Questionnaire Initial Expression Repopulatable"
+* . ^definition = "The value defines the repopulation behaviour of a Questionnaire item."
 * value[x] 1..
-* value[x] only boolean
+* value[x] only code
+* value[x] from QuestionnaireRepopulationBehavior (required)
 
 Extension: GroupHideAddItemButton
 Id: GroupHideAddItemButton
