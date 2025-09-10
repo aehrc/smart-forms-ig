@@ -728,7 +728,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-heartrhythm-lastresult"
         * type = #choice
-        * repeats = false   
+        * repeats = false
         * answerValueSet = "#heart-rhythm-1"
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
