@@ -419,7 +419,7 @@ Description: "This profile sets the minimum expectations for a QuestionnaireResp
 * author 1.. MS
 * author insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * author insert obligation2App (1, SHALL:populate, SHALL:process)
-* author only Reference(Practitioner)
+//* author only Reference(Practitioner)
 * item MS
 * item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
