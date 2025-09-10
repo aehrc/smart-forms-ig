@@ -9,7 +9,7 @@ This page documents how CapabilityStatements declare conformance to the SHC prof
 ### Conformance Artifacts
 The [Artefacts](artifacts.html) page lists the SHC profiles defined for this implementation guide. Core profile [StructureDefinitions]({{site.data.fhir.path}}structuredefinition.html) defines the minimum elements, extensions, vocabularies, and value sets which **SHALL** be present when using the profile. Many profile pages also contain additional guidance.
 
-The profile elements consist of both mandatory and *Must Support* elements. Mandatory elements are elements with a minimum cardinality of 1 (min=1). The base FHIR [*Must Support*]({{site.data.fhir.path}}profiling.html#mustsupport) guidance requires specifications to define the support expected for profile elements labeled *Must Support*. The sections below explain how these elements are displayed and define the rules for interpreting profile elements and sub-elements labeled mandatory and *Must Support* for [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html).
+The profile elements consist of both mandatory and *Must Support* elements. Mandatory elements are elements with a minimum cardinality of 1 (min=1). The base FHIR [*Must Support*]({{site.data.fhir.path}}profiling.html#mustsupport) guidance requires specifications to define the support expected for profile elements labelled *Must Support*. The sections below explain how these elements are displayed and define the rules for interpreting profile elements and sub-elements labelled mandatory and *Must Support* for [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html).
 
 
 #### Capability Statements 
@@ -81,7 +81,7 @@ Code | Interactions | SHC App Obligations
 
 #### Must Support - Resource References
 
-Some elements labeled as *Must Support* reference multiple resource types or profiles (e.g., `QuestionnaireResponse.author`). [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* referenced resource or profile for each element listed in the table below. The [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* referenced resources or profiles listed in the table below.
+Some elements labelled as *Must Support* reference multiple resource types or profiles (e.g., `QuestionnaireResponse.author`). [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* referenced resource or profile for each element listed in the table below. The [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* referenced resources or profiles listed in the table below.
 
 For example, when claiming conformance to the SHC QuestionnaireResponse profile:
 
@@ -90,7 +90,7 @@ For example, when claiming conformance to the SHC QuestionnaireResponse profile:
 
 #### Must Support - Choice of Data Types
 
-Some elements labeled as *Must Support* allow different data types (e.g., `Observation.effective[x]`) for their content. [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* data type for each element listed in the table below. [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* data types listed in the table below.
+Some elements labelled as *Must Support* allow different data types (e.g., `Observation.effective[x]`) for their content. [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* data type for each element listed in the table below. [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* data types listed in the table below.
 
 For example, when claiming conformance to the AU Core Diagnostic Result Observation profile:
 
@@ -103,7 +103,7 @@ Systems **MAY** support populating and processing other choice elements not list
 There are situations when information on a particular data element is missing, and the source system does not know the reason for the absence of data.
 
 ##### Optional And Must Support Elements
-If the [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) does not have data for an element with a minimum cardinality = 0 (including elements labeled *Must Support*), the data element **SHALL** be omitted from the resource.
+If the [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) does not have data for an element with a minimum cardinality = 0 (including elements labelled *Must Support*), the data element **SHALL** be omitted from the resource.
 
 ##### Required And Must Support Elements
 
