@@ -99,14 +99,49 @@ For example, when claiming conformance to the [SHC QuestionnaireResponse](Struct
 
 #### Must Support - Choice of Data Types
 
-Some elements labelled as *Must Support* allow different data types (e.g., `Observation.effective[x]`) for their content. [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* data type for each element listed in the table below. [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* data types listed in the table below.
+Some elements labelled as *Must Support* allow values of different data types (e.g., `Observation.effective[x]`). These 'choice elements' can inherit the *Must Support* label and obligations from the base AU Core profile. Since [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html) are respectively derived from AU Core Responder and AU Core Requester actors:
 
-For example, when claiming conformance to the AU Core Diagnostic Result Observation profile:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate choice element using *at least one* data type 
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error for *all* data types.
 
-* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** be capable of populating `Observation.effectiveDateTime`, `Observation.effectivePeriod`, or both if the element is available.
-* [SHC App](ActorDefinition-SHCApp.html) **SHALL** be capable of processing `Observation.effectiveDateTime` and `Observation.effectivePeriod`
+For example, when claiming conformance to the [Smart Health Checks Pathology Result](StructureDefinition-SHCPathologyResult.html):
 
-Systems **MAY** support populating and processing other choice elements not listed in the table (such as `Observation.effectiveInstant`), but this is not a requirement.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate using either `Observation.effectiveDateTime`, or `Observation.effectivePeriod` depending on type of data available.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept without error valid data in either `Observation.effectiveDateTime` and `Observation.effectivePeriod`.
+
+In addition, a *Must Support* choice element can have an allowed data type labelled as *Must Support* with an additional obligation of `SHOULD:populate`. In this case the
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate the choice element if known, and **SHOULD** populate the choice element using the *Must Support* data type.
+
+For example, when claiming conformance to the [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html):
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate *at least one* of `AllergyIntolerance.onsetDateTime`, `AllergyIntolerance.onsetAge`, `AllergyIntolerance.onsetPeriod` or `AllergyIntolerance.onsetRange`, and **SHOULD** populate 'AllergyIntolerance.onsetDateTime` if a value is known.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept without error valid data in `AllergyIntolerance.onsetDateTime`, `AllergyIntolerance.onsetAge`, `AllergyIntolerance.onsetPeriod` or `AllergyIntolerance.onsetRange`.
+
+A choice element supports pre-population when a data type is labelled as *Must Support* with a `SHALL:process` obligation. In this case: 
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process the choice element using the *Must Support* data type. 
+
+A choice element supports write back when a data type is labelled *Must Support* with [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) obligation of `SHALL:persist`and [SHC App](ActorDefinition-SHCApp.html) obligations of `SHALL:populate-if-known` or `SHALL:populate`. In this case:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value from the choice element *Must Support* data type
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate, or populate if known, the choice element using the *Must Support* data type
+
+For example, when claiming conformance to the [Smart Health Checks Condition](StructureDefinition-SHCCondition.html):
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate *at least one* of `Condition.onsetDateTime`, `Condition.onsetAge`, `Condition.onsetPeriod` or `Condition.onsetRange`, and **SHOULD** populate 'Condition.onsetDateTime` if a value is known.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value from the `Condition.onsetDateTime`.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept without error valid data in `Condition.onsetDateTime`, `Condition.onsetAge`, `Condition.onsetPeriod` or `Condition.onsetRange`.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process the choice element data in`Condition.onsetDateTime`
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate the choice element using `Condition.onsetDateTime`
+
+Additionally elements support pre-population and write back where only the choice element (e.g. Observation.effective[x]) is labelled as *Must Support* with [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) obligations of `SHALL:populate-if-known` and `SHALL:persist`, and [SHC App](ActorDefinition-SHCApp.html) obligations of `SHALL:persist` and `SHALL:populate-if-known`. For choice elements supporting write back:  
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process the choice element using the *Must Support* data type.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist a valid value for *all* data types allowed by the element
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate if known the choice element using *at least one* data type allowed by the element
+
+For example, when claiming conformance to the [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html):
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate if known *at least one* of types allowed for `QuestionnaireResponse.item.answer.value[x]`.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value for *all* data types allowed for `QuestionnaireResponse.item.answer.value[x]`
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process valid value for *all* data types allowed for `QuestionnaireResponse.item.answer.value[x]`
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** populate if known *at least one* of types allowed for `QuestionnaireResponse.item.answer.value[x]`.
+
+Note that [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) does not derive from an AU Core profile and hence has no inherited actor obligations.
 
 #### Missing Data
 There are situations when information on a particular data element is missing, and the source system does not know the reason for the absence of data.
