@@ -81,12 +81,21 @@ Code | Interactions | SHC App Obligations
 
 #### Must Support - Resource References
 
-Some elements labelled as *Must Support* reference multiple resource types or profiles (e.g., `QuestionnaireResponse.author`). [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* referenced resource or profile for each element listed in the table below. The [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* referenced resources or profiles listed in the table below.
+Some elements labelled as *Must Support* allow references to multiple resource types or profiles (e.g. `MedicationStatement.reasonReference`).  These *Must Support* elements and their actor obligations could be inherited from the base AU Core profile. Since [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html) are derived from AU Core Responder and AU Core Requester actors respectively: 
 
-For example, when claiming conformance to the SHC QuestionnaireResponse profile:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate if known a reference to *at least one* resource type or profile allowed by the element
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error *all* resource types or profiles allowed by the element.
 
-* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** be capable of providing a QuestionnaireResponse.author with a valid reference to an AU Core Practitioner profile, an AU Core PractitionerRole profile, an AU Core Patient profile, or any combination of them if the element is available
-* [SHC App](ActorDefinition-SHCApp.html) **SHALL** be capable of processing a QuestionnaireResponse.author with a valid reference to an AU Core Practitioner profile, AU Core PractitionerRole profile, and an AU Core Patient profile.
+Additional, SHC actor obligations that support write back can be specified on elements that reference multiple resource types or profiles. In this case: 
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) SHALL persist a valid reference for *all* resource types or profiles allowed by the element
+* [SHC App](ActorDefinition-SHCApp.html) SHALL correctly populate a reference to *at least one* resource type or profile allowed by the element
+
+For example, when claiming conformance to the [SHC QuestionnaireResponse](StructureDefinition-SHCQuestionnaireResponse.html) profile:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate if known the QuestionnaireResponse.author element with a valid reference to at least one of Device, Practitioner, PractitionerRole, Patient, RelatedPerson or Organization resource types.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** be capable of persisting a valid QuestionnaireResponse.author reference to all resource types; Device, Practitioner, PractitionerRole, Patient, RelatedPerson and Organization resource.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error a QuestionnaireResponse.author with a valid reference to all resource types; Device, Practitioner, PractitionerRole, Patient, RelatedPerson or Organization.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** populate the QuestionnaireResponse.author element with a valid reference to at least one resource type; Device, Practitioner, PractitionerRole, Patient, RelatedPerson or Organization.
+
 
 #### Must Support - Choice of Data Types
 
