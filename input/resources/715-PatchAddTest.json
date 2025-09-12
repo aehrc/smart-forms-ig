@@ -1729,104 +1729,104 @@
                 }
             ]
         },
+    {
+      "resourceType": "Parameters",
+      "id": "AllergyIntolerancePatchTemplate",
+      "parameter": [
         {
-            "resourceType": "Parameters",
-            "id": "AllergyIntolerancePatchTemplate",
-            "parameter": [
-                {
-                    "name": "operation",
-                    "part": [
-                        {
-                            "name": "type",
-                            "valueCode": "replace"
-                        },
-                        {
-                            "name": "path",
-                            "valueString": "AllergyIntolerance.clinicalStatus"
-                        },
-                        {
-                            "name": "value",
-                            "valueCodeableConcept": {
-                                "coding": [
-                                    {
-                                        "extension": [
-                                            {
-                                                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                                "valueString": "item.where(linkId='allergysummary-status').answer.value.first()"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "name": "pathLabel",
-                            "valueString": "Clinical status"
-                        }
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "valueCode": "replace"
+            },
+            {
+              "name": "path",
+              "valueString": "AllergyIntolerance.clinicalStatus"
+            },
+            {
+              "name": "value",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                        "valueString": "item.where(linkId='allergysummary-status').answer.value.first()"
+                      }
                     ]
-                },
-                {
-                    "name": "operation",
-                    "part": [
-                        {
-                            "name": "type",
-                            "_valueCode": {
-                                "extension": [
-                                    {
-                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'replace', 'add')"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "name": "path",
-                            "_valueString": {
-                                "extension": [
-                                    {
-                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0].text', 'AllergyIntolerance')"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "_name": {
-                                "extension": [
-                                    {
-                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists(), '', 'name')"
-                                    }
-                                ]
-                            },
-                            "_valueString": {
-                                "extension": [
-                                    {
-                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists(), '', 'note[0].text')"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "name": "value",
-                            "_valueMarkdown": {
-                                "extension": [
-                                    {
-                                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "item.where(linkId='allergysummary-comment').answer.value.first()"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "name": "pathLabel",
-                            "valueString": "Comment"
-                        }
-                    ]
-                }
-            ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Clinical status"
+            }
+          ]
         },
+        {
+          "name": "operation",
+          "part": [
+            {
+              "name": "type",
+              "_valueCode": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'replace', 'add')"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "path",
+              "_valueString": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0].text', 'AllergyIntolerance')"
+                  }
+                ]
+              }
+            },
+            {
+              "_name": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.empty(), 'name')"
+                  }
+                ]
+              },
+              "_valueString": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.empty(), 'note[0].text')"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "_valueMarkdown": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "item.where(linkId='allergysummary-comment').answer.value.first()"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "pathLabel",
+              "valueString": "Comment"
+            }
+          ]
+        }
+      ]
+    },
         {
             "resourceType": "ValueSet",
             "id": "AllergyIntoleranceClinicalStatusMinimal",
