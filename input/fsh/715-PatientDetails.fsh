@@ -367,7 +367,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * expression = "%PostalAddressRepeat.select(line.join(', '))"
       * linkId = "2e8437cd-5ea0-4d44-8ab2-d2aa9ef18ba7"
       * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
-      * text = "Address"
+      * text = "Street address"
       * type = #string
       * repeats = false
     * item[+]

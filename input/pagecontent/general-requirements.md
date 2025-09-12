@@ -9,7 +9,7 @@ This page documents how CapabilityStatements declare conformance to the SHC prof
 ### Conformance Artifacts
 The [Artefacts](artifacts.html) page lists the SHC profiles defined for this implementation guide. Core profile [StructureDefinitions]({{site.data.fhir.path}}structuredefinition.html) defines the minimum elements, extensions, vocabularies, and value sets which **SHALL** be present when using the profile. Many profile pages also contain additional guidance.
 
-The profile elements consist of both mandatory and *Must Support* elements. Mandatory elements are elements with a minimum cardinality of 1 (min=1). The base FHIR [*Must Support*]({{site.data.fhir.path}}profiling.html#mustsupport) guidance requires specifications to define the support expected for profile elements labeled *Must Support*. The sections below explain how these elements are displayed and define the rules for interpreting profile elements and sub-elements labeled mandatory and *Must Support* for [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html).
+The profile elements consist of both mandatory and *Must Support* elements. Mandatory elements are elements with a minimum cardinality of 1 (min=1). The base FHIR [*Must Support*]({{site.data.fhir.path}}profiling.html#mustsupport) guidance requires specifications to define the support expected for profile elements labelled *Must Support*. The sections below explain how these elements are displayed and define the rules for interpreting profile elements and sub-elements labelled mandatory and *Must Support* for [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html).
 
 
 #### Capability Statements 
@@ -81,29 +81,73 @@ Code | Interactions | SHC App Obligations
 
 #### Must Support - Resource References
 
-Some elements labeled as *Must Support* reference multiple resource types or profiles (e.g., `QuestionnaireResponse.author`). [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* referenced resource or profile for each element listed in the table below. The [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* referenced resources or profiles listed in the table below.
+Some elements labelled as *Must Support* allow references to multiple resource types or profiles (e.g. `MedicationStatement.reasonReference`).  These *Must Support* elements and their actor obligations could be inherited from the base AU Core profile. Since [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html) are derived from AU Core Responder and AU Core Requester actors respectively: 
 
-For example, when claiming conformance to the SHC QuestionnaireResponse profile:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate if known a reference to *at least one* resource type or profile allowed by the element
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error *all* resource types or profiles allowed by the element.
 
-* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** be capable of providing a QuestionnaireResponse.author with a valid reference to an AU Core Practitioner profile, an AU Core PractitionerRole profile, an AU Core Patient profile, or any combination of them if the element is available
-* [SHC App](ActorDefinition-SHCApp.html) **SHALL** be capable of processing a QuestionnaireResponse.author with a valid reference to an AU Core Practitioner profile, AU Core PractitionerRole profile, and an AU Core Patient profile.
+Additional, SHC actor obligations that support write back can be specified on elements that reference multiple resource types or profiles. In this case: 
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) SHALL persist a valid reference for *all* resource types or profiles allowed by the element
+* [SHC App](ActorDefinition-SHCApp.html) SHALL correctly populate a reference to *at least one* resource type or profile allowed by the element
+
+For example, when claiming conformance to the [SHC QuestionnaireResponse](StructureDefinition-SHCQuestionnaireResponse.html) profile:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate if known the QuestionnaireResponse.author element with a valid reference to at least one of Device, Practitioner, PractitionerRole, Patient, RelatedPerson or Organization resource types.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** be capable of persisting a valid QuestionnaireResponse.author reference to all resource types; Device, Practitioner, PractitionerRole, Patient, RelatedPerson and Organization resource.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error a QuestionnaireResponse.author with a valid reference to all resource types; Device, Practitioner, PractitionerRole, Patient, RelatedPerson or Organization.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** populate the QuestionnaireResponse.author element with a valid reference to at least one resource type; Device, Practitioner, PractitionerRole, Patient, RelatedPerson or Organization.
+
 
 #### Must Support - Choice of Data Types
 
-Some elements labeled as *Must Support* allow different data types (e.g., `Observation.effective[x]`) for their content. [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** support *at least one* data type for each element listed in the table below. [SHC App](ActorDefinition-SHCApp.html) **SHALL** support *all* data types listed in the table below.
+Some elements labelled as *Must Support* allow values of different data types (e.g., `Observation.effective[x]`). These 'choice elements' can inherit the *Must Support* label and obligations from the base AU Core profile. Since [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html) are respectively derived from AU Core Responder and AU Core Requester actors:
 
-For example, when claiming conformance to the AU Core Diagnostic Result Observation profile:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate choice element using *at least one* data type 
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error for *all* data types.
 
-* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** be capable of populating `Observation.effectiveDateTime`, `Observation.effectivePeriod`, or both if the element is available.
-* [SHC App](ActorDefinition-SHCApp.html) **SHALL** be capable of processing `Observation.effectiveDateTime` and `Observation.effectivePeriod`
+For example, when claiming conformance to the [Smart Health Checks Pathology Result](StructureDefinition-SHCPathologyResult.html):
 
-Systems **MAY** support populating and processing other choice elements not listed in the table (such as `Observation.effectiveInstant`), but this is not a requirement.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate using either `Observation.effectiveDateTime`, or `Observation.effectivePeriod` depending on type of data available.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept without error valid data in either `Observation.effectiveDateTime` and `Observation.effectivePeriod`.
+
+In addition, a *Must Support* choice element can have an allowed data type labelled as *Must Support* with an additional obligation of `SHOULD:populate`. In this case the
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate the choice element if known, and **SHOULD** populate the choice element using the *Must Support* data type.
+
+For example, when claiming conformance to the [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html):
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate *at least one* of `AllergyIntolerance.onsetDateTime`, `AllergyIntolerance.onsetAge`, `AllergyIntolerance.onsetPeriod` or `AllergyIntolerance.onsetRange`, and **SHOULD** populate 'AllergyIntolerance.onsetDateTime` if a value is known.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept without error valid data in `AllergyIntolerance.onsetDateTime`, `AllergyIntolerance.onsetAge`, `AllergyIntolerance.onsetPeriod` or `AllergyIntolerance.onsetRange`.
+
+A choice element supports pre-population when a data type is labelled as *Must Support* with a `SHALL:process` obligation. In this case: 
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process the choice element using the *Must Support* data type. 
+
+A choice element supports write back when a data type is labelled *Must Support* with [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) obligation of `SHALL:persist`and [SHC App](ActorDefinition-SHCApp.html) obligations of `SHALL:populate-if-known` or `SHALL:populate`. In this case:
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value from the choice element *Must Support* data type
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate, or populate if known, the choice element using the *Must Support* data type
+
+For example, when claiming conformance to the [Smart Health Checks Condition](StructureDefinition-SHCCondition.html):
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate *at least one* of `Condition.onsetDateTime`, `Condition.onsetAge`, `Condition.onsetPeriod` or `Condition.onsetRange`, and **SHOULD** populate 'Condition.onsetDateTime` if a value is known.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value from the `Condition.onsetDateTime`.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept without error valid data in `Condition.onsetDateTime`, `Condition.onsetAge`, `Condition.onsetPeriod` or `Condition.onsetRange`.
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process the choice element data in`Condition.onsetDateTime`
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate the choice element using `Condition.onsetDateTime`
+
+Additionally elements support pre-population and write back where only the choice element (e.g. Observation.effective[x]) is labelled as *Must Support* with [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) obligations of `SHALL:populate-if-known` and `SHALL:persist`, and [SHC App](ActorDefinition-SHCApp.html) obligations of `SHALL:persist` and `SHALL:populate-if-known`. For choice elements supporting write back:  
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process the choice element using the *Must Support* data type.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist a valid value for *all* data types allowed by the element
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate if known the choice element using *at least one* data type allowed by the element
+
+For example, when claiming conformance to the [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html):
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate if known *at least one* of types allowed for `QuestionnaireResponse.item.answer.value[x]`.
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value for *all* data types allowed for `QuestionnaireResponse.item.answer.value[x]`
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** process valid value for *all* data types allowed for `QuestionnaireResponse.item.answer.value[x]`
+* [SHC App](ActorDefinition-SHCApp.html) **SHALL** populate if known *at least one* of types allowed for `QuestionnaireResponse.item.answer.value[x]`.
+
+Note that [Smart Health Checks Questionnaire Response](StructureDefinition-SHCQuestionnaireResponse.html) does not derive from an AU Core profile and hence has no inherited actor obligations.
 
 #### Missing Data
 There are situations when information on a particular data element is missing, and the source system does not know the reason for the absence of data.
 
 ##### Optional And Must Support Elements
-If the [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) does not have data for an element with a minimum cardinality = 0 (including elements labeled *Must Support*), the data element **SHALL** be omitted from the resource.
+If the [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) does not have data for an element with a minimum cardinality = 0 (including elements labelled *Must Support*), the data element **SHALL** be omitted from the resource.
 
 ##### Required And Must Support Elements
 

@@ -161,6 +161,24 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
               * expression = "iif(%ObsTobaccoSmokingStatusValue.exists() and %ObsTobaccoSmokingStatusDateFormatted.exists(), %ObsTobaccoSmokingStatusValue.display + ' ( ' + %ObsTobaccoSmokingStatusDateFormatted + ' )', 'Not available')"
           * type = #display
         * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTobaccoSmokingStatusValue"
+          * extension[questionnaire-hidden].valueBoolean = true
+          * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+          * linkId = "substanceuse-smoking-smokingstatus-group-laststatusvalue"
+          * type = #choice
+          * repeats = false
+          * answerValueSet = "#TobaccoUseStatus-1"
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTobaccoSmokingStatusLatest.effective.toDate()"
+          * extension[questionnaire-hidden].valueBoolean = true
+          * linkId = "substanceuse-smoking-smokingstatus-group-laststatusdate"
+          * type = #date
+          * repeats = false
+        * item[+]
           * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#SmokingStatusTemplate"
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
           * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"

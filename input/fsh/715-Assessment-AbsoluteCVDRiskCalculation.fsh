@@ -219,6 +219,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "iif(%CVDRiskResultValue.exists() and %CVDRiskResultDateFormatted.exists(), %CVDRiskResultValue + ' ( ' + %CVDRiskResultDateFormatted + ' )', 'Not available')"
+      * extension[https://smartforms.csiro.au/ig/StructureDefinition/questionnaire-initialExpression-repopulatable].valueCode = #manual
       * linkId = "cvdrisk-latestresult"
       * text = "Latest available result"
       * type = #string

@@ -237,9 +237,18 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * effectiveDateTime MS
 * effectiveDateTime insert obligationServer (2, SHALL:populate-if-known)
 * effectiveDateTime insert obligationApp (3, SHALL:process)
-* value[x] MS
-* value[x] insert obligationServer (0, SHALL:populate-if-known)
-* value[x] insert obligationApp (1, SHALL:process)
+* valueQuantity MS
+* valueQuantity insert obligationServer (0, SHALL:populate-if-known)
+* valueQuantity insert obligationApp (1, SHALL:process)
+* valueQuantity.value MS
+* valueQuantity.value insert obligationServer (0, SHALL:populate-if-known)
+* valueQuantity.value insert obligationApp (1, SHALL:process)
+* valueQuantity.system MS
+* valueQuantity.system insert obligationServer (0, SHALL:populate-if-known)
+* valueQuantity.system insert obligationApp (1, SHALL:process)
+* valueQuantity.code MS
+* valueQuantity.code insert obligationServer (0, SHALL:populate-if-known)
+* valueQuantity.code insert obligationApp (1, SHALL:process)
 
 
 Profile: SmartHealthChecksPatient
@@ -410,7 +419,7 @@ Description: "This profile sets the minimum expectations for a QuestionnaireResp
 * author 1.. MS
 * author insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * author insert obligation2App (1, SHALL:populate, SHALL:process)
-* author only Reference(Practitioner)
+//* author only Reference(Practitioner)
 * item MS
 * item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -552,9 +561,40 @@ Description: "This profile sets the minimum expectations for a Blood Pressure re
 * component[SystolicBP] MS
 * component[SystolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * component[SystolicBP] insert obligation2App (3, SHALL:populate, SHALL:process)
-* component[DiastolicBP] MS
-* component[DiastolicBP] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* component[DiastolicBP] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* component[SystolicBP].code MS
+* component[SystolicBP].code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[SystolicBP].code insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[SystolicBP].valueQuantity MS
+* component[SystolicBP].valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[SystolicBP].valueQuantity insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[SystolicBP].valueQuantity.value MS
+* component[SystolicBP].valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[SystolicBP].valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[SystolicBP].valueQuantity.unit MS
+* component[SystolicBP].valueQuantity.unit insert obligation2Server (3, SHALL:populate-if-known, SHALL:persist)
+* component[SystolicBP].valueQuantity.unit insert obligationApp (4, SHALL:populate)
+* component[SystolicBP].valueQuantity.system MS
+* component[SystolicBP].valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[SystolicBP].valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[SystolicBP].valueQuantity.code MS
+* component[SystolicBP].valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[SystolicBP].valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[DiastolicBP].valueQuantity MS
+* component[DiastolicBP].valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[DiastolicBP].valueQuantity insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[DiastolicBP].valueQuantity.value MS
+* component[DiastolicBP].valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[DiastolicBP].valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[DiastolicBP].valueQuantity.unit MS
+* component[DiastolicBP].valueQuantity.unit insert obligation2Server (3, SHALL:populate-if-known, SHALL:persist)
+* component[DiastolicBP].valueQuantity.unit insert obligationApp (4, SHALL:populate)
+* component[DiastolicBP].valueQuantity.system MS
+* component[DiastolicBP].valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[DiastolicBP].valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
+* component[DiastolicBP].valueQuantity.code MS
+* component[DiastolicBP].valueQuantity.code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* component[DiastolicBP].valueQuantity.code insert obligation2App (3, SHALL:populate, SHALL:process)
+
 
 Profile: SmartHealthChecksSmokingStatus
 Parent: $au-core-smokingstatus
@@ -612,12 +652,15 @@ Description: "This profile sets the minimum expectations for a Body Height resou
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* valueQuantity MS
+* valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.value MS
 * valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
 * valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligationApp (3, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
@@ -651,12 +694,15 @@ Description: "This profile sets the minimum expectations for a Body Weight resou
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* valueQuantity MS
+* valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.value MS
 * valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
 * valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligationApp (3, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
@@ -690,12 +736,15 @@ Description: "This profile sets the minimum expectations for a Head Circumferenc
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* valueQuantity MS
+* valueQuantity insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.value MS
 * valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
 * valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (2, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligationApp (2, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
@@ -729,12 +778,15 @@ Description: "This profile sets the minimum expectations for a Waist Circumferen
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* valueQuantity MS
+* valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.value MS
 * valueQuantity.value insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (1, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:process)
-* valueQuantity.unit insert obligation2App (2, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligation2Server (1, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity.unit insert obligationApp (2, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (1, SHALL:populate, SHALL:process)
@@ -768,12 +820,15 @@ Description: "This profile sets the minimum expectations for a Heart Rate resour
 * effectiveDateTime MS
 * effectiveDateTime insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * effectiveDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* valueQuantity MS
+* valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.value MS
 * valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
 * valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* valueQuantity.unit insert obligation2App (3, SHALL:populate, SHALL:process)
+* valueQuantity.unit insert obligationApp (3, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)

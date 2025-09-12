@@ -862,7 +862,7 @@ Description: "This value set includes the minimal set of codes to represent the 
 CodeSystem: SHCPatchPathCodes
 Id: SHCPatchPathCodes
 Title: "Smart Health Checks Patch Path Codes"
-Description: "This code system includes the codes used in the Smart Health Checks Patch Path."
+Description: "The Smart Health Checks Patch Path Codes code system defines concepts that identify element paths that are the target of a patch operation."
 
 * #AllergyIntolerance.clinicalStatus "AllergyIntolerance.clinicalStatus"
 * #AllergyIntolerance.note[0].text "AllergyIntolerance.note[0].text"
@@ -872,10 +872,23 @@ Description: "This code system includes the codes used in the Smart Health Check
 * #MedicationStatement.note[0].text "MedicationStatement.note[0].text"
 * #MedicationStatement.dosage[0].text "MedicationStatement.dosage[0].text"
 
-
 ValueSet: SHCPatchPath
 Id: SHCPatchPath
 Title: "Smart Health Checks Patch Path"
-Description: "SHCPatchPath"
+Description: "The Smart Health Checks Patch Path value set includes values that can be used to identify the element paths that are the target of a patch operation for Smart Health Checks."
 * ^experimental = false
 * include codes from system SHCPatchPathCodes
+
+CodeSystem: QuestionnaireRepopulationBehaviorCodes
+Id: QuestionnaireRepopulationBehaviorCodes
+Title: "Questionnaire Repopulation Behavior Codes"
+Description: "The Questionnaire Repopulation Behavior Codes code system defines concepts that describe the repopulation behaviour that can be applied to the initial expression of a Questionnaire item."
+
+* #manual "Manual" "The item can be repopulated manually by the user. The initial expression will be evaluated and the item populated with the result."
+
+ValueSet: QuestionnaireRepopulationBehavior
+Id: QuestionnaireRepopulationBehavior
+Title: "Questionnaire Repopulation Behavior"
+Description: "The Questionnaire Repopulation Behavior value set includes values that can indicate how a Questionnaire item's initial expression can be re-evaluated and the item repopulated."
+* ^experimental = false
+* include codes from system QuestionnaireRepopulationBehaviorCodes
