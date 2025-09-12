@@ -162,6 +162,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].text = "Status"
 * item[=].item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].item[=].repeats = false
+
 * item[=].item[=].item[=].item[=].answerValueSet = "#AllergyIntoleranceClinicalStatusMinimal"
 * item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
@@ -181,6 +182,15 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.note[0].text"
 * item[=].item[=].item[=].item[=].linkId = "allergysummary-comment"
 * item[=].item[=].item[=].item[=].text = "Comment"
+* item[=].item[=].item[=].item[=].type = #text
+* item[=].item[=].item[=].item[=].repeats = false
+// This item is used to determine the appropriate patch operation for comment.
+* item[=].item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item[=].item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%AllergyIntoleranceRepeat.note[0].text"
+* item[=].item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item[=].item[=].item[=].item[=].extension[=].valueBoolean = true
+* item[=].item[=].item[=].item[=].linkId = "allergysummary-comment-hidden"
 * item[=].item[=].item[=].item[=].type = #text
 * item[=].item[=].item[=].item[=].repeats = false
 

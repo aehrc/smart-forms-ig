@@ -217,9 +217,12 @@ Usage:  #inline
 * reaction.manifestation[=].text.extension.valueString = "$this"
 
 
+
+
 Instance: AllergyIntolerancePatchTemplate
 InstanceOf: Parameters
 Usage: #inline
+
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #replace
@@ -230,11 +233,19 @@ Usage: #inline
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Clinical status"
+
+
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueCode.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'replace', 'add')"
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "AllergyIntolerance.note[0].text"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0].text', 'AllergyIntolerance')"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists(), '', 'name')"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists(), '', 'note[0].text')"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='allergysummary-comment').answer.value.first()"
