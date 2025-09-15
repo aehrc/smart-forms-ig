@@ -25,8 +25,7 @@ Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/Question
 # Embedded HTML warnings checked
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
-# Invalid errors - invariant bug
-# Boolean should be lower case
+# Invalid error/invariant bug. Boolean should be lower case
 Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean (operator = 'exists' implies (answer is Boolean))'
 
 # HL7 core warnings
