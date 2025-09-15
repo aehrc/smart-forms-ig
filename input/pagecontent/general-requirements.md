@@ -84,7 +84,7 @@ Code | Interactions | SHC App Obligations
 
 Some elements labelled as *Must Support* allow references to multiple resource types or profiles (e.g. `MedicationStatement.reasonReference`).  These *Must Support* elements and their actor obligations could be inherited from the base AU Core profile. Since [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) and [SHC App](ActorDefinition-SHCApp.html) are derived from AU Core Responder and AU Core Requester actors respectively: 
 
-* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate, if known, a reference to at least one resource type or profile permitted by the element
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** populate, if known, a reference to *at least one* resource type or profile allowed by the element
 * [SHC App](ActorDefinition-SHCApp.html) **SHALL** accept with no error *all* resource types or profiles allowed by the element.
 
 Additionally, SHC actor obligations that support writeback can be specified on elements that reference multiple resource types or profiles. In this case: 
