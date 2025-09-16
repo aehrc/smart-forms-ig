@@ -44,6 +44,9 @@ var(--publish-box-border); */
     /*--dragon-background-color: #fffbf7; /* 29. Dragon background color */
     /*--dragon-text-color: #101020; /* 30. Dragon font color */
   
+    --note-background-color: #f4fdf8; /* Smart Health Checks Note box background color */
+    --note-border-left-color: #a2eec3; /* Smart Health Checks Note box border color */
+  
 }
 
   th, td {
@@ -56,3 +59,16 @@ var(--publish-box-border); */
     background-color: #eeeeee;
   }
   
+  .note {
+    margin: 5px;
+    padding: 10px;
+    border-left-style: solid;
+    background-color: var(--note-background-color);
+    border-left-color: var(--note-border-left-color);
+}
+
+.note::before {
+  white-space: pre;
+  content: "Note\A ";
+  font-weight: bold;
+}

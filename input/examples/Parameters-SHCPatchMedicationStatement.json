@@ -1,0 +1,53 @@
+{
+    "resourceType": "Parameters",
+    "id": "SHCPatchMedicationStatement",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+        ]
+    },
+    "parameter": [
+        {
+            "name": "operation",
+            "part": [
+                {
+                    "name": "type",
+                    "valueCode": "replace"
+                },
+                {
+                    "name": "path",
+                    "valueString": "MedicationStatement.status"
+                },
+                {
+                    "name": "value",
+                    "valueCode": "completed"
+                },
+                {
+                    "name": "pathLabel",
+                    "valueString": "Status"
+                }
+            ]
+        },
+        {
+            "name": "operation",
+            "part": [
+                {
+                    "name": "type",
+                    "valueCode": "replace"
+                },
+                {
+                    "name": "path",
+                    "valueString": "MedicationStatement.note[0].text"
+                },
+                {
+                    "name": "value",
+                    "valueMarkdown": "Worked effectively."
+                },
+                {
+                    "name": "pathLabel",
+                    "valueString": "Comment"
+                }
+            ]
+        }
+    ]
+}
