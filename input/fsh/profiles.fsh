@@ -112,6 +112,9 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * code MS
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* code.text MS
+* code.text insert obligationServer (0, SHALL:persist)
+* code.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
@@ -141,6 +144,9 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * code MS
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* code.text MS
+* code.text insert obligationServer (0, SHALL:persist)
+* code.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
@@ -169,6 +175,9 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * vaccineCode.coding[amtVaccineCode] MS
 * vaccineCode.coding[amtVaccineCode] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * vaccineCode.coding[amtVaccineCode] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* vaccineCode.text MS
+* vaccineCode.text insert obligationServer (0, SHALL:persist)
+* vaccineCode.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * patient MS
 * patient insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * patient insert obligationApp (3, SHALL:populate)
@@ -194,13 +203,16 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
-* medication[x][medicationCodeableConcept] MS
-* medication[x][medicationCodeableConcept] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist) 
-* medication[x][medicationCodeableConcept] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
-* medication[x][medicationReference] MS
-* medication[x][medicationReference] only Reference(SHCMedication)
-* medication[x][medicationReference] insert obligationServer (2, SHALL:populate-if-known)
-* medication[x][medicationReference] insert obligationApp (3, SHALL:process)
+* medicationCodeableConcept MS
+* medicationCodeableConcept insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* medicationCodeableConcept insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* medicationCodeableConcept.text MS
+* medicationCodeableConcept.text insert obligationServer (0, SHALL:persist)
+* medicationCodeableConcept.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* medicationReference MS
+* medicationReference only Reference(SHCMedication)
+* medicationReference insert obligationServer (2, SHALL:populate-if-known)
+* medicationReference insert obligationApp (3, SHALL:process)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
