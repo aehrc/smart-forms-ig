@@ -1393,8 +1393,6 @@ Description: "When the part parameter named 'path' has a value of 'AllergyIntole
 * severity = #error
 * expression = "parameter.part.where(name='path').value = 'MedicationStatement.status' implies parameter.part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited')"
 
-
-
 Profile: SmartHealthChecksPatch
 Parent: Parameters
 Id: SHCPatch
@@ -1457,58 +1455,50 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[value].name insert obligationServer (0, SHALL:process)
 * parameter.part[value].name insert obligationApp (1, SHALL:populate)
 * parameter.part[value].name = "value" (exactly)
-* parameter.part[value].value[x] 1..
-* parameter.part[value].value[x] only code or CodeableConcept or dateTime or string or markdown
 * parameter.part[value].value[x] ^condition[+] = "shc-patch-01"
 * parameter.part[value].value[x] ^condition[+] = "shc-patch-02"
 * parameter.part[value].value[x] ^condition[+] = "shc-patch-03"
-* parameter.part[value].value[x] ^slicing.discriminator.type = #type
-* parameter.part[value].value[x] ^slicing.discriminator.path = "$this"
-* parameter.part[value].value[x] ^slicing.ordered = false
-* parameter.part[value].value[x] ^slicing.rules = #open
-* parameter.part[value].value[x] contains
-    code 0..1 and
-    CodeableConcept 0..1 and
-    dateTime 0..1 and
-    string 0..1 and
-    markdown 0..1
-* parameter.part[value].value[x][code] MS
-* parameter.part[value].value[x][code] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][code] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][code] only code
-* parameter.part[value].value[x][code] from MedicationStatementStatusLimited (required)
-* parameter.part[value].value[x][CodeableConcept] MS
-* parameter.part[value].value[x][CodeableConcept] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][CodeableConcept] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][CodeableConcept] only CodeableConcept
-* parameter.part[value].value[x][CodeableConcept].coding 1..1
-* parameter.part[value].value[x][CodeableConcept].coding ^slicing.discriminator.type = #value
-* parameter.part[value].value[x][CodeableConcept].coding ^slicing.discriminator.path = "$this"
-* parameter.part[value].value[x][CodeableConcept].coding ^slicing.ordered = false
-* parameter.part[value].value[x][CodeableConcept].coding ^slicing.rules = #open
-* parameter.part[value].value[x][CodeableConcept].coding contains
+* parameter.part[value].value[x] 1.. MS
+* parameter.part[value].value[x] insert obligationServer (0, SHALL:process)
+* parameter.part[value].value[x] insert obligationApp (1, SHALL:populate)
+* parameter.part[value].value[x] only 
+    code or 
+    CodeableConcept or 
+    dateTime or 
+    string or 
+    markdown    
+* parameter.part[value].valueCode MS
+* parameter.part[value].valueCode insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCode insert obligationApp (1, SHALL:populate)
+* parameter.part[value].valueCode from MedicationStatementStatusLimited (required)
+* parameter.part[value].valueCodeableConcept.coding 1..1 MS
+* parameter.part[value].valueCodeableConcept.coding insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding insert obligationApp (1, SHALL:populate)
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.type = #value
+* parameter.part[value].valueCodeableConcept.coding ^slicing.discriminator.path = "$this"
+* parameter.part[value].valueCodeableConcept.coding ^slicing.ordered = false
+* parameter.part[value].valueCodeableConcept.coding ^slicing.rules = #open
+* parameter.part[value].valueCodeableConcept.coding contains
     AllergyIntoleranceClinicalStatusCodes 0..1 and
     ConditionClinicalStatusCodes 0..1
-* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] MS
-* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][CodeableConcept].coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
-* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] MS
-* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][CodeableConcept].coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
-* parameter.part[value].value[x][dateTime] MS
-* parameter.part[value].value[x][dateTime] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][dateTime] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][dateTime] only dateTime
-* parameter.part[value].value[x][string] MS
-* parameter.part[value].value[x][string] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][string] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][string] only string
-* parameter.part[value].value[x][markdown] MS
-* parameter.part[value].value[x][markdown] insert obligationServer (0, SHALL:process)
-* parameter.part[value].value[x][markdown] insert obligationApp (1, SHALL:populate-if-known)
-* parameter.part[value].value[x][markdown] only markdown
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[AllergyIntoleranceClinicalStatusCodes] from AllergyIntoleranceClinicalStatusMinimal (required)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] MS
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueCodeableConcept.coding[ConditionClinicalStatusCodes] from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueDateTime MS
+* parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)
+// IG Publisher currently has a bug (unconfirmed) that prevents the use of valueString and valueCode here.
+//* parameter.part[value].valueString MS
+//* parameter.part[value].valueString insert obligationServer (0, SHALL:process)
+//* parameter.part[value].valueString insert obligationApp (1, SHALL:populate-if-known)
+* parameter.part[value].valueMarkdown MS
+* parameter.part[value].valueMarkdown insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueMarkdown insert obligationApp (1, SHALL:populate-if-known)
 * parameter.part[pathLabel] MS
 * parameter.part[pathLabel] insert obligationApp (0, SHALL:populate)
 * parameter.part[pathLabel] ^short = "Human readable representation of the path. Typically this is the relevant item text from the Questionnaire."
@@ -1518,6 +1508,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[pathLabel].value[x] 1.. MS
 * parameter.part[pathLabel].value[x] insert obligationApp (0, SHALL:populate)
 * parameter.part[pathLabel].value[x] only string
+
 
 Profile: SmartHealthChecksExtractBundle
 Parent: Bundle
