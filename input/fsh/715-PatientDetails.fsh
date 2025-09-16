@@ -462,15 +462,19 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #string
       * repeats = true
   * item[+]
+    * extension[sdc-questionnaire-itemPopulationContext].valueExpression
+      * name = "MedicareNumberRepeat"
+      * language = #text/fhirpath
+      * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC'))"
     * linkId = "df1475ea-bf7e-4bf0-a69f-7f9608c3ed3c"
     * text = "Medicare number"
     * type = #group
-    * repeats = false
+    * repeats = true
     * readOnly = true
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(0,10)"
+        * expression = "%MedicareNumberRepeat.value.substring(0,10)"
       * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{10}$')"
       * linkId = "eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf"
       * text = "Number"
@@ -479,7 +483,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).value.substring(10,1)"
+        * expression = "%MedicareNumberRepeat.value.substring(10,1)"
       * extension[http://hl7.org/fhir/StructureDefinition/regex].valueString = "matches('^[0-9]{1}$')"
       * linkId = "d6253253-a124-494e-a1d8-7ce02c69ec11"
       * text = "Reference number"
@@ -488,7 +492,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%patient.identifier.where(type.coding.exists(system='http://terminology.hl7.org/CodeSystem/v2-0203' and code='MC')).period.end.toString()"
+        * expression = "%MedicareNumberRepeat.period.end.toString()"
       * linkId = "c520e213-5313-42c3-860a-d30206620290"
       * text = "Expiry"
       * type = #string
