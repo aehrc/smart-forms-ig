@@ -80,6 +80,17 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
 
+RuleSet: obligation3Server(index, serverCode1, serverCode2, serverCode3)
+* ^extension[{index}].url = $obligation
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode1}"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode2}"
+* ^extension[=].extension[+].url = "code"
+* ^extension[=].extension[=].valueCode = #"{serverCode3}"
+* ^extension[=].extension[+].url = "actor"
+* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+
 Profile: SmartHealthChecksAllergyIntolerance
 Parent: $au-core-allergyintolerance
 Id: SHCAllergyIntolerance
@@ -101,7 +112,7 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * code MS
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
-* note ..1 MS
+* note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -134,10 +145,10 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
 * onsetDateTime MS
-* onsetDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* onsetDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
 * onsetDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * abatementDateTime MS
-* abatementDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* abatementDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
 * abatementDateTime insert obligationApp (3, SHALL:process)
 * note.text MS
 * note.text insert obligationServer (0, SHALL:persist)
@@ -162,11 +173,11 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * patient insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * patient insert obligationApp (3, SHALL:populate)
 * occurrenceDateTime MS
-* occurrenceDateTime insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* occurrenceDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
 * occurrenceDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * lotNumber MS
-* lotNumber insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
-* lotNumber insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* lotNumber insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* lotNumber insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -184,8 +195,8 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
 * medication[x][medicationCodeableConcept] MS
-* medication[x][medicationCodeableConcept] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist) // NOTE: When migrating to AU Core v2.0.0, update the extension array index from (0) to (2) for medication[x][medicationCodeableConcept]
-* medication[x][medicationCodeableConcept] insert obligation2App (1, SHALL:populate-if-known, SHALL:process) // When upgrading to AU Core v2.0.0, update the extension array index from (1) to (3) for medication[x][medicationCodeableConcept] to match the new element order.
+* medication[x][medicationCodeableConcept] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist) 
+* medication[x][medicationCodeableConcept] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * medication[x][medicationReference] MS
 * medication[x][medicationReference] only Reference(SHCMedication)
 * medication[x][medicationReference] insert obligationServer (2, SHALL:populate-if-known)
@@ -205,8 +216,8 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * dosage ..1 MS
 * dosage.text MS
-* dosage.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
-* dosage.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* dosage.text insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
+* dosage.text insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 
 Profile: SmartHealthChecksMedication
 Parent: $au-core-medication
@@ -235,11 +246,11 @@ Description: "This profile sets the minimum expectations for an Observation reso
 * subject MS
 * subject insert obligationServer (2, SHALL:populate)
 * effectiveDateTime MS
-* effectiveDateTime insert obligationServer (2, SHALL:populate-if-known)
+* effectiveDateTime insert obligation2Server (2, SHALL:populate-if-known, SHOULD:populate)
 * effectiveDateTime insert obligationApp (3, SHALL:process)
 * valueQuantity MS
-* valueQuantity insert obligationServer (0, SHALL:populate-if-known)
-* valueQuantity insert obligationApp (1, SHALL:process)
+* valueQuantity insert obligation2Server (2, SHALL:populate-if-known, SHOULD:populate)
+* valueQuantity insert obligationApp (3, SHALL:process)
 * valueQuantity.value MS
 * valueQuantity.value insert obligationServer (0, SHALL:populate-if-known)
 * valueQuantity.value insert obligationApp (1, SHALL:process)
@@ -305,14 +316,14 @@ Description: "This profile sets the minimum expectations for a Patient resource 
 * telecom insert obligationServer (2, SHALL:populate-if-known)
 * telecom insert obligationApp (3, SHALL:process)
 * telecom.system MS
-* telecom.system insert obligationServer (0, SHALL:populate-if-known)
-* telecom.system insert obligationApp (1, SHALL:process)
+* telecom.system insert obligationServer (2, SHALL:populate-if-known)
+* telecom.system insert obligationApp (3, SHALL:process)
 * telecom.value MS
-* telecom.value insert obligationServer (0, SHALL:populate-if-known)
-* telecom.value insert obligationApp (1, SHALL:process)
+* telecom.value insert obligationServer (2, SHALL:populate-if-known)
+* telecom.value insert obligationApp (3, SHALL:process)
 * telecom.use MS
-* telecom.use insert obligationServer (0, SHALL:populate-if-known)
-* telecom.use insert obligationApp (1, SHALL:process)
+* telecom.use insert obligationServer (2, SHALL:populate-if-known)
+* telecom.use insert obligationApp (3, SHALL:process)
 * gender MS
 * gender insert obligationServer (2, SHALL:populate-if-known)
 * gender insert obligationApp (3, SHALL:process)
@@ -607,8 +618,8 @@ Description: "This profile sets the minimum expectations for a Smoking Status re
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
 * status insert obligation2App (4, SHALL:populate, SHALL:process)
 * category[socialHistory] MS
-* category[socialHistory] insert obligationServer (0, SHALL:persist)
-* category[socialHistory] insert obligationApp (1, SHALL:populate)
+* category[socialHistory] insert obligationServer (2, SHALL:persist)
+* category[socialHistory] insert obligationApp (3, SHALL:populate)
 * code.coding MS
 * code.coding insert obligationServer (0, SHALL:persist)
 * code.coding insert obligationApp (1, SHALL:populate)
