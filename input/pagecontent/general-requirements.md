@@ -91,7 +91,7 @@ Additionally, SHC actor obligations that support writeback can be specified on e
 * [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist a valid reference for *all* resource types or profiles allowed by the element
 * [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate a reference to *at least one* resource type or profile allowed by the element.
 
-As of this version of the SHC IG, there are no SHC profiles with Must Support element with writeback obligations that allow multiple resource types or profiles. The writeback obligations guidance above is provided in case a future version of this IG does allow a Must Support element with multiple resource types or profiles.
+As of this version of the SHC IG, there are no SHC profiles with *Must Support* element with writeback obligations that allow multiple resource types or profiles. The writeback obligations guidance above is provided in case a future version of this IG does allow a *Must Support* element with multiple resource types or profiles.
 
 #### Must Support - Choice of Data Types
 
@@ -126,10 +126,10 @@ A 'choice element' supports writeback when a specific data type is labelled *Mus
 * [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate a known value, or able to populate when allowed to share, the 'choice element' using the *Must Support* data type.
 
 For example, when claiming conformance to the [Smart Health Checks Condition](StructureDefinition-SHCCondition.html):
-* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist valid value from the `Condition.onsetDateTime`
+* [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist a valid value from `Condition.onsetDateTime`
 * [SHC App](ActorDefinition-SHCApp.html) **SHALL** correctly populate a known Condition.onset[x] value using the `Condition.onsetDateTime`.
 
-On rare occasions, elements with prepopulation and writeback requirements are labelled as *Must Support* on the choice element without any specific *Must Support* datatype. In this case, The [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) obligations of `SHALL:populate-if-known` and `SHALL:persist`, and [SHC App](ActorDefinition-SHCApp.html) obligations of `SHALL:process` and `SHALL:populate-if-known` are applicable. For choice elements with prepopulation and writeback requirements:  
+On rare occasions, elements with prepopulation and writeback requirements are labelled as *Must Support* on the 'choice element' without any specific *Must Support* datatype. In this case, the [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) obligations of `SHALL:populate-if-known` and `SHALL:persist`, and [SHC App](ActorDefinition-SHCApp.html) obligations of `SHALL:process` and `SHALL:populate-if-known` are applicable. For choice elements with prepopulation and writeback requirements:  
 * [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** correctly populate a known value for the choice element using *at least one* data type allowed by the element
 * [SHC Host FHIR Server](ActorDefinition-SHCHostFHIRServer.html) **SHALL** persist a valid value for *all* data types allowed by the element
 * [SHC App](ActorDefinition-SHCApp.html) **SHALL** process valid data for *all* data types of the choice element
