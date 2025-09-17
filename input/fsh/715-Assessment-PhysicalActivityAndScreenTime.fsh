@@ -179,28 +179,20 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "a9aaba01-5f11-4d4e-ad39-40b6bef745da"
     * text = "Document conversation about age-appropriate recommendations re physical activity and screen time"
     * type = #text
-    * repeats = false 
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "64c5bab2-575b-4304-bb50-3840bae351ea"
-      * text = "Details"
-      * type = #display
+    * repeats = false
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age > 12) and (%age <= 24)"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "b2269be8-3ea5-494c-9368-06912b629789"
     * text = "Document conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "d35063fc-688b-4fab-ae3a-9aae18806043"
-      * text = "Details"
-      * type = #display
   * item[+]
     * linkId = "ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2"
     * text = "Health priorities, actions and follow-up"
@@ -268,15 +260,11 @@ Description: "Physical Activity And Screen Time sub-questionnaire for Aboriginal
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "eb326905-3709-4088-8491-8b83c97f2da4"
     * text = "Document conversation about recommendations re physical activity"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "10add54e-af14-47b7-ad1a-666692ee3767"
-      * text = "Details"
-      * type = #display
 
   * item[+]
     * linkId = "25b8b8fd-adb1-48ab-aeae-528603668c4b"

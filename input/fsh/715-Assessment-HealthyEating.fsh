@@ -150,28 +150,20 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "ff6a46e6-0812-4718-a854-489b24805925"
     * text = "Breastfeeding history"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "87f4277a-0af8-4bb9-ba2d-cb4e4f3a4548"
-      * text = "Details"
-      * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "b5f748d2-1874-4949-a7df-6e233f03135d"
     * text = "Bottle feeding history"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "1792a4b0-640f-4d41-8704-c069179539bb"
-      * text = "Details"
-      * type = #display
   
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
@@ -227,6 +219,7 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "9f6adf74-f240-41a2-a509-d216d5308911"
     * text = "Document conversation about age-appropriate healthy eating, which could include: current diet; transition to solids; dietary recommendations re fruit and vegetable intake, iron-rich foods, avoiding sugary drinks"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
@@ -239,15 +232,11 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     </div>"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "d3c0033f-20d0-40ab-b4d5-6eb3f67be492"
-      * text = "details"
-      * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 5"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "7a22a4c4-6611-4687-af00-37c80c3f8fc0"
     * text = "Document conversation about healthy eating which could include: current diet including food and drinks; recommendations about fruit and vegetable intake, water as the main drink, avoiding sugary drinks, avoiding highly processed foods (including supermarket-bought and take-away like KFC, Maccas, etc)"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
@@ -259,11 +248,6 @@ Description: "Healthy Eating sub-questionnaire for Aboriginal and Torres Strait 
     </div>"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "579a1e9e-c679-4411-b78f-0468cd45e1a2"
-      * text = "details"
-      * type = #display
   * item[+]
     * linkId = "71e39493-f0b0-4074-934b-604155b349e1"
     * text = "Food availability issues"

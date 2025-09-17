@@ -103,15 +103,11 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
       * operator = #=
       * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b"
     * text = "Who lives in your household? / Who does the child live with?"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "5b8134d2-f87e-4449-bfc1-eac1d8d3d58b"
-      * text = "Details"
-      * type = #display 
   * item[+]
     * linkId = "934d105e-a4d6-4926-9b64-55bb1049d839"
     * text = "Stressful life events"
@@ -138,15 +134,11 @@ Description: "Social History Child sub-questionnaire for Aboriginal and Torres S
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 5"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "272af1cb-4309-4227-bab4-a6cc9fb47635"
     * text = "If indicated, ask about depression and other mental health concerns"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "4048e200-1c09-441d-b25d-f8a946fac411"
-      * text = "Details"
-      * type = #display
 
   * item[+]
     * linkId = "76d51512-b94a-4092-b3ae-a656fbb9c360"

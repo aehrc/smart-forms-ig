@@ -134,15 +134,11 @@ Description: "Social And Emotional Wellbeing sub-questionnaire for Aboriginal an
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 24"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "9e991b80-7080-40d5-9ad9-447dc47e3a68"
     * text = "Consider conversation about social connection, which could include questions about sports/hobbies/clubs/other activities"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "2740f866-2cd7-41a1-912c-ba29cbe7a582"
-      * text = "Details"
-      * type = #display
 
   * item[+]
     * linkId = "b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee"

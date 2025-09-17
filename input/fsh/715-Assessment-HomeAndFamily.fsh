@@ -103,15 +103,11 @@ Description: "Home And Family sub-questionnaire for Aboriginal and Torres Strait
       * operator = #=
       * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "29bb209f-6dfc-4ed0-8b8d-741016c0ac61"
     * text = "Who do you live with?"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "f3e122f3-77ff-4e07-a45b-1511a85a9a83"
-      * text = "Details"
-      * type = #display
   * item[+]
     * linkId = "64b979b6-cfc1-4024-868c-94e7be90d12b"
     * text = "Housing stability"

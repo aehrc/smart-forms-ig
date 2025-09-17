@@ -227,28 +227,20 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 24"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "7089c48e-4216-4089-a548-034cd585e4da"
     * text = "Other family"
     * type = #string
     * repeats = true
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "70c45932-99dc-42a3-9650-4683892a0892"
-      * text = "details"
-      * type = #display
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 24"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "42b1f5e0-bf4a-47d9-86a4-f2fe946ac01f"
     * text = "Other"
     * type = #string
-    * repeats = true 
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "dcbd3a54-9b68-4486-bf30-f6f1723bc39c"
-      * text = "details"
-      * type = #display
+    * repeats = true
   * item[+]
     * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath

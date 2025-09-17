@@ -169,15 +169,11 @@ Description: "Oral And Dental Health sub-questionnaire for Aboriginal and Torres
       * type = #text
       * repeats = false
     * item[+]
+      * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
       * linkId = "79e09f4d-dac6-4088-baa0-d95dc658fb0b"
       * text = "Document conversation about oral health and care of teeth"
       * type = #text
       * repeats = false
-      * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-        * linkId = "39ddbf92-847d-4c98-adff-6aa3013f8b39"
-        * text = "Details"
-        * type = #display
 
   * item[+]
     * linkId = "875574fa-9769-42ca-8381-9e80c3e5233d"

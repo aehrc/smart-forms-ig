@@ -101,36 +101,24 @@ Description: "Mood sub-questionnaire for Aboriginal and Torres Strait Islander H
       * operator = #=
       * answerBoolean = true
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "b3c510a7-bfd1-4ebe-8755-9f05e7a742ba"
     * text = "How have you been feeling lately?"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "e440f97d-b10a-472a-9e5b-4fcf7614ee08"
-      * text = "Details"
-      * type = #display
   * item[+]
     * extension[sdc-questionnaire-shortText].valueString = "Ask about depression and complete risk assessment"
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "b4245702-afe5-4e4e-a102-1d3ceb4ad7c2"
     * text = "If indicated, ask about depression (consider screening tools, eg aPHQ-9, K5 or K10) and complete risk assessment"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "f9640e61-3b19-4d07-95e2-34daa44881ab"
-      * text = "Details"
-      * type = #display
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "6a99da48-366b-40c9-97ec-d0f2d52964a8"
     * text = "Explore other mental health concerns as indicated"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "8b747e00-0f5d-4ba1-98c3-3d8e592f4c22"
-      * text = "Details"
-      * type = #display
 
   * item[+]
     * linkId = "db9a8650-42a2-4bd3-8066-7e09394120d5"

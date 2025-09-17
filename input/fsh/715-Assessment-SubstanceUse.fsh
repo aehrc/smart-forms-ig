@@ -244,6 +244,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
     * repeats = false
     * item[+]
       * extension[sdc-questionnaire-shortText].valueString = "Quantity and frequency of substance use" 
+      * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
       * linkId = "ea73d52c-f831-46be-a45d-2c42250a5210"
       * text = "Quantity and frequency of: alcohol; caffeine (coffee, soft drinks, iced coffee); cannabis/yarndi/gunja; other substance use: IVDU, methamphetamine, opiates, solvents, other"
         * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
@@ -257,11 +258,6 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
 	      </div>"
       * type = #text
       * repeats = false
-      * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-        * linkId = "232cf24c-db60-4601-869d-525fb6e05988"
-        * text = "details"
-        * type = #display
   * item[+]
     * linkId = "f8e1cc1f-f1a1-4eb3-8255-77d600f52831"
     * text = "Health priorities, actions and follow-up"
