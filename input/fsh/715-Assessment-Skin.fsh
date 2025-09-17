@@ -155,15 +155,11 @@ Description: "Skin sub-questionnaire for Aboriginal and Torres Strait Islander H
     * repeats = false
     * answerValueSet = "#YesNo"
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "206f4e35-3b87-4252-97fc-c78bf9fb6f5d"
     * text = "Document conversation about sun protection as appropriate (ie sunscreen, hats, shade)."
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "03f9df0e-dd04-43b2-b556-ff65a70c5a0d"
-      * text = "Details"
-      * type = #display
   * item[+]
     * linkId = "7cec4c99-90da-40bc-86a6-f77abb093933"
     * text = "General skin examination findings"

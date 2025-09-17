@@ -5036,32 +5036,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 24"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "7089c48e-4216-4089-a548-034cd585e4da",
                             "text": "Other family",
                             "type": "string",
-                            "repeats": true,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "70c45932-99dc-42a3-9650-4683892a0892",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": true
                         },
                         {
                             "extension": [
@@ -5071,32 +5055,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 24"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "42b1f5e0-bf4a-47d9-86a4-f2fe946ac01f",
                             "text": "Other",
                             "type": "string",
-                            "repeats": true,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "dcbd3a54-9b68-4486-bf30-f6f1723bc39c",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": true
                         },
                         {
                             "extension": [
@@ -6195,30 +6163,16 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "dcf182c0-a2bf-46ac-a19b-72e4d24ef24d",
                             "text": "What are the important things for you in this health check today?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "3ac0c629-9acc-48af-bafe-6b05dfd06281",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -6228,32 +6182,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 12"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "a0c06f8d-3210-480b-9031-7b5eb5bf1dda",
                             "text": "Is there anything you are worried about?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "43fb3316-64a4-41dc-b12c-2f3fcee3eb84",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -6263,32 +6201,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 12"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "96f3396e-f5f8-4347-8692-9abdecb97768",
                             "text": "Is there anything that you are worried about with your child's health or wellbeing?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "75b39c42-8a15-4fdf-9129-936072336456",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -6373,32 +6295,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 12"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "35b3f6d8-2907-4134-ae55-1e321b908f70",
                             "text": "Do you have any specific health goals? Is there anything in particular about your health and wellbeing that you would like to improve?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "bb176839-5cc8-4fb5-a919-0904968418be",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "7cd424e5-7672-4e99-8a99-30b1fb3043fd",
@@ -7790,32 +7696,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 12"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "532e09ea-2c2d-48c6-81f8-e23380b329a0",
                             "text": "Provide relevant family history information",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "9bc2daf9-6d13-4747-90c3-4a1862f6199a",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -7827,6 +7717,10 @@
                                     }
                                 },
                                 {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                },
+                                {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Provide relevant family history information"
                                 }
@@ -7834,27 +7728,7 @@
                             "linkId": "df5b2081-a373-48ee-acab-96225dad3c1d",
                             "text": "Provide relevant family history information (including diabetes, heart disease, cancer, mental health)",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "8f801e02-bfe8-437f-ba51-07c8f3631a0e",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "49ee4583-c608-41d4-a1e9-c06cf4292369",
@@ -8029,32 +7903,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 24"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "9e991b80-7080-40d5-9ad9-447dc47e3a68",
                             "text": "Consider conversation about social connection, which could include questions about sports/hobbies/clubs/other activities",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "2740f866-2cd7-41a1-912c-ba29cbe7a582",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "b5a00aad-2a8b-4ac3-87b2-4a5920ca22ee",
@@ -8164,30 +8022,16 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "1bb673a4-40f9-41c3-ad04-66c9f38fdc1b",
                             "text": "Who lives in your household? / Who does the child live with?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "5b8134d2-f87e-4449-bfc1-eac1d8d3d58b",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "934d105e-a4d6-4926-9b64-55bb1049d839",
@@ -8245,32 +8089,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "272af1cb-4309-4227-bab4-a6cc9fb47635",
                             "text": "If indicated, ask about depression and other mental health concerns",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "4048e200-1c09-441d-b25d-f8a946fac411",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "76d51512-b94a-4092-b3ae-a656fbb9c360",
@@ -8376,30 +8204,16 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "29bb209f-6dfc-4ed0-8b8d-741016c0ac61",
                             "text": "Who do you live with?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "f3e122f3-77ff-4e07-a45b-1511a85a9a83",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "64b979b6-cfc1-4024-868c-94e7be90d12b",
@@ -8608,32 +8422,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "818c9aaa-1b00-4c76-9971-49df74edff7a",
                             "text": "Is there anything that you are worried about with your child's development?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "ca6113f5-b6f6-413d-b9e1-0a34491f4be3",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8643,84 +8441,40 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "e7ef5692-25e6-4598-aa08-d0107e21fe31",
                             "text": "Is there anything that you are worried about with your child's learning?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "c7c5fb28-c72b-4804-b7ec-c52fe754b689",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "fc658147-3fad-42a0-9c10-c14fbd30775e",
                             "text": "Is there anything that you are worried about with your child's behaviour?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "a3327fc8-663d-402b-8910-2b15f2a3d500",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "582fcfe5-c7a4-4847-9881-815452b9eafe",
                             "text": "Is there anything that you are worried about with your child's sleep?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "44e0023c-1b92-455f-a501-6006cf412fc5",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8730,32 +8484,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "335f4c10-a6e6-455b-8a7e-2962158f5183",
                             "text": "What childcare/early learning centre/kindergarten does your child go to? How often?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "20ae39db-7bb5-4af4-ac59-3298d20719d8",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8765,32 +8503,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "e5b886ad-840e-4f01-af04-55c5ea7f215d",
                             "text": "How often does your child miss childcare/early learning centre/kindergarten?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "61ff302c-9ef0-414c-a9f8-e2b8d119373c",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8800,32 +8522,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "f0e0ea74-cffc-46a5-8554-67e8fcc667f1",
                             "text": "Is there anything you are worried about at school?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "520a4544-a48b-4864-8cfd-6af263756f1b",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8835,32 +8541,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "73a40641-04c9-4da4-813e-a8b9ae3a2ecf",
                             "text": "How often does your child miss school?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "2e24a8de-c23d-409a-a5d6-96345177e105",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8870,32 +8560,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "47f09b28-9eea-4f8c-8d3c-7efef0504728",
                             "text": "Is your child having any difficulties making friends?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "f95dd477-98a2-4534-b8ab-5a74d1b46502",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -8905,32 +8579,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "9371dddc-49f4-4a8f-a9dc-a0e128f99636",
                             "text": "Are there any other concerns about your child's learning and development?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "f513b077-5714-4b14-b44f-30a979509651",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "5ab80929-5901-431d-bf68-67d532f5fa58",
@@ -9418,88 +9076,44 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "b3c510a7-bfd1-4ebe-8755-9f05e7a742ba",
                             "text": "How have you been feeling lately?",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "e440f97d-b10a-472a-9e5b-4fcf7614ee08",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Ask about depression and complete risk assessment"
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "b4245702-afe5-4e4e-a102-1d3ceb4ad7c2",
                             "text": "If indicated, ask about depression (consider screening tools, eg aPHQ-9, K5 or K10) and complete risk assessment",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "f9640e61-3b19-4d07-95e2-34daa44881ab",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "6a99da48-366b-40c9-97ec-d0f2d52964a8",
                             "text": "Explore other mental health concerns as indicated",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "8b747e00-0f5d-4ba1-98c3-3d8e592f4c22",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "db9a8650-42a2-4bd3-8066-7e09394120d5",
@@ -9701,30 +9315,16 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "4ebb3c30-936b-4932-a330-f1e643b5ccd4",
                             "text": "If any concerns are raised and/or high risk for cognitive impairment identified, follow up with cognitive screening (eg clock test, GPCOG, KICA-Cog, MMSE)",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "c563f52d-d3cc-4687-9863-0f1b7d00d942",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "1f0e7fde-e964-4f36-9151-dbdc5e145f94",
@@ -9834,6 +9434,10 @@
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                     "valueString": "Assessment of chronic disease associated with ageing"
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "12e244c0-2887-4230-8792-9521d4f1ab33",
@@ -9847,27 +9451,7 @@
                                 ]
                             },
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "d6337ce3-ec9a-44e2-a69a-2355025b3e8c",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "7292070b-8944-4a40-bcf6-9aaf1721e986",
@@ -10355,32 +9939,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "ff6a46e6-0812-4718-a854-489b24805925",
                             "text": "Breastfeeding history",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "87f4277a-0af8-4bb9-ba2d-cb4e4f3a4548",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -10390,32 +9958,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "b5f748d2-1874-4949-a7df-6e233f03135d",
                             "text": "Bottle feeding history",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "1792a4b0-640f-4d41-8704-c069179539bb",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -10539,6 +10091,10 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age <= 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "9f6adf74-f240-41a2-a509-d216d5308911",
@@ -10552,27 +10108,7 @@
                                 ]
                             },
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "d3c0033f-20d0-40ab-b4d5-6eb3f67be492",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -10582,6 +10118,10 @@
                                         "language": "text/fhirpath",
                                         "expression": "%age > 5"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "7a22a4c4-6611-4687-af00-37c80c3f8fc0",
@@ -10595,27 +10135,7 @@
                                 ]
                             },
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "579a1e9e-c679-4411-b78f-0468cd45e1a2",
-                                    "text": "details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "71e39493-f0b0-4074-934b-604155b349e1",
@@ -10940,30 +10460,16 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "a9aaba01-5f11-4d4e-ad39-40b6bef745da",
                             "text": "Document conversation about age-appropriate recommendations re physical activity and screen time",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "64c5bab2-575b-4304-bb50-3840bae351ea",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "extension": [
@@ -10973,32 +10479,16 @@
                                         "language": "text/fhirpath",
                                         "expression": "(%age > 12) and (%age <= 24)"
                                     }
+                                },
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
                                 }
                             ],
                             "linkId": "b2269be8-3ea5-494c-9368-06912b629789",
                             "text": "Document conversation about social connection, which could include questions about sports/hobbies/clubs/other activities",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "d35063fc-688b-4fab-ae3a-9aae18806043",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "ccbd7fbf-0d40-4cb3-82b3-ad2c7cc7bba2",
@@ -11152,30 +10642,16 @@
                             ]
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "eb326905-3709-4088-8491-8b83c97f2da4",
                             "text": "Document conversation about recommendations re physical activity",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "10add54e-af14-47b7-ad1a-666692ee3767",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "25b8b8fd-adb1-48ab-aeae-528603668c4b",
@@ -12811,6 +12287,10 @@
                                         {
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText",
                                             "valueString": "Quantity and frequency of substance use"
+                                        },
+                                        {
+                                            "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                            "valueString": "Details"
                                         }
                                     ],
                                     "linkId": "ea73d52c-f831-46be-a45d-2c42250a5210",
@@ -12824,27 +12304,7 @@
                                         ]
                                     },
                                     "type": "text",
-                                    "repeats": false,
-                                    "item": [
-                                        {
-                                            "extension": [
-                                                {
-                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                                    "valueCodeableConcept": {
-                                                        "coding": [
-                                                            {
-                                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                                "code": "prompt"
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "linkId": "232cf24c-db60-4601-869d-525fb6e05988",
-                                            "text": "details",
-                                            "type": "display"
-                                        }
-                                    ]
+                                    "repeats": false
                                 }
                             ]
                         },
@@ -14882,30 +14342,16 @@
                                     "repeats": false
                                 },
                                 {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                            "valueString": "Details"
+                                        }
+                                    ],
                                     "linkId": "79e09f4d-dac6-4088-baa0-d95dc658fb0b",
                                     "text": "Document conversation about oral health and care of teeth",
                                     "type": "text",
-                                    "repeats": false,
-                                    "item": [
-                                        {
-                                            "extension": [
-                                                {
-                                                    "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                                    "valueCodeableConcept": {
-                                                        "coding": [
-                                                            {
-                                                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                                "code": "prompt"
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "linkId": "39ddbf92-847d-4c98-adff-6aa3013f8b39",
-                                            "text": "Details",
-                                            "type": "display"
-                                        }
-                                    ]
+                                    "repeats": false
                                 }
                             ]
                         },
@@ -15139,30 +14585,16 @@
                             "answerValueSet": "#YesNo"
                         },
                         {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
+                                    "valueString": "Details"
+                                }
+                            ],
                             "linkId": "206f4e35-3b87-4252-97fc-c78bf9fb6f5d",
                             "text": "Document conversation about sun protection as appropriate (ie sunscreen, hats, shade).",
                             "type": "text",
-                            "repeats": false,
-                            "item": [
-                                {
-                                    "extension": [
-                                        {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                                            "valueCodeableConcept": {
-                                                "coding": [
-                                                    {
-                                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                                        "code": "prompt"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ],
-                                    "linkId": "03f9df0e-dd04-43b2-b556-ff65a70c5a0d",
-                                    "text": "Details",
-                                    "type": "display"
-                                }
-                            ]
+                            "repeats": false
                         },
                         {
                             "linkId": "7cec4c99-90da-40bc-86a6-f77abb093933",

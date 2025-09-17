@@ -146,15 +146,11 @@ Description: "Memory And Thinking sub-questionnaire for Aboriginal and Torres St
         * operator = #=
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
   * item[+]
+    * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
     * linkId = "4ebb3c30-936b-4932-a330-f1e643b5ccd4"
     * text = "If any concerns are raised and/or high risk for cognitive impairment identified, follow up with cognitive screening (eg clock test, GPCOG, KICA-Cog, MMSE)"
     * type = #text
     * repeats = false
-    * item[+]
-      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#prompt
-      * linkId = "c563f52d-d3cc-4687-9863-0f1b7d00d942"
-      * text = "Details"
-      * type = #display
 
 
   * item[+]
