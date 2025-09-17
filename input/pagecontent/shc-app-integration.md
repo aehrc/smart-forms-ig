@@ -402,8 +402,25 @@ A summary of the SHC profiles that could be included as a FHIR `create` interact
 ##### Patch Writeback Interactions
 The FHIR `patch` interaction uses the FHIR `Parameters` resource type as the body of the interaction request. These `Parameters` resources will comply with the [Smart Health Checks Patch](StructureDefinition-SHCPatch.html) Parameters profile. A summary of the SHC profiles and the resource element path that could be updated using the Writeback Extract Transaction as a FHIR `patch` interaction are shown below. 
 
-| Profile | Patch | Patch element path  |
-| --- | --- | --- |
-| [Smart Health Checks AllergyIntolerance](StructureDefinition-SHCAllergyIntolerance.html)  | **Y** | `clinicalStatus`<br/>`note[0].text` |
-| [Smart Health Checks Condition](StructureDefinition-SHCCondition.html)  | **Y** | `clinicalStatus`<br/>`abatement` |
-| [Smart Health Checks MedicationStatement](StructureDefinition-SHCMedicationStatement.html)  | **Y** | `status`<br/>`dosage[0].text`<br/>`note[0].text` |
+<table>
+    <tr>
+        <th>Profile</th>
+        <th>Patch</th>
+        <th>Patch element path</th>
+    </tr>
+    <tr>
+        <td><a href="StructureDefinition-SHCAllergyIntolerance.html">Smart Health Checks AllergyIntolerance</a></td>
+        <td><strong>Y</strong></td>
+        <td><ul><li><code>clinicalStatus</code></li><li><code>note[0].text</code></li></ul></td>
+    </tr>
+    <tr>
+        <td><a href="StructureDefinition-SHCCondition.html">Smart Health Checks Condition</a></td>
+        <td><strong>Y</strong></td>
+        <td><ul><li><code>clinicalStatus</code></li><li><code>abatement</code></li></ul></td>
+    </tr>
+    <tr>
+        <td><a href="StructureDefinition-SHCMedicationStatement.html">Smart Health Checks MedicationStatement</a></td>
+        <td><strong>Y</strong></td>
+        <td><ul><li><code>status</code></li><li><code>dosage[0].text</code></li><li><code>note[0].text</code></li></ul></td>
+    </tr>
+</table>
