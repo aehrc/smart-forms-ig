@@ -178,6 +178,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * type = #string
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 40 '%'
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
@@ -225,6 +226,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * repeats = true
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 35 '%'
         * linkId = "2da85994-2d5e-42f1-8a81-abf44f397468"
         * text = "Condition"
         * type = #open-choice
@@ -234,6 +236,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * text = "Onset date"
         * type = #date
       * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 45 '%'
         * linkId = "newdiagnosis-comment"
         * text = "Comment"
         * type = #string
