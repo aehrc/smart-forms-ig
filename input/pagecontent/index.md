@@ -83,7 +83,7 @@ This guide is divided into several pages which are listed at the top of each pag
 - [Home](index.html): This page provides the introduction and scope for this guide.
 - Guidance
   - [General Requirements](general-requirements.html): This page documents how CapabilityStatements declare conformance to the SHC profiles and their FHIR interactions. It also defines the expectations for mandatory and *Must Support* elements.
-  - [SHC App Integration](shc-app-integration.html): This page provides an overview of the integration requirements to launch the Smart Health Check Application.
+  - [SHC App Integration](smart-health-checks-app-integration.html): This page provides an overview of the integration requirements to launch the Smart Health Check Application.
   - [Reference Implementation](reference-implementation.html): This page describes software components that have been developed to demonstrate the Smart Health Checks solution.
 - FHIR Artefacts: These pages provide detailed descriptions and formal definitions for all the FHIR artefacts defined in this guide.
   - [Artefact Summary](artifacts.html): This page lists all of the FHIR artefacts defined in this guide.
