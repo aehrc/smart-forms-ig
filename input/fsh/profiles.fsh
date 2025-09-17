@@ -113,8 +113,8 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * code.text MS
-* code.text insert obligationServer (0, SHALL:persist)
-* code.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* code.text insert obligationServer (1, SHALL:persist)
+* code.text insert obligation2App (2, SHALL:populate-if-known, SHALL:process)
 * note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
@@ -145,8 +145,8 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * code.text MS
-* code.text insert obligationServer (0, SHALL:persist)
-* code.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* code.text insert obligationServer (1, SHALL:persist)
+* code.text insert obligation2App (2, SHALL:populate-if-known, SHALL:process)
 * subject MS
 * subject insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * subject insert obligationApp (3, SHALL:populate)
@@ -176,8 +176,8 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * vaccineCode.coding[amtVaccineCode] insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * vaccineCode.coding[amtVaccineCode] insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * vaccineCode.text MS
-* vaccineCode.text insert obligationServer (0, SHALL:persist)
-* vaccineCode.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* vaccineCode.text insert obligationServer (1, SHALL:persist)
+* vaccineCode.text insert obligation2App (2, SHALL:populate-if-known, SHALL:process)
 * patient MS
 * patient insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * patient insert obligationApp (3, SHALL:populate)
@@ -207,8 +207,8 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * medicationCodeableConcept insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * medicationCodeableConcept insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * medicationCodeableConcept.text MS
-* medicationCodeableConcept.text insert obligationServer (0, SHALL:persist)
-* medicationCodeableConcept.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* medicationCodeableConcept.text insert obligationServer (1, SHALL:persist)
+* medicationCodeableConcept.text insert obligation2App (2, SHALL:populate-if-known, SHALL:process)
 * medicationReference MS
 * medicationReference only Reference(SHCMedication)
 * medicationReference insert obligationServer (2, SHALL:populate-if-known)
@@ -1471,6 +1471,9 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[value].valueCode insert obligationServer (0, SHALL:process)
 * parameter.part[value].valueCode insert obligationApp (1, SHALL:populate)
 * parameter.part[value].valueCode from MedicationStatementStatusLimited (required)
+* parameter.part[value].valueCodeableConcept MS
+* parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
+* parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate)
 * parameter.part[value].valueCodeableConcept.coding 1..1 MS
 * parameter.part[value].valueCodeableConcept.coding insert obligationServer (0, SHALL:process)
 * parameter.part[value].valueCodeableConcept.coding insert obligationApp (1, SHALL:populate)

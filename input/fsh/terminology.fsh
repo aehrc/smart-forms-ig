@@ -864,6 +864,8 @@ Id: SHCPatchPathCodes
 Title: "Smart Health Checks Patch Path Codes"
 Description: "The Smart Health Checks Patch Path Codes code system defines concepts that identify element paths that are the target of a patch operation."
 
+* ^experimental = false
+* ^caseSensitive = true
 * #AllergyIntolerance.clinicalStatus "AllergyIntolerance.clinicalStatus"
 * #AllergyIntolerance.note[0].text "AllergyIntolerance.note[0].text"
 * #Condition.clinicalStatus "Condition.clinicalStatus"
@@ -884,6 +886,8 @@ Id: QuestionnaireRepopulationBehaviorCodes
 Title: "Questionnaire Repopulation Behavior Codes"
 Description: "The Questionnaire Repopulation Behavior Codes code system defines concepts that describe the repopulation behaviour that can be applied to the initial expression of a Questionnaire item."
 
+* ^experimental = false
+* ^caseSensitive = true
 * #manual "Manual" "The item can be repopulated manually by the user. The initial expression will be evaluated and the item populated with the result."
 
 ValueSet: QuestionnaireRepopulationBehavior
