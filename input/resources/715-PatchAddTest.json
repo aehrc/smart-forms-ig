@@ -1,6 +1,6 @@
 {
     "resourceType": "Questionnaire",
-    "id": "AboriginalTorresStraitIslanderHealthCheck",
+    "id": "715ConditionalPatchTemplating",
     "contained": [
         {
             "resourceType": "ValueSet",
@@ -1738,11 +1738,15 @@
           "part": [
             {
               "name": "type",
-              "valueCode": "replace"
+              "valueCode": "add"
             },
             {
               "name": "path",
-              "valueString": "AllergyIntolerance.clinicalStatus"
+              "valueString": "AllergyIntolerance"
+            },
+            {
+              "name": "name",
+              "valueString": "clinicalStatus"
             },
             {
               "name": "value",
@@ -1770,14 +1774,7 @@
           "part": [
             {
               "name": "type",
-              "_valueCode": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'replace', 'add')"
-                  }
-                ]
-              }
+              "valueCode": "add"
             },
             {
               "name": "path",
@@ -1785,7 +1782,18 @@
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0].text', 'AllergyIntolerance')"
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0]', 'AllergyIntolerance')"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "_valueString": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'text', 'note')"
                   }
                 ]
               }
@@ -1795,26 +1803,35 @@
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                    "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.empty(), 'name')"
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'value')"
                   }
                 ]
               },
-              "_valueString": {
+              "_valueMarkdown": {
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                    "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.empty(), 'note[0].text')"
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first())"
                   }
                 ]
               }
             },
             {
-              "name": "value",
-              "_valueMarkdown": {
+              "valueAnnotation": {
+                "_text": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                      "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), item.where(linkId='allergysummary-comment').answer.value.first())"
+                    }
+                  ]
+                }
+              },
+              "_name": {
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                    "valueString": "item.where(linkId='allergysummary-comment').answer.value.first()"
+                    "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), 'value')"
                   }
                 ]
               }
@@ -3371,10 +3388,10 @@
             "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.3.0"
         }
     ],
-    "url": "http://www.health.gov.au/assessments/mbs/715",
+    "url": "http://www.health.gov.au/assessments/mbs/715-715ConditionalPatchTemplating",
     "version": "0.3.0-assembled",
-    "name": "AboriginalTorresStraitIslanderHealthCheck",
-    "title": "Aboriginal and Torres Strait Islander Health Check",
+    "name": "715ConditionalPatchTemplating",
+    "title": "715ConditionalPatchTemplating",
     "status": "draft",
     "experimental": false,
     "subjectType": [

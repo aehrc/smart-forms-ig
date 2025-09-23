@@ -225,9 +225,11 @@ Usage: #inline
 
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "AllergyIntolerance.clinicalStatus"
+* parameter[=].part[=].valueString = "AllergyIntolerance"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "clinicalStatus"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
@@ -235,18 +237,21 @@ Usage: #inline
 * parameter[=].part[=].valueString = "Clinical status"
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueCode.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'replace', 'add')"
+* parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
 * parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0].text', 'AllergyIntolerance')"
-* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.empty(), 'name')"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0]', 'AllergyIntolerance')"
+* parameter[=].part[+].name = "name"
 * parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.empty(), 'note[0].text')"
-* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'text', 'note')"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'value')"
 * parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='allergysummary-comment').answer.value.first()"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first())"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), 'value')"
+* parameter[=].part[=].valueAnnotation.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueAnnotation.text.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), item.where(linkId='allergysummary-comment').answer.value.first())"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Comment"
 
@@ -287,14 +292,17 @@ Usage:  #inline
 * note.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * note.text.extension[=].valueString = "item.where(linkId='newdiagnosis-comment').answer.value"
 
+
 Instance: ConditionPatchTemplate
 InstanceOf: Parameters
 Usage: #inline
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "Condition.clinicalStatus"
+* parameter[=].part[=].valueString = "Condition"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "clinicalStatus"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
@@ -302,9 +310,11 @@ Usage: #inline
 * parameter[=].part[=].valueString = "Clinical status"
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "Condition.abatement"
+* parameter[=].part[=].valueString = "Condition"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "abatement"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueDateTime.extension[=].valueString = "item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.toDateTime()"
@@ -346,33 +356,53 @@ InstanceOf: Parameters
 Usage: #inline
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "MedicationStatement.status"
+* parameter[=].part[=].valueString = "MedicationStatement"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "status"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueCode.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-status').answer.value.code"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Status"
+
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
+* parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "MedicationStatement.note[0].text"
-* parameter[=].part[+].name = "value"
-* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueMarkdown.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-comment').answer.value.first()"
-* parameter[=].part[+].name = "pathLabel"
-* parameter[=].part[=].valueString = "Comment"
-* parameter[+].name = "operation"
-* parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #replace
-* parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "MedicationStatement.dosage[0].text"
-* parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueString.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), 'MedicationStatement.dosage[0]', 'MedicationStatement')"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), 'text', 'dosage')"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), 'value')"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), item.where(linkId='regularmedications-summary-current-dosage').answer.value.first())"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.empty(), 'value')"
+* parameter[=].part[=].valueDosage.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueDosage.text.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.empty(), item.where(linkId='regularmedications-summary-current-dosage').answer.value.first())"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Dosage"
 
-
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #add
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), 'MedicationStatement.note[0]', 'MedicationStatement')"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), 'text', 'note')"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), 'value')"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), item.where(linkId='regularmedications-summary-current-comment').answer.value.first())"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.empty(), 'value')"
+* parameter[=].part[=].valueAnnotation.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueAnnotation.text.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.empty(), item.where(linkId='regularmedications-summary-current-comment').answer.value.first())"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Comment"

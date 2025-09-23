@@ -208,6 +208,15 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].text = "Dosage"
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
+// This item is used to determine the appropriate patch parameter parts.
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage.text"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item.item[=].item[=].item[=].extension[=].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-dosage-hidden"
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
 
 * item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
@@ -226,6 +235,15 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment"
 * item.item[=].item[=].item[=].text = "Comment"
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
+// This item is used to determine the appropriate patch parameter parts.
+* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note.text"
+* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+* item.item[=].item[=].item[=].extension[=].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment-hidden"
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
