@@ -39,9 +39,6 @@ Profile reference 'https://healthterminologies.gov.au/fhir/StructureDefinition/c
 # Embedded HTML warnings checked
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
-# Invalid error/invariant bug. Boolean should be lower case
-Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean (operator = 'exists' implies (answer is Boolean))'
-
 # HL7 core warnings
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note: 'Use additionalBinding extension or element instead'
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
@@ -97,3 +94,14 @@ The resource Questionnaire/SubstanceUse could usefully have an OID assigned (OID
 # These warnings are relevant to typical resources, however, these are extract templates and not relevant
 A Reference without an actual reference or identifier should have a display
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1
+
+# Error message annotations
+# Invalid error/invariant bug. Boolean should be lower case
+Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean (operator = 'exists' implies (answer is Boolean))'
+
+# Cross version extension dependency issue. Will be rectified when IG tooling is supplied internationally.
+Slicing cannot be evaluated: Problem with use of resolve() - profile [CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm%5Bx%5D]] on Questionnaire.extension:versionAlgorithm could not be resolved (@char 1)
+Slicing cannot be evaluated: Problem with use of resolve() - profile [CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.copyrightLabel]] on Questionnaire.extension:copyrightLabel could not be resolved (@char 1)
+Slicing cannot be evaluated: Problem with use of resolve() - profile [CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.disabledDisplay]] on Questionnaire.item.extension:disabledDisplay could not be resolved (@char 1)
+
+

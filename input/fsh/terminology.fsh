@@ -1,8 +1,8 @@
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 
-Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
-Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason
+Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
 
 CodeSystem: QuestionnaireItemControlExtended
 Id: QuestionnaireItemControlExtended
@@ -18,20 +18,18 @@ Id: YesNoNotAskedDeclined
 Title: "Yes/No/Not Asked/Asked But Declined"
 Description: "Concepts for Yes, No, Not Asked and Asked But Declined"
 * ^experimental = false
-* ^expansion.identifier = "urn:uuid:20552db7-8def-4e55-a0d2-cb446651929c"
-* ^expansion.timestamp = "2025-05-01T10:00:51+10:00"
+* ^expansion.identifier = "urn:uuid:9c63f3f7-c471-451d-aad3-d84bca7a3c8c"
+* ^expansion.timestamp = "2025-09-18T16:28:54+10:00"
 * ^expansion.total = 4
 * ^expansion.offset = 0
-* ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
-* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[0].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
@@ -56,21 +54,18 @@ Id: YesNoNA
 Title: "Yes/No/NA"
 Description: "Concepts for Yes, No and Not applicable"
 * ^experimental = false
-
-* ^expansion.identifier = "urn:uuid:7fce8cc7-b936-4258-921d-923629b04439"
-* ^expansion.timestamp = "2025-05-01T10:00:47+10:00"
+* ^expansion.identifier = "urn:uuid:32c22ac2-d817-4c44-b9d0-5514d29cd352"
+* ^expansion.timestamp = "2025-09-18T16:28:51+10:00"
 * ^expansion.total = 3
 * ^expansion.offset = 0
-* ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
-* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[0].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
@@ -90,21 +85,18 @@ Id: YesNo
 Title: "Yes/No"
 Description: "Concepts for Yes and No"
 * ^experimental = false
-
-* ^expansion.identifier = "urn:uuid:41cccc66-fd57-4bc4-bab1-8c5c878d95f7"
-* ^expansion.timestamp = "2025-05-01T10:00:50+10:00"
+* ^expansion.identifier = "urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832"
+* ^expansion.timestamp = "2025-09-18T16:28:54+10:00"
 * ^expansion.total = 2
 * ^expansion.offset = 0
-* ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
-* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[0].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.1.0"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
