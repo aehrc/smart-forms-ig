@@ -136,10 +136,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.id"      
 * item.item[=].item[=].item[=].linkId = "medicationStatementId"
 * item.item[=].item[=].item[=].type = #string
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
+* item.item[=].item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
 /*
   This expression selects the SNOMED coding from MedicationStatements.
   In some cases, medication.reference may be a reference to a contained Medication resource or an external Medication resource.
@@ -151,7 +149,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
   Step 4: If it is, use the ID to find the corresponding Medication resource in %medicationsFromRef and select its SNOMED coding.
   Step 5: Otherwise, use the SNOMED coding from MedicationStatement.medication (medicationCodeableConcept to be specific).
 */
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "iif(%MedicationStatementRepeat.medication.reference.replace('#', '') in %medicationsFromContained.id, %medicationsFromContained.where(id = %MedicationStatementRepeat.medication.reference.replace('#', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()), iif(%MedicationStatementRepeat.medication.reference.replace('Medication/', '') in %medicationsFromRef.id , %medicationsFromRef.where(id = %MedicationStatementRepeat.medication.reference.replace('Medication/', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()) ,%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())))"
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "iif(%MedicationStatementRepeat.medication.reference.replace('#', '') in %medicationsFromContained.id, %medicationsFromContained.where(id = %MedicationStatementRepeat.medication.reference.replace('#', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()), iif(%MedicationStatementRepeat.medication.reference.replace('Medication/', '') in %medicationsFromRef.id , %medicationsFromRef.where(id = %MedicationStatementRepeat.medication.reference.replace('Medication/', '')).code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first()) ,%MedicationStatementRepeat.medication.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())))"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-medication"
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
@@ -192,28 +190,39 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].answerValueSet = "http://hl7.org/fhir/ValueSet/timing-abbreviation"
 */
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.status"
+* item.item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.status"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-status"
 * item.item[=].item[=].item[=].text = "Status"
 * item.item[=].item[=].item[=].type = #choice
 * item.item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].answerValueSet = "#MedicationStatementStatusLimited"
+// This hidden item is used to determine the appropriate patch parameter parts for comment.
+* item.item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.status"
+* item.item[=].item[=].item[=].extension[questionnaire-hidden].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-status-hidden"
+* item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].repeats = false
+* item.item[=].item[=].item[=].answerValueSet = "#MedicationStatementStatusLimited"
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.dosage.text"
+* item.item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.dosage.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-dosage"
 * item.item[=].item[=].item[=].text = "Dosage"
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
+// This item is used to determine the appropriate patch parameter parts.
+* item.item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.dosage.text"
+* item.item[=].item[=].item[=].extension[questionnaire-hidden].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-dosage-hidden"
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-* item.item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.reasonCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
+* item.item[=].item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.reasonCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-reasoncode"
 * item.item[=].item[=].item[=].text = "Clinical indication"
 * item.item[=].item[=].item[=].type = #open-choice
@@ -221,11 +230,17 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].readOnly = true
 * item.item[=].item[=].item[=].answerValueSet = "#medication-reason-taken-1"
 
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-* item.item[=].item[=].item[=].extension[=].valueExpression[+].language = #text/fhirpath
-* item.item[=].item[=].item[=].extension[=].valueExpression[=].expression = "%MedicationStatementRepeat.note.text"
+* item.item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.note.text"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment"
 * item.item[=].item[=].item[=].text = "Comment"
+* item.item[=].item[=].item[=].type = #text
+* item.item[=].item[=].item[=].repeats = false
+// This item is used to determine the appropriate patch parameter parts.
+* item.item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
+* item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.note.text"
+* item.item[=].item[=].item[=].extension[questionnaire-hidden].valueBoolean = true
+* item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-comment-hidden"
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
@@ -239,8 +254,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].text.extension[=].valueBoolean = true
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
-* item.item[=].item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension[=].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-new-medication"
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
@@ -252,8 +266,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
-* item.item[=].item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-* item.item[=].item[=].item[=].extension.valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-new-reasoncode"
 * item.item[=].item[=].item[=].text = "Clinical indication"
 * item.item[=].item[=].item[=].type = #open-choice

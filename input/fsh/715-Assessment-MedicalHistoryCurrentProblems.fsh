@@ -196,6 +196,15 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * text = "Clinical status"
         * type = #choice
         * answerValueSet = "#condition-clinical"
+// This hidden item is used to determine the appropriate patch parameter parts for comment.
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ConditionRepeat.clinicalStatus.coding" 
+        * extension[questionnaire-hidden].valueBoolean = true             
+        * linkId = "medicalhistory-status-hidden"
+        * type = #choice
+        * answerValueSet = "#condition-clinical"
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -210,6 +219,14 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
           * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
         * linkId = "e4524654-f6de-4717-b288-34919394d46b"
         * text = "Abatement date"
+        * type = #date
+// This hidden item is used to determine the appropriate patch parameter parts for comment.
+      * item[+]
+        * extension[sdc-questionnaire-initialExpression].valueExpression
+          * language = #text/fhirpath
+          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+        * extension[questionnaire-hidden].valueBoolean = true
+        * linkId = "medicalhistory-abatementdate-hidden"
         * type = #date
 
 // table for new diagnoses
