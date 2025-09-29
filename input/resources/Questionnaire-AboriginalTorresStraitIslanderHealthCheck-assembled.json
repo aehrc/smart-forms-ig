@@ -7718,7 +7718,8 @@
                                             "linkId": "allergysummary-status",
                                             "text": "Status",
                                             "type": "choice",
-                                            "repeats": false
+                                            "repeats": false,
+                                            "answerValueSet": "#AllergyIntoleranceClinicalStatusMinimal"
                                         },
                                         {
                                             "extension": [
