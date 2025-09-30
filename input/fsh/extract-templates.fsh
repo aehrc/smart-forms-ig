@@ -398,7 +398,7 @@ Usage: #inline
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 // This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueCode.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.exists(), item.where(linkId='regularmedications-summary-current-status').answer.value.first()))"
+* parameter[=].part[=].valueCode.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.exists(), item.where(linkId='regularmedications-summary-current-status').answer.value.code.first()))"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Status"
 
