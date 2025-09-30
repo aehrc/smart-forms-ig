@@ -1,0 +1,22 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "active-bisoprolol-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+        ]
+    },
+    "status": "active",
+    "medicationReference": {
+        "reference": "Medication/bisoprolol-pat-sf"
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "dateAsserted": "2024-02-05",
+    "dosage": [
+        {
+            "text": "1/2 tablet in the morning"
+        }
+    ]
+}

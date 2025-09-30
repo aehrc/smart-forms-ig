@@ -111,7 +111,7 @@
                 "resourceType": "Parameters",
                 "meta": {
                     "profile": [
-                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition"
                     ]
                 },
                 "parameter": [
@@ -120,11 +120,15 @@
                         "part": [
                             {
                                 "name": "type",
-                                "valueCode": "replace"
+                                "valueCode": "add"
                             },
                             {
                                 "name": "path",
-                                "valueString": "Condition.clinicalStatus"
+                                "valueString": "Condition"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "clinicalStatus"
                             },
                             {
                                 "name": "value",
@@ -149,11 +153,15 @@
                         "part": [
                             {
                                 "name": "type",
-                                "valueCode": "replace"
+                                "valueCode": "add"
                             },
                             {
                                 "name": "path",
-                                "valueString": "Condition.abatement"
+                                "valueString": "Condition"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "abatement"
                             },
                             {
                                 "name": "value",
@@ -223,12 +231,12 @@
             }
         },
         {
-            "fullUrl": "urn:uuid:c8a97d6f-d0d5-4561-ab83-2607b3bb072f",
+            "fullUrl": "urn:uuid:319646e0-cba5-405f-9b2d-b64f22c12876",
             "resource": {
                 "resourceType": "Parameters",
                 "meta": {
                     "profile": [
-                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
                     ]
                 },
                 "parameter": [
@@ -237,11 +245,15 @@
                         "part": [
                             {
                                 "name": "type",
-                                "valueCode": "replace"
+                                "valueCode": "add"
                             },
                             {
                                 "name": "path",
-                                "valueString": "MedicationStatement.status"
+                                "valueString": "MedicationStatement"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "status"
                             },
                             {
                                 "name": "value",
@@ -252,25 +264,69 @@
                                 "valueString": "Status"
                             }
                         ]
+                    }
+                ]
+            },
+            "request": {
+                "method": "PATCH",
+                "url": "MedicationStatement/chloramphenicol-pat-sf"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:c8a97d6f-d0d5-4561-ab83-2607b3bb072f",
+            "resource": {
+                "resourceType": "Parameters",
+                "meta": {
+                    "profile": [
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
+                    ]
+                },
+                "parameter": [
+                    {
+                        "name": "operation",
+                        "part": [
+                            {
+                                "name": "type",
+                                "valueCode": "add"
+                            },
+                            {
+                                "name": "path",
+                                "valueString": "MedicationStatement.dosage[0]"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "text"
+                            },
+                            {
+                                "name": "value",
+                                "valueString": "1 tablet in the morning."
+                            }
+                        ]
                     },
                     {
                         "name": "operation",
                         "part": [
                             {
                                 "name": "type",
-                                "valueCode": "replace"
+                                "valueCode": "add"
                             },
                             {
                                 "name": "path",
-                                "valueString": "MedicationStatement.note[0].text"
+                                "valueString": "MedicationStatement"
                             },
                             {
-                                "name": "value",
-                                "valueMarkdown": "Worked effectively."
+                                "name": "name",
+                                "valueString": "note"
                             },
                             {
                                 "name": "pathLabel",
                                 "valueString": "Comment"
+                            },
+                            {
+                                "name": "value",
+                                "valueAnnotation": {
+                                    "text": "Monitor following increased dosage."
+                                }
                             }
                         ]
                     }
@@ -278,7 +334,7 @@
             },
             "request": {
                 "method": "PATCH",
-                "url": "MedicationStatement/chloramphenicol-pat-sf"
+                "url": "MedicationStatement/active-bisoprolol-pat-sf"
             }
         },
         {
@@ -342,7 +398,7 @@
                 "resourceType": "Parameters",
                 "meta": {
                     "profile": [
-                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+                        "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance"
                     ]
                 },
                 "parameter": [
@@ -351,11 +407,15 @@
                         "part": [
                             {
                                 "name": "type",
-                                "valueCode": "replace"
+                                "valueCode": "add"
                             },
                             {
                                 "name": "path",
-                                "valueString": "AllergyIntolerance.clinicalStatus"
+                                "valueString": "AllergyIntolerance"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "clinicalStatus"
                             },
                             {
                                 "name": "value",
@@ -380,15 +440,19 @@
                         "part": [
                             {
                                 "name": "type",
-                                "valueCode": "replace"
+                                "valueCode": "add"
                             },
                             {
                                 "name": "path",
-                                "valueString": "AllergyIntolerance.note[0].text"
+                                "valueString": "AllergyIntolerance.note[0]"
+                            },
+                            {
+                                "name": "name",
+                                "valueString": "text"
                             },
                             {
                                 "name": "value",
-                                "valueMarkdown": "Duplicated allergy in record. Removed."
+                                "valueMarkdown": "Duplicated allergy in record. Made inactive."
                             },
                             {
                                 "name": "pathLabel",

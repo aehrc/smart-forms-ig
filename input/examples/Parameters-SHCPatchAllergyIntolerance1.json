@@ -1,9 +1,9 @@
 {
     "resourceType": "Parameters",
-    "id": "SHCPatchAllergyIntolerance",
+    "id": "SHCPatchAllergyIntolerance1",
     "meta": {
         "profile": [
-            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance"
         ]
     },
     "parameter": [
@@ -12,11 +12,15 @@
             "part": [
                 {
                     "name": "type",
-                    "valueCode": "replace"
+                    "valueCode": "add"
                 },
                 {
                     "name": "path",
-                    "valueString": "AllergyIntolerance.clinicalStatus"
+                    "valueString": "AllergyIntolerance"
+                },
+                {
+                    "name": "name",
+                    "valueString": "clinicalStatus"
                 },
                 {
                     "name": "value",
@@ -41,19 +45,19 @@
             "part": [
                 {
                     "name": "type",
-                    "valueCode": "replace"
+                    "valueCode": "add"
                 },
                 {
                     "name": "path",
-                    "valueString": "AllergyIntolerance.note[0].text"
+                    "valueString": "AllergyIntolerance.note[0]"
+                },
+                {
+                    "name": "name",
+                    "valueString": "text"
                 },
                 {
                     "name": "value",
-                    "valueMarkdown": "Duplicated allergy in record. Removed."
-                },
-                {
-                    "name": "pathLabel",
-                    "valueString": "Comment"
+                    "valueMarkdown": "Does not react anymore."
                 }
             ]
         }
