@@ -420,8 +420,6 @@ Description: "The Gender Identity Response value set includes values that may be
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
-* ^expansion.parameter[+].name = "used-valueset"
-* ^expansion.parameter[=].valueUri = "null"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.parameter[+].name = "version"
@@ -481,8 +479,6 @@ Description: "The Australian Pronouns value set includes values that indicate th
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
-* ^expansion.parameter[+].name = "used-valueset"
-* ^expansion.parameter[=].valueUri = "null"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://loinc.org|2.80"
 * ^expansion.parameter[+].name = "version"
@@ -547,8 +543,6 @@ Description: "The Biological Sex value set includes values that represent the bi
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
-* ^expansion.parameter[+].name = "used-valueset"
-* ^expansion.parameter[=].valueUri = "null"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
 * ^expansion.parameter[+].name = "version"
@@ -776,8 +770,6 @@ Description: "The Heart Rhythm value set includes values that may be used to rep
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
-* ^expansion.parameter[+].name = "used-valueset"
-* ^expansion.parameter[=].valueUri = "null"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
 * ^expansion.parameter[+].name = "version"
@@ -851,27 +843,92 @@ Description: "This value set includes the minimal set of codes to represent the 
 * http://hl7.org/fhir/CodeSystem/medication-statement-status#stopped
 * http://hl7.org/fhir/CodeSystem/medication-statement-status#on-hold
 
-CodeSystem: SHCPatchPathCodes
-Id: SHCPatchPathCodes
-Title: "Smart Health Checks Patch Path Codes"
-Description: "The Smart Health Checks Patch Path Codes code system defines concepts that identify element paths that are the target of a patch operation."
+CodeSystem: SHCPatchElementPathCodes
+Id: SHCPatchElementPathCodes
+Title: "Smart Health Checks Patch Element Path Codes"
+Description: "The Smart Health Checks Patch Element Path Codes code system defines concepts that identify element paths where the patch operation is to be performed for Smart Health Checks."
 
 * ^experimental = false
 * ^caseSensitive = true
-* #AllergyIntolerance.clinicalStatus "AllergyIntolerance.clinicalStatus"
-* #AllergyIntolerance.note[0].text "AllergyIntolerance.note[0].text"
-* #Condition.clinicalStatus "Condition.clinicalStatus"
-* #Condition.abatement "Condition.abatement"
-* #MedicationStatement.status "MedicationStatement.status"
-* #MedicationStatement.note[0].text "MedicationStatement.note[0].text"
-* #MedicationStatement.dosage[0].text "MedicationStatement.dosage[0].text"
+* #AllergyIntolerance "AllergyIntolerance"
+* #AllergyIntolerance.note[0] "AllergyIntolerance.note[0]"
+* #Condition "Condition"
+* #MedicationStatement "MedicationStatement"
+* #MedicationStatement.note[0] "MedicationStatement.note[0]"
+* #MedicationStatement.dosage[0] "MedicationStatement.dosage[0]"
+
+CodeSystem: SHCPatchElementNameCodes
+Id: SHCPatchElementNameCodes
+Title: "Smart Health Checks Patch Element Name Codes"
+Description: "The Smart Health Checks Patch Element Name Codes code system defines concepts that identify element names that are the target of a patch operation for Smart Health Checks."
+
+* ^experimental = false
+* ^caseSensitive = true
+* #clinicalStatus "clinicalStatus"
+* #text "text"
+* #note "note"
+* #abatement "abatement"
+* #status "status"
+* #dosage "dosage"
 
 ValueSet: SHCPatchPath
 Id: SHCPatchPath
 Title: "Smart Health Checks Patch Path"
 Description: "The Smart Health Checks Patch Path value set includes values that can be used to identify the element paths that are the target of a patch operation for Smart Health Checks."
 * ^experimental = false
-* include codes from system SHCPatchPathCodes
+* include codes from system SHCPatchElementPathCodes
+
+ValueSet: SHCPatchAllergyIntoleranceElementPath
+Id: SHCPatchAllergyIntoleranceElementPath
+Title: "Smart Health Checks Patch AllergyIntolerance Element Path"
+Description: "The Smart Health Checks Patch AllergyIntolerance Element Path value set includes values that can be used to identify the element paths in the AllergyIntolerance resource where the patch operation is to be performed for Smart Health Checks."
+* ^experimental = false
+* SHCPatchElementPathCodes#AllergyIntolerance
+* SHCPatchElementPathCodes#AllergyIntolerance.note[0]
+
+ValueSet: SHCPatchAllergyIntoleranceElementName
+Id: SHCPatchAllergyIntoleranceElementName
+Title: "Smart Health Checks Patch AllergyIntolerance Element Name"
+Description: "The Smart Health Checks Patch AllergyIntolerance Element Name value set includes values that can be used to identify the element names in the AllergyIntolerance resource that are the target of a patch operation for Smart Health Checks."
+* ^experimental = false
+* SHCPatchElementNameCodes#clinicalStatus
+* SHCPatchElementNameCodes#text
+* SHCPatchElementNameCodes#note
+
+ValueSet: SHCPatchConditionElementPath
+Id: SHCPatchConditionElementPath
+Title: "Smart Health Checks Patch Condition Element Path"
+Description: "The Smart Health Checks Patch Condition Element Path value set includes values that can be used to identify the element paths in the Condition resource where the patch operation is to be performed for Smart Health Checks."
+* ^experimental = false
+* SHCPatchElementPathCodes#Condition
+
+ValueSet: SHCPatchConditionElementName
+Id: SHCPatchConditionElementName
+Title: "Smart Health Checks Patch Condition Element Name"
+Description: "The Smart Health Checks Patch Condition Element Name value set includes values that can be used to identify the element names in the Condition resource that are the target of a patch operation for Smart Health Checks."
+* ^experimental = false
+* SHCPatchElementNameCodes#clinicalStatus
+* SHCPatchElementNameCodes#abatement
+
+ValueSet: SHCPatchMedicationStatementElementPath
+Id: SHCPatchMedicationStatementElementPath
+Title: "Smart Health Checks Patch MedicationStatement Element Path"
+Description: "The Smart Health Checks Patch MedicationStatement Element Path value set includes values that can be used to identify the element paths in the MedicationStatement resource where the patch operation is to be performed for Smart Health Checks."
+* ^experimental = false
+* SHCPatchElementPathCodes#MedicationStatement
+* SHCPatchElementPathCodes#MedicationStatement.dosage[0]
+* SHCPatchElementPathCodes#MedicationStatement.note[0]
+
+
+ValueSet: SHCPatchMedicationStatementElementName
+Id: SHCPatchMedicationStatementElementName
+Title: "Smart Health Checks Patch MedicationStatement Element Name"
+Description: "The Smart Health Checks Patch MedicationStatement Element Name value set includes values that can be used to identify the element names in the MedicationStatement resource that are the target of a patch operation for Smart Health Checks."
+* ^experimental = false
+* SHCPatchElementNameCodes#status
+* SHCPatchElementNameCodes#text
+* SHCPatchElementNameCodes#dosage
+* SHCPatchElementNameCodes#note
 
 CodeSystem: QuestionnaireRepopulationBehaviorCodes
 Id: QuestionnaireRepopulationBehaviorCodes

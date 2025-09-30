@@ -400,7 +400,7 @@ A summary of the SHC profiles that could be included as a FHIR `create` interact
 | • [Smart Health Checks Waist Circumference](StructureDefinition-SHCWaistCircumference.html) | **Y** |
 
 ##### Patch Writeback Interactions
-The FHIR `patch` interaction uses the FHIR `Parameters` resource type as the body of the interaction request. These `Parameters` resources will comply with the [Smart Health Checks Patch](StructureDefinition-SHCPatch.html) Parameters profile. A summary of the SHC profiles and the resource element path that could be updated using the Writeback Extract Transaction as a FHIR `patch` interaction are shown below. 
+The FHIR `patch` interaction uses the FHIR `Parameters` resource type as the body of the interaction request. These `Parameters` resources will comply with the [Smart Health Checks Patch parameters profiles](profiles-and-extensions.html#parameters). A summary of the SHC profiles and the resource element path that could be updated using the Writeback Extract Transaction as a FHIR `patch` interaction are shown below. 
 
 <table>
     <tr>

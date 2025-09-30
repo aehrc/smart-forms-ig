@@ -1,0 +1,38 @@
+{
+    "resourceType": "Parameters",
+    "id": "SHCPatchAllergyIntolerance2",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance"
+        ]
+    },
+    "parameter": [
+        {
+            "name": "operation",
+            "part": [
+                {
+                    "name": "type",
+                    "valueCode": "add"
+                },
+                {
+                    "name": "path",
+                    "valueString": "AllergyIntolerance"
+                },
+                {
+                    "name": "name",
+                    "valueString": "note"
+                },
+                {
+                    "name": "pathLabel",
+                    "valueString": "Comment"
+                },
+                {
+                    "name": "value",
+                    "valueAnnotation": {
+                        "text": "Over entire body"
+                    }
+                }
+            ]
+        }
+    ]
+}

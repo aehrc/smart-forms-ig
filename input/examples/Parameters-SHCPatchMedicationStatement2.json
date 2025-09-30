@@ -1,0 +1,59 @@
+{
+    "resourceType": "Parameters",
+    "id": "SHCPatchMedicationStatement2",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
+        ]
+    },
+    "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement.dosage[0]"
+              },
+              {
+                "name": "name",
+                "valueString": "text"
+              },
+              {
+                "name": "value",
+                "valueString": "1/2 tablet in the morning. Increase dose to 1 tablet after 4 weeks."
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement"
+              },
+              {
+                "name": "name",
+                "valueString": "note"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Comment"
+              },
+              {
+                "name": "value",
+                "valueAnnotation": {
+                  "text": "Monitor for effectiveness."
+                }
+              }
+            ]
+          }
+        ]
+}

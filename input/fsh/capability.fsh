@@ -37,7 +37,9 @@ Usage: #definition
 1. Support the [Smart Health Checks Patient resource profile](StructureDefinition-SHCPatient.html)
 1. Support the [Smart Health Checks Practitioner resource profile](StructureDefinition-SHCPractitioner.html)
 1. Support the [Smart Health Checks QuestionnaireResponse resource profile](StructureDefinition-SHCQuestionnaireResponse.html)
-1. Support the [Smart Health Checks Patch profile](StructureDefinition-SHCPatch.html)
+1. Support the [Smart Health Checks Patch AllergyIntolerance profile](StructureDefinition-SHCPatchAllergyIntolerance.html)
+1. Support the [Smart Health Checks Patch Condition profile](StructureDefinition-SHCPatchCondition.html)
+1. Support the [Smart Health Checks Patch MedicationStatement profile](StructureDefinition-SHCPatchMedicationStatement.html)
 1. Support the [Smart Health Checks Extract Bundle resource profile](StructureDefinition-SHCExtractBundle.html)
 1. Implement the RESTful behavior according to the FHIR specification
 1. Support JSON source formats for all interactions"
@@ -338,7 +340,9 @@ The server **SHALL** support both."
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
 * rest.resource[=].type = #Parameters
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "The server **SHALL** support the Parameters resource, the Smart Health Checks profile and the conformance expectations for the Parameters resource."
@@ -730,7 +734,9 @@ The server **SHALL** support both."
 
 //Parameters
 * rest.resource[+].type = #Parameters
-* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition"
+* rest.resource[=].supportedProfile[+] = "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
 * rest.resource[=].documentation = "The client supports the Parameters resource, the Smart Health Checks profiles listed and the conformance expectations for the Parameters resource."

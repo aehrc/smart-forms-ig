@@ -1,9 +1,9 @@
 {
     "resourceType": "Parameters",
-    "id": "SHCPatchMedicationStatement",
+    "id": "SHCPatchMedicationStatement1",
     "meta": {
         "profile": [
-            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatch"
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
         ]
     },
     "parameter": [
@@ -12,11 +12,15 @@
             "part": [
                 {
                     "name": "type",
-                    "valueCode": "replace"
+                    "valueCode": "add"
                 },
                 {
                     "name": "path",
-                    "valueString": "MedicationStatement.status"
+                    "valueString": "MedicationStatement"
+                },
+                {
+                    "name": "name",
+                    "valueString": "status"
                 },
                 {
                     "name": "value",
@@ -33,19 +37,19 @@
             "part": [
                 {
                     "name": "type",
-                    "valueCode": "replace"
+                    "valueCode": "add"
                 },
                 {
                     "name": "path",
-                    "valueString": "MedicationStatement.note[0].text"
+                    "valueString": "MedicationStatement.note[0]"
+                },
+                {
+                    "name": "name",
+                    "valueString": "text"
                 },
                 {
                     "name": "value",
-                    "valueMarkdown": "Worked effectively."
-                },
-                {
-                    "name": "pathLabel",
-                    "valueString": "Comment"
+                    "valueMarkdown": "Problem resolved with treatment"
                 }
             ]
         }

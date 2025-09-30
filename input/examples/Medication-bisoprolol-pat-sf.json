@@ -1,0 +1,19 @@
+{
+    "resourceType": "Medication",
+    "id": "bisoprolol-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication"
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "23281011000036106",
+                "display": "Bisoprolol fumarate 2.5 mg tablet"
+            }
+        ],
+        "text": "Bisoprolol 2.5mg tab"
+    }
+}
