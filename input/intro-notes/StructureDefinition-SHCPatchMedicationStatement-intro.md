@@ -21,7 +21,7 @@ The elements that can be updated using this profile are as follows:
 - `Parameters.parameter.part:name.value[x]:valueString` **SHALL** identify one of the relevant MedicationStatement element paths included in the [Smart Health Checks Patch MedicationStatement Element Name value set](ValueSet-SHCPatchMedicationStatementElementName.html): `status`, `text`, `dosage` or `note`.
 - When the path value is `MedicationStatement` and the name value is `status`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `code`
-  - `Parameters.parameter.part:value.value[x]:valueCode` **SHALL** have a value from the [Medication Statement Status Limited value set](ValueSet-AllergyIntoleranceClinicalStatusMinimal.html).
+  - `Parameters.parameter.part:value.value[x]:valueCode` **SHALL** have a value from the [Medication Statement Status Limited value set](ValueSet-MedicationStatementStatusLimited.html).
 - When the path value is `MedicationStatement` and the name value is `dosage`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `Dosage`.
 - When the path value is `MedicationStatement.dosage[0]` and the name value is `text`:
