@@ -13,9 +13,7 @@ Title: "Template Extract Extension Patch Request URL"
 Description: "This extension is used to specify the value of the request URL for a bundle entry containing a Parameters resource for a PATCH method. It identifies the resource instance being patched and will specify both the resource type and the resource Id. It is to be used as a sub-extension of the [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html) extension."
 Context: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
 
-* . ^short = "A FHIRPath expression to evaluate the bundle entry request URL for a PATCH entry (string result)"
-* . ^example[+].label = "FHIRPath expression to PATCH an AllergyIntolerance resource." 
-* . ^example[=].valueString = "'AllergyIntolerance/' + item.where(linkId='allergyIntoleranceId').answer.value"
+* . ^short = "A FHIRPath expression to evaluate the bundle entry request URL for a PATCH entry (string result). E.g. 'AllergyIntolerance/' + item.where(linkId='allergyIntoleranceId').answer.value"
 * value[x] 1..
 * value[x] only string
 
