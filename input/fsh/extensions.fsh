@@ -6,18 +6,18 @@ Description: "This extension is intended to be used as a work around to a known 
 * value[x] 1..
 * value[x] only Reference
 
-Extension: TemplateExtractExtensionExtended
-Parent: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
-Id: TemplateExtractExtensionExtended
-Title: "Template Extract Extension Extended"
-Description: "This extension is used to extend the [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html) extension to include additional information that supports the extraction of a [Parameters](https://hl7.org/fhir/R4/parameters.html) resource to be used with the [FHIRPath patch](https://hl7.org/fhir/R4/fhirpatch.html) mechanism of updating resources. An additional subextension is included to specify the type of resource that is being patched, which is necessary for constructing the request URL of an entry in a transaction bundle."
+Extension: TemplateExtractExtensionPatchRequestUrl
+Parent: Extension
+Id: TemplateExtractExtensionPatchRequestUrl
+Title: "Template Extract Extension Patch Request URL"
+Description: "This extension is used to specify the value of the request URL for a bundle entry containing a Parameters resource for a PATCH method. It identifies the resource instance being patched and will specify both the resource type and the resource Id. It is to be used as a sub-extension of the [Extract Template - Resource](https://build.fhir.org/ig/HL7/sdc/StructureDefinition-sdc-questionnaire-templateExtract.html) extension."
+Context: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
 
-* extension contains type 0..1
-* extension[type] ^short = "Patch resource type"
-* extension[type] ^definition = "When templating a Parameters resource, this is the kind of resource to be patched. It is used to construct the request URL for the entry in a transaction bundle."
-* extension[type].value[x] 1..
-* extension[type].value[x] only code
-* extension[type].value[x] from ResourceType (required)
+* . ^short = "A FHIRPath expression to evaluate the bundle entry request URL for a PATCH entry (string result)"
+* . ^example[+].label = "FHIRPath expression to PATCH an AllergyIntolerance resource." 
+* . ^example[=].valueString = "'AllergyIntolerance/' + item.where(linkId='allergyIntoleranceId').answer.value"
+* value[x] 1..
+* value[x] only string
 
 Extension: QuestionnaireItemTextHidden
 Id: QuestionnaireItemTextHidden

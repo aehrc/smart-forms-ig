@@ -158,10 +158,9 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * name = "ConditionRepeat"
         * language = #text/fhirpath
         * expression = "%Condition.entry.resource.where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
-      * extension[TemplateExtractExtensionExtended][+]
+      * extension[sdc-questionnaire-templateExtract][+]
         * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
-        * extension[resourceId][+].valueString = "item.where(linkId='conditionId').answer.value"
-        * extension[type][+].valueCode = #Condition
+        * extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'Condition/' + item.where(linkId='conditionId').answer.value"
       * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
       * text = "Medical history summary"
         * extension[+]
