@@ -20,6 +20,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = australian-states-territories-2
 * contained[+] = gender-identity-response-1
 * contained[+] = biological-sex-1
+* contained[+] = biological-sex-2
 * contained[+] = SmokingQuitStatus-1
 * contained[+] = TobaccoUseStatus-1
 * contained[+] = CervicalScreeningStatus-1
@@ -103,6 +104,1250 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * name = "ObsTobaccoSmokingStatusLatest"
     * language = #text/fhirpath
     * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+
+
+// CVD Risk Extensions
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "Condition"
+    * language = #application/x-fhir-query
+    * expression = "Condition?category=problem-list-item&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "MedicationRequest"
+    * language = #application/x-fhir-query
+    * expression = "MedicationRequest?status=active,completed&patient={{%patient.id}}&_include=MedicationRequest:medication"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTobaccoSmokingStatus"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=1747861000168109&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyHeight"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=8302-2&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyWeight"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=29463-7&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBloodPressureSitting"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=163035008&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTotalCholesterol"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=14647-2&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHDLCholesterol"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=14646-4&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTotalCholHDLRatio"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=32309-7&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsHbA1C"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=59261-8&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsuACR"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=32294-1&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObseGFR"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=62238-1&patient={{%patient.id}}"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[0]
+    * url = "name"
+    * valueCoding = $launchContext#patient
+  * extension[+]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[+]
+    * url = "description"
+    * valueString = "The patient that is to be used to pre-populate the form"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "conditionArray"
+    * language = #text/fhirpath
+    * expression = "%Condition.entry.resource.where(clinicalStatus.coding.exists(code = 'active' or code = 'recurrence' or code = 'relapse'))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "medicationRequestArray"
+    * language = #text/fhirpath
+    * expression = "%MedicationRequest.entry.resource.where(intent = 'order' or  intent = 'original-order' or intent='reflex-order' or intent='filler-order' or intent='instance-order' or resourceType = 'Medication')"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsTobaccoSmokingStatus"
+    * language = #text/fhirpath
+    * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsBodyHeight"
+    * language = #text/fhirpath
+    * expression = "%ObsBodyHeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsBodyWeight"
+    * language = #text/fhirpath
+    * expression = "%ObsBodyWeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsBloodPressure"
+    * language = #text/fhirpath
+    * expression = "%ObsBloodPressure.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsBloodPressureSitting"
+    * language = #text/fhirpath
+    * expression = "%ObsBloodPressureSitting.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsTotalCholesterol"
+    * language = #text/fhirpath
+    * expression = "%ObsTotalCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsHDLCholesterol"
+    * language = #text/fhirpath
+    * expression = "%ObsHDLCholesterol.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsTotalCholHDLRatio"
+    * language = #text/fhirpath
+    * expression = "%ObsTotalCholHDLRatio.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsHbA1C"
+    * language = #text/fhirpath
+    * expression = "%ObsHbA1C.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obsuACR"
+    * language = #text/fhirpath
+    * expression = "%ObsuACR.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "obseGFR"
+    * language = #text/fhirpath
+    * expression = "%ObseGFR.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfBpLoweringMedicationReqMedication"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(medication.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20)).774158006%20))')).where(authoredOn > (now() - 12 months)).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfBpLoweringMedicationCode"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(resourceType = 'Medication' and id in %medicationRequestArray.where(authoredOn > (now() - 12 months)).medicationReference.select(reference.replace('Medication/', ''))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20)).774158006%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfBpLoweringMedicationContained"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(authoredOn > (now() - 12 months)).contained.where(resourceType = 'Medication' and id in (%medicationRequestArray.medication.select(reference.replace('#', '')))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20)).774158006%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfLipidModifyingMedicationReqMedication"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(medication.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20)).774158006%20))')).where(authoredOn > (now() - 12 months)).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfLipidModifyingMedicationCode"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(resourceType = 'Medication' and id in %medicationRequestArray.where(authoredOn > (now() - 12 months)).medicationReference.select(reference.replace('Medication/', ''))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20)).774158006%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfLipidModifyingMedicationContained"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(authoredOn > (now() - 12 months)).contained.where(resourceType = 'Medication' and id in (%medicationRequestArray.medication.select(reference.replace('#', '')))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20)).774158006%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfAntithromboticMedicationReqMedication"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(medication.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20)).774158006%20))')).where(authoredOn > (now() - 12 months)).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfAntithromboticMedicationCode"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(resourceType = 'Medication' and id in %medicationRequestArray.where(authoredOn > (now() - 12 months)).medicationReference.select(reference.replace('Medication/', ''))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20)).774158006%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfAntithromboticMedicationContained"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(authoredOn > (now() - 12 months)).contained.where(resourceType = 'Medication' and id in (%medicationRequestArray.medication.select(reference.replace('#', '')))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20)).774158006%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfInsulinMedicationReqMedication"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(medication.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C39487003%20OR%20(%3C%20781405001%20%3A%20774160008%20%3D%20%3C%3C%2039487003%20))')).where(authoredOn > (now() - 12 months)).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfInsulinMedicationCode"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(resourceType = 'Medication' and id in %medicationRequestArray.where(authoredOn > (now() - 12 months)).medicationReference.select(reference.replace('Medication/', ''))).where(medication.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C39487003%20OR%20(%3C%20781405001%20%3A%20774160008%20%3D%20%3C%3C%2039487003%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfInsulinMedicationContained"
+    * language = #text/fhirpath
+    * expression = "%medicationRequestArray.where(authoredOn > (now() - 12 months)).contained.where(resourceType = 'Medication' and id in (%medicationRequestArray.medication.select(reference.replace('#', '')))).where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C39487003%20OR%20(%3C%20781405001%20%3A%20774160008%20%3D%20%3C%3C%2039487003%20))')).exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfDiabetesResourceArray"
+    * language = #text/fhirpath
+    * expression = "%conditionArray.where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C44054006)'))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "totalHDLRatioPrePop"
+    * language = #text/fhirpath
+    * expression = "iif(%obsTotalCholesterol.where(resource.effective > (now() - 5 years)).exists() and %obsHDLCholesterol.where(resource.effective > (now() - 5 years)).exists(), (%obsTotalCholesterol.value.value/%obsHDLCholesterol.value.value).round(2), %obsTotalCholHDLRatio.where(effective > (now() - 5 years)).value.value.round(2))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "totalHDLRatioPrePopExists"
+    * language = #text/fhirpath
+    * expression = "%totalHDLRatioPrePop.exists()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesYearsIntegerPrePop"
+    * language = #text/fhirpath
+    * expression = "today().toString().substring(0,4).toInteger() - %memberOfDiabetesResourceArray[0].onset.toString().substring(0,4).toInteger()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hba1cMmolDecimalPrepop"
+    * language = #text/fhirpath
+    * expression = "%obsHbA1C.where(effective > (now() - 12 months)).value.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "uacrDecimalPrepop"
+    * language = #text/fhirpath
+    * expression = "%obsuACR.where(effective > (now() - 18 months)).value.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "egfrDecimalPrepop"
+    * language = #text/fhirpath
+    * expression = "%obseGFR.where(effective > (now() - 12 months)).value.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "bmiWeightDecimalPrepop"
+    * language = #text/fhirpath
+    * expression = "%obsBodyWeight.where(effective > (now() - 12 months)).value.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "bmiHeightDecimalPrepop"
+    * language = #text/fhirpath
+    * expression = "%obsBodyHeight.where(effective > (%patient.birthDate + 18 years)).value.value/100"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "insulinUseBooleanPrepop"
+    * language = #text/fhirpath
+    * expression = "%memberOfInsulinMedicationReqMedication or %memberOfInsulinMedicationCode or %memberOfInsulinMedicationContained or {}"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "chronicKidneyDiseaseValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='moderate-severe-chronic-kidney-disease-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hypercholesterolaemiaValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='familial-hypercholesterolaemia-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "automaticHighRiskVar"
+    * language = #text/fhirpath
+    * expression = "iif(%chronicKidneyDiseaseValue.exists() or %hypercholesterolaemiaValue.exists(), %chronicKidneyDiseaseValue or %hypercholesterolaemiaValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "sexValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value.code"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "sexVar"
+    * language = #text/fhirpath
+    * expression = "iif(%sexValue.exists(), %sexValue, '248152002')"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='age-integer').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageVar"
+    * language = #text/fhirpath
+    * expression = "iif(%ageValue.exists(), %ageValue, 30)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0905192 * (%ageVar - 58.47472)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0691512 * (%ageVar - 53.77579)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesAgeEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0607418 * (%ageVar - 57.8318)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesAgeEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0510591 * (%ageVar - 56.57672)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "seifaValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='seifa-integer').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "nzDepValue"
+    * language = #text/fhirpath
+    * description = "NZDep = (N + 1) − SeifaQuintile"
+    * expression = "iif(%seifaValue != 2.6, 6 - %seifaValue, 2.6)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "nzDepVar"
+    * language = #text/fhirpath
+    * expression = "iif(%nzDepValue.exists(), %nzDepValue, 2.6)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalNZDepEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0978413 * (%nzDepVar - 2.625575)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalNZDepEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0900502 * (%nzDepVar - 2.628206)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesNZDepEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.1111981 * (%nzDepVar - 3.033218)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesNZDepEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0931026 * (%nzDepVar - 2.906154)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "smokingStatusValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.code"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "smokingStatusVar"
+    * language = #text/fhirpath
+    * expression = "iif(%smokingStatusValue.exists(), %smokingStatusValue, '266919005')"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalSmokingStatusEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%smokingStatusVar = '266919005', 0, iif(%smokingStatusVar = '8517006', 0.1162342, iif(%smokingStatusVar = '77176002', 0.8235061, 0)))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalSmokingStatusEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%smokingStatusVar = '266919005', 0, iif(%smokingStatusVar = '8517006', 0.0635803, iif(%smokingStatusVar = '77176002', 0.5782258, 0)))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesSmokingStatusEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%smokingStatusVar = '266919005', 0, iif(%smokingStatusVar = '8517006', 0, iif(%smokingStatusVar = '77176002', 0.7319247, 0)))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesSmokingStatusEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%smokingStatusVar = '266919005', 0, iif(%smokingStatusVar = '8517006', 0, iif(%smokingStatusVar = '77176002', 0.318424, 0)))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "atrialFibrillationValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='history-atrial-fibrillation-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "atrialFibrillationVar"
+    * language = #text/fhirpath
+    * expression = "iif(%atrialFibrillationValue.exists(), %atrialFibrillationValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAtrialFibrillationEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%atrialFibrillationVar = true, 0.709571, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAtrialFibrillationEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%atrialFibrillationVar = true, 0.474629, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesAtrialFibrillationEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%atrialFibrillationVar = true, 0.4150528, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesAtrialFibrillationEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%atrialFibrillationVar = true, 0.3149766, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='diabetes-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesVar"
+    * language = #text/fhirpath
+    * expression = "iif(%diabetesValue.exists(), %diabetesValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalDiabetesEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%diabetesVar = true, 0.6207569, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalDiabetesEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%diabetesVar = true, 0.5829839, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "yearsSinceT2DValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='diabetes-years-integer').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "yearsSinceT2DVar"
+    * language = #text/fhirpath
+    * expression = "iif(%yearsSinceT2DValue.exists(), %yearsSinceT2DValue, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesYearsSinceT2DEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.011011 * (%yearsSinceT2DVar - 5.222868)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesYearsSinceT2DEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0117042 * (%yearsSinceT2DVar - 5.255285)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "sbpValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='sbp-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "sbpVar"
+    * language = #text/fhirpath
+    * expression = "iif(%sbpValue.exists(), %sbpValue, 75)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalSBPEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0114172 * (%sbpVar - 129.2052)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalSBPEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0139242 * (%sbpVar - 129.1706)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesSBPEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0084873 * (%sbpVar - 132.2317)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesSBPEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.004488 * (%sbpVar - 131.8995)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "totalHDLRatioValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='total-hdl-ratio-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "totalCholValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='total-chol-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hdlCholValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='hdl-chol-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "totalHDLRatioVar"
+    * language = #text/fhirpath
+    * expression = "iif(%totalHDLRatioValue.exists(), %totalHDLRatioValue, iif(%totalCholValue.exists() and %hdlCholValue.exists(), (%totalCholValue/%hdlCholValue).round(2), 1.08))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalTotalHDLRatioEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.1067098 * (%totalHDLRatioVar - 3.641988)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalTotalHDLRatioEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.1350063 * (%totalHDLRatioVar - 4.325589)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesTotalHDLRatioEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.1025064 * (%totalHDLRatioVar - 3.882821)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesTotalHDLRatioEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0858267 * (%totalHDLRatioVar - 4.267316)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "weightValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='bmi-weight-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "heightValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='bmi-height-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "bmiValue"
+    * language = #text/fhirpath
+    * expression = "(%weightValue/(%heightValue.power(2))).round(1)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "bmiVar"
+    * language = #text/fhirpath
+    * expression = "iif(%bmiValue.exists(), %bmiValue, 18.5)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalBmiEquation"
+    * language = #text/fhirpath
+    * expression = "0"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesBmiEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0112387 * (%bmiVar - 30.33892)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesBmiEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0156861 * (%bmiVar - 29.21475)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "eGFRDecimalValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='egfr-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "eGFR90BooleanEnabled"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='egfr-90-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "eGFRValue"
+    * language = #text/fhirpath
+    * expression = "iif(%eGFR90BooleanEnabled = true, 100, %eGFRDecimalValue)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "eGFRVar"
+    * language = #text/fhirpath
+    * expression = "iif(%eGFRValue.exists(), %eGFRValue, 100)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesEGFREquationFemale"
+    * language = #text/fhirpath
+    * expression = "-0.0082137 * (%eGFRVar - 88.38233)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesEGFREquationMale"
+    * language = #text/fhirpath
+    * expression = "-0.002239 * (%eGFRVar - 88.15267)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hbA1cMmolValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='hba1c-mmol-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hbA1cPercentageValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='hba1c-percentage-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hbA1cPercentageConvertedToMmol"
+    * language = #text/fhirpath
+    * expression = "10.93 * %hbA1cPercentageValue - 23.5"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hbA1cValue"
+    * language = #text/fhirpath
+    * expression = "iif(%hbA1cMmolValue.exists(), %hbA1cMmolValue, iif(%hbA1cPercentageConvertedToMmol.exists(), hbA1cPercentageConvertedToMmol , {}))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "hbA1cVar"
+    * language = #text/fhirpath
+    * expression = "iif(%hbA1cValue.exists(), %hbA1cValue, 39)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesHbA1cEquationFemale"
+    * language = #text/fhirpath
+    * expression = "0.0109019 * (%hbA1cVar - 56.06538)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesHbA1cEquationMale"
+    * language = #text/fhirpath
+    * expression = "0.0065082 * (%hbA1cVar - 57.84909)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "uACRValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='uacr-decimal').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "uACRVar"
+    * language = #text/fhirpath
+    * expression = "iif(%uACRValue.exists(), %uACRValue, 3)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesUACREquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%uACRVar >= 3 and %uACRVar <= 30, 0.2030524, iif(%uACRVar > 30, 0.7023991, 0))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesUACREquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%uACRVar >= 3 and %uACRVar <= 30, 0.4277236, iif(%uACRVar > 30, 0.803022, 0))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "insulinValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='insulin-use-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "insulinVar"
+    * language = #text/fhirpath
+    * expression = "iif(%insulinValue.exists(), %insulinValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesInsulinEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%insulinVar = true, 0.2966913, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesInsulinEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%insulinVar = true, 0.3899748, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "oralDiabetesMedsValue"
+    * language = #text/fhirpath
+    * expression = "true"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "oralDiabetesMedsVar"
+    * language = #text/fhirpath
+    * expression = "iif(%oralDiabetesMedsValue.exists(), %oralDiabetesMedsValue, true)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesOralDiabetesMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%oralDiabetesMedsVar = true, 0.1594838, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesOralDiabetesMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%oralDiabetesMedsVar = true, 0.1316217, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "bpLoweringMedsValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='bp-lowering-meds-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "bpLoweringMedsVar"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsValue.exists(), %bpLoweringMedsValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalBpLoweringMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsVar = true, 0.3092255, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalBpLoweringMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsVar = true, 0.2676661, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesBpLoweringMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsVar = true, 0.1671067, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesBpLoweringMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsVar = true, 0.1674871, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "lipidModifyingMedsValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='lipid-modifying-meds-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "lipidModifyingMedsVar"
+    * language = #text/fhirpath
+    * expression = "iif(%lipidModifyingMedsValue.exists(), %lipidModifyingMedsValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalLipidModifyingMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%lipidModifyingMedsVar = true, -0.0863215, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalLipidModifyingMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%lipidModifyingMedsVar = true, -0.0383788, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesLipidModifyingMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%lipidModifyingMedsVar = true, -0.2702909, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesLipidModifyingMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%lipidModifyingMedsVar = true, -0.0616832, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "antithromboticMedsValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='antithrombotic-meds-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "antithromboticMedsVar"
+    * language = #text/fhirpath
+    * expression = "iif(%antithromboticMedsValue.exists(), %antithromboticMedsValue, false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAntithromboticMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%antithromboticMedsVar = true, 0.1622663, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAntithromboticMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%antithromboticMedsVar = true, 0.0981934, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesAntithromboticMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%antithromboticMedsVar, 0.1205109, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesAntithromboticMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%antithromboticMedsVar, 0.0273617, 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeXDiabetesEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%diabetesVar = true, -0.0230893 * (%ageVar - 58.47472), 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeXDiabetesEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%diabetesVar = true, -0.018881 * (%ageVar - 53.77579), 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeXSBPEquationFemale"
+    * language = #text/fhirpath
+    * expression = "-0.0002353 * (%ageVar - 58.47472) * (%sbpVar - 129.2052)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeXSBPEquationMale"
+    * language = #text/fhirpath
+    * expression = "-0.0001952 * (%ageVar - 53.77579) * (%sbpVar - 129.1706)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeXBplMedsEquationFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsVar = true, -0.0066143 * (%sbpVar - 129.2052), 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalAgeXBplMedsEquationMale"
+    * language = #text/fhirpath
+    * expression = "iif(%bpLoweringMedsVar = true, -0.0054419 * (%sbpVar - 129.1706), 0)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalSumFemale"
+    * language = #text/fhirpath
+    * expression = "(%generalAgeEquationFemale + %generalNZDepEquationFemale + %generalSmokingStatusEquationFemale + %generalAtrialFibrillationEquationFemale + %generalDiabetesEquationFemale + %generalSBPEquationFemale + %generalTotalHDLRatioEquationFemale + %generalBmiEquation + %generalBpLoweringMedsEquationFemale + %generalLipidModifyingMedsEquationFemale + %generalAntithromboticMedsEquationFemale + %generalAgeXDiabetesEquationFemale + %generalAgeXSBPEquationFemale + %generalAgeXBplMedsEquationFemale)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalSumMale"
+    * language = #text/fhirpath
+    * expression = "(%generalAgeEquationMale + %generalNZDepEquationMale + %generalSmokingStatusEquationMale + %generalAtrialFibrillationEquationMale + %generalDiabetesEquationMale + %generalSBPEquationMale + %generalTotalHDLRatioEquationMale + %generalBmiEquation + %generalBpLoweringMedsEquationMale + %generalLipidModifyingMedsEquationMale + %generalAntithromboticMedsEquationMale + %generalAgeXDiabetesEquationMale + %generalAgeXSBPEquationMale + %generalAgeXBplMedsEquationMale)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesSumFemale"
+    * language = #text/fhirpath
+    * expression = "(%diabetesAgeEquationFemale + %diabetesNZDepEquationFemale + %diabetesSmokingStatusEquationFemale + %diabetesAtrialFibrillationEquationFemale + %diabetesYearsSinceT2DEquationFemale + %diabetesBmiEquationFemale + %diabetesSBPEquationFemale + %diabetesTotalHDLRatioEquationFemale + %diabetesEGFREquationFemale + %diabetesHbA1cEquationFemale + %diabetesUACREquationFemale + %diabetesInsulinEquationFemale + %diabetesOralDiabetesMedsEquationFemale + %diabetesBpLoweringMedsEquationFemale + %diabetesLipidModifyingMedsEquationFemale + %diabetesAntithromboticMedsEquationFemale)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesSumMale"
+    * language = #text/fhirpath
+    * expression = "(%diabetesAgeEquationMale + %diabetesNZDepEquationMale + %diabetesSmokingStatusEquationMale + %diabetesAtrialFibrillationEquationMale + %diabetesYearsSinceT2DEquationMale + %diabetesBmiEquationMale + %diabetesSBPEquationMale + %diabetesTotalHDLRatioEquationMale + %diabetesEGFREquationMale + %diabetesHbA1cEquationMale + %diabetesUACREquationMale + %diabetesInsulinEquationMale + %diabetesOralDiabetesMedsEquationMale + %diabetesBpLoweringMedsEquationMale + %diabetesLipidModifyingMedsEquationMale + %diabetesAntithromboticMedsEquationMale)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalCvdScoreFemale"
+    * language = #text/fhirpath
+    * expression = "(1 - (0.9828361).power(%generalSumFemale.exp())) * 100"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalCvdScoreMale"
+    * language = #text/fhirpath
+    * expression = "(1 - (0.9728782).power(%generalSumMale.exp())) * 100"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesCvdScoreFemale"
+    * language = #text/fhirpath
+    * expression = "(1 - (0.9664823).power(%diabetesSumFemale.exp())) * 100"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesCvdScoreMale"
+    * language = #text/fhirpath
+    * expression = "(1 - (0.9483001).power(%diabetesSumMale.exp())) * 100"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween30and44"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 30 and %ageVar <= 44"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween45and49"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 45 and %ageVar <= 49"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween50and54"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 50 and %ageVar <= 54"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween55and59"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 55 and %ageVar <= 59"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween60and64"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 60 and %ageVar <= 64"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween65and69"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 65 and %ageVar <= 69"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween70and74"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 70 and %ageVar <= 74"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ageBetween75and79"
+    * language = #text/fhirpath
+    * expression = "%ageVar >= 75 and %ageVar <= 79"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "recalibrationFactorFemale"
+    * language = #text/fhirpath
+    * expression = "iif(%ageBetween30and44=true, 1.3, iif(%ageBetween45and49=true, 1.2, iif(%ageBetween50and54=true, 1.2, iif(%ageBetween55and59=true, 1.0, iif(%ageBetween60and64=true, 0.9, iif(%ageBetween65and69=true, 0.8, iif(%ageBetween70and74=true, 0.7, iif(%ageBetween75and79=true, 0.7, 1))))))))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "recalibrationFactorMale"
+    * language = #text/fhirpath
+    * expression = "iif(%ageBetween30and44=true, 1.1, iif(%ageBetween45and49=true, 1.1, iif(%ageBetween50and54=true, 1.1, iif(%ageBetween55and59=true, 1.0, iif(%ageBetween60and64=true, 0.9, iif(%ageBetween65and69=true, 0.8, iif(%ageBetween70and74=true, 0.8, iif(%ageBetween75and79=true, 0.8, 1))))))))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "generalRecalibratedCvdScore"
+    * language = #text/fhirpath
+    * expression = "iif(%sexVar = '248152002', %generalCvdScoreFemale * %recalibrationFactorFemale, %generalCvdScoreMale * %recalibrationFactorMale)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesRecalibratedCvdScore"
+    * language = #text/fhirpath
+    * expression = "iif(%sexVar = '248152002', %diabetesCvdScoreFemale * %recalibrationFactorFemale, %diabetesCvdScoreMale * %recalibrationFactorMale)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "additionalDiabetesDetailsValue"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='additional-diabetes-details-boolean').answer.value"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "additionalDiabetesDetailsVar"
+    * language = #text/fhirpath
+    * expression = "iif(%diabetesVar = true, iif(%additionalDiabetesDetailsValue.exists(), %additionalDiabetesDetailsValue, false), false)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "finalCvdScore"
+    * language = #text/fhirpath
+    * expression = "iif(%additionalDiabetesDetailsVar = true, %diabetesRecalibratedCvdScore, %generalRecalibratedCvdScore)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "cvdCategory"
+    * language = #text/fhirpath
+    * expression = "iif(%finalCvdScore.exists(), iif(%finalCvdScore <= 4, '75976002', iif(%finalCvdScore <= 9, '25594002', '15508007')), '75976002')"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "reclassificationDecision"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='reclassification-decision-button').answer.value.code"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "enableWhenNoHighRiskNoOutOfAgeRange"
+    * language = #text/fhirpath
+    * expression = "(%ageValue.empty() or (%ageValue >= 30 and %ageValue <= 79)) and ((%hypercholesterolaemiaValue.empty() or %hypercholesterolaemiaValue = false) and (%chronicKidneyDiseaseValue.empty() or %chronicKidneyDiseaseValue = false))"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "enableWhenNoHighRiskNoOutOfAgeRangeNoDiabetes"
+    * language = #text/fhirpath
+    * expression = "(%ageValue.empty() or (%ageValue >= 30 and %ageValue <= 79)) and ((%hypercholesterolaemiaValue.empty() or %hypercholesterolaemiaValue = false) and (%chronicKidneyDiseaseValue.empty() or %chronicKidneyDiseaseValue = false)) and (%additionalDiabetesDetailsVar = true)"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "enableWhenNoHighRiskNoOutOfAgeRangeNoTotalHDLRatio"
+    * language = #text/fhirpath
+    * expression = "(%ageValue.empty() or (%ageValue >= 30 and %ageValue <= 79)) and ((%hypercholesterolaemiaValue.empty() or %hypercholesterolaemiaValue = false) and (%chronicKidneyDiseaseValue.empty() or %chronicKidneyDiseaseValue = false)) and %totalHDLRatioValue.empty()"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "enableWhenNoHighRiskNoOutOfAgeRangeNoTotalAndHDLChol"
+    * language = #text/fhirpath
+    * expression = "(%ageValue.empty() or (%ageValue >= 30 and %ageValue <= 79)) and ((%hypercholesterolaemiaValue.empty() or %hypercholesterolaemiaValue = false) and (%chronicKidneyDiseaseValue.empty() or %chronicKidneyDiseaseValue = false)) and (%totalCholValue.empty() and %hdlCholValue.empty())"
+// Variable to hold new diagnosis entries
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "newDiagnosisArray"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='newdiagnosis')"
+
+
+// Variable to hold Condition from prepop Atrial Fibrillation
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "conditionAtrialFibrillationExists"
+    * language = #text/fhirpath
+    * expression = "%Condition.entry.resource.where(code.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C49436004)')).exists()"
+
+// Variable to hold newDiagnosisArray  Atrial Fibrillation items
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "newDiagnosisAtrialFibrillationExists"
+    * language = #text/fhirpath
+    * expression = "%newDiagnosisArray.item.answer.where(valueCoding.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C49436004)')).exists()"
+
+
+// New Regular Medications Array
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "newRegularMedicationsArray"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='regularmedications-summary-new')"
+
+
+// BP Lowering Medications exists on new medications summary
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfBpLoweringNewMedicationExists"
+    * language = #text/fhirpath
+    * expression = "%newRegularMedicationsArray.item.answer.where(valueCoding.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%2041549009%20OR%20%3C%3C%2033252009%20OR%20%3C%3C%2045518007%20OR%20%3C%3C%2096308008%20OR%20%3C%3C%2048698004%20)%20%7D%20)).774158006%20))')).exists()"
+
+// Lipid-modifying Medications exists on new medications summary
+
+
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfLipidModifyingNewMedicationExists"
+    * language = #text/fhirpath
+    * expression = "%newRegularMedicationsArray.item.answer.where(valueCoding.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%20108600003%20OR%20%3C%3C%2096307003%20OR%20%3C%3C%2096305006%20OR%20%3C%3C%2096304005%20OR%20%3C%3C%20319982006%20OR%20%3C%3C%20319937007%20OR%20%3C%3C%2072824008%20OR%20%3C%3C%2077035009%20OR%20%3C%3C%2066971004%20OR%20%3C%3C%20408041006%20OR%20%3C%3C%2035282000%20OR%20%3C%3C%2063639004%20)%20%7D%20)).774158006%20))')).exists()"
+// AntithromboticMediationReqMedication exists on new medications summary
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "memberOfAntithromboticMedicationNewMedicationExists"
+    * language = #text/fhirpath
+    * expression = "%newRegularMedicationsArray.item.answer.where(valueCoding.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(((%20%5E929360061000036106%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20))%20OR%20(((%20%3C%3C%5E929360071000036103%20AND%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20)%20OR%20(%3C%3C%5E%20929360081000036101%20%3A%20%7B%20774160008%20%3D%20(%3C%3C%207947003%20OR%20108979001%20OR%20%3C%3C%2066859009%20OR%20%3C%3C%20443312008%20OR%20%3C%3C%20704464003%20OR%20%3C%3C%20108971003%20OR%20%3C%3C%2048603004%20OR%20%3C%3C%20714788005%20OR%20%3C%3C%2047527007%20OR%20%3C%3C%20442539005%20OR%20%3C%3C%20703906002%20)%20%7D%20)).774158006%20))')).exists()"
+
+// Diabetes 2 TODO Reconfirm if the code is only type 2 or all?
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "conditionDiabetesExists"
+    * language = #text/fhirpath
+    * expression = "%Condition.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()"
+
+// Diabetes on new diagnosis array -  TODO Reconfirm if the code is only type 2 or all?
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "newDiagnosisDiabetesExists"
+    * language = #text/fhirpath
+    * expression = "%newDiagnosisArray.item.answer.valueCoding.where(system='http://snomed.info/sct' and code='44054006').exists()"
+    // * expression = "%newDiagnosisArray.item.answer.where(valueCoding.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C49436004)')).exists()"
+
+// Diabetes onset Date Years Integer from new diagnosis
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "newDiagnosisDiabetesOnsetDateYearsInteger"
+    * language = #text/fhirpath
+    * expression = "today().toString().substring(0,4).toInteger() - iif(exists(%newDiagnosisArray.where(linkId='newdiagnosis' and item.answer.valueCoding.where(system='http://snomed.info/sct' and code='44054006')).item.where(text='Onset date').answer.valueDate), %newDiagnosisArray.where(linkId='newdiagnosis' and item.answer.valueCoding.where(system='http://snomed.info/sct' and code='44054006')).item.where(text='Onset date').answer.valueDate.toString().substring(0,4).toInteger(), today().toString().substring(0,4).toInteger())"
+    // * expression = "%newDiagnosisArray.item.answer.where(valueCoding.memberOf('http://snomed.info/sct/32506021000036107?fhir_vs=ecl/(%3C%3C49436004)')).exists()"
+
+
+
+
+// Diabetes on new diagnosis array and from prepop max years
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "diabetesYearsFinal"
+    * language = #text/fhirpath
+    * expression = "( %newDiagnosisDiabetesOnsetDateYearsInteger |  %diabetesYearsIntegerPrePop ).max()"
+
+
+// get the weight date
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "weightDate"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='obs-weight-newdate').answer.valueDate"
+
+// set the weight value that is the most recent one from observations and new observations, this should work even if one variable is empty. 
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "weightValueLatest"
+    * language = #text/fhirpath
+    * expression = "iif(%weightDate > %ObsBodyWeightDateString, %weight  ,  %ObsBodyWeightValue )"
+// Get Patient's Admisistrative Gender - Map only if it is Male/Female
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "sexValueCode"
+    * language = #text/fhirpath
+    * expression = "%resource.descendants().item.where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value"
+
+
+
+
+
 
 
 //R5 preadoption extensions

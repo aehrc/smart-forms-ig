@@ -1,6 +1,11 @@
 Alias: $LNC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+// Alias for CVD
+Alias: $launchContext = http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext
+Alias: $unitsofmeasure = http://unitsofmeasure.org
+Alias: $questionnaire-item-control = http://hl7.org/fhir/questionnaire-item-control
+Alias: $sct = http://snomed.info/sct
 
 Instance: AbsoluteCVDRiskCalculation
 InstanceOf: Questionnaire
@@ -10,6 +15,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 
 
 * contained[+] = biological-sex-1
+* contained[+] = biological-sex-2
 
 
 //assemble expectation
@@ -323,12 +329,12 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Sex At Birth"
         * language = #text/fhirpath
-        * expression = "%SexAtBirthCoding"
+        * expression = "%sexValueCode"
       * linkId = "3dbb0e63-3b28-4567-8ef3-bac242fd95f6"
       * text = "Sex at birth"
       * type = #choice
       * repeats = false
-      * answerValueSet = "#biological-sex-1"
+      * answerValueSet = "#biological-sex-2"
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
       * linkId = "fe9feec6-593a-4106-8a7d-f9965a632ea2"
@@ -338,42 +344,46 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
           * valueBoolean = true
       * type = #group 
       * repeats = false
+      // Smoking Status
       * item[+]
         * linkId = "bac0f824-3784-400e-80f9-ad18d46bd8cb"
         * text = "Smoking status"
         * type = #group
         * repeats = false
         * item[+]
-          * extension[sdc-questionnaire-initialExpression].valueExpression
+          // * extension[sdc-questionnaire-initialExpression].valueExpression
+          //   * language = #text/fhirpath
+          //   * expression = "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
+          * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+            * description = "CVD Smoking Status"
             * language = #text/fhirpath
-            * expression = "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
+            * expression = "iif(exists(%resource.descendants().item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.code), %resource.descendants().item.where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.code, %ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first())"  
           * linkId = "333007c7-47a9-482b-af11-e55484abf2ae"
           * text = "Value"
           * type = #choice
           * repeats = false
-          * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Lifetime non-smoker"
-          * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Current smoker"
-          * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-smoker"
-          * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Exposure to second hand tobacco smoke"
-          * answerOption[+].valueString = "Wants to quit"
-          * answerOption[+].valueString = "Other tobacco use"
-        * item[+]
-          * extension[sdc-questionnaire-initialExpression].valueExpression
-            * language = #text/fhirpath
-            * expression = "%ObsTobaccoSmokingStatusLatest.effective"
-          * linkId = "cvdrisk-smokingstatus-date"
-          * text = "Date performed"
-          * type = #date
-          * repeats = false
+          * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Never Smoked"
+          * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Currently Smoker"
+          * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Previously Smoked"
+          * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Never Smoked"
+          * answerOption[+].valueCoding = http://snomed.info/sct#394872000 "Currently Smoker"
+          * answerOption[+].valueCoding = http://snomed.info/sct#713914004 "Currently Smoker"
+
+
+      // Systolic Blood Pressure
       * item[+]
         * linkId = "fa4f73a3-7633-410c-9177-8aa43b117122"
         * text = "Systolic Blood Pressure"
         * type = #group
         * repeats = false
         * item[+]
-          * extension[sdc-questionnaire-initialExpression].valueExpression
+          // * extension[sdc-questionnaire-initialExpression].valueExpression
+          //   * language = #text/fhirpath
+          //   * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value"
+          * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+            * description = "CVD Systolic Blood Pressure"
             * language = #text/fhirpath
-            * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value"
+            * expression = "iif(exists(%resource.descendants().item.where(linkId='bp-newbp-systolic').answer.value) and (%resource.descendants().item.where(linkId='bp-newbp-date').answer.valueDate > (now() - 24 months)  ), %resource.descendants().item.where(linkId='bp-newbp-systolic').answer.value, %ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value)"  
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
           * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
           * text = "Value"
@@ -384,14 +394,16 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
             * linkId = "ddea5a62-a8c1-4b15-b667-7b69babec8cd"
             * text = "mm Hg"
             * type = #display
-        * item[+]
-          * extension[sdc-questionnaire-initialExpression].valueExpression
-            * language = #text/fhirpath
-            * expression = "%ObsBloodPressureLatest.effective"
-          * linkId = "85d8faf7-ddb0-446c-b489-28d786d6de50"
-          * text = "Date performed"
-          * type = #date
-          * repeats = false
+        // * item[+]
+        //   * extension[sdc-questionnaire-initialExpression].valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%ObsBloodPressureLatest.effective"
+        //   * linkId = "85d8faf7-ddb0-446c-b489-28d786d6de50"
+        //   * text = "Date performed"
+        //   * type = #date
+        //   * repeats = false
+      
+      // Total Collestrol
       * item[+]
         * linkId = "e693c7d2-be69-4f1f-b72d-7ff2ea3cd536"
         * text = "Total Cholesterol"
@@ -411,14 +423,15 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
             * linkId = "fcfbfc9f-e400-4aae-993f-ea54096e7361"
             * text = "mmol/L"
             * type = #display
-        * item[+]
-          * extension[sdc-questionnaire-initialExpression].valueExpression
-            * language = #text/fhirpath
-            * expression = "%ObsTotalCholesterolLatest.effective"
-          * linkId = "16cbe87b-5c8d-4385-b7d9-da3f07f63f8a"
-          * text = "Date performed"
-          * type = #date
-          * repeats = false
+        // * item[+]
+        //   * extension[sdc-questionnaire-initialExpression].valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%ObsTotalCholesterolLatest.effective"
+        //   * linkId = "16cbe87b-5c8d-4385-b7d9-da3f07f63f8a"
+        //   * text = "Date performed"
+        //   * type = #date
+        //   * repeats = false
+
       * item[+]
         * linkId = "87eefaf6-010f-4b0d-9f51-2c33e46e6c69"
         * text = "HDL Cholesterol"
@@ -438,34 +451,674 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
             * linkId = "2ba61002-b642-4b28-9e66-dc2b060c4e0e"
             * text = "mmol/L"
             * type = #display
-        * item[+]
-          * extension[sdc-questionnaire-initialExpression].valueExpression
+        // * item[+]
+        //   * extension[sdc-questionnaire-initialExpression].valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%ObsHDLCholesterolLatest.effective"
+        //   * linkId = "6407e0a7-c416-4a75-933b-904c0dcf88ca"
+        //   * text = "Date performed"
+        //   * type = #date
+        //   * repeats = false
+          //  TODO: check how to get the ratio of cholestrol "Ratio of total cholesterol to HDL cholesterol"
+
+//TODO Check how CVD medications are calculated. It uses medication request array.  The patient prepop does not list these medications. But the array variables exists. 
+
+
+//Use of CVD Medicines
+    * item[+]
+      // * extension[0]
+      //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+      //   * valueExpression
+      //     * language = #text/fhirpath
+      //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRange"
+      // * extension[+]
+      //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+      //   * valueString = "Please make a selection to continue"
+      * linkId = "cvd-meds-group"
+      * type = #group
+      * repeats = false
+      // * required = true
+      * text = "Use of CVD medicines within last 6 months"
+      * item[+]
+        * extension[0]
+          * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+          * valueExpression
             * language = #text/fhirpath
-            * expression = "%ObsHDLCholesterolLatest.effective"
-          * linkId = "6407e0a7-c416-4a75-933b-904c0dcf88ca"
-          * text = "Date performed"
-          * type = #date
-          * repeats = false
+            * expression = "%memberOfBpLoweringNewMedicationExists or %memberOfBpLoweringMedicationReqMedication or %memberOfBpLoweringMedicationCode or %memberOfBpLoweringMedicationContained or {}"
+        * extension[+]
+          * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+          * valueCodeableConcept = $questionnaire-item-control#check-box
+        * linkId = "bp-lowering-meds-boolean"
+        * type = #boolean
+        * repeats = false
+        * text = "Blood pressure-lowering medicines"
+        // * enableWhen
+        //   * question = "cvd-meds-none-boolean"
+        //   * operator = #!=
+        //   * answerBoolean = true
+
+      * item[+]
+        * extension[0]
+          * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+          * valueExpression
+            * language = #text/fhirpath
+            * expression = "%memberOfLipidModifyingNewMedicationExists or %memberOfLipidModifyingMedicationReqMedication or %memberOfLipidModifyingMedicationCode or %memberOfLipidModifyingMedicationContained or {}"
+        * extension[+]
+          * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+          * valueCodeableConcept = $questionnaire-item-control#check-box
+        * linkId = "lipid-modifying-meds-boolean"
+        * type = #boolean
+        * repeats = false
+        * text = "Lipid-modifying medicines"
+        // * enableWhen
+        //   * question = "cvd-meds-none-boolean"
+        //   * operator = #!=
+        //   * answerBoolean = true
+      * item[+]
+        * extension[0]
+          * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+          * valueExpression
+            * language = #text/fhirpath
+            * expression = "%memberOfAntithromboticMedicationNewMedicationExists or %memberOfAntithromboticMedicationReqMedication or %memberOfAntithromboticMedicationCode or %memberOfAntithromboticMedicationContained or {}"
+        * extension[+]
+          * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+          * valueCodeableConcept = $questionnaire-item-control#check-box
+        * linkId = "antithrombotic-meds-boolean"
+        * type = #boolean
+        * repeats = false
+        * text = "Antithrombotic medicines"
+        // * enableWhen
+        //   * question = "cvd-meds-none-boolean"
+        //   * operator = #!=
+        //   * answerBoolean = true
+// End if CVD Medicines
+
+//  Start History of Atrial Fibrillation ******
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
-        * description = "CVD Risk Postcode"
+        * description = "CVD Atrial Fibrillation Check"
+        * language = #text/fhirpath
+        * expression = "%conditionAtrialFibrillationExists or %newDiagnosisAtrialFibrillationExists"
+      * linkId = "history-atrial-fibrillation-boolean"
+      * type = #boolean
+      * repeats = false
+      * text = "History of atrial fibrillation"
+    
+//  ******* End of Atrial Fibrillation
+    
+// **** Start Postcode ****
+    * item[+]
+      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * description = "CVD Risk Postcode JVTEST"
         * language = #text/fhirpath
         * expression = "%postcode"
       * linkId = "fa8f03ca-9a5a-4ed1-a866-db26e567352a"
       * text = "Postcode"
       * type = #string
+//  End ***** of Postcode 
+
+// Diabetes
     * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%Condition.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()" //type 2 diabetes
+      * extension
+        * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+        * valueExpression
+          * language = #text/fhirpath
+          * expression = "%conditionDiabetesExists or %newDiagnosisDiabetesExists"
       * linkId = "1c1eea28-6c82-4b7b-aaa3-8655ce70f2fd"
       * text = "Type 2 diabetes mellitus"
       * type = #boolean
       * repeats = false
-    * linkId = "f8022f3f-21fe-42c0-8abd-95f24e2e37e5"
-    * text = "Health priorities, actions and follow-up"
-    * type = #text
-    * repeats = false  
+      * item[+]
+        * extension
+          * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+          * valueCodeableConcept = $questionnaire-item-control#check-box
+        * linkId = "cvd-meds-none-boolean"
+        * type = #boolean
+        * repeats = false
+        * text = "None"
+        * enableWhen[0]
+          * question = "bp-lowering-meds-boolean"
+          * operator = #!=
+          * answerBoolean = true
+        * enableWhen[+]
+          * question = "lipid-modifying-meds-boolean"
+          * operator = #!=
+          * answerBoolean = true
+        * enableWhen[+]
+          * question = "antithrombotic-meds-boolean"
+          * operator = #!=
+          * answerBoolean = true
+
+//
+// **************************************Start of Additional Diabetes Details Group
+    
+    * item[+]
+      * linkId = "additional-diabetes-details-group"
+      * type = #group
+      * repeats = false
+      * text = "Additional Diabetes Details"
+      // * item[0]
+      //   * extension[0]
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      //     * valueExpression
+      //       * language = #text/fhirpath
+      //       * expression = "%diabetesYearsIntegerPrePop.exists() or %hba1cMmolDecimalPrepop.exists() or %uacrDecimalPrepop.exists() or %egfrDecimalPrepop.exists() or %bmiWeightDecimalPrepop.exists() or %bmiHeightDecimalPrepop.exists() or %insulinUseBooleanPrepop.exists()"
+      //   // * extension[+]
+      //   //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+      //   //   * valueExpression
+      //   //     * language = #text/fhirpath
+      //   //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRange"
+      //   * linkId = "additional-diabetes-details-boolean"
+      //   * text = "Provide additional diabetes details"
+      //   * type = #boolean
+      * item[0]
+        * text = "The diabetes specific equation provides a more accurate CVD risk estimate for people with type 2 diabetes. Please note that this may give an inaccurate risk estimate in people with type 1 diabetes."
+          * extension
+            * url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+            * valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"color: rgb(84, 110, 122); font-size: 14px\">The diabetes specific equation provides a more accurate CVD risk estimate for people with type 2 diabetes. Please note that this may give an inaccurate risk estimate in people with type 1 diabetes.</p></div>"
+        * linkId = "additional-diabetes-details-display"
+        * type = #display
+      * item[+]
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+          * description = "Diabetes Years Final"
+          * language = #text/fhirpath
+          * expression = "%diabetesYearsFinal"
+        // * extension[+]
+        //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+        //   * valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%diabetesYearsFinal"
+        * linkId = "diabetes-years-integer"
+        * text = "Years since diabetes diagnosis"
+        // * required = true
+        * type = #integer
+// HbA1c
+
+      * item[+]
+        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
+        * linkId = "hba1c-cvd-grid"
+        * text = "Glycated haemoglobin (HbA1c)"
+        * type = #group
+
+        * item[+]
+          // * extension[0]
+          //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+          //   * valueExpression
+          //     * language = #text/fhirpath
+          //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRangeNoDiabetes"
+          // * extension[+]
+          //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+          //   * valueString = "Please enter a valid number"
+          * linkId = "hba1c-group"
+          * text = "Glycated haemoglobin (HbA1c)"
+          * type = #group
+          * repeats = false
+          * required = true
+          * item[0]
+            * extension[+]
+              * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+              * valueExpression
+                * language = #text/fhirpath
+                * expression = "%hba1cMmolDecimalPrepop"
+            // * extension[+]
+            //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+            //   * valueExpression
+            //     * language = #text/fhirpath
+            //     * expression = "%hbA1cPercentageValue.empty()"
+            * linkId = "hba1c-mmol-decimal"
+            * text = "Decimal Value"
+            * type = #decimal
+            * item[0] 
+              * extension
+                * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+                * valueCodeableConcept = $questionnaire-item-control#unit
+              * linkId = "hba1c-mmol-unit"
+              * text = "mmol/mol"
+              * type = #display
+          * item[+]
+            * text = "Or"
+            * type = #display
+            * linkId = "hba1c-or-seperator-text"
+            * extension[0]
+              * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+              * valueBoolean = true
+
+
+          * item[+]
+            * extension[+]
+              * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+              * valueExpression
+                * language = #text/fhirpath
+                * expression = "%hbA1cMmolValue.empty()"
+            * linkId = "hba1c-percentage-decimal"
+            * text = "Percentage"
+            * type = #decimal
+            * item
+              * extension
+                * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+                * valueCodeableConcept = $questionnaire-item-control#unit
+              * linkId = "hba1c-percentage-unit"
+              * text = "%"
+              * type = #display
+  // 
+
+// uACR
+     
+      * item[+]
+        // * extension
+        //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+        //   * valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRangeNoDiabetes"
+        * linkId = "uacr-group"
+        * type = #group
+        * text = "uACR"
+        * repeats = false
+        * required = true
+        * item[0]
+          * extension[0]
+            * url = "http://hl7.org/fhir/StructureDefinition/entryFormat"
+            * valueString = "Enter value"
+          * extension[+]
+            * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            * valueExpression
+              * language = #text/fhirpath
+              * expression = "%uacrDecimalPrepop"
+          * extension[+]
+            * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+            * valueString = "Please enter a valid number"
+          * linkId = "uacr-decimal"
+          * text = "uACR"
+          * required = true
+          * type = #decimal
+          * item
+            * extension
+              * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+              * valueCodeableConcept = $questionnaire-item-control#unit
+            * linkId = "uacr-unit"
+            * text = "mg/mmol"
+            * type = #display
+        * item[+]
+          * extension
+            * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+            * valueBoolean = true
+          * text.extension
+            * url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+            * valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\" id=\"uacr-alert-div\" style=\"width:100%; display: flex; border-radius: 4px; border: 1px solid transparent; background-color: rgba(255, 168, 90, 0.12); padding: 12px 16px; color: rgb(168, 75, 13);\"><div style=\"margin-right: 16px; margin-top: 1px; height: 20px; width: 20px;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0\"></path><path d=\"M12 8v4\"></path><path d=\"M12 16h.01\"></path></svg></div><div style=\"display: flex; flex-direction: column; gap: 10px; font-size: 14px;\"><div style=\"font-weight: 600;\">Clinically determined high risk</div><div style=\"color: rgb(84, 110, 122);\">People with moderate-to-severe chronic kidney disease are automatically considered to be at high risk of CVD. This includes people with any of the following:</div><ul style=\"color: rgb(84, 110, 122); font-size: 14px; list-style-position: inside;\" ><li>sustained eGFR <45mL/min/1.73m²</li><li>persistent uACR >25mg/mmol (men) or persistent uACR >35mg/mmol (women)</li></ul><div style=\"display: flex;\"><button type=\"button\" aria-label=\"Close alert\" onclick=\"document.getElementById('uacr-alert-div').style.display='none';\"style=\"border-radius: 4px; height: 30px; min-width: 110px; padding: 0 1.125rem; font-size: 12px; font-weight: 500; line-height: 30px; text-decoration: none; background-color: rgb(182, 198, 207, 0.4); color: rgb(25, 27, 94); border: none; cursor: pointer;\">Continue with risk calculator</button></div></div></div>"
+          * linkId = "uacr-alert"
+          * type = #display
+          * repeats = false
+//  end of uACR
+     
+      // eGFR
+
+      * item[+]
+        // * extension[0]
+        //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+        //   * valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRangeNoDiabetes"
+        // * extension[+]
+        //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+        //   * valueString = "Please enter a valid number"
+        * linkId = "egfr-group"
+        * text = "eGFR"
+        * type = #group
+        * repeats = false
+        * required = true
+        * item[0]
+          // * extension[0]
+          //   * url = "http://hl7.org/fhir/StructureDefinition/entryFormat"
+          //   * valueString = "Enter value"
+          * extension[0]
+            * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            * valueExpression
+              * language = #text/fhirpath
+              * expression = "%egfrDecimalPrepop"
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/StructureDefinition/minValue"
+          //   * valueDecimal = 1
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/StructureDefinition/maxValue"
+          //   * valueDecimal = 199
+          // * extension[+]
+          //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/minValue-feedback"
+          //   * valueString = "Please enter a value between 1-199 to continue"
+          // * extension[+]
+          //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/maxValue-feedback"
+          //   * valueString = "Please enter a value between 1-199 to continue"
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+          //   * valueExpression
+          //     * language = #text/fhirpath
+          //     * expression = "%eGFR90BooleanEnabled.empty() or %eGFR90BooleanEnabled = false"
+          * linkId = "egfr-decimal"
+          * text = "eGFR"
+          * type = #decimal
+          * item
+            * extension
+              * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+              * valueCodeableConcept = $questionnaire-item-control#unit
+            * linkId = "egfr-unit"
+            * text = "mL/min/1.73 m²"
+            * type = #display
+        // * item[+]
+        //   * extension
+        //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+        //     * valueExpression
+        //       * language = #text/fhirpath
+        //       * expression = "%eGFRDecimalValue.empty()"
+        //   * linkId = "egfr-90-boolean"
+        //   * text = "eGFR≥90"
+        //   * type = #boolean
+      * item[+]
+        * extension
+          * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+          * valueBoolean = true
+        * text.extension
+          * url = "http://hl7.org/fhir/StructureDefinition/rendering-xhtml"
+          * valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\" id=\"egfr-alert-div\" style=\"width:100%; display: flex; border-radius: 4px; border: 1px solid transparent; background-color: rgba(255, 168, 90, 0.12); padding: 12px 16px; color: rgb(168, 75, 13);\"><div style=\"margin-right: 16px; margin-top: 1px; height: 20px; width: 20px;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0\"></path><path d=\"M12 8v4\"></path><path d=\"M12 16h.01\"></path></svg></div><div style=\"display: flex; flex-direction: column; gap: 10px; font-size: 14px;\"><div style=\"font-weight: 600;\">Clinically determined high risk</div><div style=\"color: rgb(84, 110, 122);\">People with moderate-to-severe chronic kidney disease are automatically considered to be at high risk of CVD. This includes people with any of the following:</div><ul style=\"color: rgb(84, 110, 122); font-size: 14px; list-style-position: inside;\" ><li>sustained eGFR <45mL/min/1.73m²</li><li>persistent uACR >25mg/mmol (men) or persistent uACR >35mg/mmol (women)</li></ul><div style=\"display: flex;\"><button type=\"button\" aria-label=\"Close alert\" onclick=\"document.getElementById('egfr-alert-div').style.display='none';\"style=\"border-radius: 4px; height: 30px; min-width: 110px; padding: 0 1.125rem; font-size: 12px; font-weight: 500; line-height: 30px; text-decoration: none; background-color: rgb(182, 198, 207, 0.4); color: rgb(25, 27, 94); border: none; cursor: pointer;\">Continue with risk calculator</button></div></div></div>"
+        * linkId = "egfr-alert"
+        * type = #display
+        * repeats = false
+
+      // BMI
+
+      * item[+]
+        // * extension[0]
+        //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+        //   * valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRangeNoDiabetes"
+        * extension[+]
+          * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+          * valueCoding = $unitsofmeasure#kg/m2 "kg/m²"
+        * linkId = "bmi-group"
+        * text = "Body mass index (BMI)"
+        * required = true
+        * type = #group
+        * item[0]
+          // * extension[0]
+          //   * url = "http://hl7.org/fhir/StructureDefinition/entryFormat"
+          //   * valueString = "Weight"
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+          //   * valueExpression
+          //     * language = #text/fhirpath
+          //     * expression = "%bmiWeightDecimalPrepop"
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/StructureDefinition/minValue"
+          //   * valueDecimal = 30
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/StructureDefinition/maxValue"
+          //   * valueDecimal = 350
+          // * extension[+]
+          //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/minValue-feedback"
+          //   * valueString = "Please enter a value between 30-350 to continue"
+          // * extension[+]
+          //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/maxValue-feedback"
+          //   * valueString = "Please enter a value between 30-350 to continue"
+          // * extension[+]
+          //   * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+          //   * valueString = "Please enter a valid number to continue"
+          * extension[0]
+            * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+            * valueExpression
+              * language = #text/fhirpath
+              * expression = "%weightValueLatest"
+          * linkId = "bmi-weight-decimal"
+          * text = "Weight"
+          * type = #decimal
+          // * required = true
+          * item
+            * extension
+              * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+              * valueCodeableConcept = $questionnaire-item-control#unit
+            * linkId = "bmi-weight-unit"
+            * text = "kg"
+            * type = #display
+        * item[+]
+          * extension[0]
+            * url = "http://hl7.org/fhir/StructureDefinition/entryFormat"
+            * valueString = "Height"
+          // * extension[+]
+          //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+          //   * valueExpression
+          //     * language = #text/fhirpath
+          //     * expression = "%bmiHeightDecimalPrepop"
+          * extension[+]
+            * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+            * valueExpression
+              * language = #text/fhirpath
+              * expression = "iif(exists(%height), %height / 100, %ObsBodyHeightValue / 100)"
+          * linkId = "bmi-height-decimal"
+          * text = "Height"
+          * type = #decimal
+          * required = true
+          * item
+            * extension
+              * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+              * valueCodeableConcept = $questionnaire-item-control#unit
+            * linkId = "bmi-height-unit"
+            * text = "m"
+            * type = #display
+
+      // Insulin Use
+
+      * item[+]
+        * extension[0]
+          * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+          * valueExpression
+            * language = #text/fhirpath
+            * expression = "%insulinUseBooleanPrepop"
+        // * extension[+]
+        //   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+        //   * valueExpression
+        //     * language = #text/fhirpath
+        //     * expression = "%enableWhenNoHighRiskNoOutOfAgeRangeNoDiabetes"
+        * extension[+]
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+          * valueString = "Please make a selection to continue"
+        * linkId = "insulin-use-boolean"
+        * text = "Use of insulin within last 6 months"
+        * required = true
+        * type = #boolean
+
+
+      // * enableWhen
+      //   * question = "diabetes-boolean"
+      //   * operator = #=
+      //   * answerBoolean = true
+
+// END of Additional Diabetes group **************************
+
+
+    // * item[+]
+    //   * extension[sdc-questionnaire-initialExpression].valueExpression
+    //     * language = #text/fhirpath
+    //     * expression = "%Condition.entry.resource.code.coding.where(system='http://snomed.info/sct' and code='44054006').exists()" //type 2 diabetes
+    //   * linkId = "1c1eea28-6c82-4b7b-aaa3-8655ce70f2fd"
+    //   * text = "Type 2 diabetes mellitus"
+    //   * type = #boolean
+    //   * repeats = false
+    // * linkId = "f8022f3f-21fe-42c0-8abd-95f24e2e37e5"
+    // * text = "Health priorities, actions and follow-up"
+    // * type = #text
+    // * repeats = false
+
+
+    // //CVD Items
+    // * item[+]
+    //   * linkId = "8d02ef36-3f48-4912-b001-e9fec6aa7101"
+    //   * text = "CVD risk calculator variables"
+    //   * type = #group
+    //   * repeats = false
+    //   * readOnly = true
+      // * item[+]
+      //   * extension[+]
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+      //     * valueExpression
+      //       * description = "CVD Risk Age"
+      //       * language = #text/fhirpath
+      //       * expression = "%age"
+      //   * extension[+]
+      //     * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+      //     * valueCoding = $unitsofmeasure#a
+      //   * linkId = "6909cb38-a6f4-44c9-abae-0e5d697a21f5"
+      //   * text = "Age"
+      //   * type = #integer
+      //   * item
+      //     * extension
+      //       * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+      //       * valueCodeableConcept = $questionnaire-item-control#unit
+      //     * linkId = "b9aba16c-f910-4948-9267-e07851f69572"
+      //     * text = "years"
+      //     * type = #display
+      // * item[+]
+      //   * extension
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+      //     * valueExpression
+      //       * description = "CVD Risk Sex At Birth"
+      //       * language = #text/fhirpath
+      //       * expression = "%sex"
+      //   * linkId = "3dbb0e63-3b28-4567-8ef3-bac242fd95f6"
+      //   * text = "Sex at birth"
+      //   * type = #choice
+      //   * repeats = false
+      //   * answerValueSet = "#biological-sex-1"
+      // * item[+]
+      //   * extension
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+      //     * valueExpression
+      //       * description = "CVD Risk Smoking Status"
+      //       * language = #text/fhirpath
+      //       * expression = "%smoker"
+      //   * linkId = "bac0f824-3784-400e-80f9-ad18d46bd8cb"
+      //   * text = "Smoking status"
+      //   * type = #choice
+      //   * repeats = false
+      //   * answerOption[0].valueCoding = $sct#266919005 "Never smoked"
+      //   * answerOption[+].valueCoding = $sct#77176002 "Smoker"
+      //   * answerOption[+].valueCoding = $sct#8517006 "Ex-smoker"
+      //   * answerOption[+].valueCoding = $sct#16090371000119103 "Exposure to second hand tobacco smoke"
+      //   * answerOption[+].valueString = "Wants to quit"
+      //   // Add Additional smoking mapping here
+      //   * answerOption[+].valueString = "Other tobacco use"
+      // * item[+]
+      //   * extension
+      //     * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+      //     * valueCodeableConcept.coding = $questionnaire-item-control#grid
+      //       * version = "1.0.0"
+      //   * linkId = "fe9feec6-593a-4106-8a7d-f9965a632ea2"
+      //   * type = #group
+      //   * repeats = false
+      //   * item[0]
+      //     * linkId = "fa4f73a3-7633-410c-9177-8aa43b117122"
+      //     * text = "Systolic Blood Pressure"
+      //     * type = #group
+      //     * repeats = false
+      //     * item
+      //       * extension[0]
+      //         * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      //         * valueExpression
+      //           * language = #text/fhirpath
+      //           * expression = "%ObsBloodPressure.entry.resource.component.where(code.coding.exists(code='8480-6')).value.value"
+      //       * extension[+]
+      //         * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+      //         * valueCoding = $unitsofmeasure#mm[Hg]
+      //       * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
+      //       * text = "Value"
+      //       * type = #integer
+      //       * repeats = false
+      //       * item
+      //         * extension
+      //           * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+      //           * valueCodeableConcept = $questionnaire-item-control#unit
+      //         * linkId = "ddea5a62-a8c1-4b15-b667-7b69babec8cd"
+      //         * text = "mm Hg"
+      //         * type = #display
+      //   * item[+]
+      //     * linkId = "e693c7d2-be69-4f1f-b72d-7ff2ea3cd536"
+      //     * text = "Total Cholesterol"
+      //     * type = #group
+      //     * repeats = false
+      //     * item
+      //       * extension[0]
+      //         * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      //         * valueExpression
+      //           * language = #text/fhirpath
+      //           * expression = "%ObsTotalCholesterol.entry.resource.value.value"
+      //       * extension[+]
+      //         * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+      //         * valueCoding = $unitsofmeasure#mmol/L
+      //       * linkId = "99932a93-8135-47b2-933b-fd751b34b7af"
+      //       * text = "Value"
+      //       * type = #decimal
+      //       * repeats = false
+      //       * item
+      //         * extension
+      //           * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+      //           * valueCodeableConcept = $questionnaire-item-control#unit
+      //         * linkId = "fcfbfc9f-e400-4aae-993f-ea54096e7361"
+      //         * text = "mmol/L"
+      //         * type = #display
+      //   * item[+]
+      //     * linkId = "87eefaf6-010f-4b0d-9f51-2c33e46e6c69"
+      //     * text = "HDL Cholesterol"
+      //     * type = #group
+      //     * repeats = false
+      //     * item
+      //       * extension[0]
+      //         * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      //         * valueExpression
+      //           * language = #text/fhirpath
+      //           * expression = "%ObsHDLCholesterol.entry.resource.value.value"
+      //       * extension[+]
+      //         * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+      //         * valueCoding = $unitsofmeasure#mmol/L
+      //       * linkId = "c14b4513-1e20-461d-97f4-4631711adc65"
+      //       * text = "Value"
+      //       * type = #decimal
+      //       * repeats = false
+      //       * item
+      //         * extension
+      //           * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+      //           * valueCodeableConcept = $questionnaire-item-control#unit
+      //         * linkId = "2ba61002-b642-4b28-9e66-dc2b060c4e0e"
+      //         * text = "mmol/L"
+      //         * type = #display
+      // * item[+]
+      //   * extension
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
+      //     * valueExpression
+      //       * description = "CVD Risk Postcode"
+      //       * language = #text/fhirpath
+      //       * expression = "%postcode"
+      //   * linkId = "fa8f03ca-9a5a-4ed1-a866-db26e567352a"
+      //   * text = "Postcode"
+      //   * type = #string
+
+      
+      // * item[+]
+      //   * extension[0]
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      //     * valueExpression
+      //       * language = #text/fhirpath
+      //       * expression = "%memberOfDiabetesResourceArray.exists() or {}"
+      //   * extension[+]
+      //     * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression"
+      //     * valueExpression
+      //       * language = #text/fhirpath
+      //       * expression = "%enableWhenNoHighRiskNoOutOfAgeRange"
+      //   * extension[+]
+      //     * url = "https://smartforms.csiro.au/ig/StructureDefinition/required-feedback"
+      //     * valueString = "Please make a selection to continue"
+      //   * linkId = "diabetes-boolean"
+      //   * type = #boolean
+      //   * repeats = false
+      //   * required = true
+      //   * text = "Diabetes"
+ 
   * item[+]
     * linkId = "MarkComplete-2"
     * text = "Mark section as complete"

@@ -562,6 +562,50 @@ Description: "The Biological Sex value set includes values that represent the bi
 * include codes from system $SCT
     where constraint = "^32570631000036107|Sex reference set|"
 
+ValueSet: BiologicalSex2
+Id: biological-sex-2
+Title: "Biological Sex"
+Description: "The Biological Sex value set includes values that represent the biological sex of an individual."
+* ^meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+* ^meta.profile[+] = "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+* ^url = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10198"
+* ^version = "1.0.0"
+* ^status = #active
+* ^experimental = false
+* ^date = "2020-12-31"
+* ^publisher = "Australian Digital Health Agency"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "help@digitalhealth.gov.au"
+* ^copyright = "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
+
+* ^expansion.identifier = "urn:uuid:9a0c2291-6dd8-4778-9099-4622f64fa897"
+* ^expansion.timestamp = "2025-05-01T10:00:49+10:00"
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "displayLanguage"
+* ^expansion.parameter[=].valueCode = #en-US
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "used-valueset"
+* ^expansion.parameter[=].valueUri = "null"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #248152002
+* ^expansion.contains[=].display = "Female"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #248153007
+* ^expansion.contains[=].display = "Male"
+* include codes from system $SCT
+    where constraint = "^32570631000036107|Sex reference set|"
+
 
 CodeSystem: HealthChecksSCTSupplement
 Id: HealthChecksSCTSupplement
