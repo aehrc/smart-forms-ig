@@ -4,6 +4,7 @@ import requests
 import subprocess
 import sys
 import platform
+from datetime import datetime
 
 formsServerEndpoint = "https://smartforms.csiro.au/api/fhir"
 implementationGuideOutputDirectory = "output"
@@ -207,13 +208,28 @@ def updateAssembledQuestionnaire(questionnaire):
 
 # Main function
 def main():
-    if len(sys.argv) != 2 or (sys.argv[1] != "skip" and sys.argv[1] != "build"):
-        print(f"Run {INFO_BLUE}python bulk-import-ci.py build{END_C} to run _genonce.sh before running the bulk import.")
-        print(f"Run {INFO_BLUE}python bulk-import-ci.py skip{END_C} to run the bulk import only.")
+    skip = False
+    no_cloud_update = False
+    
+
+    for arg in sys.argv[1:]:
+        if arg == "--skip":
+            skip = True
+        elif arg == "--no-cloud-form-update":
+            no_cloud_update = True
+        else:
+            print(f"{ERROR_RED}Unknown argument: {arg}{END_C}")
+            print(f"Usage: python bulk-import-ci.py [--skip] [--no-cloud-form-update]")
+            return
+    print(f"skip: {skip},  no_cloud_update: {no_cloud_update}")
+
+    if not (skip):
+        print(f"Usage: python bulk-import-ci.py [--skip] [--no-cloud-form-update]")
+        print(f"  --skip               Skip running _genonce.sh")
+        print(f"  --no-cloud-form-update  Do not upload assembled questionnaire to cloud forms server")
         return
 
-
-    if (sys.argv[1] == "skip"):
+    if skip:
         print(f"{HEADER}Skipping IG build...{END_C}")
     else:
         print(f"{HEADER}Running _genonce.sh...{END_C}")
@@ -238,11 +254,23 @@ def main():
     assembledQuestionnaire = assembleQuestionnaire(questionnaires)
 
     # update assembled questionnaire
-    print(f"{HEADER}Uploading assembled questionnaire...{END_C}")
-    if assembledQuestionnaire != None:
-        updateAssembledQuestionnaire(assembledQuestionnaire)
-    print(f"{HEADER}Bulk import done. Exiting.{END_C}")
-
+    if not no_cloud_update:
+        print(f"{HEADER}Uploading assembled questionnaire...{END_C}")
+        if assembledQuestionnaire != None:
+            updateAssembledQuestionnaire(assembledQuestionnaire)
+        print(f"{HEADER}Bulk import done. Exiting.{END_C}")
+    if assembledQuestionnaire is not None:
+        timestamp = datetime.now().strftime("%d%m%Y-%H%M%S")
+        output_filename = f"Questionnaire-AboriginalTorresStraitIslanderHealthCheck-assembled-{timestamp}.json"
+        output_path = os.path.join(
+            os.getcwd(),
+            output_filename
+        )
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(assembledQuestionnaire, f, indent=2, ensure_ascii=False)
+        print(f"{OK_GREEN}Assembled questionnaire written to {output_path}{END_C}")
+    else:
+        print(f"{ERROR_RED}No assembled questionnaire to write.{END_C}")
 
 # Entry point of script
 if __name__ == "__main__":
