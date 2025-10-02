@@ -216,8 +216,35 @@ Usage:  #inline
 * reaction.manifestation[=].text.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * reaction.manifestation[=].text.extension.valueString = "$this"
 
-/*
+
 Instance: AllergyIntoleranceClinicalStatusPatchTemplate
+InstanceOf: Parameters
+Usage: #inline
+
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueCode.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-status-hidden').answer.value.exists() and %resource.repeat(item).where(linkId='allergysummary-status').answer.value.empty(), 'delete', 'add')"
+
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-status-hidden').answer.value.exists() and %resource.repeat(item).where(linkId='allergysummary-status').answer.value.empty(), 'AllergyIntolerance.clinicalStatus', 'AllergyIntolerance')"
+
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-status-hidden').answer.value.exists() and %resource.repeat(item).where(linkId='allergysummary-status').answer.value.empty(), '', 'name')"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-status-hidden').answer.value.exists() and %resource.repeat(item).where(linkId='allergysummary-status').answer.value.empty(), '', 'clinicalStatus')"
+
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-status-hidden').answer.value.exists() and %resource.repeat(item).where(linkId='allergysummary-status').answer.value.empty(), '', 'value')"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-status-hidden').answer.value.exists() and %resource.repeat(item).where(linkId='allergysummary-status').answer.value.empty(), '', %resource.repeat(item).where(linkId='allergysummary-status').answer.value.first())"
+
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Clinical status"
+
+
+Instance: AllergyIntoleranceNotePatchTemplate
 InstanceOf: Parameters
 Usage: #inline
 
@@ -226,21 +253,29 @@ Usage: #inline
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
 * parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "AllergyIntolerance"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0]', 'AllergyIntolerance')"
 * parameter[=].part[+].name = "name"
-* parameter[=].part[=].valueString = "clinicalStatus"
-* parameter[=].part[+].name = "value"
-* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-comment').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first()))"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'text', 'note')"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'value')"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-comment-hidden').answer.value.exists(), %resource.repeat(item).where(linkId='allergysummary-comment').answer.value.first())"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-comment-hidden').answer.value.empty(), 'value')"
+* parameter[=].part[=].valueAnnotation.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueAnnotation.text.extension[=].valueString = "iif(%resource.repeat(item).where(linkId='allergysummary-comment-hidden').answer.value.empty(), %resource.repeat(item).where(linkId='allergysummary-comment').answer.value.first())"
 * parameter[=].part[+].name = "pathLabel"
-* parameter[=].part[=].valueString = "Clinical status"
-*/
+* parameter[=].part[=].valueString = "Comment"
 
+
+/*
 Instance: AllergyIntolerancePatchTemplate
 InstanceOf: Parameters
 Usage: #inline
 
-
+/*
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
@@ -254,8 +289,50 @@ Usage: #inline
 * parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first()))"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Clinical status"
+*/
+/*
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #add
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "AllergyIntolerance"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "clinicalStatus"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the AllergyIntolerance resource. If both fields have values, it uses the visible field's value.
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first())"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Clinical status"
 
 
+//delete
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #delete
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), 'AllergyIntolerance.clinicalStatus')"
+*/
+/*
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #add
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString = "AllergyIntolerance"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString = "clinicalStatus"
+* parameter[=].part[+].name = "value"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the AllergyIntolerance resource. If both fields have values, it uses the visible field's value.
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first())"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Clinical status"
+
+
+
+
+/*
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
@@ -276,14 +353,37 @@ Usage: #inline
 * parameter[=].part[=].valueAnnotation.text.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), item.where(linkId='allergysummary-comment').answer.value.first())"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Comment"
+*/
 /*
+* parameter[+].name = "operation"
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #add
+* parameter[=].part[+].name = "type"
+* parameter[=].part[=].valueCode = #add
+* parameter[=].part[+].name = "path"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'AllergyIntolerance.note[0]', 'AllergyIntolerance')"
+* parameter[=].part[+].name = "name"
+* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'text', 'note')"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'value')"
+* parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists() and item.where(linkId='allergysummary-comment').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first())"
+* parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), 'value')"
+* parameter[=].part[=].valueAnnotation.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* parameter[=].part[=].valueAnnotation.text.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), item.where(linkId='allergysummary-comment').answer.value.first())"
+* parameter[=].part[+].name = "pathLabel"
+* parameter[=].part[=].valueString = "Comment"
+
 //delete
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #delete
 * parameter[=].part[+].name = "path"
 * parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), 'AllergyIntolerance.clinicalStatus')"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists() and item.where(linkId='allergysummary-comment').answer.value.empty(), 'AllergyIntolerance.note[0].text')"
 */
 
 

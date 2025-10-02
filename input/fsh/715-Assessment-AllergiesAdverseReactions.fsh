@@ -9,7 +9,8 @@ Title: "Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse R
 Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
 * contained[+] = AllergyIntoleranceTemplate
-* contained[+] = AllergyIntolerancePatchTemplate
+* contained[+] = AllergyIntoleranceClinicalStatusPatchTemplate
+* contained[+] = AllergyIntoleranceNotePatchTemplate
 * contained[+] = AllergyIntoleranceClinicalStatusMinimal
 
 //assemble expectation
@@ -121,15 +122,18 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
     <p>Adverse reaction risk summary</p>
     <p style=\"font-size:0.9em; font-weight:normal\"><em>This section includes a list of existing items from the patient record. <br />Update these items here or update the patient record and repopulate the form. <br />Add new items at the bottom.</em></p>
-    </div>"    
-    * type = #group 
+    </div>"  
+    * type = #group
 //existing adverse reactions
-* item[=].item[=].item[+].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "AllergyIntoleranceRepeat"
+* item[=].item[=].item[+].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(AllergyIntoleranceClinicalStatusPatchTemplate)
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "%resource.repeat(item).where(linkId='allergyIntoleranceId').answer.value"
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(AllergyIntoleranceNotePatchTemplate)
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "%resource.repeat(item).where(linkId='allergyIntoleranceId').answer.value"
+* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
+* item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "AllergyIntoleranceRepeat"
 * item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
 * item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
-* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(AllergyIntolerancePatchTemplate)
-* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='allergyIntoleranceId').answer.value"
-* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
 * item[=].item[=].item[=].extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
 * item[=].item[=].item[=].linkId = "allergysummary"
 * item[=].item[=].item[=].text = "Adverse reaction risk summary"
