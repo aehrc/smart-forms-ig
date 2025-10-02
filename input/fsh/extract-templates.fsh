@@ -216,31 +216,9 @@ Usage:  #inline
 * reaction.manifestation[=].text.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * reaction.manifestation[=].text.extension.valueString = "$this"
 
-/*
-Instance: AllergyIntoleranceClinicalStatusPatchTemplate
-InstanceOf: Parameters
-Usage: #inline
-
-
-* parameter[+].name = "operation"
-* parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #add
-* parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString = "AllergyIntolerance"
-* parameter[=].part[+].name = "name"
-* parameter[=].part[=].valueString = "clinicalStatus"
-* parameter[=].part[+].name = "value"
-* parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-comment').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first()))"
-* parameter[=].part[+].name = "pathLabel"
-* parameter[=].part[=].valueString = "Clinical status"
-*/
-
 Instance: AllergyIntolerancePatchTemplate
 InstanceOf: Parameters
 Usage: #inline
-
-
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
@@ -250,11 +228,9 @@ Usage: #inline
 * parameter[=].part[=].valueString = "clinicalStatus"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the AllergyIntolerance resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first()))"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='allergysummary-status').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Clinical status"
-
 
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
@@ -268,23 +244,13 @@ Usage: #inline
 * parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), 'value')"
 * parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the AllergyIntolerance resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists() and item.where(linkId='allergysummary-comment').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists() and item.where(linkId='allergysummary-comment').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first()))"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first())"
 * parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), 'value')"
 * parameter[=].part[=].valueAnnotation.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].valueAnnotation.text.extension[=].valueString = "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.empty(), item.where(linkId='allergysummary-comment').answer.value.first())"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Comment"
-/*
-//delete
-* parameter[+].name = "operation"
-* parameter[=].part[+].name = "type"
-* parameter[=].part[=].valueCode = #delete
-* parameter[=].part[+].name = "path"
-* parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), 'AllergyIntolerance.clinicalStatus')"
-*/
 
 
 Instance:   ImmunizationTemplate
@@ -337,10 +303,10 @@ Usage: #inline
 * parameter[=].part[=].valueString = "clinicalStatus"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCodeableConcept.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "iif(item.where(linkId='medicalhistory-status-hidden').answer.value.exists() and item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.empty(), ' ', iif(item.where(linkId='medicalhistory-status-hidden').answer.value.exists() and item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.exists(), item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()))"
+* parameter[=].part[=].valueCodeableConcept.coding.extension[=].valueString = "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Clinical status"
+
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
@@ -350,8 +316,7 @@ Usage: #inline
 * parameter[=].part[=].valueString = "abatement"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueDateTime.extension[=].valueString = "iif(item.where(linkId='medicalhistory-abatementdate-hidden').answer.value.exists() and item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.empty(), ' ', iif(item.where(linkId='medicalhistory-abatementdate-hidden').answer.value.exists() and item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.exists(), item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.first()))"
+* parameter[=].part[=].valueDateTime.extension[=].valueString = "item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Abatement date"
 
@@ -397,8 +362,7 @@ Usage: #inline
 * parameter[=].part[=].valueString = "status"
 * parameter[=].part[+].name = "value"
 * parameter[=].part[=].valueCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueCode.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.exists(), item.where(linkId='regularmedications-summary-current-status').answer.value.code.first()))"
+* parameter[=].part[=].valueCode.extension[=].valueString = "item.where(linkId='regularmedications-summary-current-status').answer.value.code.first()"
 * parameter[=].part[+].name = "pathLabel"
 * parameter[=].part[=].valueString = "Status"
 
@@ -414,8 +378,7 @@ Usage: #inline
 * parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), 'value')"
 * parameter[=].part[=].valueString.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-dosage').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-dosage').answer.value.exists(), item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()))"
+* parameter[=].part[=].valueString.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), item.where(linkId='regularmedications-summary-current-dosage').answer.value.first())"
 * parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.empty(), 'value')"
 * parameter[=].part[=].valueDosage.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
@@ -435,8 +398,7 @@ Usage: #inline
 * parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), 'value')"
 * parameter[=].part[=].valueMarkdown.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-// This logic ensures that if the hidden field has a value (indicating a prepop value exists) and the visible field is empty (a user has deleted it), a single space is used to clear the existing value in the resource. If both fields have values, it uses the visible field's value.
-* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-comment').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-comment').answer.value.exists(), item.where(linkId='regularmedications-summary-current-comment').answer.value.first()))"
+* parameter[=].part[=].valueMarkdown.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), item.where(linkId='regularmedications-summary-current-comment').answer.value.first())"
 * parameter[=].part[+].name.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * parameter[=].part[=].name.extension[=].valueString = "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.empty(), 'value')"
 * parameter[=].part[=].valueAnnotation.text.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"

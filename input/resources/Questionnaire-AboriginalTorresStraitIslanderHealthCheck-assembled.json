@@ -1215,7 +1215,7 @@
                                         "extension": [
                                             {
                                                 "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                                "valueString": "iif(item.where(linkId='medicalhistory-status-hidden').answer.value.exists() and item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.empty(), ' ', iif(item.where(linkId='medicalhistory-status-hidden').answer.value.exists() and item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.exists(), item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()))"
+                                                "valueString": "item.where(linkId='88bcfad7-386b-4d87-b34b-2e50482e4d2c').answer.value.first()"
                                             }
                                         ]
                                     }
@@ -1249,7 +1249,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='medicalhistory-abatementdate-hidden').answer.value.exists() and item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.empty(), ' ', iif(item.where(linkId='medicalhistory-abatementdate-hidden').answer.value.exists() and item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.exists(), item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.first()))"
+                                        "valueString": "item.where(linkId='e4524654-f6de-4717-b288-34919394d46b').answer.value.first()"
                                     }
                                 ]
                             }
@@ -1477,7 +1477,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-status-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-status').answer.value.exists(), item.where(linkId='regularmedications-summary-current-status').answer.value.code.first()))"
+                                        "valueString": "item.where(linkId='regularmedications-summary-current-status').answer.value.code.first()"
                                     }
                                 ]
                             }
@@ -1530,7 +1530,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-dosage').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-dosage').answer.value.exists(), item.where(linkId='regularmedications-summary-current-dosage').answer.value.first()))"
+                                        "valueString": "iif(item.where(linkId='regularmedications-summary-current-dosage-hidden').answer.value.exists(), item.where(linkId='regularmedications-summary-current-dosage').answer.value.first())"
                                     }
                                 ]
                             }
@@ -1603,7 +1603,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-comment').answer.value.empty(), ' ', iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists() and item.where(linkId='regularmedications-summary-current-comment').answer.value.exists(), item.where(linkId='regularmedications-summary-current-comment').answer.value.first()))"
+                                        "valueString": "iif(item.where(linkId='regularmedications-summary-current-comment-hidden').answer.value.exists(), item.where(linkId='regularmedications-summary-current-comment').answer.value.first())"
                                     }
                                 ]
                             }
@@ -1840,7 +1840,7 @@
                                         "extension": [
                                             {
                                                 "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                                "valueString": "iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-status-hidden').answer.value.exists() and item.where(linkId='allergysummary-status').answer.value.exists(), item.where(linkId='allergysummary-status').answer.value.first()))"
+                                                "valueString": "item.where(linkId='allergysummary-status').answer.value.first()"
                                             }
                                         ]
                                     }
@@ -1895,7 +1895,7 @@
                                 "extension": [
                                     {
                                         "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                        "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists() and item.where(linkId='allergysummary-comment').answer.value.empty(), ' ', iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists() and item.where(linkId='allergysummary-comment').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first()))"
+                                        "valueString": "iif(item.where(linkId='allergysummary-comment-hidden').answer.value.exists(), item.where(linkId='allergysummary-comment').answer.value.first())"
                                     }
                                 ]
                             }
