@@ -121,9 +121,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[0].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "MedicationStatementRepeat"
 * item.item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
 * item.item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource.ofType(MedicationStatement)"
-* item.item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(MedicationStatementPatchTemplate)
-* item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='medicationStatementId').answer.value"
-* item.item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #MedicationStatement
+* item.item[=].item[=].extension[sdc-questionnaire-templateExtract][+].extension[template][+].valueReference = Reference(MedicationStatementPatchTemplate)
+* item.item[=].item[=].extension[sdc-questionnaire-templateExtract][=].extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'MedicationStatement/' + item.where(linkId='medicationStatementId').answer.value"
 * item.item[=].item[=].extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
 * item.item[=].item[=].linkId = "regularmedications-summary-current"
 * item.item[=].item[=].text = "Current medications"
