@@ -104,48 +104,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * language = #text/fhirpath
     * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
 
-//cvd risk specific variables - variable values are drawn from QuestionnaireResponse where possible
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "CVDSexAtBirth"
-    * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value)"
-
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "CVDSmokingStatusNew"
-    * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value)"
-
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBloodPressureSitting"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=163035008&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBloodPressureSittingLatest"
-    * language = #text/fhirpath
-    * expression = "%ObsBloodPressureSitting.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "CVDSystolicBloodPressureValue"
-    * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='bp-newbp-systolic').answer.value)"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "CVDSystolicBloodPressureDate"
-    * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='bp-newbp-date').answer.value)"
-
-
-    
 
 //R5 preadoption extensions
 * extension[+]

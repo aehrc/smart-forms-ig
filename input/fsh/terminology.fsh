@@ -582,6 +582,7 @@ Description: "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander
 * #394872000 "Wants to quit"
 * #713914004 "Other tobacco use"
 
+
 ValueSet: CervicalScreeningStatus
 Id: CervicalScreeningStatus-1
 Title: "Cervical Screening Status"
@@ -944,27 +945,3 @@ Title: "Questionnaire Repopulation Behavior"
 Description: "The Questionnaire Repopulation Behavior value set includes values that can indicate how a Questionnaire item's initial expression can be re-evaluated and the item repopulated."
 * ^experimental = false
 * include codes from system QuestionnaireRepopulationBehaviorCodes
-
-//CVD risk specific terminology
-CodeSystem: CVDRiskSmokingStatusSCTSupplement
-Id: CVDRiskSmokingStatusSCTSupplement
-Title: "CVD Risk Smoking Status SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check"
-Description: "The CVD Risk Smoking Status SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the CVD risk calculation section of the health check Questionnaire."
-* ^experimental = false
-* ^content = #supplement
-* ^supplements = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
-* #266919005 "Never smoked"
-* #77176002 "Currently smokes"
-* #8517006 "Previously smoked"
-
-ValueSet: CVDRiskSmokingStatus
-Id: CVDRiskSmokingStatus-1
-Title: "CVD Risk Smoking Status"
-Description: "The CVD Risk Smoking Status value set includes values that can indicate how long ago an individual quit smoking."
-* ^experimental = false
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSmokingStatusSCTSupplement|0.3.0"
-//needs expansion
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430##266919005 "Never smoked"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#8517006 "Previously smoked"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#77176002 "Currently smokes"

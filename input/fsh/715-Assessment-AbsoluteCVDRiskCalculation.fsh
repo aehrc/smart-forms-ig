@@ -10,7 +10,6 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 
 
 * contained[+] = biological-sex-1
-* contained[+] = CVDRiskSmokingStatus-1
 
 
 //assemble expectation
@@ -324,64 +323,129 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Sex At Birth"
         * language = #text/fhirpath
-        * expression = "%CVDSexAtBirth"
+        * expression = "%SexAtBirthCoding"
       * linkId = "3dbb0e63-3b28-4567-8ef3-bac242fd95f6"
       * text = "Sex at birth"
       * type = #choice
       * repeats = false
-      * answerOption[+].valueCoding = $SCT#248248152002
-      * answerOption[+].valueCoding = $SCT#248153007
+      * answerValueSet = "#biological-sex-1"
     * item[+]
-      * extension[sdc-questionnaire-calculatedExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "iif(%CVDSmokingStatusNew.exists(), %CVDSmokingStatusNew, %ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
-      * linkId = "333007c7-47a9-482b-af11-e55484abf2ae"
-      * text = "Smoking status"
-      * type = #choice
-      * repeats = false
-      * answerValueSet = "#CVDRiskSmokingStatus-1"
-    * item[+]
-      * extension[sdc-questionnaire-calculatedExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "iif(%CVDSystolicBloodPressureValue.exists() and %CVDSystolicBloodPressureDate > (now() - 2 years), %CVDSystolicBloodPressure, iif(%ObsBloodPressureSittingLatest.where(effective > (now() - 2 years)).exists(), %ObsBloodPressureSittingLatest.component.where(code.coding.exists(code='407554009')).value.value, %ObsBloodPressureLatest.where(effective > (now() - 2 years)).component.where(code.coding.exists(code='271649006')).value.value))"
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
-      * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
-      * text = "Systolic blood pressure"
-      * type = #integer
+      * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
+      * linkId = "fe9feec6-593a-4106-8a7d-f9965a632ea2"
+      * text = "Observation values"
+        * extension[+]
+          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+          * valueBoolean = true
+      * type = #group 
       * repeats = false
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "ddea5a62-a8c1-4b15-b667-7b69babec8cd"
-        * text = "mm Hg"
-        * type = #display
-    * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%ObsTotalCholesterolLatest.value.value"
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
-      * linkId = "99932a93-8135-47b2-933b-fd751b34b7af"
-      * text = "Total Cholesterol"
-      * type = #decimal
-      * repeats = false
+        * linkId = "bac0f824-3784-400e-80f9-ad18d46bd8cb"
+        * text = "Smoking status"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTobaccoSmokingStatusLatest.value.coding.where(system='http://snomed.info/sct').first()"
+          * linkId = "333007c7-47a9-482b-af11-e55484abf2ae"
+          * text = "Value"
+          * type = #choice
+          * repeats = false
+          * answerOption[+].valueCoding = http://snomed.info/sct#266919005 "Lifetime non-smoker"
+          * answerOption[+].valueCoding = http://snomed.info/sct#77176002 "Current smoker"
+          * answerOption[+].valueCoding = http://snomed.info/sct#8517006 "Ex-smoker"
+          * answerOption[+].valueCoding = http://snomed.info/sct#16090371000119103 "Exposure to second hand tobacco smoke"
+          * answerOption[+].valueString = "Wants to quit"
+          * answerOption[+].valueString = "Other tobacco use"
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTobaccoSmokingStatusLatest.effective"
+          * linkId = "cvdrisk-smokingstatus-date"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "fcfbfc9f-e400-4aae-993f-ea54096e7361"
-        * text = "mmol/L"
-        * type = #display
-    * item[+]
-      * extension[sdc-questionnaire-initialExpression].valueExpression
-        * language = #text/fhirpath
-        * expression = "%ObsHDLCholesterolLatest.value.value"
-      * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
-      * linkId = "c14b4513-1e20-461d-97f4-4631711adc65"
-      * text = "HDL Cholesterol"
-      * type = #decimal
-      * repeats = false
+        * linkId = "fa4f73a3-7633-410c-9177-8aa43b117122"
+        * text = "Systolic Blood Pressure"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsBloodPressureLatest.component.where(code.coding.exists(code='8480-6')).value.value"
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+          * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
+          * text = "Value"
+          * type = #integer
+          * repeats = false
+          * item[+]
+            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+            * linkId = "ddea5a62-a8c1-4b15-b667-7b69babec8cd"
+            * text = "mm Hg"
+            * type = #display
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsBloodPressureLatest.effective"
+          * linkId = "85d8faf7-ddb0-446c-b489-28d786d6de50"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
       * item[+]
-        * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
-        * linkId = "2ba61002-b642-4b28-9e66-dc2b060c4e0e"
-        * text = "mmol/L"
-        * type = #display      
+        * linkId = "e693c7d2-be69-4f1f-b72d-7ff2ea3cd536"
+        * text = "Total Cholesterol"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTotalCholesterolLatest.value.value"
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
+          * linkId = "99932a93-8135-47b2-933b-fd751b34b7af"
+          * text = "Value"
+          * type = #decimal
+          * repeats = false
+          * item[+]
+            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+            * linkId = "fcfbfc9f-e400-4aae-993f-ea54096e7361"
+            * text = "mmol/L"
+            * type = #display
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsTotalCholesterolLatest.effective"
+          * linkId = "16cbe87b-5c8d-4385-b7d9-da3f07f63f8a"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
+      * item[+]
+        * linkId = "87eefaf6-010f-4b0d-9f51-2c33e46e6c69"
+        * text = "HDL Cholesterol"
+        * type = #group
+        * repeats = false
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsHDLCholesterolLatest.value.value"
+          * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mmol/L
+          * linkId = "c14b4513-1e20-461d-97f4-4631711adc65"
+          * text = "Value"
+          * type = #decimal
+          * repeats = false
+          * item[+]
+            * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#unit
+            * linkId = "2ba61002-b642-4b28-9e66-dc2b060c4e0e"
+            * text = "mmol/L"
+            * type = #display
+        * item[+]
+          * extension[sdc-questionnaire-initialExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "%ObsHDLCholesterolLatest.effective"
+          * linkId = "6407e0a7-c416-4a75-933b-904c0dcf88ca"
+          * text = "Date performed"
+          * type = #date
+          * repeats = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Postcode"
@@ -398,7 +462,6 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * text = "Type 2 diabetes mellitus"
       * type = #boolean
       * repeats = false
-  * item[+]
     * linkId = "f8022f3f-21fe-42c0-8abd-95f24e2e37e5"
     * text = "Health priorities, actions and follow-up"
     * type = #text
