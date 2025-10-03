@@ -6671,12 +6671,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "url": "resourceId",
-                                                    "valueString": "item.where(linkId='conditionId').answer.value"
-                                                },
-                                                {
-                                                    "url": "type",
-                                                    "valueCode": "Condition"
+                                                    "url": "https://smartforms.csiro.au/ig/StructureDefinition/TemplateExtractExtensionPatchRequestUrl",
+                                                    "valueString": "'Condition/' + item.where(linkId='conditionId').answer.value"
                                                 }
                                             ]
                                         }
@@ -7077,12 +7073,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "url": "resourceId",
-                                                    "valueString": "item.where(linkId='medicationStatementId').answer.value"
-                                                },
-                                                {
-                                                    "url": "type",
-                                                    "valueCode": "MedicationStatement"
+                                                    "url": "https://smartforms.csiro.au/ig/StructureDefinition/TemplateExtractExtensionPatchRequestUrl",
+                                                    "valueString": "'MedicationStatement/' + item.where(linkId='medicationStatementId').answer.value"
                                                 }
                                             ]
                                         },
@@ -7606,12 +7598,8 @@
                                                     }
                                                 },
                                                 {
-                                                    "url": "resourceId",
-                                                    "valueString": "item.where(linkId='allergyIntoleranceId').answer.value"
-                                                },
-                                                {
-                                                    "url": "type",
-                                                    "valueCode": "AllergyIntolerance"
+                                                    "url": "https://smartforms.csiro.au/ig/StructureDefinition/TemplateExtractExtensionPatchRequestUrl",
+                                                    "valueString": "'AllergyIntolerance/' + item.where(linkId='allergyIntoleranceId').answer.value"
                                                 }
                                             ]
                                         },
