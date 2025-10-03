@@ -127,9 +127,8 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[+].extension[sdc-questionnaire-itemPopulationContext][+].valueExpression[+].name = "AllergyIntoleranceRepeat"
 * item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].language = #text/fhirpath
 * item[=].item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%AllergyIntolerance.entry.resource.where(clinicalStatus.coding.exists(code='active')).where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
-* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][+].extension[template][+].valueReference = Reference(AllergyIntolerancePatchTemplate)
-* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[resourceId][+].valueString = "item.where(linkId='allergyIntoleranceId').answer.value"
-* item[=].item[=].item[=].extension[TemplateExtractExtensionExtended][=].extension[type][+].valueCode = #AllergyIntolerance
+* item[=].item[=].item[=].extension[sdc-questionnaire-templateExtract][+].extension[template][+].valueReference = Reference(AllergyIntolerancePatchTemplate)
+* item[=].item[=].item[=].extension[sdc-questionnaire-templateExtract][=].extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'AllergyIntolerance/' + item.where(linkId='allergyIntoleranceId').answer.value"
 * item[=].item[=].item[=].extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
 * item[=].item[=].item[=].linkId = "allergysummary"
 * item[=].item[=].item[=].text = "Adverse reaction risk summary"
