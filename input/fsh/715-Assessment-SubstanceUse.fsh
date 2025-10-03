@@ -64,7 +64,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * valueString = "ObsTobaccoSmokingStatusLatest"
 
 //fhirpath variables
-//Previous examination results variables
+//Previous results variables
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -160,6 +160,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
               * language = #text/fhirpath
               * expression = "iif(%ObsTobaccoSmokingStatusValue.exists() and %ObsTobaccoSmokingStatusDateFormatted.exists(), %ObsTobaccoSmokingStatusValue.display + ' ( ' + %ObsTobaccoSmokingStatusDateFormatted + ' )', 'Not available')"
           * type = #display
+        //This hidden item captures the previous smoking status value to be recorded in the QuestionnaireResponse
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
@@ -170,6 +171,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * type = #choice
           * repeats = false
           * answerValueSet = "#TobaccoUseStatus-1"
+        //This hidden item captures the previous smoking status value to be recorded in the QuestionnaireResponse
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
