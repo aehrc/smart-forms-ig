@@ -64,88 +64,161 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
     * url = "description"
     * valueString = "The encounter that is to be used to pre-populate the form"
 
-//fhir query variables
+
+//Age - variable to store age value from questionnaire response for use in throughout including CVD risk
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "age"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"
+
+//Postcode - variable to store postcode value from questionnaire response for use in CVD risk
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "postcode"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.value"
+
+//Condition variables
+  //fhir query variable for all Conditions with category = problem-list-item. Used in medical history and CVD risk
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "Condition"
     * language = #application/x-fhir-query
     * expression = "Condition?patient={{%patient.id}}&category=http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBloodPressure"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=85354-9&_sort=-date&patient={{%patient.id}}" 
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsTobaccoSmokingStatus"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=72166-2&_sort=-date&patient={{%patient.id}}"  
+
+// Sex at birth variables
+  //fhir query variable for patient extension individual-recordedSexOrGender for use in patient details
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "SexAtBirthCoding"
     * language = #text/fhirpath
     * expression = "%patient.extension.where(exists(url='http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender' and extension.where(exists(url='type' and value.coding.code='1515311000168102')) and extension.where(url='effectivePeriod').value.end.empty())).extension.where(url='value').value.coding"
+  //variable to store sex at birth value from questionnaire response for use in CVD risk prepop logic
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "CVDSexAtBirth"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value"
 
-//client side filtering on Observations
+//Blood pressure variables
+  //fhir query variable blood pressure observations sorted by date descending
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBloodPressure"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=85354-9&_sort=-date&patient={{%patient.id}}" 
+  //client side filtering on Observations to get latest resource with final/amended/corrected status
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsBloodPressureLatest"
     * language = #text/fhirpath
     * expression = "%ObsBloodPressure.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+  //variable to store systolic blood pressure new result from questionnaire response for use in CVD risk prepop logic
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "CVDSystolicBloodPressureValue"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='bp-newbp-systolic').answer.value.round(0)"
+  //variable to store systolic blood pressure new result date from questionnaire response for use in CVD risk prepop logic
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "CVDSystolicBloodPressureDate"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='bp-newbp-date').answer.value"
+
+//Smoking status variables
+  //fhir query variable smoking status observations sorted by date descending
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsTobaccoSmokingStatus"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=72166-2&_sort=-date&patient={{%patient.id}}" 
+  //client side filtering on Observations to get latest resource with final/amended/corrected status
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "ObsTobaccoSmokingStatusLatest"
     * language = #text/fhirpath
     * expression = "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
-
-//cvd risk specific variables - variable values are drawn from QuestionnaireResponse where possible
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "CVDSexAtBirth"
-    * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='56ef44bb-3d1d-4972-aad1-834b69185d61').answer.value)"
-
+  //variable to store smoking status new result from questionnaire response for use in CVD risk prepop logic
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "CVDSmokingStatusNew"
     * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value)"
+    * expression = "repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value"
 
+//Height variables
+  //fhir query variable for height observations sorted by date descending
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "ObsBloodPressureSitting"
+    * name = "ObsBodyHeight"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=163035008&_sort=-date&patient={{%patient.id}}"
+    * expression = "Observation?code=8302-2&_sort=-date&patient={{%patient.id}}"
+  //client side filtering on Observations to get latest resource with final/amended/corrected status
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "ObsBloodPressureSittingLatest"
+    * name = "ObsBodyHeightLatest"
     * language = #text/fhirpath
-    * expression = "%ObsBloodPressureSitting.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+    * expression = "%ObsBodyHeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+  //Variable used to store new result. Used in Examination and CVD risk.
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "CVDSystolicBloodPressureValue"
+    * name = "height"
     * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='bp-newbp-systolic').answer.value)"
+    * expression = "repeat(item).where(linkId='obs-height-newresult').answer.value"
+  //Variable used to store new result date. Used in CVD risk prepop logic.
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
-    * name = "CVDSystolicBloodPressureDate"
+    * name = "CVDHeightNewResultDate"
     * language = #text/fhirpath
-    * expression = "repeat(item).where(linkId='bp-newbp-date').answer.value)"
+    * expression = "repeat(item).where(linkId='obs-height-newdate').answer.value"
 
+//Weight variables
+  //fhir query variable for weight observations sorted by date descending
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyWeight"
+    * language = #application/x-fhir-query
+    * expression = "Observation?code=29463-7&_sort=-date&patient={{%patient.id}}"
+  //client side filtering on Observations to get latest resource with final/amended/corrected status
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "ObsBodyWeightLatest"
+    * language = #text/fhirpath
+    * expression = "%ObsBodyWeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
+  //Variable used to store new result. Used in Examination and CVD risk.
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "weight"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='obs-weight-newresult').answer.value"
+  //Variable used to store new result date. Used in CVD risk prepop logic.
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "CVDWeightNewResultDate"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='obs-weight-newdate').answer.value"
 
-    
 
 //R5 preadoption extensions
 * extension[+]
@@ -201,7 +274,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#CervicalScreeningStatus-1"
 
-
 * meta.profile[+] = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-modular"
 * url = "http://www.health.gov.au/assessments/mbs/715"
 * name = "AboriginalTorresStraitIslanderHealthCheck"
@@ -217,15 +289,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * linkId = "fd5af92e-c248-497a-8007-ee0952ccd4d9"  
   * type = #group
   * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#tab-container
- //fhirpath variables
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "age"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='e2a16e4d-2765-4b61-b286-82cfc6356b30').answer.value"
-  * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
-    * name = "postcode"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='5b224753-9365-44e3-823b-9c17e7394005').item.where(linkId='f1262ade-843c-4eba-a86d-51a9c97d134b').item.where(linkId='4e0dc185-f83e-4027-b7a8-ecb543d42c6d').item.where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.value"
   // Health priorities summary variables
   * extension[http://hl7.org/fhir/StructureDefinition/variable][+].valueExpression
     * name = "HealthPrioritiesSummaryCurrentPriorities"

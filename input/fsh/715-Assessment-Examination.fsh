@@ -61,13 +61,22 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 //assemble context
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
-  * valueString = "ObsBloodPressure"
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "ObsBloodPressureLatest"
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
   * valueString = "age"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsBodyHeightLatest"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "ObsBodyWeightLatest"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "height"
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext"
+  * valueString = "weight"
 
 //fhir query variables
 * extension[+]
@@ -88,18 +97,6 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * name = "ObsHeartRhythm"
     * language = #application/x-fhir-query
     * expression = "Observation?code=364074009&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBodyHeight"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=8302-2&_sort=-date&patient={{%patient.id}}"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBodyWeight"
-    * language = #application/x-fhir-query
-    * expression = "Observation?code=29463-7&_sort=-date&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -126,18 +123,6 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * name = "ObsHeartRhythmLatest"
     * language = #text/fhirpath
     * expression = "%ObsHeartRhythm.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBodyHeightLatest"
-    * language = #text/fhirpath
-    * expression = "%ObsBodyHeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "ObsBodyWeightLatest"
-    * language = #text/fhirpath
-    * expression = "%ObsBodyWeight.entry.resource.where(status = 'final' or status = 'amended' or status = 'corrected').first()"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -274,19 +259,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * language = #text/fhirpath
     * expression = "%ObsBloodPressureDateString.substring(8,2).toInteger().toString() + ' ' + %ObsBloodPressureDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec') + ' ' + %ObsBloodPressureDateString.substring(0,4)"
 
-//BMI calculation variables
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "weight"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='97ed4c86-8820-4e4d-9234-0e0e8b6ca44a').item.where(linkId='obs-weight-newresult').answer.value"
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/variable"
-  * valueExpression
-    * name = "height"
-    * language = #text/fhirpath
-    * expression = "item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='obs-height-newresult').answer.value"
+
 
 //R5 preadoption extensions
 * extension[+]
@@ -371,6 +344,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBodyHeightValue.exists() and %ObsBodyHeightDateFormatted.exists(), %ObsBodyHeightValue.round(0).toString() + ' cm ( ' + %ObsBodyHeightDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -380,6 +354,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-lengthheight-lastresult"
         * type = #decimal
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -424,6 +399,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBodyHeightValue.exists() and %ObsBodyHeightDateFormatted.exists(), %ObsBodyHeightValue.round(0).toString() + ' cm ( ' + %ObsBodyHeightDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -433,6 +409,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-height-lastresult"
         * type = #decimal
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -474,6 +451,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBodyWeightValue.exists() and %ObsBodyWeightDateFormatted.exists(), %ObsBodyWeightValue.round(1).toString() + ' kg ( ' + %ObsBodyWeightDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -483,6 +461,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-weight-lastresult"
         * type = #decimal
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -527,6 +506,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBodyWeightValue.exists() and %ObsBodyHeightValue.exists(), (%ObsBodyWeightValue/((%ObsBodyHeightValue/100).power(2))).round(1).toString() + ' kg/m2', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -569,6 +549,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsHeadCircumferenceValue.exists() and %ObsHeadCircumferenceDateFormatted.exists(), %ObsHeadCircumferenceValue.round(0).toString() + ' cm ( ' + %ObsHeadCircumferenceDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -578,6 +559,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-headcircumference-lastresult"
         * type = #decimal
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -622,6 +604,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsWaistCircumferenceValue.exists() and %ObsWaistCircumferenceDateFormatted.exists(), %ObsWaistCircumferenceValue.round(0).toString() + ' cm ( ' + %ObsWaistCircumferenceDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -631,6 +614,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-waistcircumference-lastresult"
         * type = #decimal
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -671,6 +655,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsHeartRateValue.exists() and %ObsHeartRateDateFormatted.exists(), %ObsHeartRateValue.round(0).toString() + ' /min ( ' + %ObsHeartRateDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -680,6 +665,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "obs-heartrate-lastresult"
         * type = #integer
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -721,6 +707,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsHeartRhythmValue.exists() and %ObsHeartRhythmDateFormatted.exists(), %ObsHeartRhythmValue.display + ' ( ' + %ObsHeartRhythmDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -730,6 +717,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #choice
         * repeats = false
         * answerValueSet = "#heart-rhythm-1"
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -782,6 +770,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
             * expression = "iif(%ObsBloodPressureValue.exists() and %ObsBloodPressureDateFormatted.exists(), %ObsBloodPressureValue + ' mm Hg ( ' + %ObsBloodPressureDateFormatted + ' )', 'Not available')"
           * extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "text-align: left;"
         * type = #display
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -791,6 +780,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "bp-lastbp-systolic"
         * type = #integer
         * repeats = false
+      // This hidden item records the last result value in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
@@ -800,6 +790,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * linkId = "bp-lastbp-diastolic"
         * type = #integer
         * repeats = false
+      // This hidden item records the last result date in the QuestionnaireResponse
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath

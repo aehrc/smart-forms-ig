@@ -946,16 +946,19 @@ Description: "The Questionnaire Repopulation Behavior value set includes values 
 * include codes from system QuestionnaireRepopulationBehaviorCodes
 
 //CVD risk specific terminology
-CodeSystem: CVDRiskSmokingStatusSCTSupplement
-Id: CVDRiskSmokingStatusSCTSupplement
+CodeSystem: CVDRiskSCTSupplement
+Id: CVDRiskSCTSupplement
 Title: "CVD Risk Smoking Status SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check"
 Description: "The CVD Risk Smoking Status SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the CVD risk calculation section of the health check Questionnaire."
 * ^experimental = false
 * ^content = #supplement
 * ^supplements = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* #75976002 "Low Risk"
+* #25594002 "Intermediate Risk"
+* #15508007 "High Risk"
 * #266919005 "Never smoked"
-* #77176002 "Currently smokes"
 * #8517006 "Previously smoked"
+* #77176002 "Currently smokes"
 
 ValueSet: CVDRiskSmokingStatus
 Id: CVDRiskSmokingStatus-1
@@ -963,8 +966,64 @@ Title: "CVD Risk Smoking Status"
 Description: "The CVD Risk Smoking Status value set includes values that can indicate how long ago an individual quit smoking."
 * ^experimental = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSmokingStatusSCTSupplement|0.3.0"
-//needs expansion
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430##266919005 "Never smoked"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+* ^expansion.identifier = "urn:uuid:b2e820da-5d0d-40d8-ab32-5ab7ab84626b"
+* ^expansion.timestamp = "2025-10-08T10:11:49+10:00"
+* ^expansion.parameter[0].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1|0.3.0"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].code = #266919005
+* ^expansion.contains[=].display = "Never smoked"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].code = #8517006
+* ^expansion.contains[=].display = "Previously smoked"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].code = #77176002
+* ^expansion.contains[=].display = "Currently smokes"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#266919005 "Never smoked"
 * $SCT|http://snomed.info/sct/32506021000036107/version/20250430#8517006 "Previously smoked"
 * $SCT|http://snomed.info/sct/32506021000036107/version/20250430#77176002 "Currently smokes"
+
+ValueSet: CVDRiskCategory
+Id: CVDRiskCategory-1
+Title: "CVD Risk Category"
+Description: "The CVD Risk Category value set includes values that can be used to represent the cardiovascular disease risk classification categories."
+* ^experimental = false
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+* ^expansion.identifier = "urn:uuid:542be920-0ac6-401d-a924-0cbd705c7e99"
+* ^expansion.timestamp = "2025-10-10T13:08:07+10:00"
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131"
+* ^expansion.contains[0].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #75976002
+* ^expansion.contains[=].display = "Low Risk"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #25594002
+* ^expansion.contains[=].display = "Intermediate Risk"
+* ^expansion.contains[+].system = "http://snomed.info/sct"
+* ^expansion.contains[=].code = #15508007
+* ^expansion.contains[=].display = "High Risk"
+* http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131#75976002 "Low Risk"
+* http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131#25594002 "Intermediate Risk"
+* http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131#15508007 "High Risk"

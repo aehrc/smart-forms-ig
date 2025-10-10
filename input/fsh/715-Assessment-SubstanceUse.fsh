@@ -189,6 +189,9 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * repeats = false
           * answerValueSet = "#TobaccoUseStatus-1"
         * item[+]
+          * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "iif(%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(), today())"
           * linkId = "substanceuse-smoking-smokingstatus-group-newdate"
           * text = "New date"
           * type = #date

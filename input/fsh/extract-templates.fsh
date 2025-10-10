@@ -191,7 +191,44 @@ Usage:  #inline
 * component[=].valueQuantity.system = $UCUM
 * component[=].valueQuantity.code = #mm[Hg]
 
-
+Instance:   CVDRiskResultTemplate
+InstanceOf: Observation
+Usage:  #inline  
+* status = #final
+* category[+] = $observation-category#social-history
+* code.coding[+] = $SCT#441829007
+* code.text = "CVD risk result"
+* subject.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* subject.reference.extension[=].valueString = "%resource.subject.reference"
+* encounter.reference.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* encounter.reference.extension[=].valueString = "%resource.encounter.reference"
+* effectiveDateTime.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* effectiveDateTime.extension[=].valueString = "now()"
+* valueQuantity.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueQuantity.value.extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '75976002', 5, iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '15508007', 10, item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.toDecimal()))"
+* valueQuantity.comparator.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueQuantity.comparator.extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '75976002', '<', iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '15508007', '>='))"
+* valueQuantity.unit = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.exists(), '%')"
+* valueQuantity.system = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.exists(), 'http://unitsofmeasure.org')"
+* valueQuantity.code = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.exists(), '%')"
+* valueRange.low.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.low.value.extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', 5)"
+* valueRange.low.unit..extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.low.unit..extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', '%')"
+* valueRange.low.system..extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.low.system..extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', 'http://unitsofmeasure.org')"
+* valueRange.low.code..extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.low.code..extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', '%')"
+* valueRange.high.value.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.high.value.extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', 9)"
+* valueRange.high.unit..extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.high.unit..extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', '%')"
+* valueRange.high.system..extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.high.system..extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', 'http://unitsofmeasure.org')"
+* valueRange.high.code..extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* valueRange.high.code..extension[=].valueString = "iif(item.where(linkId='4c52fcec-0695-4916-b185-24a5c2711631').answer.value.empty() and item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value.code = '25594002', '%')"
+* interpretation.coding.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* interpretation.coding.extension[=].valueString = "item.where(linkId='28ff9463-b77f-435d-9ba7-427682a61f96').answer.value"
 
 Instance:   AllergyIntoleranceTemplate
 InstanceOf: AllergyIntolerance
