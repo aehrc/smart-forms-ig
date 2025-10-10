@@ -11,7 +11,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 
 * contained[+] = CVDRiskSmokingStatus-1
 * contained[+] = CVDRiskCategory-1
-* contained[+] = CVDRiskResultTemplate
+//* contained[+] = CVDRiskResultTemplate
 
 //assemble expectation
 * extension[+]
@@ -633,7 +633,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%AusCVDRiskiAccessAnswer != true or %RepopulateOverrideAnswer = true"
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#CVDRiskResultTemplate"
+      //* extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#CVDRiskResultTemplate"
       * linkId = "cvdrisk-cvdriskresultgroup"
       * text = "New CVD risk result"
       * type = #group
