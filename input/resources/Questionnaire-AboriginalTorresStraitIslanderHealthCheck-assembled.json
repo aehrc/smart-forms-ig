@@ -17104,16 +17104,18 @@
                             ]
                         },
                         {
-                            "linkId": "f8022f3f-21fe-42c0-8abd-95f24e2e37e5",
-                            "text": "Health priorities, actions and follow-up",
-                            "type": "text",
-                            "enableWhen": [
+                            "extension": [
                                 {
-                                    "question": "cvdrisk-auscvdriskiaccess",
-                                    "operator": "=",
-                                    "answerBoolean": false
+                                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                    "valueExpression": {
+                                        "language": "text/fhirpath",
+                                        "expression": "%AusCVDRiskiAccessAnswer != true or %AusCVDRiskiAccessAnswer.empty()"
+                                    }
                                 }
                             ],
+                            "linkId": "8d02ef36-3f48-4912-b001-e9fec6aa7101",
+                            "text": "CVD risk calculator variables",
+                            "type": "group",
                             "repeats": false,
                             "readOnly": true,
                             "item": [
@@ -17505,6 +17507,12 @@
                                     "repeats": false
                                 }
                             ]
+                        },
+                        {
+                            "linkId": "f8022f3f-21fe-42c0-8abd-95f24e2e37e5",
+                            "text": "Health priorities, actions and follow-up",
+                            "type": "text",
+                            "repeats": false
                         },
                         {
                             "linkId": "MarkComplete-2",

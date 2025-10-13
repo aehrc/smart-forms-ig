@@ -296,15 +296,14 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * answerOption[+].valueString = "Low Risk"
 //Online calculator variables view
   * item[+]
+    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%AusCVDRiskiAccessAnswer != true or %AusCVDRiskiAccessAnswer.empty()"
     * linkId = "8d02ef36-3f48-4912-b001-e9fec6aa7101"
     * text = "CVD risk calculator variables"
     * type = #group
     * repeats = false
     * readOnly = true
-    * enableWhen[+]
-      * question = "cvdrisk-auscvdriskiaccess"
-      * operator = #=
-      * answerBoolean = false
     * item[+]
       * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
         * description = "CVD Risk Age"
@@ -462,6 +461,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
       * text = "Type 2 diabetes mellitus"
       * type = #boolean
       * repeats = false
+  * item[+]
     * linkId = "f8022f3f-21fe-42c0-8abd-95f24e2e37e5"
     * text = "Health priorities, actions and follow-up"
     * type = #text
