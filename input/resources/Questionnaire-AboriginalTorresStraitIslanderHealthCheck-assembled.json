@@ -7718,7 +7718,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%AllergyIntoleranceRepeat.reaction.manifestation.coding"
+                                                        "expression": "%AllergyIntoleranceRepeat.reaction.manifestation.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
                                                     }
                                                 },
                                                 {
