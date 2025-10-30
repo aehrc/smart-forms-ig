@@ -8,7 +8,7 @@ The following profiles have been defined for this implementation guide.
 {% include sd-list-generator.md %}
 <!-- ================================================ -->
 
-There are additional profiles used in this guide defined in [AU Core](https://build.fhir.org/ig/hl7au/au-fhir-core/).
+There are additional profiles used in this guide defined in [AU Core](https://hl7.org.au/fhir/core/2.0.0-ballot/).
 
 
 <br />

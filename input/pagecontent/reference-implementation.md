@@ -6,7 +6,7 @@ An open source reference implementation has been developed to demonstrate the Sm
 
 Try it out here: <https://www.smartforms.io/>
 
-A web application supporting the rendering of Questionnaire resources and authoring of QuestionnaireResponse resources. The app leverages [SMART App Launch](https://hl7.org/fhir/smart-app-launch/index.html) and [Structured Data Capture](http://hl7.org/fhir/uv/sdc/).
+A web application supporting the rendering of Questionnaire resources and authoring of QuestionnaireResponse resources. The app leverages [SMART App Launch](https://hl7.org/fhir/smart-app-launch/index.html) and [Structured Data Capture](http://build.fhir.org/ig/HL7/sdc/).
 
 The source code and additional information is available at the [Smart Forms GitHub repository](https://github.com/aehrc/smart-forms).
 

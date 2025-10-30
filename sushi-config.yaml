@@ -9,10 +9,10 @@ name: SmartHealthChecks
 title: Smart Health Checks
 description: The Smart Health Checks FHIR Implementation Guide supports the integration of the Smart Health Checks App within a patient management system enabling users to complete health check assessments such as the Aboriginal and Torres Strait Islander Health Check.
 status: draft # draft | active | retired | unknown
-version: 0.3.0
+version: 0.3.0-draft
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2022+
-releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: trial-use # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 license: CC-BY-SA-4.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#AU "Australia" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -27,7 +27,7 @@ publisher:
 dependencies:
   hl7.fhir.au.core: 2.0.0-ballot
   hl7.fhir.au.base: 6.0.0-ballot
-  hl7.fhir.uv.sdc: current
+  hl7.fhir.uv.sdc: 4.0.0-ballot
   hl7.fhir.uv.smart-app-launch: 2.2.0
 #  hl7.fhir.uv.extensions.r4: 5.2.0
 #  hl7.fhir.extensions.r5: 4.0.1

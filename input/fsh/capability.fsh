@@ -54,7 +54,7 @@ Usage: #definition
 1. Support CORS headers
 1. Support SMART on FHIR security services
 
-Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/1.0.0/security.html) section for general considerations and recommendations."
+Also see the [AU Core Security and Privacy](https://hl7.org.au/fhir/core/2.0.0-ballot/security.html) section for general considerations and recommendations."
 
 //AllergyIntolerance
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
