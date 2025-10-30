@@ -8,7 +8,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.3.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
@@ -46,7 +46,7 @@
                 "parameter": [
                     {
                         "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.3.0"
                     },
                     {
                         "name": "used-codesystem",
@@ -58,11 +58,11 @@
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.3.0"
                     }
                 ],
                 "contains": [
@@ -93,7 +93,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.3.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
@@ -131,7 +131,7 @@
                 "parameter": [
                     {
                         "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.3.0"
                     },
                     {
                         "name": "used-codesystem",
@@ -143,11 +143,11 @@
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.3.0"
                     }
                 ],
                 "contains": [
@@ -2123,7 +2123,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
@@ -2164,15 +2164,15 @@
                     },
                     {
                         "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.3.0"
                     }
                 ],
                 "contains": [
@@ -2197,7 +2197,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1",
@@ -2254,15 +2254,15 @@
                     },
                     {
                         "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.3.0"
                     }
                 ],
                 "contains": [
@@ -2403,7 +2403,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
@@ -2452,15 +2452,15 @@
                     },
                     {
                         "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.3.0"
                     }
                 ],
                 "contains": [
@@ -3409,139 +3409,139 @@
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Consent|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Consent|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Mood|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Mood|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Gambling|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Gambling|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Skin|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Skin|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Immunisation|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Immunisation|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Examination|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Investigations|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Investigations|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.3.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.4.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.3.0"
         }
     ],
     "url": "http://www.health.gov.au/assessments/mbs/715",
-    "version": "0.4.0-assembled",
+    "version": "0.3.0-assembled",
     "name": "AboriginalTorresStraitIslanderHealthCheck",
     "title": "Aboriginal and Torres Strait Islander Health Check",
     "status": "draft",
