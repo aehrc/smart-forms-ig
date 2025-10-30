@@ -5,6 +5,12 @@
         {
             "resourceType": "ValueSet",
             "id": "YesNoNA",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
+                }
+            ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA",
             "name": "YesNoNA",
             "title": "Yes/No/NA",
@@ -34,41 +40,47 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:32c22ac2-d817-4c44-b9d0-5514d29cd352",
-                "timestamp": "2025-09-18T16:28:51+10:00",
+                "identifier": "urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181",
+                "timestamp": "2025-10-29T16:30:17+10:00",
                 "total": 3,
-                "offset": 0,
                 "parameter": [
                     {
-                        "name": "count",
-                        "valueInteger": 1000
-                    },
-                    {
-                        "name": "offset",
-                        "valueInteger": 0
-                    },
-                    {
-                        "name": "excludeNested",
-                        "valueBoolean": false
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
                     },
                     {
                         "name": "used-codesystem",
                         "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+                        "version": "2.0.0",
                         "code": "Y",
                         "display": "Yes"
                     },
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+                        "version": "2.0.0",
                         "code": "N",
                         "display": "No"
                     },
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/v2-0532",
+                        "version": "2.0.0",
                         "code": "NA",
                         "display": "N/A"
                     }
@@ -78,6 +90,12 @@
         {
             "resourceType": "ValueSet",
             "id": "AboriginalTorresStraitIslander",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
+                }
+            ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander",
             "name": "AboriginalTorresStraitIslander",
             "title": "Aboriginal and/or Torres Strait Islander",
@@ -88,6 +106,7 @@
                 "include": [
                     {
                         "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+                        "version": "1.0.5",
                         "concept": [
                             {
                                 "code": "1",
@@ -106,45 +125,47 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:eb422e76-71e8-48b0-a191-73285ddb91cc",
-                "timestamp": "2025-05-01T10:00:56+10:00",
+                "identifier": "urn:uuid:99d3428a-7ac4-47ff-b2b7-e50ccf5e1b49",
+                "timestamp": "2025-10-29T16:34:14+10:00",
                 "total": 3,
-                "offset": 0,
                 "parameter": [
                     {
-                        "name": "displayLanguage",
-                        "valueCode": "en-US"
-                    },
-                    {
-                        "name": "count",
-                        "valueInteger": 1000
-                    },
-                    {
-                        "name": "offset",
-                        "valueInteger": 0
-                    },
-                    {
-                        "name": "excludeNested",
-                        "valueBoolean": false
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"
+                        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.5"
+                    },
+                    {
+                        "name": "version",
+                        "valueUri": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.5"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander|0.4.0"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+                        "version": "1.0.5",
                         "code": "1",
                         "display": "Aboriginal"
                     },
                     {
                         "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+                        "version": "1.0.5",
                         "code": "2",
                         "display": "Torres Strait Islander"
                     },
                     {
                         "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+                        "version": "1.0.5",
                         "code": "3",
                         "display": "Aboriginal and Torres Strait Islander"
                     }
@@ -559,13 +580,13 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:81810018-2ec2-4e42-adcc-6aab69e7750c",
-                "timestamp": "2025-05-01T10:00:58+10:00",
+                "identifier": "urn:uuid:5cd85856-1ce5-43f2-afff-063f748c2c7d",
+                "timestamp": "2025-10-28T16:39:25+10:00",
                 "offset": 0,
                 "parameter": [
                     {
                         "name": "displayLanguage",
-                        "valueCode": "en-US"
+                        "valueCode": "en"
                     },
                     {
                         "name": "count",
@@ -580,12 +601,16 @@
                         "valueBoolean": false
                     },
                     {
+                        "name": "system-version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
+                    },
+                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "used-codesystem",
@@ -642,12 +667,12 @@
                     "value": "urn:oid:1.2.36.1.2001.1004.201.10198"
                 }
             ],
-            "version": "1.0.0",
+            "version": "1.1.0",
             "name": "BiologicalSex",
             "title": "Biological Sex",
             "status": "active",
             "experimental": false,
-            "date": "2020-12-31",
+            "date": "2024-11-30",
             "publisher": "Australian Digital Health Agency",
             "contact": [
                 {
@@ -669,20 +694,37 @@
                             {
                                 "property": "constraint",
                                 "op": "=",
-                                "value": "^32570631000036107|Sex reference set|"
+                                "value": "^ 32570631000036107|Sex reference set|"
+                            }
+                        ]
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "concept": [
+                            {
+                                "code": "asked-unknown"
+                            },
+                            {
+                                "code": "unknown"
+                            },
+                            {
+                                "code": "asked-declined"
+                            },
+                            {
+                                "code": "not-asked"
                             }
                         ]
                     }
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:9a0c2291-6dd8-4778-9099-4622f64fa897",
-                "timestamp": "2025-05-01T10:00:49+10:00",
+                "identifier": "urn:uuid:3491de0c-49f2-4913-8909-a63c92d14c9d",
+                "timestamp": "2025-10-28T16:39:14+10:00",
                 "offset": 0,
                 "parameter": [
                     {
                         "name": "displayLanguage",
-                        "valueCode": "en-US"
+                        "valueCode": "en"
                     },
                     {
                         "name": "count",
@@ -697,12 +739,20 @@
                         "valueBoolean": false
                     },
                     {
+                        "name": "system-version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
+                    },
+                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                    },
+                    {
+                        "name": "used-codesystem",
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
                     }
                 ],
                 "contains": [
@@ -725,6 +775,26 @@
                         "system": "http://snomed.info/sct",
                         "code": "248153007",
                         "display": "Male"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "code": "asked-unknown",
+                        "display": "Asked But Unknown"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "code": "unknown",
+                        "display": "Unknown"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "code": "asked-declined",
+                        "display": "Asked But Declined"
+                    },
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                        "code": "not-asked",
+                        "display": "Not Asked"
                     }
                 ]
             }
@@ -2053,7 +2123,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1",
@@ -2066,7 +2136,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "concept": [
                             {
                                 "code": "48031000119106",
@@ -2081,40 +2151,40 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:93600010-14a0-4d6e-a82f-15283d13a2cb",
-                "timestamp": "2025-05-01T11:41:24+10:00",
+                "identifier": "urn:uuid:ee67ad1e-7faa-4fe8-ab3e-1995de4fcd26",
+                "timestamp": "2025-10-29T09:44:35+10:00",
                 "parameter": [
                     {
-                        "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-                    },
-                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                    },
+                    {
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "48031000119106",
                         "display": "Quit >12 months"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "735128000",
                         "display": "Quit <12 months"
                     }
@@ -2127,7 +2197,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1",
@@ -2140,7 +2210,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "concept": [
                             {
                                 "code": "266919005",
@@ -2171,64 +2241,64 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:e7e976ca-5eb9-41da-9ca8-2c795c5e2dd2",
-                "timestamp": "2025-05-01T11:43:41+10:00",
+                "identifier": "urn:uuid:a7d04dc0-077c-4744-8e21-da8ce4cba135",
+                "timestamp": "2025-10-29T09:46:14+10:00",
                 "parameter": [
                     {
-                        "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-                    },
-                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                    },
+                    {
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "266919005",
                         "display": "Never smoked"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "77176002",
                         "display": "Current smoker"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "8517006",
                         "display": "Ex-smoker"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "16090371000119103",
                         "display": "Exposure to second hand tobacco smoke"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "394872000",
                         "display": "Wants to quit"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "713914004",
                         "display": "Other tobacco use"
                     }
@@ -2333,7 +2403,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1",
@@ -2346,7 +2416,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "concept": [
                             {
                                 "code": "736595007",
@@ -2369,52 +2439,52 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:3657ae6f-b206-482f-a745-0ff9c99358ef",
-                "timestamp": "2025-06-05T13:50:47+10:00",
+                "identifier": "urn:uuid:66e5ae5e-d111-45a0-b6b1-e433ec6edbe7",
+                "timestamp": "2025-10-29T09:42:14+10:00",
                 "parameter": [
                     {
-                        "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-                    },
-                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                    },
+                    {
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "736595007",
                         "display": "Declined"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "410527000",
                         "display": "Offered"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "171154002",
                         "display": "Not required"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
                         "code": "171155001",
                         "display": "Up to date"
                     }
@@ -2567,13 +2637,13 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7",
-                "timestamp": "2025-06-27T12:16:28+10:00",
+                "identifier": "urn:uuid:7743ad1f-02f2-4977-b7a4-ea993b57023b",
+                "timestamp": "2025-10-28T16:39:30+10:00",
                 "offset": 0,
                 "parameter": [
                     {
                         "name": "displayLanguage",
-                        "valueCode": "en-US"
+                        "valueCode": "en"
                     },
                     {
                         "name": "count",
@@ -2588,12 +2658,16 @@
                         "valueBoolean": false
                     },
                     {
+                        "name": "system-version",
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
+                    },
+                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
                     }
                 ],
                 "contains": [
@@ -3335,139 +3409,139 @@
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AboutTheHealthCheck|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Consent|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Consent|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PatientDetails|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/CurrentPriorities|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MedicalHistoryCurrentProblems|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RegularMedications|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AllergiesAdverseReactions|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FamilyHistory|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialAndEmotionalWellbeing|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SocialHistoryChild|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HomeAndFamily|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndDevelopment|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/LearningAndWork|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Mood|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Mood|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/MemoryAndThinking|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ChronicDiseaseAgeing|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/ScreeningPrograms|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthyEating|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/PhysicalActivityAndScreenTime|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/RedFlagsEarlyIdentificationGuide|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SubstanceUse|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Gambling|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Gambling|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/SexualHealth|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EyeHealth|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/EarHealthAndHearing|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/OralAndDentalHealth|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Skin|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Skin|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Immunisation|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Immunisation|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Examination|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Examination|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/AbsoluteCVDRiskCalculation|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Investigations|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/Investigations|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/HealthPrioritiesSummary|0.4.0"
         },
         {
             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembledFrom",
-            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.3.0"
+            "valueCanonical": "http://www.health.gov.au/assessments/mbs/715/FinalisingHealthCheck|0.4.0"
         }
     ],
     "url": "http://www.health.gov.au/assessments/mbs/715",
-    "version": "0.3.0-assembled",
+    "version": "0.4.0-assembled",
     "name": "AboriginalTorresStraitIslanderHealthCheck",
     "title": "Aboriginal and Torres Strait Islander Health Check",
     "status": "draft",

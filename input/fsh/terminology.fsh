@@ -49,30 +49,45 @@ Description: "Concepts for Yes, No, Not Asked and Asked But Declined"
 * $v2-0532#NASK "Not Asked"
 * $data-empty#asked-declined "Asked But Declined"
 
+CodeSystem: HealthChecksExpandedYesNoIndicatorSupplement
+Id: HealthChecksExpandedYesNoIndicatorSupplement
+Title: "Health Checks Expanded Yes No Indicator Supplement"
+Description: "The Health Checks Expanded Yes No Indicator Supplement defines consumer friendly terms for the HL7 expandedYes-NoIndicator code system for use in the health check Questionnaire."
+* ^experimental = false
+* ^content = #supplement
+* ^supplements = $v2-0532
+* #NA "N/A"
+
 ValueSet: YesNoNA
 Id: YesNoNA
 Title: "Yes/No/NA"
 Description: "Concepts for Yes, No and Not applicable"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
 * ^experimental = false
-* ^expansion.identifier = "urn:uuid:32c22ac2-d817-4c44-b9d0-5514d29cd352"
-* ^expansion.timestamp = "2025-09-18T16:28:51+10:00"
+* ^expansion.identifier = "urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181"
+* ^expansion.timestamp = "2025-10-29T16:30:17+10:00"
 * ^expansion.total = 3
-* ^expansion.offset = 0
-* ^expansion.parameter[0].name = "count"
-* ^expansion.parameter[=].valueInteger = 1000
-* ^expansion.parameter[+].name = "offset"
-* ^expansion.parameter[=].valueInteger = 0
-* ^expansion.parameter[+].name = "excludeNested"
-* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[0].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].version = "2.0.0"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
 * ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].version = "2.0.0"
 * ^expansion.contains[=].code = #N
 * ^expansion.contains[=].display = "No"
 * ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
+* ^expansion.contains[=].version = "2.0.0"
 * ^expansion.contains[=].code = #NA
 * ^expansion.contains[=].display = "N/A"
 * $v2-0532#Y "Yes"
@@ -106,35 +121,49 @@ Description: "Concepts for Yes and No"
 * $v2-0532#Y "Yes"
 * $v2-0532#N "No"
 
-Alias: $australian-indigenous-status-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1
+Alias: $australian-indigenous-status-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.5
+
+CodeSystem: HealthChecksAustralianIndigenousStatusSupplement
+Id: HealthChecksAustralianIndigenousStatusSupplement
+Title: "Health Checks Australian Indigenous Status Supplement"
+Description: "The Health Checks Australian Indigenous Status Supplement defines consumer friendly terms for the Australian Indigenous Status code system for use in the health check Questionnaire."
+* ^experimental = false
+* ^content = #supplement
+* ^supplements = $australian-indigenous-status-1
+* #1 "Aboriginal"
+* #2 "Torres Strait Islander"
+* #3 "Aboriginal and Torres Strait Islander"
 
 ValueSet: AboriginalTorresStraitIslander
 Id: AboriginalTorresStraitIslander
 Title: "Aboriginal and/or Torres Strait Islander"
 Description: "The Aboriginal and/or Torres Strait Islander value set includes the Australian Indigenous statuses for Indigenous people."
 * ^experimental = false
-
-* ^expansion.identifier = "urn:uuid:eb422e76-71e8-48b0-a191-73285ddb91cc"
-* ^expansion.timestamp = "2025-05-01T10:00:56+10:00"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
+* ^expansion.identifier = "urn:uuid:99d3428a-7ac4-47ff-b2b7-e50ccf5e1b49"
+* ^expansion.timestamp = "2025-10-29T16:34:14+10:00"
 * ^expansion.total = 3
-* ^expansion.offset = 0
-* ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
-* ^expansion.parameter[+].name = "count"
-* ^expansion.parameter[=].valueInteger = 1000
-* ^expansion.parameter[+].name = "offset"
-* ^expansion.parameter[=].valueInteger = 0
-* ^expansion.parameter[+].name = "excludeNested"
-* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[0].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.3"
+* ^expansion.parameter[=].valueUri = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.5"
+* ^expansion.parameter[+].name = "version"
+* ^expansion.parameter[=].valueUri = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1|1.0.5"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/AboriginalTorresStraitIslander|0.4.0"
+* ^expansion.parameter[+].name = "warning-draft"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksAustralianIndigenousStatusSupplement|0.4.0"
 * ^expansion.contains[0].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+* ^expansion.contains[=].version = "1.0.5"
 * ^expansion.contains[=].code = #1
 * ^expansion.contains[=].display = "Aboriginal"
 * ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+* ^expansion.contains[=].version = "1.0.5"
 * ^expansion.contains[=].code = #2
 * ^expansion.contains[=].display = "Torres Strait Islander"
 * ^expansion.contains[+].system = "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+* ^expansion.contains[=].version = "1.0.5"
 * ^expansion.contains[=].code = #3
 * ^expansion.contains[=].display = "Aboriginal and Torres Strait Islander"
 * $australian-indigenous-status-1#1 "Aboriginal"
@@ -408,22 +437,23 @@ Description: "The Gender Identity Response value set includes values that may be
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "help@digitalhealth.gov.au"
 * ^copyright = "Copyright © 2022 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.\n\n\"This resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. This resource includes material that is based on Australian Bureau of Statistics data. \n\nThis resource also includes all or a portion of material from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: https://terminology.hl7.org/license."
-
-* ^expansion.identifier = "urn:uuid:81810018-2ec2-4e42-adcc-6aab69e7750c"
-* ^expansion.timestamp = "2025-05-01T10:00:58+10:00"
+* ^expansion.identifier = "urn:uuid:5cd85856-1ce5-43f2-afff-063f748c2c7d"
+* ^expansion.timestamp = "2025-10-28T16:39:25+10:00"
 * ^expansion.offset = 0
 * ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
+* ^expansion.parameter[=].valueCode = #en
 * ^expansion.parameter[+].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "system-version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
@@ -523,30 +553,33 @@ Description: "The Biological Sex value set includes values that represent the bi
 * ^url = "https://healthterminologies.gov.au/fhir/ValueSet/biological-sex-1"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:1.2.36.1.2001.1004.201.10198"
-* ^version = "1.0.0"
+* ^version = "1.1.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2020-12-31"
+* ^date = "2024-11-30"
 * ^publisher = "Australian Digital Health Agency"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "help@digitalhealth.gov.au"
 * ^copyright = "Copyright © 2020 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms™ (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT®, was originally created by The College of American Pathologists. “SNOMED” and “SNOMED CT” are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement."
-
-* ^expansion.identifier = "urn:uuid:9a0c2291-6dd8-4778-9099-4622f64fa897"
-* ^expansion.timestamp = "2025-05-01T10:00:49+10:00"
+* ^expansion.identifier = "urn:uuid:3491de0c-49f2-4913-8909-a63c92d14c9d"
+* ^expansion.timestamp = "2025-10-28T16:39:14+10:00"
 * ^expansion.offset = 0
 * ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
+* ^expansion.parameter[=].valueCode = #en
 * ^expansion.parameter[+].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "system-version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
 * ^expansion.contains[=].code = #248152002
 * ^expansion.contains[=].display = "Female"
@@ -559,8 +592,23 @@ Description: "The Biological Sex value set includes values that represent the bi
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].code = #248153007
 * ^expansion.contains[=].display = "Male"
-* include codes from system $SCT
-    where constraint = "^32570631000036107|Sex reference set|"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].code = #asked-unknown
+* ^expansion.contains[=].display = "Asked But Unknown"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].code = #unknown
+* ^expansion.contains[=].display = "Unknown"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].code = #asked-declined
+* ^expansion.contains[=].display = "Asked But Declined"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+* ^expansion.contains[=].code = #not-asked
+* ^expansion.contains[=].display = "Not Asked"
+* include codes from system $SCT where constraint = "^ 32570631000036107|Sex reference set|"
+* DataAbsentReason#asked-unknown
+* DataAbsentReason#unknown
+* DataAbsentReason#asked-declined
+* DataAbsentReason#not-asked
 
 
 CodeSystem: HealthChecksSCTSupplement
@@ -569,7 +617,7 @@ Title: "SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Ch
 Description: "The SNOMED CT Supplement for Aboriginal and Torres Strait Islander Health Check code system supplement defines consumer friendly terms for use in the health check Questionnaire."
 * ^experimental = false
 * ^content = #supplement
-* ^supplements = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^supplements = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * #736595007 "Declined"
 * #171154002 "Not required"
 * #171155001 "Up to date"
@@ -589,37 +637,37 @@ Title: "Cervical Screening Status"
 Description: "The Cervical Screening Status value set includes values that can be used to represent the status of an individual's participation in a cervical screening program."
 * ^experimental = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#736595007 "Declined"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#410527000 "Offered" // a better concept is required
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#171154002 "Not required"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#171155001 "Up to date"
-* ^expansion.identifier = "urn:uuid:3657ae6f-b206-482f-a745-0ff9c99358ef"
-* ^expansion.timestamp = "2025-06-05T13:50:47+10:00"
-* ^expansion.parameter[0].name = "used-supplement"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-* ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#736595007 "Declined"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#410527000 "Offered" // a better concept is required
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#171154002 "Not required"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#171155001 "Up to date"
+* ^expansion.identifier = "urn:uuid:66e5ae5e-d111-45a0-b6b1-e433ec6edbe7"
+* ^expansion.timestamp = "2025-10-29T09:42:14+10:00"
+* ^expansion.parameter[0].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+* ^expansion.parameter[+].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
 * ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
 * ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.3.0"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #736595007
 * ^expansion.contains[=].display = "Declined"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #410527000
 * ^expansion.contains[=].display = "Offered"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #171154002
 * ^expansion.contains[=].display = "Not required"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #171155001
 * ^expansion.contains[=].display = "Up to date"
 
@@ -629,30 +677,29 @@ Title: "Smoking Quit Status"
 Description: "The Smoking Quit Status value set includes values that can indicate how long ago an individual quit smoking."
 * ^experimental = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-
-* ^expansion.identifier = "urn:uuid:93600010-14a0-4d6e-a82f-15283d13a2cb"
-* ^expansion.timestamp = "2025-05-01T11:41:24+10:00"
-* ^expansion.parameter[0].name = "used-supplement"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-* ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+* ^expansion.identifier = "urn:uuid:ee67ad1e-7faa-4fe8-ab3e-1995de4fcd26"
+* ^expansion.timestamp = "2025-10-29T09:44:35+10:00"
+* ^expansion.parameter[0].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+* ^expansion.parameter[+].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
 * ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
 * ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.3.0"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #48031000119106
 * ^expansion.contains[=].display = "Quit >12 months"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #735128000
 * ^expansion.contains[=].display = "Quit <12 months"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#48031000119106 "Quit >12 months"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#735128000 "Quit <12 months"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#48031000119106 "Quit >12 months"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#735128000 "Quit <12 months"
 
 
 ValueSet: TobaccoUseStatus
@@ -661,49 +708,49 @@ Title: "Tobacco Use Status"
 Description: "The Tobacco Use Status value set includes values that may be used to represent an individual's current tobacco use and exposure status."
 * ^experimental = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
-* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-* ^expansion.identifier = "urn:uuid:e7e976ca-5eb9-41da-9ca8-2c795c5e2dd2"
-* ^expansion.timestamp = "2025-05-01T11:43:41+10:00"
-* ^expansion.parameter[0].name = "used-supplement"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
-* ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^extension[=].valueCanonical = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
+* ^expansion.identifier = "urn:uuid:a7d04dc0-077c-4744-8e21-da8ce4cba135"
+* ^expansion.timestamp = "2025-10-29T09:46:14+10:00"
+* ^expansion.parameter[0].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+* ^expansion.parameter[+].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
 * ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.3.0"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
 * ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.3.0"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #266919005
 * ^expansion.contains[=].display = "Never smoked"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #77176002
 * ^expansion.contains[=].display = "Current smoker"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #8517006
 * ^expansion.contains[=].display = "Ex-smoker"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #16090371000119103
 * ^expansion.contains[=].display = "Exposure to second hand tobacco smoke"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #394872000
 * ^expansion.contains[=].display = "Wants to quit"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20250430"
+* ^expansion.contains[=].version = "http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[=].code = #713914004
 * ^expansion.contains[=].display = "Other tobacco use"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#266919005 "Never smoked"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#77176002 "Current smoker"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#8517006 "Ex-smoker"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#16090371000119103 "Exposure to second hand tobacco smoke"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#394872000 "Wants to quit"
-* $SCT|http://snomed.info/sct/32506021000036107/version/20250430#713914004 "Other tobacco use"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#266919005 "Never smoked"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#77176002 "Current smoker"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#8517006 "Ex-smoker"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#16090371000119103 "Exposure to second hand tobacco smoke"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#394872000 "Wants to quit"
+* $SCT|http://snomed.info/sct/32506021000036107/version/20251031#713914004 "Other tobacco use"
 
 ValueSet: AustralianMedicinesTerminologyVaccine
 Id: amt-vaccine-1
@@ -758,22 +805,24 @@ ValueSet: HeartRhythm
 Id: heart-rhythm-1
 Title: "Heart Rhythm"
 Description: "The Heart Rhythm value set includes values that may be used to represent the heart rhythm of an individual."
-* ^experimental = false  
-* ^expansion.identifier = "urn:uuid:b12cc8bf-25b0-49a8-8ee1-f641fd89cfa7"
-* ^expansion.timestamp = "2025-06-27T12:16:28+10:00"
+* ^experimental = false
+* ^expansion.identifier = "urn:uuid:7743ad1f-02f2-4977-b7a4-ea993b57023b"
+* ^expansion.timestamp = "2025-10-28T16:39:30+10:00"
 * ^expansion.offset = 0
 * ^expansion.parameter[0].name = "displayLanguage"
-* ^expansion.parameter[=].valueCode = #en-US
+* ^expansion.parameter[=].valueCode = #en
 * ^expansion.parameter[+].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "system-version"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250630"
+* ^expansion.parameter[=].valueUri = "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
 * ^expansion.contains[=].code = #933506231000036108
 * ^expansion.contains[=].display = "Regular heart rhythm"
