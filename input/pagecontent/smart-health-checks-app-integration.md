@@ -166,12 +166,13 @@ code of `302 Found`. The `Location` header URL matches the `redirect_uri` parame
 | --------- | --- |
 | error | The error code from the following set:<br/>• `invalid_request`<br/>• `unauthorized_client`<br/>• `access_denied`<br/>• `unsupported_response_type`<br/>• `invalid_scope`<br/>• `server_error` – unexpected server error, equivalent to HTTP 500 Internal Server Error status code<br/>• `temporarily_unavailable` – server temporarily unavailable, equivalent to HTTP 503 Server Unavailable status code |
 | error_description | Optional human readable description of the error |
+| state | The state value provided in the authorization request to correlate this redirect response with the request |
 
 An example of the response is shown below.
 
 ```
 HTTP 302 Found
-Location: https://healthchecks.smartforms.io?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration
+Location: https://healthchecks.smartforms.io?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration&state=NhlJ741C31hRDf8v
 ```
 
 When the Web browser client receives the authorize request response, the application **SHALL** display the error details and not attempt to access the SHC Host FHIR Server.
