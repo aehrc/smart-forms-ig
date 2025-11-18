@@ -61,13 +61,13 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * valueExpression
     * name = "QuestionnaireResponseLatestCompleted"
     * language = #application/x-fhir-query
-    * expression = "QuestionnaireResponse?status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
+    * expression = "QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&status=completed&_count=1&_sort=-authored&patient={{%patient.id}}"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
     * name = "QuestionnaireResponseLatest"
     * language = #application/x-fhir-query
-    * expression = "QuestionnaireResponse?_count=1&_sort=-authored&patient={{%patient.id}}"
+    * expression = "QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&_count=1&_sort=-authored&patient={{%patient.id}}"
 
 //R5 preadoption extensions
 * extension[+]
