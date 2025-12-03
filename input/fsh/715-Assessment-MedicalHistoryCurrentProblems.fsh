@@ -8,7 +8,7 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Medical History"
 Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
-* contained[+] = condition-clinical
+* contained[+] = ConditionClinicalStatusMinimal
 * contained[+] = clinical-condition-1
 * contained[+] = ConditionTemplate
 * contained[+] = ConditionPatchTemplate
@@ -201,7 +201,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
         * text = "Clinical status"
         * type = #choice
-        * answerValueSet = "#condition-clinical"
+        * answerValueSet = "#ConditionClinicalStatusMinimal"
 // This hidden item is used to determine the appropriate patch parameter parts for comment.
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -210,7 +210,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * extension[questionnaire-hidden].valueBoolean = true             
         * linkId = "medicalhistory-status-hidden"
         * type = #choice
-        * answerValueSet = "#condition-clinical"
+        * answerValueSet = "#ConditionClinicalStatusMinimal"
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath

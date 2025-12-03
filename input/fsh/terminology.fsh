@@ -350,6 +350,35 @@ Description: "Preferred value set for Condition Clinical Status."
 * ^expansion.contains[=].display = "Unknown"
 * include codes from system http://terminology.hl7.org/CodeSystem/condition-clinical
 
+ValueSet: ConditionClinicalStatusMinimal
+Id: ConditionClinicalStatusMinimal
+Title: "Condition Clinical Status Minimal"
+Description: "This value set includes the minimal set of codes to represent the clinical status of a condition (i.e., active and inactive)."
+* ^experimental = false
+* ^expansion.identifier = "urn:uuid:79c6437f-1765-498a-979f-533bbeb06e33"
+* ^expansion.timestamp = "2025-12-03T12:09:39+10:00"
+* ^expansion.total = 2
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "displayLanguage"
+* ^expansion.parameter[=].valueCode = #en
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
+* ^expansion.parameter[+].name = "used-codesystem"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/condition-clinical|3.0.0"
+* ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #active
+* ^expansion.contains[=].display = "Active"
+* ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/condition-clinical"
+* ^expansion.contains[=].code = #inactive
+* ^expansion.contains[=].display = "Inactive"
+* http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* http://terminology.hl7.org/CodeSystem/condition-clinical#inactive
+
+
 Alias: $australian-states-territories-1 = https://healthterminologies.gov.au/fhir/CodeSystem/australian-states-territories-1
 
 ValueSet: AustralianStatesAndTerritories

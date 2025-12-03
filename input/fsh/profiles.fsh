@@ -106,6 +106,7 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * clinicalStatus MS 
 * clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * clinicalStatus insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* clinicalStatus from AllergyIntoleranceClinicalStatusMinimal (required)
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
@@ -135,9 +136,11 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * clinicalStatus MS
 * clinicalStatus insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * clinicalStatus insert obligation2App (3, SHALL:populate, SHALL:process)
+* clinicalStatus from ConditionClinicalStatusMinimal (required)
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
+* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * category MS
 * category insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * category insert obligationApp (3, SHALL:populate)
@@ -154,8 +157,9 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * onsetDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
 * onsetDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * abatementDateTime MS
-* abatementDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
+* abatementDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHOULD:persist)
 * abatementDateTime insert obligationApp (3, SHALL:process)
+* note ..1
 * note.text MS
 * note.text insert obligationServer (0, SHALL:persist)
 * note.text insert obligationApp (1, SHALL:populate-if-known)
@@ -169,6 +173,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
+* status = #completed
 * vaccineCode MS
 * vaccineCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * vaccineCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
@@ -187,6 +192,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * lotNumber MS
 * lotNumber insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * lotNumber insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -203,6 +209,7 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
+* status from MedicationStatementStatusLimited (required)
 * medicationCodeableConcept MS
 * medicationCodeableConcept insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * medicationCodeableConcept insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
@@ -222,7 +229,7 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * reasonCode MS
 * reasonCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * reasonCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
-* note ..1 MS
+* note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
