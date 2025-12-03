@@ -82,7 +82,7 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
   * valueExpression
     * name = "ObsTobaccoSmokingStatus"
     * language = #application/x-fhir-query
-    * expression = "Observation?code=72166-2&_sort=-date&patient={{%patient.id}}"  
+    * expression = "Observation?code=1747861000168109&_sort=-date&patient={{%patient.id}}"  
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
