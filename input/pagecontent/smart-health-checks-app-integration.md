@@ -277,7 +277,7 @@ The JWS Payload claims required by the [OIDC specification](https://openid.net/s
 | ------- | ----------- |
 | sub | Unique identifier of the user as known by the PMS authorization service |
 | iss | Authorization service issuer |
-| aud | Client URI |
+| aud | Client identifier for the registered SHC App |
 | fhirUser | FHIR Practitioner reference | 
 | preferred_username | Optional username used by the user to login to the PMS | 
 | iat | Token issued at |
@@ -289,7 +289,7 @@ An example of the JWS Payload is shown below.
 {
   "sub":"f256d3ba-bb70-4613-a631-825d500c57fa",
   "iss":"https://auth.pmsserver.com.au",
-  "aud":"https://healthchecks.smartforms.io",
+  "aud":"smart-health-checks-application",
   "fhirUser":"Practitioner/f256d3ba-bb70-4613-a631-825d500c57fa",
   "preferred_username":"janedoe",
   "iat":1690903483,
@@ -302,6 +302,8 @@ Below is Base64URL encoded JWS Payload.
 ```
 eyAKICJzdWIiOiJmMjU2ZDNiYS1iYjcwLTQ2MTMtYTYzMS04MjVkNTAwYzU3ZmEiLCAKICJpc3MiOiJodHRwczovL2F1dGgucG1zc2VydmVyLmNvbS5hdSIsIAogImF1ZCI6Imh0dHBzOi8vc21hcnRmb3Jtcy5jc2lyby5hdSIsIAogImZoaXJVc2VyIjoiUHJhY3RpdGlvbmVyL2YyNTZkM2JhLWJiNzAtNDYxMy1hNjMxLTgyNWQ1MDBjNTdmYSIsIAogInByZWZlcnJlZF91c2VybmFtZSI6ImphbmVkb2UiLCAKICJpYXQiOjE2OTA5MDM0ODMsIAogImV4cCI6MTY5MDkwNzA4MyAKfSA
 ```
+
+Note: This Base64URL encode JWS Payload does not match the example of the JWS Payload above.
 
 ##### JWS Signature
 The JWS Signature uses the RSA PKCS1 SHA-256 algorithm where the input string is the concatenation of the JWS Protected Header and JWS Payload delimited with a period (`.`). For example:
