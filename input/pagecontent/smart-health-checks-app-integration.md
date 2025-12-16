@@ -10,14 +10,15 @@ To establish a trust relationship between the PMS and the SHC App that enables t
 | Attribute    | Value                                          |
 |--------------|--------------------------------------------------|
 | Client Name  | Smart Health Checks Application                  |
-| Client ID    | smart-health-checks-application                  |
 | Redirect URIs | https://healthchecks.smartforms.io/             |
 
-How this client registration is performed is not specified in this implementation guide and it is the responsibility of the PMS admininstrator to ensure the client details are configured as specified above.
+How this client registration is performed is not specified in this implementation guide and it is the responsibility of the PMS administrator to ensure the client details are configured as specified above. 
 
-Note that the Client ID is assigned by the SHC App to allow multiple PMSs to launch the app without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server (such as if the Auth Server requires Client IDs to be UUIDs, or if the server assigns an auto-generated Client ID), please contact AEHRC to arrange a workaround.
+The Client ID assigned to the SHC App by the SHC Host Authorization Server and the SHC Host FHIR Server base URL should be provided to SHC App administrator to configure the SHC App trust relationship with the PMS host.
 
-The SHC App requests the following scopes, these can be configured in the SHC Host Authorization Server client registration details as required.
+Where the Client ID can be assigned in the SHC Host Authorization Server registration details for the SHC App, the Client ID of `smart-health-checks-application` may be used for testing purpose only. This enables the SHC App to be launched using an untrusted FHIR Server base URL.
+
+The SHC App requests the following scopes, these should be configured in the SHC Host Authorization Server client registration details as required.
 - launch
 - openid
 - fhirUser
@@ -34,7 +35,7 @@ The SHC App requests the following scopes, these can be configured in the SHC Ho
 - user/Practitioner.r
 - launch/questionnaire?role=http://ns.electronichealth.net.au/smart/role/new
 
-Other client registration details that may need to be configured in the SHC Host Authorization Server based on the [Client Metadata fields defined in the OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591#section-2) are shown below. 
+Other client registration details that may be configured in the SHC Host Authorization Server based on the [Client Metadata fields defined in the OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591#section-2) are shown below. 
 
 | Attribute    | Value            |
 |--------------|--------------------|
