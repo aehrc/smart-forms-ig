@@ -1,0 +1,45 @@
+{
+    "resourceType": "Observation",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
+        ]
+    },
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "8884-9"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "364074009"
+            }
+        ],
+        "text": "Heart rhythm"
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "effectiveDateTime": "2025-08-15",
+    "valueCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "933506231000036108",
+                "display": "Regular heart rhythm"
+            }
+        ]
+    }
+}

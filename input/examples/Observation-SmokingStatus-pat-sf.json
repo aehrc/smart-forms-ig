@@ -1,0 +1,45 @@
+{
+    "resourceType": "Observation",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+        ]
+    },
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "social-history"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "1747861000168109"
+            },
+            {
+                "system": "http://loinc.org",
+                "code": "72166-2"
+            }
+        ],
+        "text": "Smoking status"
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "effectiveDateTime": "2025-08-15",
+    "valueCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "8517006",
+                "display": "Ex-smoker"
+            }
+        ]
+    }
+}

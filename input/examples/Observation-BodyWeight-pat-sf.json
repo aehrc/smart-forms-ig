@@ -1,0 +1,42 @@
+{
+    "resourceType": "Observation",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
+        ]
+    },
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "29463-7"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "27113001"
+            }
+        ],
+        "text": "Weight"
+    },
+    "valueQuantity": {
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg",
+        "value": 80
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "effectiveDateTime": "2025-08-15"
+}

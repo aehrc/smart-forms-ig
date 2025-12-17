@@ -1,0 +1,80 @@
+{
+    "resourceType": "Observation",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+        ]
+    },
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "vital-signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "85354-9"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "75367002"
+            }
+        ],
+        "text": "Blood pressure"
+    },
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "8480-6"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "271649006"
+                    }
+                ],
+                "text": "Systolic"
+            },
+            "valueQuantity": {
+                "unit": "mm[Hg]",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]",
+                "value": 170
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://loinc.org",
+                        "code": "8462-4"
+                    },
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "271650006"
+                    }
+                ],
+                "text": "Diastolic"
+            },
+            "valueQuantity": {
+                "unit": "mm[Hg]",
+                "system": "http://unitsofmeasure.org",
+                "code": "mm[Hg]",
+                "value": 90
+            }
+        }
+    ],
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "effectiveDateTime": "2025-08-15"
+}
