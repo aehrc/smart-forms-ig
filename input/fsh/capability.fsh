@@ -122,7 +122,7 @@ The server **SHALL** support both."
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "category"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Condition-category"
 * rest.resource[=].searchParam[=].type = #token
@@ -130,7 +130,7 @@ The server **SHALL** support both."
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 
 //Encounter
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -172,7 +172,7 @@ The server **SHALL** support both."
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "status"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Immunization-status"
 * rest.resource[=].searchParam[=].type = #token
@@ -180,7 +180,7 @@ The server **SHALL** support both."
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 
 //Medication
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -238,7 +238,7 @@ If a medication in a MedicationStatement resource is represented as an external 
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "status"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/medications-status"
 * rest.resource[=].searchParam[=].type = #token
@@ -250,7 +250,7 @@ The client **SHALL** support `multipleOr`.
 
 The server **SHALL** support `multipleOr`."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "_include"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "If a medication in a MedicationStatement resource is represented as an external Medication resource reference, the server **SHALL** support the `_include` parameter for searching this element (`MedicationStatement:medication`).
@@ -316,7 +316,7 @@ The client **SHALL** support this method."
 
 The server **SHALL** support both. "
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "code"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
 * rest.resource[=].searchParam[=].type = #token
@@ -324,7 +324,7 @@ The server **SHALL** support both. "
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 /** rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."
@@ -334,7 +334,7 @@ The server **SHALL** support both."
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by date and **MAY** support other values."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 
 //Parameters
 * rest.resource[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -432,7 +432,7 @@ The server **SHALL** support both."
 
 The server **SHALL** support both. "
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "questionnaire"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-questionnaire"
 * rest.resource[=].searchParam[=].type = #reference
@@ -442,7 +442,7 @@ The server **SHALL** support both.
 
 The client and server **SHALL** support chained search questionnaire.title using the :contains modifier."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "status"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-status"
 * rest.resource[=].searchParam[=].type = #token
@@ -450,17 +450,17 @@ The client and server **SHALL** support chained search questionnaire.title using
 
 The server **SHALL** support both."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "_count"
 * rest.resource[=].searchParam[=].type = #number
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result limiting."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "_sort"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "The client and server **SHALL** support search result sorting by authored and **MAY** support other values."
 * rest.resource[=].searchParam[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension[0].valueCode = #SHALL
+* rest.resource[=].searchParam[=].extension[0].valueCode = #MAY
 
 * rest.interaction[+].code = #transaction
 * rest.interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
