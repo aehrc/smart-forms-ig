@@ -158,7 +158,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyHeightDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBodyHeightLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsBodyHeightLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
