@@ -176,7 +176,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyWeightDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBodyWeightLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsBodyWeightLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -194,7 +194,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeadCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeadCircumferenceLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsHeadCircumferenceLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -212,7 +212,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsWaistCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsWaistCircumferenceLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsWaistCircumferenceLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -230,7 +230,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRateDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRateLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsHeartRateLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -248,7 +248,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRhythmDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRhythmLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsHeartRhythmLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -266,7 +266,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBloodPressureDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBloodPressureLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsBloodPressureLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
