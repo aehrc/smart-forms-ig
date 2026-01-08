@@ -76,7 +76,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * valueExpression
     * name = "ObsTobaccoSmokingStatusDateString"
     * language = #text/fhirpath
-    * expression = "%ObsTobaccoSmokingStatusLatest.effective.toString().substring(0, 10)"
+    * expression = "%ObsTobaccoSmokingStatusLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
