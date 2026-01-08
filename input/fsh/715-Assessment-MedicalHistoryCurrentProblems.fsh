@@ -214,7 +214,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.onset.ofType(dateTime).toDate()"
+          * expression = "%ConditionRepeat.onset.ofType(dateTime).toString().substring(0,10).toDate()"
         * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
         * text = "Onset date"
         * type = #date
@@ -222,7 +222,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toString().substring(0,10).toDate()"
         * linkId = "e4524654-f6de-4717-b288-34919394d46b"
         * text = "Abatement date"
         * type = #date
@@ -230,7 +230,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "medicalhistory-abatementdate-hidden"
         * type = #date

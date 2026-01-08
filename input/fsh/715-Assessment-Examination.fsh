@@ -158,7 +158,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyHeightDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBodyHeightLatest.effective.toDate().toString()"
+    * expression = "%ObsBodyHeightLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -176,7 +176,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBodyWeightDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBodyWeightLatest.effective.toDate().toString()"
+    * expression = "%ObsBodyWeightLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -194,7 +194,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeadCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeadCircumferenceLatest.effective.toDate().toString()"
+    * expression = "%ObsHeadCircumferenceLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -212,7 +212,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsWaistCircumferenceDateString"
     * language = #text/fhirpath
-    * expression = "%ObsWaistCircumferenceLatest.effective.toDate().toString()"
+    * expression = "%ObsWaistCircumferenceLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -230,7 +230,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRateDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRateLatest.effective.toDate().toString()"
+    * expression = "%ObsHeartRateLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -248,7 +248,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsHeartRhythmDateString"
     * language = #text/fhirpath
-    * expression = "%ObsHeartRhythmLatest.effective.toDate().toString()"
+    * expression = "%ObsHeartRhythmLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -266,7 +266,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
   * valueExpression
     * name = "ObsBloodPressureDateString"
     * language = #text/fhirpath
-    * expression = "%ObsBloodPressureLatest.effective.toDate().toString()"
+    * expression = "%ObsBloodPressureLatest.effective.toString().substring(0,10)"
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -390,7 +390,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBodyHeightLatest.effective.toDate()"
+          * expression = "%ObsBodyHeightLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-lengthheight-lastdate"
         * type = #date
@@ -443,7 +443,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBodyHeightLatest.effective.toDate()"
+          * expression = "%ObsBodyHeightLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-height-lastdate"
         * type = #date
@@ -493,7 +493,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBodyWeightLatest.effective.toDate()"
+          * expression = "%ObsBodyWeightLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-weight-lastdate"
         * type = #date
@@ -588,7 +588,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsHeadCircumferenceLatest.effective.toDate()"
+          * expression = "%ObsHeadCircumferenceLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-headcircumference-lastdate"
         * type = #date
@@ -641,7 +641,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsWaistCircumferenceLatest.effective.toDate()"
+          * expression = "%ObsWaistCircumferenceLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-waistcircumference-lastdate"
         * type = #date
@@ -690,7 +690,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsHeartRateLatest.effective.toDate()"
+          * expression = "%ObsHeartRateLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-heartrate-lastdate"
         * type = #date
@@ -740,7 +740,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsHeartRhythmLatest.effective.toDate()"
+          * expression = "%ObsHeartRhythmLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-heartrhythm-lastdate"
         * type = #date
@@ -810,7 +810,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ObsBloodPressureLatest.effective.toDate()"
+          * expression = "%ObsBloodPressureLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "bp-lastbp-date"
         * type = #date

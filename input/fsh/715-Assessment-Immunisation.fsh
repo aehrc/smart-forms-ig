@@ -191,7 +191,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * item[+]
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "%ImmunizationRepeat.occurrence.ofType(dateTime).toDate()"
+        * expression = "%ImmunizationRepeat.occurrence.ofType(dateTime).toString().substring(0,10).toDate()"
       * linkId = "vaccinesprevious-date"
       * text = "Administration date"
       * type = #date

@@ -1012,63 +1012,37 @@
         },
         {
             "resourceType": "ValueSet",
-            "id": "condition-clinical",
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-                    "valueCode": "pc"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                    "valueCode": "trial-use"
-                },
-                {
-                    "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-                    "valueInteger": 3
-                }
-            ],
-            "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
-            "identifier": [
-                {
-                    "system": "urn:ietf:rfc:3986",
-                    "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
-                }
-            ],
-            "version": "4.0.1",
-            "name": "ConditionClinicalStatusCodes",
-            "title": "Condition Clinical Status Codes",
+            "id": "ConditionClinicalStatusMinimal",
+            "url": "https://smartforms.csiro.au/ig/ValueSet/ConditionClinicalStatusMinimal",
+            "name": "ConditionClinicalStatusMinimal",
+            "title": "Condition Clinical Status Minimal",
             "status": "draft",
             "experimental": false,
-            "date": "2019-11-01T09:29:23+11:00",
-            "publisher": "FHIR Project team",
-            "contact": [
-                {
-                    "telecom": [
-                        {
-                            "system": "url",
-                            "value": "http://hl7.org/fhir"
-                        }
-                    ]
-                }
-            ],
-            "description": "Preferred value set for Condition Clinical Status.",
-            "copyright": "Copyright © 2011+ HL7. Licensed under Creative Commons \"No Rights Reserved\".",
+            "description": "This value set includes the minimal set of codes to represent the clinical status of a condition (i.e., active and inactive).",
             "compose": {
                 "include": [
                     {
-                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "concept": [
+                            {
+                                "code": "active"
+                            },
+                            {
+                                "code": "inactive"
+                            }
+                        ]
                     }
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:7b100d21-fde9-4fd8-bded-80f345db777d",
-                "timestamp": "2025-05-01T10:00:56+10:00",
-                "total": 7,
+                "identifier": "urn:uuid:79c6437f-1765-498a-979f-533bbeb06e33",
+                "timestamp": "2025-12-03T12:09:39+10:00",
+                "total": 2,
                 "offset": 0,
                 "parameter": [
                     {
                         "name": "displayLanguage",
-                        "valueCode": "en-US"
+                        "valueCode": "en"
                     },
                     {
                         "name": "count",
@@ -1091,41 +1065,12 @@
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                         "code": "active",
-                        "display": "Active",
-                        "contains": [
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                                "code": "recurrence",
-                                "display": "Recurrence"
-                            },
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                                "code": "relapse",
-                                "display": "Relapse"
-                            }
-                        ]
+                        "display": "Active"
                     },
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                         "code": "inactive",
-                        "display": "Inactive",
-                        "contains": [
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                                "code": "remission",
-                                "display": "Remission"
-                            },
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                                "code": "resolved",
-                                "display": "Resolved"
-                            }
-                        ]
-                    },
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                        "code": "unknown",
-                        "display": "Unknown"
+                        "display": "Inactive"
                     }
                 ]
             }
@@ -3223,7 +3168,7 @@
             "valueExpression": {
                 "name": "ObsTobaccoSmokingStatus",
                 "language": "application/x-fhir-query",
-                "expression": "Observation?code=72166-2&_sort=-date&patient={{%patient.id}}"
+                "expression": "Observation?code=1747861000168109&_sort=-date&patient={{%patient.id}}"
             }
         },
         {
@@ -3921,7 +3866,7 @@
                     "valueExpression": {
                         "name": "ObsTobaccoSmokingStatusDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsTobaccoSmokingStatusLatest.effective.toDate().toString()"
+                        "expression": "%ObsTobaccoSmokingStatusLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4049,7 +3994,7 @@
                     "valueExpression": {
                         "name": "ObsBodyHeightDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyHeightLatest.effective.toDate().toString()"
+                        "expression": "%ObsBodyHeightLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4073,7 +4018,7 @@
                     "valueExpression": {
                         "name": "ObsBodyWeightDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBodyWeightLatest.effective.toDate().toString()"
+                        "expression": "%ObsBodyWeightLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4097,7 +4042,7 @@
                     "valueExpression": {
                         "name": "ObsHeadCircumferenceDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeadCircumferenceLatest.effective.toDate().toString()"
+                        "expression": "%ObsHeadCircumferenceLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4121,7 +4066,7 @@
                     "valueExpression": {
                         "name": "ObsWaistCircumferenceDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsWaistCircumferenceLatest.effective.toDate().toString()"
+                        "expression": "%ObsWaistCircumferenceLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4145,7 +4090,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRateDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRateLatest.effective.toDate().toString()"
+                        "expression": "%ObsHeartRateLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4169,7 +4114,7 @@
                     "valueExpression": {
                         "name": "ObsHeartRhythmDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsHeartRhythmLatest.effective.toDate().toString()"
+                        "expression": "%ObsHeartRhythmLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -4193,7 +4138,7 @@
                     "valueExpression": {
                         "name": "ObsBloodPressureDateString",
                         "language": "text/fhirpath",
-                        "expression": "%ObsBloodPressureLatest.effective.toDate().toString()"
+                        "expression": "%ObsBloodPressureLatest.effective.toString().substring(0, 10)"
                     }
                 },
                 {
@@ -7117,7 +7062,7 @@
                                             "linkId": "88bcfad7-386b-4d87-b34b-2e50482e4d2c",
                                             "text": "Clinical status",
                                             "type": "choice",
-                                            "answerValueSet": "#condition-clinical"
+                                            "answerValueSet": "#ConditionClinicalStatusMinimal"
                                         },
                                         {
                                             "extension": [
@@ -7135,7 +7080,7 @@
                                             ],
                                             "linkId": "medicalhistory-status-hidden",
                                             "type": "choice",
-                                            "answerValueSet": "#condition-clinical"
+                                            "answerValueSet": "#ConditionClinicalStatusMinimal"
                                         },
                                         {
                                             "extension": [
@@ -7143,7 +7088,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ConditionRepeat.onset.ofType(dateTime).toDate()"
+                                                        "expression": "%ConditionRepeat.onset.ofType(dateTime).toString().substring(0,10).toDate()"
                                                     }
                                                 }
                                             ],
@@ -7158,7 +7103,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+                                                        "expression": "%ConditionRepeat.abatement.ofType(dateTime).toString().substring(0,10).toDate()"
                                                     }
                                                 }
                                             ],
@@ -7172,7 +7117,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+                                                        "expression": "%ConditionRepeat.abatement.ofType(dateTime).toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -13849,7 +13794,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "%ObsTobaccoSmokingStatusLatest.effective.toDate()"
+                                                                "expression": "%ObsTobaccoSmokingStatusLatest.effective.toString().substring(0,10).toDate()"
                                                             }
                                                         },
                                                         {
@@ -17139,7 +17084,7 @@
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                             "valueExpression": {
                                                 "language": "text/fhirpath",
-                                                "expression": "%ImmunizationRepeat.occurrence.ofType(dateTime).toDate()"
+                                                "expression": "%ImmunizationRepeat.occurrence.ofType(dateTime).toString().substring(0,10).toDate()"
                                             }
                                         }
                                     ],
@@ -17568,7 +17513,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsBodyHeightLatest.effective.toDate()"
+                                                        "expression": "%ObsBodyHeightLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -17709,7 +17654,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsBodyHeightLatest.effective.toDate()"
+                                                        "expression": "%ObsBodyHeightLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -17841,7 +17786,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsBodyWeightLatest.effective.toDate()"
+                                                        "expression": "%ObsBodyWeightLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -18088,7 +18033,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsHeadCircumferenceLatest.effective.toDate()"
+                                                        "expression": "%ObsHeadCircumferenceLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -18229,7 +18174,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsWaistCircumferenceLatest.effective.toDate()"
+                                                        "expression": "%ObsWaistCircumferenceLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -18354,7 +18299,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsHeartRateLatest.effective.toDate()"
+                                                        "expression": "%ObsHeartRateLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -18480,7 +18425,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsHeartRhythmLatest.effective.toDate()"
+                                                        "expression": "%ObsHeartRhythmLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
@@ -18658,7 +18603,7 @@
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "%ObsBloodPressureLatest.effective.toDate()"
+                                                        "expression": "%ObsBloodPressureLatest.effective.toString().substring(0,10).toDate()"
                                                     }
                                                 },
                                                 {
