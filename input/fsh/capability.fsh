@@ -18,15 +18,8 @@ Usage: #definition
 * patchFormat[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * patchFormat[=].extension[0].valueCode = #SHALL
 
-* implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
-* implementationGuide[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* implementationGuide[=].extension[0].valueCode = #SHALL
-* implementationGuide[+] = "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"
-* implementationGuide[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* implementationGuide[=].extension[0].valueCode = #SHOULD
-
 * rest.mode = #server
-* rest.documentation = "Smart Forms Launcher Server **SHALL**:
+* rest.documentation = "SHC Host FHIR Server **SHALL**:
 1. Support the [Smart Health Checks AllergyIntolerance resource profile](StructureDefinition-SHCAllergyIntolerance.html)
 1. Support the [Smart Health Checks Condition resource profile](StructureDefinition-SHCCondition.html)
 1. Support the [Smart Health Checks Encounter resource profile](StructureDefinition-SHCEncounter.html)
@@ -50,7 +43,7 @@ Usage: #definition
 * rest.security.service = http://terminology.hl7.org/CodeSystem/restful-security-service#SMART-on-FHIR
 * rest.security.service.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.security.service.extension[0].valueCode = #SHALL
-* rest.security.description = "Smart Forms Launcher Server **SHALL**:
+* rest.security.description = "SHC Host FHIR Server **SHALL**:
 1. Support CORS headers
 1. Support SMART on FHIR security services
 
@@ -551,7 +544,6 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #json
 * patchFormat[0] = #application/fhir+json
-* implementationGuide[+] = "http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.2.0"
 
 * rest.mode = #client
 * rest.documentation = "The SHC App performs interactions to support SMART App Launch, form prepopulation, write-back of extracted resources and form filling."

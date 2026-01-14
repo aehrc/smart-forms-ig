@@ -13,7 +13,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * contained[+] = YesNoNotAskedDeclined
 * contained[+] = clinical-condition-1
 * contained[+] = administrative-gender
-* contained[+] = condition-clinical
 * contained[+] = AboriginalTorresStraitIslander
 * contained[+] = PrimaryCarerParentGrandparent
 * contained[+] = australian-pronouns-1
@@ -128,9 +127,6 @@ Description: "Aboriginal and Torres Strait Islander Health Check assessment form
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#administrative-gender"
-* extension[+]
-  * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
-  * valueReference.reference = "#condition-clinical"
 * extension[+]
   * url = "https://smartforms.csiro.au/ig/StructureDefinition/ContainedResourceReference"
   * valueReference.reference = "#AboriginalTorresStraitIslander"

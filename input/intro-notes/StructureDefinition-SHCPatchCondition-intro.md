@@ -21,7 +21,7 @@ The elements that can be updated using this profile are as follows:
 - `Parameters.parameter.part:name.value[x]:valueString` **SHALL** identify one of the relevant Condition element paths included in the [Smart Health Checks Patch Condition Element Name value set](ValueSet-SHCPatchConditionElementName.html): `clinicalStatus` or `abatement`.
 - When the path value is `Condition` and the name value is `clinicalStatus`: 
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `CodeableConcept`
-  - `Parameters.parameter.part:value.value[x]:valueCodeableConcept` **SHALL** have a value from the [Condition Clinical Status Codes value set]({{site.data.fhir.path}}valueset-condition-clinical.html).
+  - `Parameters.parameter.part:value.value[x]:valueCodeableConcept` **SHALL** have a value from the [Condition Clinical Status Codes value set](ValueSet-ConditionClinicalStatusMinimal.html).
 - When the path value is `Condition` and the name value is `abatement`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `dateTime`. 
 

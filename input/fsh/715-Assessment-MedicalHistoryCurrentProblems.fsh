@@ -259,7 +259,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * text = "Onset date"
         * type = #date
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 45 '%'
+        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 40 '%'
         * linkId = "newdiagnosis-comment"
         * text = "Comment"
         * type = #string

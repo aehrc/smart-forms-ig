@@ -39,7 +39,7 @@ Each resource to be patched requires a separate Parameters resource that include
 - `Parameters.parameter.part:path.value[x]:valueString` **SHALL** identify one of the relevant Condition element paths included in the [Smart Health Checks Patch Path value set](ValueSet-SHCPatchPath.html): `Condition.clinicalStatus` or `Condition.abatement`.
 - When the path value is `Condition.clinicalStatus`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `CodeableConcept`
-  - `Parameters.parameter.part:value.value[x]:valueCodeableConcept.coding` **SHALL** have a value from the [Condition Clinical Status Codes value set]({{site.data.fhir.path}}valueset-condition-clinical.html).
+  - `Parameters.parameter.part:value.value[x]:valueCodeableConcept.coding` **SHALL** have a value from the [Condition Clinical Status Codes value set](ValueSet-ConditionClinicalStatusMinimal.html).
 - When the path value is `Condition.abatement`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `dateTime`. 
 

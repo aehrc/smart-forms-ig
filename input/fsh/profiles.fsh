@@ -422,7 +422,7 @@ Id: SHCQuestionnaireResponse
 Title: "Smart Health Checks Questionnaire Response"
 Description: "This profile sets the minimum expectations for a QuestionnaireResponse resource to record, search and save form information when used within Smart Health Checks."
 
-* id 1.. MS
+* id MS
 * id insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * id insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * text MS
@@ -990,9 +990,9 @@ Description: "This profile sets the expectations for a Parameters resource when 
 
 
 Invariant: shc-patch-condition-01
-Description: "When the part parameter named 'path' has a value of 'Condition' and the part parameter named 'name' has a value of 'clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Condition Clinical Status Codes' value set."
+Description: "When the part parameter named 'path' has a value of 'Condition' and the part parameter named 'name' has a value of 'clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Condition Clinical Status Minimal' value set."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').exists() implies parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').part.where(name='value').value.memberOf('http://hl7.org/fhir/ValueSet/condition-clinical')"
+* expression = "parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').exists() implies parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/ConditionClinicalStatusMinimal')"
 
 
 Invariant: shc-patch-condition-02
@@ -1082,7 +1082,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[value].valueCodeableConcept MS
 * parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
 * parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate)
-* parameter.part[value].valueCodeableConcept from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueCodeableConcept from ConditionClinicalStatusMinimal (required)
 * parameter.part[value].valueDateTime MS
 * parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
 * parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)
