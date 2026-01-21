@@ -732,7 +732,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 
   * item[+]
     * linkId = "patientdetails-section-end-divider"
-    * text.extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "border-top: 1px solid #ccc;"
+    * text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\" style=\"border-top: 1px solid #ccc;\"></div>"
     * type = #display
   * item[+]
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button

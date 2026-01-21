@@ -234,7 +234,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].repeats = false
 
 * item[=].item[+].linkId = "allergy-section-end-divider"
-* item[=].item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-style].valueString = "border-top: 1px solid #ccc;"
+* item[=].item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\" style=\"border-top: 1px solid #ccc;\"></div>"
 * item[=].item[=].type = #display
 * item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
 * item[=].item[=].linkId = "MarkComplete-3"
