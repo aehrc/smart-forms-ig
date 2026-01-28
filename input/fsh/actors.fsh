@@ -23,7 +23,7 @@ Description: "The SHC App is a system that a SHC Host can launch allowing a user
 - **SHALL** invoke search and read requests for resources required by this IG to pre-populate questionnaire response
 - **SHALL** invoke create and patch requests in a transaction Bundle for resources required by this IG
 """
-* capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SHCAppCapabilityStatement"
+* capabilities = Canonical(SHCAppCapabilityStatement)
 * derivedFrom = "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-requester"
 
 Instance: SHCHost
@@ -90,5 +90,5 @@ Description: "The SHC Host FHIR Server allows the SHC App to retrieve patient he
 - **SHALL** respond to search and read requests for resources required by this IG
 - **SHALL** respond to create and patch requests in a transaction Bundle for resources required by this IG
 """
-* capabilities = "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement"
+* capabilities = Canonical(SHCHostFHIRServerCapabilityStatement)
 * derivedFrom = "http://hl7.org.au/fhir/core/ActorDefinition/au-core-actor-responder"

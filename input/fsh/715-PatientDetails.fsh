@@ -101,7 +101,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-32').answer.value = 'In progress' or %resource.repeat(item).where(linkId='MarkComplete-32').answer.value.empty()"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-in-progress-32"
     * text = "In progress"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
@@ -110,7 +110,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-32').answer.value = 'Complete'"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-32"
     * text = "Complete"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Complete\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
@@ -119,7 +119,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-32').answer.value = 'Attention required'"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-attention-32"
     * text = "Attention required"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Attention required\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
@@ -221,7 +221,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * readOnly = true
     * answerValueSet = "#AboriginalTorresStraitIslander"
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 24"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
@@ -231,7 +231,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = true
     * answerValueSet = "#PrimaryCarerParentGrandparent"
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 24"
     * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
@@ -240,7 +240,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #string
     * repeats = true
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 24"
     * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "Details"
@@ -249,7 +249,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * type = #string
     * repeats = true
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 12"
     * linkId = "06737e46-e880-4037-9a2c-bcd278cd70ba"
@@ -290,7 +290,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * linkId = "4e0dc185-f83e-4027-b7a8-ecb543d42c6d"
       * text = "Home address"
         * extension[+]
-          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+          * url = Canonical(QuestionnaireItemTextHidden)
           * valueBoolean = true
       * type = #group
       * repeats = true      
@@ -343,7 +343,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * name = "PostalAddressRepeat"
       * language = #text/fhirpath
       * expression = "%patient.address.where(type='postal')"
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%PostalAddress.exists()"
     * linkId = "edc081ea-b5ba-4234-9234-8ee598c2f95f"
@@ -437,7 +437,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #string
       * repeats = false
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age <= 12"
       * linkId = "aa35d559-f45b-4d35-9453-dd02e4a790f3"
@@ -445,7 +445,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #string
       * repeats = false  
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age > 12"
       * linkId = "27099697-d6d1-42c0-bb0a-5e9ff7372a96"
@@ -526,7 +526,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
     * readOnly = true
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
@@ -537,7 +537,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
     * answerValueSet = "#YesNoNA" 
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age >= 50"
     * linkId = "a8143230-b30d-4b85-9805-5f2f73f2dffa"
@@ -584,7 +584,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age <= 49) and (%age > 12)"
     * linkId = "9bc882bc-e989-4600-9587-8089fb757641"
@@ -618,7 +618,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 12"
     * linkId = "2b5ae784-4341-4172-875d-1698cc8069f0"
@@ -643,7 +643,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * answerCoding = http://terminology.hl7.org/CodeSystem/v2-0136#Y
       * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age >= 50"
     * linkId = "6c80c675-1320-4ca3-ae3f-51ad173da741"
@@ -686,7 +686,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #text
       * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age >= 50"
     * linkId = "38f81a73-447f-4ecd-a8eb-6eccd9dee050"

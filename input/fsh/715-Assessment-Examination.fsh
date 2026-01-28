@@ -311,7 +311,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 
 * item[+] 
-  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"
   * linkId = "c587e3b6-b91a-40dc-9a16-179342d001e9"
@@ -322,7 +322,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-7').answer.value = 'In progress' or %resource.repeat(item).where(linkId='MarkComplete-7').answer.value.empty()"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-in-progress-7"
     * text = "In progress"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
@@ -331,7 +331,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-7').answer.value = 'Complete'"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-7"
     * text = "Complete"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Complete\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
@@ -340,14 +340,14 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-7').answer.value = 'Attention required'"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-attention-7"
     * text = "Attention required"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Attention required\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
     * type = #display
 
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 12"
     * linkId = "d15824f8-eafc-4fa0-80a2-82f0ec7f8728"
@@ -363,7 +363,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #group 
     * repeats = false
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age <= 5"
       * linkId = "4e32e9b2-82e6-41ea-9545-79e928f7d6c2"
@@ -396,7 +396,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightLengthTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightLengthTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-lengthheight-newresult"
         * text = "New result"
@@ -408,7 +408,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(), today())"
         * linkId = "obs-lengthheight-newdate"
@@ -416,7 +416,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age > 5"
       * linkId = "6226a5c5-b5c3-4ebb-a689-2b286322cfe0"
@@ -449,7 +449,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-height-newresult"
         * text = "New result"
@@ -461,7 +461,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
         * linkId = "obs-height-newdate"
@@ -499,7 +499,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyWeightTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyWeightTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
         * linkId = "obs-weight-newresult"
         * text = "New result"
@@ -511,7 +511,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "kg"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(), today())"
         * linkId = "obs-weight-newdate"
@@ -519,7 +519,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age > 12"
       * linkId = "bc209c5e-ed28-48e3-b1a1-55cb7e435d8b"
@@ -544,7 +544,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #decimal
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * description = "BMI calculation"
           * language = #text/fhirpath
           * expression = "(%weight/((%height/100).power(2))).round(1)"
@@ -561,7 +561,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "kg/m2"
           * type = #display
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age <= 12"
       * linkId = "d3557f55-1abf-401c-aada-2d4380151c56"
@@ -594,7 +594,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeadCircumferenceTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeadCircumferenceTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-headcircumference-newresult"
         * text = "New result"
@@ -606,7 +606,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(), today())"
         * linkId = "obs-headcircumference-newdate"
@@ -614,7 +614,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
     * item[+]
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%age >= 18"
       * linkId = "ec884b64-ed8d-485b-930f-e7ac18ad4cc9"
@@ -647,7 +647,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#WaistCircumferenceTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#WaistCircumferenceTemplate"
         * linkId = "obs-waistcircumference-newresult"
         * text = "New result"
         * type = #decimal
@@ -658,7 +658,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "cm"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(), today())"
         * linkId = "obs-waistcircumference-newdate"
@@ -696,7 +696,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRateTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRateTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
         * linkId = "obs-heartrate-newresult"
         * text = "New result"
@@ -708,7 +708,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "/min"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(), today())"
         * linkId = "obs-heartrate-newdate"
@@ -746,7 +746,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]       
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRhythmTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRhythmTemplate"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
         * linkId = "obs-heartrhythm-newresult"
         * text = "New result"
@@ -754,7 +754,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false        
         * answerValueSet = "#heart-rhythm-1"
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(), today())"
         * linkId = "obs-heartrhythm-newdate"
@@ -765,14 +765,14 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
 // Blood pressure observations table with dates
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 12"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#grid
     * linkId = "3639c586-9576-48d3-a52b-e91fd2138581"
     * text = "Blood pressure"
       * extension[+]
-        * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+        * url = Canonical(QuestionnaireItemTextHidden)
         * valueBoolean = true
     * type = #group
     * repeats = false
@@ -816,7 +816,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #date
         * repeats = false
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BloodPressureTemplate"
+        * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BloodPressureTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "bp-newbp-systolic"
         * text = "Systolic"
@@ -839,7 +839,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * text = "mm Hg"
           * type = #display
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+        * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(), today())"
         * linkId = "bp-newbp-date"
@@ -849,7 +849,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
 
   // needs assessment for potentional coded response
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 12"
     * linkId = "213a3eac-e530-4e27-859c-407136c7a0a6"
@@ -857,7 +857,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 12"
     * linkId = "8886f3bb-52de-4294-a5cb-8f960e2a6bbe"
@@ -865,7 +865,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 12"
     * linkId = "5e10229c-390d-4968-90d3-f896840f3c50"
@@ -873,7 +873,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age < 1"
     * linkId = "6c69ee91-f777-494c-bf09-d963773cd4ae"
@@ -882,7 +882,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
     * repeats = false
 // needs assessment for what is being recorded. Actual measurement result or result interpretation?
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 12"
     * linkId = "7a431d03-1726-4905-aae7-49f62a10ce5e"

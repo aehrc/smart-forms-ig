@@ -74,7 +74,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
 
 
 * item[+]
-  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"
   * linkId = "16971bd2-5494-483d-9713-eda182c47f02"
@@ -85,7 +85,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-31').answer.value = 'In progress' or %resource.repeat(item).where(linkId='MarkComplete-31').answer.value.empty()"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-in-progress-31"
     * text = "In progress"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
@@ -94,7 +94,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-31').answer.value = 'Complete'"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-31"
     * text = "Complete"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Complete\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
@@ -103,13 +103,13 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%resource.repeat(item).where(linkId='MarkComplete-31').answer.value = 'Attention required'"
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-attention-31"
     * text = "Attention required"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Attention required\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
     * type = #display
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
     * linkId = "30532ad8-3465-4bdd-97ed-ec5664f9d733"
@@ -117,7 +117,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age <= 12) and (%age > 5)"
     * linkId = "6aa0a113-4d33-4f6b-9899-fa249674075a"
@@ -125,7 +125,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 12"
     * linkId = "71c19d58-a8ae-43ba-8b96-463c108c75dc"
@@ -134,7 +134,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * repeats = false
 
   * item[+] //infant
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
@@ -155,7 +155,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Developmental milestones - including language and hearing"
 
   * item[+] //Primary school
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age <= 12) and (%age > 5)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
@@ -174,7 +174,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Parenting advice"
 
   * item[+] //Adolescent 
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age <= 24) and (%age > 12)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
@@ -195,7 +195,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Care of teeth and gums"
 
   * item[+] //Adult 
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age <= 49) and (%age > 24)"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
@@ -217,7 +217,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * answerOption[+].valueString = "Oral and dental health"
 
   * item[+] //Older people 
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 49"
     * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
@@ -265,7 +265,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * type = #group
       * repeats = true
       * item[+] //Infant
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * extension[sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%age <= 5"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
@@ -287,7 +287,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Early intervention (development) services"
         * answerOption[+].valueString = "Parenting programs/support services"
       * item[+] //Primary School
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * extension[sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "(%age <= 12) and (%age > 5)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
@@ -307,7 +307,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Mental health"
         * answerOption[+].valueString = "Parenting programs/support services"
       * item[+] //Adolescent
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * extension[sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "(%age <= 24) and (%age > 12)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
@@ -328,7 +328,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Parenting programs/support services"
         * answerOption[+].valueString = "Social and emotional wellbeing/mental health"
       * item[+] //Adult
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * extension[sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "(%age <= 49) and (%age > 24)"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
@@ -351,7 +351,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
         * answerOption[+].valueString = "Parenting programs/support services"
         * answerOption[+].valueString = "Social and emotional wellbeing/mental health"
       * item[+] //Older people
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+        * extension[sdc-questionnaire-enableWhenExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%age > 49"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
@@ -418,7 +418,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
       * type = #string
       * repeats = true
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
     * linkId = "5a0c98f8-5349-4045-9ba0-27a4f35630b9"
@@ -426,7 +426,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "(%age <= 12) and (%age > 5)"
     * linkId = "cde03bf0-182a-4998-a37e-7b3f22786617"
@@ -434,7 +434,7 @@ Description: "Finalising the Health Check sub-questionnaire for Aboriginal and T
     * type = #text
     * repeats = false
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age > 12"
     * linkId = "51ff0c15-312a-45ce-a25a-6c6a4bf0e17e"

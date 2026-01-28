@@ -31,21 +31,21 @@ Alias: $au-healthcarecardnumber = http://hl7.org.au/fhir/StructureDefinition/au-
 /* Old RuleSets to be reinstated following SUSHI bug fix
 RuleSet: obligationApp(index, appCode)
 * ^extension[$obligation][{index}].extension[code].valueCode = #"{appCode}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[$obligation][{index}].extension[code][+].valueCode = #"{appCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{appCode2}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligationServer(index, serverCode)
 * ^extension[$obligation][{index}].extension[code].valueCode = #"{serverCode}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[$obligation][{index}].extension[code][+].valueCode = #"{serverCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{serverCode2}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCHostFHIRServer)
 */
 
 RuleSet: obligationApp(index, appCode)
@@ -53,7 +53,7 @@ RuleSet: obligationApp(index, appCode)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{appCode}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[{index}].url = $obligation
@@ -62,14 +62,14 @@ RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{appCode2}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligationServer(index, serverCode)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{serverCode}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[{index}].url = $obligation
@@ -78,7 +78,7 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{serverCode2}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation3Server(index, serverCode1, serverCode2, serverCode3)
 * ^extension[{index}].url = $obligation
@@ -89,7 +89,7 @@ RuleSet: obligation3Server(index, serverCode1, serverCode2, serverCode3)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{serverCode3}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 Profile: SmartHealthChecksAllergyIntolerance
 Parent: $au-core-allergyintolerance

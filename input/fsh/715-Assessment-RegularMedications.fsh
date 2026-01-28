@@ -77,15 +77,15 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item.linkId = "7dfe7c6a-ca7f-4ddf-9241-a7b918a9695a"
-* item.extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-* item.extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age.exists()"
+* item.extension[sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+* item.extension[sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age.exists()"
 * item.text = "Regular medications"
 * item.type = #group
 * item.repeats = false
 * item.item[+] //in-progress
 * item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
 * item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%resource.repeat(item).where(linkId='MarkComplete-23').answer.value = 'In progress' or %resource.repeat(item).where(linkId='MarkComplete-23').answer.value.empty()"
-* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
 * item.item[=].linkId = "CD-in-progress-23"
 * item.item[=].text = "In progress"
 * item.item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
@@ -93,7 +93,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[+] //complete
 * item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
 * item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%resource.repeat(item).where(linkId='MarkComplete-23').answer.value = 'Complete'"
-* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
 * item.item[=].linkId = "CD-complete-23"
 * item.item[=].text = "Complete"
 * item.item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Complete\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
@@ -101,7 +101,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[+] //attention
 * item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
 * item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%resource.repeat(item).where(linkId='MarkComplete-23').answer.value = 'Attention required'"
-* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+* item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
 * item.item[=].linkId = "CD-attention-23"
 * item.item[=].text = "Attention required"
 * item.item[=].text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Attention required\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
@@ -129,10 +129,10 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].extension[sdc-questionnaire-itemPopulationContext][=].valueExpression[=].expression = "%MedicationStatement.entry.resource.ofType(MedicationStatement)"
 * item.item[=].item[=].extension[sdc-questionnaire-templateExtract][+].extension[template][+].valueReference = Reference(MedicationStatementPatchTemplate)
 * item.item[=].item[=].extension[sdc-questionnaire-templateExtract][=].extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'MedicationStatement/' + item.where(linkId='medicationStatementId').answer.value"
-* item.item[=].item[=].extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
+* item.item[=].item[=].extension[GroupHideAddItemButton][+].valueBoolean = true
 * item.item[=].item[=].linkId = "regularmedications-summary-current"
 * item.item[=].item[=].text = "Current medications"
-* item.item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+* item.item[=].item[=].text.extension[+].url = Canonical(QuestionnaireItemTextHidden)
 * item.item[=].item[=].text.extension[=].valueBoolean = true
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
@@ -255,7 +255,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].extension[=].extension.valueReference = Reference(MedicationStatementTemplate)
 * item.item[=].item[=].linkId = "regularmedications-summary-new"
 * item.item[=].item[=].text = "New medications"
-* item.item[=].item[=].text.extension[+].url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
+* item.item[=].item[=].text.extension[+].url = Canonical(QuestionnaireItemTextHidden)
 * item.item[=].item[=].text.extension[=].valueBoolean = true
 * item.item[=].item[=].type = #group
 * item.item[=].item[=].repeats = true
@@ -283,8 +283,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].type = #text
 * item.item[=].item[=].item[=].repeats = false
 
-* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age <= 12"
+* item.item[+].extension[sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+* item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age <= 12"
 * item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
 * item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
 * item.item[=].linkId = "6eb59145-ed9a-4184-af83-3506d47e4d4e"
@@ -293,8 +293,8 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].type = #choice
 * item.item[=].repeats = false 
 * item.item[=].answerValueSet = "#YesNo"
-* item.item[+].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
-* item.item[=].extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age > 12"
+* item.item[+].extension[sdc-questionnaire-enableWhenExpression].valueExpression.language = #text/fhirpath
+* item.item[=].extension[sdc-questionnaire-enableWhenExpression].valueExpression.expression = "%age > 12"
 * item.item[=].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
 * item.item[=].extension[questionnaire-choiceOrientation].valueCode = #horizontal
 * item.item[=].linkId = "3a2d27b6-e918-4df5-aca9-b374fcf9faad"
