@@ -1,6 +1,6 @@
 ### Usage Scenarios
 
-This profile supports updating MedicationStatement resource elements that are applicable to Smart Health Checks using the FHIRPath patch method. FHIRPath patch uses the Parameters resource to describe how a patch operation should be performed.
+This profile supports updating MedicationStatement resource elements that are applicable to Smart Health Checks using the FHIRPath patch method. FHIRPath patch uses the Parameters resource to describe how a patch operation should be performed. Parameters resources will be generated and included in a transaction bundle following completion of a health check form according to the form's extract definition.
 
 The elements that can be updated using this profile are as follows:
 
@@ -11,7 +11,7 @@ The elements that can be updated using this profile are as follows:
     </tr>
     <tr>
         <td><a href="StructureDefinition-SHCMedicationStatement.html">Smart Health Checks MedicationStatement</a></td>
-        <td><ul><li><code>MedicationStatement.status</code></li><li><code>MedicationStatement.dosage[0].text</code></li><li><code>MedicationStatement.note[0].text</code></li></ul></td>
+        <td><ul><li><code>MedicationStatement.status</code></li><li><code>MedicationStatement.dosage</code><li><code>MedicationStatement.dosage[0].text</code></li><li><code>MedicationStatement.note</code></li><li><code>MedicationStatement.note[0].text</code></li></ul></td>
     </tr>
 </table>
 
@@ -22,16 +22,23 @@ The elements that can be updated using this profile are as follows:
 - When the path value is `MedicationStatement` and the name value is `status`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `code`
   - `Parameters.parameter.part:value.value[x]:valueCode` **SHALL** have a value from the [Medication Statement Status Limited value set](ValueSet-MedicationStatementStatusLimited.html).
+  - See example [SHCPatchMedicationStatement1](Parameters-SHCPatchMedicationStatement1.html), [SHCPatchMedicationStatement3](Parameters-SHCPatchMedicationStatement3.html) or [SHCPatchMedicationStatement4](Parameters-SHCPatchMedicationStatement4.html).
 - When the path value is `MedicationStatement` and the name value is `dosage`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `Dosage`.
+  - This combination of path and value is used where a resource does not contain a dosage and a new one is to be added. 
+  - See example [SHCPatchMedicationStatement3](Parameters-SHCPatchMedicationStatement3.html).
 - When the path value is `MedicationStatement.dosage[0]` and the name value is `text`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `string`.
+  - This combination of path and value is used where a resource already contains a dosage and the text has been modified so the text will be replaced.
+  - See example [SHCPatchMedicationStatement2](Parameters-SHCPatchMedicationStatement2.html) or [SHCPatchMedicationStatement4](Parameters-SHCPatchMedicationStatement4.html).
 - When the path value is `MedicationStatement` and the name value is `note`:
-  - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `Annotation`.
+  - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `Annotation`
+  - This combination of path and value is used where a resource does not contain a note and a new one is to be added. .
+  - See example [SHCPatchMedicationStatement2](Parameters-SHCPatchMedicationStatement2.html).
 - When the path value is `MedicationStatement.note[0]` and the name value is `text`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `markdown`.
-
-Illustrative examples are provided.
+  - This combination of path and value is used where a resource already contains a note and the text has been modified so the text will be replaced.
+  - See example [SHCPatchMedicationStatement1](Parameters-SHCPatchMedicationStatement1.html).
 
 <div class="note" markdown="1">
 

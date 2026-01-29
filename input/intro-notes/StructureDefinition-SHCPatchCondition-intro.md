@@ -1,6 +1,6 @@
 ### Usage Scenarios
 
-This profile supports updating Condition resource elements that are applicable to Smart Health Checks using the FHIRPath patch method. FHIRPath patch uses the Parameters resource to describe how a patch operation should be performed.
+This profile supports updating Condition resource elements that are applicable to Smart Health Checks using the FHIRPath patch method. FHIRPath patch uses the Parameters resource to describe how a patch operation should be performed. Parameters resources will be generated and included in a transaction bundle following completion of a health check form according to the form's extract definition.
 
 The elements that can be updated using this profile are as follows:
 
@@ -22,7 +22,7 @@ The elements that can be updated using this profile are as follows:
 - When the path value is `Condition` and the name value is `clinicalStatus`: 
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `CodeableConcept`
   - `Parameters.parameter.part:value.value[x]:valueCodeableConcept` **SHALL** have a value from the [Condition Clinical Status Codes value set](ValueSet-ConditionClinicalStatusMinimal.html).
+  - See example [SHCPatchCondition1](Parameters-SHCPatchCondition1.html).
 - When the path value is `Condition` and the name value is `abatement`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `dateTime`. 
-
-Illustrative examples are provided.
+  - See example [SHCPatchCondition1](Parameters-SHCPatchCondition1.html).
