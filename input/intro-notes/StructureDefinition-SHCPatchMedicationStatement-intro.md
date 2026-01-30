@@ -11,7 +11,7 @@ The elements that can be updated using this profile are as follows:
     </tr>
     <tr>
         <td><a href="StructureDefinition-SHCMedicationStatement.html">Smart Health Checks MedicationStatement</a></td>
-        <td><ul><li><code>MedicationStatement.status</code></li><li><code>MedicationStatement.dosage</code><li><code>MedicationStatement.dosage[0].text</code></li><li><code>MedicationStatement.note</code></li><li><code>MedicationStatement.note[0].text</code></li></ul></td>
+        <td><ul><li><code>MedicationStatement.status</code></li><li><code>MedicationStatement.dosage</code></li><li><code>MedicationStatement.dosage[0].text</code></li><li><code>MedicationStatement.note</code></li><li><code>MedicationStatement.note[0].text</code></li></ul></td>
     </tr>
 </table>
 

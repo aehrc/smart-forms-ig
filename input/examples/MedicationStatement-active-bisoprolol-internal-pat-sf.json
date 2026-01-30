@@ -1,0 +1,38 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "active-bisoprolol-internal-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "Medication",
+            "id": "bisoprolol-internal-pat-sf",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "23281011000036106",
+                        "display": "Bisoprolol fumarate 2.5 mg tablet"
+                    }
+                ],
+                "text": "Bisoprolol 2.5mg tab"
+            }
+        }
+    ],
+    "status": "active",
+    "medicationReference": {
+        "reference": "#bisoprolol-internal-pat-sf"
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "dateAsserted": "2024-02-05",
+    "dosage": [
+        {
+            "text": "1/2 tablet in the morning"
+        }
+    ]
+}

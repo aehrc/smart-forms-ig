@@ -1,6 +1,6 @@
 {
     "resourceType": "MedicationStatement",
-    "id": "active-bisoprolol-pat-sf",
+    "id": "active-bisoprolol-external-pat-sf",
     "meta": {
         "profile": [
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
@@ -8,7 +8,7 @@
     },
     "status": "active",
     "medicationReference": {
-        "reference": "Medication/bisoprolol-pat-sf"
+        "reference": "Medication/bisoprolol-external-pat-sf"
     },
     "subject": {
         "reference": "Patient/pat-sf"
