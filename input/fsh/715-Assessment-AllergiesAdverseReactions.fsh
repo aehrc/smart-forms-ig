@@ -138,9 +138,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].extension[sdc-questionnaire-templateExtract][=].extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'AllergyIntolerance/' + item.where(linkId='allergyIntoleranceId').answer.value"
 * item[=].item[=].item[=].extension[GroupHideAddItemButton][+].valueBoolean = true
 * item[=].item[=].item[=].linkId = "allergysummary"
-* item[=].item[=].item[=].text = "Adverse reaction risk summary"
-* item[=].item[=].item[=].text.extension[+].url = Canonical(QuestionnaireItemTextHidden)
-* item[=].item[=].item[=].text.extension[=].valueBoolean = true
+* item[=].item[=].item[=].text = "Recorded adverse reaction risks"
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[0].extension[questionnaire-hidden].valueBoolean = true
@@ -204,8 +202,6 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].extension[=].extension.valueReference = Reference(AllergyIntoleranceTemplate)
 * item[=].item[=].item[=].linkId = "allergynew"
 * item[=].item[=].item[=].text = "New adverse reaction risks"
-* item[=].item[=].item[=].text.extension[+].url = Canonical(QuestionnaireItemTextHidden)
-* item[=].item[=].item[=].text.extension[=].valueBoolean = true
 * item[=].item[=].item[=].type = #group
 * item[=].item[=].item[=].repeats = true
 * item[=].item[=].item[=].item[+].extension[questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete

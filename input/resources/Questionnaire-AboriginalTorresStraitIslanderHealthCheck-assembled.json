@@ -7064,15 +7064,7 @@
                                         }
                                     ],
                                     "linkId": "92bd7d05-9b5e-4cf9-900b-703f361dad9d",
-                                    "text": "Medical history summary",
-                                    "_text": {
-                                        "extension": [
-                                            {
-                                                "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
-                                                "valueBoolean": true
-                                            }
-                                        ]
-                                    },
+                                    "text": "Recorded problems/diagnoses",
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -7246,15 +7238,7 @@
                                         }
                                     ],
                                     "linkId": "newdiagnosis",
-                                    "text": "New diagnosis",
-                                    "_text": {
-                                        "extension": [
-                                            {
-                                                "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
-                                                "valueBoolean": true
-                                            }
-                                        ]
-                                    },
+                                    "text": "New problems/diagnoses",
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -7555,15 +7539,7 @@
                                         }
                                     ],
                                     "linkId": "regularmedications-summary-current",
-                                    "text": "Current medications",
-                                    "_text": {
-                                        "extension": [
-                                            {
-                                                "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
-                                                "valueBoolean": true
-                                            }
-                                        ]
-                                    },
+                                    "text": "Recorded medications",
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -7759,14 +7735,6 @@
                                     ],
                                     "linkId": "regularmedications-summary-new",
                                     "text": "New medications",
-                                    "_text": {
-                                        "extension": [
-                                            {
-                                                "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
-                                                "valueBoolean": true
-                                            }
-                                        ]
-                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -8165,15 +8133,7 @@
                                         }
                                     ],
                                     "linkId": "allergysummary",
-                                    "text": "Adverse reaction risk summary",
-                                    "_text": {
-                                        "extension": [
-                                            {
-                                                "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
-                                                "valueBoolean": true
-                                            }
-                                        ]
-                                    },
+                                    "text": "Recorded adverse reaction risks",
                                     "type": "group",
                                     "repeats": true,
                                     "item": [
@@ -8347,14 +8307,6 @@
                                     ],
                                     "linkId": "allergynew",
                                     "text": "New adverse reaction risks",
-                                    "_text": {
-                                        "extension": [
-                                            {
-                                                "url": "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden",
-                                                "valueBoolean": true
-                                            }
-                                        ]
-                                    },
                                     "type": "group",
                                     "repeats": true,
                                     "item": [

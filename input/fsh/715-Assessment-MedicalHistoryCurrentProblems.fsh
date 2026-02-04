@@ -169,10 +169,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
         * extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'Condition/' + item.where(linkId='conditionId').answer.value"
       * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
-      * text = "Medical history summary"
-        * extension[+]
-          * url = Canonical(QuestionnaireItemTextHidden)
-          * valueBoolean = true
+      * text = "Recorded problems/diagnoses"
       * type = #group
       * repeats = true
       * item[+]
@@ -241,10 +238,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * extension[sdc-questionnaire-templateExtract]
         * extension[template].valueReference = Reference(ConditionTemplate)
       * linkId = "newdiagnosis"
-      * text = "New diagnosis"
-        * extension[+]
-          * url = Canonical(QuestionnaireItemTextHidden)
-          * valueBoolean = true
+      * text = "New problems/diagnoses"
       * type = #group
       * repeats = true
       * item[+]
