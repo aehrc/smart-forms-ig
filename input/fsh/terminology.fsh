@@ -94,7 +94,6 @@ Description: "Concepts for Yes, No and Not applicable"
 * $v2-0532#N "No"
 * $v2-0532#NA "N/A"
 
-
 ValueSet: YesNo
 Id: YesNo
 Title: "Yes/No"

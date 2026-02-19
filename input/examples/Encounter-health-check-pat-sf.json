@@ -1,0 +1,56 @@
+{
+    "resourceType": "Encounter",
+    "id": "health-check-pat-sf",
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter",
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter"
+        ]
+    },
+    "status": "in-progress",
+    "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+    },
+    "serviceType": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "788007007",
+                "display": "General practice service"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/pat-sf",
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MC",
+                        "display": "Patient's Medicare Number"
+                    }
+                ],
+                "text": "Medicare Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-number",
+            "value": "69514496771"
+        }
+    },
+    "period": {
+        "start": "2025-02-10T09:20:00+10:00"
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "283680004",
+                    "display": "Nail wound of sole of foot"
+                }
+            ]
+        }
+    ]
+}

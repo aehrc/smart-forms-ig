@@ -1,0 +1,24 @@
+{
+    "resourceType": "Immunization",
+    "id": "Immunization-ExtractBundleEntry1-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+        ]
+    },
+    "status": "completed",
+    "vaccineCode": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "884862121000036103",
+                "display": "Fluquadri 2025"
+            }
+        ]
+    },
+    "patient": {
+        "reference": "Patient/pat-sf"
+    },
+    "occurrenceDateTime": "2025-08-15",
+    "lotNumber": "123"
+}

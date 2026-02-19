@@ -1,0 +1,49 @@
+{
+    "resourceType": "AllergyIntolerance",
+    "id": "AllergyIntolerance-ExtractBundleEntry1-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                "code": "active"
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "387458008",
+                "display": "Aspirin"
+            }
+        ]
+    },
+    "reaction": [
+        {
+            "manifestation": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "126485001",
+                            "display": "Urticaria"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "patient": {
+        "reference": "Patient/pat-sf"
+    },
+    "note": [
+        {
+            "text": "Moderate reaction"
+        }
+    ]
+}
