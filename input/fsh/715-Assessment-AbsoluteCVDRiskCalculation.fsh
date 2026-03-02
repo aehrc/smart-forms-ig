@@ -158,7 +158,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
 
 //R5 preadoption extensions
 * extension[+]
-  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * url = "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm"
   * valueCoding
     * system = "http://hl7.org/fhir/version-algorithm"
     * code = #semver

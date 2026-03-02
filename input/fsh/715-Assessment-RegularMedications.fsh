@@ -59,7 +59,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * extension[=].valueString = "age"
 
 //R5 preadoption extensions
-* extension[+].url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm"
 * extension[=].valueCoding.system = "http://hl7.org/fhir/version-algorithm"
 * extension[=].valueCoding.code = #semver
 

@@ -57,7 +57,7 @@ Description: "Eye Health sub-questionnaire for Aboriginal and Torres Strait Isla
 
 //R5 preadoption extensions
 * extension[+]
-  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * url = "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm"
   * valueCoding
     * system = "http://hl7.org/fhir/version-algorithm"
     * code = #semver

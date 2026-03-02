@@ -75,7 +75,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 
 //R5 preadoption extensions
 * extension[+]
-  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * url = "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm"
   * valueCoding
     * system = "http://hl7.org/fhir/version-algorithm"
     * code = #semver
@@ -94,7 +94,7 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
 
 * item[+]
   * linkId = "5b224753-9365-44e3-823b-9c17e7394005"
-  * text = "Patient Details"
+  * text = "Patient details"
   * type = #group
   * repeats = false
   * item[+] //in-progress

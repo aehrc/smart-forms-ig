@@ -1,7 +1,7 @@
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 
-Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
 Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
 
 CodeSystem: QuestionnaireItemControlExtended
@@ -13,23 +13,40 @@ Description: "The Questionnaire Item Control Extension code system defines conce
 * ^caseSensitive = true
 * #context-display "context-display" "Display item is rendered adjacent (horizontally or vertically) to the text of the parent item."
 
+
+CodeSystem: HealthChecksExpandedYesNoIndicatorSupplement
+Id: HealthChecksExpandedYesNoIndicatorSupplement
+Title: "Health Checks Expanded Yes No Indicator Supplement"
+Description: "The Health Checks Expanded Yes No Indicator Supplement defines consumer friendly terms for the HL7 expandedYes-NoIndicator code system for use in the health check Questionnaire."
+* ^experimental = false
+* ^content = #supplement
+* ^supplements = $v2-0532
+* #NA "N/A"
+* #NASK "Not Asked"
+
 ValueSet: YesNoNotAskedDeclined
 Id: YesNoNotAskedDeclined
 Title: "Yes/No/Not Asked/Asked But Declined"
 Description: "Concepts for Yes, No, Not Asked and Asked But Declined"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
+* ^extension[=].valueCanonical = Canonical(HealthChecksExpandedYesNoIndicatorSupplement|0.4.0)
 * ^experimental = false
-* ^expansion.identifier = "urn:uuid:9c63f3f7-c471-451d-aad3-d84bca7a3c8c"
-* ^expansion.timestamp = "2025-09-18T16:28:54+10:00"
+* ^expansion.identifier = "urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339"
+* ^expansion.timestamp = "2026-03-02T12:08:23+10:00"
 * ^expansion.total = 4
 * ^expansion.offset = 0
-* ^expansion.parameter[0].name = "count"
+* ^expansion.parameter[0].name = "displayLanguage"
+* ^expansion.parameter[=].valueCode = #en
+* ^expansion.parameter[+].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0"
+* ^expansion.parameter[+].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
 * ^expansion.parameter[+].name = "used-codesystem"
 * ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
@@ -49,15 +66,6 @@ Description: "Concepts for Yes, No, Not Asked and Asked But Declined"
 * $v2-0532#NASK "Not Asked"
 * $data-empty#asked-declined "Asked But Declined"
 
-CodeSystem: HealthChecksExpandedYesNoIndicatorSupplement
-Id: HealthChecksExpandedYesNoIndicatorSupplement
-Title: "Health Checks Expanded Yes No Indicator Supplement"
-Description: "The Health Checks Expanded Yes No Indicator Supplement defines consumer friendly terms for the HL7 expandedYes-NoIndicator code system for use in the health check Questionnaire."
-* ^experimental = false
-* ^content = #supplement
-* ^supplements = $v2-0532
-* #NA "N/A"
-
 ValueSet: YesNoNA
 Id: YesNoNA
 Title: "Yes/No/NA"
@@ -65,29 +73,29 @@ Description: "Concepts for Yes, No and Not applicable"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-supplement"
 * ^extension[=].valueCanonical = Canonical(HealthChecksExpandedYesNoIndicatorSupplement|0.4.0)
 * ^experimental = false
-* ^expansion.identifier = "urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181"
-* ^expansion.timestamp = "2025-10-29T16:30:17+10:00"
+* ^expansion.identifier = "urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2"
+* ^expansion.timestamp = "2026-03-02T12:08:22+10:00"
 * ^expansion.total = 3
-* ^expansion.parameter[0].name = "used-supplement"
-* ^expansion.parameter[=].valueUri = Canonical(HealthChecksExpandedYesNoIndicatorSupplement|0.4.0)
+* ^expansion.offset = 0
+* ^expansion.parameter[0].name = "displayLanguage"
+* ^expansion.parameter[=].valueCode = #en
+* ^expansion.parameter[+].name = "count"
+* ^expansion.parameter[=].valueInteger = 1000
+* ^expansion.parameter[+].name = "offset"
+* ^expansion.parameter[=].valueInteger = 0
+* ^expansion.parameter[+].name = "excludeNested"
+* ^expansion.parameter[=].valueBoolean = false
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
-* ^expansion.parameter[+].name = "version"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
-* ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = Canonical(HealthChecksExpandedYesNoIndicatorSupplement|0.4.0)
-* ^expansion.parameter[+].name = "warning-draft"
-* ^expansion.parameter[=].valueUri = Canonical(YesNoNA|0.4.0)
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0"
+* ^expansion.parameter[+].name = "used-supplement"
+* ^expansion.parameter[=].valueUri = "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
-* ^expansion.contains[=].version = "2.0.0"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
 * ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
-* ^expansion.contains[=].version = "2.0.0"
 * ^expansion.contains[=].code = #N
 * ^expansion.contains[=].display = "No"
 * ^expansion.contains[+].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
-* ^expansion.contains[=].version = "2.0.0"
 * ^expansion.contains[=].code = #NA
 * ^expansion.contains[=].display = "N/A"
 * $v2-0532#Y "Yes"
@@ -99,18 +107,20 @@ Id: YesNo
 Title: "Yes/No"
 Description: "Concepts for Yes and No"
 * ^experimental = false
-* ^expansion.identifier = "urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832"
-* ^expansion.timestamp = "2025-09-18T16:28:54+10:00"
+* ^expansion.identifier = "urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec"
+* ^expansion.timestamp = "2026-03-02T12:08:23+10:00"
 * ^expansion.total = 2
 * ^expansion.offset = 0
-* ^expansion.parameter[0].name = "count"
+* ^expansion.parameter[0].name = "displayLanguage"
+* ^expansion.parameter[=].valueCode = #en
+* ^expansion.parameter[+].name = "count"
 * ^expansion.parameter[=].valueInteger = 1000
 * ^expansion.parameter[+].name = "offset"
 * ^expansion.parameter[=].valueInteger = 0
 * ^expansion.parameter[+].name = "excludeNested"
 * ^expansion.parameter[=].valueBoolean = false
 * ^expansion.parameter[+].name = "used-codesystem"
-* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0"
+* ^expansion.parameter[=].valueUri = "http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0"
 * ^expansion.contains[0].system = "http://terminology.hl7.org/CodeSystem/v2-0532"
 * ^expansion.contains[=].code = #Y
 * ^expansion.contains[=].display = "Yes"
