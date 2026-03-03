@@ -209,7 +209,6 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[=].text = "Substance"
 * item[=].item[=].item[=].item[=].type = #open-choice
 * item[=].item[=].item[=].item[=].repeats = false
-* item[=].item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].item[=].answerValueSet = "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
 * item[=].item[=].item[=].item[+].extension[questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
 * item[=].item[=].item[=].item[=].linkId = "allergynew-manifestation"
