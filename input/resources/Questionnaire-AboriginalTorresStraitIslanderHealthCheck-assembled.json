@@ -14277,6 +14277,7 @@
                                                         }
                                                     ],
                                                     "linkId": "substanceuse-smoking-smokingstatus-group-laststatusvalue",
+                                                    "text": "Last status value",
                                                     "type": "choice",
                                                     "repeats": false,
                                                     "answerValueSet": "#TobaccoUseStatus-1"
@@ -14296,6 +14297,7 @@
                                                         }
                                                     ],
                                                     "linkId": "substanceuse-smoking-smokingstatus-group-laststatusdate",
+                                                    "text": "Last status date",
                                                     "type": "date",
                                                     "repeats": false
                                                 },
@@ -18237,6 +18239,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-lengthheight-lastresult",
+                                            "text": "Last result value",
                                             "type": "decimal",
                                             "repeats": false
                                         },
@@ -18255,6 +18258,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-lengthheight-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -18378,6 +18382,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-height-lastresult",
+                                            "text": "Last result value",
                                             "type": "decimal",
                                             "repeats": false
                                         },
@@ -18396,6 +18401,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-height-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -18510,6 +18516,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-weight-lastresult",
+                                            "text": "Last result value",
                                             "type": "decimal",
                                             "repeats": false
                                         },
@@ -18528,6 +18535,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-weight-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -18651,6 +18659,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-bmi-lastresult",
+                                            "text": "Last result value",
                                             "type": "decimal",
                                             "repeats": false
                                         },
@@ -18757,6 +18766,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-headcircumference-lastresult",
+                                            "text": "Last result value",
                                             "type": "decimal",
                                             "repeats": false
                                         },
@@ -18775,6 +18785,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-headcircumference-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -18898,6 +18909,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-waistcircumference-lastresult",
+                                            "text": "Last result value",
                                             "type": "decimal",
                                             "repeats": false
                                         },
@@ -18916,6 +18928,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-waistcircumference-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -19023,6 +19036,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-heartrate-lastresult",
+                                            "text": "Last result value",
                                             "type": "integer",
                                             "repeats": false
                                         },
@@ -19041,6 +19055,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-heartrate-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -19148,6 +19163,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-heartrhythm-lastresult",
+                                            "text": "Last result value",
                                             "type": "choice",
                                             "repeats": false,
                                             "answerValueSet": "#heart-rhythm-1"
@@ -19167,6 +19183,7 @@
                                                 }
                                             ],
                                             "linkId": "obs-heartrhythm-lastdate",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },
@@ -19302,6 +19319,7 @@
                                                 }
                                             ],
                                             "linkId": "bp-lastbp-systolic",
+                                            "text": "Last result value systolic",
                                             "type": "integer",
                                             "repeats": false
                                         },
@@ -19327,6 +19345,7 @@
                                                 }
                                             ],
                                             "linkId": "bp-lastbp-diastolic",
+                                            "text": "Last result value diastolic",
                                             "type": "integer",
                                             "repeats": false
                                         },
@@ -19345,6 +19364,7 @@
                                                 }
                                             ],
                                             "linkId": "bp-lastbp-date",
+                                            "text": "Last result date",
                                             "type": "date",
                                             "repeats": false
                                         },

@@ -385,6 +385,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-lengthheight-lastresult"
+        * text = "Last result value"
         * type = #decimal
         * repeats = false
       * item[+]
@@ -393,6 +394,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsBodyHeightLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-lengthheight-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]
@@ -438,6 +440,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-height-lastresult"
+        * text = "Last result value"
         * type = #decimal
         * repeats = false
       * item[+]
@@ -446,6 +449,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsBodyHeightLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-height-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]
@@ -488,6 +492,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
         * linkId = "obs-weight-lastresult"
+        * text = "Last result value"
         * type = #decimal
         * repeats = false
       * item[+]
@@ -496,6 +501,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsBodyWeightLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-weight-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]
@@ -541,6 +547,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
         * linkId = "obs-bmi-lastresult"
+        * text = "Last result value"
         * type = #decimal
         * repeats = false
       * item[+]
@@ -583,6 +590,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-headcircumference-lastresult"
+        * text = "Last result value"
         * type = #decimal
         * repeats = false
       * item[+]
@@ -591,6 +599,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsHeadCircumferenceLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-headcircumference-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]
@@ -636,6 +645,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
         * linkId = "obs-waistcircumference-lastresult"
+        * text = "Last result value"
         * type = #decimal
         * repeats = false
       * item[+]
@@ -644,6 +654,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsWaistCircumferenceLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-waistcircumference-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]
@@ -685,6 +696,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
         * linkId = "obs-heartrate-lastresult"
+        * text = "Last result value"
         * type = #integer
         * repeats = false
       * item[+]
@@ -693,6 +705,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsHeartRateLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-heartrate-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]
@@ -734,6 +747,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsHeartRhythmValue"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-heartrhythm-lastresult"
+        * text = "Last result value"
         * type = #choice
         * repeats = false
         * answerValueSet = "#heart-rhythm-1"
@@ -743,6 +757,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsHeartRhythmLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "obs-heartrhythm-lastdate"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]       
@@ -796,6 +811,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "bp-lastbp-systolic"
+        * text = "Last result value systolic"
         * type = #integer
         * repeats = false
       * item[+]
@@ -805,6 +821,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[questionnaire-hidden].valueBoolean = true
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
         * linkId = "bp-lastbp-diastolic"
+        * text = "Last result value diastolic"
         * type = #integer
         * repeats = false
       * item[+]
@@ -813,6 +830,7 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * expression = "%ObsBloodPressureLatest.effective.toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "bp-lastbp-date"
+        * text = "Last result date"
         * type = #date
         * repeats = false
       * item[+]

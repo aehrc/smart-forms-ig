@@ -174,6 +174,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * extension[questionnaire-hidden].valueBoolean = true
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
           * linkId = "substanceuse-smoking-smokingstatus-group-laststatusvalue"
+          * text = "Last status value"
           * type = #choice
           * repeats = false
           * answerValueSet = "#TobaccoUseStatus-1"
@@ -183,6 +184,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
             * expression = "%ObsTobaccoSmokingStatusLatest.effective.toString().substring(0,10).toDate()"
           * extension[questionnaire-hidden].valueBoolean = true
           * linkId = "substanceuse-smoking-smokingstatus-group-laststatusdate"
+          * text = "Last status date"
           * type = #date
           * repeats = false
         * item[+]
