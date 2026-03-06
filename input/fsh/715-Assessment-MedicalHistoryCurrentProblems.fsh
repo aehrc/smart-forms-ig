@@ -8,7 +8,7 @@ Usage: #example
 Title: "Aboriginal and Torres Strait Islander Health Check - Medical History"
 Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait Islander Health Check."
 
-* contained[+] = condition-clinical
+* contained[+] = ConditionClinicalStatusMinimal
 * contained[+] = clinical-condition-1
 * contained[+] = ConditionTemplate
 * contained[+] = ConditionPatchTemplate
@@ -63,7 +63,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 
 //R5 preadoption extensions
 * extension[+]
-  * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]"
+  * url = "http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm"
   * valueCoding
     * system = "http://hl7.org/fhir/version-algorithm"
     * code = #semver
@@ -82,7 +82,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
 * jurisdiction.coding = urn:iso:std:iso:3166#AU
 
 * item[+]
-  * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+  * extension[sdc-questionnaire-enableWhenExpression].valueExpression
     * language = #text/fhirpath
     * expression = "%age.exists()"
   * linkId = "28d5dbe4-1e65-487c-847a-847f544a6a91"
@@ -90,28 +90,35 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
   * type = #group
   * repeats = false
   * item[+] //in-progress
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display    
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%resource.repeat(item).where(linkId='MarkComplete-17').answer.value = 'In progress' or %resource.repeat(item).where(linkId='MarkComplete-17').answer.value.empty()"
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-in-progress-17"
     * text = "In progress"
       * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"In progress\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>" 
     * type = #display
-    * enableWhen[+]
-      * question = "MarkComplete-17" // Section complete item
-      * operator = #!=
-      * answerBoolean = true  
   * item[+] //complete
-    * extension[questionnaire-itemControl].valueCodeableConcept = https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended#context-display
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%resource.repeat(item).where(linkId='MarkComplete-17').answer.value = 'Complete'"
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
     * linkId = "CD-complete-17"
     * text = "Complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Section completed\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Complete\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
     * type = #display
-    * enableWhen[+]
-      * question = "MarkComplete-17" // Section complete item
-      * operator = #=
-      * answerBoolean = true
+  * item[+] //attention
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+      * language = #text/fhirpath
+      * expression = "%resource.repeat(item).where(linkId='MarkComplete-17').answer.value = 'Attention required'"
+    * extension[questionnaire-itemControl].valueCodeableConcept = QuestionnaireItemControlExtended#context-display
+    * linkId = "CD-attention-17"
+    * text = "Attention required"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div title=\"Attention required\" xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">\r\n\t\t<img width='24' height='24' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
+    * type = #display
 //Birth history      
   * item[+]
-    * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression].valueExpression
+    * extension[sdc-questionnaire-enableWhenExpression].valueExpression
       * language = #text/fhirpath
       * expression = "%age <= 5"
     * linkId = "b9de2b58-55e2-436d-95ab-49600508cdf7"
@@ -152,9 +159,9 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     </div>"
     * type = #group 
     * item[+]
-      * extension[https://smartforms.csiro.au/ig/StructureDefinition/GroupHideAddItemButton][+].valueBoolean = true
+      * extension[GroupHideAddItemButton][+].valueBoolean = true
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#gtable
-      * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext][+].valueExpression
+      * extension[sdc-questionnaire-itemPopulationContext][+].valueExpression
         * name = "ConditionRepeat"
         * language = #text/fhirpath
         * expression = "%Condition.entry.resource.where(verificationStatus.coding.all(code.empty() or code='confirmed'))"
@@ -162,10 +169,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * extension[template][+].valueReference = Reference(ConditionPatchTemplate)
         * extension[TemplateExtractExtensionPatchRequestUrl][+].valueString = "'Condition/' + item.where(linkId='conditionId').answer.value"
       * linkId = "92bd7d05-9b5e-4cf9-900b-703f361dad9d"
-      * text = "Medical history summary"
-        * extension[+]
-          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
-          * valueBoolean = true
+      * text = "Recorded problems/diagnoses"
       * type = #group
       * repeats = true
       * item[+]
@@ -177,7 +181,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * type = #string
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 40 '%'
+        * extension[sdc-questionnaire-width].valueQuantity = 40 '%'
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      
@@ -194,7 +198,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * linkId = "88bcfad7-386b-4d87-b34b-2e50482e4d2c"
         * text = "Clinical status"
         * type = #choice
-        * answerValueSet = "#condition-clinical"
+        * answerValueSet = "#ConditionClinicalStatusMinimal"
 // This hidden item is used to determine the appropriate patch parameter parts for comment.
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -203,11 +207,11 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * extension[questionnaire-hidden].valueBoolean = true             
         * linkId = "medicalhistory-status-hidden"
         * type = #choice
-        * answerValueSet = "#condition-clinical"
+        * answerValueSet = "#ConditionClinicalStatusMinimal"
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.onset.ofType(dateTime).toDate()"
+          * expression = "%ConditionRepeat.onset.ofType(dateTime).toString().substring(0,10).toDate()"
         * linkId = "6ae641ad-95bb-4cdc-8910-5a52077e492c"
         * text = "Onset date"
         * type = #date
@@ -215,7 +219,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toString().substring(0,10).toDate()"
         * linkId = "e4524654-f6de-4717-b288-34919394d46b"
         * text = "Abatement date"
         * type = #date
@@ -223,7 +227,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
-          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toDate()"
+          * expression = "%ConditionRepeat.abatement.ofType(dateTime).toString().substring(0,10).toDate()"
         * extension[questionnaire-hidden].valueBoolean = true
         * linkId = "medicalhistory-abatementdate-hidden"
         * type = #date
@@ -234,15 +238,12 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * extension[sdc-questionnaire-templateExtract]
         * extension[template].valueReference = Reference(ConditionTemplate)
       * linkId = "newdiagnosis"
-      * text = "New diagnosis"
-        * extension[+]
-          * url = "https://smartforms.csiro.au/ig/StructureDefinition/QuestionnaireItemTextHidden"
-          * valueBoolean = true
+      * text = "New problems/diagnoses"
       * type = #group
       * repeats = true
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 35 '%'
+        * extension[sdc-questionnaire-width].valueQuantity = 35 '%'
         * linkId = "2da85994-2d5e-42f1-8a81-abf44f397468"
         * text = "Condition"
         * type = #open-choice
@@ -252,7 +253,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * text = "Onset date"
         * type = #date
       * item[+]
-        * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-width].valueQuantity = 45 '%'
+        * extension[sdc-questionnaire-width].valueQuantity = 40 '%'
         * linkId = "newdiagnosis-comment"
         * text = "Comment"
         * type = #string
@@ -265,8 +266,18 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
     * repeats = false
 
   * item[+]
+    * linkId = "medicalhistory-section-end-divider"
+    * text.extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\" style=\"border-top: 1px solid #ccc;\"></div>"
+    * type = #display
+  * item[+]
+    * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
     * linkId = "MarkComplete-17"
-    * text = "Mark section as complete"
-      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n    <style type=\"text/css\">\r\n        .alert {\r\n            padding: 0.875rem;\r\n            margin-bottom: 1rem;\r\n            font-size: 0.875rem;\r\n            color: #29712D;\r\n            border-radius: 0.5rem;\r\n            background-color: #D9E8DA;\r\n            font-weight: 700;\r\n        max-width: 205px;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"alert\">Mark section as complete</div>\r\n</body>\r\n</div>"
-    * type = #boolean
+    * text = "Section completion status"
+    * type = #choice
     * repeats = false
+    * answerOption[+].valueString = "Complete"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">Complete&nbsp;\r\n\t\t<img width='19' height='19' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMyZTdkMzIiIGQ9Ik0yMCAxMmE4IDggMCAwIDEtOCA4YTggOCAwIDAgMS04LThhOCA4IDAgMCAxIDgtOGMuNzYgMCAxLjUuMTEgMi4yLjMxbDEuNTctMS41N0E5LjgyMiA5LjgyMiAwIDAgMCAxMiAyQTEwIDEwIDAgMCAwIDIgMTJhMTAgMTAgMCAwIDAgMTAgMTBhMTAgMTAgMCAwIDAgMTAtMTBNNy45MSAxMC4wOEw2LjUgMTEuNUwxMSAxNkwyMSA2bC0xLjQxLTEuNDJMMTEgMTMuMTdsLTMuMDktMy4wOVoiLz48L3N2Zz4='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
+    * answerOption[+].valueString = "In progress"      
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">In progress&nbsp;\r\n\t\t<img width='20' height='20' src='data:image/svg+xml;base64,\r\n\t\tPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiM3NTc1NzUiIGQ9Im0xNS44NCAxMC4ybC0xLjAxIDEuMDFsLTIuMDctMi4wM2wxLjAxLTEuMDJjLjItLjIxLjU0LS4yMi43OCAwbDEuMjkgMS4yNWMuMjEuMjEuMjIuNTUgMCAuNzlNOCAxMy45MWw0LjE3LTQuMTlsMi4wNyAyLjA4bC00LjE2IDQuMkg4di0yLjA5TTEzIDJ2MmM0LjM5LjU0IDcuNSA0LjUzIDYuOTYgOC45MkE4LjAxNCA4LjAxNCAwIDAgMSAxMyAxOS44OHYyYzUuNS0uNiA5LjQ1LTUuNTQgOC44NS0xMS4wM0MyMS4zMyA2LjE5IDE3LjY2IDIuNSAxMyAybS0yIDBjLTEuOTYuMTgtMy44MS45NS01LjMzIDIuMkw3LjEgNS43NGMxLjEyLS45IDIuNDctMS40OCAzLjktMS42OHYtMk00LjI2IDUuNjdBOS44MSA5LjgxIDAgMCAwIDIuMDUgMTFoMmMuMTktMS40Mi43NS0yLjc3IDEuNjQtMy45TDQuMjYgNS42N00yLjA2IDEzYy4yIDEuOTYuOTcgMy44MSAyLjIxIDUuMzNsMS40Mi0xLjQzQTguMDAyIDguMDAyIDAgMCAxIDQuMDYgMTNoLTJtNSA1LjM3bC0xLjM5IDEuMzdBOS45OTQgOS45OTQgMCAwIDAgMTEgMjJ2LTJhOC4wMDIgOC4wMDIgMCAwIDEtMy45LTEuNjNoLS4wNFoiLz48L3N2Zz4=' \r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"
+    * answerOption[+].valueString = "Attention required"
+      * extension[http://hl7.org/fhir/StructureDefinition/rendering-xhtml].valueString = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t<div style=\"display: flex; flex-direction: row;\">Attention required&nbsp;\r\n\t\t<img width='19' height='19' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self: center;\"/>\r\n\t</div>\r\n</div>"

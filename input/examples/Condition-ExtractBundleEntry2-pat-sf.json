@@ -1,0 +1,45 @@
+{
+    "resourceType": "Condition",
+    "id": "Condition-ExtractBundleEntry2-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "problem-list-item"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "195967001",
+                "display": "Asthma"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "onsetDateTime": "2025-07-01",
+    "note": [
+        {
+            "text": "Difficulty breathing"
+        }
+    ]
+}

@@ -31,21 +31,21 @@ Alias: $au-healthcarecardnumber = http://hl7.org.au/fhir/StructureDefinition/au-
 /* Old RuleSets to be reinstated following SUSHI bug fix
 RuleSet: obligationApp(index, appCode)
 * ^extension[$obligation][{index}].extension[code].valueCode = #"{appCode}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[$obligation][{index}].extension[code][+].valueCode = #"{appCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{appCode2}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligationServer(index, serverCode)
 * ^extension[$obligation][{index}].extension[code].valueCode = #"{serverCode}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[$obligation][{index}].extension[code][+].valueCode = #"{serverCode1}"
 * ^extension[$obligation][=].extension[code][+].valueCode = #"{serverCode2}"
-* ^extension[$obligation][=].extension[actor].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[$obligation][=].extension[actor].valueCanonical = Canonical(SHCHostFHIRServer)
 */
 
 RuleSet: obligationApp(index, appCode)
@@ -53,7 +53,7 @@ RuleSet: obligationApp(index, appCode)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{appCode}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[{index}].url = $obligation
@@ -62,14 +62,14 @@ RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{appCode2}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCApp"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligationServer(index, serverCode)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{serverCode}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[{index}].url = $obligation
@@ -78,7 +78,7 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{serverCode2}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation3Server(index, serverCode1, serverCode2, serverCode3)
 * ^extension[{index}].url = $obligation
@@ -89,7 +89,7 @@ RuleSet: obligation3Server(index, serverCode1, serverCode2, serverCode3)
 * ^extension[=].extension[+].url = "code"
 * ^extension[=].extension[=].valueCode = #"{serverCode3}"
 * ^extension[=].extension[+].url = "actor"
-* ^extension[=].extension[=].valueCanonical = "https://smartforms.csiro.au/ig/ActorDefinition/SHCHostFHIRServer"
+* ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 Profile: SmartHealthChecksAllergyIntolerance
 Parent: $au-core-allergyintolerance
@@ -106,6 +106,7 @@ Description: "This profile sets the minimum expectations for an AllergyIntoleran
 * clinicalStatus MS 
 * clinicalStatus insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * clinicalStatus insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* clinicalStatus from AllergyIntoleranceClinicalStatusMinimal (required)
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
@@ -135,9 +136,11 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * clinicalStatus MS
 * clinicalStatus insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * clinicalStatus insert obligation2App (3, SHALL:populate, SHALL:process)
+* clinicalStatus from ConditionClinicalStatusMinimal (required)
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
+* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * category MS
 * category insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * category insert obligationApp (3, SHALL:populate)
@@ -154,8 +157,9 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * onsetDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
 * onsetDateTime insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
 * abatementDateTime MS
-* abatementDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHALL:persist)
+* abatementDateTime insert obligation3Server (2, SHALL:populate-if-known, SHOULD:populate, SHOULD:persist)
 * abatementDateTime insert obligationApp (3, SHALL:process)
+* note ..1
 * note.text MS
 * note.text insert obligationServer (0, SHALL:persist)
 * note.text insert obligationApp (1, SHALL:populate-if-known)
@@ -169,6 +173,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
+* status = #completed
 * vaccineCode MS
 * vaccineCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * vaccineCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
@@ -187,6 +192,7 @@ Description: "This profile sets the minimum expectations for an Immunization res
 * lotNumber MS
 * lotNumber insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * lotNumber insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
+* note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -203,6 +209,7 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * status insert obligationApp (3, SHALL:populate)
+* status from MedicationStatementStatusLimited (required)
 * medicationCodeableConcept MS
 * medicationCodeableConcept insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * medicationCodeableConcept insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
@@ -222,7 +229,7 @@ Description: "This profile sets the minimum expectations for a MedicationStateme
 * reasonCode MS
 * reasonCode insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * reasonCode insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
-* note ..1 MS
+* note ..1
 * note.text MS
 * note.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * note.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
@@ -415,7 +422,7 @@ Id: SHCQuestionnaireResponse
 Title: "Smart Health Checks Questionnaire Response"
 Description: "This profile sets the minimum expectations for a QuestionnaireResponse resource to record, search and save form information when used within Smart Health Checks."
 
-* id 1.. MS
+* id MS
 * id insert obligation2Server (0, SHALL:populate, SHALL:persist)
 * id insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 * text MS
@@ -450,19 +457,80 @@ Description: "This profile sets the minimum expectations for a QuestionnaireResp
 * item.linkId MS
 * item.linkId insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * item.linkId insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
-* item.text MS
-* item.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
-* item.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
-* item.answer MS
-* item.answer insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
-* item.answer insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
-* item.answer.value[x] MS
-* item.answer.value[x] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
-* item.answer.value[x] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+
 * item.item MS
 * item.item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
 * item.item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.linkId MS
+* item.item.linkId insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.linkId insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.text MS
+* item.item.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
+* item.item.item MS
+* item.item.item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.linkId MS
+* item.item.item.linkId insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.linkId insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.text MS
+* item.item.item.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.answer MS
+* item.item.item.answer insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.answer insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.answer.value[x] MS
+* item.item.item.answer.value[x] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.answer.value[x] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+
+* item.item.item.item MS
+* item.item.item.item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.linkId MS
+* item.item.item.item.linkId insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.linkId insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.text MS
+* item.item.item.item.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.answer MS
+* item.item.item.item.answer insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.answer insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.answer.value[x] MS
+* item.item.item.item.answer.value[x] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.answer.value[x] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+
+* item.item.item.item.item MS
+* item.item.item.item.item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.linkId MS
+* item.item.item.item.item.linkId insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.linkId insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.text MS
+* item.item.item.item.item.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.answer MS
+* item.item.item.item.item.answer insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.answer insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.answer.value[x] MS
+* item.item.item.item.item.answer.value[x] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.answer.value[x] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+
+* item.item.item.item.item.item MS
+* item.item.item.item.item.item insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.item insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.item.linkId MS
+* item.item.item.item.item.item.linkId insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.item.linkId insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.item.text MS
+* item.item.item.item.item.item.text insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.item.text insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.item.answer MS
+* item.item.item.item.item.item.answer insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.item.answer insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
+* item.item.item.item.item.item.answer.value[x] MS
+* item.item.item.item.item.item.answer.value[x] insert obligation2Server (0, SHALL:populate-if-known, SHALL:persist)
+* item.item.item.item.item.item.answer.value[x] insert obligation2App (1, SHALL:populate-if-known, SHALL:process)
 
 Invariant: shc-heartrhythm-01
 Description: "At least value or data absent reason shall be present"
@@ -983,9 +1051,9 @@ Description: "This profile sets the expectations for a Parameters resource when 
 
 
 Invariant: shc-patch-condition-01
-Description: "When the part parameter named 'path' has a value of 'Condition' and the part parameter named 'name' has a value of 'clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Condition Clinical Status Codes' value set."
+Description: "When the part parameter named 'path' has a value of 'Condition' and the part parameter named 'name' has a value of 'clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Condition Clinical Status Minimal' value set."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').exists() implies parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').part.where(name='value').value.memberOf('http://hl7.org/fhir/ValueSet/condition-clinical')"
+* expression = "parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').exists() implies parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/ConditionClinicalStatusMinimal')"
 
 
 Invariant: shc-patch-condition-02
@@ -1075,7 +1143,7 @@ Description: "This profile sets the expectations for a Parameters resource when 
 * parameter.part[value].valueCodeableConcept MS
 * parameter.part[value].valueCodeableConcept insert obligationServer (0, SHALL:process)
 * parameter.part[value].valueCodeableConcept insert obligationApp (1, SHALL:populate)
-* parameter.part[value].valueCodeableConcept from http://hl7.org/fhir/ValueSet/condition-clinical (required)
+* parameter.part[value].valueCodeableConcept from ConditionClinicalStatusMinimal (required)
 * parameter.part[value].valueDateTime MS
 * parameter.part[value].valueDateTime insert obligationServer (0, SHALL:process)
 * parameter.part[value].valueDateTime insert obligationApp (1, SHALL:populate-if-known)

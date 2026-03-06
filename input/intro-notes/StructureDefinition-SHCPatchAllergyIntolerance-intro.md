@@ -1,6 +1,6 @@
 ### Usage Scenarios
 
-This profile supports updating AllergyIntolerance resource elements that are applicable to Smart Health Checks using the FHIRPath patch method. FHIRPath patch uses the Parameters resource to describe how a patch operation should be performed.
+This profile supports updating AllergyIntolerance resource elements that are applicable to Smart Health Checks using the FHIRPath patch method. FHIRPath patch uses the Parameters resource to describe how a patch operation should be performed. Parameters resources will be generated and included in a transaction bundle following completion of a health check form according to the form's extract definition.
 
 The elements that can be updated using this profile are as follows:
 
@@ -11,7 +11,7 @@ The elements that can be updated using this profile are as follows:
     </tr>
     <tr>
         <td><a href="StructureDefinition-SHCAllergyIntolerance.html">Smart Health Checks AllergyIntolerance</a></td>
-        <td><ul><li><code>AllergyIntolerance.clinicalStatus</code></li><li><code>AllergyIntolerance.note[0].text</code></li></ul></td>
+        <td><ul><li><code>AllergyIntolerance.clinicalStatus</code></li><li><code>AllergyIntolerance.note</code></li><li><code>AllergyIntolerance.note[0].text</code></li></ul></td>
     </tr>
 </table>
 
@@ -22,9 +22,12 @@ The elements that can be updated using this profile are as follows:
 - When the path value is `AllergyIntolerance` and the name value is `clinicalStatus`: 
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `CodeableConcept`
   - `Parameters.parameter.part:value.value[x]:valueCodeableConcept` **SHALL** have a value from the [Allergy Intolerance Clinical Status Minimal value set](ValueSet-AllergyIntoleranceClinicalStatusMinimal.html).
+  - See example [SHCPatchAllergyIntolerance1](Parameters-SHCPatchAllergyIntolerance1.html).
 - When the path value is `AllergyIntolerance` and the name value is `note`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `Annotation`. 
+  - This combination of path and value is used where a resource does not contain a note and a new one is to be added. 
+  - See example [SHCPatchAllergyIntolerance2](Parameters-SHCPatchAllergyIntolerance2.html).
 - When the path value is `AllergyIntolerance.note[0]` and the name value is `text`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `markdown`. 
-
-Illustrative examples are provided.
+  - This combination of path and value is used where a resource already contains a note and the text has been modified so the text will be replaced.
+  - See example [SHCPatchAllergyIntolerance1](Parameters-SHCPatchAllergyIntolerance1.html).

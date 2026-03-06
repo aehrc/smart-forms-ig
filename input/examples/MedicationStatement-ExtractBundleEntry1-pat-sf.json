@@ -1,0 +1,44 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "MedicationStatement-ExtractBundleEntry1-pat-sf",
+    "meta": {
+        "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+        ]
+    },
+    "status": "active",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "85332011000036101",
+                "display": "Coveram 10 mg/10 mg (perindopril arginine/amlodipine) tablet"
+            }
+        ]
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "38341003",
+                    "display": "Hypertension"
+                }
+            ]
+        }
+    ],
+    "dosage": [
+        {
+            "text": "One tablet daily"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/pat-sf"
+    },
+    "dateAsserted": "2025-08-15T10:08:34.551+10:00",
+    "note": [
+        {
+            "text": "Review regularly"
+        }
+    ]
+}

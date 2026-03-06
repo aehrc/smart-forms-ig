@@ -96,11 +96,14 @@ A Reference without an actual reference or identifier should have a display
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1
 
 # Error message annotations
-# Invalid error/invariant bug. Boolean should be lower case
+# Invalid error/invariant bug. Boolean in the expression should be lower case
 Constraint failed: que-7: 'If the operator is 'exists', the value must be a boolean (operator = 'exists' implies (answer is Boolean))'
 
 # Invalid error. Vital signs invariants not applicable to SDC extract templates nor are the templates asserting conformance against their profiles.
 Constraint failed: vs-1: 'if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day ($this is dateTime implies $this.toString().length() >= 10)'
+
+# Invalid error. hl7.fhir.uv.smart-app-launch#2.2.0 package has inherited dependency on an old extension package hl7.fhir.uv.extensions.r4#1.0.0 which contains an invariant bug. The extension reported on should be used on display items but the invariant evaluates as false for display items.
+The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'')
 
 # Cross version extension dependency issue. Will be rectified when IG tooling is supplied internationally.
 Slicing cannot be evaluated: Problem with use of resolve() - profile [CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm%5Bx%5D]] on Questionnaire.extension:versionAlgorithm could not be resolved (@char 1)

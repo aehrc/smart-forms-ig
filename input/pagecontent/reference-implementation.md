@@ -31,6 +31,7 @@ A Questionnaire-hosting Forms Server API that supports the [$assemble](http://hl
 
 Try it out here: <https://ehr.smartforms.io/>
 
-A simple simulator showing a patient summary screen with a launch button to perform an [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). The patient, user and questionnaire are preselected but can be changed on the Configuration page. The simulator is supported by the [SMART Launcher](https://launch.smarthealthit.org/).
+A simple simulator showing a patient summary screen with a launch button to perform an [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). 
+The patient, user and questionnaire can be selected on the Configuration page. The simulator is supported by the [SMART Launcher](https://launch.smarthealthit.org/).
 
 The source code is available at the [SMART-EHR-Launcher GitHub repository](https://github.com/aehrc/SMART-EHR-Launcher).

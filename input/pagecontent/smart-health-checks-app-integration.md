@@ -10,14 +10,15 @@ To establish a trust relationship between the PMS and the SHC App that enables t
 | Attribute    | Value                                          |
 |--------------|--------------------------------------------------|
 | Client Name  | Smart Health Checks Application                  |
-| Client ID    | smart-health-checks-application                  |
 | Redirect URIs | https://healthchecks.smartforms.io/             |
 
-How this client registration is performed is not specified in this implementation guide and it is the responsibility of the PMS admininstrator to ensure the client details are configured as specified above.
+How this client registration is performed is not specified in this implementation guide and it is the responsibility of the PMS administrator to ensure the client details are configured as specified above. 
 
-Note that the Client ID is assigned by the SHC App to allow multiple PMSs to launch the app without it maintaining a Client ID for each SHC Host Authorization Server. If the Client ID can not be assigned in the SHC Host Authorization Server (such as if the Auth Server requires Client IDs to be UUIDs, or if the server assigns an auto-generated Client ID), please contact AEHRC to arrange a workaround.
+The Client ID assigned to the SHC App by the SHC Host Authorization Server and the SHC Host FHIR Server base URL should be provided to SHC App administrator to configure the SHC App trust relationship with the PMS host.
 
-The SHC App requests the following scopes, these can be configured in the SHC Host Authorization Server client registration details as required.
+Where the Client ID can be assigned in the SHC Host Authorization Server registration details for the SHC App, the Client ID of `smart-health-checks-application` may be used for testing purpose only. This enables the SHC App to be launched using an untrusted FHIR Server base URL.
+
+The SHC App requests the following scopes, these should be configured in the SHC Host Authorization Server client registration details as required.
 - launch
 - openid
 - fhirUser
@@ -34,7 +35,7 @@ The SHC App requests the following scopes, these can be configured in the SHC Ho
 - user/Practitioner.r
 - launch/questionnaire?role=http://ns.electronichealth.net.au/smart/role/new
 
-Other client registration details that may need to be configured in the SHC Host Authorization Server based on the [Client Metadata fields defined in the OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591#section-2) are shown below. 
+Other client registration details that may be configured in the SHC Host Authorization Server based on the [Client Metadata fields defined in the OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591#section-2) are shown below. 
 
 | Attribute    | Value            |
 |--------------|--------------------|
@@ -166,12 +167,13 @@ code of `302 Found`. The `Location` header URL matches the `redirect_uri` parame
 | --------- | --- |
 | error | The error code from the following set:<br/>• `invalid_request`<br/>• `unauthorized_client`<br/>• `access_denied`<br/>• `unsupported_response_type`<br/>• `invalid_scope`<br/>• `server_error` – unexpected server error, equivalent to HTTP 500 Internal Server Error status code<br/>• `temporarily_unavailable` – server temporarily unavailable, equivalent to HTTP 503 Server Unavailable status code |
 | error_description | Optional human readable description of the error |
+| state | The state value provided in the authorization request to correlate this redirect response with the request |
 
 An example of the response is shown below.
 
 ```
 HTTP 302 Found
-Location: https://healthchecks.smartforms.io?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration
+Location: https://healthchecks.smartforms.io?error=unauthorized_client&error_description=redirect_uri%20does%20not%20match%20client%20registration&state=NhlJ741C31hRDf8v
 ```
 
 When the Web browser client receives the authorize request response, the application **SHALL** display the error details and not attempt to access the SHC Host FHIR Server.
@@ -276,7 +278,7 @@ The JWS Payload claims required by the [OIDC specification](https://openid.net/s
 | ------- | ----------- |
 | sub | Unique identifier of the user as known by the PMS authorization service |
 | iss | Authorization service issuer |
-| aud | Client URI |
+| aud | Client identifier for the registered SHC App |
 | fhirUser | FHIR Practitioner reference | 
 | preferred_username | Optional username used by the user to login to the PMS | 
 | iat | Token issued at |
@@ -288,7 +290,7 @@ An example of the JWS Payload is shown below.
 {
   "sub":"f256d3ba-bb70-4613-a631-825d500c57fa",
   "iss":"https://auth.pmsserver.com.au",
-  "aud":"https://healthchecks.smartforms.io",
+  "aud":"smart-health-checks-application",
   "fhirUser":"Practitioner/f256d3ba-bb70-4613-a631-825d500c57fa",
   "preferred_username":"janedoe",
   "iat":1690903483,
@@ -301,6 +303,8 @@ Below is Base64URL encoded JWS Payload.
 ```
 eyAKICJzdWIiOiJmMjU2ZDNiYS1iYjcwLTQ2MTMtYTYzMS04MjVkNTAwYzU3ZmEiLCAKICJpc3MiOiJodHRwczovL2F1dGgucG1zc2VydmVyLmNvbS5hdSIsIAogImF1ZCI6Imh0dHBzOi8vc21hcnRmb3Jtcy5jc2lyby5hdSIsIAogImZoaXJVc2VyIjoiUHJhY3RpdGlvbmVyL2YyNTZkM2JhLWJiNzAtNDYxMy1hNjMxLTgyNWQ1MDBjNTdmYSIsIAogInByZWZlcnJlZF91c2VybmFtZSI6ImphbmVkb2UiLCAKICJpYXQiOjE2OTA5MDM0ODMsIAogImV4cCI6MTY5MDkwNzA4MyAKfSA
 ```
+
+Note: This Base64URL encode JWS Payload does not match the example of the JWS Payload above.
 
 ##### JWS Signature
 The JWS Signature uses the RSA PKCS1 SHA-256 algorithm where the input string is the concatenation of the JWS Protected Header and JWS Payload delimited with a period (`.`). For example:

@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "id": "HeadCircumference-baby-smith-john",
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "9843-4"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "363812007"
+      }
+    ],
+    "text": "Head circumference"
+  },
+  "subject": {
+    "reference": "Patient/baby-smith-john"
+  },
+  "valueQuantity": {
+    "unit": "cm",
+    "system": "http://unitsofmeasure.org",
+    "code": "cm",
+    "value": 42
+  },
+  "effectiveDateTime": "2023-03-14"
+}
