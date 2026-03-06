@@ -190,7 +190,8 @@ Usage:  #inline
 * component[=].valueQuantity.unit = "mm[Hg]"
 * component[=].valueQuantity.system = $UCUM
 * component[=].valueQuantity.code = #mm[Hg]
-/*
+
+/* Can be uncommented along with other extract features once expectations around implementation of CVD Risk Result profile are available. Template also requires fixes and review. See comments in CVD Risk Result template for details.
 Instance:   CVDRiskResultTemplate
 InstanceOf: Observation
 Usage:  #inline  
