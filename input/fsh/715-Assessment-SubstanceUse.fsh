@@ -64,7 +64,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
   * valueString = "ObsTobaccoSmokingStatusLatest"
 
 //fhirpath variables
-//Previous examination results variables
+//Previous results variables
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"
   * valueExpression
@@ -167,6 +167,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
               * language = #text/fhirpath
               * expression = "iif(%ObsTobaccoSmokingStatusValue.exists() and %ObsTobaccoSmokingStatusDateFormatted.exists(), %ObsTobaccoSmokingStatusValue.display + ' ( ' + %ObsTobaccoSmokingStatusDateFormatted + ' )', 'Not available')"
           * type = #display
+        //This hidden item captures the previous smoking status value to be recorded in the QuestionnaireResponse
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
@@ -178,6 +179,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * type = #choice
           * repeats = false
           * answerValueSet = "#TobaccoUseStatus-1"
+        //This hidden item captures the previous smoking status value to be recorded in the QuestionnaireResponse
         * item[+]
           * extension[sdc-questionnaire-initialExpression].valueExpression
             * language = #text/fhirpath
@@ -196,6 +198,9 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * repeats = false
           * answerValueSet = "#TobaccoUseStatus-1"
         * item[+]
+          * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
+            * language = #text/fhirpath
+            * expression = "iif(%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(), today())"
           * linkId = "substanceuse-smoking-smokingstatus-group-newdate"
           * text = "New date"
           * type = #date
