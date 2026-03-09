@@ -915,7 +915,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * type = #group
         * repeats = false
         * item[+]       
-          * extension[sdc-questionnaire-initialExpression].valueExpression
+          * extension[sdc-questionnaire-calculatedExpression].valueExpression
             * language = #text/fhirpath
             * expression = "iif(%weight.exists() and %CVDWeightNewResultDate > (now() - 12 months), %weight, %bmiWeightDecimalPrepop)"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
@@ -928,7 +928,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
             * text = "kg"
             * type = #display
         * item[+]       
-          * extension[sdc-questionnaire-initialExpression].valueExpression
+          * extension[sdc-questionnaire-calculatedExpression].valueExpression
             * language = #text/fhirpath
             * expression = "iif(%height.exists() and %CVDHeightNewResultDate > (%patient.birthDate + 18 years), %height, %bmiHeightDecimalPrepop)"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#m

@@ -21112,7 +21112,7 @@
                                                 {
                                                     "extension": [
                                                         {
-                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
                                                                 "expression": "iif(%weight.exists() and %CVDWeightNewResultDate > (now() - 12 months), %weight, %bmiWeightDecimalPrepop)"
@@ -21153,7 +21153,7 @@
                                                 {
                                                     "extension": [
                                                         {
-                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
                                                                 "expression": "iif(%height.exists() and %CVDHeightNewResultDate > (%patient.birthDate + 18 years), %height, %bmiHeightDecimalPrepop)"
