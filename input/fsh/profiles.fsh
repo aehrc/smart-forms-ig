@@ -140,10 +140,27 @@ Description: "This profile sets the minimum expectations for a Condition resourc
 * verificationStatus MS
 * verificationStatus insert obligationServer (2, SHALL:populate-if-known)
 * verificationStatus insert obligationApp (3, SHALL:process)
-* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * category MS
 * category insert obligation2Server (2, SHALL:populate, SHALL:persist)
 * category insert obligationApp (3, SHALL:populate)
+* category ^slicing.discriminator[0].type = #value
+* category ^slicing.discriminator[=].path = "coding.code"
+* category ^slicing.discriminator[+].type = #value
+* category ^slicing.discriminator[=].path = "coding.system"
+* category ^slicing.ordered = false
+* category ^slicing.rules = #open
+* category contains problemListCategory 1..1 
+* category[problemListCategory] MS
+* category[problemListCategory] insert obligation2Server (0, SHALL:populate, SHALL:persist)
+* category[problemListCategory] insert obligationApp (0, SHALL:populate)
+* category[problemListCategory].coding 1..*
+* category[problemListCategory].coding only Coding
+* category[problemListCategory].coding.system 1..1
+* category[problemListCategory].coding.system only uri
+* category[problemListCategory].coding.system = "http://terminology.hl7.org/CodeSystem/condition-category" (exactly)
+* category[problemListCategory].coding.code 1..1
+* category[problemListCategory].coding.code only code
+* category[problemListCategory].coding.code = #problem-list-item (exactly)
 * code MS
 * code insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * code insert obligation2App (3, SHALL:populate-if-known, SHALL:process)
