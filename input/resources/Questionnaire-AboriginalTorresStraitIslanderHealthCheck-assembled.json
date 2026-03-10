@@ -2293,7 +2293,6 @@
                     },
                     {
                         "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-                        "version": "1.0.0",
                         "concept": [
                             {
                                 "code": "asked-declined",
@@ -3171,7 +3170,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1",
@@ -3208,7 +3207,7 @@
                 "parameter": [
                     {
                         "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
                     },
                     {
                         "name": "used-codesystem",
@@ -3220,11 +3219,11 @@
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1|0.4.0"
                     },
                     {
                         "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
                     }
                 ],
                 "contains": [
@@ -3255,7 +3254,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
-                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.3.0"
+                    "valueCanonical": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
                 }
             ],
             "url": "https://smartforms.csiro.au/ig/ValueSet/CVDRiskCategory-1",
@@ -6167,8 +6166,28 @@
                                                     }
                                                 },
                                                 {
-                                                    "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                                                    "valueString": "matches('^[0-9]{4}$')"
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "constraint-regex-postcode"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "warning"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "matches('^[0-9]{4}$')"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "Postcode must be 4 digits"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
@@ -6295,8 +6314,28 @@
                                             }
                                         },
                                         {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                                            "valueString": "matches('^[0-9]{4}$')"
+                                            "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                            "extension": [
+                                                {
+                                                    "url": "key",
+                                                    "valueId": "constraint-regex-postcode"
+                                                },
+                                                {
+                                                    "url": "severity",
+                                                    "valueCode": "warning"
+                                                },
+                                                {
+                                                    "url": "expression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "matches('^[0-9]{4}$')"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "human",
+                                                    "valueString": "Postcode must be 4 digits"
+                                                }
+                                            ]
                                         },
                                         {
                                             "url": "http://hl7.org/fhir/StructureDefinition/entryFormat",
@@ -6449,8 +6488,28 @@
                                             }
                                         },
                                         {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                                            "valueString": "matches('^[0-9]{10}$')"
+                                            "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                            "extension": [
+                                                {
+                                                    "url": "key",
+                                                    "valueId": "constraint-regex-medicarecardnumber-1"
+                                                },
+                                                {
+                                                    "url": "severity",
+                                                    "valueCode": "warning"
+                                                },
+                                                {
+                                                    "url": "expression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "matches('^[0-9]{10}$')"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "human",
+                                                    "valueString": "Medicare card number must be 10 digits"
+                                                }
+                                            ]
                                         }
                                     ],
                                     "linkId": "eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf",
@@ -6468,8 +6527,28 @@
                                             }
                                         },
                                         {
-                                            "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                                            "valueString": "matches('^[0-9]{1}$')"
+                                            "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                            "extension": [
+                                                {
+                                                    "url": "key",
+                                                    "valueId": "constraint-regex-medicarecardnumber-2"
+                                                },
+                                                {
+                                                    "url": "severity",
+                                                    "valueCode": "warning"
+                                                },
+                                                {
+                                                    "url": "expression",
+                                                    "valueExpression": {
+                                                        "language": "text/fhirpath",
+                                                        "expression": "matches('^[0-9]{1}$')"
+                                                    }
+                                                },
+                                                {
+                                                    "url": "human",
+                                                    "valueString": "Medicare card reference number must be 1 digit"
+                                                }
+                                            ]
                                         }
                                     ],
                                     "linkId": "d6253253-a124-494e-a1d8-7ce02c69ec11",

@@ -1,8 +1,10 @@
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 
+// specific version used due to its use in supplement.
 Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
-Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
+
+Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
 CodeSystem: QuestionnaireItemControlExtended
 Id: QuestionnaireItemControlExtended
