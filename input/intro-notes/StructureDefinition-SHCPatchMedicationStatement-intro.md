@@ -33,7 +33,7 @@ The elements that can be updated using this profile are as follows:
   - See example [SHCPatchMedicationStatement2](Parameters-SHCPatchMedicationStatement2.html) or [SHCPatchMedicationStatement4](Parameters-SHCPatchMedicationStatement4.html).
 - When the path value is `MedicationStatement` and the name value is `note`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `Annotation`
-  - This combination of path and value is used where a resource does not contain a note and a new one is to be added. .
+  - This combination of path and value is used where a resource does not contain a note and a new one is to be added.
   - See example [SHCPatchMedicationStatement2](Parameters-SHCPatchMedicationStatement2.html).
 - When the path value is `MedicationStatement.note[0]` and the name value is `text`:
   - `Parameters.parameter.part:value.value[x]` **SHALL** be of type `markdown`.

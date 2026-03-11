@@ -60,13 +60,10 @@ The Smart Health Check App follows a standard set of interactions which are summ
 ### Dependencies
 
 {% include dependency-table.xhtml %}
+{% include expansion-params.xhtml %}
 
-Smart Forms is also dependent on:
+This guide is also dependent on:
 - Terminology published in Australia's [National Clinical Terminology Service](https://www.healthterminologies.gov.au/access-clinical-terminology/access-fhir-terminology-resources/)
-
-In addition, the following FHIR implementation guides are referenced:
-- [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch)
-
 
 ### Usage
 
