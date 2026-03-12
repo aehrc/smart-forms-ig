@@ -51,43 +51,43 @@ RuleSet: obligation2Server(index, serverCode1, serverCode2)
 RuleSet: obligationApp(index, appCode)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{appCode}"
+* ^extension[=].extension[=].valueCode = #{appCode}
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligation2App(index, appCode1, appCode2)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{appCode1}"
+* ^extension[=].extension[=].valueCode = #{appCode1}
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{appCode2}"
+* ^extension[=].extension[=].valueCode = #{appCode2}
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = Canonical(SHCApp)
 
 RuleSet: obligationServer(index, serverCode)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{serverCode}"
+* ^extension[=].extension[=].valueCode = #{serverCode}
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation2Server(index, serverCode1, serverCode2)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{serverCode1}"
+* ^extension[=].extension[=].valueCode = #{serverCode1}
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{serverCode2}"
+* ^extension[=].extension[=].valueCode = #{serverCode2}
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
 RuleSet: obligation3Server(index, serverCode1, serverCode2, serverCode3)
 * ^extension[{index}].url = $obligation
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{serverCode1}"
+* ^extension[=].extension[=].valueCode = #{serverCode1}
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{serverCode2}"
+* ^extension[=].extension[=].valueCode = #{serverCode2}
 * ^extension[=].extension[+].url = "code"
-* ^extension[=].extension[=].valueCode = #"{serverCode3}"
+* ^extension[=].extension[=].valueCode = #{serverCode3}
 * ^extension[=].extension[+].url = "actor"
 * ^extension[=].extension[=].valueCanonical = Canonical(SHCHostFHIRServer)
 
