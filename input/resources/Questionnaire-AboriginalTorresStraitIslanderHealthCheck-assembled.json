@@ -4099,6 +4099,14 @@
                 {
                     "url": "http://hl7.org/fhir/StructureDefinition/variable",
                     "valueExpression": {
+                        "name": "HomeAddressNoFixedAddress",
+                        "language": "text/fhirpath",
+                        "expression": "repeat(item).where(linkId='311d83bb-f22e-4f60-9b50-b6e38dd2059b').answer.value"
+                    }
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/variable",
+                    "valueExpression": {
                         "name": "MedicationStatement",
                         "language": "application/x-fhir-query",
                         "expression": "MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication"
@@ -6076,6 +6084,15 @@
                                     "repeats": false
                                 },
                                 {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%HomeAddressNoFixedAddress.empty() or %HomeAddressNoFixedAddress = false"
+                                            }
+                                        }
+                                    ],
                                     "linkId": "4e0dc185-f83e-4027-b7a8-ecb543d42c6d",
                                     "text": "Home address",
                                     "_text": {
@@ -6087,13 +6104,6 @@
                                         ]
                                     },
                                     "type": "group",
-                                    "enableWhen": [
-                                        {
-                                            "question": "311d83bb-f22e-4f60-9b50-b6e38dd2059b",
-                                            "operator": "!=",
-                                            "answerBoolean": true
-                                        }
-                                    ],
                                     "repeats": true,
                                     "item": [
                                         {

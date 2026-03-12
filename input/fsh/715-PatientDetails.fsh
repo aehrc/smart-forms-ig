@@ -72,6 +72,12 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
     * name = "PostalAddress"
     * language = #text/fhirpath
     * expression = "%patient.address.where(type='postal')"
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/variable"
+  * valueExpression
+    * name = "HomeAddressNoFixedAddress"
+    * language = #text/fhirpath
+    * expression = "repeat(item).where(linkId='311d83bb-f22e-4f60-9b50-b6e38dd2059b').answer.value"
 
 //R5 preadoption extensions
 * extension[+]
@@ -287,17 +293,16 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * type = #boolean
       * repeats = false
     * item[+]
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%HomeAddressNoFixedAddress.empty() or %HomeAddressNoFixedAddress = false"
       * linkId = "4e0dc185-f83e-4027-b7a8-ecb543d42c6d"
       * text = "Home address"
         * extension[+]
           * url = Canonical(QuestionnaireItemTextHidden)
           * valueBoolean = true
       * type = #group
-      * repeats = true      
-      * enableWhen[+]
-        * question = "311d83bb-f22e-4f60-9b50-b6e38dd2059b"
-        * operator = #!=
-        * answerBoolean = true
+      * repeats = true
       * item[+]
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
