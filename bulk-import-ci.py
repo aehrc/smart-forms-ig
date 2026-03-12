@@ -80,7 +80,7 @@ def updateRootAndSubquestionnaires(questionnaires, implementationGuide):
     for resource in implementationGuide["definition"]["resource"]:
         reference = resource["reference"]["reference"]
 
-        if reference.startswith("Questionnaire"):
+        if reference.startswith("Questionnaire/"):
             # skip assembled questionnaire's reference because it doesn't exist yet
             if reference == assembledQuestionnaireReference:
                 continue
