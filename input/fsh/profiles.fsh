@@ -770,8 +770,8 @@ Description: "This profile sets the minimum expectations for a Body Height resou
 * valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* valueQuantity.unit insert obligationApp (3, SHALL:populate)
+* valueQuantity.unit insert obligation2Server (3, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity.unit insert obligationApp (4, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
@@ -812,8 +812,8 @@ Description: "This profile sets the minimum expectations for a Body Weight resou
 * valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* valueQuantity.unit insert obligationApp (3, SHALL:populate)
+* valueQuantity.unit insert obligation2Server (3, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity.unit insert obligationApp (4, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
@@ -938,8 +938,8 @@ Description: "This profile sets the minimum expectations for a Heart Rate resour
 * valueQuantity.value insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.value insert obligation2App (3, SHALL:populate, SHALL:process)
 * valueQuantity.unit MS
-* valueQuantity.unit insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
-* valueQuantity.unit insert obligationApp (3, SHALL:populate)
+* valueQuantity.unit insert obligation2Server (3, SHALL:populate-if-known, SHALL:persist)
+* valueQuantity.unit insert obligationApp (4, SHALL:populate)
 * valueQuantity.system MS
 * valueQuantity.system insert obligation2Server (2, SHALL:populate-if-known, SHALL:persist)
 * valueQuantity.system insert obligation2App (3, SHALL:populate, SHALL:process)
