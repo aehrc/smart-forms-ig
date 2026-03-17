@@ -950,18 +950,18 @@ Description: "This profile sets the minimum expectations for a Heart Rate resour
 Invariant: shc-patch-allergy-intolerance-01
 Description: "When the part parameter named 'path' has a value of 'AllergyIntolerance' and the part parameter named 'name' has a value of 'clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Allergy Intolerance Clinical Status Minimal' value set."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'AllergyIntolerance' and part.where(name='name').value = 'clinicalStatus').exists() implies parameter.where(part.where(name='path').value = 'AllergyIntolerance' and part.where(name='name').value = 'clinicalStatus').part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/AllergyIntoleranceClinicalStatusMinimal')"
+* expression = "parameter.all((part.exists(name='path' and value = 'AllergyIntolerance') and part.exists(name='name' and value = 'clinicalStatus')) implies part.where(name='value').single().value.memberOf('https://smartforms.csiro.au/ig/ValueSet/AllergyIntoleranceClinicalStatusMinimal'))"
 
 
 Invariant: shc-patch-allergy-intolerance-02
 Description: "When the part parameter named 'path' has a value of 'AllergyIntolerance' and the part parameter named 'name' has a value of 'note', the part parameter named 'value' SHALL have a value of type Annotation"
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'AllergyIntolerance' and part.where(name='name').value = 'note').exists() implies parameter.where(part.where(name='path').value = 'AllergyIntolerance' and part.where(name='name').value = 'note').part.where(name='value').value is Annotation"
+* expression = "parameter.all((part.exists(name='path' and value = 'AllergyIntolerance') and part.exists(name='name' and value = 'note')) implies part.where(name='value').single().value is Annotation)"
 
 Invariant: shc-patch-allergy-intolerance-03
 Description: "When the part parameter named 'path' has a value of 'AllergyIntolerance.note[0]' and the part parameter named 'name' has a value of 'text', the part parameter named 'value' SHALL have a value of type markdown"
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'AllergyIntolerance.note[0]' and part.where(name='name').value = 'text').exists() implies parameter.where(part.where(name='path').value = 'AllergyIntolerance.note[0]' and part.where(name='name').value = 'text').part.where(name='value').value is markdown"
+* expression = "parameter.all((part.exists(name='path' and value = 'AllergyIntolerance.note[0]') and part.exists(name='name' and value = 'text')) implies part.where(name='value').single().value is markdown)"
 
 
 Profile: SmartHealthChecksPatchAllergyIntolerance
@@ -1072,13 +1072,13 @@ Description: "This profile sets the expectations for a Parameters resource when 
 Invariant: shc-patch-condition-01
 Description: "When the part parameter named 'path' has a value of 'Condition' and the part parameter named 'name' has a value of 'clinicalStatus', the part parameter named 'value' SHALL have a value from the 'Condition Clinical Status Minimal' value set."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').exists() implies parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'clinicalStatus').part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/ConditionClinicalStatusMinimal')"
+* expression = "parameter.all((part.exists(name='path' and value = 'Condition') and part.exists(name='name' and value = 'clinicalStatus')) implies part.where(name='value').single().value.memberOf('https://smartforms.csiro.au/ig/ValueSet/ConditionClinicalStatusMinimal'))"
 
 
 Invariant: shc-patch-condition-02
 Description: "When the part parameter named 'path' has a value of 'Condition' and the part parameter named 'name' has a value of 'abatement', the part parameter named 'value' SHALL have a value of type dateTime."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'abatement').exists() implies parameter.where(part.where(name='path').value = 'Condition' and part.where(name='name').value = 'abatement').part.where(name='value').value is dateTime"
+* expression = "parameter.all((part.exists(name='path' and value = 'Condition') and part.exists(name='name' and value = 'abatement')) implies part.where(name='value').single().value is dateTime)"
 
 
 Profile: SmartHealthChecksPatchCondition
@@ -1179,27 +1179,27 @@ Description: "This profile sets the expectations for a Parameters resource when 
 Invariant: shc-patch-medication-statement-01
 Description: "When the part parameter named 'path' has a value of 'MedicationStatement' and the part parameter named 'name' has a value of 'status', the part parameter named 'value' SHALL have a value from the 'Medication Statement Status Limited' value set."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'MedicationStatement' and part.where(name='name').value = 'status').exists() implies parameter.where(part.where(name='path').value = 'MedicationStatement' and part.where(name='name').value = 'status').part.where(name='value').value.memberOf('https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited')"
+* expression = "parameter.all((part.exists(name='path' and value = 'MedicationStatement') and part.exists(name='name' and value = 'status')) implies part.where(name='value').single().value.memberOf('https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited'))"
 
 Invariant: shc-patch-medication-statement-02
 Description: "When the part parameter named 'path' has a value of 'MedicationStatement' and the part parameter named 'name' has a value of 'dosage', the part parameter named 'value' SHALL have a value of type Dosage."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'MedicationStatement' and part.where(name='name').value = 'dosage').exists() implies parameter.where(part.where(name='path').value = 'MedicationStatement' and part.where(name='name').value = 'dosage').part.where(name='value').value is Dosage"
+* expression = "parameter.all((part.exists(name='path' and value = 'MedicationStatement') and part.exists(name='name' and value = 'dosage')) implies part.where(name='value').single().value is Dosage)"
 
 Invariant: shc-patch-medication-statement-03
 Description: "When the part parameter named 'path' has a value of 'MedicationStatement.dosage[0]' and the part parameter named 'name' has a value of 'text', the part parameter named 'value' SHALL have a value of type string."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'MedicationStatement.dosage[0]' and part.where(name='name').value = 'text').exists() implies parameter.where(part.where(name='path').value = 'MedicationStatement.dosage[0]' and part.where(name='name').value = 'text').part.where(name='value').value is string"
+* expression = "parameter.all((part.exists(name='path' and value = 'MedicationStatement.dosage[0]') and part.exists(name='name' and value = 'text')) implies part.where(name='value').single().value is string)"
 
 Invariant: shc-patch-medication-statement-04
 Description: "When the part parameter named 'path' has a value of 'MedicationStatement' and the part parameter named 'name' has a value of 'note', the part parameter named 'value' SHALL have a value of type Annotation."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'MedicationStatement' and part.where(name='name').value = 'note').exists() implies parameter.where(part.where(name='path').value = 'MedicationStatement' and part.where(name='name').value = 'note').part.where(name='value').value is Annotation"
+* expression = "parameter.all((part.exists(name='path' and value = 'MedicationStatement') and part.exists(name='name' and value = 'note')) implies part.where(name='value').single().value is Annotation)"
 
 Invariant: shc-patch-medication-statement-05
 Description: "When the part parameter named 'path' has a value of 'MedicationStatement.note[0]' and the part parameter named 'name' has a value of 'text', the part parameter named 'value' SHALL have a value of type markdown."
 * severity = #error
-* expression = "parameter.where(part.where(name='path').value = 'MedicationStatement.note[0]' and part.where(name='name').value = 'text').exists() implies parameter.where(part.where(name='path').value = 'MedicationStatement.note[0]' and part.where(name='name').value = 'text').part.where(name='value').value is markdown"
+* expression = "parameter.all((part.exists(name='path' and value = 'MedicationStatement.note[0]') and part.exists(name='name' and value = 'text')) implies part.where(name='value').single().value is markdown)"
 
 
 Profile: SmartHealthChecksPatchMedicationStatement
