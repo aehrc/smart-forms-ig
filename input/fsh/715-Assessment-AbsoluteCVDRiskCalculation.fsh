@@ -718,7 +718,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
     * item[+]
       * extension[sdc-questionnaire-calculatedExpression].valueExpression
         * language = #text/fhirpath
-        * expression = "iif(%CVDSystolicBloodPressureValue.exists() and %CVDSystolicBloodPressureDate > (now() - 2 years), %CVDSystolicBloodPressureValue, iif(%ObsBloodPressureSittingLatest.where(effective > (now() - 2 years)).exists(), %ObsBloodPressureSittingLatest.component.where(code.coding.exists(code='407554009')).value.value.round(0), %ObsBloodPressureLatest.where(effective > (now() - 2 years)).component.where(code.coding.exists(code='271649006')).value.value.round(0)))"
+        * expression = "iif(%CVDSystolicBloodPressureValue.exists() and %CVDSystolicBloodPressureDate.toDate() > (now() - 2 years), %CVDSystolicBloodPressureValue, iif(%ObsBloodPressureSittingLatest.where(effective > (now() - 2 years)).exists(), %ObsBloodPressureSittingLatest.component.where(code.coding.exists(code='407554009')).value.value.round(0), %ObsBloodPressureLatest.where(effective > (now() - 2 years)).component.where(code.coding.exists(code='271649006')).value.value.round(0)))"
       * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
       * linkId = "818ce640-c8dd-457d-b607-3aaa8da38524"
       * text = "Systolic blood pressure"
@@ -917,7 +917,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]       
           * extension[sdc-questionnaire-calculatedExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%weight.exists() and %CVDWeightNewResultDate > (now() - 12 months), %weight, %bmiWeightDecimalPrepop)"
+            * expression = "iif(%weight.exists() and %CVDWeightNewResultDate.toDate() > (now() - 12 months), %weight, %bmiWeightDecimalPrepop)"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
           * linkId = "cvdrisk-bmi-weight-decimal"
           * text = "Weight"
@@ -930,7 +930,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]       
           * extension[sdc-questionnaire-calculatedExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%height.exists() and %CVDHeightNewResultDate > (%patient.birthDate + 18 years), %height, %bmiHeightDecimalPrepop)"
+            * expression = "iif(%height.exists() and %CVDHeightNewResultDate.toDate() > (%patient.birthDate + 18 years), %height/100.round(2), %bmiHeightDecimalPrepop)"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#m
           * linkId = "cvdrisk-bmi-height-decimal"
           * text = "Height"

@@ -20723,7 +20723,7 @@
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                             "valueExpression": {
                                                 "language": "text/fhirpath",
-                                                "expression": "iif(%CVDSystolicBloodPressureValue.exists() and %CVDSystolicBloodPressureDate > (now() - 2 years), %CVDSystolicBloodPressureValue, iif(%ObsBloodPressureSittingLatest.where(effective > (now() - 2 years)).exists(), %ObsBloodPressureSittingLatest.component.where(code.coding.exists(code='407554009')).value.value.round(0), %ObsBloodPressureLatest.where(effective > (now() - 2 years)).component.where(code.coding.exists(code='271649006')).value.value.round(0)))"
+                                                "expression": "iif(%CVDSystolicBloodPressureValue.exists() and %CVDSystolicBloodPressureDate.toDate() > (now() - 2 years), %CVDSystolicBloodPressureValue, iif(%ObsBloodPressureSittingLatest.where(effective > (now() - 2 years)).exists(), %ObsBloodPressureSittingLatest.component.where(code.coding.exists(code='407554009')).value.value.round(0), %ObsBloodPressureLatest.where(effective > (now() - 2 years)).component.where(code.coding.exists(code='271649006')).value.value.round(0)))"
                                             }
                                         },
                                         {
@@ -21204,7 +21204,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "iif(%weight.exists() and %CVDWeightNewResultDate > (now() - 12 months), %weight, %bmiWeightDecimalPrepop)"
+                                                                "expression": "iif(%weight.exists() and %CVDWeightNewResultDate.toDate() > (now() - 12 months), %weight, %bmiWeightDecimalPrepop)"
                                                             }
                                                         },
                                                         {
@@ -21245,7 +21245,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "iif(%height.exists() and %CVDHeightNewResultDate > (%patient.birthDate + 18 years), %height, %bmiHeightDecimalPrepop)"
+                                                                "expression": "iif(%height.exists() and %CVDHeightNewResultDate.toDate() > (%patient.birthDate + 18 years), %height/100.round(2), %bmiHeightDecimalPrepop)"
                                                             }
                                                         },
                                                         {
