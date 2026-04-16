@@ -3,7 +3,7 @@ Alias: $LOINC = http://loinc.org
 
 // specific version used due to its use in supplement.
 Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
-
+Alias: $medication-statement-status = http://hl7.org/fhir/CodeSystem/medication-statement-status|4.0.1
 Alias: $data-empty = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
 CodeSystem: QuestionnaireItemControlExtended
@@ -926,10 +926,10 @@ Description: "This value set includes the minimal set of codes to represent the 
 * ^expansion.contains[+].system = "http://hl7.org/fhir/CodeSystem/medication-statement-status"
 * ^expansion.contains[=].code = #on-hold
 * ^expansion.contains[=].display = "On Hold"
-* http://hl7.org/fhir/CodeSystem/medication-statement-status#active
-* http://hl7.org/fhir/CodeSystem/medication-statement-status#completed
-* http://hl7.org/fhir/CodeSystem/medication-statement-status#stopped
-* http://hl7.org/fhir/CodeSystem/medication-statement-status#on-hold
+* $medication-statement-status#active
+* $medication-statement-status#completed
+* $medication-statement-status#stopped
+* $medication-statement-status#on-hold
 
 CodeSystem: SHCPatchElementPathCodes
 Id: SHCPatchElementPathCodes

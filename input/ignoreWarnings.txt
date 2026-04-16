@@ -19,6 +19,9 @@ This element does not match any known slice defined in the profile https://smart
 # INFORMATION: Slice matching - due to the profile approach that mixes slice and pattern in AU Core. The code is valid according to the profile but is defined using pattern and is outside the slice definition.
 This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
+# INFORMATION: Value set expansion too large. Noted and accepted.
+The value set expansion is too large, and only a subset has been displayed
+
 # INFORMATION: Example intentionally includes identifier value that is not defined as a slice for illustrative purposes.
 This element does not match any known slice defined in the profile http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -167,9 +170,14 @@ Constraint failed: vs-1: 'if Observation.effective[x] is dateTime and has a valu
 
 # ERROR: Invalid error. hl7.fhir.uv.smart-app-launch#2.2.0 package has inherited dependency on an old extension package hl7.fhir.uv.extensions.r4#1.0.0 which contains an invariant bug. The extension reported on should be used on display items but the invariant evaluates as false for display items.
 The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'')
+The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory v4.0.1 is not allowed to be used at this point (based on context invariant 'type!='display'')
 
 # ERROR: Cross version extension dependency issue. Will be rectified when IG tooling is supplied internationally.
 Slicing cannot be evaluated: Problem with use of resolve() - profile [CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.disabledDisplay]] on Questionnaire.item.extension:disabledDisplay could not be resolved (@char 1)
 
 # ERROR: To be fixed in a later version of the IG Publisher (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build).
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
+
+# ERROR: Currently unable to use newer extension. IG Publisher expects v4.0.1 and is unable to validate codes from the newer version of the code system. The binding is extensible so the included code is valid anyway. https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Extensions.20dependency.20using.20incorrect.20version
+Unknown code 'tab-container' in the CodeSystem 'http://hl7.org/fhir/questionnaire-item-control' version '4.0.1'
+Unknown code 'grid' in the CodeSystem 'http://hl7.org/fhir/questionnaire-item-control' version '4.0.1'

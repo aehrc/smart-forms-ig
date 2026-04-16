@@ -29,8 +29,8 @@ dependencies:
   hl7.fhir.au.base: 6.0.0
   hl7.fhir.uv.sdc: current
   hl7.fhir.uv.smart-app-launch: 2.2.0
-#  hl7.fhir.uv.extensions.r4: 5.2.0
-#  hl7.fhir.extensions.r5: 4.0.1
+  hl7.fhir.uv.extensions.r4: 5.2.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -79,6 +79,7 @@ dependencies:
 #
 parameters:
   path-expansion-params: '../../input/_resources/exp-params.json'
+#  pin-canonicals: pin-all
   special-url-base: 'http://www.health.gov.au/assessments/mbs/715'
   special-url:
     - 'http://www.health.gov.au/assessments/mbs/715'
