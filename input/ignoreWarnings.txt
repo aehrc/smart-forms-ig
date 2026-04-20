@@ -168,7 +168,7 @@ The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced
 # ERROR: Invalid error. Vital signs invariants not applicable to SDC extract templates nor are the templates asserting conformance against their profiles.
 Constraint failed: vs-1: 'if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day ($this is dateTime implies $this.toString().length() >= 10)'
 
-# ERROR: Invalid error. hl7.fhir.uv.smart-app-launch#2.2.0 package has inherited dependency on an old extension package hl7.fhir.uv.extensions.r4#1.0.0 which contains an invariant bug. The extension reported on should be used on display items but the invariant evaluates as false for display items.
+# ERROR: Invalid error. hl7.fhir.uv.smart-app-launch#2.2.0 package has inherited dependency on an old extension package hl7.fhir.uv.extensions.r4#1.0.0 that contains an invariant bug. The extension reported on should be used on display items but the invariant evaluates as false for display items.
 The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'')
 The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory v4.0.1 is not allowed to be used at this point (based on context invariant 'type!='display'')
 
@@ -181,3 +181,15 @@ No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureD
 # ERROR: Currently unable to use newer extension. IG Publisher expects v4.0.1 and is unable to validate codes from the newer version of the code system. The binding is extensible so the included code is valid anyway. https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Extensions.20dependency.20using.20incorrect.20version
 Unknown code 'tab-container' in the CodeSystem 'http://hl7.org/fhir/questionnaire-item-control' version '4.0.1'
 Unknown code 'grid' in the CodeSystem 'http://hl7.org/fhir/questionnaire-item-control' version '4.0.1'
+
+# ERROR: Items enabled through enableWhenExpression extension cannot currently be validated when they contain variables defined in the Questionnaire. These items are correctly enabled. https://github.com/hapifhir/org.hl7.fhir.core/issues/2404
+Item has answer, even though it is not enabled (item id =%
+
+# ERROR: CodeSystem supplements are not being considered during validation. Display names are correct per supplement and codes in supplement match the original CodeSystem.
+Wrong Display Name 'Aboriginal' for https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#1. Valid display is 'Aboriginal but not Torres Strait Islander origin' (for the language(s) 'en-AU')
+Wrong Display Name 'Currently smokes' for http://snomed.info/sct#77176002. Valid display is 'Current smoker' (en-x-sctlang-32570271-00003610-6) (for the language(s) 'en-AU')
+The code '1' in the system 'https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1' is not in the options value set (Aboriginal and/or Torres Strait Islander) specified by the questionnaire. Terminology Error: Wrong Display Name 'Aboriginal' for https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#1. Valid display is 'Aboriginal but not Torres Strait Islander origin' (for the language(s) '--')
+
+# WARNING: CodeSystem supplements are not being considered during validation. Display names are correct per supplement and codes in supplement match the original CodeSystem.
+The expansion provided is missing 3 codes (1, 2, 3) that are in the expansion using default expansion parameters
+The expansion provided is has 3 extra codes (1, 2, 3) that are not in the expansion using default expansion parameters
