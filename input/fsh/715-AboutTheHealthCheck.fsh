@@ -148,10 +148,10 @@ Description: "About The Health Check sub-questionnaire for Aboriginal and Torres
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
       * language = #text/fhirpath
-      * expression = "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
+      * expression = "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toString().substring(0,10).toDate()"
     * linkId = "01418489-1ec4-4c3b-b96a-7c14c3e21cfe"
     * text = "Date of last completed health check"
-    * type = #dateTime
+    * type = #date
     * repeats = false
   * item[+]
     * extension[sdc-questionnaire-initialExpression].valueExpression
