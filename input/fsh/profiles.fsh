@@ -95,7 +95,7 @@ Profile: SmartHealthChecksAllergyIntolerance
 Parent: $au-core-allergyintolerance
 Id: SHCAllergyIntolerance
 Title: "Smart Health Checks AllergyIntolerance"
-Description: "This profile sets the minimum expectations for an AllergyIntolerance resource to record, search and save allergy or intolerance information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for an AllergyIntolerance resource to search, record and save allergy or intolerance information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
@@ -128,7 +128,7 @@ Profile: SmartHealthChecksCondition
 Parent: $au-core-condition
 Id: SHCCondition
 Title: "Smart Health Checks Condition"
-Description: "This profile sets the minimum expectations for a Condition resource to record, search and save condition information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Condition resource to search, record and save condition information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
@@ -187,7 +187,7 @@ Profile: SmartHealthChecksImmunization
 Parent: $au-core-immunization
 Id: SHCImmunization
 Title: "Smart Health Checks Immunization"
-Description: "This profile sets the minimum expectations for an Immunization resource to record, search and save immunization information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for an Immunization resource to search, record and save immunization information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (2, SHALL:populate, SHALL:persist)
@@ -220,7 +220,7 @@ Profile: SmartHealthChecksMedicationStatement
 Parent: $au-core-medicationstatement
 Id: SHCMedicationStatement
 Title: "Smart Health Checks MedicationStatement"
-Description: "This profile sets the minimum expectations for a MedicationStatement resource to record, search and save medication information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a MedicationStatement resource to search, record and save medication information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
@@ -261,7 +261,7 @@ Profile: SmartHealthChecksMedication
 Parent: $au-core-medication
 Id: SHCMedication
 Title: "Smart Health Checks Medication"
-Description: "This profile sets the minimum expectations for a Medication resource to search and retrieve medication information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Medication resource to retrieve, search and record medication information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
@@ -274,7 +274,7 @@ Profile: SmartHealthChecksPathologyResult
 Parent: $au-core-diagnosticresult-path
 Id: SHCPathologyResult
 Title: "Smart Health Checks Pathology Result"
-Description: "This profile sets the minimum expectations for an Observation resource to search and retrieve pathology result information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for an Observation resource to search and record pathology result information when used within Smart Health Checks."
 
 * status MS
 * status insert obligationServer (3, SHALL:populate)
@@ -304,7 +304,7 @@ Profile: SmartHealthChecksPatient
 Parent: $au-core-patient
 Id: SHCPatient
 Title: "Smart Health Checks Patient"
-Description: "This profile sets the minimum expectations for a Patient resource to search and retrieve patient information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Patient resource to retrieve and record patient information when used within Smart Health Checks."
 
 * extension[indigenousStatus] MS
 * extension[indigenousStatus] insert obligationServer (2, SHALL:populate-if-known)
@@ -415,7 +415,7 @@ Profile: SmartHealthChecksPractitioner
 Parent: $au-core-practitioner
 Id: SHCPractitioner
 Title: "Smart Health Checks Practitioner"
-Description: "This profile sets the minimum expectations for a Practitioner resource to search and retrieve practitioner information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Practitioner resource to retrieve and record practitioner information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
@@ -428,7 +428,7 @@ Profile: SmartHealthChecksEncounter
 Parent: $au-core-encounter
 Id: SHCEncounter
 Title: "Smart Health Checks Encounter"
-Description: "This profile sets the minimum expectations for a Encounter resource to search and retrieve encounter information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Encounter resource to retrieve and record encounter information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
@@ -439,7 +439,7 @@ Profile: SmartHealthChecksQuestionnaireResponse
 Parent: $sdc-questionnaireresponse
 Id: SHCQuestionnaireResponse
 Title: "Smart Health Checks Questionnaire Response"
-Description: "This profile sets the minimum expectations for a QuestionnaireResponse resource to record, search and save form information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a QuestionnaireResponse resource to record, retrieve, search and save form information when used within Smart Health Checks."
 
 * id MS
 * id insert obligation2Server (0, SHALL:populate, SHALL:persist)
@@ -568,7 +568,7 @@ Profile: SmartHealthChecksHeartRhythm
 Parent: Observation
 Id: SHCHeartRhythm
 Title: "Smart Health Checks Heart Rhythm"
-Description: "This profile sets the minimum expectations for an Observation resource to record heart rhythm observations. It is used to represent heart rhythm data captured during a First Nations Health Check that can be used to record the observation in a clinical record."
+Description: "This profile sets the minimum expectations for a Heart Rhythm resource to search, record and save heart rhythm information when used within Smart Health Checks."
 
 * . ^short = "Heart Rhythm"
 * . ^definition = "Measurement of a patient's heart rhythm at a point in time."
@@ -647,7 +647,7 @@ Profile: SmartHealthChecksBloodPressure
 Parent: $au-core-bloodpressure
 Id: SHCBloodPressure
 Title: "Smart Health Checks Blood Pressure"
-Description: "This profile sets the minimum expectations for a Blood Pressure resource to record, search and save blood pressure information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Blood Pressure resource to search, record and save blood pressure information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
@@ -711,7 +711,7 @@ Profile: SmartHealthChecksSmokingStatus
 Parent: $au-core-smokingstatus
 Id: SHCSmokingStatus
 Title: "Smart Health Checks Smoking Status"
-Description: "This profile sets the minimum expectations for a Smoking Status resource to record, search and save smoking status information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Smoking Status resource to search, record and save smoking status information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
@@ -741,7 +741,7 @@ Profile: SmartHealthChecksBodyHeight
 Parent: $au-core-bodyheight
 Id: SHCBodyHeight
 Title: "Smart Health Checks Body Height"
-Description: "This profile sets the minimum expectations for a Body Height resource to record, search and save body height information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Body Height resource to search, record and save body height information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
@@ -783,7 +783,7 @@ Profile: SmartHealthChecksBodyWeight
 Parent: $au-core-bodyweight 
 Id: SHCBodyWeight
 Title: "Smart Health Checks Body Weight"
-Description: "This profile sets the minimum expectations for a Body Weight resource to record, search and save body weight information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Body Weight resource to search, record and save body weight information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
@@ -825,7 +825,7 @@ Profile: SmartHealthChecksHeadCircumference
 Parent: $au-core-headcircum
 Id: SHCHeadCircumference
 Title: "Smart Health Checks Head Circumference"
-Description: "This profile sets the minimum expectations for a Head Circumference resource to record, search and save head circumference information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Head Circumference resource to search, record and save head circumference information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (1, SHALL:populate, SHALL:persist)
@@ -867,7 +867,7 @@ Profile: SmartHealthChecksWaistCircumference
 Parent: $au-core-waistcircum
 Id: SHCWaistCircumference
 Title: "Smart Health Checks Waist Circumference"
-Description: "This profile sets the minimum expectations for a Waist Circumference resource to record, search and save waist circumference information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Waist Circumference resource to search, record and save waist circumference information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
@@ -909,7 +909,7 @@ Profile: SmartHealthChecksHeartRate
 Parent: $au-core-heartrate
 Id: SHCHeartRate
 Title: "Smart Health Checks Heart Rate"
-Description: "This profile sets the minimum expectations for a Heart Rate resource to record, search and save heart rate information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a Heart Rate resource to search, record and save heart rate information when used within Smart Health Checks."
 
 * status MS
 * status insert obligation2Server (3, SHALL:populate, SHALL:persist)
