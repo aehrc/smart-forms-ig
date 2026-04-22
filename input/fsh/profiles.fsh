@@ -428,7 +428,7 @@ Profile: SmartHealthChecksEncounter
 Parent: $au-core-encounter
 Id: SHCEncounter
 Title: "Smart Health Checks Encounter"
-Description: "This profile sets the minimum expectations for a Encounter resource to retrieve and record encounter information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for an Encounter resource to retrieve encounter information when used within Smart Health Checks."
 
 * id MS
 * id insert obligationServer (0, SHALL:populate)
