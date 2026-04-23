@@ -568,7 +568,7 @@ Profile: SmartHealthChecksHeartRhythm
 Parent: Observation
 Id: SHCHeartRhythm
 Title: "Smart Health Checks Heart Rhythm"
-Description: "This profile sets the minimum expectations for a Heart Rhythm resource to search, record and save heart rhythm information when used within Smart Health Checks."
+Description: "This profile sets the minimum expectations for a heart rhythm observation to search, record and save heart rhythm information when used within Smart Health Checks."
 
 * . ^short = "Heart Rhythm"
 * . ^definition = "Measurement of a patient's heart rhythm at a point in time."
