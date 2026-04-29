@@ -207,20 +207,29 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * repeats = false
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsTobaccoSmokingStatusValue.exists(code = '8517006') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code = '8517006')"
       * linkId = "96dc7c22-d003-459c-8a56-f6cd182fc077"
       * text = "Quit status"
       * type = #choice
       * repeats = false
+      /*
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
         * answerCoding = http://snomed.info/sct#8517006
+        */
       * answerValueSet = "#SmokingQuitStatus-1"      
     * item[+]
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsTobaccoSmokingStatusValue.exists(code = '8517006' or code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code = '8517006' or code = '77176002' or code = '394872000')"
       * linkId = "9e86387d-1be4-4c26-9047-9dd6b03e1ee0"
       * text = "How many?"
       * type = #string
       * repeats = false
+      /*
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
@@ -234,10 +243,15 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
         * operator = #=
         * answerCoding = http://snomed.info/sct#394872000
       * enableBehavior = #any
+      */
     * item[+]
+      * extension[sdc-questionnaire-enableWhenExpression].valueExpression
+        * language = #text/fhirpath
+        * expression = "%ObsTobaccoSmokingStatusValue.exists(code = '8517006' or code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.where(code = '8517006' or code = '77176002' or code = '394872000').exists()"
       * linkId = "32e71641-f660-4ca2-af99-dff8917f07be"
       * text = "How long as a smoker?"
       * type = #string
+      /*
       * enableWhen[+]
         * question = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
         * operator = #=
@@ -251,6 +265,7 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
         * operator = #=
         * answerCoding = http://snomed.info/sct#394872000
       * enableBehavior = #any
+      */
   * item[+]
     * linkId = "34feaee8-8088-43ee-991d-9729990b5550"
     * text = "Alcohol and other substance use"
