@@ -227,6 +227,16 @@ The token response contains a JSON payload in the body with the following elemen
 | encounter | optional | FHIR Encounter id provided in the launch context |
 | fhirContext | required | A list of other FHIR resource references that have been requested as launch context. Each `fhirContext` item has a relative or canonical reference to a FHIR resource and a role represented as the canonical URL of the FHIR resource type. When a specified health check form is requested, the Questionnaire canonical URL **SHALL** be provided in the `fhirContext`. |
 
+##### Extra Launch Context
+
+In addition to the standard token response elements described above, the SHC Host **MAY** pass supplementary non-FHIR context to the SHC App using the extra context extension mechanism defined in the [SMART App Launch Implementation Guide]({{site.data.fhir.hl7_fhir_uv_smart_app_launch}}/scopes-and-launch-context.html#example-extra-context---extensions-for-non-fhir-context).
+
+Extra context parameters are returned as additional properties in the token response, using a full URI as the property name. The SHC App supports the following extra context parameters as documented in the [Smart Forms documentation](https://smartforms.csiro.au/docs/).
+
+| Element | Type | Description |
+|-----------|------|-------------|
+| `https://smartforms.csiro.au/smart-app-launch/extra-context/disable-writeback-selection` | boolean | When `true`, skips the item selection step in the Save Final & Write Back dialog and writes back all items to the patient record. Also accepts the string value `"true"` for launchers that serialise all values as strings. |
+
 #### Access Token
 The access token is opaque to the client and its representation **SHOULD** only be known by the SHC FHIR Authorization Server and SHC Host FHIR Server.
 
