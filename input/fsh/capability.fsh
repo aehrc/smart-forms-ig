@@ -402,7 +402,7 @@ The server **SHALL** support both."
 * rest.resource[=].supportedProfile[+] = Canonical(SHCQuestionnaireResponse)
 * rest.resource[=].supportedProfile[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension[0].valueCode = #SHALL
-* rest.resource[=].documentation = "The server **SHALL** support the QuestionnaireResponse resource, Smart Health Checks profile and the conformance expectations for the QuestionnaireResponse resource."
+* rest.resource[=].documentation = "The server **SHALL** support the QuestionnaireResponse resource, Smart Health Checks profile and the conformance expectations for the QuestionnaireResponse resource. The server **SHALL** support versioned updates to QuestionnaireResponse resources."
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
@@ -415,7 +415,7 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
-* rest.resource[=].versioning = #versioned-update
+* rest.resource[=].versioning = #versioned
 * rest.resource[=].versioning.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].versioning.extension[0].valueCode = #SHALL
 * rest.resource[=].searchParam[+].name = "patient"
@@ -818,12 +818,12 @@ The server **SHALL** support both."
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].type = #QuestionnaireResponse
 * rest.resource[=].profile = Canonical(SHCQuestionnaireResponse)
-* rest.resource[=].documentation = "The client supports the QuestionnaireResponse resource, Smart Health Checks profile and the conformance expectations for the QuestionnaireResponse resource."
+* rest.resource[=].documentation = "The client supports the QuestionnaireResponse resource, Smart Health Checks profile and the conformance expectations for the QuestionnaireResponse resource. The client supports versioned updates to QuestionnaireResponse resources."
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #update
-* rest.resource[=].versioning = #versioned-update
+* rest.resource[=].versioning = #versioned
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
