@@ -336,10 +336,10 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%HomeAddressRepeat.postalCode"
-        * extension[targetConstraint].extension[key].valueId = "constraint-regex-postcode"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-postcode-1"
         * extension[targetConstraint].extension[severity].valueCode = #warning
         * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
-        * extension[targetConstraint].extension[expression].valueExpression.expression = "matches('^[0-9]{4}$')"
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.all(value.matches('^[0-9]{4}$'))"
         * extension[targetConstraint].extension[human].valueString = "Postcode must be 4 digits"
         * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "####"
         * linkId = "3f61a1ea-1c74-4f52-8519-432ce861a74f"
@@ -402,10 +402,10 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%PostalAddressRepeat.postalCode"
-      * extension[targetConstraint].extension[key].valueId = "constraint-regex-postcode"
+      * extension[targetConstraint].extension[key].valueId = "shc-que-postcode-2"
       * extension[targetConstraint].extension[severity].valueCode = #warning
       * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
-      * extension[targetConstraint].extension[expression].valueExpression.expression = "matches('^[0-9]{4}$')"
+      * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='28b58e50-2a04-4192-9655-efc8d72f32fa').answer.all(value.matches('^[0-9]{4}$'))"
       * extension[targetConstraint].extension[human].valueString = "Postcode must be 4 digits"
       * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "####"
       * linkId = "28b58e50-2a04-4192-9655-efc8d72f32fa"
@@ -487,10 +487,10 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%MedicareNumberRepeat.value.substring(0,10)"
-      * extension[targetConstraint].extension[key].valueId = "constraint-regex-medicarecardnumber-1"
+      * extension[targetConstraint].extension[key].valueId = "shc-que-medicarecardnumber-1"
       * extension[targetConstraint].extension[severity].valueCode = #warning
       * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
-      * extension[targetConstraint].extension[expression].valueExpression.expression = "matches('^[0-9]{10}$')"
+      * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf').answer.all(value.matches('^[0-9]{10}$'))"
       * extension[targetConstraint].extension[human].valueString = "Medicare card number must be 10 digits"
       * linkId = "eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf"
       * text = "Number"
@@ -500,10 +500,10 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%MedicareNumberRepeat.value.substring(10,1)"
-      * extension[targetConstraint].extension[key].valueId = "constraint-regex-medicarecardnumber-2"
+      * extension[targetConstraint].extension[key].valueId = "shc-que-medicarecardnumber-2"
       * extension[targetConstraint].extension[severity].valueCode = #warning
       * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
-      * extension[targetConstraint].extension[expression].valueExpression.expression = "matches('^[0-9]{1}$')"
+      * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='d6253253-a124-494e-a1d8-7ce02c69ec11').answer.all(value.matches('^[0-9]{1}$'))"
       * extension[targetConstraint].extension[human].valueString = "Medicare card reference number must be 1 digit"
       * linkId = "d6253253-a124-494e-a1d8-7ce02c69ec11"
       * text = "Reference number"

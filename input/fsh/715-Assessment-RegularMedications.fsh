@@ -198,6 +198,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-status"
 * item.item[=].item[=].item[=].text = "Status"
 * item.item[=].item[=].item[=].type = #choice
+* item.item[=].item[=].item[=].required = true
 * item.item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].answerValueSet = "#MedicationStatementStatusLimited"
 // This hidden item is used to determine the appropriate patch parameter parts for comment.
@@ -259,6 +260,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-new-medication"
 * item.item[=].item[=].item[=].text = "Medication"
 * item.item[=].item[=].item[=].type = #open-choice
+* item.item[=].item[=].item[=].required = true
 * item.item[=].item[=].item[=].repeats = false
 * item.item[=].item[=].item[=].answerValueSet = "#smart-health-checks-medicine-products"
 

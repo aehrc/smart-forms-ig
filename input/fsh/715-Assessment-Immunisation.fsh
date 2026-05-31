@@ -232,6 +232,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
       * linkId = "vaccinestoday-vaccine"
       * text = "Vaccine"
       * type = #open-choice
+      * required = true
       * answerValueSet = "#amt-vaccine-1"
     * item[+]
       * linkId = "vaccinestoday-batch"
@@ -241,6 +242,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
       * linkId = "vaccinestoday-date"
       * text = "Administration date"
       * type = #date
+      * required = true
     * item[+]
       * linkId = "vaccinestoday-comment"
       * text = "Comment"

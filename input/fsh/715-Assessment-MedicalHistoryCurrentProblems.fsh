@@ -188,8 +188,8 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * linkId = "59b1900a-4f85-4a8c-b9cd-3fe2fd76f27e"
         * text = "Condition"
         * type = #open-choice
-        * answerValueSet = "#clinical-condition-1"
         * readOnly = true
+        * answerValueSet = "#clinical-condition-1"
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * extension[sdc-questionnaire-initialExpression].valueExpression
@@ -247,6 +247,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
         * linkId = "2da85994-2d5e-42f1-8a81-abf44f397468"
         * text = "Condition"
         * type = #open-choice
+        * required = true
         * answerValueSet = "#clinical-condition-1"
       * item[+]
         * linkId = "4d55bffb-3286-4a23-a785-3b9c346d464d"

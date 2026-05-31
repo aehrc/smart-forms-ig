@@ -192,6 +192,12 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
         * item[+]
           * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#SmokingStatusTemplate"
           * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
+          * extension[targetConstraint].extension[key].valueId = "shc-que-smokingstatus-1"
+          * extension[targetConstraint].extension[requirements].valueMarkdown = "A new smoking status date must be accompanied by a smoking status value to ensure a valid smoking status observation resource can be extracted."
+          * extension[targetConstraint].extension[severity].valueCode = #error
+          * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+          * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists()"
+          * extension[targetConstraint].extension[human].valueString = "If a date is entered, a smoking status must also be entered."
           * linkId = "b639a3a8-f476-4cc8-b5c7-f5d2abb23511"
           * text = "New status"
           * type = #choice
@@ -201,6 +207,12 @@ Description: "Substance Use sub-questionnaire for Aboriginal and Torres Strait I
           * extension[http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression].valueExpression
             * language = #text/fhirpath
             * expression = "iif(%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(), today())"
+          * extension[targetConstraint].extension[key].valueId = "shc-que-smokingstatus-2"
+          * extension[targetConstraint].extension[requirements].valueMarkdown = "A new smoking status value must be accompanied by a date to ensure a valid smoking status observation resource can be extracted."
+          * extension[targetConstraint].extension[severity].valueCode = #error
+          * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+          * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists() implies %resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists()"
+          * extension[targetConstraint].extension[human].valueString = "If a smoking status is entered, a date must also be entered."
           * linkId = "substanceuse-smoking-smokingstatus-group-newdate"
           * text = "New date"
           * type = #date

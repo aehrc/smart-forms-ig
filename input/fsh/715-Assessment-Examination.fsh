@@ -375,6 +375,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightLengthTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[targetConstraint].extension[key].valueId = "shc-que-lengthheight-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new length/height date must be accompanied by a new length/height result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new length/height result must also be entered."
         * linkId = "obs-lengthheight-newresult"
         * text = "New result"
         * type = #decimal
@@ -388,6 +394,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-lengthheight-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new length/height result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new length/height result is entered, a date must also be entered."
         * linkId = "obs-lengthheight-newdate"
         * text = "New result date"
         * type = #date
@@ -432,6 +444,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyHeightTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[targetConstraint].extension[key].valueId = "shc-que-height-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new height date must be accompanied by a new height result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new height result must also be entered."
         * linkId = "obs-height-newresult"
         * text = "New result"
         * type = #decimal
@@ -445,6 +463,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-height-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new height result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new height result is entered, a date must also be entered."
         * linkId = "obs-height-newdate"
         * text = "New result date"
         * type = #date
@@ -486,6 +510,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BodyWeightTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg
+        * extension[targetConstraint].extension[key].valueId = "shc-que-weight-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new weight date must be accompanied by a new weight result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new weight result must also be entered."
         * linkId = "obs-weight-newresult"
         * text = "New result"
         * type = #decimal
@@ -499,6 +529,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-weight-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new weight result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new weight result is entered, a date must also be entered."
         * linkId = "obs-weight-newdate"
         * text = "New result date"
         * type = #date
@@ -587,6 +623,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeadCircumferenceTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#cm
+        * extension[targetConstraint].extension[key].valueId = "shc-que-headcircumference-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new head circumference date must be accompanied by a new head circumference result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new head circumference result must also be entered."
         * linkId = "obs-headcircumference-newresult"
         * text = "New result"
         * type = #decimal
@@ -600,6 +642,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-headcircumference-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new head circumference result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new head circumference result is entered, a date must also be entered."
         * linkId = "obs-headcircumference-newdate"
         * text = "New result date"
         * type = #date
@@ -643,6 +691,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * repeats = false
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#WaistCircumferenceTemplate"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-waistcircumference-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new waist circumference date must be accompanied by a new waist circumference result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new waist circumference result must also be entered."
         * linkId = "obs-waistcircumference-newresult"
         * text = "New result"
         * type = #decimal
@@ -656,6 +710,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-waistcircumference-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new waist circumference result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new waist circumference result is entered, a date must also be entered."
         * linkId = "obs-waistcircumference-newdate"
         * text = "New result date"
         * type = #date
@@ -697,6 +757,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRateTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#/min
+        * extension[targetConstraint].extension[key].valueId = "shc-que-heartrate-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new heart rate date must be accompanied by a new heart rate result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new heart rate result must also be entered."
         * linkId = "obs-heartrate-newresult"
         * text = "New result"
         * type = #integer
@@ -710,6 +776,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-heartrate-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new heart rate result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new heart rate result is entered, a date must also be entered."
         * linkId = "obs-heartrate-newdate"
         * text = "New result date"
         * type = #date
@@ -751,6 +823,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]       
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#HeartRhythmTemplate"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#radio-button
+        * extension[targetConstraint].extension[key].valueId = "shc-que-heartrhythm-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new heart rhythm date must be accompanied by a new heart rhythm result to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a date is entered, a new heart rhythm result must also be entered."
         * linkId = "obs-heartrhythm-newresult"
         * text = "New result"
         * type = #choice
@@ -760,6 +838,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(), today())"
+        * extension[targetConstraint].extension[key].valueId = "shc-que-heartrhythm-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "A new heart rhythm result must be accompanied by a date to ensure a valid observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a new heart rhythm result is entered, a date must also be entered."
         * linkId = "obs-heartrhythm-newdate"
         * text = "New result date"
         * type = #date
@@ -827,6 +911,12 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
       * item[+]
         * extension[sdc-questionnaire-templateExtract].extension[template].valueReference.reference = "#BloodPressureTemplate"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * extension[targetConstraint].extension[key].valueId = "shc-que-bp-1"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "If a diastolic value or date is present, a systolic value must also be present to ensure a valid blood pressure observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "(%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()) implies %resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a diastolic value or date is entered, a systolic value must also be entered."
         * linkId = "bp-newbp-systolic"
         * text = "Systolic"
         * type = #integer
@@ -836,8 +926,14 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
           * linkId = "bp-newbp-systolic-unit"
           * text = "mm Hg"
           * type = #display
-      * item[+]      
+      * item[+]
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#mm[Hg]
+        * extension[targetConstraint].extension[key].valueId = "shc-que-bp-2"
+        * extension[targetConstraint].extension[requirements].valueMarkdown = "If a systolic value or date is present, a diastolic value must also be present to ensure a valid blood pressure observation resource can be extracted."
+        * extension[targetConstraint].extension[severity].valueCode = #error
+        * extension[targetConstraint].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint].extension[expression].valueExpression.expression = "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()) implies %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()"
+        * extension[targetConstraint].extension[human].valueString = "If a systolic value or date is entered, a diastolic value must also be entered."
         * linkId = "bp-newbp-diastolic"
         * text = "Diastolic"
         * type = #integer
@@ -851,6 +947,18 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * language = #text/fhirpath
           * expression = "iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(), today())"
+        * extension[targetConstraint][+].extension[key].valueId = "shc-que-bp-3"
+        * extension[targetConstraint][=].extension[requirements].valueMarkdown = "If a date is present, both a systolic and diastolic value must also be present to ensure a valid blood pressure observation resource can be extracted."
+        * extension[targetConstraint][=].extension[severity].valueCode = #error
+        * extension[targetConstraint][=].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint][=].extension[expression].valueExpression.expression = "%resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists() implies (%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() and %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists())"
+        * extension[targetConstraint][=].extension[human].valueString = "If a date is entered, both a systolic and diastolic value must also be entered."
+        * extension[targetConstraint][+].extension[key].valueId = "shc-que-bp-4"
+        * extension[targetConstraint][=].extension[requirements].valueMarkdown = "If a systolic or diastolic value is present, a date must also be present to ensure a valid blood pressure observation resource can be extracted."
+        * extension[targetConstraint][=].extension[severity].valueCode = #error
+        * extension[targetConstraint][=].extension[expression].valueExpression.language = #text/fhirpath
+        * extension[targetConstraint][=].extension[expression].valueExpression.expression = "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()) implies %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()"
+        * extension[targetConstraint][=].extension[human].valueString = "If a systolic or diastolic value is entered, a date must also be entered."
         * linkId = "bp-newbp-date"
         * text = "Date performed"
         * type = #date

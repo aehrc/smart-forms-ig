@@ -1777,7 +1777,7 @@
                     "extension": [
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                            "valueString": "%resource.subject.reference"
+                            "valueString": "iif(item.where(linkId='allergynew-substance').answer.exists(), %resource.subject.reference, null)"
                         }
                     ]
                 }
@@ -1788,7 +1788,7 @@
                         "extension": [
                             {
                                 "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                "valueString": "item.where(linkId='allergynew-comment').answer.value"
+                                "valueString": "$this.where(item.where(linkId='allergynew-substance').answer.exists()).item.where(linkId='allergynew-comment').answer.value"
                             }
                         ]
                     }
@@ -1801,7 +1801,7 @@
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-                                    "valueString": "item.where(linkId='allergynew-manifestation').answer.value.ofType(Coding)"
+                                    "valueString": "$this.where(item.where(linkId='allergynew-substance').answer.exists()).item.where(linkId='allergynew-manifestation').answer.value.ofType(Coding)"
                                 }
                             ],
                             "coding": [
@@ -1819,7 +1819,7 @@
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-                                    "valueString": "item.where(linkId='allergynew-manifestation').answer.value.ofType(string)"
+                                    "valueString": "$this.where(item.where(linkId='allergynew-substance').answer.exists()).item.where(linkId='allergynew-manifestation').answer.value.ofType(string)"
                                 }
                             ],
                             "_text": {
@@ -6181,7 +6181,7 @@
                                                     "extension": [
                                                         {
                                                             "url": "key",
-                                                            "valueId": "constraint-regex-postcode"
+                                                            "valueId": "shc-que-postcode-1"
                                                         },
                                                         {
                                                             "url": "severity",
@@ -6191,7 +6191,7 @@
                                                             "url": "expression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "matches('^[0-9]{4}$')"
+                                                                "expression": "%resource.repeat(item).where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.all(value.matches('^[0-9]{4}$'))"
                                                             }
                                                         },
                                                         {
@@ -6329,7 +6329,7 @@
                                             "extension": [
                                                 {
                                                     "url": "key",
-                                                    "valueId": "constraint-regex-postcode"
+                                                    "valueId": "shc-que-postcode-2"
                                                 },
                                                 {
                                                     "url": "severity",
@@ -6339,7 +6339,7 @@
                                                     "url": "expression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "matches('^[0-9]{4}$')"
+                                                        "expression": "%resource.repeat(item).where(linkId='28b58e50-2a04-4192-9655-efc8d72f32fa').answer.all(value.matches('^[0-9]{4}$'))"
                                                     }
                                                 },
                                                 {
@@ -6503,7 +6503,7 @@
                                             "extension": [
                                                 {
                                                     "url": "key",
-                                                    "valueId": "constraint-regex-medicarecardnumber-1"
+                                                    "valueId": "shc-que-medicarecardnumber-1"
                                                 },
                                                 {
                                                     "url": "severity",
@@ -6513,7 +6513,7 @@
                                                     "url": "expression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "matches('^[0-9]{10}$')"
+                                                        "expression": "%resource.repeat(item).where(linkId='eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf').answer.all(value.matches('^[0-9]{10}$'))"
                                                     }
                                                 },
                                                 {
@@ -6542,7 +6542,7 @@
                                             "extension": [
                                                 {
                                                     "url": "key",
-                                                    "valueId": "constraint-regex-medicarecardnumber-2"
+                                                    "valueId": "shc-que-medicarecardnumber-2"
                                                 },
                                                 {
                                                     "url": "severity",
@@ -6552,7 +6552,7 @@
                                                     "url": "expression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
-                                                        "expression": "matches('^[0-9]{1}$')"
+                                                        "expression": "%resource.repeat(item).where(linkId='d6253253-a124-494e-a1d8-7ce02c69ec11').answer.all(value.matches('^[0-9]{1}$'))"
                                                     }
                                                 },
                                                 {
@@ -7951,6 +7951,7 @@
                                             "linkId": "2da85994-2d5e-42f1-8a81-abf44f397468",
                                             "text": "Condition",
                                             "type": "open-choice",
+                                            "required": true,
                                             "answerValueSet": "#clinical-condition-1"
                                         },
                                         {
@@ -8285,6 +8286,7 @@
                                             "linkId": "regularmedications-summary-current-status",
                                             "text": "Status",
                                             "type": "choice",
+                                            "required": true,
                                             "repeats": false,
                                             "answerValueSet": "#MedicationStatementStatusLimited"
                                         },
@@ -8439,6 +8441,7 @@
                                             "linkId": "regularmedications-summary-new-medication",
                                             "text": "Medication",
                                             "type": "open-choice",
+                                            "required": true,
                                             "repeats": false,
                                             "answerValueSet": "#smart-health-checks-medicine-products"
                                         },
@@ -9011,6 +9014,7 @@
                                             "linkId": "allergynew-substance",
                                             "text": "Substance",
                                             "type": "open-choice",
+                                            "required": true,
                                             "repeats": false,
                                             "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
                                         },
@@ -14988,6 +14992,34 @@
                                                                     }
                                                                 ]
                                                             }
+                                                        },
+                                                        {
+                                                            "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                            "extension": [
+                                                                {
+                                                                    "url": "key",
+                                                                    "valueId": "shc-que-smokingstatus-1"
+                                                                },
+                                                                {
+                                                                    "url": "severity",
+                                                                    "valueCode": "error"
+                                                                },
+                                                                {
+                                                                    "url": "expression",
+                                                                    "valueExpression": {
+                                                                        "language": "text/fhirpath",
+                                                                        "expression": "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists()"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "url": "human",
+                                                                    "valueString": "If a date is entered, a smoking status must also be entered."
+                                                                },
+                                                                {
+                                                                    "url": "requirements",
+                                                                    "valueMarkdown": "A new smoking status date must be accompanied by a smoking status value to ensure a valid smoking status observation resource can be extracted."
+                                                                }
+                                                            ]
                                                         }
                                                     ],
                                                     "linkId": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
@@ -15004,6 +15036,34 @@
                                                                 "language": "text/fhirpath",
                                                                 "expression": "iif(%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(), today())"
                                                             }
+                                                        },
+                                                        {
+                                                            "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                            "extension": [
+                                                                {
+                                                                    "url": "key",
+                                                                    "valueId": "shc-que-smokingstatus-2"
+                                                                },
+                                                                {
+                                                                    "url": "severity",
+                                                                    "valueCode": "error"
+                                                                },
+                                                                {
+                                                                    "url": "expression",
+                                                                    "valueExpression": {
+                                                                        "language": "text/fhirpath",
+                                                                        "expression": "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists() implies %resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists()"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "url": "human",
+                                                                    "valueString": "If a smoking status is entered, a date must also be entered."
+                                                                },
+                                                                {
+                                                                    "url": "requirements",
+                                                                    "valueMarkdown": "A new smoking status value must be accompanied by a date to ensure a valid smoking status observation resource can be extracted."
+                                                                }
+                                                            ]
                                                         }
                                                     ],
                                                     "linkId": "substanceuse-smoking-smokingstatus-group-newdate",
@@ -15027,88 +15087,49 @@
                                                     }
                                                 ]
                                             }
+                                        },
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%ObsTobaccoSmokingStatusValue.exists(code = '8517006') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code = '8517006')"
+                                            }
                                         }
                                     ],
                                     "linkId": "96dc7c22-d003-459c-8a56-f6cd182fc077",
                                     "text": "Quit status",
                                     "type": "choice",
-                                    "enableWhen": [
-                                        {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "8517006"
-                                            }
-                                        }
-                                    ],
                                     "repeats": false,
                                     "answerValueSet": "#SmokingQuitStatus-1"
                                 },
                                 {
+                                    "extension": [
+                                        {
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%ObsTobaccoSmokingStatusValue.exists(code = '8517006' or code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code = '8517006' or code = '77176002' or code = '394872000')"
+                                            }
+                                        }
+                                    ],
                                     "linkId": "9e86387d-1be4-4c26-9047-9dd6b03e1ee0",
                                     "text": "How many?",
                                     "type": "string",
-                                    "enableWhen": [
-                                        {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "77176002"
-                                            }
-                                        },
-                                        {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "8517006"
-                                            }
-                                        },
-                                        {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "394872000"
-                                            }
-                                        }
-                                    ],
-                                    "enableBehavior": "any",
                                     "repeats": false
                                 },
                                 {
-                                    "linkId": "32e71641-f660-4ca2-af99-dff8917f07be",
-                                    "text": "How long as a smoker?",
-                                    "type": "string",
-                                    "enableWhen": [
+                                    "extension": [
                                         {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "77176002"
-                                            }
-                                        },
-                                        {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "8517006"
-                                            }
-                                        },
-                                        {
-                                            "question": "b639a3a8-f476-4cc8-b5c7-f5d2abb23511",
-                                            "operator": "=",
-                                            "answerCoding": {
-                                                "system": "http://snomed.info/sct",
-                                                "code": "394872000"
+                                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression",
+                                            "valueExpression": {
+                                                "language": "text/fhirpath",
+                                                "expression": "%ObsTobaccoSmokingStatusValue.exists(code = '8517006' or code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.where(code = '8517006' or code = '77176002' or code = '394872000').exists()"
                                             }
                                         }
                                     ],
-                                    "enableBehavior": "any"
+                                    "linkId": "32e71641-f660-4ca2-af99-dff8917f07be",
+                                    "text": "How long as a smoker?",
+                                    "type": "string"
                                 }
                             ]
                         },
@@ -18583,6 +18604,7 @@
                                     "linkId": "vaccinestoday-vaccine",
                                     "text": "Vaccine",
                                     "type": "open-choice",
+                                    "required": true,
                                     "answerValueSet": "#amt-vaccine-1"
                                 },
                                 {
@@ -18593,7 +18615,8 @@
                                 {
                                     "linkId": "vaccinestoday-date",
                                     "text": "Administration date",
-                                    "type": "date"
+                                    "type": "date",
+                                    "required": true
                                 },
                                 {
                                     "linkId": "vaccinestoday-comment",
@@ -18954,6 +18977,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "cm"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-lengthheight-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new length/height result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new length/height date must be accompanied by a new length/height result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-lengthheight-newresult",
@@ -18989,6 +19040,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-lengthheight-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new length/height result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new length/height result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-lengthheight-newdate",
@@ -19097,6 +19176,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "cm"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-height-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new height result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new height date must be accompanied by a new height result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-height-newresult",
@@ -19132,6 +19239,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-height-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new height result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new height result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-height-newdate",
@@ -19231,6 +19366,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "kg"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-weight-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new weight result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new weight date must be accompanied by a new weight result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-weight-newresult",
@@ -19266,6 +19429,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-weight-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new weight result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new weight result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-weight-newdate",
@@ -19481,6 +19672,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "cm"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-headcircumference-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new head circumference result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new head circumference date must be accompanied by a new head circumference result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-headcircumference-newresult",
@@ -19516,6 +19735,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-headcircumference-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new head circumference result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new head circumference result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-headcircumference-newdate",
@@ -19617,6 +19864,34 @@
                                                             }
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-waistcircumference-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new waist circumference result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new waist circumference date must be accompanied by a new waist circumference result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-waistcircumference-newresult",
@@ -19652,6 +19927,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-waistcircumference-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new waist circumference result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new waist circumference result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-waistcircumference-newdate",
@@ -19751,6 +20054,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "/min"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-heartrate-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new heart rate result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new heart rate date must be accompanied by a new heart rate result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-heartrate-newresult",
@@ -19786,6 +20117,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-heartrate-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new heart rate result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new heart rate result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-heartrate-newdate",
@@ -19883,6 +20242,34 @@
                                                             }
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-heartrhythm-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, a new heart rhythm result must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new heart rhythm date must be accompanied by a new heart rhythm result to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-heartrhythm-newresult",
@@ -19899,6 +20286,34 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-heartrhythm-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists() implies %resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a new heart rhythm result is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "A new heart rhythm result must be accompanied by a date to ensure a valid observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "obs-heartrhythm-newdate",
@@ -20060,6 +20475,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "mm[Hg]"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-bp-1"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "(%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()) implies %resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a diastolic value or date is entered, a systolic value must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "If a diastolic value or date is present, a systolic value must also be present to ensure a valid blood pressure observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "bp-newbp-systolic",
@@ -20095,6 +20538,34 @@
                                                         "system": "http://unitsofmeasure.org",
                                                         "code": "mm[Hg]"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-bp-2"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()) implies %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a systolic value or date is entered, a diastolic value must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "If a systolic value or date is present, a diastolic value must also be present to ensure a valid blood pressure observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "bp-newbp-diastolic",
@@ -20130,6 +20601,62 @@
                                                         "language": "text/fhirpath",
                                                         "expression": "iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(), today())"
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-bp-3"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "%resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists() implies (%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() and %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists())"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a date is entered, both a systolic and diastolic value must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "If a date is present, both a systolic and diastolic value must also be present to ensure a valid blood pressure observation resource can be extracted."
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/StructureDefinition/targetConstraint",
+                                                    "extension": [
+                                                        {
+                                                            "url": "key",
+                                                            "valueId": "shc-que-bp-4"
+                                                        },
+                                                        {
+                                                            "url": "severity",
+                                                            "valueCode": "error"
+                                                        },
+                                                        {
+                                                            "url": "expression",
+                                                            "valueExpression": {
+                                                                "language": "text/fhirpath",
+                                                                "expression": "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists() or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()) implies %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()"
+                                                            }
+                                                        },
+                                                        {
+                                                            "url": "human",
+                                                            "valueString": "If a systolic or diastolic value is entered, a date must also be entered."
+                                                        },
+                                                        {
+                                                            "url": "requirements",
+                                                            "valueMarkdown": "If a systolic or diastolic value is present, a date must also be present to ensure a valid blood pressure observation resource can be extracted."
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             "linkId": "bp-newbp-date",
