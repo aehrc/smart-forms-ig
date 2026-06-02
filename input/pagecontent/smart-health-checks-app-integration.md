@@ -237,6 +237,8 @@ Extra context parameters are returned as additional properties in the token resp
 |-----------|------|-------------|
 | `https://smartforms.csiro.au/smart-app-launch/extra-context/disable-writeback-selection` | boolean | When `true`, skips the item selection step in the Save Final & Write Back dialog and writes back all items to the patient record. Also accepts the string value `"true"` for launchers that serialise all values as strings. |
 
+If the SHC Host chooses to disable the writeback selection dialog, it **SHOULD** implement its own mechanism to manage user guided writeback selection. 
+
 #### Access Token
 The access token is opaque to the client and its representation **SHOULD** only be known by the SHC FHIR Authorization Server and SHC Host FHIR Server.
 
