@@ -210,14 +210,14 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:f8e7efc2-94d6-403e-9e40-3a3a4e9fffb4",
-                "timestamp": "2025-05-01T10:00:56+10:00",
+                "identifier": "urn:uuid:7487141b-378a-42a9-bc33-e8233d1dc442",
+                "timestamp": "2026-06-03T11:12:00+10:00",
                 "total": 4,
                 "offset": 0,
                 "parameter": [
                     {
                         "name": "displayLanguage",
-                        "valueCode": "en-US"
+                        "valueCode": "en"
                     },
                     {
                         "name": "count",
@@ -233,11 +233,11 @@
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://terminology.hl7.org/CodeSystem/v3-RoleCode|3.0.0"
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0"
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0"
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0"
                     }
                 ],
                 "contains": [
@@ -582,8 +582,9 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:5cd85856-1ce5-43f2-afff-063f748c2c7d",
-                "timestamp": "2025-10-28T16:39:25+10:00",
+                "identifier": "urn:uuid:607da01f-2fd0-4fee-966e-ea9db4aa5d3b",
+                "timestamp": "2026-06-03T12:53:55+10:00",
+                "total": 6,
                 "offset": 0,
                 "parameter": [
                     {
@@ -608,11 +609,11 @@
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "used-codesystem",
@@ -720,8 +721,9 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:3491de0c-49f2-4913-8909-a63c92d14c9d",
-                "timestamp": "2025-10-28T16:39:14+10:00",
+                "identifier": "urn:uuid:3d7b06c9-0430-4ea2-87a3-b681751809fa",
+                "timestamp": "2026-06-03T12:53:56+10:00",
+                "total": 8,
                 "offset": 0,
                 "parameter": [
                     {
@@ -746,11 +748,11 @@
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "used-codesystem",
@@ -1041,8 +1043,8 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:79c6437f-1765-498a-979f-533bbeb06e33",
-                "timestamp": "2025-12-03T12:09:39+10:00",
+                "identifier": "urn:uuid:2ff73b06-cd8c-46f9-86ec-e60746783d71",
+                "timestamp": "2026-06-03T12:54:03+10:00",
                 "total": 2,
                 "offset": 0,
                 "parameter": [
@@ -1777,7 +1779,7 @@
                     "extension": [
                         {
                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                            "valueString": "iif(item.where(linkId='allergynew-substance').answer.exists(), %resource.subject.reference, null)"
+                            "valueString": "%resource.subject.reference"
                         }
                     ]
                 }
@@ -1788,7 +1790,7 @@
                         "extension": [
                             {
                                 "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-                                "valueString": "$this.where(item.where(linkId='allergynew-substance').answer.exists()).item.where(linkId='allergynew-comment').answer.value"
+                                "valueString": "item.where(linkId='allergynew-comment').answer.value"
                             }
                         ]
                     }
@@ -1801,7 +1803,7 @@
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-                                    "valueString": "$this.where(item.where(linkId='allergynew-substance').answer.exists()).item.where(linkId='allergynew-manifestation').answer.value.ofType(Coding)"
+                                    "valueString": "item.where(linkId='allergynew-manifestation').answer.value.ofType(Coding)"
                                 }
                             ],
                             "coding": [
@@ -1819,7 +1821,7 @@
                             "extension": [
                                 {
                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext",
-                                    "valueString": "$this.where(item.where(linkId='allergynew-substance').answer.exists()).item.where(linkId='allergynew-manifestation').answer.value.ofType(string)"
+                                    "valueString": "item.where(linkId='allergynew-manifestation').answer.value.ofType(string)"
                                 }
                             ],
                             "_text": {
@@ -1975,11 +1977,15 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:40f0c59e-9fa5-4322-bc1d-5fde644a076c",
-                "timestamp": "2025-08-25T15:52:50+10:00",
+                "identifier": "urn:uuid:7e283615-1d6f-4e79-8380-609c0e3ba098",
+                "timestamp": "2026-06-03T14:38:25+10:00",
                 "total": 2,
                 "offset": 0,
                 "parameter": [
+                    {
+                        "name": "displayLanguage",
+                        "valueCode": "en"
+                    },
                     {
                         "name": "count",
                         "valueInteger": 1000
@@ -1994,7 +2000,7 @@
                     },
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.0"
+                        "valueUri": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1"
                     }
                 ],
                 "contains": [
@@ -2088,7 +2094,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "concept": [
                             {
                                 "code": "48031000119106",
@@ -2103,16 +2109,16 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:ee67ad1e-7faa-4fe8-ab3e-1995de4fcd26",
-                "timestamp": "2025-10-29T09:44:35+10:00",
+                "identifier": "urn:uuid:a91c3f75-0918-4e52-aae4-ac15ef176a54",
+                "timestamp": "2026-06-04T09:47:48+10:00",
                 "parameter": [
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "used-supplement",
@@ -2121,22 +2127,18 @@
                     {
                         "name": "warning-draft",
                         "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
-                    },
-                    {
-                        "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "48031000119106",
                         "display": "Quit >12 months"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "735128000",
                         "display": "Quit <12 months"
                     }
@@ -2162,7 +2164,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "concept": [
                             {
                                 "code": "266919005",
@@ -2193,16 +2195,16 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:a7d04dc0-077c-4744-8e21-da8ce4cba135",
-                "timestamp": "2025-10-29T09:46:14+10:00",
+                "identifier": "urn:uuid:83a52367-2530-4e2e-ae46-3a7dca08c7e8",
+                "timestamp": "2026-06-04T09:49:22+10:00",
                 "parameter": [
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "used-supplement",
@@ -2211,46 +2213,42 @@
                     {
                         "name": "warning-draft",
                         "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
-                    },
-                    {
-                        "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "266919005",
                         "display": "Never smoked"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "77176002",
                         "display": "Current smoker"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "8517006",
                         "display": "Ex-smoker"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "16090371000119103",
                         "display": "Exposure to second hand tobacco smoke"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "394872000",
                         "display": "Wants to quit"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "713914004",
                         "display": "Other tobacco use"
                     }
@@ -2304,8 +2302,8 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339",
-                "timestamp": "2026-03-02T12:08:23+10:00",
+                "identifier": "urn:uuid:4f3ac05a-a930-477b-8a49-03a09e1df2e1",
+                "timestamp": "2026-06-03T12:53:53+10:00",
                 "total": 4,
                 "offset": 0,
                 "parameter": [
@@ -2381,7 +2379,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "concept": [
                             {
                                 "code": "736595007",
@@ -2404,16 +2402,16 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:66e5ae5e-d111-45a0-b6b1-e433ec6edbe7",
-                "timestamp": "2025-10-29T09:42:14+10:00",
+                "identifier": "urn:uuid:ccc014c8-24ae-4011-a329-5549be8f853e",
+                "timestamp": "2026-06-04T09:44:16+10:00",
                 "parameter": [
                     {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "used-supplement",
@@ -2422,34 +2420,30 @@
                     {
                         "name": "warning-draft",
                         "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0"
-                    },
-                    {
-                        "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "736595007",
                         "display": "Declined"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "410527000",
                         "display": "Offered"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "171154002",
                         "display": "Not required"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20251031",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "171155001",
                         "display": "Up to date"
                     }
@@ -2602,37 +2596,17 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:7743ad1f-02f2-4977-b7a4-ea993b57023b",
-                "timestamp": "2025-10-28T16:39:30+10:00",
-                "offset": 0,
+                "identifier": "urn:uuid:ec8b048c-2670-47e4-8873-24bcb99734e5",
+                "timestamp": "2026-06-04T09:50:55+10:00",
+                "total": 2,
                 "parameter": [
                     {
-                        "name": "displayLanguage",
-                        "valueCode": "en"
-                    },
-                    {
-                        "name": "count",
-                        "valueInteger": 1000
-                    },
-                    {
-                        "name": "offset",
-                        "valueInteger": 0
-                    },
-                    {
-                        "name": "excludeNested",
-                        "valueBoolean": false
-                    },
-                    {
-                        "name": "system-version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107"
-                    },
-                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     }
                 ],
                 "contains": [
@@ -3184,7 +3158,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "concept": [
                             {
                                 "code": "266919005",
@@ -3203,24 +3177,20 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:b2e820da-5d0d-40d8-ab32-5ab7ab84626b",
-                "timestamp": "2025-10-08T10:11:49+10:00",
+                "identifier": "urn:uuid:8ba71b4e-19ac-4b06-8fa3-4d1a12fb704c",
+                "timestamp": "2026-06-04T09:57:01+10:00",
                 "parameter": [
                     {
-                        "name": "used-supplement",
-                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
-                    },
-                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
-                        "name": "warning-draft",
-                        "valueUri": "https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1|0.4.0"
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
                     },
                     {
                         "name": "warning-draft",
@@ -3230,19 +3200,19 @@
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "266919005",
                         "display": "Never smoked"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "8517006",
                         "display": "Previously smoked"
                     },
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250430",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "77176002",
                         "display": "Currently smokes"
                     }
@@ -3268,7 +3238,7 @@
                 "include": [
                     {
                         "system": "http://snomed.info/sct",
-                        "version": "http://snomed.info/sct/32506021000036107/version/20250131",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "concept": [
                             {
                                 "code": "75976002",
@@ -3287,44 +3257,42 @@
                 ]
             },
             "expansion": {
-                "identifier": "urn:uuid:542be920-0ac6-401d-a924-0cbd705c7e99",
-                "timestamp": "2025-10-10T13:08:07+10:00",
-                "offset": 0,
+                "identifier": "urn:uuid:d45a6f7f-04a8-4b09-ac3b-14b8a4db72f6",
+                "timestamp": "2026-06-04T09:58:38+10:00",
                 "parameter": [
                     {
-                        "name": "count",
-                        "valueInteger": 1000
-                    },
-                    {
-                        "name": "offset",
-                        "valueInteger": 0
-                    },
-                    {
-                        "name": "excludeNested",
-                        "valueBoolean": false
-                    },
-                    {
                         "name": "used-codesystem",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
                     },
                     {
                         "name": "version",
-                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131"
+                        "valueUri": "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531"
+                    },
+                    {
+                        "name": "used-supplement",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
+                    },
+                    {
+                        "name": "warning-draft",
+                        "valueUri": "https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0"
                     }
                 ],
                 "contains": [
                     {
                         "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "75976002",
                         "display": "Low Risk"
                     },
                     {
                         "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "25594002",
                         "display": "Intermediate Risk"
                     },
                     {
                         "system": "http://snomed.info/sct",
+                        "version": "http://snomed.info/sct/32506021000036107/version/20260531",
                         "code": "15508007",
                         "display": "High Risk"
                     }
@@ -3810,7 +3778,7 @@
             ]
         }
     ],
-    "copyright": "Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.\nThis content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\nSee https://creativecommons.org/licenses/by-sa/4.0/.\n",
+    "copyright": "Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.\nThis content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\nSee https://creativecommons.org/licenses/by-sa/4.0/.\n",
     "item": [
         {
             "extension": [
