@@ -288,7 +288,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * expression = "%HomeAddressRepeat.extension('http://hl7.org.au/fhir/StructureDefinition/no-fixed-address').value"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#check-box
       * linkId = "311d83bb-f22e-4f60-9b50-b6e38dd2059b"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.extension:noFixedAddress"
       * text = "No fixed address"
       * type = #boolean
       * repeats = false
@@ -308,7 +307,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
           * language = #text/fhirpath
           * expression = "%HomeAddressRepeat.select(line.join(', '))"
         * linkId = "2fee2d51-7828-4178-b8c1-35edd32ba338"
-        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
         * text = "Street address"
         * type = #string
         * repeats = false
@@ -317,7 +315,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
           * language = #text/fhirpath
           * expression = "%HomeAddressRepeat.city"
         * linkId = "ddb65ed1-f4b2-4730-af2a-2f98bc73c76f"
-        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city"
         * text = "City"
         * type = #string
         * repeats = false
@@ -327,7 +324,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
           * expression = "%HomeAddressRepeat.state"
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
         * linkId = "d9a1236c-8d6e-4f20-a12a-9d5de5a1d0f6"
-        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state"
         * text = "State"
         * type = #choice
         * answerValueSet = "#australian-states-territories-2"
@@ -343,7 +339,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * extension[targetConstraint].extension[human].valueString = "Postcode must be 4 digits"
         * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "####"
         * linkId = "3f61a1ea-1c74-4f52-8519-432ce861a74f"
-        * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode"
         * text = "Postcode"
         * type = #string
         * repeats = false
@@ -365,7 +360,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * language = #text/fhirpath
         * expression = "%PostalAddressRepeat.use"
       * linkId = "622970f1-3cf1-4f0a-bf05-b00a08046eba"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.use"
       * text = "Purpose of use"
       * type = #string
       * repeats = false
@@ -374,7 +368,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * language = #text/fhirpath
         * expression = "%PostalAddressRepeat.select(line.join(', '))"
       * linkId = "2e8437cd-5ea0-4d44-8ab2-d2aa9ef18ba7"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line"
       * text = "Street address"
       * type = #string
       * repeats = false
@@ -383,7 +376,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * language = #text/fhirpath
         * expression = "%PostalAddressRepeat.city"
       * linkId = "2bde25e5-2c4c-4c0c-b6f3-c6859535a764"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city"
       * text = "City"
       * type = #string
       * repeats = false
@@ -393,7 +385,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
         * expression = "%PostalAddressRepeat.state"
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#drop-down
       * linkId = "b41a8b11-8dbf-4999-9d0a-71d39240fed1"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state"
       * text = "State"
       * type = #choice
       * answerValueSet = "#australian-states-territories-2"
@@ -409,7 +400,6 @@ Description: "Patient Details sub-questionnaire for Aboriginal and Torres Strait
       * extension[targetConstraint].extension[human].valueString = "Postcode must be 4 digits"
       * extension[http://hl7.org/fhir/StructureDefinition/entryFormat].valueString = "####"
       * linkId = "28b58e50-2a04-4192-9655-efc8d72f32fa"
-      * definition = "http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode"
       * text = "Postcode"
       * type = #string
       * repeats = false    
