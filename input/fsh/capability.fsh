@@ -1,8 +1,8 @@
 Instance: SHCHostFHIRServerCapabilityStatement
 InstanceOf: CapabilityStatement
 Usage: #definition
-* name = "SHCHostFHIRServer"
-* title = "SHC Host FHIR Server"
+* name = "SHCHostFHIRServerCapabilityStatement"
+* title = "SHC Host FHIR Server Capability Statement"
 * description = "This CapabilityStatement describes the expected capabilities for systems to launch and exchange data with the [SHC App](CapabilityStatement-SHCAppCapabilityStatement.html) to support the [Aboriginal and Torres Strait Islander Health Check](Questionnaire-AboriginalTorresStraitIslanderHealthCheck.html). It lists the server's conformance expectations for the resource types required as a launch context, resource types required to support prepopulation of the form, resource types required to support writing back to the patient record, and QuestionnaireResponse requirements for managing form responses. These expectations include supported FHIR profiles, RESTful operations, and search parameters."
 * status = #draft
 * experimental = false
@@ -530,8 +530,8 @@ Usage: #definition
 Instance: SHCAppCapabilityStatement
 InstanceOf: CapabilityStatement
 Usage: #definition
-* name = "SHCApp"
-* title = "SHC App"
+* name = "SHCAppCapabilityStatement"
+* title = "SHC App Capability Statement"
 * description = "This CapabilityStatement describes the capabilities of the SHC App. These capabilities include supported FHIR profiles, RESTful operations, and search parameters. It covers supported tasks such as SMART App launch context, prepopulation, write-back of extracted resources and completion of forms."
 * status = #draft
 * experimental = false
