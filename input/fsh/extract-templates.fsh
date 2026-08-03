@@ -25,7 +25,8 @@ Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation
 
 Instance:   SmokingStatusTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCSmokingStatus)
 * status = #final
 * category[+] = $observation-category#social-history
 * code.coding[+] = $SCT#1747861000168109
@@ -40,7 +41,8 @@ Usage:  #inline
 
 Instance:   BodyHeightLengthTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCBodyHeight)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#8302-2
@@ -58,7 +60,8 @@ Usage:  #inline
 
 Instance:   BodyHeightTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCBodyHeight)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#8302-2
@@ -77,7 +80,8 @@ Usage:  #inline
 
 Instance:   BodyWeightTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCBodyWeight)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#29463-7
@@ -95,7 +99,8 @@ Usage:  #inline
 
 Instance:   HeadCircumferenceTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCHeadCircumference)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#9843-4
@@ -113,7 +118,8 @@ Usage:  #inline
 
 Instance:   WaistCircumferenceTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCWaistCircumference)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#8280-0
@@ -131,7 +137,8 @@ Usage:  #inline
 
 Instance:   HeartRateTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCHeartRate)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#8867-4
@@ -149,7 +156,8 @@ Usage:  #inline
 
 Instance:   HeartRhythmTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCHeartRhythm)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#8884-9
@@ -164,7 +172,8 @@ Usage:  #inline
 
 Instance:   BloodPressureTemplate
 InstanceOf: Observation
-Usage:  #inline  
+Usage:  #inline
+* meta.profile = Canonical(SHCBloodPressure)
 * status = #final
 * category[+] = $observation-category#vital-signs
 * code.coding[+] = $LNC#85354-9
@@ -238,6 +247,7 @@ Usage:  #inline
 Instance:   AllergyIntoleranceTemplate
 InstanceOf: AllergyIntolerance
 Usage:  #inline
+* meta.profile = Canonical(SHCAllergyIntolerance)
 * clinicalStatus.coding = $allergyintolerance-clinical#active
 * code.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
 * code.extension[=].valueString = "item.where(linkId='allergynew-substance').answer.value"
@@ -261,6 +271,7 @@ Usage:  #inline
 Instance: AllergyIntolerancePatchTemplate
 InstanceOf: Parameters
 Usage: #inline
+* meta.profile = Canonical(SHCPatchAllergyIntolerance)
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
@@ -298,6 +309,7 @@ Usage: #inline
 Instance:   ImmunizationTemplate
 InstanceOf: Immunization
 Usage:  #inline
+* meta.profile = Canonical(SHCImmunization)
 * status = #completed
 * vaccineCode.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
 * vaccineCode.extension[=].valueString = "item.where(linkId='vaccinestoday-vaccine').answer.value"
@@ -317,6 +329,7 @@ Usage:  #inline
 Instance:   ConditionTemplate
 InstanceOf: Condition
 Usage:  #inline
+* meta.profile = Canonical(SHCCondition)
 * clinicalStatus.coding = $condition-clinical#active
 * category.coding = $condition-category#problem-list-item
 * code.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
@@ -336,6 +349,7 @@ Usage:  #inline
 Instance: ConditionPatchTemplate
 InstanceOf: Parameters
 Usage: #inline
+* meta.profile = Canonical(SHCPatchCondition)
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
@@ -366,6 +380,7 @@ Usage: #inline
 Instance:   MedicationStatementTemplate
 InstanceOf: MedicationStatement
 Usage:  #inline
+* meta.profile = Canonical(SHCMedicationStatement)
 * status = #active
 * medicationCodeableConcept.extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractContext"
 * medicationCodeableConcept.extension[=].valueString = "item.where(linkId='regularmedications-summary-new-medication').answer.value"
@@ -395,6 +410,7 @@ Usage:  #inline
 Instance: MedicationStatementPatchTemplate
 InstanceOf: Parameters
 Usage: #inline
+* meta.profile = Canonical(SHCPatchMedicationStatement)
 * parameter[+].name = "operation"
 * parameter[=].part[+].name = "type"
 * parameter[=].part[=].valueCode = #add
