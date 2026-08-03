@@ -1136,6 +1136,11 @@
         {
             "resourceType": "Condition",
             "id": "ConditionTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+                ]
+            },
             "clinicalStatus": {
                 "coding": [
                     {
@@ -1214,6 +1219,11 @@
         {
             "resourceType": "Parameters",
             "id": "ConditionPatchTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition"
+                ]
+            },
             "parameter": [
                 {
                     "name": "operation",
@@ -1363,6 +1373,11 @@
         {
             "resourceType": "MedicationStatement",
             "id": "MedicationStatementTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+                ]
+            },
             "status": "active",
             "medicationCodeableConcept": {
                 "extension": [
@@ -1478,6 +1493,11 @@
         {
             "resourceType": "Parameters",
             "id": "MedicationStatementPatchTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement"
+                ]
+            },
             "parameter": [
                 {
                     "name": "operation",
@@ -1740,6 +1760,11 @@
         {
             "resourceType": "AllergyIntolerance",
             "id": "AllergyIntoleranceTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+                ]
+            },
             "clinicalStatus": {
                 "coding": [
                     {
@@ -1840,6 +1865,11 @@
         {
             "resourceType": "Parameters",
             "id": "AllergyIntolerancePatchTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance"
+                ]
+            },
             "parameter": [
                 {
                     "name": "operation",
@@ -2020,6 +2050,11 @@
         {
             "resourceType": "Observation",
             "id": "SmokingStatusTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2503,6 +2538,11 @@
         {
             "resourceType": "Immunization",
             "id": "ImmunizationTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+                ]
+            },
             "status": "completed",
             "vaccineCode": {
                 "extension": [
@@ -2626,6 +2666,11 @@
         {
             "resourceType": "Observation",
             "id": "BodyHeightTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2685,6 +2730,11 @@
         {
             "resourceType": "Observation",
             "id": "BodyHeightLengthTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2744,6 +2794,11 @@
         {
             "resourceType": "Observation",
             "id": "BodyWeightTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2803,6 +2858,11 @@
         {
             "resourceType": "Observation",
             "id": "WaistCircumferenceTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2862,6 +2922,11 @@
         {
             "resourceType": "Observation",
             "id": "HeadCircumferenceTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2921,6 +2986,11 @@
         {
             "resourceType": "Observation",
             "id": "HeartRateTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -2980,6 +3050,11 @@
         {
             "resourceType": "Observation",
             "id": "HeartRhythmTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
+                ]
+            },
             "status": "final",
             "category": [
                 {
@@ -3038,6 +3113,11 @@
         {
             "resourceType": "Observation",
             "id": "BloodPressureTemplate",
+            "meta": {
+                "profile": [
+                    "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+                ]
+            },
             "status": "final",
             "category": [
                 {
