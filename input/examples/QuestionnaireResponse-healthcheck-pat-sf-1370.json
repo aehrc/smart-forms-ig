@@ -964,6 +964,74 @@
                       ]
                     }
                   ]
+                },{
+                  "linkId": "regularmedications-summary-current",
+                  "text": "Recorded medications",
+                  "item": [
+                    {
+                      "linkId": "medicationStatementId",
+                      "answer": [
+                        {
+                          "valueString": "mims-test"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "regularmedications-summary-current-medication",
+                      "text": "Medication",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://www.mims.com.au/codes",
+                            "code": "48520000100001",
+                            "display": "Paracetamol"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "regularmedications-summary-current-status",
+                      "text": "Status",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                            "code": "active",
+                            "display": "Active"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "regularmedications-summary-current-status-hidden",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+                            "code": "active",
+                            "display": "Active"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "regularmedications-summary-current-dosage",
+                      "text": "Dosage",
+                      "answer": [
+                        {
+                          "valueString": "Two tablets as needed."
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "regularmedications-summary-current-dosage-hidden",
+                      "answer": [
+                        {
+                          "valueString": "Two tablets as needed."
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -1054,6 +1122,70 @@
                       "answer": [
                         {
                           "valueString": "The criticality is high due to a documented episode of hives following penicillin administration."
+                        }
+                      ]
+                    }
+                  ]
+                },{
+                  "linkId": "allergysummary",
+                  "text": "Recorded adverse reaction risks",
+                  "item": [
+                    {
+                      "linkId": "allergyIntoleranceId",
+                      "answer": [
+                        {
+                          "valueString": "answerConstraint-test"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "allergysummary-substance",
+                      "text": "Substance",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://example.com",
+                            "code": "1234",
+                            "display": "Test Substance"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "allergysummary-status",
+                      "text": "Status",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active",
+                            "display": "Active"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "allergysummary-status-hidden",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active",
+                            "display": "Active"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "allergysummary-manifestation",
+                      "text": "Manifestation",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "247472004",
+                            "display": "Hives"
+                          }
                         }
                       ]
                     }
