@@ -140,6 +140,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].linkId = "medicationStatementId"
 * item.item[=].item[=].item[=].type = #string
 * item.item[=].item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].extension[ExtensionQuestionnaire_Item_AnswerConstraint].valueCode = #optionsOrType
 * item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
 /*
   This expression selects the SNOMED coding from MedicationStatements.
@@ -225,6 +226,7 @@ Description: "Regular Medications sub-questionnaire for Aboriginal and Torres St
 * item.item[=].item[=].item[=].repeats = false
 
 * item.item[=].item[=].item[+].extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item.item[=].item[=].item[=].extension[ExtensionQuestionnaire_Item_AnswerConstraint].valueCode = #optionsOrType
 * item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
 * item.item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%MedicationStatementRepeat.reasonCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
 * item.item[=].item[=].item[=].linkId = "regularmedications-summary-current-reasoncode"

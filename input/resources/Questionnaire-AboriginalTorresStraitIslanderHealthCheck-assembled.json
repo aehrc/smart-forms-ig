@@ -7829,6 +7829,10 @@
                                                     }
                                                 },
                                                 {
+                                                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint",
+                                                    "valueCode": "optionsOrType"
+                                                },
+                                                {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
@@ -8297,6 +8301,10 @@
                                                     }
                                                 },
                                                 {
+                                                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint",
+                                                    "valueCode": "optionsOrType"
+                                                },
+                                                {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                                                     "valueExpression": {
                                                         "language": "text/fhirpath",
@@ -8392,6 +8400,10 @@
                                                             }
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint",
+                                                    "valueCode": "optionsOrType"
                                                 },
                                                 {
                                                     "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -8898,6 +8910,10 @@
                                                             }
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint",
+                                                    "valueCode": "optionsOrType"
                                                 }
                                             ],
                                             "linkId": "allergysummary-substance",
@@ -8972,6 +8988,10 @@
                                                             }
                                                         ]
                                                     }
+                                                },
+                                                {
+                                                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint",
+                                                    "valueCode": "optionsOrType"
                                                 }
                                             ],
                                             "linkId": "allergysummary-manifestation",
@@ -18493,6 +18513,10 @@
                                                     }
                                                 ]
                                             }
+                                        },
+                                        {
+                                            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint",
+                                            "valueCode": "optionsOrType"
                                         },
                                         {
                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",

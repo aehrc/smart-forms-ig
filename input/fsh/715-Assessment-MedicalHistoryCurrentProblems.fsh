@@ -182,6 +182,7 @@ Description: "Medical History sub-questionnaire for Aboriginal and Torres Strait
       * item[+]
         * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
         * extension[sdc-questionnaire-width].valueQuantity = 40 '%'
+        * extension[ExtensionQuestionnaire_Item_AnswerConstraint].valueCode = #optionsOrType
         * extension[sdc-questionnaire-initialExpression].valueExpression
           * language = #text/fhirpath
           * expression = "%ConditionRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      

@@ -174,6 +174,7 @@ Description: "Immunisation sub-questionnaire for Aboriginal and Torres Strait Is
     * readOnly = true
     * item[+]
       * extension[questionnaire-itemControl].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+      * extension[ExtensionQuestionnaire_Item_AnswerConstraint].valueCode = #optionsOrType
       * extension[sdc-questionnaire-initialExpression].valueExpression
         * language = #text/fhirpath
         * expression = "%ImmunizationRepeat.vaccineCode.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"      

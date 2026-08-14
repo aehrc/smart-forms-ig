@@ -149,6 +149,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%AllergyIntoleranceRepeat.code.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
 * item[=].item[=].item[=].item[=].extension[questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item[=].item[=].item[=].item[=].extension[ExtensionQuestionnaire_Item_AnswerConstraint][+].valueCode = #optionsOrType
 * item[=].item[=].item[=].item[=].linkId = "allergysummary-substance"
 * item[=].item[=].item[=].item[=].text = "Substance"
 * item[=].item[=].item[=].item[=].type = #open-choice
@@ -174,6 +175,7 @@ Description: "Allergies/Adverse Reactions sub-questionnaire for Aboriginal and T
 * item[=].item[=].item[=].item[+].extension[sdc-questionnaire-initialExpression][+].valueExpression.language = #text/fhirpath
 * item[=].item[=].item[=].item[=].extension[sdc-questionnaire-initialExpression][=].valueExpression.expression = "%AllergyIntoleranceRepeat.reaction.manifestation.select((coding.where(system='http://snomed.info/sct') | coding.where(system!='http://snomed.info/sct').first() | text ).first())"
 * item[=].item[=].item[=].item[=].extension[questionnaire-itemControl][+].valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#autocomplete
+* item[=].item[=].item[=].item[=].extension[ExtensionQuestionnaire_Item_AnswerConstraint][+].valueCode = #optionsOrType
 * item[=].item[=].item[=].item[=].linkId = "allergysummary-manifestation"
 * item[=].item[=].item[=].item[=].text = "Manifestation"
 * item[=].item[=].item[=].item[=].type = #open-choice
