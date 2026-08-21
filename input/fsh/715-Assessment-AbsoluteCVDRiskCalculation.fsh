@@ -930,7 +930,7 @@ Description: "Absolute Cardiovascular Disease Risk Calculation sub-questionnaire
         * item[+]       
           * extension[sdc-questionnaire-calculatedExpression].valueExpression
             * language = #text/fhirpath
-            * expression = "iif(%height.exists() and %CVDHeightNewResultDate.toDate() > (%patient.birthDate + 18 years), %height/100.round(2), %bmiHeightDecimalPrepop)"
+            * expression = "iif(%height.exists() and %CVDHeightNewResultDate.toDate() > (%patient.birthDate + 18 years), (%height/100).round(2), %bmiHeightDecimalPrepop)"
           * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#m
           * linkId = "cvdrisk-bmi-height-decimal"
           * text = "Height"
