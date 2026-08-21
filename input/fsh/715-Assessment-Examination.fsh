@@ -567,10 +567,11 @@ Description: "Examination sub-questionnaire for Aboriginal and Torres Strait Isl
         * type = #decimal
         * repeats = false
       * item[+]
+        // Prefers a height entered during this assessment. Falls back to the latest recorded height only if it was measured after the patient turned 18, as a height recorded while still growing would understate current height and overstate BMI.
         * extension[sdc-questionnaire-calculatedExpression].valueExpression
           * description = "BMI calculation"
           * language = #text/fhirpath
-          * expression = "(%weight/((%height/100).power(2))).round(1)"
+          * expression = "(%weight/((iif(%height.exists(), %height, %ObsBodyHeightValue.where(%ObsBodyHeightDateString.toDate() > (%patient.birthDate + 18 years)))/100).power(2))).round(1)"
         * extension[http://hl7.org/fhir/StructureDefinition/questionnaire-unit].valueCoding = $UCUM#kg/m2
         * linkId = "obs-bmi-newresult"
         * text = "New result"
