@@ -19596,7 +19596,7 @@
                                                     "valueExpression": {
                                                         "description": "BMI calculation",
                                                         "language": "text/fhirpath",
-                                                        "expression": "(%weight/((%height/100).power(2))).round(1)"
+                                                        "expression": "(%weight/((iif(%height.exists(), %height, %ObsBodyHeightValue.where(%ObsBodyHeightDateString.toDate() > (%patient.birthDate + 18 years)))/100).power(2))).round(1)"
                                                     }
                                                 },
                                                 {
@@ -21835,7 +21835,7 @@
                                                             "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
                                                             "valueExpression": {
                                                                 "language": "text/fhirpath",
-                                                                "expression": "iif(%height.exists() and %CVDHeightNewResultDate.toDate() > (%patient.birthDate + 18 years), %height/100.round(2), %bmiHeightDecimalPrepop)"
+                                                                "expression": "iif(%height.exists() and %CVDHeightNewResultDate.toDate() > (%patient.birthDate + 18 years), (%height/100).round(2), %bmiHeightDecimalPrepop)"
                                                             }
                                                         },
                                                         {
