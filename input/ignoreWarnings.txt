@@ -19,14 +19,19 @@ This element does not match any known slice defined in the profile https://smart
 # INFORMATION 05: Slice matching - due to the profile approach that mixes slice and pattern in AU Core. The code is valid according to the profile but is defined using pattern and is outside the slice definition.
 This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# INFORMATION 06: Value set expansion too large. Noted and accepted.
+# INFORMATION 06: Slice matching - contained templates do match slices as they are not true instances
+This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# INFORMATION 07: Value set expansion too large. Noted and accepted.
 The value set expansion is too large, and only a subset has been displayed
 
-# INFORMATION 07: Example intentionally includes identifier value that is not defined as a slice for illustrative purposes.
+# INFORMATION 08: Example intentionally includes identifier value that is not defined as a slice for illustrative purposes.
 This element does not match any known slice defined in the profile http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 This element does not match any known slice defined in the profile https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient|0.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# INFORMATION 08: Reference to draft resources noted and accepted
+# INFORMATION 09: Reference to draft resources noted and accepted
 Reference to draft CodeSystem https://smartforms.csiro.au/ig/CodeSystem/QuestionnaireItemControlExtended%
 Reference to draft ValueSet https://smartforms.csiro.au/ig/ValueSet/heart-rhythm-1%
 Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/medication-statement-status|4.0.1
@@ -37,7 +42,7 @@ Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/allergyintol
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-clinical|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/questionnaire-item-control|4.0.1
 
-# INFORMATION 09: Wrong display name. Alternate display names are supported by a CodeSystem supplement.
+# INFORMATION 10: Wrong display name. Alternate display names are supported by a CodeSystem supplement.
 Wrong Display Name 'N/A' for http://terminology.hl7.org/CodeSystem/v2-0532#NA. Valid display is 'not applicable' (en) (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
 Wrong Display Name 'N/A' for http://terminology.hl7.org/CodeSystem/v2-0532#NA. Valid display is 'not applicable' (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
 Wrong Display Name 'Aboriginal' for https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#1. Valid display is 'Aboriginal but not Torres Strait Islander origin' (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
@@ -46,26 +51,29 @@ Wrong Display Name 'Torres Strait Islander' for https://healthterminologies.gov.
 Wrong Display Name 'Aboriginal and Torres Strait Islander' for https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1#3. Valid display is 'Both Aboriginal and Torres Strait Islander origin' (for the language(s) 'en, en-US'). Note that the display in the ValueSet does not have to match; this check exists to help check that it's not accidentally the wrong code
 Wrong Display Name 'Currently smokes' for http://snomed.info/sct#77176002. Valid display is 'Current smoker' (en) (for the language(s) 'en') 
 
-# INFORMATION 10: Terminology validation not performed. Nothing can be done about this.
+# INFORMATION 11: Terminology validation not performed. Nothing can be done about this.
 The concepts in the value set include have not been validated because the terminology server https://tx.hl7.org.au/fhir does not support batch validation (tests version < 1.7.8)
 
-# INFORMATION 11: These issues are known FHIR standard and Extension Pack future version and current deprecations.
+# INFORMATION 12: These issues are known FHIR standard and Extension Pack future version and current deprecations.
 The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated with the note: 'Use additionalBinding extension or element instead'
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0-ballot-tc1 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 
-# INFORMATION 12: HTML inclusion supports rendering
+# INFORMATION 13: HTML inclusion supports rendering
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
-# INFORMATION 13: OIDs are not desired
+# INFORMATION 14: OIDs are not desired
 %could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 
-# INFORMATION 14: Inherited from FHIR core  - value set included with these values
+# INFORMATION 15: Inherited from FHIR core  - value set included with these values
 The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
 
-# INFORMATION 15: INHERITED FROM AU BASE: Known NCTS published RCPA ValueSets published as experimental and as such examples contain codes from these.
+# INFORMATION 16: INHERITED FROM AU BASE: Known NCTS published RCPA ValueSets published as experimental and as such examples contain codes from these.
 Reference to experimental ValueSet https://www.rcpa.edu.au/fhir/ValueSet/spia-chemical-pathology-refset-3|3.0.1
+
+# INFORMATION 17: Reference to experimental resource reviewed and accepted 
+Reference to experimental CodeSystem http://hl7.org/fhir/questionnaire-answer-constraint|5.0.0
 
 # WARNING 01: INHERITED FROM AU BASE: Known NCTS published RCPA ValueSets published as experimental.
 The definition for the element 'Observation.code' binds to the value set 'https://www.rcpa.edu.au/fhir/ValueSet/spia-chemical-pathology-refset-3' which is experimental, but this structure is not labeled as experimental
@@ -144,7 +152,7 @@ The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced
 %should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 
 # ERROR 01: Invalid error. Vital signs invariants not applicable to SDC extract templates nor are the templates asserting conformance against their profiles.
-Constraint failed: vs-1: 'if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day ($this is dateTime implies $this.toString().length() >= 10)'
+Constraint failed: vs-1: 'if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day ($this is dateTime implies $this.toString().length() >= 10)'%
 
 # ERROR 02: Invalid error. hl7.fhir.uv.smart-app-launch#2.2.0 package has inherited dependency on an old extension package hl7.fhir.uv.extensions.r4#1.0.0 that contains an invariant bug. The extension reported on should be used on display items but the invariant evaluates as false for display items.
 The extension http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory is not allowed to be used at this point (based on context invariant 'type!='display'')
