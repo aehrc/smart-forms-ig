@@ -415,9 +415,13 @@ The server **SHALL** support both."
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].interaction[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension[0].valueCode = #SHALL
+* rest.resource[=].interaction[=].documentation = "The server **MAY** allow clients to PUT a resource to a location that does not yet exist (Update as Create)."
 * rest.resource[=].versioning = #versioned
 * rest.resource[=].versioning.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].versioning.extension[0].valueCode = #SHALL
+* rest.resource[=].updateCreate = true
+* rest.resource[=].updateCreate.extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].updateCreate.extension[0].valueCode = #MAY
 * rest.resource[=].searchParam[+].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/QuestionnaireResponse-patient"
 * rest.resource[=].searchParam[=].type = #reference
